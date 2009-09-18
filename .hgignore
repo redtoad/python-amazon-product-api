@@ -1,0 +1,14 @@
+dist
+build
+
+examples/config.py
+
+# eclipse project files
+.settings
+.project
+.pydevproject
+
+syntax: glob
+*.pyc
+*.pyo
+
