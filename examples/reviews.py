@@ -3,11 +3,12 @@
 """
 Get all reviews for books with the specified ISBNs.
 """
+from heapq import nsmallest
 
 import sys
 from textwrap import fill
 from config import AWS_KEY, SECRET_KEY
-from amazon.product import ProductAdvertisingAPI
+from amazon.product import API
 
 if __name__ == '__main__':
     
@@ -20,7 +21,7 @@ if __name__ == '__main__':
 
         isbn = isbn.replace('-', '')
         
-        api = ProductAdvertisingAPI(AWS_KEY, SECRET_KEY)
+        api = API(AWS_KEY, SECRET_KEY)
         root = api.item_lookup(isbn, IdType='ISBN', SearchIndex='Books', 
                             ResponseGroup='Reviews', ReviewPage=1)
         
@@ -45,7 +46,7 @@ if __name__ == '__main__':
         for review in reviews:
             #print review.ASIN
             print unicode(review.Reviewer.Name),
-            print '(%d Sterne)' % review.Rating.pyval,
+            print '*' * review.Rating.pyval,
             print review.Date
             print unicode(review.Summary)
             print '-'*80

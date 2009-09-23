@@ -31,6 +31,15 @@ http://blog.umlungu.co.uk/blog/2009/jul/12/pyaws-adding-request-authentication/)
 
 """
 
+from base64 import b64encode
+from hashlib import sha256
+import hmac
+from lxml import objectify
+import re
+from time import strftime, gmtime
+from urlparse import urlsplit
+from urllib2 import quote, urlopen
+
 __docformat__ = "restructuredtext en"
 
 LOCALES = {
@@ -41,14 +50,6 @@ LOCALES = {
     'uk' : 'http://ecs.amazonaws.co.uk/onca/xml', 
     'us' : 'http://ecs.amazonaws.com/onca/xml', 
 }
-
-from base64 import b64encode
-from hashlib import sha256
-import hmac
-from lxml import objectify
-from time import strftime, gmtime
-from urlparse import urlsplit
-from urllib2 import quote, urlopen
 
 class UnknownLocale (Exception):
     """
@@ -92,7 +93,19 @@ class InvalidResponseGroup (Exception):
     Variations.
     """
 
-class ProductAdvertisingAPI (object):
+class InvalidItemId (Exception):
+    """
+    The specified ItemId parameter is invalid. Please change this value and 
+    retry your request.
+    """
+
+INVALID_SEARCH_INDEX_REG = re.compile(
+    'The value you specified for SearchIndex is invalid.')
+
+INVALID_ITEMID_REG = re.compile('.+? is not a valid value for ItemId. '
+    'Please change this value and retry your request.')
+
+class API (object):
     
     """
     Wrapper class for the Amazon Product Advertising API. You will need both an 
@@ -192,13 +205,17 @@ class ProductAdvertisingAPI (object):
             url = self._build_url(Operation='ItemLookup', ItemId=id, **params)
             return self._call(url)
         except AWSError, e:
+            
             if (e.code=='AWS.InvalidEnumeratedParameter' 
-            and e.msg.startswith('The value you specified for SearchIndex '
-                                 'is invalid.')):
+            and INVALID_SEARCH_INDEX_REG.search(e.msg)):
                 raise InvalidSearchIndex(params.get('SearchIndex'))
             
-            elif e.code=='AWS.InvalidResponseGroup': 
+            if e.code=='AWS.InvalidResponseGroup': 
                 raise InvalidResponseGroup(params.get('ResponseGroup'))
+            
+            if (e.code=='AWS.InvalidParameterValue' 
+            and INVALID_ITEMID_REG.search(e.msg)):
+                raise InvalidItemId(id)
             
             # otherwise re-raise exception
             raise
