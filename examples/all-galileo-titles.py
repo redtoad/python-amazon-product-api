@@ -4,11 +4,11 @@ Get all books published by "Galileo Press".
 """
 
 from config import AWS_KEY, SECRET_KEY
-from amazon.product import ProductAdvertisingAPI
+from amazon.product import API
 
 if __name__ == '__main__':
     
-    api = ProductAdvertisingAPI(AWS_KEY, SECRET_KEY)
+    api = API(AWS_KEY, SECRET_KEY)
     root = api.item_search('Books', Publisher='Galileo Press', ItemPage=2)
     
     #from lxml import etree
