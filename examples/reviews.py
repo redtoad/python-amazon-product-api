@@ -6,8 +6,10 @@ Get all reviews for books with the specified ISBNs.
 
 import sys
 from textwrap import fill
+
 from config import AWS_KEY, SECRET_KEY
 from amazon.product import API
+from amazon.product import ResultPaginator
 
 if __name__ == '__main__':
     
@@ -21,36 +23,29 @@ if __name__ == '__main__':
         isbn = isbn.replace('-', '')
         
         api = API(AWS_KEY, SECRET_KEY)
-        root = api.item_lookup(isbn, IdType='ISBN', SearchIndex='Books', 
-                            ResponseGroup='Reviews', ReviewPage=1)
+        paginator = ResultPaginator('ReviewPage',
+            '//aws:Items/aws:Request/aws:ItemLookupRequest/aws:ReviewPage',
+            '//aws:Items/aws:Item/aws:CustomerReviews/aws:TotalReviewPages',
+            '//aws:Items/aws:Item/aws:CustomerReviews/aws:TotalReviews')
         
-        rating = root.Items.Item.CustomerReviews.AverageRating.pyval
-        total_reviews = root.Items.Item.CustomerReviews.TotalReviews.pyval
-        review_pages = root.Items.Item.CustomerReviews.TotalReviewPages.pyval
-        try:
-            current_page = root.Items.Request.ItemLookupRequest.ReviewPage.pyval
-        except AttributeError:
-            current_page = 1
+        for root in paginator(api.item_lookup, id=isbn, IdType='ISBN', 
+                             SearchIndex='Books', ResponseGroup='Reviews'):
         
-        print 'ISBN %s' % isbn
-        print '%d reviews' % total_reviews,
-        print 'with avg. rating of %d stars' % rating
-        print 'displaying page %d of %d' % (current_page, review_pages)
-        print 
-        
-        nspace = root.nsmap.get(None, '')
-        reviews = root.xpath('//aws:CustomerReviews/aws:Review', 
-                            namespaces={'aws' : nspace})
-        
-        for review in reviews:
-            #print review.ASIN
-            print unicode(review.Reviewer.Name),
-            print '*' * review.Rating.pyval,
-            print review.Date
-            print unicode(review.Summary)
-            print '-'*80
-            print fill(unicode(review.Content), 80)
-            print '%i von %i fanden das hilfreich' % (review.HelpfulVotes, 
-                                                    review.TotalVotes)
-            print
+            rating = root.Items.Item.CustomerReviews.AverageRating.pyval
+            total_reviews = root.Items.Item.CustomerReviews.TotalReviews.pyval
+            review_pages = root.Items.Item.CustomerReviews.TotalReviewPages.pyval
+            try:
+                current_page = root.Items.Request.ItemLookupRequest.ReviewPage.pyval
+            except AttributeError:
+                current_page = 1
+                
+            print '%d reviews' % total_reviews,
+            print 'requested page %d of %d' % (current_page, review_pages)
             
+            nspace = root.nsmap.get(None, '')
+            reviews = root.xpath('//aws:CustomerReviews/aws:Review', 
+                                namespaces={'aws' : nspace})
+            for review in reviews:
+                print '%s %-5s %s: %s' % (review.Date, '*' * review.Rating.pyval,  
+                                          unicode(review.Reviewer.Name),
+                                          unicode(review.Summary))
