@@ -241,3 +241,89 @@ class API (object):
             
             # otherwise re-raise exception
             raise
+    
+
+class ResultPaginator (object):
+    
+    """
+    Wrapper class for paginated results. This class will call the passed 
+    function iteratively until either the specified limit is reached or all 
+    result pages are fetched.
+    
+    A small example fetching reviews for a book::
+        
+        api = API(AWS_KEY, SECRET_KEY)
+        paginator = ResultPaginator('ReviewPage',
+            '//aws:Items/aws:Request/aws:ItemLookupRequest/aws:ReviewPage',
+            '//aws:Items/aws:Item/aws:CustomerReviews/aws:TotalReviewPages',
+            '//aws:Items/aws:Item/aws:CustomerReviews/aws:TotalReviews')
+        
+        for root in paginator(api.item_lookup, id=isbn, IdType='ISBN', 
+                             SearchIndex='Books', ResponseGroup='Reviews'):
+            ...
+    
+    """
+    
+    def __init__(self, counter, curent_page, total_pages, total_results, 
+                 limit=None, nspace=None):
+        """
+        :param counter: counter variable passed to AWS.
+        :param current_page: XPath expression locating current paginator page.
+        :param total_pages: XPath expression locating total number of pages.
+        :param total_results: XPath expression locating total number of results. 
+        :param limit: limit fetched pages to this amount. 
+        :param nspace: used XML name space. 
+        """
+        self.counter = counter
+        self.current_page_xpath = curent_page
+        self.total_pages_xpath = total_pages
+        self.total_results_xpath = total_results
+        
+        self.limit = limit
+        self.nspace = nspace
+        
+    def __call__(self, fun, **kwargs):
+        """
+        Iterate over all paginated results of ``fun``.
+        """
+        current_page = 0
+        total_pages = 1
+        
+        kwargs[self.counter] = kwargs.get(self.counter, 1)
+        
+        while (current_page < total_pages 
+        and (self.limit is None or current_page < self.limit)):
+            
+            root = fun(**kwargs)
+            
+            if self.nspace is None:
+                self.nspace = root.nsmap.get(None, '')
+        
+            current_page = self.get_current_page_numer(root)
+            total_results = self.get_total_results(root)
+            total_pages = self.get_total_page_numer(root)
+            
+            yield root
+            
+            kwargs[self.counter] += 1
+        
+    def get_total_page_numer(self, root):
+        """
+        Get total number of paginator pages.
+        """
+        return root.xpath(self.total_pages_xpath, 
+                          namespaces={'aws' : self.nspace})[0].pyval
+        
+    def get_current_page_numer(self, root):
+        """
+        Get number of current paginator page.
+        """
+        return root.xpath(self.current_page_xpath, 
+                          namespaces={'aws' : self.nspace})[0].pyval
+    
+    def get_total_results(self, root):
+        """
+        Get number of current paginator page.
+        """
+        return root.xpath(self.total_results_xpath, 
+                          namespaces={'aws' : self.nspace})[0].pyval
