@@ -3,7 +3,6 @@
 """
 Get all reviews for books with the specified ISBNs.
 """
-from heapq import nsmallest
 
 import sys
 from textwrap import fill
