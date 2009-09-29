@@ -199,7 +199,19 @@ class API (object):
     
     def item_lookup(self, id, **params):
         """
-        Looks up one specific item.
+        Given an Item identifier, the ``ItemLookup`` operation returns some or
+        all of the item attributes, depending on the response group specified
+        in the request. By default, ``ItemLookup`` returns an item's ``ASIN``,
+        ``DetailPageURL``, ``Manufacturer``, ``ProductGroup``, and ``Title`` of
+        the item.
+        
+        ``ItemLookup`` supports many response groups, so you can retrieve many
+        different kinds of product information, called item attributes,
+        including product reviews, variations, similar products, pricing,
+        availability, images of products, accessories, and other information.
+        
+        To look up more than one item at a time, separate the item identifiers
+        by commas. 
         """
         try:
             url = self._build_url(Operation='ItemLookup', ItemId=id, **params)
@@ -222,7 +234,35 @@ class API (object):
         
     def item_search(self, search_index, **params):
         """
-        Looks up one specific item.
+        The ``ItemSearch`` operation returns items that satisfy the search
+        criteria, including one or more search indices.
+
+        ``ItemSearch`` returns up to ten search results at a time. When
+        ``condition`` equals "All," ``ItemSearch`` returns up to three offers
+        per condition (if they exist), for example, three new, three used,
+        three refurbished, and three collectible items. Or, for example, if
+        there are no collectible or refurbished offers, ``ItemSearch`` returns
+        three new and three used offers.
+
+        Because there are thousands of items in each search index,
+        ``ItemSearch`` requires that you specify the value for at least one
+        parameter in addition to a search index. The additional parameter value
+        must reference items within the specified search index. For example,
+        you might specify a browse node (BrowseNode is an ``ItemSearch``
+        parameter), Harry Potter Books, within the Books product category. You
+        would not get results, for example, if you specified the search index
+        to be Automotive and the browse node to be Harry Potter Books. In this
+        case, the parameter value is not associated with the search index
+        value.
+
+        The ``ItemPage`` parameter enables you to return a specified page of
+        results. The maximum ``ItemPage`` number that can be returned is 400.
+        An error is returned if you try to access higher numbered pages. If you
+        do not include ``ItemPage`` in your request, the first page will be
+        returned by default. There can be up to ten items per page.
+
+        ``ItemSearch`` is the operation that is used most often in requests. In
+        general, when trying to find an item for sale, you use this operation.
         """
         try:
             url = self._build_url(Operation='ItemSearch', 
