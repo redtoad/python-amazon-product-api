@@ -32,6 +32,7 @@ http://blog.umlungu.co.uk/blog/2009/jul/12/pyaws-adding-request-authentication/)
 """
 
 from base64 import b64encode
+from datetime import datetime, timedelta
 from hashlib import sha256
 import hmac
 from lxml import objectify
@@ -127,6 +128,7 @@ class API (object):
     """
     
     VERSION = '2009-07-01' #: supported Amazon API version
+    REQUESTS_PER_SECOND = 2 #: max requests per second
     
     def __init__(self, access_key_id, secret_access_key, locale='de'):
         
@@ -140,6 +142,9 @@ class API (object):
             self.path = parts.path
         except KeyError:
             raise UnknownLocale(locale)
+        
+        self.last_call = datetime(1970, 1, 1)
+        self.throttle = timedelta(seconds=1)/self.REQUESTS_PER_SECOND
         
     def _build_url(self, **qargs):
         """
@@ -180,6 +185,12 @@ class API (object):
         """
         Calls the Amazon Product Advertising API and objectifies the response.
         """
+        # Be nice and wait for some time 
+        # before submitting the next request
+        while (datetime.now() - self.last_call) < self.throttle: 
+            pass # Wait for it!
+        self.last_call = datetime.now()
+        
         tree = objectify.parse(urlopen(url))
         root = tree.getroot()
         
