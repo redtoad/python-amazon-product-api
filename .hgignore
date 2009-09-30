@@ -1,0 +1,19 @@
+
+dist
+build
+docs/.build
+
+# hide real key data!
+examples/config.py$
+
+# eclipse project files
+.settings
+.project
+.pydevproject
+
+# use glob syntax.
+syntax: glob
+
+*.pyc
+*.pyo
+
