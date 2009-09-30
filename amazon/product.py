@@ -34,11 +34,12 @@ http://blog.umlungu.co.uk/blog/2009/jul/12/pyaws-adding-request-authentication/)
 from base64 import b64encode
 from hashlib import sha256
 import hmac
-from lxml import objectify
 import re
 from time import strftime, gmtime
 from urlparse import urlsplit
 from urllib2 import quote, urlopen
+
+from lxml import objectify
 
 __docformat__ = "restructuredtext en"
 
@@ -105,6 +106,34 @@ INVALID_SEARCH_INDEX_REG = re.compile(
 INVALID_ITEMID_REG = re.compile('.+? is not a valid value for ItemId. '
     'Please change this value and retry your request.')
 
+class ResponseProcessor (object):
+    
+    """
+    A post-processor for the AWS response. XML is fed in, some usable output 
+    comes out.  
+    """
+    
+    def __call__(self, fp):
+        """
+        Parse file like object with XML response from AWS.
+        """
+        tree = objectify.parse(fp)
+        root = tree.getroot()
+        
+        #~ from lxml import etree
+        #~ print etree.tostring(tree, pretty_print=True)
+        
+        nspace = root.nsmap.get(None, '')
+        errors = root.xpath('//aws:Request/aws:Errors/aws:Error', 
+                         namespaces={'aws' : nspace})
+        
+        for error in errors:
+            raise AWSError(error.Code.text, error.Message.text)
+        
+        #~ from lxml import etree
+        #~ print etree.tostring(root, pretty_print=True)
+        return root
+
 class API (object):
     
     """
@@ -140,6 +169,8 @@ class API (object):
             self.path = parts.path
         except KeyError:
             raise UnknownLocale(locale)
+        
+        self.response_processor = ResponseProcessor()
         
     def _build_url(self, **qargs):
         """
@@ -180,22 +211,8 @@ class API (object):
         """
         Calls the Amazon Product Advertising API and objectifies the response.
         """
-        tree = objectify.parse(urlopen(url))
-        root = tree.getroot()
-        
-        #~ from lxml import etree
-        #~ print etree.tostring(tree, pretty_print=True)
-        
-        nspace = root.nsmap.get(None, '')
-        errors = root.xpath('//aws:Request/aws:Errors/aws:Error', 
-                         namespaces={'aws' : nspace})
-        
-        for error in errors:
-            raise AWSError(error.Code.text, error.Message.text)
-        
-        #~ from lxml import etree
-        #~ print etree.tostring(root, pretty_print=True)
-        return root
+        response = urlopen(url)
+        return self.response_processor(response)
     
     def item_lookup(self, id, **params):
         """
