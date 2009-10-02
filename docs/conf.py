@@ -94,7 +94,7 @@ pygments_style = 'sphinx'
 # The style sheet to use for HTML and HTML Help pages. A file of that name
 # must exist either in Sphinx' static/ path, or in one of the custom paths
 # given in html_static_path.
-html_style = 'default.css'
+html_style = 'custom.css'
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
@@ -168,14 +168,14 @@ htmlhelp_basename = 'python-amazondoc'
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, document class [howto/manual]).
 latex_documents = [
-  ('index', 'python-amazon-prodcut-api.tex', 
-   ur'python-amazon-prodcut-api Documentation',
+  ('index', 'python-amazon-product-api.tex', 
+   ur'python-amazon-product-api Documentation',
    ur'Sebastian Rahlf', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
 # the title page.
-#latex_logo = None
+latex_logo = 'static/python-amazon-logo.png'
 
 # For "manual" documents, if this is true, then toplevel headings are parts,
 # not chapters.
