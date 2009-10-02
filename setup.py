@@ -1,12 +1,11 @@
 from setuptools import setup
 
 setup(
-    name = "amazon",
+    name = 'python-amazon-product-api',
     version = '0.1',
     author = 'Sebastian Rahlf',
     author_email = 'basti AT redtoad DOT de',
-    description = 'A collection of wrappers for various Amazon Webservices.',
-    
+    description = 'A Python wrappers for the Amazon Product Advertising API.', 
     packages = ['amazon'],
     install_requires=['lxml>=2.1.5'],
     
