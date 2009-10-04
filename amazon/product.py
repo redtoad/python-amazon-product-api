@@ -100,11 +100,20 @@ class InvalidItemId (Exception):
     retry your request.
     """
 
+class NoSimilarityForASIN (Exception):
+    """
+    When you specify multiple items, it is possible for there to be no 
+    intersection of similar items.
+    """
+    
 INVALID_SEARCH_INDEX_REG = re.compile(
     'The value you specified for SearchIndex is invalid.')
 
-INVALID_ITEMID_REG = re.compile('.+? is not a valid value for ItemId. '
+INVALID_ITEMID_REG = re.compile('(.+?) is not a valid value for ItemId. '
     'Please change this value and retry your request.')
+
+NOSIMILARITIES_REG = re.compile('There are no similar items for this ASIN: '
+                                '(?P<ASIN>\w+).')
 
 class API (object):
     
@@ -281,10 +290,8 @@ class API (object):
             return self._call(url)
         except AWSError, e:
             
-            # check for specific exceptions
             if (e.code=='AWS.InvalidEnumeratedParameter' 
-            and e.msg.startswith('The value you specified for SearchIndex '
-                                 'is invalid.')):
+            and INVALID_SEARCH_INDEX_REG.search(e.msg)):
                 raise InvalidSearchIndex(search_index)
             
             if e.code=='AWS.InvalidResponseGroup': 
@@ -292,7 +299,35 @@ class API (object):
             
             # otherwise re-raise exception
             raise
-    
+        
+    def similarity_lookup(self, *ids, **params):
+        """
+        The ``SimilarityLookup`` operation returns up to ten products per page
+        that are similar to one or more items specified in the request. This
+        operation is typically used to pique a customer's interest in buying
+        something similar to what they've already ordered.
+
+        If you specify more than one item, ``SimilarityLookup`` returns the
+        intersection of similar items each item would return separately.
+        Alternatively, you can use the ``SimilarityType`` parameter to return
+        the union of items that are similar to any of the specified items. A
+        maximum of ten similar items are returned; the operation does not
+        return additional pages of similar items. If there are more than ten
+        similar items, running the same request can result in different answers
+        because the ten that are included in the response are picked randomly.
+        The results are picked randomly only when you specify multiple items
+        and the results include more than ten similar items. 
+        """
+        item_id = ','.join(ids)
+        try:
+            url = self._build_url(Operation='SimilarityLookup', 
+                                  ItemId=item_id, **params)
+            return self._call(url)
+        except AWSError, e:
+            
+            if e.code=='AWS.ECommerceService.NoSimilarities':
+                asin = NOSIMILARITIES_REG.search(e.msg).group('ASIN')
+                raise NoSimilarityForASIN(asin)
 
 class ResultPaginator (object):
     
@@ -315,7 +350,7 @@ class ResultPaginator (object):
     
     """
     
-    def __init__(self, counter, curent_page, total_pages, total_results, 
+    def __init__(self, counter, current_page, total_pages, total_results, 
                  limit=None, nspace=None):
         """
         :param counter: counter variable passed to AWS.
@@ -326,7 +361,7 @@ class ResultPaginator (object):
         :param nspace: used XML name space. 
         """
         self.counter = counter
-        self.current_page_xpath = curent_page
+        self.current_page_xpath = current_page
         self.total_pages_xpath = total_pages
         self.total_results_xpath = total_results
         
@@ -378,3 +413,4 @@ class ResultPaginator (object):
         """
         return root.xpath(self.total_results_xpath, 
                           namespaces={'aws' : self.nspace})[0].pyval
+
