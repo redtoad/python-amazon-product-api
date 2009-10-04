@@ -136,7 +136,7 @@ class API (object):
 
     """
     
-    VERSION = '2009-07-01' #: supported Amazon API version
+    VERSION = '2009-10-01' #: supported Amazon API version
     REQUESTS_PER_SECOND = 2 #: max requests per second
     
     def __init__(self, access_key_id, secret_access_key, locale='de'):
