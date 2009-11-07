@@ -6,7 +6,7 @@ setup(
     author = 'Sebastian Rahlf',
     author_email = 'basti AT redtoad DOT de',
     description = 'A Python wrappers for the Amazon Product Advertising API.', 
-    packages = ['amazon'],
+    py_modules = ['amazonproduct'],
     install_requires=['lxml>=2.1.5'],
     
     classifiers = [
