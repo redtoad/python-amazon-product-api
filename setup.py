@@ -12,7 +12,7 @@ setup(
     url="http://bitbucket.org/basti/python-amazon-product-api/downloads/",
     license='bsd',
     
-    description = 'A Python wrappers for the Amazon Product Advertising API.', 
+    description = 'A Python wrapper for the Amazon Product Advertising API.', 
     long_description=read('README.rst'),
     keywords = 'amazon product advertising api wrapper',
     
