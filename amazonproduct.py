@@ -115,33 +115,28 @@ INVALID_ITEMID_REG = re.compile('(.+?) is not a valid value for ItemId. '
 
 NOSIMILARITIES_REG = re.compile('There are no similar items for this ASIN: '
                                 '(?P<ASIN>\w+).')
-class ResponseProcessor (object):
-    
+
+def response_processor(fp):
     """
     A post-processor for the AWS response. XML is fed in, some usable output 
-    comes out.  
+    comes out. Parses file like object with XML response from AWS.  
     """
+    tree = objectify.parse(fp)
+    root = tree.getroot()
     
-    def __call__(self, fp):
-        """
-        Parse file like object with XML response from AWS.
-        """
-        tree = objectify.parse(fp)
-        root = tree.getroot()
-        
-        #~ from lxml import etree
-        #~ print etree.tostring(tree, pretty_print=True)
-        
-        nspace = root.nsmap.get(None, '')
-        errors = root.xpath('//aws:Request/aws:Errors/aws:Error', 
-                         namespaces={'aws' : nspace})
-        
-        for error in errors:
-            raise AWSError(error.Code.text, error.Message.text)
-        
-        #~ from lxml import etree
-        #~ print etree.tostring(root, pretty_print=True)
-        return root
+    #~ from lxml import etree
+    #~ print etree.tostring(tree, pretty_print=True)
+    
+    nspace = root.nsmap.get(None, '')
+    errors = root.xpath('//aws:Request/aws:Errors/aws:Error', 
+                     namespaces={'aws' : nspace})
+    
+    for error in errors:
+        raise AWSError(error.Code.text, error.Message.text)
+    
+    #~ from lxml import etree
+    #~ print etree.tostring(root, pretty_print=True)
+    return root
 
 class API (object):
     
@@ -167,7 +162,8 @@ class API (object):
     VERSION = '2009-10-01' #: supported Amazon API version
     REQUESTS_PER_SECOND = 2 #: max requests per second
     
-    def __init__(self, access_key_id, secret_access_key, locale='de'):
+    def __init__(self, access_key_id, secret_access_key, 
+                 locale='de', processor=response_processor):
         
         self.access_key = access_key_id
         self.secret_key = secret_access_key
@@ -183,7 +179,7 @@ class API (object):
         self.last_call = datetime(1970, 1, 1)
         self.throttle = timedelta(seconds=1)/self.REQUESTS_PER_SECOND
         
-        self.response_processor = ResponseProcessor()
+        self.response_processor = processor
         
     def _build_url(self, **qargs):
         """
