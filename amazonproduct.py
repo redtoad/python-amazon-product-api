@@ -35,11 +35,12 @@ from base64 import b64encode
 from datetime import datetime, timedelta
 from hashlib import sha256
 import hmac
-from lxml import objectify
 import re
 from time import strftime, gmtime
 from urlparse import urlsplit
 from urllib2 import quote, urlopen
+
+from lxml import objectify
 
 __docformat__ = "restructuredtext en"
 
@@ -114,6 +115,33 @@ INVALID_ITEMID_REG = re.compile('(.+?) is not a valid value for ItemId. '
 
 NOSIMILARITIES_REG = re.compile('There are no similar items for this ASIN: '
                                 '(?P<ASIN>\w+).')
+class ResponseProcessor (object):
+    
+    """
+    A post-processor for the AWS response. XML is fed in, some usable output 
+    comes out.  
+    """
+    
+    def __call__(self, fp):
+        """
+        Parse file like object with XML response from AWS.
+        """
+        tree = objectify.parse(fp)
+        root = tree.getroot()
+        
+        #~ from lxml import etree
+        #~ print etree.tostring(tree, pretty_print=True)
+        
+        nspace = root.nsmap.get(None, '')
+        errors = root.xpath('//aws:Request/aws:Errors/aws:Error', 
+                         namespaces={'aws' : nspace})
+        
+        for error in errors:
+            raise AWSError(error.Code.text, error.Message.text)
+        
+        #~ from lxml import etree
+        #~ print etree.tostring(root, pretty_print=True)
+        return root
 
 class API (object):
     
@@ -154,6 +182,8 @@ class API (object):
         
         self.last_call = datetime(1970, 1, 1)
         self.throttle = timedelta(seconds=1)/self.REQUESTS_PER_SECOND
+        
+        self.response_processor = ResponseProcessor()
         
     def _build_url(self, **qargs):
         """
@@ -200,22 +230,8 @@ class API (object):
             pass # Wait for it!
         self.last_call = datetime.now()
         
-        tree = objectify.parse(urlopen(url))
-        root = tree.getroot()
-        
-        #~ from lxml import etree
-        #~ print etree.tostring(tree, pretty_print=True)
-        
-        nspace = root.nsmap.get(None, '')
-        errors = root.xpath('//aws:Request/aws:Errors/aws:Error', 
-                         namespaces={'aws' : nspace})
-        
-        for error in errors:
-            raise AWSError(error.Code.text, error.Message.text)
-        
-        #~ from lxml import etree
-        #~ print etree.tostring(root, pretty_print=True)
-        return root
+        response = urlopen(url)
+        return self.response_processor(response)
     
     def item_lookup(self, id, **params):
         """
@@ -290,6 +306,7 @@ class API (object):
             return self._call(url)
         except AWSError, e:
             
+            # check for specific exceptions
             if (e.code=='AWS.InvalidEnumeratedParameter' 
             and INVALID_SEARCH_INDEX_REG.search(e.msg)):
                 raise InvalidSearchIndex(search_index)
@@ -413,4 +430,3 @@ class ResultPaginator (object):
         """
         return root.xpath(self.total_results_xpath, 
                           namespaces={'aws' : self.nspace})[0].pyval
-
