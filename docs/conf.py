@@ -19,7 +19,7 @@ import sys, os
 # If your extensions (or modules documented by autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
-#sys.path.append(os.path.abspath('.'))
+sys.path.append(os.path.abspath('../'))
 
 # General configuration
 # ---------------------
@@ -29,7 +29,7 @@ import sys, os
 extensions = ['sphinx.ext.autodoc']
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['.templates']
+templates_path = ['templates']
 
 # The suffix of source filenames.
 source_suffix = '.rst'
@@ -43,6 +43,9 @@ master_doc = 'index'
 # General information about the project.
 project = u'python-amazon-product-api'
 copyright = u'2009, Sebastian Rahlf'
+#import time
+#copyright = '2009-%s, Sebastian Rahlf' % time.strftime('%Y')
+
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -78,7 +81,7 @@ exclude_trees = ['.build']
 
 # If true, the current module name will be prepended to all description
 # unit titles (such as .. function::).
-#add_module_names = True
+add_module_names = True
 
 # If true, sectionauthor and moduleauthor directives will be shown in the
 # output. They are ignored by default.
@@ -105,12 +108,12 @@ html_style = 'custom.css'
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
-html_logo = 'static/python-amazon-logo.png'
+#html_logo = ''
 
 # The name of an image file (within the static path) to use as favicon of the
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
 # pixels large.
-#html_favicon = 'static/amazon_favicon.png'
+html_favicon = 'static/favicon.ico'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -119,7 +122,7 @@ html_static_path = ['static']
 
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
 # using the given strftime format.
-#html_last_updated_fmt = '%b %d, %Y'
+html_last_updated_fmt = '%b %d, %Y'
 
 # If true, SmartyPants will be used to convert quotes and dashes to
 # typographically correct entities.
@@ -175,11 +178,11 @@ latex_documents = [
 
 # The name of an image file (relative to this directory) to place at the top of
 # the title page.
-latex_logo = 'static/python-amazon-logo.png'
+latex_logo = 'static/banner.png'
 
 # For "manual" documents, if this is true, then toplevel headings are parts,
 # not chapters.
-#latex_use_parts = False
+latex_use_parts = False
 
 # Additional stuff for the LaTeX preamble.
 #latex_preamble = ''
