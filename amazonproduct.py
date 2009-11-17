@@ -21,7 +21,11 @@ https://affiliate-program.amazon.com/gp/advertising/api/detail/main.html
 Requirements
 ------------
 
-You need an Amazon Webservice account.
+You need an Amazon Webservice account which comes with an access key and a 
+secret key.
+
+You'll also need the python module lxml (>=2.1.5) and, if you're using python 
+2.4, also pycrypto.
 
 Kudos
 -----
@@ -33,13 +37,19 @@ http://blog.umlungu.co.uk/blog/2009/jul/12/pyaws-adding-request-authentication/)
 
 from base64 import b64encode
 from datetime import datetime, timedelta
-from hashlib import sha256
+
+try: # make it python2.4 compatible!
+    from hashlib import sha256
+except ImportError:
+    from Crypto.Hash import SHA256 as sha256
+    
 import hmac
 from lxml import objectify
 import re
 from time import strftime, gmtime
 from urlparse import urlsplit
-from urllib2 import quote, urlopen
+from urllib import quote
+from urllib2 import urlopen
 
 __docformat__ = "restructuredtext en"
 
@@ -146,9 +156,7 @@ class API (object):
         
         try:
             parts = urlsplit(LOCALES[locale])
-            self.scheme = parts.scheme
-            self.host = parts.netloc
-            self.path = parts.path
+            self.scheme, self.host, self.path = parts[:3]
         except KeyError:
             raise UnknownLocale(locale)
         
