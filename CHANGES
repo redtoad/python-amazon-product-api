@@ -1,0 +1,23 @@
+
+0.2.x (under development)
+-------------------------
+
+- Support for Python 2.4 added. 
+
+0.2.0 "Westley"
+---------------
+
+This is the first `public` release. We're now available via the Cheeseshop!
+http://pypi.python.org/pypi/python-amazon-product-api
+
+- The module is no longer a package. Please use ``import amazonproduct`` 
+  (instead of ``import amazon.product``) now.
+- SimilarityLookup is now supported.
+- Updated to support version 2009-10-01.
+- Documentation added (made with http://sphinx.pocoo.org).
+- New artwork.
+
+0.1 "Fezzik"
+------------
+
+Initial release
