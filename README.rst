@@ -20,16 +20,24 @@ https://affiliate-program.amazon.com/gp/advertising/api/detail/main.html
 Features
 --------
 
-This module is still undergoing development. The support for the Amazon Product
-API is currently limited to a number of operations. More functionality is to 
-follow as development progresses. 
+This module offers a light-weight access to the latest version of the Amazon 
+Product Advertising API without getting in your way. All requests are signed
+as required since August 15, 2009.
 
-Supported so far are:
-   
-- ItemLookup
-- ItemSearch
-- SimilarityLookup
+Installation
+------------
+
+In order to install python-amazon-product-api you can use::
+
+    easy_install python-amazon-product-api
     
+or download the source package from 
+http://pypi.python.org/pypi/python-amazon-product-api, untar it and run ::
+    
+    python setup.py install
+
+You'll also find binaries there to make your life easier if you happen to use
+a Windows system.
 
 Basic usage
 -----------
@@ -64,3 +72,24 @@ Please refer to the `lxml.objectify`_ documentation for more examples.
 .. _lxml.objectify: http://codespeak.net/lxml/objectify.html
 __ lxml.objectify_
 
+Status
+------
+
+This module is still undergoing development. The support for the Amazon Product
+API is currently limited to a number of operations. More functionality is to 
+follow as development progresses. 
+
+Supported so far are:
+   
+- ItemLookup
+- ItemSearch
+- SimilarityLookup
+
+Development
+-----------
+
+Development happens over at `bitbucket.org`_. Feel free to clone the repository
+and add your own features.  If you like what you see, drop me a line at 
+`basti at redtoad dot de`.
+
+.. _bitbucket.org: http://bitbucket.org/basti/python-amazon-product-api/ 

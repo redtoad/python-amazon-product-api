@@ -23,6 +23,17 @@ Amazon's Product Advertising API provides...
 
 .. [#amazon] https://affiliate-program.amazon.com/gp/advertising/api/detail/main.html
 
+Features
+--------
+
+This module offers a light-weight access to the latest version of the Amazon 
+Product Advertising API without getting in your way. All requests are signed
+as required since August 15, 2009.
+
+.. 
+   By default the XML response is returned as a object parsed by `lxml.objectify`_. 
+   However, you can substitute this with your own parsing method if you so wish.
+
 Status
 ------
 
@@ -35,25 +46,22 @@ Supported so far are:
 - ItemLookup
 - ItemSearch
 - SimilarityLookup
-    
-
-Features
---------
-
-...
 
 Installation
 ------------
 
 The easiest way to get the python bindings is if you have setuptools_ 
-installed.
+installed. ::
 
-``easy_install python-product-advertising-api``
-
+    easy_install python-amazon-product-api
+    
 Without setuptools, it's still pretty easy. Download the .tgz file from 
-`Cheeseshop`_, untar it and run:
+`Cheeseshop`_, untar it and run::
+    
+    python setup.py install
 
-``python setup.py install``
+You'll also find binaries there to make your life easier if you happen to use
+a Windows system.
 
 .. _Cheeseshop: http://pypi.python.org/pypi/python-amazon-product-advertising-api/
 .. _setuptools: http://peak.telecommunity.com/DevCenter/EasyInstall
@@ -63,6 +71,15 @@ License
 
 This module is licensed under a BSD license. See the `LICENSE` file in the 
 distribution.
+
+Development
+-----------
+
+Development happens over at `bitbucket.org`_. Feel free to clone the repository
+and add your own features.  If you like what you see, drop me a line at 
+`basti at redtoad dot de`.
+
+.. _bitbucket.org: http://bitbucket.org/basti/python-amazon-product-api/ 
 
 Contents
 --------
@@ -74,6 +91,8 @@ Contents
    basic-usage
    pagination
    operations
+   
+   changes
 	
 Indices and tables
 ------------------
