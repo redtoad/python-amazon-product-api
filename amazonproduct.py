@@ -49,7 +49,7 @@ import re
 from time import strftime, gmtime
 from urlparse import urlsplit
 from urllib import quote
-from urllib2 import urlopen
+from urllib2 import urlopen, HTTPError
 
 __docformat__ = "restructuredtext en"
 
@@ -116,6 +116,13 @@ class NoSimilarityForASIN (Exception):
     intersection of similar items.
     """
     
+class TooManyRequests (Exception):
+    """
+    You are submitting requests too quickly and your requests are being 
+    throttled. If this is the case, you need to slow your request rate to one 
+    request per second.
+    """
+
 INVALID_SEARCH_INDEX_REG = re.compile(
     'The value you specified for SearchIndex is invalid.')
 
@@ -147,7 +154,7 @@ class API (object):
     """
     
     VERSION = '2009-10-01' #: supported Amazon API version
-    REQUESTS_PER_SECOND = 2 #: max requests per second
+    REQUESTS_PER_SECOND = 1 #: max requests per second
     
     def __init__(self, access_key_id, secret_access_key, locale='de'):
         
@@ -208,8 +215,14 @@ class API (object):
             pass # Wait for it!
         self.last_call = datetime.now()
         
-        tree = objectify.parse(urlopen(url))
-        root = tree.getroot()
+        try:
+            tree = objectify.parse(urlopen(url))
+            root = tree.getroot()
+        except HTTPError, e:
+            if e.code == 503:
+                raise TooManyRequests
+            # otherwise re-raise
+            raise        
         
         #~ from lxml import etree
         #~ print etree.tostring(tree, pretty_print=True)
