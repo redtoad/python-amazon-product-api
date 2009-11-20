@@ -1,14 +1,19 @@
 
-0.2.x (under development)
--------------------------
-
-- Support for Python 2.4 added. 
-
-0.2.0 "Westley"
----------------
+0.2 "Westley"
+-------------
 
 This is the first `public` release. We're now available via the Cheeseshop!
 http://pypi.python.org/pypi/python-amazon-product-api
+
+0.2.1
+~~~~~
+
+- Support for Python 2.4 added. 
+- Fixed #2: ResultPaginator now returns ``None`` if the XPath expression doesn't 
+  find the node it's looking for.
+  
+0.2.0
+~~~~~
 
 - The module is no longer a package. Please use ``import amazonproduct`` 
   (instead of ``import amazon.product``) now.
