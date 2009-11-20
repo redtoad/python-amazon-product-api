@@ -413,25 +413,34 @@ class ResultPaginator (object):
             yield root
             
             kwargs[self.counter] += 1
-        
+            
     def get_total_page_numer(self, root):
         """
         Get total number of paginator pages.
         """
-        return root.xpath(self.total_pages_xpath, 
+        try:
+            return root.xpath(self.total_pages_xpath, 
                           namespaces={'aws' : self.nspace})[0].pyval
+        except IndexError:
+            return None
         
     def get_current_page_numer(self, root):
         """
         Get number of current paginator page.
         """
-        return root.xpath(self.current_page_xpath, 
+        try:
+            return root.xpath(self.current_page_xpath, 
                           namespaces={'aws' : self.nspace})[0].pyval
+        except IndexError:
+            return None
     
     def get_total_results(self, root):
         """
-        Get number of current paginator page.
+        Get total number of results.
         """
-        return root.xpath(self.total_results_xpath, 
-                          namespaces={'aws' : self.nspace})[0].pyval
+        try:
+            return root.xpath(self.total_results_xpath, 
+                          namespaces={'aws' : self.nspace})
+        except IndexError:
+            return None
 
