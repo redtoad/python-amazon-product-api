@@ -1,9 +1,7 @@
-
-"""
-"""
-
+from lxml import etree, objectify
 import os, os.path
 import re
+from StringIO import StringIO
 import unittest
 import urllib2
 
@@ -15,6 +13,43 @@ except ImportError:
     import os
     AWS_KEY = os.environ.get('AWS_KEY')
     SECRET_KEY = os.environ.get('SECRET_KEY')
+
+class CustomAPI (API):
+    
+    """
+    Uses stored XML responses from local files (or retrieves them from Amazon 
+    if they are not present yet).
+    """
+    
+    def _call(self, url):
+        """
+        Uses XML response from (or stores in) local file.
+        """
+        
+        if not os.path.exists(self.local_file):
+            tree = objectify.parse(API._call(self, url))
+            root = tree.getroot()
+            
+            # overwrite sensible data
+            nspace = root.nsmap.get(None, '')
+            for arg in root.xpath('//aws:Arguments/aws:Argument',
+                                  namespaces={'aws' : nspace}):
+                if arg.get('Name') in 'AWSAccessKeyId Signature':
+                    arg.set('Value', 'X'*15)
+            
+            data = etree.tostring(root, pretty_print=True)
+            local_dir = os.path.dirname(self.local_file)
+            if not os.path.exists(local_dir):
+                #print 'creating %s...' % local_dir
+                os.mkdir(local_dir)
+                
+            fp = open(self.local_file, 'wb')
+            #print 'storing response in %s...' % self.local_file 
+            fp.write(data)
+            fp.close()
+            return StringIO(data)
+            
+        return open(self.local_file, 'rb')
 
 
 class XMLResponseTestCase (unittest.TestCase):
@@ -28,10 +63,10 @@ class XMLResponseTestCase (unittest.TestCase):
         Method called to prepare the test fixture. This is called immediately 
         before calling the test method.
         """
-        self.api = API(AWS_KEY, SECRET_KEY)
-        self.response = open(self._get_sample_response_file())
+        self.api = CustomAPI(AWS_KEY, SECRET_KEY)
+        self.api.local_file = self.get_local_response_file()
         
-    def _get_sample_response_file(self):
+    def get_local_response_file(self):
         """
         Constructs name for local XML file based on API version, TestCase and 
         test method. ``Test``, ``TestCase`` and ``test`` is omitted from names.
@@ -66,41 +101,3 @@ class ItemLookupTestCase (XMLResponseTestCase):
         # Harry Potter and the Philosopher's Stone
         self.api.item_lookup('9780747532743', IdType='ISBN')
         
-        
-def collect_sample_files():
-    """
-    Collects all XML responses from Amazon and stores them in local files.
-    """
-    module = __import__('__main__')
-    suites = unittest.defaultTestLoader.loadTestsFromModule(module)
-    for suite in suites:
-        for test in suite._tests:
-            
-            class CustomAPI (API):
-                def _call(self, url):
-                    "Stores XML response in local file."
-                    fp = open(self.local_file, 'wb')
-                    print 'storing response in %s...' % self.local_file 
-                    fp.write(urllib2.urlopen(url).read())
-                    fp.close() 
-                    return API._call(self, url)
-                
-            def custom_testcase_setUp(slf):
-                "Replaces the standard setUp method to invoke a custom API."
-                slf.api = CustomAPI(AWS_KEY, SECRET_KEY)
-                slf.api.local_file = slf._get_sample_response_file()
-                local_dir = os.path.dirname(slf.api.local_file)
-                if not os.path.exists(local_dir):
-                    print 'creating %s...' % local_dir
-                    os.mkdir(local_dir)
-            
-            result = test.defaultTestResult()
-            test.setUp = lambda: custom_testcase_setUp(test)
-            test.run(result)
-            
-            for testcase, traceback in result.errors:
-                print testcase
-                print traceback
-    
-if __name__ == '__main__':
-    collect_sample_files()
