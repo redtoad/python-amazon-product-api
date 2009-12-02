@@ -216,13 +216,19 @@ class API (object):
         self.last_call = datetime.now()
         
         try:
-            tree = objectify.parse(urlopen(url))
-            root = tree.getroot()
+            return urlopen(url)
         except HTTPError, e:
             if e.code == 503:
                 raise TooManyRequests
             # otherwise re-raise
             raise        
+    
+    def _parse(self, fp):
+        """
+        Calls the Amazon Product Advertising API and objectifies the response.
+        """
+        tree = objectify.parse(fp)
+        root = tree.getroot()
         
         #~ from lxml import etree
         #~ print etree.tostring(tree, pretty_print=True)
@@ -256,7 +262,8 @@ class API (object):
         """
         try:
             url = self._build_url(Operation='ItemLookup', ItemId=id, **params)
-            return self._call(url)
+            fp = self._call(url)
+            return self._parse(fp)
         except AWSError, e:
             
             if (e.code=='AWS.InvalidEnumeratedParameter' 
