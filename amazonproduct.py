@@ -390,7 +390,7 @@ class ResultPaginator (object):
         self.limit = limit
         self.nspace = nspace
         
-    def __call__(self, fun, **kwargs):
+    def __call__(self, fun, *args, **kwargs):
         """
         Iterate over all paginated results of ``fun``.
         """
@@ -402,7 +402,7 @@ class ResultPaginator (object):
         while (current_page < total_pages 
         and (self.limit is None or current_page < self.limit)):
             
-            root = fun(**kwargs)
+            root = fun(*args, **kwargs)
             
             if self.nspace is None:
                 self.nspace = root.nsmap.get(None, '')
