@@ -104,7 +104,7 @@ class InvalidResponseGroup (Exception):
     Variations.
     """
 
-class InvalidItemId (Exception):
+class InvalidParameterValue (Exception):
     """
     The specified ItemId parameter is invalid. Please change this value and 
     retry your request.
@@ -126,8 +126,8 @@ class TooManyRequests (Exception):
 INVALID_SEARCH_INDEX_REG = re.compile(
     'The value you specified for SearchIndex is invalid.')
 
-INVALID_ITEMID_REG = re.compile('(.+?) is not a valid value for ItemId. '
-    'Please change this value and retry your request.')
+INVALID_PARAMETER_VALUE_REG = re.compile('(?P<value>.+?) is not a valid value '
+    'for (?P<parameter>\w+). Please change this value and retry your request.')
 
 NOSIMILARITIES_REG = re.compile('There are no similar items for this ASIN: '
                                 '(?P<ASIN>\w+).')
@@ -232,6 +232,10 @@ class API (object):
                          namespaces={'aws' : nspace})
         
         for error in errors:
+            if error.Code.text == 'AWS.InvalidParameterValue':
+                m = INVALID_PARAMETER_VALUE_REG.search(error.Message.text)
+                raise InvalidParameterValue(m.group('parameter'), m.group('value'))
+            
             raise AWSError(error.Code.text, error.Message.text)
         
         #~ from lxml import etree
@@ -265,10 +269,6 @@ class API (object):
             
             if e.code=='AWS.InvalidResponseGroup': 
                 raise InvalidResponseGroup(params.get('ResponseGroup'))
-            
-            if (e.code=='AWS.InvalidParameterValue' 
-            and INVALID_ITEMID_REG.search(e.msg)):
-                raise InvalidItemId(id)
             
             # otherwise re-raise exception
             raise
@@ -349,6 +349,7 @@ class API (object):
             if e.code=='AWS.ECommerceService.NoSimilarities':
                 asin = NOSIMILARITIES_REG.search(e.msg).group('ASIN')
                 raise NoSimilarityForASIN(asin)
+ 
 
 class ResultPaginator (object):
     
