@@ -116,6 +116,11 @@ class NoSimilarityForASIN (Exception):
     intersection of similar items.
     """
     
+class NoExactMatchesFound (Exception):
+    """
+    We did not find any matches for your request.
+    """
+    
 class TooManyRequests (Exception):
     """
     You are submitting requests too quickly and your requests are being 
@@ -349,7 +354,90 @@ class API (object):
             if e.code=='AWS.ECommerceService.NoSimilarities':
                 asin = NOSIMILARITIES_REG.search(e.msg).group('ASIN')
                 raise NoSimilarityForASIN(asin)
- 
+            
+    def list_lookup(self, list_id, list_type, **params):
+        """
+        The ListLookup operation returns, by default, summary information about
+        a list that you specify in the request. The summary information
+        includes the:
+
+        - Creation date of the list
+        - Name of the list's creator 
+        
+        The operation returns up to ten sets of summary information per page.
+
+        Lists are specified by list type and list ID, which can be found using
+        ListSearch.
+
+        You cannot lookup more than one list at a time in a single request. You
+        can, however, make a batch request to look for more than one list
+        simultaneously. 
+
+        The operation supports the following list types:
+
+        - ``BabyRegistry`` - Baby registries contain items that expectant
+          parents want. Gift givers can find baby registries created on Amazon
+          or in Babies "R" Us or Toys "R" Us stores.
+        - ``Listmania`` - Customers can create random groups of items, called
+          Listmania lists. Listmania lists can be as specific ("Dorm Room
+          Essentials for Every Freshman") or as general ("The Best Novels of
+          2005") as customers choose.
+        - ``WeddingRegistry`` - Wedding registries contain items that a wedding
+          couple wants.
+        - ``WishList`` - Wish lists contain items for birthdays, anniversaries
+          or any other special day. These lists help others know what gifts the
+          wishlist creator wants.  
+        """
+        try:
+            url = self._build_url(Operation='ListLookup', ListId=list_id,
+                                  ListType=list_type, **params)
+            return self._call(url)
+        except AWSError, e:
+            
+            #if e.code=='AWS.ECommerceService.NoExactMatches': 
+            #    raise NoExactMatchesFound
+            
+            # otherwise re-raise exception
+            raise
+    
+    def list_search(self, list_type, **params):
+        """
+        Given a customer name or e-mail address, the ListSearch  operation
+        returns the associated list ID(s) but not the list items. To find
+        those, use the list ID returned by ListSearch with  ListLookup.
+        
+        Specifying a full name or just a first or last name in the request
+        typically returns multiple lists belonging to different people. Using
+        e-mail as the identifier produces more filtered results.
+        
+        For Wishlists and WeddingRegistry list types, you must specify one or
+        more of the following parameters:
+
+        - e-mail 
+        - FirstName 
+        - LastName 
+        - Name 
+
+        For the BabyRegistry list type, you must specify one or more of the
+        following parameters:
+
+        - FirstName 
+        - LastName 
+
+        You cannot, for example, retrieve a BabyRegistry by specifying an
+        e-mail address or Name. 
+        """
+        try:
+            url = self._build_url(Operation='ListSearch', 
+                                  ListType=list_type, **params)
+            return self._call(url)
+        except AWSError, e:
+            
+            if e.code=='AWS.ECommerceService.NoExactMatches': 
+                raise NoExactMatchesFound
+            
+            # otherwise re-raise exception
+            raise
 
 class ResultPaginator (object):
     
