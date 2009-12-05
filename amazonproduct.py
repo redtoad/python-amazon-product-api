@@ -110,6 +110,12 @@ class InvalidParameterValue (Exception):
     retry your request.
     """
 
+class InvalidListType (Exception):
+    """
+    The value you specified for ListType is invalid. Valid values include: 
+    BabyRegistry, Listmania, WeddingRegistry, WishList.
+    """
+    
 class NoSimilarityForASIN (Exception):
     """
     When you specify multiple items, it is possible for there to be no 
@@ -128,8 +134,8 @@ class TooManyRequests (Exception):
     request per second.
     """
 
-INVALID_SEARCH_INDEX_REG = re.compile(
-    'The value you specified for SearchIndex is invalid.')
+INVALID_VALUE_REG = re.compile(
+    'The value you specified for (?P<parameter>\w+) is invalid.')
 
 INVALID_PARAMETER_VALUE_REG = re.compile('(?P<value>.+?) is not a valid value '
     'for (?P<parameter>\w+). Please change this value and retry your request.')
@@ -276,7 +282,7 @@ class API (object):
         except AWSError, e:
             
             if (e.code=='AWS.InvalidEnumeratedParameter' 
-            and INVALID_SEARCH_INDEX_REG.search(e.msg)):
+            and INVALID_VALUE_REG.search(e.msg).group('parameter')=='SearchIndex'):
                 raise InvalidSearchIndex(params.get('SearchIndex'))
             
             if e.code=='AWS.InvalidResponseGroup': 
@@ -320,7 +326,8 @@ class API (object):
         try:
             url = self._build_url(Operation='ItemSearch', 
                                   SearchIndex=search_index, **params)
-            return self._call(url)
+            fp = self._call(url)
+            return self._parse(fp)
         except AWSError, e:
             
             if (e.code=='AWS.InvalidEnumeratedParameter' 
@@ -355,7 +362,8 @@ class API (object):
         try:
             url = self._build_url(Operation='SimilarityLookup', 
                                   ItemId=item_id, **params)
-            return self._call(url)
+            fp = self._call(url)
+            return self._parse(fp)
         except AWSError, e:
             
             if e.code=='AWS.ECommerceService.NoSimilarities':
@@ -398,11 +406,13 @@ class API (object):
         try:
             url = self._build_url(Operation='ListLookup', ListId=list_id,
                                   ListType=list_type, **params)
-            return self._call(url)
+            fp = self._call(url)
+            return self._parse(fp)
         except AWSError, e:
             
-            #if e.code=='AWS.ECommerceService.NoExactMatches': 
-            #    raise NoExactMatchesFound
+            if (e.code=='AWS.InvalidEnumeratedParameter' 
+            and INVALID_VALUE_REG.search(e.msg).group('parameter')=='ListType'):
+                raise InvalidListType(params.get('ListType'))
             
             # otherwise re-raise exception
             raise
@@ -437,7 +447,8 @@ class API (object):
         try:
             url = self._build_url(Operation='ListSearch', 
                                   ListType=list_type, **params)
-            return self._call(url)
+            fp = self._call(url)
+            return self._parse(fp)
         except AWSError, e:
             
             if e.code=='AWS.ECommerceService.NoExactMatches': 
