@@ -28,7 +28,7 @@ if __name__ == '__main__':
             '//aws:Items/aws:Item/aws:CustomerReviews/aws:TotalReviewPages',
             '//aws:Items/aws:Item/aws:CustomerReviews/aws:TotalReviews')
         
-        for root in paginator(api.item_lookup, id=isbn, IdType='ISBN', 
+        for root in paginator(api.item_lookup, isbn, IdType='ISBN', 
                              SearchIndex='Books', ResponseGroup='Reviews'):
         
             rating = root.Items.Item.CustomerReviews.AverageRating.pyval
