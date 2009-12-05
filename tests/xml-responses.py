@@ -5,7 +5,7 @@ from StringIO import StringIO
 import unittest
 import urllib2
 
-from amazonproduct import API, InvalidItemId
+from amazonproduct import API, InvalidParameterValue, InvalidListType
 
 try:
     from config import AWS_KEY, SECRET_KEY
@@ -79,15 +79,15 @@ class XMLResponseTestCase (unittest.TestCase):
         method = method.replace('_', '-') 
         return '%s/%s-%s.xml' % (version, klass, method)
     
-        
+
 class ItemLookupTestCase (XMLResponseTestCase):
 
     """
-    Check that all XML responses for ItemLookup are parse correctly.
+    Check that all XML responses for ItemLookup are parsed correctly.
     """
      
     def test_invalid_item_id(self):
-        self.assertRaises(InvalidItemId, self.api.item_lookup, '1234567890123')
+        self.assertRaises(InvalidParameterValue, self.api.item_lookup, '1234567890123')
         
     def test_valid_asin(self):
         # Harry Potter and the Philosopher's Stone
@@ -100,4 +100,17 @@ class ItemLookupTestCase (XMLResponseTestCase):
     def test_valid_isbn_no_searchindex(self):
         # Harry Potter and the Philosopher's Stone
         self.api.item_lookup('9780747532743', IdType='ISBN')
+        
+
+class ListLookupTestCase (XMLResponseTestCase):
+
+    """
+    Check that all XML responses for ListLookup are parsed correctly.
+    """
+     
+    def test_invalid_list_id(self):
+        self.assertRaises(InvalidParameterValue, self.api.list_lookup, '???', 'WishList')
+        
+    def test_invalid_list_type(self):
+        self.assertRaises(InvalidListType, self.api.list_lookup, '???', '???')
         
