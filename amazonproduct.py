@@ -46,6 +46,7 @@ except ImportError:
 import hmac
 from lxml import objectify
 import re
+import socket
 from time import strftime, gmtime
 from urlparse import urlsplit
 from urllib import quote
@@ -166,6 +167,7 @@ class API (object):
     
     VERSION = '2009-10-01' #: supported Amazon API version
     REQUESTS_PER_SECOND = 1 #: max requests per second
+    TIMEOUT = 5 #: timeout in seconds
     
     def __init__(self, access_key_id, secret_access_key, locale='de'):
         
@@ -177,6 +179,8 @@ class API (object):
             self.scheme, self.host, self.path = parts[:3]
         except KeyError:
             raise UnknownLocale(locale)
+        
+        socket.setdefaulttimeout(self.TIMEOUT)
         
         self.last_call = datetime(1970, 1, 1)
         self.throttle = timedelta(seconds=1)/self.REQUESTS_PER_SECOND
