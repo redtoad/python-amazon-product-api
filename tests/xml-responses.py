@@ -5,7 +5,10 @@ from StringIO import StringIO
 import unittest
 import urllib2
 
-from amazonproduct import API, InvalidParameterValue, InvalidListType, InvalidSearchIndex, InvalidResponseGroup
+from amazonproduct import API
+from amazonproduct import AWSError
+from amazonproduct import InvalidParameterValue, InvalidListType
+from amazonproduct import InvalidSearchIndex, InvalidResponseGroup
 
 def get_config_value(key, default=None):
     """
@@ -117,7 +120,10 @@ class ItemLookupTestCase (XMLResponseTestCase):
         
     def test_valid_isbn_no_searchindex(self):
         # Harry Potter and the Philosopher's Stone
-        self.api.item_lookup('9780747532743', IdType='ISBN')
+        try:
+            self.api.item_lookup('9780747532743', IdType='ISBN')
+        except AWSError, e:
+            self.assert_(e.code == 'AWS.MissingParameterValueCombination')
         
 
 class ListLookupTestCase (XMLResponseTestCase):
