@@ -7,12 +7,21 @@ import urllib2
 
 from amazonproduct import API, InvalidParameterValue, InvalidListType
 
-try:
-    from config import AWS_KEY, SECRET_KEY
-except ImportError:
-    import os
-    AWS_KEY = os.environ.get('AWS_KEY')
-    SECRET_KEY = os.environ.get('SECRET_KEY')
+def get_config_value(key, default=None):
+    """
+    Loads value from config.py or from environment variable or return default
+    (in that order).
+    """
+    try:
+        config = __import__('config')
+        return getattr(config, key)
+    except ImportError:
+        import os
+        return os.environ.get(key, default)
+        
+AWS_KEY = get_config_value('AWS_KEY')
+SECRET_KEY = get_config_value('SECRET_KEY')
+OVERWRITE_TESTS = get_config_value('OVERWRITE_TESTS', False)
 
 class CustomAPI (API):
     
@@ -26,7 +35,7 @@ class CustomAPI (API):
         Uses XML response from (or stores in) local file.
         """
         
-        if not os.path.exists(self.local_file):
+        if not os.path.exists(self.local_file) or OVERWRITE_TESTS:
             tree = objectify.parse(API._call(self, url))
             root = tree.getroot()
             
@@ -96,6 +105,16 @@ class ItemLookupTestCase (XMLResponseTestCase):
     def test_valid_isbn(self):
         # Harry Potter and the Philosopher's Stone
         self.api.item_lookup('9780747532743', IdType='ISBN', SearchIndex='All')
+        
+    def test_invalid_response_group(self):
+        self.assertRaises(InvalidResponseGroup, self.api.item_lookup, 
+                          '9780747532743', IdType='ISBN', SearchIndex='All', 
+                          ResponseGroup='???')
+        
+    def test_invalid_response_group(self):
+        self.assertRaises(InvalidResponseGroup, self.api.item_lookup, 
+                          '9780747532743', IdType='ISBN', SearchIndex='All', 
+                          ResponseGroup='???')
         
     def test_valid_isbn_no_searchindex(self):
         # Harry Potter and the Philosopher's Stone
