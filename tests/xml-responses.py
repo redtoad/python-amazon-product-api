@@ -5,7 +5,7 @@ from StringIO import StringIO
 import unittest
 import urllib2
 
-from amazonproduct import API, InvalidParameterValue, InvalidListType
+from amazonproduct import API, InvalidParameterValue, InvalidListType, InvalidSearchIndex, InvalidResponseGroup
 
 def get_config_value(key, default=None):
     """
@@ -106,10 +106,9 @@ class ItemLookupTestCase (XMLResponseTestCase):
         # Harry Potter and the Philosopher's Stone
         self.api.item_lookup('9780747532743', IdType='ISBN', SearchIndex='All')
         
-    def test_invalid_response_group(self):
-        self.assertRaises(InvalidResponseGroup, self.api.item_lookup, 
-                          '9780747532743', IdType='ISBN', SearchIndex='All', 
-                          ResponseGroup='???')
+    def test_invalid_search_index(self):
+        self.assertRaises(InvalidSearchIndex, self.api.item_lookup, 
+                          '9780747532743', IdType='ISBN', SearchIndex='???')
         
     def test_invalid_response_group(self):
         self.assertRaises(InvalidResponseGroup, self.api.item_lookup, 
