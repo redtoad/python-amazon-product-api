@@ -18,7 +18,7 @@ def get_config_value(key, default=None):
     try:
         config = __import__('config')
         return getattr(config, key)
-    except ImportError:
+    except (ImportError, AttributeError):
         import os
         return os.environ.get(key, default)
         
