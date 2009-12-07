@@ -125,6 +125,23 @@ class ItemLookupTestCase (XMLResponseTestCase):
         except AWSError, e:
             self.assert_(e.code == 'AWS.MissingParameterValueCombination')
         
+class ItemSearchTestCase (XMLResponseTestCase):
+
+    """
+    Check that all XML responses for ItemSearch are parsed correctly.
+    """
+    
+    def test_no_parameters(self):
+        try:
+            self.assertRaises(InvalidResponseGroup, 
+                              self.api.item_search, 'Books')
+        except AWSError, e:
+            self.assert_(e.code == 'AWS.MinimumParameterRequirement')
+        
+    def test_invalid_response_group(self):
+        self.assertRaises(InvalidResponseGroup, self.api.item_search, 
+                          'All', ResponseGroup='???')
+        
 
 class ListLookupTestCase (XMLResponseTestCase):
 
