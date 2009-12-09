@@ -9,6 +9,7 @@ from amazonproduct import API
 from amazonproduct import AWSError
 from amazonproduct import InvalidParameterValue, InvalidListType
 from amazonproduct import InvalidSearchIndex, InvalidResponseGroup
+from amazonproduct import NoSimilarityForASIN
 
 def get_config_value(key, default=None):
     """
@@ -125,7 +126,27 @@ class ItemLookupTestCase (XMLResponseTestCase):
         except AWSError, e:
             self.assert_(e.code == 'AWS.MissingParameterValueCombination')
         
-
+        
+class SimilarityLookupTestCase (XMLResponseTestCase):
+    
+    """
+    Check that all XML responses for SimilarityLookup are parsed correctly.
+    """
+    
+    def test_similar_items(self):
+        # 0451462009 Small Favor: A Novel of the Dresden Files 
+        root = self.api.similarity_lookup('0451462009')
+        
+        self.assert_(root.Items.Request.IsValid.pyval is True)
+        self.assert_(len(root.Items.Item) > 0)
+        
+    def test_no_similar_items_for_two_asins(self):
+        # 0451462009 Small Favor: A Novel of the Dresden Files
+        # B0024NL0TG Oral-B toothbrush
+        self.assertRaises(NoSimilarityForASIN, self.api.similarity_lookup,
+                          '0451462009', 'B0024NL0TG')
+        
+        
 class ListLookupTestCase (XMLResponseTestCase):
 
     """
