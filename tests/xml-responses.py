@@ -173,3 +173,33 @@ class ListLookupTestCase (XMLResponseTestCase):
     def test_invalid_list_type(self):
         self.assertRaises(InvalidListType, self.api.list_lookup, '???', '???')
         
+
+class ResultPaginatorTestCase (XMLResponseTestCase):
+    
+    """
+    Check that all XML responses for pagination are parsed correctly.
+    """
+    
+    def test_review_pagination(self):
+        # reviews for 
+        paginator = ResultPaginator('ReviewPage',
+            '//aws:Items/aws:Request/aws:ItemLookupRequest/aws:ReviewPage',
+            '//aws:Items/aws:Item/aws:CustomerReviews/aws:TotalReviewPages',
+            '//aws:Items/aws:Item/aws:CustomerReviews/aws:TotalReviews', 
+            limit=10)
+        
+        for page, root in enumerate(paginator(self.api.item_lookup, 
+                        '0747532745', ResponseGroup='Reviews')):
+            
+            total_reviews = root.Items.Item.CustomerReviews.TotalReviews.pyval
+            review_pages = root.Items.Item.CustomerReviews.TotalReviewPages.pyval
+            try:
+                current_page = root.Items.Request.ItemLookupRequest.ReviewPage.pyval
+            except AttributeError:
+                current_page = 1
+            
+            self.assert_(total_reviews==2458)
+            self.assert_(review_pages==492)
+            self.assert_(current_page==page+1)
+            
+        self.assert_(page==9)
