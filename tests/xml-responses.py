@@ -19,7 +19,7 @@ def get_config_value(key, default=None):
     try:
         config = __import__('config')
         return getattr(config, key)
-    except ImportError:
+    except (ImportError, AttributeError):
         import os
         return os.environ.get(key, default)
         
@@ -139,6 +139,24 @@ class ItemLookupTestCase (XMLResponseTestCase):
             self.api.item_lookup('9780747532743', IdType='ISBN')
         except AWSError, e:
             self.assert_(e.code == 'AWS.MissingParameterValueCombination')
+        
+        
+class ItemSearchTestCase (XMLResponseTestCase):
+
+    """
+    Check that all XML responses for ItemSearch are parsed correctly.
+    """
+    
+    def test_no_parameters(self):
+        try:
+            self.assertRaises(InvalidResponseGroup, 
+                              self.api.item_search, 'Books')
+        except AWSError, e:
+            self.assert_(e.code == 'AWS.MinimumParameterRequirement')
+        
+    def test_invalid_response_group(self):
+        self.assertRaises(InvalidResponseGroup, self.api.item_search, 
+                          'All', ResponseGroup='???')
         
         
 class SimilarityLookupTestCase (XMLResponseTestCase):
