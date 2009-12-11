@@ -1,4 +1,4 @@
-from lxml import etree, objectify
+from lxml import etree
 import os, os.path
 import re
 from StringIO import StringIO
@@ -53,7 +53,7 @@ class CustomAPI (API):
             path = head + '-%i' % self.calls + tail
         
         if not os.path.exists(path) or OVERWRITE_TESTS:
-            tree = objectify.parse(API._call(self, url))
+            tree = etree.parse(API._call(self, url))
             root = tree.getroot()
             
             # overwrite sensible data
@@ -63,7 +63,9 @@ class CustomAPI (API):
                 if arg.get('Name') in 'AWSAccessKeyId Signature':
                     arg.set('Value', 'X'*15)
                     
-            data = etree.tostring(root, pretty_print=True)
+            xml = etree.tostring(root, pretty_print=True)
+            xml = xml.replace(AWS_KEY, 'X'*15)
+            xml = xml.replace(SECRET_KEY, 'X'*15)
             
             local_dir = os.path.dirname(path)
             if not os.path.exists(local_dir):
@@ -72,9 +74,9 @@ class CustomAPI (API):
                 
             fp = open(path, 'wb')
             #print 'storing response in %s...' % self.local_file 
-            fp.write(data)
+            fp.write(xml)
             fp.close()
-            return StringIO(data)
+            return StringIO(xml)
             
         return open(path, 'rb')
 
