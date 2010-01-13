@@ -23,8 +23,8 @@ def get_config_value(key, default=None):
         import os
         return os.environ.get(key, default)
         
-AWS_KEY = get_config_value('AWS_KEY')
-SECRET_KEY = get_config_value('SECRET_KEY')
+AWS_KEY = get_config_value('AWS_KEY', '')
+SECRET_KEY = get_config_value('SECRET_KEY', '')
 OVERWRITE_TESTS = get_config_value('OVERWRITE_TESTS', False)
 
 class CustomAPI (API):
@@ -223,3 +223,6 @@ class ResultPaginatorTestCase (XMLResponseTestCase):
             self.assert_(current_page==page+1)
             
         self.assert_(page==9)
+
+if __name__ == '__main__':
+    unittest.main()
