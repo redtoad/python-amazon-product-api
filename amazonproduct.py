@@ -506,6 +506,59 @@ class API (object):
             # otherwise re-raise exception
             raise
         
+    def browse_node_lookup(self, browse_node_id, response_group=None, **params):
+        """
+        Given a browse node ID, ``BrowseNodeLookup`` returns the specified
+        browse node's name, children, and ancestors. The names and browse node
+        IDs of the children and ancestor browse nodes are also returned.
+        ``BrowseNodeLookup`` enables you to traverse the browse node hierarchy
+        to find a browse node.
+        
+        As you traverse down the hierarchy, you refine your search and limit
+        the number of items returned. For example, you might traverse the
+        following hierarchy: ``DVD>Used DVDs>Kids and Family``, to select out
+        of all the DVDs offered by Amazon only those that are appropriate for
+        family viewing. Returning the items associated with Kids and Family
+        produces a much more targeted result than a search based at the level
+        of Used DVDs.
+        
+        Alternatively, by traversing up the browse node tree, you can
+        determine the root category of an item. You might do that, for
+        example, to return the top seller of the root product category using
+        the ``TopSeller`` response group in an ``ItemSearch`` request.
+        
+        You can use ``BrowseNodeLookup`` iteratively to navigate through the
+        browse node hierarchy to reach the node that most appropriately suits
+        your search. Then you can use the browse node ID in an ItemSearch
+        request. This response would be far more targeted than, for example,
+        searching through all of the browse nodes in a search index.
+        
+        :param browse_node_id: A positive integer assigned by Amazon that 
+          uniquely identifies a product category. 
+          Default: None
+          Valid Values: A positive integer.
+        :type browse_node_id: str
+        :param response_group: Specifies the types of values to return. You can 
+          specify multiple response groups in one request by separating them 
+          with commas.
+          Default: ``BrowseNodeInfo``
+          Valid Values: ``MostGifted``, ``NewReleases``, ``MostWishedFor``, 
+            ``TopSellers`` 
+        """
+        try:
+            url = self._build_url(Operation='BrowseNodeLookup', 
+                    BrowseNodeId=browse_node_id, ResponseGroup=response_group, 
+                    **params)
+            fp = self._call(url)
+            return self._parse(fp)
+        except AWSError, e:
+            
+            if e.code=='AWS.InvalidResponseGroup': 
+                raise InvalidResponseGroup(params.get('ResponseGroup'))
+            
+            # otherwise re-raise exception
+            raise
+        
         
 class ResultPaginator (object):
     
