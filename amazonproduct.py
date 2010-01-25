@@ -499,9 +499,10 @@ class API (object):
             return self._parse(fp)
         except AWSError, e:
             
-            #if e.code=='AWS.ECommerceService.NoExactMatches': 
-            #    raise NoExactMatchesFound
-            
+            m = INVALID_VALUE_REG.search(e.msg)
+            if e.code=='AWS.InvalidEnumeratedParameter': 
+                raise ValueError(m.group('parameter'))
+                        
             # otherwise re-raise exception
             raise
         

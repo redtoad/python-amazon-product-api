@@ -230,6 +230,14 @@ class HelpTestCase (XMLResponseTestCase):
     Check that all XML responses for Help are parsed correctly.
     """
     
+    def test_fails_for_wrong_input(self):
+        """
+        Wrong help_type and about raise ValueErrors.
+        """
+        self.assertRaises(ValueError, self.api.help, 'Help', 'Unknown')
+        self.assertRaises(ValueError, self.api.help, 'Unknown', 'Operation')
+        self.assertRaises(ValueError, self.api.help, 'Unknown', 'Unknown')
+    
     def _check_parameters(self, node, list):
         """
         Checks that all required parameters are contained in XML node.
