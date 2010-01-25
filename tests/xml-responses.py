@@ -193,6 +193,7 @@ class ListLookupTestCase (XMLResponseTestCase):
         self.assertRaises(InvalidListType, self.api.list_lookup, '???', '???')
         
 
+
 class ResultPaginatorTestCase (XMLResponseTestCase):
     
     """
@@ -222,6 +223,7 @@ class ResultPaginatorTestCase (XMLResponseTestCase):
             self.assert_(current_page==page+1)
             
         self.assert_(page==9)
+
 
 class HelpTestCase (XMLResponseTestCase):
     
@@ -308,6 +310,36 @@ class HelpTestCase (XMLResponseTestCase):
         ResponseGroupInformation/Name
         ResponseGroupInformation/ValidOperations/Operation'''.splitlines())
         self._check_elements(info, elements)
+        
+        
+class BrowseNodeLookupTestCase (XMLResponseTestCase):
+    
+    """
+    Check that all XML responses for ListLookup are parsed correctly.
+    """
+    
+    #:  BrowseNodeId for 'Books'
+    BOOKS_ROOT_NODE = 541686
+    
+    def test_fails_for_wrong_input(self):
+        self.assertRaises(InvalidParameterValue, self.api.browse_node_lookup, '???')
+        self.assertRaises(InvalidResponseGroup, self.api.browse_node_lookup, 
+                self.BOOKS_ROOT_NODE, '???')
+        
+    def test_books_browsenode(self):
+        nodes = self.api.browse_node_lookup(self.BOOKS_ROOT_NODE).BrowseNodes
+        self.assert_(nodes.Request.IsValid.pyval is True)
+        self.assertEquals(nodes.BrowseNode.BrowseNodeId, self.BOOKS_ROOT_NODE)
+        self.assertEquals(nodes.BrowseNode.IsCategoryRoot, 1)
+        
+        children = [n.BrowseNodeId for n in nodes.BrowseNode.Children.BrowseNode]
+        ancestors = [n.BrowseNodeId for n in nodes.BrowseNode.Ancestors.BrowseNode]
+        self.assertEquals(children, [
+            4185461, 117, 187254, 403434, 120, 287621, 124, 11063821,
+            340583031, 288100, 548400, 122, 13690631, 118310011, 280652,
+            189528, 287480, 403432, 1199902, 121, 143, 536302, 298002,
+            340513031, 142, 298338, 188795])
+        self.assertEquals(ancestors, [186606])
         
         
 if __name__ == '__main__':
