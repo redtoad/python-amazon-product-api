@@ -20,7 +20,6 @@ def get_config_value(key, default=None):
         config = __import__('config')
         return getattr(config, key)
     except (ImportError, AttributeError):
-        import os
         return os.environ.get(key, default)
         
 AWS_KEY = get_config_value('AWS_KEY', '')
