@@ -224,5 +224,84 @@ class ResultPaginatorTestCase (XMLResponseTestCase):
             
         self.assert_(page==9)
 
+class HelpTestCase (XMLResponseTestCase):
+    
+    """
+    Check that all XML responses for Help are parsed correctly.
+    """
+    
+    def _check_parameters(self, node, list):
+        """
+        Checks that all required parameters are contained in XML node.
+        """
+        self.assertEquals(node.countchildren(), len(list))
+        for e in node.iterchildren():
+            self.assertTrue(e.text in list)
+            
+    def _check_elements(self, node, list):
+        """
+        Checks that all required elements are contained in XML node.
+        """
+        self.assertEquals(len(node.Elements.Element), len(list))
+        for e in node.Elements.Element:
+            self.assertTrue(e.text in list)
+        
+    def test_help_operation(self):
+        """
+        Check API call ``Help`` for ``Operation`` ``Help``.
+        """
+        root = self.api.help('Help', 'Operation')
+        self.assert_(root.Information.Request.IsValid.pyval is True)
+        
+        # check that all information is correct
+        info = root.Information.OperationInformation
+        self.assertEquals(info.Name.text, 'Help')
+        
+        self._check_parameters(info.RequiredParameters, 
+                'About HelpType'.split())
+        self._check_parameters(info.AvailableParameters, 
+                'AssociateTag ContentType Marketplace MarketplaceDomain Style '
+                'Validate Version XMLEscaping'.split())
+        self._check_parameters(info.DefaultResponseGroups, 
+                'Request Help'.split())
+        self._check_parameters(info.AvailableResponseGroups, 
+                'Request Help'.split())
+        
+    def test_help_responsegroup(self):
+        """
+        Check API call ``Help`` for ``ResponseGroup`` ``Help``.
+        """
+        root = self.api.help('Help', 'ResponseGroup')
+        self.assert_(root.Information.Request.IsValid.pyval is True)
+        
+        # check that all information is correct
+        info = root.Information.ResponseGroupInformation
+        self.assertEquals(info.Name.text, 'Help')
+        self.assertEquals(info.CreationDate.pyval, '2004-01-28')
+        self.assertEquals(len(info.ValidOperations.Operation), 1)
+        self.assertEquals(info.ValidOperations.Operation.pyval, 'Help')
+        
+        # check that all required elements are contained in XML
+        elements = map(lambda x: x.strip(), '''Arguments/Argument/Name
+        Arguments/Argument/Value
+        Errors/Error/Code
+        Errors/Error/Message
+        OperationInformation/AvailableParameters/Parameter
+        OperationInformation/AvailableResponseGroups/ResponseGroup
+        OperationInformation/DefaultResponseGroups/ResponseGroup
+        OperationInformation/Description
+        OperationInformation/Name
+        OperationInformation/RequiredParameters/Parameter
+        OperationRequest/RequestId
+        OperationRequest/UserAgent
+        Request/IsValid
+        ResponseGroupInformation/AvailableVersions/Version
+        ResponseGroupInformation/CreationDate
+        ResponseGroupInformation/Elements/Element
+        ResponseGroupInformation/Name
+        ResponseGroupInformation/ValidOperations/Operation'''.splitlines())
+        self._check_elements(info, elements)
+        
+        
 if __name__ == '__main__':
     unittest.main()
