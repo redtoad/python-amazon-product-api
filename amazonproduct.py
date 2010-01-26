@@ -518,9 +518,9 @@ class API (object):
         the number of items returned. For example, you might traverse the
         following hierarchy: ``DVD>Used DVDs>Kids and Family``, to select out
         of all the DVDs offered by Amazon only those that are appropriate for
-        family viewing. Returning the items associated with Kids and Family
+        family viewing. Returning the items associated with ``Kids and Family``
         produces a much more targeted result than a search based at the level
-        of Used DVDs.
+        of ``Used DVDs``.
         
         Alternatively, by traversing up the browse node tree, you can
         determine the root category of an item. You might do that, for
@@ -543,7 +543,7 @@ class API (object):
           with commas.
           Default: ``BrowseNodeInfo``
           Valid Values: ``MostGifted``, ``NewReleases``, ``MostWishedFor``, 
-            ``TopSellers`` 
+          ``TopSellers`` 
         """
         try:
             url = self._build_url(Operation='BrowseNodeLookup', 

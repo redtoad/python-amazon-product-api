@@ -69,8 +69,7 @@ a Windows system.
 License
 -------
 
-This module is licensed under a BSD license. See the `LICENSE` file in the 
-distribution.
+.. include:: ../LICENSE
 
 Development
 -----------
