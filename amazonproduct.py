@@ -134,6 +134,11 @@ class TooManyRequests (Exception):
     throttled. If this is the case, you need to slow your request rate to one 
     request per second.
     """
+    
+class NotEnoughParameters (Exception):
+    """
+    Your request should have at least one parameter which you did not submit.
+    """
 
 INVALID_VALUE_REG = re.compile(
     'The value you specified for (?P<parameter>\w+) is invalid.')
@@ -143,6 +148,9 @@ INVALID_PARAMETER_VALUE_REG = re.compile('(?P<value>.+?) is not a valid value '
 
 NOSIMILARITIES_REG = re.compile('There are no similar items for this ASIN: '
                                 '(?P<ASIN>\w+).')
+
+NOT_ENOUGH_PARAMETERS_REG = re.compile('Your request should have atleast '
+        '(?P<numer>\d+) of the following parameters: (?P<parameters>[\w ,]+).')
 
 class API (object):
     
@@ -427,29 +435,29 @@ class API (object):
     
     def list_search(self, list_type, **params):
         """
-        Given a customer name or e-mail address, the ListSearch  operation
+        Given a customer name or e-mail address, the ``ListSearch`` operation
         returns the associated list ID(s) but not the list items. To find
-        those, use the list ID returned by ListSearch with  ListLookup.
+        those, use the list ID returned by ``ListSearch`` with ``ListLookup``.
         
         Specifying a full name or just a first or last name in the request
         typically returns multiple lists belonging to different people. Using
         e-mail as the identifier produces more filtered results.
         
-        For Wishlists and WeddingRegistry list types, you must specify one or
-        more of the following parameters:
-
+        For ``Wishlists`` and ``WeddingRegistry`` list types, you must specify 
+        one or more of the following parameters:
+        
         - e-mail 
         - FirstName 
         - LastName 
         - Name 
-
-        For the BabyRegistry list type, you must specify one or more of the
+        
+        For the ``BabyRegistry`` list type, you must specify one or more of the
         following parameters:
-
+        
         - FirstName 
         - LastName 
-
-        You cannot, for example, retrieve a BabyRegistry by specifying an
+        
+        You cannot, for example, retrieve a ``BabyRegistry`` by specifying an
         e-mail address or Name. 
         """
         try:
@@ -458,6 +466,14 @@ class API (object):
             fp = self._call(url)
             return self._parse(fp)
         except AWSError, e:
+            
+            if (e.code=='AWS.InvalidEnumeratedParameter' 
+            and INVALID_VALUE_REG.search(e.msg).group('parameter')=='ListType'):
+                raise InvalidListType(list_type)
+            
+            if e.code=='AWS.MinimumParameterRequirement': 
+                p = NOT_ENOUGH_PARAMETERS_REG.search(e.msg).group('parameters')
+                raise NotEnoughParameters(p)
             
             if e.code=='AWS.ECommerceService.NoExactMatches': 
                 raise NoExactMatchesFound

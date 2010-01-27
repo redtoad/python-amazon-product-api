@@ -1,0 +1,32 @@
+<ListSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2009-10-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+    </HTTPHeaders>
+    <RequestId>1DBK7E5Z962K9PR6QB3B</RequestId>
+    <Arguments>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Operation" Value="ListSearch"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2010-01-27T22:04:42Z"/>
+      <Argument Name="Version" Value="2009-10-01"/>
+      <Argument Name="ListType" Value="???"/>
+    </Arguments>
+    <RequestProcessingTime>0.00375795364379883</RequestProcessingTime>
+  </OperationRequest>
+  <Lists>
+    <Request>
+      <IsValid>False</IsValid>
+      <ListSearchRequest>
+        <ListType>???</ListType>
+      </ListSearchRequest>
+      <Errors>
+        <Error>
+          <Code>AWS.InvalidEnumeratedParameter</Code>
+          <Message>The value you specified for ListType is invalid. Valid values include BabyRegistry, WeddingRegistry, WishList.</Message>
+        </Error>
+      </Errors>
+    </Request>
+  </Lists>
+</ListSearchResponse>

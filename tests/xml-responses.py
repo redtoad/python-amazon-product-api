@@ -10,6 +10,7 @@ from amazonproduct import AWSError
 from amazonproduct import InvalidParameterValue, InvalidListType
 from amazonproduct import InvalidSearchIndex, InvalidResponseGroup
 from amazonproduct import NoSimilarityForASIN
+from amazonproduct import NoExactMatchesFound, NotEnoughParameters
 
 def get_config_value(key, default=None):
     """
@@ -185,13 +186,31 @@ class ListLookupTestCase (XMLResponseTestCase):
     """
     Check that all XML responses for ListLookup are parsed correctly.
     """
-     
+    
     def test_invalid_list_id(self):
         self.assertRaises(InvalidParameterValue, self.api.list_lookup, '???', 'WishList')
         
     def test_invalid_list_type(self):
         self.assertRaises(InvalidListType, self.api.list_lookup, '???', '???')
         
+
+
+class ListSearchTestCase (XMLResponseTestCase):
+
+    """
+    Check that all XML responses for ListSearch are parsed correctly.
+    """
+     
+    def test_fails_for_wrong_list_type(self):
+        self.assertRaises(InvalidListType, self.api.list_search, '???')
+        
+    def test_fails_for_missing_search_parameters(self):
+        self.assertRaises(NotEnoughParameters, self.api.list_search, 'WishList')
+        self.assertRaises(NotEnoughParameters, self.api.list_search, 'WeddingRegistry')
+        
+    def test_no_exact_matches(self):
+        self.assertRaises(NoExactMatchesFound, self.api.list_search, 
+                'WishList', Email='???')
 
 
 class ResultPaginatorTestCase (XMLResponseTestCase):
