@@ -1,10 +1,17 @@
 
-0.2.2 (in development)
-----------------------
+0.2.2 (2010-01-30)
+------------------
 
+- ``browse_node_lookup`` operation added.	
+- ``help`` operation added.	
 - ``list_lookup`` and ``list_search`` operations added.
 - Default timeout for API calls is set to 5 sec.
-- Test cases for correct parsing of XML responses added.
+- Test cases for correct parsing of XML responses added. Local XML files are
+  used for testing (if available) stored in separate directories 
+  according to API version. These can be overwritten when cofig value
+  ``OVERWRITE_TESTS`` is set to ``True``.
+- ``InvalidItemId`` exception is replaced by more general 
+  ``InvalidParameterValue`` exception.	
 
 0.2.1 (2009-11-20)
 ------------------
