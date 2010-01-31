@@ -43,9 +43,13 @@ follow as development progresses.
 
 Supported so far are:
    
-- ItemLookup
-- ItemSearch
-- SimilarityLookup
+- ``ItemLookup``
+- ``ItemSearch``
+- ``SimilarityLookup``
+- ``ListLookup``
+- ``ListSearch``
+- ``Help``
+- ``BrowseNodeLookup``
 
 Installation
 ------------
