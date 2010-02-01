@@ -170,7 +170,26 @@ class API (object):
         rating = root.Items.Item.CustomerReviews.AverageRating.pyval
         total_reviews = root.Items.Item.CustomerReviews.TotalReviews.pyval
         review_pages = root.Items.Item.CustomerReviews.TotalReviewPages.pyval
-
+        
+     It is possible to use a different module for parsing the XML response. For 
+     instance, you can use ``xml.minidom`` instead of ``lxml`` by defining a
+     custom result processor::
+        
+        def minidom_response_parser(fp):
+            root = parse(fp)
+            # parse errors
+            for error in root.getElementsByTagName('Error'):
+                code = error.getElementsByTagName('Code')[0].firstChild.nodeValue
+                msg = error.getElementsByTagName('Message')[0].firstChild.nodeValue
+                raise AWSError(code, msg)
+            return root
+        api = API(AWS_KEY, SECRET_KEY, processor=minidom_response_parser)
+        root = api.item_lookup('0718155157')
+        print root.toprettyxml()
+        # ...
+        
+    Just make sure it raises an ``AWSError`` with the appropriate error code 
+    and message.
     """
     
     VERSION = '2009-10-01' #: supported Amazon API version
@@ -179,7 +198,12 @@ class API (object):
     
     def __init__(self, access_key_id, secret_access_key, 
                  locale='de', processor=None):
-        
+        """
+        :param access_key_id: AWS access key ID.
+        :param secret_key_id: AWS secret key.
+        :param locale: localise results by using one value from ``LOCALES``.
+        :param processor: result processing function (``None`` if unsure).
+        """
         self.access_key = access_key_id
         self.secret_key = secret_access_key
         
@@ -256,26 +280,8 @@ class API (object):
     def _parse(self, fp):
         """
         Processes the AWS response (file like object). XML is fed in, some 
-        usable output comes out. 
-        
-        It will use a different result_processor if you have defined one. For 
-        instance, here is one using ``xml.minidom`` instead of ``lxml``::
-        
-            def minidom_response_parser(fp):
-                root = parse(fp)
-                # parse errors
-                for error in root.getElementsByTagName('Error'):
-                    code = error.getElementsByTagName('Code')[0].firstChild.nodeValue
-                    msg = error.getElementsByTagName('Message')[0].firstChild.nodeValue
-                    raise AWSError(code, msg)
-                return root
-            api = API(AWS_KEY, SECRET_KEY, processor=minidom_response_parser)
-            root = api.item_lookup('0718155157')
-            print root.toprettyxml()
-            # ...
-            
-        Make sure it raises an ``AWSError`` with the appropriate error code and
-        message.
+        usable output comes out. It will use a different result_processor if 
+        you have defined one. 
         """
         if self.response_processor:
             return self.response_processor(fp)
