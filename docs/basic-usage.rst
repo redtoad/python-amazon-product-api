@@ -1,44 +1,15 @@
-==============================
-Amazon Product Advertising API
-==============================
-
-The `Product Advertising API`_ provides...
-
-    [...] programmatic access to Amazon's product selection and discovery
-    functionality so that developers like you can advertise Amazon products to
-    monetize your website.
-    
-    The Product Advertising API helps you advertise Amazon products using
-    product search and look up capability, product information and features
-    such as Customer Reviews, Similar Products, Wish Lists and New and Used
-    listings. You can make money using the Product Advertising API to advertise
-    Amazon products in conjunction with the Amazon Associates program. Be sure
-    to join the Amazon Associates program to earn up to 15% in referral fees
-    when the users you refer to Amazon sites buy qualifying products.  
-
-.. _Product Advertising API: 
-   https://affiliate-program.amazon.com/gp/advertising/api/detail/main.html
-
-.. note:: The support for this API is currently limited to *ItemLookup* and
-   *ItemSearch*. More functionality is to follow as development progresses.
-
-Motivation
-----------
-
-Since August 15, 2009 all calls to the Product Advertising API must be
-authenticated using request signatures. All existing libraries did not support
-this at the time. Plus I felt that they were very cumbersome to work with (if
-that is indeed a word).
 
 Basic usage
------------
+===========
 
 In order to use this API you'll obviously need an Amazon Associates Web Service
 account for which you must with Amazon at http://aws.amazon.com. Each account
 contains an *AWSAccessKeyId* and a *SecretKey*. 
 
 The API itself can used like this::
-
+    
+    from amazonproduct import API
+    
     AWS_KEY = '...'
     SECRET_KEY = '...'
     
@@ -68,7 +39,14 @@ Error handling
 --------------
 
 In general, all anticipated errors are caught and raised with meaningful error
-messages. However, if something should slip through here is another quote from
+messages. ::
+
+    try:
+        api.similarity_lookup('0451462009', '0718155157')
+    except NoSimilarityForASIN, e:
+        print 'There is no book similar to %s!' % e.args[0]
+
+However, if something should slip through here is another quote from
 the `Amazon Associates Web Service Best Practices`_:
 
   Amazon Associates Web Service returns errors in three categories so that you

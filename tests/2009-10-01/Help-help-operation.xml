@@ -1,0 +1,53 @@
+<HelpResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2009-10-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+    </HTTPHeaders>
+    <RequestId>0JXCMWXHHGE4GW9FYV2Z</RequestId>
+    <Arguments>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="HelpType" Value="Operation"/>
+      <Argument Name="Operation" Value="Help"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Version" Value="2009-10-01"/>
+      <Argument Name="Timestamp" Value="2010-01-25T17:19:12Z"/>
+      <Argument Name="About" Value="Help"/>
+    </Arguments>
+    <RequestProcessingTime>0.0273699760437012</RequestProcessingTime>
+  </OperationRequest>
+  <Information>
+    <Request>
+      <IsValid>True</IsValid>
+      <HelpRequest>
+        <About>Help</About>
+        <HelpType>Operation</HelpType>
+      </HelpRequest>
+    </Request>
+    <OperationInformation>
+      <Name>Help</Name>
+      <RequiredParameters>
+        <Parameter>About</Parameter>
+        <Parameter>HelpType</Parameter>
+      </RequiredParameters>
+      <AvailableParameters>
+        <Parameter>AssociateTag</Parameter>
+        <Parameter>ContentType</Parameter>
+        <Parameter>Marketplace</Parameter>
+        <Parameter>MarketplaceDomain</Parameter>
+        <Parameter>Style</Parameter>
+        <Parameter>Validate</Parameter>
+        <Parameter>Version</Parameter>
+        <Parameter>XMLEscaping</Parameter>
+      </AvailableParameters>
+      <DefaultResponseGroups>
+        <ResponseGroup>Request</ResponseGroup>
+        <ResponseGroup>Help</ResponseGroup>
+      </DefaultResponseGroups>
+      <AvailableResponseGroups>
+        <ResponseGroup>Request</ResponseGroup>
+        <ResponseGroup>Help</ResponseGroup>
+      </AvailableResponseGroups>
+    </OperationInformation>
+  </Information>
+</HelpResponse>

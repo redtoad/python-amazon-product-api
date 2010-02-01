@@ -1,0 +1,39 @@
+
+0.2.2 (2010-01-30)
+------------------
+
+- ``browse_node_lookup`` operation added.	
+- ``help`` operation added.	
+- ``list_lookup`` and ``list_search`` operations added.
+- Default timeout for API calls is set to 5 sec.
+- Test cases for correct parsing of XML responses added. Local XML files are
+  used for testing (if available) stored in separate directories 
+  according to API version. These can be overwritten when cofig value
+  ``OVERWRITE_TESTS`` is set to ``True``.
+- ``InvalidItemId`` exception is replaced by more general 
+  ``InvalidParameterValue`` exception.	
+
+0.2.1 (2009-11-20)
+------------------
+
+- Support for Python 2.4 added. 
+- Fixed #2: ResultPaginator now returns ``None`` if the XPath expression doesn't 
+  find the node it's looking for.
+  
+0.2.0 (2009-11-07) "Westley"
+----------------------------
+
+This is the first `public` release. We're now available via the Cheeseshop!
+http://pypi.python.org/pypi/python-amazon-product-api
+
+- The module is no longer a package. Please use ``import amazonproduct`` 
+  (instead of ``import amazon.product``) now.
+- SimilarityLookup is now supported.
+- Updated to support version 2009-10-01.
+- Documentation added (made with http://sphinx.pocoo.org).
+- New artwork.
+
+0.1 (2009-09-30) "Fezzik"
+-------------------------
+
+Initial release.
