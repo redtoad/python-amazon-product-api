@@ -1,0 +1,133 @@
+<ItemLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2009-10-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+    </HTTPHeaders>
+    <RequestId>e1411936-d06a-4279-bd52-a98a092fcd55</RequestId>
+    <Arguments>
+      <Argument Name="ReviewPage" Value="2"/>
+      <Argument Name="Operation" Value="ItemLookup"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="ItemId" Value="0747532745"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2009-12-09T16:38:34Z"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="ResponseGroup" Value="Reviews"/>
+      <Argument Name="Version" Value="2009-10-01"/>
+    </Arguments>
+    <RequestProcessingTime>0.0165770000000000</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>True</IsValid>
+      <ItemLookupRequest>
+        <Condition>New</Condition>
+        <DeliveryMethod>Ship</DeliveryMethod>
+        <IdType>ASIN</IdType>
+        <MerchantId>Amazon</MerchantId>
+        <OfferPage>1</OfferPage>
+        <ItemId>0747532745</ItemId>
+        <ResponseGroup>Reviews</ResponseGroup>
+        <ReviewPage>2</ReviewPage>
+        <ReviewSort>-SubmissionDate</ReviewSort>
+        <VariationPage>All</VariationPage>
+      </ItemLookupRequest>
+    </Request>
+    <Item>
+      <ASIN>0747532745</ASIN>
+      <CustomerReviews>
+        <AverageRating>5.0</AverageRating>
+        <TotalReviews>2458</TotalReviews>
+        <TotalReviewPages>492</TotalReviewPages>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>4</Rating>
+          <HelpfulVotes>0</HelpfulVotes>
+          <CustomerId>ARDBDL9MCB4QV</CustomerId>
+          <Reviewer>
+            <CustomerId>ARDBDL9MCB4QV</CustomerId>
+            <Name>G. Keweloh</Name>
+          </Reviewer>
+          <TotalVotes>0</TotalVotes>
+          <Date>2009-06-04</Date>
+          <Summary>Sehr gut zu lesen!</Summary>
+          <Content>Das Buch liest sich gut, auch wenn man noch nicht alle englisch Vokabeln kennt.
+&lt;br /&gt;Die Geschichte finde ich auch gut, ist halt praktisch so wie der Film.
+&lt;br /&gt;
+&lt;br /&gt;Wer Harry Potter mag, mag auch das Buch.</Content>
+        </Review>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>4</Rating>
+          <HelpfulVotes>0</HelpfulVotes>
+          <CustomerId>A2J09GAWWL0I3L</CustomerId>
+          <Reviewer>
+            <CustomerId>A2J09GAWWL0I3L</CustomerId>
+            <Name>Chris</Name>
+            <Location>Linz</Location>
+          </Reviewer>
+          <TotalVotes>0</TotalVotes>
+          <Date>2009-04-28</Date>
+          <Summary>Harry Potter 1 and the Philosopher's Stone</Summary>
+          <Content>Der Harry Potter 1 ist meiner Meinung nach auch f&#252;r Personen verst&#228;ndlich, welche nicht so viel &#220;bung mit der englischen Sprache haben. Ich habe mir dieses Buch bestellt, da ich das Lesen und Verstehen der englischen Spache trainieren m&#246;chte.</Content>
+        </Review>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>5</Rating>
+          <HelpfulVotes>0</HelpfulVotes>
+          <CustomerId>A2LN14MHSMXL9G</CustomerId>
+          <Reviewer>
+            <CustomerId>A2LN14MHSMXL9G</CustomerId>
+            <Name>Michael Schlimpen</Name>
+            <Nickname>mschlimpen</Nickname>
+            <Location>Sassen</Location>
+          </Reviewer>
+          <TotalVotes>0</TotalVotes>
+          <Date>2008-05-27</Date>
+          <Summary>Der Beginn einer zauberhaften Reise</Summary>
+          <Content>Der erste Band aus der Potter-Reihe ist ein guter Einstieg in die Serie, sowohl von der Sprache her, als auch vom Umfang des Buches. Ich sagte mir bereits als der zweite Band damals rauskam, dass ich warte bis alle 7 B&#252;cher auf dem Markt sind, und dann werden sie alle am St&#252;ck gelesen und dann auf Englisch. Tja, ich wei&#223; gar nicht, wie ich es geschafft habe, so lange zu warten, jetzt wo ich die B&#252;cher kenne.
+&lt;br /&gt;
+&lt;br /&gt;Auf englisch sind die B&#252;cher jedem zu empfehlen, der Originale liebt und noch ein recht ordentliches Englisch drauf hat. Wenn man mal bei Hagrid's w&#252;stem Slang ins straucheln kommt, ist das wohl f&#252;r niemanden dramatisch.
+&lt;br /&gt;
+&lt;br /&gt;Gerade diese Edition mit den Erwachsenen-Cover macht die Potter-Serie zu einem Schmuckst&#252;ck in der privaten Bibliothek.</Content>
+        </Review>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>5</Rating>
+          <HelpfulVotes>0</HelpfulVotes>
+          <CustomerId>AYH4VWEWKJFBS</CustomerId>
+          <Reviewer>
+            <CustomerId>AYH4VWEWKJFBS</CustomerId>
+            <Name>Lukas Wagner</Name>
+          </Reviewer>
+          <TotalVotes>0</TotalVotes>
+          <Date>2007-11-28</Date>
+          <Summary>Tolle Geschichte / nicht schwer zu lesen</Summary>
+          <Content>Ich muss sagen das Buch ist wunderbar gelungen. Ich habe vorher keinen Teil von Harry Potter gesehen oder auch gelesen. Da ich ein Englisches Buch lesen wollte habe ich mich f&#252;r Harry Potter entschieden. Trotz meiner nicht so brillianten Englischk&#252;nste hatte ich keine gro&#223;en Probleme das Buch zu lesen, auch wenn das ein oder andere Vokabel nicht in meinem Kopf war, der Zusammenhang ging nicht verloren ( W&#246;rterbuch hat auch manchmal geholfen ).
+&lt;br /&gt;Allerdings Hagrids "Slang" ist wirklich sehr gew&#246;hnungsbed&#252;rftig.
+&lt;br /&gt;
+&lt;br /&gt;Der 2te Band ist bereits bestellt.</Content>
+        </Review>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>5</Rating>
+          <HelpfulVotes>8</HelpfulVotes>
+          <CustomerId>A1I8NQSWUOSDH0</CustomerId>
+          <Reviewer>
+            <CustomerId>A1I8NQSWUOSDH0</CustomerId>
+            <Name>Media-Mania.de</Name>
+          </Reviewer>
+          <TotalVotes>11</TotalVotes>
+          <Date>2007-08-01</Date>
+          <Summary>Fantasie- und liebevoller Auftrakt einer gro&#223;artigen Reihe.</Summary>
+          <Content>Als die junge Mutter Joanne Kathleen Rowling vor zehn Jahren, 1997, mit "Harry Potter and the Philosopher&#8217;s Stone" den ersten Band um ihren jugendlichen Zaubersch&#252;ler ver&#246;ffentlichte, begann nicht nur f&#252;r sie, sondern auch f&#252;r Millionen Leser eine zauberhafte Reise. In den USA wurde dieses erste Schuljahr von Harry Potter ein Jahr sp&#228;ter unter dem Titel "Harry Potter and the Sorcerer&#8217;s Stone" ver&#246;ffentlicht.
+&lt;br /&gt;
+&lt;br /&gt;Spannend und einf&#252;hlsam f&#252;hrt J. K. Rowling ihren Leser an die zumindest zu Beginn sehr tragische Figur des Harry Potter heran, der bei seinen ungeliebten Verwandten leben und mit ihnen zurechtkommen muss und stets versucht, das Beste aus seiner Situation zu machen. R&#228;tselhafte und scheinbar unerkl&#228;rliche Ereignisse pr&#228;gen den Anfang dieses unschuldigen Kinderbuches, bis die Autorin schlie&#223;lich die Bombe platzen l&#228;sst und nicht nur Harry, sondern auch der Leser erstaunt und erfreut erf&#228;hrt, dass ersterer ein Zauberer ist. Auch das Schuljahr auf Hogwarts gestaltet Joanne K. Rowling &#252;beraus ansprechend und liebevoll, entf&#252;hrt ihren Protagonisten in eine magische Welt, in der er schon bald Freunde &#8211; aber auch Feinde &#8211; findet, in der er von erfahrenen Professoren in die K&#252;nste der Zauberei eingef&#252;hrt wird und in der er St&#252;ck f&#252;r St&#252;ck dem Geheimnis seiner Vergangenheit auf die Spur kommt. Dabei streut die Autorin im gesamten Verlauf der bezaubernden Handlung zahlreiche Hinweise und Details aus, die sich schlie&#223;lich zu einem runden und in sich &#252;beraus schl&#252;ssigen Ganzen zusammenf&#252;gen und sogar &#8211; ohne dass man dies als Leser wei&#223; &#8211; f&#252;r die nachfolgenden B&#228;nde &#252;ber Harry Potter mitunter eine gro&#223;e Rolle spielen. Allein diese Kunst, dem Leser eine in sich geschlossene Geschichte zu pr&#228;sentieren, die nichtsdestotrotz gleichzeitig auch den Grundstein f&#252;r ihre Fortsetungen legt, macht "Harry Potter and the Sorcerer&#8217;s Stone" zu einer fantastischen Erz&#228;hlung f&#252;r Kinder. Hinzu kommen die liebevoll beschriebenen Figuren und Charaktere, die dem Leser schnell ans Herz wachsen und mit denen er von der ersten bis zur letzten Seite mitfiebern kann.
+&lt;br /&gt;
+&lt;br /&gt;Fazit:
+&lt;br /&gt;Das erste Abenteuer von Harry Potter erweist sich als unschuldige, aber sehr spannende und liebevoll beschriebene Geschichte f&#252;r j&#252;ngere Leser, die von der Fantasie der Autorin sicherlich ebenso begeistert und angetan sein werden wie ihre gro&#223;en Geschwister und Eltern.</Content>
+        </Review>
+      </CustomerReviews>
+    </Item>
+  </Items>
+</ItemLookupResponse>

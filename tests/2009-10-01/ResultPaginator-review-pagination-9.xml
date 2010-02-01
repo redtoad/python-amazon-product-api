@@ -1,0 +1,107 @@
+<ItemLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2009-10-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+    </HTTPHeaders>
+    <RequestId>9accfa05-350e-4cc2-a66d-c1f0f31fddba</RequestId>
+    <Arguments>
+      <Argument Name="ReviewPage" Value="9"/>
+      <Argument Name="Operation" Value="ItemLookup"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="ItemId" Value="0747532745"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2009-12-09T16:38:41Z"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="ResponseGroup" Value="Reviews"/>
+      <Argument Name="Version" Value="2009-10-01"/>
+    </Arguments>
+    <RequestProcessingTime>0.0332890000000000</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>True</IsValid>
+      <ItemLookupRequest>
+        <Condition>New</Condition>
+        <DeliveryMethod>Ship</DeliveryMethod>
+        <IdType>ASIN</IdType>
+        <MerchantId>Amazon</MerchantId>
+        <OfferPage>1</OfferPage>
+        <ItemId>0747532745</ItemId>
+        <ResponseGroup>Reviews</ResponseGroup>
+        <ReviewPage>9</ReviewPage>
+        <ReviewSort>-SubmissionDate</ReviewSort>
+        <VariationPage>All</VariationPage>
+      </ItemLookupRequest>
+    </Request>
+    <Item>
+      <ASIN>0747532745</ASIN>
+      <CustomerReviews>
+        <AverageRating>5.0</AverageRating>
+        <TotalReviews>2458</TotalReviews>
+        <TotalReviewPages>492</TotalReviewPages>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>5</Rating>
+          <HelpfulVotes>4</HelpfulVotes>
+          <TotalVotes>8</TotalVotes>
+          <Date>2002-12-29</Date>
+          <Summary>Hilfreich</Summary>
+          <Content>Eigentlich habe ich dieses Buch erst in deutsch gelesen. (Wurde mir geschenkt)&lt;br&gt;Doch dann hat mir meine Schwester geraten, das Buch auch in englisch zu lesen, damit ich meine Kenntnisse etwas aufbessern kann. &lt;br&gt;Immerhin ist es ja ein Kinderbuch!&lt;br&gt;Inzwischen habe ich alle Harry Potter - B&#228;nde mit einem Schmunzeln und &#228;ngstlich feuchten H&#228;nden gelesen und habe auch keine Scheu mehr vor Englischer Literatur. Es macht einfach Spa&#223; die Abenteuer hautnah mit Harry mitzuerleben.</Content>
+        </Review>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>5</Rating>
+          <HelpfulVotes>3</HelpfulVotes>
+          <CustomerId>A1I1PZ8P6QFAJ8</CustomerId>
+          <Reviewer>
+            <CustomerId>A1I1PZ8P6QFAJ8</CustomerId>
+            <Name>S. Serfling</Name>
+            <Nickname>suaine_crowgod</Nickname>
+            <Location>Leipzig</Location>
+          </Reviewer>
+          <TotalVotes>3</TotalVotes>
+          <Date>2002-09-25</Date>
+          <Summary>Wundersch&#246;n!</Summary>
+          <Content>Dieses Buch ist ein ideales Geschenk f&#252;r Harry Potter Fans und solche die es werden wollen. Die Englische Special Edition ist wundersch&#246;n anzusehen und ein Blickf&#228;nger in jedem B&#252;cherregal. Der Wert dieser Edition liegt nicht mehr allein in der hervorragenden Geschichte, die J.K. Rowling uns erz&#228;hlt sondern auch in der edlen Aufmachung.&lt;br&gt;Harry Potter erlebt hier sein erstes Jahr in 'Hogwarts' School for Witchcraft and Wizardry'. Lebt er jahrelang unter dem Joch seiner Verwandten, findet er bald heraus, dass er in Wirklichkeit ein Zauberer ist. W&#228;re das nicht schon genug entdeckt er auch, dass er ber&#252;hmt ist f&#252;r etwas an das er sich noch nicht einmal erinneren kann.&lt;br&gt;Rowling schafft es mit ihrer phantasievollen Erz&#228;hlung junge wie alte Menschen zu faszinieren, kaum einer schafft es sich dem Zauber der wundervollen Charaktere zu entziehen. Schl&#228;gt man das Buch einmal auf, hat es einen auch schon in seinen Bann gezogen.&lt;br&gt;Diese Ausgabe ist ein Muss f&#252;r jeden der B&#252;cher um ihrer selbst Willen liebt.</Content>
+        </Review>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>5</Rating>
+          <HelpfulVotes>5</HelpfulVotes>
+          <CustomerId>A1UK4OVI04KF0L</CustomerId>
+          <Reviewer>
+            <CustomerId>A1UK4OVI04KF0L</CustomerId>
+            <Nickname>sportgirl15</Nickname>
+          </Reviewer>
+          <TotalVotes>8</TotalVotes>
+          <Date>2002-08-18</Date>
+          <Summary>Viel besser als auf deutsch</Summary>
+          <Content>Ich habe die deutsche Ausgabe von Harry Potter angefangen zu lesen und habe nach ca. 40 Seiten aufgeh&#246;rt zu lesen, da ich es nicht gut fand. Als ich die englische Ausgabe gelesen habe konnte ich nicht mehr aufh&#246;ren zu lesen. In der englischen Sprache ist es viel interessanter geschrieben und man bessert dazu noch die englisch Kenntnise auf.</Content>
+        </Review>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>5</Rating>
+          <HelpfulVotes>9</HelpfulVotes>
+          <CustomerId>ACMOHFR2RMXHG</CustomerId>
+          <Reviewer>
+            <CustomerId>ACMOHFR2RMXHG</CustomerId>
+            <Nickname>harung</Nickname>
+          </Reviewer>
+          <TotalVotes>13</TotalVotes>
+          <Date>2002-07-31</Date>
+          <Summary>Sehr sch&#246;n!</Summary>
+          <Content>Der erste Teil, der &#252;bererfolgreichen Serie Harry Potter ist sehr spannend, mitrei&#223;end und angenehm zu lesen. Vor allem diese englische Ausgabe war wirklich ein Genuss. Ich(17) als jemand der versucht neben der Schule auch privat meine englischen Sprachekenntnisse zu erweitern, hat mir dieses Buch sehr dabei geholfen. Denn insgesamt war es sehr leicht zu lesen. Ein paar Begriffe am Anfang musste ich nat&#252;rlich aufschlagen, doch danach flie&#223;te das Lesen so hin. Gerade deshalb sollte man ein Buch haben, dass den Leser nach paar Seiten nicht gleich langweilt. Deshalb kann ich Harry Potter and the Philosopher's Stone sehr sehr empfehlen. Ich freu mich schon auf den zweiten Teil!</Content>
+        </Review>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>4</Rating>
+          <HelpfulVotes>8</HelpfulVotes>
+          <TotalVotes>9</TotalVotes>
+          <Date>2002-01-27</Date>
+          <Summary>harry potter und der Stein der Weisen</Summary>
+          <Content>So sie wollen sich oder ihrem kind harry potter kaufen....ich habe es gelesen und kann ihnen sagen das sie es lieben werden.ich habe schon einige teile gelesen und kann jedem besonders teil 1 zuraten....nicht nur f&#252;r kinder auch erwachsene weden werden ihren spass haben&lt;br&gt;Ich finde dieses buch sehr unterhaltsam(und dazu ich bin 16)...und hat mir echt wieder freude am lesen bereitet...&lt;br&gt;Eiziges manko sind die zauber-und horrorstellen des buches die nicht f&#252;r ganz kleine kinder vertr&#228;glich sind...</Content>
+        </Review>
+      </CustomerReviews>
+    </Item>
+  </Items>
+</ItemLookupResponse>

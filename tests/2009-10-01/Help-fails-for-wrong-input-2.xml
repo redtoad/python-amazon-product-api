@@ -1,0 +1,34 @@
+<HelpResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2009-10-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+    </HTTPHeaders>
+    <RequestId>1NN3VC76ZSCPKB2EE90E</RequestId>
+    <Arguments>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="HelpType" Value="Operation"/>
+      <Argument Name="Operation" Value="Help"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Version" Value="2009-10-01"/>
+      <Argument Name="Timestamp" Value="2010-01-25T20:31:00Z"/>
+      <Argument Name="About" Value="Unknown"/>
+    </Arguments>
+    <RequestProcessingTime>0.0141839981079102</RequestProcessingTime>
+  </OperationRequest>
+  <Information>
+    <Request>
+      <IsValid>False</IsValid>
+      <HelpRequest>
+        <About>Unknown</About>
+        <HelpType>Operation</HelpType>
+      </HelpRequest>
+      <Errors>
+        <Error>
+          <Code>AWS.InvalidEnumeratedParameter</Code>
+          <Message>The value you specified for About is invalid. Valid values include Accessories, AlternateVersions, BrowseNodeInfo, BrowseNodeLookup, BrowseNodes, Cart, CartAdd, CartClear, CartCreate, CartGet, CartModify, CartNewReleases, CartSimilarities, CartTopSellers, Collections, CustomerContentLookup, CustomerContentSearch, CustomerFull, CustomerInfo, CustomerLists, CustomerReviews, EditorialReview, Fitments, HasPartCompatibility, Help, Images, ItemAttributes, ItemIds, ItemLookup, ItemSearch, Large, ListFull, ListInfo, ListItems, ListLookup, ListMinimum, ListSearch, ListmaniaLists, Medium, MerchantItemAttributes, MostGifted, MostWishedFor, MultiOperation, NewReleases, OfferFull, OfferListings, OfferSummary, Offers, PartBrandBinsSummary, PartBrowseNodeBinsSummary, PromotionDetails, PromotionSummary, PromotionalTag, RelatedItems, Request, Reviews, SalesRank, SearchBins, Seller, SellerListing, SellerListingLookup, SellerListingSearch, SellerLookup, ShippingCharges, Similarities, SimilarityLookup, Small, Subjects, TagLookup, TaggedGuides, TaggedItems, TaggedListmaniaLists, Tags, TagsSummary, TopSellers, Tracks, TransactionDetails, TransactionLookup, VariationImages, VariationMatrix, VariationMinimum, VariationOffers, VariationSummary, Variations, VehicleMakes, VehicleModels, VehicleOptions, VehiclePartFit, VehiclePartLookup, VehiclePartSearch, VehicleParts, VehicleSearch, VehicleTrims, VehicleYears.</Message>
+        </Error>
+      </Errors>
+    </Request>
+  </Information>
+</HelpResponse>

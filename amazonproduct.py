@@ -21,7 +21,11 @@ https://affiliate-program.amazon.com/gp/advertising/api/detail/main.html
 Requirements
 ------------
 
-You need an Amazon Webservice account.
+You need an Amazon Webservice account which comes with an access key and a 
+secret key.
+
+You'll also need the python module lxml (>=2.1.5) and, if you're using python 
+2.4, also pycrypto.
 
 Kudos
 -----
@@ -33,14 +37,19 @@ http://blog.umlungu.co.uk/blog/2009/jul/12/pyaws-adding-request-authentication/)
 
 from base64 import b64encode
 from datetime import datetime, timedelta
-from hashlib import sha256
+
+try: # make it python2.4 compatible!
+    from hashlib import sha256
+except ImportError:
+    from Crypto.Hash import SHA256 as sha256
+    
 import hmac
+from lxml import objectify
 import re
+import socket
 from time import strftime, gmtime
 from urlparse import urlsplit
-from urllib2 import quote, urlopen
-
-from lxml import objectify
+from urllib2 import quote, urlopen, HTTPError
 
 __docformat__ = "restructuredtext en"
 
@@ -95,48 +104,53 @@ class InvalidResponseGroup (Exception):
     Variations.
     """
 
-class InvalidItemId (Exception):
+class InvalidParameterValue (Exception):
     """
     The specified ItemId parameter is invalid. Please change this value and 
     retry your request.
     """
 
+class InvalidListType (Exception):
+    """
+    The value you specified for ListType is invalid. Valid values include: 
+    BabyRegistry, Listmania, WeddingRegistry, WishList.
+    """
+    
 class NoSimilarityForASIN (Exception):
     """
     When you specify multiple items, it is possible for there to be no 
     intersection of similar items.
     """
     
-INVALID_SEARCH_INDEX_REG = re.compile(
-    'The value you specified for SearchIndex is invalid.')
+class NoExactMatchesFound (Exception):
+    """
+    We did not find any matches for your request.
+    """
+    
+class TooManyRequests (Exception):
+    """
+    You are submitting requests too quickly and your requests are being 
+    throttled. If this is the case, you need to slow your request rate to one 
+    request per second.
+    """
+    
+class NotEnoughParameters (Exception):
+    """
+    Your request should have at least one parameter which you did not submit.
+    """
 
-INVALID_ITEMID_REG = re.compile('(.+?) is not a valid value for ItemId. '
-    'Please change this value and retry your request.')
+INVALID_VALUE_REG = re.compile(
+    'The value you specified for (?P<parameter>\w+) is invalid.')
+
+INVALID_PARAMETER_VALUE_REG = re.compile('(?P<value>.+?) is not a valid value '
+    'for (?P<parameter>\w+). Please change this value and retry your request.')
 
 NOSIMILARITIES_REG = re.compile('There are no similar items for this ASIN: '
                                 '(?P<ASIN>\w+).')
 
-def response_processor(fp):
-    """
-    A post-processor for the AWS response. XML is fed in, some usable output 
-    comes out. Parses file like object with XML response from AWS.  
-    """
-    tree = objectify.parse(fp)
-    root = tree.getroot()
-    
-    #~ from lxml import etree
-    #~ print etree.tostring(tree, pretty_print=True)
-    
-    nspace = root.nsmap.get(None, '')
-    errors = root.xpath('//aws:Request/aws:Errors/aws:Error', 
-                     namespaces={'aws' : nspace})
-    
-    for error in errors:
-        raise AWSError(error.Code.text, error.Message.text)
-    
-    #~ from lxml import etree
-    #~ print etree.tostring(root, pretty_print=True)
-    return root
+NOT_ENOUGH_PARAMETERS_REG = re.compile('Your request should have atleast '
+        '(?P<numer>\d+) of the following parameters: (?P<parameters>[\w ,]+).')
+
 
 class API (object):
     
@@ -160,21 +174,22 @@ class API (object):
     """
     
     VERSION = '2009-10-01' #: supported Amazon API version
-    REQUESTS_PER_SECOND = 2 #: max requests per second
+    REQUESTS_PER_SECOND = 1 #: max requests per second
+    TIMEOUT = 5 #: timeout in seconds
     
     def __init__(self, access_key_id, secret_access_key, 
-                 locale='de', processor=response_processor):
+                 locale='de', processor=None):
         
         self.access_key = access_key_id
         self.secret_key = secret_access_key
         
         try:
             parts = urlsplit(LOCALES[locale])
-            self.scheme = parts.scheme
-            self.host = parts.netloc
-            self.path = parts.path
+            self.scheme, self.host, self.path = parts[:3]
         except KeyError:
             raise UnknownLocale(locale)
+        
+        socket.setdefaulttimeout(self.TIMEOUT)
         
         self.last_call = datetime(1970, 1, 1)
         self.throttle = timedelta(seconds=1)/self.REQUESTS_PER_SECOND
@@ -185,6 +200,10 @@ class API (object):
         """
         Builds a signed URL for querying Amazon AWS.
         """
+        # remove empty (=None) parameters
+        for key, val in qargs.items():
+            if val is None:
+                del qargs[key]
         
         if 'AWSAccessKeyId' not in qargs:
             qargs['AWSAccessKeyId'] = self.access_key
@@ -226,8 +245,61 @@ class API (object):
             pass # Wait for it!
         self.last_call = datetime.now()
         
-        response = urlopen(url)
-        return self.response_processor(response)
+        try:
+            return urlopen(url)
+        except HTTPError, e:
+            if e.code == 503:
+                raise TooManyRequests
+            # otherwise re-raise
+            raise        
+    
+    def _parse(self, fp):
+        """
+        Processes the AWS response (file like object). XML is fed in, some 
+        usable output comes out. 
+        
+        It will use a different result_processor if you have defined one. For 
+        instance, here is one using ``xml.minidom`` instead of ``lxml``::
+        
+            def minidom_response_parser(fp):
+                root = parse(fp)
+                # parse errors
+                for error in root.getElementsByTagName('Error'):
+                    code = error.getElementsByTagName('Code')[0].firstChild.nodeValue
+                    msg = error.getElementsByTagName('Message')[0].firstChild.nodeValue
+                    raise AWSError(code, msg)
+                return root
+            api = API(AWS_KEY, SECRET_KEY, processor=minidom_response_parser)
+            root = api.item_lookup('0718155157')
+            print root.toprettyxml()
+            # ...
+            
+        Make sure it raises an ``AWSError`` with the appropriate error code and
+        message.
+        """
+        if self.response_processor:
+            return self.response_processor(fp)
+        
+        tree = objectify.parse(fp)
+        root = tree.getroot()
+        
+        #~ from lxml import etree
+        #~ print etree.tostring(tree, pretty_print=True)
+        
+        nspace = root.nsmap.get(None, '')
+        errors = root.xpath('//aws:Request/aws:Errors/aws:Error', 
+                         namespaces={'aws' : nspace})
+        
+        for error in errors:
+            if error.Code.text == 'AWS.InvalidParameterValue':
+                m = INVALID_PARAMETER_VALUE_REG.search(error.Message.text)
+                raise InvalidParameterValue(m.group('parameter'), m.group('value'))
+            
+            raise AWSError(error.Code.text, error.Message.text)
+        
+        #~ from lxml import etree
+        #~ print etree.tostring(root, pretty_print=True)
+        return root
     
     def item_lookup(self, id, **params):
         """
@@ -247,19 +319,16 @@ class API (object):
         """
         try:
             url = self._build_url(Operation='ItemLookup', ItemId=id, **params)
-            return self._call(url)
+            fp = self._call(url)
+            return self._parse(fp)
         except AWSError, e:
             
             if (e.code=='AWS.InvalidEnumeratedParameter' 
-            and INVALID_SEARCH_INDEX_REG.search(e.msg)):
+            and INVALID_VALUE_REG.search(e.msg).group('parameter')=='SearchIndex'):
                 raise InvalidSearchIndex(params.get('SearchIndex'))
             
             if e.code=='AWS.InvalidResponseGroup': 
                 raise InvalidResponseGroup(params.get('ResponseGroup'))
-            
-            if (e.code=='AWS.InvalidParameterValue' 
-            and INVALID_ITEMID_REG.search(e.msg)):
-                raise InvalidItemId(id)
             
             # otherwise re-raise exception
             raise
@@ -299,10 +368,10 @@ class API (object):
         try:
             url = self._build_url(Operation='ItemSearch', 
                                   SearchIndex=search_index, **params)
-            return self._call(url)
+            fp = self._call(url)
+            return self._parse(fp)
         except AWSError, e:
             
-            # check for specific exceptions
             if (e.code=='AWS.InvalidEnumeratedParameter' 
             and INVALID_SEARCH_INDEX_REG.search(e.msg)):
                 raise InvalidSearchIndex(search_index)
@@ -335,13 +404,204 @@ class API (object):
         try:
             url = self._build_url(Operation='SimilarityLookup', 
                                   ItemId=item_id, **params)
-            return self._call(url)
+            fp = self._call(url)
+            return self._parse(fp)
         except AWSError, e:
             
             if e.code=='AWS.ECommerceService.NoSimilarities':
                 asin = NOSIMILARITIES_REG.search(e.msg).group('ASIN')
                 raise NoSimilarityForASIN(asin)
+            
+    def list_lookup(self, list_id, list_type, **params):
+        """
+        The ListLookup operation returns, by default, summary information about
+        a list that you specify in the request. The summary information
+        includes the:
 
+        - Creation date of the list
+        - Name of the list's creator 
+        
+        The operation returns up to ten sets of summary information per page.
+
+        Lists are specified by list type and list ID, which can be found using
+        ListSearch.
+
+        You cannot lookup more than one list at a time in a single request. You
+        can, however, make a batch request to look for more than one list
+        simultaneously. 
+
+        The operation supports the following list types:
+
+        - ``BabyRegistry`` - Baby registries contain items that expectant
+          parents want. Gift givers can find baby registries created on Amazon
+          or in Babies "R" Us or Toys "R" Us stores.
+        - ``Listmania`` - Customers can create random groups of items, called
+          Listmania lists. Listmania lists can be as specific ("Dorm Room
+          Essentials for Every Freshman") or as general ("The Best Novels of
+          2005") as customers choose.
+        - ``WeddingRegistry`` - Wedding registries contain items that a wedding
+          couple wants.
+        - ``WishList`` - Wish lists contain items for birthdays, anniversaries
+          or any other special day. These lists help others know what gifts the
+          wishlist creator wants.  
+        """
+        try:
+            url = self._build_url(Operation='ListLookup', ListId=list_id,
+                                  ListType=list_type, **params)
+            fp = self._call(url)
+            return self._parse(fp)
+        except AWSError, e:
+            
+            if (e.code=='AWS.InvalidEnumeratedParameter' 
+            and INVALID_VALUE_REG.search(e.msg).group('parameter')=='ListType'):
+                raise InvalidListType(params.get('ListType'))
+            
+            # otherwise re-raise exception
+            raise
+    
+    def list_search(self, list_type, **params):
+        """
+        Given a customer name or e-mail address, the ``ListSearch`` operation
+        returns the associated list ID(s) but not the list items. To find
+        those, use the list ID returned by ``ListSearch`` with ``ListLookup``.
+        
+        Specifying a full name or just a first or last name in the request
+        typically returns multiple lists belonging to different people. Using
+        e-mail as the identifier produces more filtered results.
+        
+        For ``Wishlists`` and ``WeddingRegistry`` list types, you must specify 
+        one or more of the following parameters:
+        
+        - e-mail 
+        - FirstName 
+        - LastName 
+        - Name 
+        
+        For the ``BabyRegistry`` list type, you must specify one or more of the
+        following parameters:
+        
+        - FirstName 
+        - LastName 
+        
+        You cannot, for example, retrieve a ``BabyRegistry`` by specifying an
+        e-mail address or Name. 
+        """
+        try:
+            url = self._build_url(Operation='ListSearch', 
+                                  ListType=list_type, **params)
+            fp = self._call(url)
+            return self._parse(fp)
+        except AWSError, e:
+            
+            if (e.code=='AWS.InvalidEnumeratedParameter' 
+            and INVALID_VALUE_REG.search(e.msg).group('parameter')=='ListType'):
+                raise InvalidListType(list_type)
+            
+            if e.code=='AWS.MinimumParameterRequirement': 
+                p = NOT_ENOUGH_PARAMETERS_REG.search(e.msg).group('parameters')
+                raise NotEnoughParameters(p)
+            
+            if e.code=='AWS.ECommerceService.NoExactMatches': 
+                raise NoExactMatchesFound
+            
+            # otherwise re-raise exception
+            raise
+        
+    def help(self, about, help_type, response_group=None, **params):
+        """
+        The Help operation provides information about Product Advertising API
+        operations and response groups. For operations, Help lists required
+        and optional request parameters, as well as default and optional
+        response groups the operation can use. For response groups, Help lists
+        the operations that can use the response group as well as the response
+        tags returned by the response group in the XML response.
+        
+        The Help operation is not often used in customer applications. It can,
+        however, be used to help the developer in the following ways:
+        
+        * Provide contextual help in an interactive development environment
+          (IDE) for developers
+        * Automate documentation creation as part of a developer's toolkit.
+        
+        :param about: Specifies the operation or response group about which
+          you want more information. All Product Advertising API operations, all
+          Product Advertising API response groups
+        :param help_type: Specifies whether the help topic is an operation or
+          response group. HelpType and About values must both be operations or
+          response groups, not a mixture of the two. 
+          Valid Values: ``Operation``, ``ResponseGroup``
+        :param response_group: Specifies the types of values to return. You
+          can specify multiple response groups in one request by separating them
+          with commas.
+        """
+        try:
+            url = self._build_url(Operation='Help', About=about, 
+                    HelpType=help_type, ResponseGroup=response_group, **params)
+            fp = self._call(url)
+            return self._parse(fp)
+        except AWSError, e:
+            
+            m = INVALID_VALUE_REG.search(e.msg)
+            if e.code=='AWS.InvalidEnumeratedParameter': 
+                raise ValueError(m.group('parameter'))
+                        
+            # otherwise re-raise exception
+            raise
+        
+    def browse_node_lookup(self, browse_node_id, response_group=None, **params):
+        """
+        Given a browse node ID, ``BrowseNodeLookup`` returns the specified
+        browse node's name, children, and ancestors. The names and browse node
+        IDs of the children and ancestor browse nodes are also returned.
+        ``BrowseNodeLookup`` enables you to traverse the browse node hierarchy
+        to find a browse node.
+        
+        As you traverse down the hierarchy, you refine your search and limit
+        the number of items returned. For example, you might traverse the
+        following hierarchy: ``DVD>Used DVDs>Kids and Family``, to select out
+        of all the DVDs offered by Amazon only those that are appropriate for
+        family viewing. Returning the items associated with ``Kids and Family``
+        produces a much more targeted result than a search based at the level
+        of ``Used DVDs``.
+        
+        Alternatively, by traversing up the browse node tree, you can
+        determine the root category of an item. You might do that, for
+        example, to return the top seller of the root product category using
+        the ``TopSeller`` response group in an ``ItemSearch`` request.
+        
+        You can use ``BrowseNodeLookup`` iteratively to navigate through the
+        browse node hierarchy to reach the node that most appropriately suits
+        your search. Then you can use the browse node ID in an ItemSearch
+        request. This response would be far more targeted than, for example,
+        searching through all of the browse nodes in a search index.
+        
+        :param browse_node_id: A positive integer assigned by Amazon that 
+          uniquely identifies a product category. 
+          Default: None
+          Valid Values: A positive integer.
+        :type browse_node_id: str
+        :param response_group: Specifies the types of values to return. You can 
+          specify multiple response groups in one request by separating them 
+          with commas.
+          Default: ``BrowseNodeInfo``
+          Valid Values: ``MostGifted``, ``NewReleases``, ``MostWishedFor``, 
+          ``TopSellers`` 
+        """
+        try:
+            url = self._build_url(Operation='BrowseNodeLookup', 
+                    BrowseNodeId=browse_node_id, ResponseGroup=response_group, 
+                    **params)
+            fp = self._call(url)
+            return self._parse(fp)
+        except AWSError, e:
+            
+            if e.code=='AWS.InvalidResponseGroup': 
+                raise InvalidResponseGroup(params.get('ResponseGroup'))
+            
+            # otherwise re-raise exception
+            raise
+        
+        
 class ResultPaginator (object):
     
     """
@@ -381,7 +641,7 @@ class ResultPaginator (object):
         self.limit = limit
         self.nspace = nspace
         
-    def __call__(self, fun, **kwargs):
+    def __call__(self, fun, *args, **kwargs):
         """
         Iterate over all paginated results of ``fun``.
         """
@@ -393,7 +653,7 @@ class ResultPaginator (object):
         while (current_page < total_pages 
         and (self.limit is None or current_page < self.limit)):
             
-            root = fun(**kwargs)
+            root = fun(*args, **kwargs)
             
             if self.nspace is None:
                 self.nspace = root.nsmap.get(None, '')
@@ -405,24 +665,34 @@ class ResultPaginator (object):
             yield root
             
             kwargs[self.counter] += 1
-        
+            
     def get_total_page_numer(self, root):
         """
         Get total number of paginator pages.
         """
-        return root.xpath(self.total_pages_xpath, 
+        try:
+            return root.xpath(self.total_pages_xpath, 
                           namespaces={'aws' : self.nspace})[0].pyval
+        except IndexError:
+            return None
         
     def get_current_page_numer(self, root):
         """
         Get number of current paginator page.
         """
-        return root.xpath(self.current_page_xpath, 
+        try:
+            return root.xpath(self.current_page_xpath, 
                           namespaces={'aws' : self.nspace})[0].pyval
+        except IndexError:
+            return None
     
     def get_total_results(self, root):
         """
-        Get number of current paginator page.
+        Get total number of results.
         """
-        return root.xpath(self.total_results_xpath, 
-                          namespaces={'aws' : self.nspace})[0].pyval
+        try:
+            return root.xpath(self.total_results_xpath, 
+                          namespaces={'aws' : self.nspace})
+        except IndexError:
+            return None
+
