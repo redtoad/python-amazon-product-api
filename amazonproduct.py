@@ -171,9 +171,9 @@ class API (object):
         total_reviews = root.Items.Item.CustomerReviews.TotalReviews.pyval
         review_pages = root.Items.Item.CustomerReviews.TotalReviewPages.pyval
         
-     It is possible to use a different module for parsing the XML response. For 
-     instance, you can use ``xml.minidom`` instead of ``lxml`` by defining a
-     custom result processor::
+    It is possible to use a different module for parsing the XML response. For 
+    instance, you can use ``xml.minidom`` instead of ``lxml`` by defining a
+    custom result processor::
         
         def minidom_response_parser(fp):
             root = parse(fp)
