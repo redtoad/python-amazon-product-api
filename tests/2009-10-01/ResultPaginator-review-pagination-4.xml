@@ -1,0 +1,108 @@
+<ItemLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2009-10-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+    </HTTPHeaders>
+    <RequestId>7626cc90-be05-49ad-9ec0-73534de99376</RequestId>
+    <Arguments>
+      <Argument Name="ReviewPage" Value="4"/>
+      <Argument Name="Operation" Value="ItemLookup"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="ItemId" Value="0747532745"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2009-12-09T16:38:36Z"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="ResponseGroup" Value="Reviews"/>
+      <Argument Name="Version" Value="2009-10-01"/>
+    </Arguments>
+    <RequestProcessingTime>0.0229950000000000</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>True</IsValid>
+      <ItemLookupRequest>
+        <Condition>New</Condition>
+        <DeliveryMethod>Ship</DeliveryMethod>
+        <IdType>ASIN</IdType>
+        <MerchantId>Amazon</MerchantId>
+        <OfferPage>1</OfferPage>
+        <ItemId>0747532745</ItemId>
+        <ResponseGroup>Reviews</ResponseGroup>
+        <ReviewPage>4</ReviewPage>
+        <ReviewSort>-SubmissionDate</ReviewSort>
+        <VariationPage>All</VariationPage>
+      </ItemLookupRequest>
+    </Request>
+    <Item>
+      <ASIN>0747532745</ASIN>
+      <CustomerReviews>
+        <AverageRating>5.0</AverageRating>
+        <TotalReviews>2458</TotalReviews>
+        <TotalReviewPages>492</TotalReviewPages>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>5</Rating>
+          <HelpfulVotes>13</HelpfulVotes>
+          <CustomerId>A1VFG6RI77WHFZ</CustomerId>
+          <Reviewer>
+            <CustomerId>A1VFG6RI77WHFZ</CustomerId>
+            <Name>Mo Phroe</Name>
+          </Reviewer>
+          <TotalVotes>14</TotalVotes>
+          <Date>2006-05-16</Date>
+          <Summary>Nachdem ich die ersten f&#252;nf B&#228;nde &#252;ber den brillentragenden </Summary>
+          <Content>...Zauberlehrling verschlungen hatte und das Ver&#246;ffentlichungsdatum f&#252;r Band 6 noch in weiter Ferne lag, fasste ich den Entschluss die B&#252;cher nocheinmal zu lesen. Allerdings nicht in der deustchen &#220;bersetzung, sondern im englischen Original. 
+&lt;br /&gt;Meine Reise, durch das Quintett startete ich mit diesem Buch, Band 1, 'Harry Potter and the Philosopher's Stone'. Und ich muss sagen, ich war, obwohl ich den ersten Teil schon mehrere Male auf Deutsch gelesen hatte und auch den Film kannte wieder einmal von Harry gefesselt. Das Lese-Feeling des englischen Buchs ist einfach noch um ein St&#252;ck authentischer als das des deustchen. Das Englisch in dem Rowling schreibt ist leicht verst&#228;ndlich, so dass auch Schulenglisch-Sprecher sicher keine Probleme damit haben werden. Das einzige was vielleiht etwas Gew&#246;hnung bed&#252;rfen k&#246;nnte ist der Dialekt Hagrid's. (Mich als American English belasteter Sprecher erstaunen die Dialekte der Briten immer wieder. Try 'Quest' bon Giorgio Kostantinos--super buch. Dank</Content>
+        </Review>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>4</Rating>
+          <HelpfulVotes>4</HelpfulVotes>
+          <TotalVotes>8</TotalVotes>
+          <Date>2006-03-30</Date>
+          <Summary>A very good book</Summary>
+          <Content>Harry Potter had all the time thought, he is a completely normal boy. When he was one year old his parents died. Now he lives by his only remaining relatives, the Dursleys, who also have a son named Dudley. Harry hates the Dursleys who treats him not very nice.&lt;br&gt; A few weeks before Harry's 11th birthday lots of on Harry addressed letters are sent to Privet Drive Nr. 4. But as always, uncle Vernon is successful, to keep the letters away from Harry. And every day they became more! Because of this flood of letters, the family flew onto a deserted island. At midnight of Harry's birthday, a giant comes to them. The giant is Hagrid, who was sent by Albus Dumbledore, the head teacher at Hogwarts, School of Witchcraft and Wizardy. He wants to visit Harry, who is very amazing about that. Hagrid tells Harry, that the scare, which he has on his forehead so long he could remember, isn't from a car accident (how the Dursleys said all time). It's the remaining of an attack from Lord Voldemort, a very evil and mighty wizard, by which Harry's parents died. And now he should go to Hogwarts, the wizard school. He'd never thought, that he would be a wizard! Of course he needs some equipment for his knew school. So he followed Hagrid into Diagon Alley, the only magically place at London. Here Harry gets ropes, books and- not to forget- his wand. So, at beginning of the new school year, Harry is brought by the Hogwarts Express from London to Hogwarts. He even meets an other first-year boy Ron Weasley and both become friends. Arrived at Hogwarts, all new pupils are sorted by an old hut into four different houses. Harry is chosen for Gryffindor.&lt;br&gt; The lessons begin. They are very interesting, but Harry did learn something else: it is Quidditch, a sport game played on flying brooms. He even is selected for Gryffindor's house team. &lt;br&gt;Soon he'd found a new friend, Hermione Granger, who is very intelligent and clever. But he doesn't only have friends. Draco Malfoy, a boy at Slytherin is Harry's archenemy. Malfoy always think, he's better than others, because his whole family are wizards. And someone else Harry doesn't like. It's professor Snape, the potions teacher, who is really unfair to Harry and his friends. The time goes past. At Christmas Harry does not leave school, because he wouldn't back to the Dursleys, which he not really misses. So he spends the most beautiful Christmas he ever has been had, because he the first time in his life gets presents. The best one is an invisibility cloak, but he didn't know from whom. And in addition something else he isn't able to forget: Together with his Ron and Hermione he'd found out, that the philosopher's stone must be at Hogwarts. And they are sure, that somebody is going to steel it. The stone is saved by a three-headed dog, Fluffy. After the three friends had found out, that Hagrid has told a stranger, how Fluffy is bewitched, they are alarmed and try with all their might to stop the thief. In the end Harry had to fight against Lord Voldemort, the dark wizard, who has murdered his parents. But because of a care from his mother, Harry survived and can rescue the philosopher's stone.</Content>
+        </Review>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>5</Rating>
+          <HelpfulVotes>16</HelpfulVotes>
+          <CustomerId>A1EEB5E9QX3AYT</CustomerId>
+          <Reviewer>
+            <CustomerId>A1EEB5E9QX3AYT</CustomerId>
+            <Name>Rene Hofler</Name>
+          </Reviewer>
+          <TotalVotes>18</TotalVotes>
+          <Date>2005-12-30</Date>
+          <Summary>Ein Muss f&#252;r einen Harry-Potter-Fan</Summary>
+          <Content>Ich z&#228;hle zu einen der gr&#246;&#223;ten Harry-Potter-Fans meines Umfelds und wollte wieder etwas ,,neues" von Harry Potter. Also kaufte ich mir alle Harry-Potter-B&#228;nde auf englisch und verschlang sie. &lt;br&gt;Ich war begeistert - sie waren tausendmal besser als die Deutsche &#220;bersetzung! Sie schienen fast wie eine neue Geschichte - und auch noch im positiven.&lt;p&gt;+ Gut illustriert&lt;br&gt;+ Spannender als die &#220;bersetzungen&lt;br&gt;+ Fesselndes Original&lt;br&gt;+ Macht sich gut im B&#252;cherregal</Content>
+        </Review>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>5</Rating>
+          <HelpfulVotes>11</HelpfulVotes>
+          <CustomerId>AZGURJDHPS5X9</CustomerId>
+          <Reviewer>
+            <CustomerId>AZGURJDHPS5X9</CustomerId>
+            <Name>Countess Culadra</Name>
+            <Nickname>CC</Nickname>
+            <Location>Transilvanien</Location>
+          </Reviewer>
+          <TotalVotes>12</TotalVotes>
+          <Date>2005-11-20</Date>
+          <Summary>Easy reading</Summary>
+          <Content>Ich wei&#223; nicht mehr genau, wie ich dazu kam mir die Harry Potter B&#252;cher auf englisch zu kaufen. Ich glaube, ich sah den ersten Band billig als Taschenbuch Version im Buchladen und da ich sowieso Spa&#223; und Interesse an Englisch habe, habe ich es probiert.&lt;br&gt;Ich muss sagen, das Buch war leicht zu lesen und da Harry sowieso auch ein Neuling im Bereich der Zauberei und Magie ist, ist es mit ein paar Grundwortschatz&#252;bersetzungen wie Zauberstab, Kessel und Besen gar nicht mal all zu schwer. Allerdings sollte man auf seine Englischlehrer h&#246;ren und nicht alles Wort f&#252;r Wort &#252;bersetzen und verstehen wollen. Beherzigt man das, ist "Harry Potter and the Philosopher's Stone" ein echtes Lesevergn&#252;gen. Aber das ist es f&#252;r mich sowieso, weil es das Original ist und keine &#220;bersetzung wirklich an Originale kommt.</Content>
+        </Review>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>5</Rating>
+          <HelpfulVotes>2</HelpfulVotes>
+          <TotalVotes>4</TotalVotes>
+          <Date>2005-08-26</Date>
+          <Summary>The "Harry Potter" Series</Summary>
+          <Content>If there is one series of books that just has to be recommended, it is the tale of "Harry Potter".&lt;br&gt;J.K. Rowling has written a very entertaining story in a simultaneous thrilling and humorous style.&lt;br&gt;And it isn't hard to believe at all that it might happen right among us just now.&lt;br&gt;A wonderful pastime for really every age group.&lt;p&gt;Books about "magical worlds" have never been my proper kind of literature; so I decided to "just have a look" at the first H.P. book when the 5th volume had been already published. But once I had begun reading, I read all five books in only one week (and nearly started all over again), and then the 6th volume right on the day it was published.</Content>
+        </Review>
+      </CustomerReviews>
+    </Item>
+  </Items>
+</ItemLookupResponse>
