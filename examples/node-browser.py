@@ -80,10 +80,10 @@ class BrowseNodeExplorer (gtk.Window):
             is_root = False
         name = node.Name.pyval
         
-        if not is_root:
+        try:
             parents = dict((parent.BrowseNodeId.pyval, parent.Name.pyval)
                         for parent in node.Ancestors.BrowseNode)
-        else:
+        except AttributeError:
             parents = {}
             
         try:
@@ -109,4 +109,6 @@ class BrowseNodeExplorer (gtk.Window):
 if __name__ == "__main__":
     explorer = BrowseNodeExplorer()
     explorer.fetch_nodes(542676) # Music node for locale de
+    # a list of root nodes can be found here:
+    # http://docs.amazonwebservices.com/AWSECommerceService/2009-11-01/DG/index.html?BrowseNodeIDs.html
     explorer.main()
