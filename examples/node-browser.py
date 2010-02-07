@@ -51,7 +51,7 @@ class BrowseNodeExplorer (gtk.Window):
         # add column name
         renderer = gtk.CellRendererText()
         column = gtk.TreeViewColumn('name', renderer, text=1)
-        column.set_sort_column_id(0) # Allow sorting on the column
+        column.set_sort_column_id(1) # Allow sorting on the column
         self.treeview.append_column(column)
         
         # make it clickable
