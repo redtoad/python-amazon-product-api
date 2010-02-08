@@ -43,9 +43,13 @@ follow as development progresses.
 
 Supported so far are:
    
-- ItemLookup
-- ItemSearch
-- SimilarityLookup
+- ``ItemLookup``
+- ``ItemSearch``
+- ``SimilarityLookup``
+- ``ListLookup``
+- ``ListSearch``
+- ``Help``
+- ``BrowseNodeLookup``
 
 Installation
 ------------
@@ -69,8 +73,7 @@ a Windows system.
 License
 -------
 
-This module is licensed under a BSD license. See the `LICENSE` file in the 
-distribution.
+.. include:: ../LICENSE
 
 Development
 -----------

@@ -49,8 +49,7 @@ import re
 import socket
 from time import strftime, gmtime
 from urlparse import urlsplit
-from urllib import quote
-from urllib2 import urlopen, HTTPError
+from urllib2 import quote, urlopen, HTTPError
 
 __docformat__ = "restructuredtext en"
 
@@ -134,6 +133,11 @@ class TooManyRequests (Exception):
     throttled. If this is the case, you need to slow your request rate to one 
     request per second.
     """
+    
+class NotEnoughParameters (Exception):
+    """
+    Your request should have at least one parameter which you did not submit.
+    """
 
 INVALID_VALUE_REG = re.compile(
     'The value you specified for (?P<parameter>\w+) is invalid.')
@@ -143,6 +147,10 @@ INVALID_PARAMETER_VALUE_REG = re.compile('(?P<value>.+?) is not a valid value '
 
 NOSIMILARITIES_REG = re.compile('There are no similar items for this ASIN: '
                                 '(?P<ASIN>\w+).')
+
+NOT_ENOUGH_PARAMETERS_REG = re.compile('Your request should have atleast '
+        '(?P<numer>\d+) of the following parameters: (?P<parameters>[\w ,]+).')
+
 
 class API (object):
     
@@ -162,15 +170,40 @@ class API (object):
         rating = root.Items.Item.CustomerReviews.AverageRating.pyval
         total_reviews = root.Items.Item.CustomerReviews.TotalReviews.pyval
         review_pages = root.Items.Item.CustomerReviews.TotalReviewPages.pyval
-
+        
+    It is possible to use a different module for parsing the XML response. For 
+    instance, you can use ``xml.minidom`` instead of ``lxml`` by defining a
+    custom result processor::
+        
+        def minidom_response_parser(fp):
+            root = parse(fp)
+            # parse errors
+            for error in root.getElementsByTagName('Error'):
+                code = error.getElementsByTagName('Code')[0].firstChild.nodeValue
+                msg = error.getElementsByTagName('Message')[0].firstChild.nodeValue
+                raise AWSError(code, msg)
+            return root
+        api = API(AWS_KEY, SECRET_KEY, processor=minidom_response_parser)
+        root = api.item_lookup('0718155157')
+        print root.toprettyxml()
+        # ...
+        
+    Just make sure it raises an ``AWSError`` with the appropriate error code 
+    and message.
     """
     
-    VERSION = '2009-10-01' #: supported Amazon API version
+    VERSION = '2009-11-01' #: supported Amazon API version
     REQUESTS_PER_SECOND = 1 #: max requests per second
     TIMEOUT = 5 #: timeout in seconds
     
-    def __init__(self, access_key_id, secret_access_key, locale='de'):
-        
+    def __init__(self, access_key_id, secret_access_key, 
+                 locale='de', processor=None):
+        """
+        :param access_key_id: AWS access key ID.
+        :param secret_key_id: AWS secret key.
+        :param locale: localise results by using one value from ``LOCALES``.
+        :param processor: result processing function (``None`` if unsure).
+        """
         self.access_key = access_key_id
         self.secret_key = secret_access_key
         
@@ -184,6 +217,8 @@ class API (object):
         
         self.last_call = datetime(1970, 1, 1)
         self.throttle = timedelta(seconds=1)/self.REQUESTS_PER_SECOND
+        
+        self.response_processor = processor
         
     def _build_url(self, **qargs):
         """
@@ -244,8 +279,13 @@ class API (object):
     
     def _parse(self, fp):
         """
-        Calls the Amazon Product Advertising API and objectifies the response.
+        Processes the AWS response (file like object). XML is fed in, some 
+        usable output comes out. It will use a different result_processor if 
+        you have defined one. 
         """
+        if self.response_processor:
+            return self.response_processor(fp)
+        
         tree = objectify.parse(fp)
         root = tree.getroot()
         
@@ -427,29 +467,29 @@ class API (object):
     
     def list_search(self, list_type, **params):
         """
-        Given a customer name or e-mail address, the ListSearch  operation
+        Given a customer name or e-mail address, the ``ListSearch`` operation
         returns the associated list ID(s) but not the list items. To find
-        those, use the list ID returned by ListSearch with  ListLookup.
+        those, use the list ID returned by ``ListSearch`` with ``ListLookup``.
         
         Specifying a full name or just a first or last name in the request
         typically returns multiple lists belonging to different people. Using
         e-mail as the identifier produces more filtered results.
         
-        For Wishlists and WeddingRegistry list types, you must specify one or
-        more of the following parameters:
-
+        For ``Wishlists`` and ``WeddingRegistry`` list types, you must specify 
+        one or more of the following parameters:
+        
         - e-mail 
         - FirstName 
         - LastName 
         - Name 
-
-        For the BabyRegistry list type, you must specify one or more of the
+        
+        For the ``BabyRegistry`` list type, you must specify one or more of the
         following parameters:
-
+        
         - FirstName 
         - LastName 
-
-        You cannot, for example, retrieve a BabyRegistry by specifying an
+        
+        You cannot, for example, retrieve a ``BabyRegistry`` by specifying an
         e-mail address or Name. 
         """
         try:
@@ -458,6 +498,14 @@ class API (object):
             fp = self._call(url)
             return self._parse(fp)
         except AWSError, e:
+            
+            if (e.code=='AWS.InvalidEnumeratedParameter' 
+            and INVALID_VALUE_REG.search(e.msg).group('parameter')=='ListType'):
+                raise InvalidListType(list_type)
+            
+            if e.code=='AWS.MinimumParameterRequirement': 
+                p = NOT_ENOUGH_PARAMETERS_REG.search(e.msg).group('parameters')
+                raise NotEnoughParameters(p)
             
             if e.code=='AWS.ECommerceService.NoExactMatches': 
                 raise NoExactMatchesFound
@@ -518,9 +566,9 @@ class API (object):
         the number of items returned. For example, you might traverse the
         following hierarchy: ``DVD>Used DVDs>Kids and Family``, to select out
         of all the DVDs offered by Amazon only those that are appropriate for
-        family viewing. Returning the items associated with Kids and Family
+        family viewing. Returning the items associated with ``Kids and Family``
         produces a much more targeted result than a search based at the level
-        of Used DVDs.
+        of ``Used DVDs``.
         
         Alternatively, by traversing up the browse node tree, you can
         determine the root category of an item. You might do that, for
@@ -543,7 +591,7 @@ class API (object):
           with commas.
           Default: ``BrowseNodeInfo``
           Valid Values: ``MostGifted``, ``NewReleases``, ``MostWishedFor``, 
-            ``TopSellers`` 
+          ``TopSellers`` 
         """
         try:
             url = self._build_url(Operation='BrowseNodeLookup', 

@@ -10,6 +10,7 @@ from amazonproduct import AWSError
 from amazonproduct import InvalidParameterValue, InvalidListType
 from amazonproduct import InvalidSearchIndex, InvalidResponseGroup
 from amazonproduct import NoSimilarityForASIN
+from amazonproduct import NoExactMatchesFound, NotEnoughParameters
 
 def get_config_value(key, default=None):
     """
@@ -25,6 +26,10 @@ def get_config_value(key, default=None):
 AWS_KEY = get_config_value('AWS_KEY', '')
 SECRET_KEY = get_config_value('SECRET_KEY', '')
 OVERWRITE_TESTS = get_config_value('OVERWRITE_TESTS', False)
+
+#: Versions of Amazon API to be tested against 
+TESTABLE_API_VERSIONS = '2009-11-01 2009-10-01'.split()
+ALL = TESTABLE_API_VERSIONS
 
 class CustomAPI (API):
     
@@ -42,7 +47,6 @@ class CustomAPI (API):
         """
         Uses XML response from (or stores in) local file.
         """
-        
         # subsequent calls of this API instance
         # will be stored in different files
         self.calls += 1
@@ -83,15 +87,39 @@ class CustomAPI (API):
 class XMLResponseTestCase (unittest.TestCase):
     
     """
-    Test case which uses local XML files rather than making HTTP calls. 
+    Test case which uses local XML files rather than making HTTP calls.
+    
+    You can specify which API versions this test case should be run against by
+    providing a class attribute ``api_versions`` with a list of your choices.
+    For all versions, set it to ``ALL`` or leave blank. Example::
+        
+        class MySpecialTest (XMLResponseTestCase):
+            api_versions = ['2009-10-01']
+            def test_something(self):
+                ...
+                
     """
     
+    def __init__(self, *args):
+        unittest.TestCase.__init__(self, *args)
+        self.versions_to_test = getattr(self, 'api_versions', 
+                                        TESTABLE_API_VERSIONS[:])
+        
+    def run(self, result=None):
+        """
+        Run the test once for each version to be tested against.
+        """
+        while self.versions_to_test:
+            #~ print self.versions_to_test
+            unittest.TestCase.run(self, result)
+        
     def setUp(self):
         """
         Method called to prepare the test fixture. This is called immediately 
         before calling the test method.
         """
         self.api = CustomAPI(AWS_KEY, SECRET_KEY)
+        self.api.VERSION = self.versions_to_test.pop(0)
         self.api.local_file = self.get_local_response_file()
         
     def get_local_response_file(self):
@@ -185,7 +213,7 @@ class ListLookupTestCase (XMLResponseTestCase):
     """
     Check that all XML responses for ListLookup are parsed correctly.
     """
-     
+    
     def test_invalid_list_id(self):
         self.assertRaises(InvalidParameterValue, self.api.list_lookup, '???', 'WishList')
         
@@ -194,11 +222,31 @@ class ListLookupTestCase (XMLResponseTestCase):
         
 
 
+class ListSearchTestCase (XMLResponseTestCase):
+
+    """
+    Check that all XML responses for ListSearch are parsed correctly.
+    """
+     
+    def test_fails_for_wrong_list_type(self):
+        self.assertRaises(InvalidListType, self.api.list_search, '???')
+        
+    def test_fails_for_missing_search_parameters(self):
+        self.assertRaises(NotEnoughParameters, self.api.list_search, 'WishList')
+        self.assertRaises(NotEnoughParameters, self.api.list_search, 'WeddingRegistry')
+        
+    def test_no_exact_matches(self):
+        self.assertRaises(NoExactMatchesFound, self.api.list_search, 
+                'WishList', Email='???')
+
+
 class ResultPaginatorTestCase (XMLResponseTestCase):
     
     """
     Check that all XML responses for pagination are parsed correctly.
     """
+    
+    api_versions = ['2009-10-01']
     
     def test_review_pagination(self):
         # reviews for 
@@ -218,9 +266,9 @@ class ResultPaginatorTestCase (XMLResponseTestCase):
             except AttributeError:
                 current_page = 1
             
-            self.assert_(total_reviews==2458)
-            self.assert_(review_pages==492)
-            self.assert_(current_page==page+1)
+            self.assertEquals(total_reviews, 2458)
+            self.assertEquals(review_pages, 492)
+            self.assertEquals(current_page, page+1)
             
         self.assert_(page==9)
 
