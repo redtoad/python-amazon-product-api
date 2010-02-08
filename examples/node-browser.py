@@ -234,47 +234,71 @@ class BrowseNodeExplorer (gtk.Window):
         self.show_all()
         
         # populate with root nodes
+        # but avoid duplicated node ids
+        node_ids = set(NODE_IDS[self.locale].values())
         for name, id in NODE_IDS[self.locale].items():
-            self.treestore.append(None, [id, name])
+            if id in node_ids:
+                self.treestore.append(None, [id, name])
+                node_ids.remove(id)
+        
+    def _find_row(self, node_id):
+        def match_func(row, data):
+            # data is a tuple containing column number, key
+            column, key = data 
+            return row[column] == key
+        def search(rows, func, data):
+            if not rows: return None
+            for row in rows:
+                if func(row, data):
+                    return row
+                result = search(row.iterchildren(), func, data)
+                if result: return result
+            return None
+        return search(self.treestore, match_func, (0, node_id))
         
     def fetch_nodes(self, node_id):
         """
         Fetches a BrowseNode from Amazon.
         """
-        self.treestore.clear()
+        # fetch matching row from treestore
+        row = self._find_row(node_id)
         
-        root = self.api.browse_node_lookup(node_id)
-        node = root.BrowseNodes.BrowseNode
+        # fetch Amazon data
+        node = self.api.browse_node_lookup(node_id).BrowseNodes.BrowseNode
         id = node.BrowseNodeId.pyval
-        try:
-            is_root = node.IsCategoryRoot.pyval == 1
-        except AttributeError:
-            is_root = False
         name = node.Name.pyval
+        is_root = hasattr(node, 'IsCategoryRoot') and node.IsCategoryRoot.pyval == 1
         
-        try:
-            parents = dict((parent.BrowseNodeId.pyval, parent.Name.pyval)
-                        for parent in node.Ancestors.BrowseNode)
-        except AttributeError:
-            parents = {}
-            
+        #~ from lxml import etree
+        #~ print etree.tostring(node, pretty_print=True)
+        
+        #try:
+        #    parents = dict((parent.BrowseNodeId.pyval, parent.Name.pyval)
+        #                for parent in node.Ancestors.BrowseNode)
+        #except AttributeError:
+        #    parents = {}
+        #    
+        #piter = None
+        #for parent_id, parent_name in parents.items():
+        #    piter = self.treestore.append(None, [parent_id, parent_name])
+        #
+        #iter = self.treestore.append(piter, [id, name])
+        
+        # replace node name
+        row[1] = name
+        
         try:
             children = dict((child.BrowseNodeId.pyval, child.Name.pyval)
                         for child in node.Children.BrowseNode)
         except AttributeError:
             children = {}
         
-        piter = None
-        for parent_id, parent_name in parents.items():
-            piter = self.treestore.append(None, [parent_id, parent_name])
-            
-        iter = self.treestore.append(piter, [id, name])
-            
         for child_id, child_name in children.items():
-            self.treestore.append(iter, [child_id, child_name])
+            self.treestore.append(row.iter, [child_id, child_name])
             
-        self.treeview.expand_all()
-        
+        # expand nodes of just added
+        self.treeview.expand_row(tuple(row.path), True)
+            
     def main(self):
         gtk.main()
 
