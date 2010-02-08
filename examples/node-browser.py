@@ -1,6 +1,11 @@
 #!/usr/bin/env python
-import gtk
 
+"""
+Explorer window for BrowseNodes. Simply double-click on an entry to load the 
+corresponding node from the web service.
+"""
+
+import gtk
 from config import AWS_KEY, SECRET_KEY
 from amazonproduct import API
 
@@ -285,7 +290,8 @@ class BrowseNodeExplorer (gtk.Window):
         #iter = self.treestore.append(piter, [id, name])
         
         # replace node name
-        row[1] = name
+        if is_root:
+            row[1] = node.Ancestors.BrowseNode.Name.text
         
         try:
             children = dict((child.BrowseNodeId.pyval, child.Name.pyval)
