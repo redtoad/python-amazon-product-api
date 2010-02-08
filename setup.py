@@ -6,7 +6,7 @@ def read(fname):
 
 setup(
     name = 'python-amazon-product-api',
-    version = '0.2.1',
+    version = '0.2.2',
     author = 'Sebastian Rahlf',
     author_email = 'basti AT redtoad DOT de',
     url="http://bitbucket.org/basti/python-amazon-product-api/downloads/",
@@ -17,7 +17,7 @@ setup(
     keywords = 'amazon product advertising api wrapper signed requests',
     
     py_modules = ['amazonproduct'],
-    install_requires=['lxml>=2.1.5'],
+    install_requires=['lxml>=2.1.5'], # 'pycrypto' # for python2.4
     
     classifiers = [
         'Operating System :: OS Independent', 
