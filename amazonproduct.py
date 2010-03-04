@@ -1,3 +1,7 @@
+# Copyright (C) 2009 Sebastian Rahlf <basti at redtoad dot de>
+#
+# This program is release under the BSD License. You can find the full text of
+# the license in the LICENSE file.
 
 """
 Amazon Product Advertising API
@@ -27,11 +31,11 @@ secret key.
 You'll also need the python module lxml (>=2.1.5) and, if you're using python 
 2.4, also pycrypto.
 
-Kudos
------
+License
+-------
 
-The ``_build_url()`` function is based on code by Adam Cox (found at 
-http://blog.umlungu.co.uk/blog/2009/jul/12/pyaws-adding-request-authentication/)
+This program is release under the BSD License. You can find the full text of
+the license in the LICENSE file.
 
 """
 
@@ -222,7 +226,9 @@ class API (object):
         
     def _build_url(self, **qargs):
         """
-        Builds a signed URL for querying Amazon AWS.
+        Builds a signed URL for querying Amazon AWS.  This function is based
+        on code by Adam Cox (found at
+        http://blog.umlungu.co.uk/blog/2009/jul/12/pyaws-adding-request-authentication/)
         """
         # remove empty (=None) parameters
         for key, val in qargs.items():
