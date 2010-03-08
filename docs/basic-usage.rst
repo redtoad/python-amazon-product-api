@@ -6,22 +6,21 @@ In order to use this API you'll obviously need an Amazon Associates Web Service
 account for which you must with Amazon at http://aws.amazon.com. Each account
 contains an *AWSAccessKeyId* and a *SecretKey*. 
 
-The API itself can used like this::
-    
-    from amazonproduct import API
-    
+Here is an example how to use the API to search for books of a certain 
+publisher::
+
     AWS_KEY = '...'
     SECRET_KEY = '...'
     
     api = API(AWS_KEY, SECRET_KEY)
     node = api.item_search('Books', Publisher='Galileo Press')
 
-The ``node`` object returned is a `lxml.objectified`__ element. All its content
-can be accessed using the lxml.objectify API::
+The ``node`` object returned is a `lxml.objectified`__ element. All its 
+attributes can be accessed the pythonic way::
     
     # .pyval will convert the node content into int here
-    total_results = root.Items.TotalResults.pyval
-    total_pages = root.Items.TotalPages.pyval
+    total_results = node.Items.TotalResults.pyval
+    total_pages = node.Items.TotalPages.pyval
     
     # get all books from result set and 
     # print author and title
@@ -29,11 +28,10 @@ can be accessed using the lxml.objectify API::
         print '%s: "%s"' % (book.ItemAttributes.Author, 
                             book.ItemAttributes.Title)
 
-Please refer to the `lxml.objectify`_ documentation for more examples.
+Please refer to the `lxml.objectify`_ documentation for more details.
 
 .. _lxml.objectify: http://codespeak.net/lxml/objectify.html
 __ lxml.objectify_
-
 
 Error handling
 --------------
