@@ -1,4 +1,29 @@
 
+0.2.x (in development)
+----------------------
+
+- Fixed #3: Support for API Version 2009-11-01
+- Tests run now for all API versions. Test cases can now be told which versions
+  to use (class attribute ``api_versions`` set to i.e. ``['2009-10-01']``).
+- A custom AWS response processor can now be defined. For instance, here is one 
+  using ``xml.minidom`` instead of ``lxml``::
+      
+      def minidom_response_parser(fp):
+          root = parse(fp)
+          # parse errors
+          for error in root.getElementsByTagName('Error'):
+              code = error.getElementsByTagName('Code')[0].firstChild.nodeValue
+              msg = error.getElementsByTagName('Message')[0].firstChild.nodeValue
+                  raise AWSError(code, msg)
+              return root
+          api = API(AWS_KEY, SECRET_KEY, processor=minidom_response_parser)
+          root = api.item_lookup('0718155157')
+          print root.toprettyxml()
+          # ...
+      
+  Just Make sure it raises an ``AWSError`` with the appropriate error code and
+  message.
+
 0.2.2 (2010-01-30)
 ------------------
 
