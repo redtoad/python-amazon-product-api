@@ -13,7 +13,7 @@ setup(
     license='bsd',
     
     description = 'A Python wrapper for the Amazon Product Advertising API.', 
-    long_description=read('README.rst'),
+    long_description=read('README'),
     keywords = 'amazon product advertising api wrapper signed requests',
     
     py_modules = ['amazonproduct'],
