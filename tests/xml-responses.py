@@ -187,6 +187,10 @@ class ItemSearchTestCase (XMLResponseTestCase):
         self.assertRaises(InvalidResponseGroup, self.api.item_search, 
                           'All', ResponseGroup='???')
         
+    def test_invalid_search_index(self):
+        self.assertRaises(InvalidSearchIndex, self.api.item_search, 
+                          'TopSellers', BrowseNode=132)
+        
         
 class SimilarityLookupTestCase (XMLResponseTestCase):
     
