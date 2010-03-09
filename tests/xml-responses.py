@@ -9,6 +9,7 @@ from amazonproduct import API, ResultPaginator
 from amazonproduct import AWSError
 from amazonproduct import InvalidParameterValue, InvalidListType
 from amazonproduct import InvalidSearchIndex, InvalidResponseGroup
+from amazonproduct import InvalidParameterCombination
 from amazonproduct import NoSimilarityForASIN
 from amazonproduct import NoExactMatchesFound, NotEnoughParameters
 
@@ -191,6 +192,10 @@ class ItemSearchTestCase (XMLResponseTestCase):
         self.assertRaises(InvalidSearchIndex, self.api.item_search, 
                           'TopSellers', BrowseNode=132)
         
+    def test_invalid_parameter_combination(self):
+        self.assertRaises(InvalidParameterCombination, self.api.item_search, 
+                          'All', BrowseNode=132)
+
         
 class SimilarityLookupTestCase (XMLResponseTestCase):
     
