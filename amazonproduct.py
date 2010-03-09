@@ -143,6 +143,11 @@ class NotEnoughParameters (Exception):
     Your request should have at least one parameter which you did not submit.
     """
 
+class InvalidParameterCombination (Exception):
+    """
+    Your request contained a restricted parameter combination.
+    """
+
 INVALID_VALUE_REG = re.compile(
     'The value you specified for (?P<parameter>\w+) is invalid.')
 
@@ -303,10 +308,14 @@ class API (object):
                          namespaces={'aws' : nspace})
         
         for error in errors:
+            
             if error.Code.text == 'AWS.InvalidParameterValue':
                 m = INVALID_PARAMETER_VALUE_REG.search(error.Message.text)
                 raise InvalidParameterValue(m.group('parameter'), m.group('value'))
             
+            if error.Code.text == 'AWS.RestrictedParameterValueCombination':
+                raise InvalidParameterCombination
+
             raise AWSError(error.Code.text, error.Message.text)
         
         #~ from lxml import etree
