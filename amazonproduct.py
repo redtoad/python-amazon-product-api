@@ -385,7 +385,7 @@ class API (object):
         except AWSError, e:
             
             if (e.code=='AWS.InvalidEnumeratedParameter' 
-            and INVALID_SEARCH_INDEX_REG.search(e.msg)):
+            and INVALID_VALUE_REG.search(e.msg)):
                 raise InvalidSearchIndex(search_index)
             
             if e.code=='AWS.InvalidResponseGroup': 
