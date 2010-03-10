@@ -154,12 +154,15 @@ INVALID_VALUE_REG = re.compile(
 INVALID_PARAMETER_VALUE_REG = re.compile('(?P<value>.+?) is not a valid value '
     'for (?P<parameter>\w+). Please change this value and retry your request.')
 
-NOSIMILARITIES_REG = re.compile('There are no similar items for this ASIN: '
-                                '(?P<ASIN>\w+).')
+NOSIMILARITIES_REG = re.compile(
+    'There are no similar items for this ASIN: (?P<ASIN>\w+).')
 
 NOT_ENOUGH_PARAMETERS_REG = re.compile('Your request should have atleast '
         '(?P<numer>\d+) of the following parameters: (?P<parameters>[\w ,]+).')
 
+INVALID_PARAMETER_COMBINATION_REG = re.compile(
+     'Your request contained a restricted parameter combination.'
+     '\s*(?P<message>\w.*)$') # only the last bit is of interest here
 
 class API (object):
     
@@ -314,7 +317,8 @@ class API (object):
                 raise InvalidParameterValue(m.group('parameter'), m.group('value'))
             
             if error.Code.text == 'AWS.RestrictedParameterValueCombination':
-                raise InvalidParameterCombination
+                m = INVALID_PARAMETER_COMBINATION_REG.search(error.Message.text)
+                raise InvalidParameterCombination(m.group('message'))
 
             raise AWSError(error.Code.text, error.Message.text)
         
