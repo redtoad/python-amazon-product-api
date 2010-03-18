@@ -1,21 +1,21 @@
-<ItemLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2009-10-01">
+<ItemLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2009-11-01">
   <OperationRequest>
     <HTTPHeaders>
       <Header Name="UserAgent" Value="Python-urllib/2.6"/>
     </HTTPHeaders>
-    <RequestId>fdc57d00-663e-4bd7-8b40-022d6c500de5</RequestId>
+    <RequestId>f724d32b-b558-4cd0-851c-4c5b7e87f6f1</RequestId>
     <Arguments>
       <Argument Name="ReviewPage" Value="4"/>
       <Argument Name="Operation" Value="ItemLookup"/>
       <Argument Name="Service" Value="AWSECommerceService"/>
       <Argument Name="ItemId" Value="0747532745"/>
       <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="Timestamp" Value="2010-03-19T13:07:58Z"/>
+      <Argument Name="Timestamp" Value="2010-03-19T13:03:04Z"/>
       <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
       <Argument Name="ResponseGroup" Value="Reviews"/>
-      <Argument Name="Version" Value="2009-10-01"/>
+      <Argument Name="Version" Value="2009-11-01"/>
     </Arguments>
-    <RequestProcessingTime>0.0170810000000000</RequestProcessingTime>
+    <RequestProcessingTime>0.0217600000000000</RequestProcessingTime>
   </OperationRequest>
   <Items>
     <Request>
