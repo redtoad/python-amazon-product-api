@@ -5,22 +5,24 @@ from StringIO import StringIO
 import unittest
 import urllib2
 
+_here = os.path.abspath(os.path.dirname(__file__))
+
 # Preprend parent directory to PYTHONPATH to ensure that this amazonproduct
 # module can be imported and will take precedence over an existing one
 import sys
-sys.path.insert(0, '..')
+sys.path.insert(0, os.path.join(_here, '..'))
 
 from amazonproduct import API, ResultPaginator
 from amazonproduct import AWSError
 from amazonproduct import InvalidParameterValue, InvalidListType
 from amazonproduct import InvalidSearchIndex, InvalidResponseGroup
-from amazonproduct import InvalidParameterCombination
+from amazonproduct import InvalidParameterCombination 
 from amazonproduct import NoSimilarityForASIN
 from amazonproduct import NoExactMatchesFound, NotEnoughParameters
 
 #: Directory containing XML responses for API versions (one directory for each
 #: API version)
-XML_TEST_DIR = os.path.abspath(os.path.dirname(__file__))
+XML_TEST_DIR = _here
 
 #: Versions of Amazon API to be tested against 
 TESTABLE_API_VERSIONS = '2009-11-01 2009-10-01'.split()
@@ -265,18 +267,21 @@ class ResultPaginatorTestCase (XMLResponseTestCase):
     Check that all XML responses for pagination are parsed correctly.
     """
     
-    api_versions = ['2009-10-01']
-    
+    # FIXME This does not seem to work at the moment!
+    #api_versions = ['2009-10-01', '2009-11-01']
+
     def test_review_pagination(self):
-        # reviews for 
+        # reviews for "Harry Potter and the Philosopher's Stone"
+        ASIN = '0747532745'
+
         paginator = ResultPaginator('ReviewPage',
             '//aws:Items/aws:Request/aws:ItemLookupRequest/aws:ReviewPage',
             '//aws:Items/aws:Item/aws:CustomerReviews/aws:TotalReviewPages',
             '//aws:Items/aws:Item/aws:CustomerReviews/aws:TotalReviews', 
             limit=10)
-        
+
         for page, root in enumerate(paginator(self.api.item_lookup, 
-                        '0747532745', ResponseGroup='Reviews')):
+                        ASIN, ResponseGroup='Reviews')):
             
             total_reviews = root.Items.Item.CustomerReviews.TotalReviews.pyval
             review_pages = root.Items.Item.CustomerReviews.TotalReviewPages.pyval
@@ -285,12 +290,28 @@ class ResultPaginatorTestCase (XMLResponseTestCase):
             except AttributeError:
                 current_page = 1
             
-            self.assertEquals(total_reviews, 2458)
-            self.assertEquals(review_pages, 492)
+            self.assertEquals(total_reviews, 2465)
+            self.assertEquals(review_pages, 493)
             self.assertEquals(current_page, page+1)
             
-        self.assert_(page==9)
+        self.assertEquals(page, 9)
+        self.assertEquals(current_page, 10)
 
+    def test_pagination_works_for_missing_reviews(self):
+        # "Sherlock Holmes (limitierte Steelbook Edition) [Blu-ray]"
+        # had no reviews at time of writing
+        ASIN = 'B0039NM7Y2'
+
+        paginator = ResultPaginator('ReviewPage',
+            '//aws:Items/aws:Request/aws:ItemLookupRequest/aws:ReviewPage',
+            '//aws:Items/aws:Item/aws:CustomerReviews/aws:TotalReviewPages',
+            '//aws:Items/aws:Item/aws:CustomerReviews/aws:TotalReviews')
+
+        for page, root in enumerate(paginator(self.api.item_lookup, 
+                        ASIN, ResponseGroup='Reviews')):
+            self.assertFalse(hasattr(root.Items.Item, 'CustomerReviews'))
+
+        self.assertEquals(page, 0)
 
 class HelpTestCase (XMLResponseTestCase):
     
