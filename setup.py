@@ -18,7 +18,10 @@ setup(
     
     py_modules = ['amazonproduct'],
     install_requires=['lxml>=2.1.5'], # 'pycrypto' # for python2.4
-    
+
+    test_suite = 'nose.collector',
+    tests_require = 'nose',
+
     classifiers = [
         'Operating System :: OS Independent', 
         'Development Status :: 3 - Alpha', 

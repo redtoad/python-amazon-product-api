@@ -5,6 +5,11 @@ from StringIO import StringIO
 import unittest
 import urllib2
 
+# Preprend parent directory to PYTHONPATH to ensure that this amazonproduct
+# module can be imported and will take precedence over an existing one
+import sys
+sys.path.insert(0, '..')
+
 from amazonproduct import API, ResultPaginator
 from amazonproduct import AWSError
 from amazonproduct import InvalidParameterValue, InvalidListType
@@ -12,6 +17,14 @@ from amazonproduct import InvalidSearchIndex, InvalidResponseGroup
 from amazonproduct import InvalidParameterCombination
 from amazonproduct import NoSimilarityForASIN
 from amazonproduct import NoExactMatchesFound, NotEnoughParameters
+
+#: Directory containing XML responses for API versions (one directory for each
+#: API version)
+XML_TEST_DIR = os.path.abspath(os.path.dirname(__file__))
+
+#: Versions of Amazon API to be tested against 
+TESTABLE_API_VERSIONS = '2009-11-01 2009-10-01'.split()
+ALL = TESTABLE_API_VERSIONS
 
 def get_config_value(key, default=None):
     """
@@ -23,14 +36,10 @@ def get_config_value(key, default=None):
         return getattr(config, key)
     except (ImportError, AttributeError):
         return os.environ.get(key, default)
-        
+
 AWS_KEY = get_config_value('AWS_KEY', '')
 SECRET_KEY = get_config_value('SECRET_KEY', '')
 OVERWRITE_TESTS = get_config_value('OVERWRITE_TESTS', False)
-
-#: Versions of Amazon API to be tested against 
-TESTABLE_API_VERSIONS = '2009-11-01 2009-10-01'.split()
-ALL = TESTABLE_API_VERSIONS
 
 class CustomAPI (API):
     
@@ -121,7 +130,8 @@ class XMLResponseTestCase (unittest.TestCase):
         """
         self.api = CustomAPI(AWS_KEY, SECRET_KEY)
         self.api.VERSION = self.versions_to_test.pop(0)
-        self.api.local_file = self.get_local_response_file()
+        self.api.local_file = os.path.join(XML_TEST_DIR,
+                self.get_local_response_file())
         
     def get_local_response_file(self):
         """
