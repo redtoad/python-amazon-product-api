@@ -115,7 +115,7 @@ class XMLResponseTestCase (unittest.TestCase):
     def __init__(self, *args):
         unittest.TestCase.__init__(self, *args)
         self.versions_to_test = getattr(self, 'api_versions', 
-                                        TESTABLE_API_VERSIONS[:])
+                                        TESTABLE_API_VERSIONS)[:]
         
     def run(self, result=None):
         """
@@ -267,8 +267,7 @@ class ResultPaginatorTestCase (XMLResponseTestCase):
     Check that all XML responses for pagination are parsed correctly.
     """
     
-    # FIXME This does not seem to work at the moment!
-    #api_versions = ['2009-10-01', '2009-11-01']
+    api_versions = ['2009-10-01', '2009-11-01']
 
     def test_review_pagination(self):
         # reviews for "Harry Potter and the Philosopher's Stone"
