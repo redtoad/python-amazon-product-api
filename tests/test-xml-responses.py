@@ -7,7 +7,7 @@ import urllib2
 
 _here = os.path.abspath(os.path.dirname(__file__))
 
-# Preprend parent directory to PYTHONPATH to ensure that this amazonproduct
+# Prepend parent directory to PYTHONPATH to ensure that this amazonproduct
 # module can be imported and will take precedence over an existing one
 import sys
 sys.path.insert(0, os.path.join(_here, '..'))
@@ -220,7 +220,7 @@ class SimilarityLookupTestCase (XMLResponseTestCase):
         # 0451462009 Small Favor: A Novel of the Dresden Files 
         root = self.api.similarity_lookup('0451462009')
         
-        self.assert_(root.Items.Request.IsValid.pyval is True)
+        self.assertEquals(root.Items.Request.IsValid.text, 'True')
         self.assert_(len(root.Items.Item) > 0)
         
     def test_no_similar_items_for_two_asins(self):
@@ -329,9 +329,7 @@ class HelpTestCase (XMLResponseTestCase):
     """
     
     def test_fails_for_wrong_input(self):
-        """
-        Wrong help_type and about raise ValueErrors.
-        """
+        # Wrong help_type and about raise ValueErrors.
         self.assertRaises(ValueError, self.api.help, 'Help', 'Unknown')
         self.assertRaises(ValueError, self.api.help, 'Unknown', 'Operation')
         self.assertRaises(ValueError, self.api.help, 'Unknown', 'Unknown')
@@ -353,11 +351,9 @@ class HelpTestCase (XMLResponseTestCase):
             self.assertTrue(e.text in list)
         
     def test_help_operation(self):
-        """
-        Check API call ``Help`` for ``Operation`` ``Help``.
-        """
+        # Check API call ``Help`` for ``Operation`` ``Help``.
         root = self.api.help('Help', 'Operation')
-        self.assert_(root.Information.Request.IsValid.pyval is True)
+        self.assertEquals(root.Information.Request.IsValid.text, 'True')
         
         # check that all information is correct
         info = root.Information.OperationInformation
@@ -374,11 +370,9 @@ class HelpTestCase (XMLResponseTestCase):
                 'Request Help'.split())
         
     def test_help_responsegroup(self):
-        """
-        Check API call ``Help`` for ``ResponseGroup`` ``Help``.
-        """
+        # Check API call ``Help`` for ``ResponseGroup`` ``Help``.
         root = self.api.help('Help', 'ResponseGroup')
-        self.assert_(root.Information.Request.IsValid.pyval is True)
+        self.assertEquals(root.Information.Request.IsValid.text, 'True')
         
         # check that all information is correct
         info = root.Information.ResponseGroupInformation
@@ -425,7 +419,7 @@ class BrowseNodeLookupTestCase (XMLResponseTestCase):
         
     def test_books_browsenode(self):
         nodes = self.api.browse_node_lookup(self.BOOKS_ROOT_NODE).BrowseNodes
-        self.assert_(nodes.Request.IsValid.pyval is True)
+        self.assertEquals(nodes.Request.IsValid.text, 'True')
         self.assertEquals(nodes.BrowseNode.BrowseNodeId, self.BOOKS_ROOT_NODE)
         self.assertEquals(nodes.BrowseNode.IsCategoryRoot, 1)
         
