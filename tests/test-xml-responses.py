@@ -114,24 +114,25 @@ class XMLResponseTestCase (unittest.TestCase):
     
     def __init__(self, *args):
         unittest.TestCase.__init__(self, *args)
-        self.versions_to_test = getattr(self, 'api_versions', 
-                                        TESTABLE_API_VERSIONS)[:]
+        self._versions_to_test = getattr(self, 'api_versions', 
+                                         TESTABLE_API_VERSIONS)[:]
         
     def run(self, result=None):
         """
         Run the test once for each version to be tested against.
         """
-        while self.versions_to_test:
-            #~ print self.versions_to_test
+        while self._versions_to_test:
             unittest.TestCase.run(self, result)
         
     def setUp(self):
         """
         Method called to prepare the test fixture. This is called immediately 
-        before calling the test method.
+        before calling the test method. The API version for the current test
+        is stored in attribute ``current_api_version``.
         """
+        self.current_api_version = self._versions_to_test.pop(0)
         self.api = CustomAPI(AWS_KEY, SECRET_KEY)
-        self.api.VERSION = self.versions_to_test.pop(0)
+        self.api.VERSION = self.current_api_version
         self.api.local_file = os.path.join(XML_TEST_DIR,
                 self.get_local_response_file())
         
@@ -268,17 +269,24 @@ class ResultPaginatorTestCase (XMLResponseTestCase):
     """
     
     api_versions = ['2009-10-01', '2009-11-01']
-
+    
     def test_review_pagination(self):
         # reviews for "Harry Potter and the Philosopher's Stone"
         ASIN = '0747532745'
-
+        
+        # test values for different API versions
+        # version : (total_reviews, review_pages)
+        VALUES = {
+            '2009-10-01' : (2458, 492), 
+            '2009-11-01' : (2465, 493),
+        }
+        
         paginator = ResultPaginator('ReviewPage',
             '//aws:Items/aws:Request/aws:ItemLookupRequest/aws:ReviewPage',
             '//aws:Items/aws:Item/aws:CustomerReviews/aws:TotalReviewPages',
             '//aws:Items/aws:Item/aws:CustomerReviews/aws:TotalReviews', 
             limit=10)
-
+        
         for page, root in enumerate(paginator(self.api.item_lookup, 
                         ASIN, ResponseGroup='Reviews')):
             
@@ -289,8 +297,10 @@ class ResultPaginatorTestCase (XMLResponseTestCase):
             except AttributeError:
                 current_page = 1
             
-            self.assertEquals(total_reviews, 2465)
-            self.assertEquals(review_pages, 493)
+            (reviews, pages) = VALUES[self.current_api_version]
+            
+            self.assertEquals(total_reviews, reviews)
+            self.assertEquals(review_pages, pages)
             self.assertEquals(current_page, page+1)
             
         self.assertEquals(page, 9)
