@@ -1,8 +1,7 @@
 
-0.2.x (in development)
-----------------------
+0.2.3 (2010-03-20)
+------------------
 
-- Fixed #3: Support for API Version 2009-11-01
 - Tests run now for all API versions. Test cases can now be told which versions
   to use (class attribute ``api_versions`` set to i.e. ``['2009-10-01']``).
 - A custom AWS response processor can now be defined. For instance, here is one 
@@ -21,8 +20,16 @@
           print root.toprettyxml()
           # ...
       
-  Just Make sure it raises an ``AWSError`` with the appropriate error code and
-  message.
+- Fixed #3: Support for API Version 2009-11-01.
+- Fixed #4: When using a bad parameter combination, an ``InvalidParameterCombination`` exception is raised. 
+- Fixed #5: ``InvalidSearchIndex`` is raised when unknown ``SearchIndex`` is 
+  specified.
+- Fixed #7: Specifying API versions works now for more than just one test per 
+  test case.
+- The ``setup.py`` command has been empowered a bit with the following 
+  additional options: ``test``, ``build_sphinx``, ``upload_sphinx``.
+- ``ResultPaginator`` attributes ``_get_current_page_numer``, 
+  ``_get_total_results`` and ``_get_total_page_numer`` are now private.
 
 0.2.2 (2010-01-30)
 ------------------

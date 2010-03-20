@@ -70,8 +70,9 @@ Contents
    
    why
    basic-usage
-   pagination
    operations
+   pagination
+   use-your-own
    
    changes
    license
