@@ -682,16 +682,16 @@ class ResultPaginator (object):
             
             if self.nspace is None:
                 self.nspace = root.nsmap.get(None, '')
-        
-            current_page = self.get_current_page_numer(root)
-            total_results = self.get_total_results(root)
-            total_pages = self.get_total_page_numer(root)
+            
+            current_page = self._get_current_page_numer(root)
+            total_results = self._get_total_results(root)
+            total_pages = self._get_total_page_numer(root)
             
             yield root
             
             kwargs[self.counter] += 1
             
-    def get_total_page_numer(self, root):
+    def _get_total_page_numer(self, root):
         """
         Get total number of paginator pages.
         """
@@ -701,7 +701,7 @@ class ResultPaginator (object):
         except IndexError:
             return None
         
-    def get_current_page_numer(self, root):
+    def _get_current_page_numer(self, root):
         """
         Get number of current paginator page.
         """
@@ -711,7 +711,7 @@ class ResultPaginator (object):
         except IndexError:
             return None
     
-    def get_total_results(self, root):
+    def _get_total_results(self, root):
         """
         Get total number of results.
         """
