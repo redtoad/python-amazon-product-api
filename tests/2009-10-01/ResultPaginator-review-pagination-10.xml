@@ -3,19 +3,19 @@
     <HTTPHeaders>
       <Header Name="UserAgent" Value="Python-urllib/2.6"/>
     </HTTPHeaders>
-    <RequestId>2f45bcb8-a621-4f31-a7c5-7f463ae5bd60</RequestId>
+    <RequestId>250adcd1-0ca1-4ee1-b6aa-8baaf9d5a3f3</RequestId>
     <Arguments>
       <Argument Name="ReviewPage" Value="10"/>
       <Argument Name="Operation" Value="ItemLookup"/>
       <Argument Name="Service" Value="AWSECommerceService"/>
       <Argument Name="ItemId" Value="0747532745"/>
       <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="Timestamp" Value="2010-03-19T13:08:04Z"/>
+      <Argument Name="Timestamp" Value="2009-12-09T16:38:42Z"/>
       <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
       <Argument Name="ResponseGroup" Value="Reviews"/>
       <Argument Name="Version" Value="2009-10-01"/>
     </Arguments>
-    <RequestProcessingTime>0.0568680000000000</RequestProcessingTime>
+    <RequestProcessingTime>0.0527720000000000</RequestProcessingTime>
   </OperationRequest>
   <Items>
     <Request>
@@ -37,64 +37,80 @@
       <ASIN>0747532745</ASIN>
       <CustomerReviews>
         <AverageRating>5.0</AverageRating>
-        <TotalReviews>2465</TotalReviews>
-        <TotalReviewPages>493</TotalReviewPages>
+        <TotalReviews>2458</TotalReviews>
+        <TotalReviewPages>492</TotalReviewPages>
         <Review>
           <ASIN>0747532745</ASIN>
-          <Rating>5</Rating>
-          <HelpfulVotes>5</HelpfulVotes>
+          <Rating>3</Rating>
+          <HelpfulVotes>4</HelpfulVotes>
+          <CustomerId>A1ULX15KVGOR7V</CustomerId>
+          <Reviewer>
+            <CustomerId>A1ULX15KVGOR7V</CustomerId>
+            <Nickname>inga_haas</Nickname>
+          </Reviewer>
           <TotalVotes>7</TotalVotes>
-          <Date>2003-03-28</Date>
-          <Summary>spannend gelesen</Summary>
-          <Content>ich bin viel im Auto unterwegs und nutze die Zeit, um meine Englischkenntnisse aufzubessern. Ich war absolut begeistert von den Harry Potter-Kassetten, da sie wunderbar spannend gelesen sind. So habe ich mir die Zeit gespart, die B&#252;cher zu lesen.</Content>
-        </Review>
-        <Review>
-          <ASIN>0747532745</ASIN>
-          <Rating>1</Rating>
-          <HelpfulVotes>10</HelpfulVotes>
-          <TotalVotes>47</TotalVotes>
-          <Date>2003-03-14</Date>
-          <Summary>Harry Potter and the Chamber of Secrets</Summary>
-          <Content>Ich kenne die gelesenen Harry Potter-H&#246;rbucher sowohl vom Briten Stephen Fry als auch vom Amerikaner Jim Dale und ich kann jedem nur die amerikanische Version anraten: Eine tolle Stimme und extrem gut und packend vorgelesen. Die Versionen von Stephen Fry jedoch finde nicht nur ich furchtbar gelesen und daher kann ich jedem nur abraten diese langweilige britische Ausgabe zu erstehen.</Content>
+          <Date>2002-01-19</Date>
+          <Summary>Zauber in Englisch</Summary>
+          <Content>Endlich mal ein Buch, das man gem&#252;tlich in Englisch lesen kann, ohne st&#228;ndig das Dictionary zu w&#228;lzen. &lt;br&gt;Leichte, phantasievolle Lekt&#252;re, die im Erz&#228;hlstil allerdings doch stark auf Kinder abzielt. &lt;br&gt;Auch wenn ich mich beim Lesen gut am&#252;siert habe, so bin ich dem Harry Potter Fieber nicht ganz verfallen, da man einfach merkt, da&#223; das Buch urspr&#252;nglich f&#252;r Kinder gedacht war. F&#252;r erwachsene Leser fehlt doch ein bi&#223;chen mehr Anspruch.&lt;br&gt;Trotzdem ein Tip f&#252;r verregnete Sonntage, als Bettlekt&#252;re oder f&#252;r l&#228;ngere Zugfahrten.</Content>
         </Review>
         <Review>
           <ASIN>0747532745</ASIN>
           <Rating>5</Rating>
           <HelpfulVotes>1</HelpfulVotes>
-          <CustomerId>A27ZXQ04OI1XOA</CustomerId>
+          <CustomerId>A3EISWMAS3UNJJ</CustomerId>
           <Reviewer>
-            <CustomerId>A27ZXQ04OI1XOA</CustomerId>
-            <Name>Kate</Name>
-            <Location>Deutschland</Location>
+            <CustomerId>A3EISWMAS3UNJJ</CustomerId>
+            <Name>Die Leseratte33</Name>
+            <Location>Niederkassel</Location>
           </Reviewer>
-          <TotalVotes>1</TotalVotes>
-          <Date>2003-02-07</Date>
-          <Summary>Great!</Summary>
-          <Content>I have seen the movie version first, but reading the book was much better. I am not a big reader, but this book made me read every night, I am reading the second part right now. I can recomend it to anyone.</Content>
+          <TotalVotes>3</TotalVotes>
+          <Date>2002-01-13</Date>
+          <Summary>Sehr gutes Buch</Summary>
+          <Content>Kurz und knapp, dieses Buch ist in jedem Fall &#228;u&#223;erst lesenswert.&lt;br&gt;Die S&#228;tze sind recht kurz gehalten und leicht zu verstehen. Diesem Stil ist es zu verdanken , dass man das Buch recht schnell lesen kann. Vom Inhalt her ist es sehr lustig aufgemacht und man kommt &#246;fter ins Schmunzeln. Es ist ein Buch f&#252;r jung und alt, ein richtiger Generationenvereiniger!Ich w&#252;nsche jedem viel Spa&#223; mit dem Buch !</Content>
+        </Review>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>5</Rating>
+          <HelpfulVotes>2</HelpfulVotes>
+          <CustomerId>A2JSI6Y8EOGGK0</CustomerId>
+          <Reviewer>
+            <CustomerId>A2JSI6Y8EOGGK0</CustomerId>
+            <Nickname>acyyd</Nickname>
+          </Reviewer>
+          <TotalVotes>2</TotalVotes>
+          <Date>2001-12-05</Date>
+          <Summary>klasse</Summary>
+          <Content>Dieses Buch muss man gelesen haben, toll geschrieben, super spannend, noch besser als der Film. Rowling baut eine Atmosph&#228;re auf, die einen beim Lesen v&#246;llig fesselt. Man kann das Buch fast nicht mehr weg legen und f&#252;hlt sich, als w&#252;rde man daneben stehen, man kann fast Snapes atem spr&#252;ren.</Content>
+        </Review>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>5</Rating>
+          <HelpfulVotes>5</HelpfulVotes>
+          <CustomerId>A2WLKOTGJOTHI2</CustomerId>
+          <Reviewer>
+            <CustomerId>A2WLKOTGJOTHI2</CustomerId>
+            <Name>M. Bargmann</Name>
+            <Nickname>library mistress</Nickname>
+            <Location>Austria</Location>
+          </Reviewer>
+          <TotalVotes>6</TotalVotes>
+          <Date>2001-12-04</Date>
+          <Summary>Hervorragend</Summary>
+          <Content>Mir war der Harry Potter-Hype anfangs zuwider, aber ich dachte, als Bibliothekarin muss ich diese B&#252;cher einfach lesen. Und ich bin restlos begeistert. Nach der Lekt&#252;re des ersten und zweiten Bandes kann ich sagen: hier stimmt einfach alles - breites, durchaus anspruchsvolles Vokabular; originelle Namensgebung (da&#223; ein "Dudley Dursley" nur unsympathisch sein kann, wird jedem/r einleuchten); eine f&#252;r Klein und Gro&#223; spannende Geschichte; eine durchdachte Szenerie. Mit wievielen Personen diese Zauberwelt bev&#246;lkert wurde, ist ebenfalls bemerkenswert. Daher: eindeutig f&#252;nf Sterne!</Content>
         </Review>
         <Review>
           <ASIN>0747532745</ASIN>
           <Rating>5</Rating>
           <HelpfulVotes>0</HelpfulVotes>
-          <CustomerId>A2DVIXCV53M9GB</CustomerId>
+          <CustomerId>A2JSI6Y8EOGGK0</CustomerId>
           <Reviewer>
-            <CustomerId>A2DVIXCV53M9GB</CustomerId>
-            <Name>Psychic_Medium</Name>
-            <Location>Illinois</Location>
+            <CustomerId>A2JSI6Y8EOGGK0</CustomerId>
+            <Nickname>acyyd</Nickname>
           </Reviewer>
-          <TotalVotes>2</TotalVotes>
-          <Date>2003-01-13</Date>
-          <Summary>Affordable!</Summary>
-          <Content>I purchased three of these as gifts for my nieces, but I didn't have the chance to read Harry Potter and the Sorcerer's Stone (Book 1), yet.&lt;br&gt;It is recommended for the young at heart though.&lt;br&gt;Also recommending: Gold Heaven</Content>
-        </Review>
-        <Review>
-          <ASIN>0747532745</ASIN>
-          <Rating>5</Rating>
-          <HelpfulVotes>4</HelpfulVotes>
-          <TotalVotes>8</TotalVotes>
-          <Date>2002-12-29</Date>
-          <Summary>Hilfreich</Summary>
-          <Content>Eigentlich habe ich dieses Buch erst in deutsch gelesen. (Wurde mir geschenkt)&lt;br&gt;Doch dann hat mir meine Schwester geraten, das Buch auch in englisch zu lesen, damit ich meine Kenntnisse etwas aufbessern kann. &lt;br&gt;Immerhin ist es ja ein Kinderbuch!&lt;br&gt;Inzwischen habe ich alle Harry Potter - B&#228;nde mit einem Schmunzeln und &#228;ngstlich feuchten H&#228;nden gelesen und habe auch keine Scheu mehr vor Englischer Literatur. Es macht einfach Spa&#223; die Abenteuer hautnah mit Harry mitzuerleben.</Content>
+          <TotalVotes>6</TotalVotes>
+          <Date>2001-11-29</Date>
+          <Summary>Bin sehr gespannt darauf</Summary>
+          <Content>Lange Zeit hatte ich mit Harry Potter eigentlich nichts zu tun, aber nachdem ich jetzt zweimal den Film im Kino gesehen habe, kann ich es kaum erwarten, das wohl noch bessere buch zu lesen.</Content>
         </Review>
       </CustomerReviews>
     </Item>
