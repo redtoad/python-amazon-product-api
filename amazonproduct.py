@@ -39,6 +39,9 @@ the license in the LICENSE file.
 
 """
 
+__version__ = '0.2.3'
+__docformat__ = "restructuredtext en"
+
 from base64 import b64encode
 from datetime import datetime, timedelta
 
@@ -54,8 +57,6 @@ import socket
 from time import strftime, gmtime
 from urlparse import urlsplit
 from urllib2 import quote, urlopen, HTTPError
-
-__docformat__ = "restructuredtext en"
 
 LOCALES = {
     'ca' : 'http://ecs.amazonaws.ca/onca/xml', 

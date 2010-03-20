@@ -1,12 +1,14 @@
 from setuptools import setup
 import os
 
+import amazonproduct
+
 def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
 setup(
     name = 'python-amazon-product-api',
-    version = '0.2.2',
+    version = amazonproduct.__version__,
     author = 'Sebastian Rahlf',
     author_email = 'basti AT redtoad DOT de',
     url="http://bitbucket.org/basti/python-amazon-product-api/downloads/",
