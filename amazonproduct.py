@@ -55,8 +55,10 @@ from lxml import objectify
 import re
 import socket
 from time import strftime, gmtime
-from urlparse import urlsplit
-from urllib2 import quote, urlopen, HTTPError
+from urllib.parse import urlsplit
+from urllib.parse import quote
+from urllib.request import urlopen
+from urllib.error import HTTPError
 
 LOCALES = {
     'ca' : 'http://ecs.amazonaws.ca/onca/xml', 
@@ -229,7 +231,7 @@ class API (object):
         socket.setdefaulttimeout(self.TIMEOUT)
         
         self.last_call = datetime(1970, 1, 1)
-        self.throttle = timedelta(seconds=1)/self.REQUESTS_PER_SECOND
+        self.throttle = timedelta(seconds=1) // self.REQUESTS_PER_SECOND
         
         self.response_processor = processor
         
@@ -240,7 +242,7 @@ class API (object):
         http://blog.umlungu.co.uk/blog/2009/jul/12/pyaws-adding-request-authentication/)
         """
         # remove empty (=None) parameters
-        for key, val in qargs.items():
+        for key, val in list(qargs.items()):
             if val is None:
                 del qargs[key]
         
@@ -265,10 +267,11 @@ class API (object):
         msg = 'GET'
         msg += '\n' + self.host
         msg += '\n' + self.path
-        msg += '\n' + args.encode('utf-8')
+        msg += '\n' + args #.encode('utf-8')
         
         signature = quote(
-            b64encode(hmac.new(self.secret_key, msg, sha256).digest()))
+            b64encode(hmac.new(self.secret_key.encode('utf-8'), 
+                msg.encode('utf-8'), sha256).digest()))
         
         url = '%s://%s%s?%s&Signature=%s' % (self.scheme, self.host, self.path, 
                                              args, signature)
@@ -286,7 +289,7 @@ class API (object):
         
         try:
             return urlopen(url)
-        except HTTPError, e:
+        except HTTPError as e:
             if e.code == 503:
                 raise TooManyRequests
             # otherwise re-raise
@@ -347,7 +350,7 @@ class API (object):
             url = self._build_url(Operation='ItemLookup', ItemId=id, **params)
             fp = self._call(url)
             return self._parse(fp)
-        except AWSError, e:
+        except AWSError as e:
             
             if (e.code=='AWS.InvalidEnumeratedParameter' 
             and INVALID_VALUE_REG.search(e.msg).group('parameter')=='SearchIndex'):
@@ -396,7 +399,7 @@ class API (object):
                                   SearchIndex=search_index, **params)
             fp = self._call(url)
             return self._parse(fp)
-        except AWSError, e:
+        except AWSError as e:
             
             if (e.code=='AWS.InvalidEnumeratedParameter' 
             and INVALID_VALUE_REG.search(e.msg)):
@@ -432,7 +435,7 @@ class API (object):
                                   ItemId=item_id, **params)
             fp = self._call(url)
             return self._parse(fp)
-        except AWSError, e:
+        except AWSError as e:
             
             if e.code=='AWS.ECommerceService.NoSimilarities':
                 asin = NOSIMILARITIES_REG.search(e.msg).group('ASIN')
@@ -476,7 +479,7 @@ class API (object):
                                   ListType=list_type, **params)
             fp = self._call(url)
             return self._parse(fp)
-        except AWSError, e:
+        except AWSError as e:
             
             if (e.code=='AWS.InvalidEnumeratedParameter' 
             and INVALID_VALUE_REG.search(e.msg).group('parameter')=='ListType'):
@@ -517,7 +520,7 @@ class API (object):
                                   ListType=list_type, **params)
             fp = self._call(url)
             return self._parse(fp)
-        except AWSError, e:
+        except AWSError as e:
             
             if (e.code=='AWS.InvalidEnumeratedParameter' 
             and INVALID_VALUE_REG.search(e.msg).group('parameter')=='ListType'):
@@ -565,7 +568,7 @@ class API (object):
                     HelpType=help_type, ResponseGroup=response_group, **params)
             fp = self._call(url)
             return self._parse(fp)
-        except AWSError, e:
+        except AWSError as e:
             
             m = INVALID_VALUE_REG.search(e.msg)
             if e.code=='AWS.InvalidEnumeratedParameter': 
@@ -619,7 +622,7 @@ class API (object):
                     **params)
             fp = self._call(url)
             return self._parse(fp)
-        except AWSError, e:
+        except AWSError as e:
             
             if e.code=='AWS.InvalidResponseGroup': 
                 raise InvalidResponseGroup(params.get('ResponseGroup'))
@@ -700,7 +703,7 @@ class ResultPaginator (object):
             return root.xpath(self.total_pages_xpath, 
                           namespaces={'aws' : self.nspace})[0].pyval
         except IndexError:
-            return None
+            return 0
         
     def _get_current_page_numer(self, root):
         """
@@ -710,7 +713,7 @@ class ResultPaginator (object):
             return root.xpath(self.current_page_xpath, 
                           namespaces={'aws' : self.nspace})[0].pyval
         except IndexError:
-            return None
+            return 0
     
     def _get_total_results(self, root):
         """
@@ -720,5 +723,5 @@ class ResultPaginator (object):
             return root.xpath(self.total_results_xpath, 
                           namespaces={'aws' : self.nspace})
         except IndexError:
-            return None
+            return 0
 

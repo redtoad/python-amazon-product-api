@@ -8,7 +8,7 @@ Downloads cover images from Amazon.
 from optparse import OptionParser
 import os.path
 import sys
-import urllib2
+import urllib.request, urllib.error, urllib.parse
 
 from config import AWS_KEY, SECRET_KEY
 from amazonproduct import API
@@ -23,7 +23,7 @@ def fetch_image(url, dest_path):
     Downloads image and saves it to ``dest_path``.
     """
     fp = open(dest_path, 'wb')
-    fp.write(urllib2.urlopen(url).read())
+    fp.write(urllib.request.urlopen(url).read())
     fp.close()
 
 if __name__ == '__main__':
@@ -53,7 +53,7 @@ if __name__ == '__main__':
         
         id = id.replace('-', '')
         
-        if options.verbose: print 'Fetching info for %s...' % id
+        if options.verbose: print('Fetching info for %s...' % id)
         root = api.item_lookup(id, **params)
         
         #~ from lxml import etree
@@ -62,6 +62,6 @@ if __name__ == '__main__':
         url = root.Items.Item.LargeImage.URL.pyval
         name, ext = os.path.splitext(url)
         path = '%s%s' % (id, ext)
-        if options.verbose: print 'Downloading %s to %s ...' % (url, path)
+        if options.verbose: print('Downloading %s to %s ...' % (url, path))
         fetch_image(url, path)
         

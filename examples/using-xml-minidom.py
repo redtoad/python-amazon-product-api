@@ -32,7 +32,7 @@ if __name__ == '__main__':
               processor=minidom_response_parser)
     root = api.item_lookup('0718155157')
     
-    print root.toprettyxml()
+    print(root.toprettyxml())
     
     # ...
     # now do something with it! 

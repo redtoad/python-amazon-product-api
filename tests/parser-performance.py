@@ -62,9 +62,9 @@ if __name__ == '__main__':
         for file in files
         if os.path.splitext(file)[1].lower() == '.xml']
 
-    print "Parsing %i XML files..." % (len(xml_files)*RUNS, )
-    for label, parser in custom_parsers.items():
-        print label, 
+    print("Parsing %i XML files..." % (len(xml_files)*RUNS, ))
+    for label, parser in list(custom_parsers.items()):
+        print(label, end=' ') 
         start = time.clock()
         api = API(AWS_KEY, SECRET_KEY, processor=parser)
         for i in range(RUNS):
@@ -74,4 +74,4 @@ if __name__ == '__main__':
                 except AWSError:
                     pass
         stop = time.clock()
-        print stop - start
+        print(stop - start)
