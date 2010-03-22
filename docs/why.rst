@@ -16,6 +16,11 @@ There are a number of alternatives available:
   This module seems to be the most widely used. It hasn't been updated however
   in quite some time. A fork of this project is maintained 
   `here <http://bitbucket.org/johnpaulett/pyaws>`_.
+
+- In October 2008 David Jane started `pyecs <http://code.google.com/p/pyecs/>`_
+  after stumbling accross pyamazon. He decided that "a new, more class and
+  iterator-oriented approach would be better." However, it only supports a
+  subset. Last commit was in November 2008. 
   
 - There is a `clever hack <http://jjinux.blogspot.com/2009/06/python-amazon-product-advertising-api.html>`_
   using `boto <http://code.google.com/p/boto/>`_ to create the URL, although
@@ -24,6 +29,7 @@ There are a number of alternatives available:
 
 So why write your own then? First and foremost, since August 15, 2009 all calls
 to Amazon's Product Advertising API must be authenticated using request 
-signatures . The existing libraries, at least the ones I found, did not support
-this out of the box at the time.
+signatures. The existing libraries, at least the ones I found, did not support
+this out of the box at the time. And yes... writing something from scratch is
+always more appealing.
 
