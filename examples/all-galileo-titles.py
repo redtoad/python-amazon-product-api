@@ -27,7 +27,7 @@ if __name__ == '__main__':
         except AttributeError:
             current_page = 1
             
-        print 'page %d of %d' % (current_page, total_pages)
+        print('page %d of %d' % (current_page, total_pages))
         
         #~ from lxml import etree
         #~ print etree.tostring(root, pretty_print=True)
@@ -37,7 +37,7 @@ if __name__ == '__main__':
                              namespaces={'aws' : nspace})
         
         for book in books:
-            print book.ASIN,
-            print unicode(book.ItemAttributes.Author), ':', 
-            print unicode(book.ItemAttributes.Title)
+            print(book.ASIN, end=' ')
+            print(str(book.ItemAttributes.Author), ':', end=' ') 
+            print(str(book.ItemAttributes.Title))
             

@@ -1,9 +1,9 @@
 from lxml import etree
 import os, os.path
 import re
-from StringIO import StringIO
+from io import StringIO
 import unittest
-import urllib2
+import urllib.request, urllib.error, urllib.parse
 
 _here = os.path.abspath(os.path.dirname(__file__))
 
@@ -180,7 +180,7 @@ class ItemLookupTestCase (XMLResponseTestCase):
         # Harry Potter and the Philosopher's Stone
         try:
             self.api.item_lookup('9780747532743', IdType='ISBN')
-        except AWSError, e:
+        except AWSError as e:
             self.assert_(e.code == 'AWS.MissingParameterValueCombination')
         
         
@@ -194,7 +194,7 @@ class ItemSearchTestCase (XMLResponseTestCase):
         try:
             self.assertRaises(InvalidResponseGroup, 
                               self.api.item_search, 'Books')
-        except AWSError, e:
+        except AWSError as e:
             self.assert_(e.code == 'AWS.MinimumParameterRequirement')
         
     def test_invalid_response_group(self):
@@ -382,7 +382,7 @@ class HelpTestCase (XMLResponseTestCase):
         self.assertEquals(info.ValidOperations.Operation.pyval, 'Help')
         
         # check that all required elements are contained in XML
-        elements = map(lambda x: x.strip(), '''Arguments/Argument/Name
+        elements = [x.strip() for x in '''Arguments/Argument/Name
         Arguments/Argument/Value
         Errors/Error/Code
         Errors/Error/Message
@@ -399,7 +399,7 @@ class HelpTestCase (XMLResponseTestCase):
         ResponseGroupInformation/CreationDate
         ResponseGroupInformation/Elements/Element
         ResponseGroupInformation/Name
-        ResponseGroupInformation/ValidOperations/Operation'''.splitlines())
+        ResponseGroupInformation/ValidOperations/Operation'''.splitlines()]
         self._check_elements(info, elements)
         
         

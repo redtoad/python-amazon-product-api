@@ -21,7 +21,7 @@ if __name__ == '__main__':
                          namespaces={'aws' : nspace})
     
     for book in books:
-        print 'ASIN %-10s' % book.ASIN,
-        print unicode(book.ItemAttributes.Author), ':', 
-        print unicode(book.ItemAttributes.Title)
+        print('ASIN %-10s' % book.ASIN, end=' ')
+        print(str(book.ItemAttributes.Author), ':', end=' ') 
+        print(str(book.ItemAttributes.Title))
         

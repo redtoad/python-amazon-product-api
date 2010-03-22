@@ -14,8 +14,8 @@ from amazonproduct import ResultPaginator
 if __name__ == '__main__':
     
     if len(sys.argv[1:]) == 0:
-        print __doc__
-        print 'Usage: %s ISBN' % sys.argv[0]
+        print(__doc__)
+        print('Usage: %s ISBN' % sys.argv[0])
         sys.exit(1)
     
     for isbn in sys.argv[1:]:
@@ -39,13 +39,13 @@ if __name__ == '__main__':
             except AttributeError:
                 current_page = 1
                 
-            print '%d reviews' % total_reviews,
-            print 'requested page %d of %d' % (current_page, review_pages)
+            print('%d reviews' % total_reviews, end=' ')
+            print('requested page %d of %d' % (current_page, review_pages))
             
             nspace = root.nsmap.get(None, '')
             reviews = root.xpath('//aws:CustomerReviews/aws:Review', 
                                 namespaces={'aws' : nspace})
             for review in reviews:
-                print '%s %-5s %s: %s' % (review.Date, '*' * review.Rating.pyval,  
-                                          unicode(review.Reviewer.Name),
-                                          unicode(review.Summary))
+                print('%s %-5s %s: %s' % (review.Date, '*' * review.Rating.pyval,  
+                                          str(review.Reviewer.Name),
+                                          str(review.Summary)))

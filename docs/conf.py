@@ -42,7 +42,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'python-amazon-product-api'
+project = 'python-amazon-product-api'
 copyright = '%s, Sebastian Rahlf' % '-'.join(set(['2009', time.strftime('%Y')]))
 
 # The version info for the project you're documenting, acts as replacement for
@@ -170,8 +170,8 @@ htmlhelp_basename = 'python-amazondoc'
 # (source start file, target name, title, author, document class [howto/manual]).
 latex_documents = [
   ('index', 'python-amazon-product-api.tex', 
-   ur'python-amazon-product-api Documentation',
-   ur'Sebastian Rahlf', 'manual'),
+   r'python-amazon-product-api Documentation',
+   r'Sebastian Rahlf', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of

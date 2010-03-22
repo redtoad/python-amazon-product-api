@@ -241,7 +241,7 @@ class BrowseNodeExplorer (gtk.Window):
         # populate with root nodes
         # but avoid duplicated node ids
         node_ids = set(NODE_IDS[self.locale].values())
-        for name, id in NODE_IDS[self.locale].items():
+        for name, id in list(NODE_IDS[self.locale].items()):
             if id in node_ids:
                 self.treestore.append(None, [id, name])
                 node_ids.remove(id)
@@ -299,7 +299,7 @@ class BrowseNodeExplorer (gtk.Window):
         except AttributeError:
             children = {}
         
-        for child_id, child_name in children.items():
+        for child_id, child_name in list(children.items()):
             self.treestore.append(row.iter, [child_id, child_name])
             
         # expand nodes of just added

@@ -77,17 +77,17 @@ def get_wishlist_items(list_id, **params):
 if __name__ == '__main__':
     
     for list in get_wishlists(FirstName='John', LastName='Doe'):
-        print list.customer
-        print '%(name)r with %(total_items)i items' % list.__dict__
-        print 'created: %(created)s last modified: %(last_modified)s' % list.__dict__ 
-        print list.url
-        print
+        print(list.customer)
+        print('%(name)r with %(total_items)i items' % list.__dict__)
+        print('created: %(created)s last modified: %(last_modified)s' % list.__dict__) 
+        print(list.url)
+        print()
         
         for item in get_wishlist_items(list.id):
             
             number = item.number_desired - item.number_received
-            print '%3ix %s (%s)' % (number, item.title, item.asin)
+            print('%3ix %s (%s)' % (number, item.title, item.asin))
             
-        print
+        print()
     
  
