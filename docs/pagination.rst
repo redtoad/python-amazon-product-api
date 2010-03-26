@@ -5,6 +5,7 @@ Pagination
 ----------
 
 .. index:: pagination
+   single: results; pagination
 
 The Amazon Product Advertising API paginates some its results. In order to get
 all reviews of a product, for instance, subsequent calls have to be made to the
