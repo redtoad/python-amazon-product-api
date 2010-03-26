@@ -1,12 +1,4 @@
 
-======================================================
-Python Bindings for the Amazon Product Advertising API
-======================================================
-
-.. image:: static/banner.png
-    :width: 633
-    :height: 122
-
 Amazon's Product Advertising API provides programmatic access to Amazon's
 product selection and discovery functionality. it has search and look up 
 capabilities, provides information on products and other features such as 

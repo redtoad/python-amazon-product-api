@@ -1,6 +1,8 @@
 Why yet another implementation?
 ===============================
 
+.. index:: pyaws, pyamazon, boto, pyecs
+
 There are a number of alternatives available:
 
 - `PyAmazon <http://www.josephson.org/projects/pyamazon/>`_, originally written
