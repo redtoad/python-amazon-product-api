@@ -34,12 +34,12 @@ class APICallsTestCase (unittest.TestCase):
     
     def setUp(self):
         self.api = API(self.ACCESS_KEY, self.SECRET_KEY)
-        self.server = TestServer()
-        self.api.scheme = 'http'
+        self.server = TestServer(port=8002)
         self.api.host = '%s:%i' % self.server.server_address
+        self.server.start()
         
-        Thread(target=self.server.serve_forever).start()
-        print 'Test server running at http://%s:%i' % self.server.server_address
+    def tearDown(self):
+        self.server.stop()
         
     def test_fails_for_too_many_requests(self):
         self.server.serve_file(code=503)
