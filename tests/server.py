@@ -14,20 +14,22 @@ class TestServer (HTTPServer):
     Small test server which can be taught which files to serve with which 
     response code. Try the following snippet for testing API calls::
         
-        import threading
-        server = TestServer()
-        threading.Thread(target=server.serve_forever).start()
+        server = TestServer(port=8080)
+        server.start()
         print 'Test server running at http://%s:%i' % server.server_address
         server.serve_file(code=503)
         # any call to http://localhost:8080 will gat a 503 response.
+        # ...
         
     """
     
-    def __init__(self, server_address=(DEFAULT_ADDRESS, DEFAULT_PORT)):
-        HTTPServer.__init__(self, server_address, RequestHandler)
-        
-        self.file, self.code = (None, 500)
-        self.stopped = False
+    #: timeout for request handling (in seconds?)
+    timeout = 1
+    
+    def __init__(self, host=DEFAULT_ADDRESS, port=DEFAULT_PORT):
+        HTTPServer.__init__(self, (host, port), RequestHandler)
+        self.file, self.code = (None, 204) # HTTP 204: No Content
+        self._thread = None
         
     def serve_file(self, path=None, code=200):
         """
@@ -35,6 +37,33 @@ class TestServer (HTTPServer):
         request.
         """
         self.file, self.code = (path, code)
+        
+    def serve_forever (self):
+        """
+        Handles one request at a time until stopped.
+        """
+        self._running = True
+        while self._running:
+            self.handle_request()
+        
+    def start(self):
+        """
+        Starts test server in own thread.
+        """
+        try:
+            import threading
+        except ImportError:
+            self.fail("This test needs threading support!")
+            
+        self._thread = threading.Thread(target=self.serve_forever)
+        self._thread.start()
+        
+    def stop(self):
+        """
+        Stops test server.
+        """
+        self._running = False
+        self._thread.join()
 
 class RequestHandler(BaseHTTPRequestHandler):
     
@@ -57,10 +86,19 @@ class RequestHandler(BaseHTTPRequestHandler):
             
         return
 
+
 if __name__ == '__main__':
-    server = TestServer()
+    server = TestServer(port=8001)
+    server.start()
+    
     print 'Test server is running at http://%s:%i' % (server.server_address)
-    print 'Use <Ctrl-C> to stop'
-    server.serve_file('./2009-10-01/Help-fails-for-wrong-input.xml')
-    server.serve_forever()
+    print 'Type <Ctrl-C> to stop'
+    server.serve_file('./2009-10-01/Help-fails-for-wrong-input.xml', 302)
+    
+    try:
+        while True: 
+            pass
+    except KeyboardInterrupt:
+        print '\rstopping...'
+    server.stop()
     
