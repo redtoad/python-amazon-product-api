@@ -1,13 +1,9 @@
 
 from server import TestServer
-from threading import Thread
 import unittest
 
-# Preprend parent directory to PYTHONPATH to ensure that this amazonproduct
-# module can be imported and will take precedence over an existing one
-import os.path, sys
-_here = os.path.abspath(os.path.dirname(__file__))
-sys.path.insert(0, os.path.join(_here, '..'))
+# import base first because sys.path is changed in order to find amazonproduct!
+import base
 
 from amazonproduct import API
 from amazonproduct import UnknownLocale, TooManyRequests
