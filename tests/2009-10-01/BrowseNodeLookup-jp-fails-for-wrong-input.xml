@@ -1,0 +1,32 @@
+<BrowseNodeLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2009-10-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+    </HTTPHeaders>
+    <RequestId>00ZJPF49VF2KF51J4Z43</RequestId>
+    <Arguments>
+      <Argument Name="Timestamp" Value="2010-04-03T12:41:05Z"/>
+      <Argument Name="Version" Value="2009-10-01"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Operation" Value="BrowseNodeLookup"/>
+      <Argument Name="BrowseNodeId" Value="???"/>
+    </Arguments>
+    <RequestProcessingTime>0.0135831832885742</RequestProcessingTime>
+  </OperationRequest>
+  <BrowseNodes>
+    <Request>
+      <IsValid>True</IsValid>
+      <BrowseNodeLookupRequest>
+        <BrowseNodeId>???</BrowseNodeId>
+      </BrowseNodeLookupRequest>
+      <Errors>
+        <Error>
+          <Code>AWS.InvalidParameterValue</Code>
+          <Message>???&#12399;&#12289;BrowseNodeId&#12398;&#20516;&#12392;&#12375;&#12390;&#28961;&#21177;&#12391;&#12377;&#12290;&#20516;&#12434;&#22793;&#26356;&#12375;&#12390;&#12363;&#12425;&#12289;&#20877;&#24230;&#12522;&#12463;&#12456;&#12473;&#12488;&#12434;&#23455;&#34892;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290;</Message>
+        </Error>
+      </Errors>
+    </Request>
+  </BrowseNodes>
+</BrowseNodeLookupResponse>

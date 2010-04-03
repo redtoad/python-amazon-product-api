@@ -1,18 +1,8 @@
-from lxml import etree
-import os, os.path
-import re
-from StringIO import StringIO
-import unittest
-import urllib2
 
-_here = os.path.abspath(os.path.dirname(__file__))
+# import base first because sys.path is changed in order to find amazonproduct!
+from base import XMLResponseTestCase, XMLResponseTestLoader
 
-# Prepend parent directory to PYTHONPATH to ensure that this amazonproduct
-# module can be imported and will take precedence over an existing one
-import sys
-sys.path.insert(0, os.path.join(_here, '..'))
-
-from amazonproduct import API, ResultPaginator
+from amazonproduct import API, ResultPaginator, LOCALES
 from amazonproduct import AWSError
 from amazonproduct import InvalidParameterValue, InvalidListType
 from amazonproduct import InvalidSearchIndex, InvalidResponseGroup
@@ -20,142 +10,14 @@ from amazonproduct import InvalidParameterCombination
 from amazonproduct import NoSimilarityForASIN
 from amazonproduct import NoExactMatchesFound, NotEnoughParameters
 
-#: Directory containing XML responses for API versions (one directory for each
-#: API version)
-XML_TEST_DIR = _here
-
-#: Versions of Amazon API to be tested against 
-TESTABLE_API_VERSIONS = '2009-11-01 2009-10-01'.split()
-ALL = TESTABLE_API_VERSIONS
-
-def get_config_value(key, default=None):
-    """
-    Loads value from config.py or from environment variable or return default
-    (in that order).
-    """
-    try:
-        config = __import__('config')
-        return getattr(config, key)
-    except (ImportError, AttributeError):
-        return os.environ.get(key, default)
-
-AWS_KEY = get_config_value('AWS_KEY', '')
-SECRET_KEY = get_config_value('SECRET_KEY', '')
-OVERWRITE_TESTS = get_config_value('OVERWRITE_TESTS', False)
-
-class CustomAPI (API):
-    
-    """
-    Uses stored XML responses from local files (or retrieves them from Amazon 
-    if they are not present yet). The number of calls via a particular API 
-    instance is tracked and local files are named accordingly.
-    """
-    
-    def __init__(self, *args, **kwargs):
-        super(CustomAPI, self).__init__(*args, **kwargs)
-        self.calls = 0
-    
-    def _call(self, url):
-        """
-        Uses XML response from (or stores in) local file.
-        """
-        # subsequent calls of this API instance
-        # will be stored in different files
-        self.calls += 1
-        path = self.local_file
-        if self.calls > 1:
-            head, tail = os.path.splitext(self.local_file)
-            path = head + '-%i' % self.calls + tail
-        
-        if not os.path.exists(path) or OVERWRITE_TESTS:
-            tree = etree.parse(API._call(self, url))
-            root = tree.getroot()
-            
-            # overwrite sensible data
-            nspace = root.nsmap.get(None, '')
-            for arg in root.xpath('//aws:Arguments/aws:Argument',
-                                  namespaces={'aws' : nspace}):
-                if arg.get('Name') in 'AWSAccessKeyId Signature':
-                    arg.set('Value', 'X'*15)
-                    
-            xml = etree.tostring(root, pretty_print=True)
-            xml = xml.replace(AWS_KEY, 'X'*15)
-            xml = xml.replace(SECRET_KEY, 'X'*15)
-            
-            local_dir = os.path.dirname(path)
-            if not os.path.exists(local_dir):
-                #print 'creating %s...' % local_dir
-                os.mkdir(local_dir)
-                
-            fp = open(path, 'wb')
-            #print 'storing response in %s...' % self.local_file 
-            fp.write(xml)
-            fp.close()
-            return StringIO(xml)
-            
-        return open(path, 'rb')
-
-
-class XMLResponseTestCase (unittest.TestCase):
-    
-    """
-    Test case which uses local XML files rather than making HTTP calls.
-    
-    You can specify which API versions this test case should be run against by
-    providing a class attribute ``api_versions`` with a list of your choices.
-    For all versions, set it to ``ALL`` or leave blank. Example::
-        
-        class MySpecialTest (XMLResponseTestCase):
-            api_versions = ['2009-10-01']
-            def test_something(self):
-                ...
-                
-    """
-    
-    def __init__(self, *args):
-        unittest.TestCase.__init__(self, *args)
-        self._versions_to_test = getattr(self, 'api_versions', 
-                                         TESTABLE_API_VERSIONS)[:]
-        
-    def run(self, result=None):
-        """
-        Run the test once for each version to be tested against.
-        """
-        while self._versions_to_test:
-            unittest.TestCase.run(self, result)
-        
-    def setUp(self):
-        """
-        Method called to prepare the test fixture. This is called immediately 
-        before calling the test method. The API version for the current test
-        is stored in attribute ``current_api_version``.
-        """
-        self.current_api_version = self._versions_to_test.pop(0)
-        self.api = CustomAPI(AWS_KEY, SECRET_KEY)
-        self.api.VERSION = self.current_api_version
-        self.api.local_file = os.path.join(XML_TEST_DIR,
-                self.get_local_response_file())
-        
-    def get_local_response_file(self):
-        """
-        Constructs name for local XML file based on API version, TestCase and 
-        test method. ``Test``, ``TestCase`` and ``test`` is omitted from names.
-        For instance: ``ItemLookupTestCase.test_invalid_item_id`` will have an
-        XML response in file ``ItemLookup-invalid-item-id``.
-        """
-        version = self.api.VERSION
-        klass = re.search(r'(\w+?)Test(Case)?', self.__class__.__name__).group(1)
-        method = re.search(r'test_?(\w+)', self._testMethodName).group(1)
-        method = method.replace('_', '-')
-        return '%s/%s-%s.xml' % (version, klass, method)
-    
-
 class ItemLookupTestCase (XMLResponseTestCase):
 
     """
     Check that all XML responses for ItemLookup are parsed correctly.
     """
      
+    locales = ['de']
+    
     def test_invalid_item_id(self):
         self.assertRaises(InvalidParameterValue, self.api.item_lookup, '1234567890123')
         
@@ -190,6 +52,8 @@ class ItemSearchTestCase (XMLResponseTestCase):
     Check that all XML responses for ItemSearch are parsed correctly.
     """
     
+    locales = ['de']
+    
     def test_no_parameters(self):
         try:
             self.assertRaises(InvalidResponseGroup, 
@@ -216,6 +80,8 @@ class SimilarityLookupTestCase (XMLResponseTestCase):
     Check that all XML responses for SimilarityLookup are parsed correctly.
     """
     
+    locales = ['de']
+    
     def test_similar_items(self):
         # 0451462009 Small Favor: A Novel of the Dresden Files 
         root = self.api.similarity_lookup('0451462009')
@@ -236,6 +102,8 @@ class ListLookupTestCase (XMLResponseTestCase):
     Check that all XML responses for ListLookup are parsed correctly.
     """
     
+    locales = ['de']
+    
     def test_invalid_list_id(self):
         self.assertRaises(InvalidParameterValue, self.api.list_lookup, '???', 'WishList')
         
@@ -250,6 +118,8 @@ class ListSearchTestCase (XMLResponseTestCase):
     Check that all XML responses for ListSearch are parsed correctly.
     """
      
+    locales = ['de']
+    
     def test_fails_for_wrong_list_type(self):
         self.assertRaises(InvalidListType, self.api.list_search, '???')
         
@@ -269,6 +139,7 @@ class ResultPaginatorTestCase (XMLResponseTestCase):
     """
     
     api_versions = ['2009-10-01', '2009-11-01']
+    locales = ['de']
     
     def test_review_pagination(self):
         # reviews for "Harry Potter and the Philosopher's Stone"
@@ -327,6 +198,8 @@ class HelpTestCase (XMLResponseTestCase):
     """
     Check that all XML responses for Help are parsed correctly.
     """
+    
+    locales = ['de']
     
     def test_fails_for_wrong_input(self):
         # Wrong help_type and about raise ValueErrors.
@@ -410,28 +283,65 @@ class BrowseNodeLookupTestCase (XMLResponseTestCase):
     """
     
     #:  BrowseNodeId for 'Books'
-    BOOKS_ROOT_NODE = 541686
+    BOOKS_ROOT_NODE = {
+        'ca' : 927726, 
+        'de' : 541686, 
+        'fr' : 468256, 
+        'jp' : 465610, 
+        'uk' : 1025612, 
+        'us' : 1000, 
+    }
+    
+    CHILDREN = {
+        'ca' : [933484, 13901671, 934986, 935522, 4142731, 935948, 13932641, 
+                939082, 940804, 387057011, 941378, 942318, 942402, 927728, 
+                943356, 943958, 927730, 927790, 948300, 948808, 927734, 950152, 
+                950640, 950756, 952366, 953420, 955190, 956280, 957368, 959466, 
+                959978, 960696, 680096011], 
+        'de' : [4185461, 117, 187254, 403434, 120, 287621, 124, 11063821,
+                340583031, 288100, 548400, 122, 13690631, 118310011, 280652,
+                189528, 287480, 403432, 1199902, 121, 143, 536302, 298002,
+                340513031, 142, 298338, 188795], 
+        'fr' : [13921201, 463892, 360051011, 257111011, 306966011, 14122841, 401466011, 401465011, 310883011, 735796, 310884011, 301145, 3498561, 381592011, 3023891, 236451011, 401467011, 13464941, 365476011, 310253011, 310880011, 362944011], 
+        'jp' : [466284, 466288, 571582, 571584, 492152, 466286, 466282, 492054, 
+                466290, 492166, 466298, 466294, 466292, 492228, 466304, 492090, 
+                466302, 3148931, 466306, 466280, 500592, 492266, 466296, 
+                466300, 13384021, 746102, 255460011, 886928, 13383771, 
+                10667101],
+        'uk' : [349777011, 91, 267859, 51, 67, 68, 507848, 69, 274081, 71, 72, 
+                62, 66, 275835, 74, 65, 64, 63, 89, 275738, 61, 73, 275389, 59, 
+                58, 88, 57, 56, 564334, 60, 55, 13384091, 83, 52, 637262],
+        'us' : [1, 2, 3, 4, 4366, 5, 6, 86, 301889, 10, 9, 48, 10777, 17, 
+                13996, 18, 53, 290060, 20, 173507, 21, 22, 23, 75, 25, 26, 28, 
+                27],
+    }
+    
+    ANCESTORS = {
+        'ca' : [916520], 
+        'de' : [186606], 
+        'fr' : [301061], 
+        'jp' : [465392],
+        'uk' : [266239],
+        'us' : [283155],
+    }
     
     def test_fails_for_wrong_input(self):
         self.assertRaises(InvalidParameterValue, self.api.browse_node_lookup, '???')
         self.assertRaises(InvalidResponseGroup, self.api.browse_node_lookup, 
-                self.BOOKS_ROOT_NODE, '???')
+                self.BOOKS_ROOT_NODE[self.current_locale], '???')
         
     def test_books_browsenode(self):
-        nodes = self.api.browse_node_lookup(self.BOOKS_ROOT_NODE).BrowseNodes
+        nodes = self.api.browse_node_lookup(self.BOOKS_ROOT_NODE[self.current_locale]).BrowseNodes
         self.assertEquals(nodes.Request.IsValid.text, 'True')
-        self.assertEquals(nodes.BrowseNode.BrowseNodeId, self.BOOKS_ROOT_NODE)
-        self.assertEquals(nodes.BrowseNode.IsCategoryRoot, 1)
+        self.assertEquals(nodes.BrowseNode.BrowseNodeId, self.BOOKS_ROOT_NODE[self.current_locale])
+        #self.assertEquals(nodes.BrowseNode.IsCategoryRoot, 1)
         
         children = [n.BrowseNodeId for n in nodes.BrowseNode.Children.BrowseNode]
         ancestors = [n.BrowseNodeId for n in nodes.BrowseNode.Ancestors.BrowseNode]
-        self.assertEquals(children, [
-            4185461, 117, 187254, 403434, 120, 287621, 124, 11063821,
-            340583031, 288100, 548400, 122, 13690631, 118310011, 280652,
-            189528, 287480, 403432, 1199902, 121, 143, 536302, 298002,
-            340513031, 142, 298338, 188795])
-        self.assertEquals(ancestors, [186606])
+        self.assertEquals(children, self.CHILDREN[self.current_locale])
+        self.assertEquals(ancestors, self.ANCESTORS[self.current_locale])
         
-        
+
 if __name__ == '__main__':
-    unittest.main()
+    import unittest
+    unittest.main(testLoader=XMLResponseTestLoader())

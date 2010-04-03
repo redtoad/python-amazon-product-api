@@ -23,7 +23,8 @@ setup(
     py_modules = ['amazonproduct'],
     install_requires=['lxml>=2.1.5'], # 'pycrypto' # for python2.4
 
-    test_suite = 'nose.collector',
+    test_suite = 'tests',
+    test_loader = 'tests:XMLResponseTestLoader',
     tests_require = 'nose',
 
     classifiers = [
