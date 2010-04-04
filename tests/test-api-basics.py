@@ -1,4 +1,5 @@
 
+import os.path
 from server import TestServer
 import unittest
 
@@ -38,7 +39,9 @@ class APICallsTestCase (unittest.TestCase):
         self.server.stop()
         
     def test_fails_for_too_many_requests(self):
-        self.server.serve_file(code=503)
+        xml = os.path.join(base.XML_TEST_DIR, 
+            'APICalls-fails-for-too-many-requests.xml')
+        self.server.serve_file(xml, 503)
         self.assertRaises(TooManyRequests, self.api.item_lookup, 
                           '9780747532743', IdType='ISBN', SearchIndex='All', 
                           ResponseGroup='???')
