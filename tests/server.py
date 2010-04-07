@@ -18,7 +18,7 @@ class TestServer (HTTPServer):
         server.start()
         print 'Test server running at http://%s:%i' % server.server_address
         server.serve_file(code=503)
-        # any call to http://localhost:8080 will gat a 503 response.
+        # any call to http://localhost:8080 will get a 503 response.
         # ...
         
     """
@@ -71,6 +71,16 @@ class RequestHandler(BaseHTTPRequestHandler):
     Handler for HTTP requests serving files specified by server instance.
     """
     
+    def log_message(self, format, *args):
+        """
+        Overrides standard logging method.
+        """
+        #import sys
+        #sys.stdout.write("%s - - [%s] %s\n" %
+        #                 (self.address_string(),
+        #                  self.log_date_time_string(),
+        #                  format%args))
+        
     def do_GET(self):
         """
         Any GET response will be sent ``self.server.file`` as message and 
@@ -93,7 +103,7 @@ if __name__ == '__main__':
     
     print 'Test server is running at http://%s:%i' % (server.server_address)
     print 'Type <Ctrl-C> to stop'
-    server.serve_file('./2009-10-01/Help-fails-for-wrong-input.xml', 302)
+    server.serve_file('./2009-10-01/Help-de-fails-for-wrong-input.xml', 302)
     
     try:
         while True: 
