@@ -177,7 +177,7 @@ class API (object):
         SECRET_KEY = '...'
         
         api = ProductAdvertisingAPI(AWS_KEY, SECRET_KEY)
-        root = api.item_lookup('987311264224', IdType='ISBN', 
+        root = api.item_lookup('9783836214063', IdType='ISBN', 
                     SearchIndex='Books', ResponseGroup='Reviews', ReviewPage=1)
         
         rating = root.Items.Item.CustomerReviews.AverageRating.pyval
