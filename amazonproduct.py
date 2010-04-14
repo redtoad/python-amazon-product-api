@@ -47,7 +47,7 @@ from datetime import datetime, timedelta
 
 try: # make it python2.4 compatible!
     from hashlib import sha256
-except ImportError:
+except ImportError: # pragma: no cover
     from Crypto.Hash import SHA256 as sha256
     
 import hmac
@@ -79,7 +79,7 @@ class AWSError (Exception):
     def __init__(self, code, msg):
         self.code = code
         self.msg = msg
-    def __str__(self):
+    def __str__(self): # pragma: no cover
         return '%(code)s: %(msg)s' % self.__dict__
     
 class InvalidSearchIndex (Exception):
@@ -281,7 +281,7 @@ class API (object):
         # Be nice and wait for some time 
         # before submitting the next request
         while (datetime.now() - self.last_call) < self.throttle: 
-            pass # Wait for it!
+            pass # Wait for it! # pragma: no cover
         self.last_call = datetime.now()
         
         try:
@@ -290,7 +290,7 @@ class API (object):
             if e.code == 503:
                 raise TooManyRequests
             # otherwise re-raise
-            raise        
+            raise # pragma: no cover
     
     def _parse(self, fp):
         """
@@ -357,7 +357,7 @@ class API (object):
                 raise InvalidResponseGroup(params.get('ResponseGroup'))
             
             # otherwise re-raise exception
-            raise
+            raise # pragma: no cover
         
     def item_search(self, search_index, **params):
         """
@@ -406,7 +406,7 @@ class API (object):
                 raise InvalidResponseGroup(params.get('ResponseGroup'))
             
             # otherwise re-raise exception
-            raise
+            raise # pragma: no cover
         
     def similarity_lookup(self, *ids, **params):
         """
@@ -483,7 +483,7 @@ class API (object):
                 raise InvalidListType(params.get('ListType'))
             
             # otherwise re-raise exception
-            raise
+            raise # pragma: no cover
     
     def list_search(self, list_type, **params):
         """
@@ -531,7 +531,7 @@ class API (object):
                 raise NoExactMatchesFound
             
             # otherwise re-raise exception
-            raise
+            raise # pragma: no cover
         
     def help(self, about, help_type, response_group=None, **params):
         """
@@ -572,7 +572,7 @@ class API (object):
                 raise ValueError(m.group('parameter'))
                         
             # otherwise re-raise exception
-            raise
+            raise # pragma: no cover
         
     def browse_node_lookup(self, browse_node_id, response_group=None, **params):
         """
@@ -625,7 +625,7 @@ class API (object):
                 raise InvalidResponseGroup(params.get('ResponseGroup'))
             
             # otherwise re-raise exception
-            raise
+            raise # pragma: no cover
         
         
 class ResultPaginator (object):
