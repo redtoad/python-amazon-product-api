@@ -223,6 +223,7 @@ class API (object):
         try:
             parts = urlsplit(LOCALES[locale])
             self.scheme, self.host, self.path = parts[:3]
+            self.locale = locale
         except KeyError:
             raise UnknownLocale(locale)
         
@@ -314,10 +315,22 @@ class API (object):
         for error in errors:
             
             if error.Code.text == 'AWS.InvalidParameterValue':
+
+                # simply return error message for Japanese locale
+                # as it doesn't parse very well with the regexps above
+                if self.locale == 'jp':
+                    raise InvalidParameterValue(error.Message.text)
+
                 m = INVALID_PARAMETER_VALUE_REG.search(error.Message.text)
                 raise InvalidParameterValue(m.group('parameter'), m.group('value'))
             
             if error.Code.text == 'AWS.RestrictedParameterValueCombination':
+
+                # simply return error message for Japanese locale
+                # as it doesn't parse very well with the regexps above
+                if self.locale == 'jp':
+                    raise InvalidParameterCombination(error.Message.text)
+
                 m = INVALID_PARAMETER_COMBINATION_REG.search(error.Message.text)
                 raise InvalidParameterCombination(m.group('message'))
 
