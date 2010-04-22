@@ -80,8 +80,9 @@ class CustomAPI (API):
                     arg.set('Value', 'X'*15)
                     
             xml = etree.tostring(root, pretty_print=True)
-            xml = xml.replace(AWS_KEY, 'X'*15)
-            xml = xml.replace(SECRET_KEY, 'X'*15)
+            if AWS_KEY!='' and SECRET_KEY!='':
+                xml = xml.replace(AWS_KEY, 'X'*15)
+                xml = xml.replace(SECRET_KEY, 'X'*15)
             
             local_dir = os.path.dirname(path)
             if not os.path.exists(local_dir):
