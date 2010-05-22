@@ -660,6 +660,8 @@ class ResultPaginator (object):
                              SearchIndex='Books', ResponseGroup='Reviews'):
             ...
     
+    .. note: All three XPath expressions have to return integer values for the 
+       pagination to work!
     """
     
     def __init__(self, counter, current_page, total_pages, total_results, 
@@ -710,28 +712,41 @@ class ResultPaginator (object):
         Get total number of paginator pages.
         """
         try:
-            return root.xpath(self.total_pages_xpath, 
-                          namespaces={'aws' : self.nspace})[0].pyval
+            node = root.xpath(self.total_pages_xpath, 
+                          namespaces={'aws' : self.nspace})[0]
+            return node.pyval
+        except AttributeError:
+            # node has no attribute pyval so it better be a number
+            return int(node)
         except IndexError:
-            return None
+            return 0
         
     def _get_current_page_numer(self, root):
         """
-        Get number of current paginator page.
+        Get number of current paginator page. If it cannot be extracted, it is 
+        probably the first.
         """
         try:
-            return root.xpath(self.current_page_xpath, 
-                          namespaces={'aws' : self.nspace})[0].pyval
+            node = root.xpath(self.current_page_xpath, 
+                          namespaces={'aws' : self.nspace})[0]
+            return node.pyval
+        except AttributeError:
+            # node has no attribute pyval so it better be a number
+            return int(node)
         except IndexError:
-            return None
+            return 1
     
     def _get_total_results(self, root):
         """
         Get total number of results.
         """
         try:
-            return root.xpath(self.total_results_xpath, 
-                          namespaces={'aws' : self.nspace})
+            node = root.xpath(self.total_results_xpath, 
+                          namespaces={'aws' : self.nspace})[0]
+            return node.pyval
+        except AttributeError:
+            # node has no attribute pyval so it better be a number
+            return int(node)
         except IndexError:
-            return None
+            return 0
 
