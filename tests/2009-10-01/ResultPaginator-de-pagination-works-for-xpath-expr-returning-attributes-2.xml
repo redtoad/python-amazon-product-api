@@ -1,0 +1,531 @@
+<ListLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2009-10-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+    </HTTPHeaders>
+    <RequestId>18XTCZE6M0G0CQB7J9A1</RequestId>
+    <Arguments>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="ProductPage" Value="2"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="ResponseGroup" Value="ItemAttributes,ListInfo"/>
+      <Argument Name="Operation" Value="ListLookup"/>
+      <Argument Name="ListId" Value="229RA3LVMR97X"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Version" Value="2009-10-01"/>
+      <Argument Name="Timestamp" Value="2010-05-22T15:10:55Z"/>
+      <Argument Name="ListType" Value="WishList"/>
+      <Argument Name="IsOmitPurchasedItems" Value="True"/>
+    </Arguments>
+    <RequestProcessingTime>0.114929914474487</RequestProcessingTime>
+  </OperationRequest>
+  <Lists>
+    <Request>
+      <IsValid>True</IsValid>
+      <ListLookupRequest>
+        <ListId>229RA3LVMR97X</ListId>
+        <ListType>WishList</ListType>
+        <ProductPage>2</ProductPage>
+        <ResponseGroup>ItemAttributes</ResponseGroup>
+        <ResponseGroup>ListInfo</ResponseGroup>
+        <IsOmitPurchasedItems>True</IsOmitPurchasedItems>
+      </ListLookupRequest>
+    </Request>
+    <List>
+      <ListId>229RA3LVMR97X</ListId>
+      <ListURL>http://www.amazon.de/gp/registry/wishlist/229RA3LVMR97X</ListURL>
+      <ListName>Wishlist</ListName>
+      <ListType>WishList</ListType>
+      <TotalItems>29</TotalItems>
+      <TotalPages>3</TotalPages>
+      <DateCreated>2001-06-28</DateCreated>
+      <LastModified>2010-05-16</LastModified>
+      <CustomerName>Giacomo Lacava</CustomerName>
+      <ListItem>
+        <Item>
+          <ASIN>1569715025</ASIN>
+          <DetailPageURL>http://www.amazon.de/Assassins-Road-Lone-Wolf-Horse/dp/1569715025%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1569715025%26coliid%3DI2T9T5W2IKH48C%26colid%3D229RA3LVMR97X</DetailPageURL>
+          <ItemLinks>
+            <ItemLink>
+              <Description>Add To Wishlist</Description>
+              <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D1569715025%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D1569715025</URL>
+            </ItemLink>
+            <ItemLink>
+              <Description>Tell A Friend</Description>
+              <URL>http://www.amazon.de/gp/pdp/taf/1569715025%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D1569715025</URL>
+            </ItemLink>
+            <ItemLink>
+              <Description>All Customer Reviews</Description>
+              <URL>http://www.amazon.de/review/product/1569715025%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D1569715025</URL>
+            </ItemLink>
+            <ItemLink>
+              <Description>All Offers</Description>
+              <URL>http://www.amazon.de/gp/offer-listing/1569715025%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D1569715025</URL>
+            </ItemLink>
+          </ItemLinks>
+          <ItemAttributes>
+            <Author>Kazuo Koike</Author>
+            <Author>Goseki Kojima</Author>
+            <Binding>Taschenbuch</Binding>
+            <Creator Role="Autor">Kazuo Koike</Creator>
+            <Creator Role="Autor">Goseki Kojima</Creator>
+            <DeweyDecimalNumber>741.5952</DeweyDecimalNumber>
+            <EAN>9781569715024</EAN>
+            <ISBN>1569715025</ISBN>
+            <IsEligibleForTradeIn>1</IsEligibleForTradeIn>
+            <Label>Dark Horse Comics</Label>
+            <Manufacturer>Dark Horse Comics</Manufacturer>
+            <NumberOfPages>296</NumberOfPages>
+            <PackageDimensions>
+              <Height Units="hundredths-inches">90</Height>
+              <Length Units="hundredths-inches">590</Length>
+              <Weight Units="hundredths-pounds">35</Weight>
+              <Width Units="hundredths-inches">410</Width>
+            </PackageDimensions>
+            <ProductGroup>Book</ProductGroup>
+            <ProductTypeName>ABIS_BOOK</ProductTypeName>
+            <PublicationDate>2000-09-13</PublicationDate>
+            <Publisher>Dark Horse Comics</Publisher>
+            <Studio>Dark Horse Comics</Studio>
+            <Title>The Assassin's Road: 1 (Lone Wolf and Cub (Dark Horse))</Title>
+          </ItemAttributes>
+        </Item>
+      </ListItem>
+      <ListItem>
+        <Item>
+          <ASIN>184719494X</ASIN>
+          <DetailPageURL>http://www.amazon.de/Expert-Python-Programming-Tarek-Ziad/dp/184719494X%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D184719494X%26coliid%3DI349HR1JSUR5DY%26colid%3D229RA3LVMR97X</DetailPageURL>
+          <ItemLinks>
+            <ItemLink>
+              <Description>Add To Wishlist</Description>
+              <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D184719494X%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D184719494X</URL>
+            </ItemLink>
+            <ItemLink>
+              <Description>Tell A Friend</Description>
+              <URL>http://www.amazon.de/gp/pdp/taf/184719494X%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D184719494X</URL>
+            </ItemLink>
+            <ItemLink>
+              <Description>All Customer Reviews</Description>
+              <URL>http://www.amazon.de/review/product/184719494X%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D184719494X</URL>
+            </ItemLink>
+            <ItemLink>
+              <Description>All Offers</Description>
+              <URL>http://www.amazon.de/gp/offer-listing/184719494X%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D184719494X</URL>
+            </ItemLink>
+          </ItemLinks>
+          <ItemAttributes>
+            <Author>Tarek Ziad</Author>
+            <Binding>Taschenbuch</Binding>
+            <Creator Role="Autor">Tarek Ziad</Creator>
+            <DeweyDecimalNumber>005</DeweyDecimalNumber>
+            <EAN>9781847194947</EAN>
+            <ISBN>184719494X</ISBN>
+            <IsEligibleForTradeIn>1</IsEligibleForTradeIn>
+            <Label>Packt Publishing</Label>
+            <Manufacturer>Packt Publishing</Manufacturer>
+            <NumberOfPages>376</NumberOfPages>
+            <PackageDimensions>
+              <Height Units="hundredths-inches">110</Height>
+              <Length Units="hundredths-inches">906</Length>
+              <Weight Units="hundredths-pounds">168</Weight>
+              <Width Units="hundredths-inches">748</Width>
+            </PackageDimensions>
+            <ProductGroup>Book</ProductGroup>
+            <ProductTypeName>ABIS_BOOK</ProductTypeName>
+            <PublicationDate>2008-09-26</PublicationDate>
+            <Publisher>Packt Publishing</Publisher>
+            <Studio>Packt Publishing</Studio>
+            <Title>Expert Python Programming</Title>
+          </ItemAttributes>
+        </Item>
+      </ListItem>
+      <ListItem>
+        <Item>
+          <ASIN>0140289208</ASIN>
+          <DetailPageURL>http://www.amazon.de/GODEL-ESCHER-BACH-ETERNAL-ANNIVERSARY/dp/0140289208%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0140289208%26coliid%3DI2LOKPK0305MLH%26colid%3D229RA3LVMR97X</DetailPageURL>
+          <ItemLinks>
+            <ItemLink>
+              <Description>Add To Wishlist</Description>
+              <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D0140289208%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D0140289208</URL>
+            </ItemLink>
+            <ItemLink>
+              <Description>Tell A Friend</Description>
+              <URL>http://www.amazon.de/gp/pdp/taf/0140289208%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D0140289208</URL>
+            </ItemLink>
+            <ItemLink>
+              <Description>All Customer Reviews</Description>
+              <URL>http://www.amazon.de/review/product/0140289208%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D0140289208</URL>
+            </ItemLink>
+            <ItemLink>
+              <Description>All Offers</Description>
+              <URL>http://www.amazon.de/gp/offer-listing/0140289208%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D0140289208</URL>
+            </ItemLink>
+          </ItemLinks>
+          <ItemAttributes>
+            <Author>Douglas R Hofstadter</Author>
+            <Binding>Taschenbuch</Binding>
+            <Creator Role="Autor">Douglas R Hofstadter</Creator>
+            <DeweyDecimalNumber>153</DeweyDecimalNumber>
+            <EAN>9780140289206</EAN>
+            <Edition>20th Anniversary ed</Edition>
+            <ISBN>0140289208</ISBN>
+            <IsEligibleForTradeIn>1</IsEligibleForTradeIn>
+            <Label>Penguin</Label>
+            <Manufacturer>Penguin</Manufacturer>
+            <NumberOfPages>824</NumberOfPages>
+            <PackageDimensions>
+              <Height Units="hundredths-inches">157</Height>
+              <Length Units="hundredths-inches">913</Length>
+              <Weight Units="hundredths-pounds">238</Weight>
+              <Width Units="hundredths-inches">606</Width>
+            </PackageDimensions>
+            <ProductGroup>Book</ProductGroup>
+            <ProductTypeName>ABIS_BOOK</ProductTypeName>
+            <PublicationDate>2000-03-30</PublicationDate>
+            <Publisher>Penguin</Publisher>
+            <Studio>Penguin</Studio>
+            <Title>Godel, Escher, Bach: An Eternal Golden Braid (Penguin Press Science)</Title>
+          </ItemAttributes>
+        </Item>
+      </ListItem>
+      <ListItem>
+        <Item>
+          <ASIN>1560979348</ASIN>
+          <DetailPageURL>http://www.amazon.de/Pocket-Full-Rain-Other-Stories/dp/1560979348%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1560979348%26coliid%3DIZF9R06SVBYWC%26colid%3D229RA3LVMR97X</DetailPageURL>
+          <ItemLinks>
+            <ItemLink>
+              <Description>Add To Wishlist</Description>
+              <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D1560979348%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D1560979348</URL>
+            </ItemLink>
+            <ItemLink>
+              <Description>Tell A Friend</Description>
+              <URL>http://www.amazon.de/gp/pdp/taf/1560979348%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D1560979348</URL>
+            </ItemLink>
+            <ItemLink>
+              <Description>All Customer Reviews</Description>
+              <URL>http://www.amazon.de/review/product/1560979348%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D1560979348</URL>
+            </ItemLink>
+            <ItemLink>
+              <Description>All Offers</Description>
+              <URL>http://www.amazon.de/gp/offer-listing/1560979348%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D1560979348</URL>
+            </ItemLink>
+          </ItemLinks>
+          <ItemAttributes>
+            <Author>Jason</Author>
+            <Binding>Taschenbuch</Binding>
+            <Creator Role="Autor">Jason</Creator>
+            <DeweyDecimalNumber>741</DeweyDecimalNumber>
+            <EAN>9781560979340</EAN>
+            <Edition>illustrated edition</Edition>
+            <ISBN>1560979348</ISBN>
+            <Label>Fantagraphics Books</Label>
+            <Manufacturer>Fantagraphics Books</Manufacturer>
+            <NumberOfPages>184</NumberOfPages>
+            <PackageDimensions>
+              <Height Units="hundredths-inches">70</Height>
+              <Length Units="hundredths-inches">990</Length>
+              <Weight Units="hundredths-pounds">85</Weight>
+              <Width Units="hundredths-inches">700</Width>
+            </PackageDimensions>
+            <ProductGroup>Book</ProductGroup>
+            <ProductTypeName>ABIS_BOOK</ProductTypeName>
+            <PublicationDate>2008-12-24</PublicationDate>
+            <Publisher>Fantagraphics Books</Publisher>
+            <Studio>Fantagraphics Books</Studio>
+            <Title>Pocket Full of Rain and Other Stories</Title>
+          </ItemAttributes>
+        </Item>
+      </ListItem>
+      <ListItem>
+        <Item>
+          <ASIN>1560978287</ASIN>
+          <DetailPageURL>http://www.amazon.de/I-Killed-Adolf-Hitler-Jason/dp/1560978287%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1560978287%26coliid%3DIZOSSZH2MXBDP%26colid%3D229RA3LVMR97X</DetailPageURL>
+          <ItemLinks>
+            <ItemLink>
+              <Description>Add To Wishlist</Description>
+              <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D1560978287%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D1560978287</URL>
+            </ItemLink>
+            <ItemLink>
+              <Description>Tell A Friend</Description>
+              <URL>http://www.amazon.de/gp/pdp/taf/1560978287%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D1560978287</URL>
+            </ItemLink>
+            <ItemLink>
+              <Description>All Customer Reviews</Description>
+              <URL>http://www.amazon.de/review/product/1560978287%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D1560978287</URL>
+            </ItemLink>
+            <ItemLink>
+              <Description>All Offers</Description>
+              <URL>http://www.amazon.de/gp/offer-listing/1560978287%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D1560978287</URL>
+            </ItemLink>
+          </ItemLinks>
+          <ItemAttributes>
+            <Author>Jason</Author>
+            <Binding>Taschenbuch</Binding>
+            <Creator Role="Autor">Jason</Creator>
+            <DeweyDecimalNumber>741</DeweyDecimalNumber>
+            <EAN>9781560978282</EAN>
+            <ISBN>1560978287</ISBN>
+            <IsEligibleForTradeIn>1</IsEligibleForTradeIn>
+            <Label>Fantagraphics Books</Label>
+            <Manufacturer>Fantagraphics Books</Manufacturer>
+            <NumberOfPages>48</NumberOfPages>
+            <PackageDimensions>
+              <Height Units="hundredths-inches">30</Height>
+              <Length Units="hundredths-inches">980</Length>
+              <Weight Units="hundredths-pounds">45</Weight>
+              <Width Units="hundredths-inches">710</Width>
+            </PackageDimensions>
+            <ProductGroup>Book</ProductGroup>
+            <ProductTypeName>ABIS_BOOK</ProductTypeName>
+            <PublicationDate>2008-06-25</PublicationDate>
+            <Publisher>Fantagraphics Books</Publisher>
+            <Studio>Fantagraphics Books</Studio>
+            <Title>I Killed Adolf Hitler</Title>
+          </ItemAttributes>
+        </Item>
+      </ListItem>
+      <ListItem>
+        <Item>
+          <ASIN>0224081667</ASIN>
+          <DetailPageURL>http://www.amazon.de/Exit-Wounds-Rutu-Modan/dp/0224081667%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0224081667%26coliid%3DI2EALYMFKA6I1I%26colid%3D229RA3LVMR97X</DetailPageURL>
+          <ItemLinks>
+            <ItemLink>
+              <Description>Add To Wishlist</Description>
+              <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D0224081667%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D0224081667</URL>
+            </ItemLink>
+            <ItemLink>
+              <Description>Tell A Friend</Description>
+              <URL>http://www.amazon.de/gp/pdp/taf/0224081667%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D0224081667</URL>
+            </ItemLink>
+            <ItemLink>
+              <Description>All Customer Reviews</Description>
+              <URL>http://www.amazon.de/review/product/0224081667%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D0224081667</URL>
+            </ItemLink>
+            <ItemLink>
+              <Description>All Offers</Description>
+              <URL>http://www.amazon.de/gp/offer-listing/0224081667%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D0224081667</URL>
+            </ItemLink>
+          </ItemLinks>
+          <ItemAttributes>
+            <Author>Rutu Modan</Author>
+            <Binding>Gebundene Ausgabe</Binding>
+            <Creator Role="Autor">Rutu Modan</Creator>
+            <EAN>9780224081665</EAN>
+            <ISBN>0224081667</ISBN>
+            <Label>Jonathan Cape</Label>
+            <Manufacturer>Jonathan Cape</Manufacturer>
+            <NumberOfPages>160</NumberOfPages>
+            <PackageDimensions>
+              <Height Units="hundredths-inches">102</Height>
+              <Length Units="hundredths-inches">898</Length>
+              <Weight Units="hundredths-pounds">141</Weight>
+              <Width Units="hundredths-inches">669</Width>
+            </PackageDimensions>
+            <ProductGroup>Book</ProductGroup>
+            <ProductTypeName>ABIS_BOOK</ProductTypeName>
+            <PublicationDate>2007-06-07</PublicationDate>
+            <Publisher>Jonathan Cape</Publisher>
+            <Studio>Jonathan Cape</Studio>
+            <Title>Exit Wounds</Title>
+          </ItemAttributes>
+        </Item>
+      </ListItem>
+      <ListItem>
+        <Item>
+          <ASIN>1846680891</ASIN>
+          <DetailPageURL>http://www.amazon.de/Daily-Mail-Guide-Jane-Vass/dp/1846680891%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1846680891%26coliid%3DI7XLXQRWGFD4B%26colid%3D229RA3LVMR97X</DetailPageURL>
+          <ItemLinks>
+            <ItemLink>
+              <Description>Add To Wishlist</Description>
+              <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D1846680891%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D1846680891</URL>
+            </ItemLink>
+            <ItemLink>
+              <Description>Tell A Friend</Description>
+              <URL>http://www.amazon.de/gp/pdp/taf/1846680891%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D1846680891</URL>
+            </ItemLink>
+            <ItemLink>
+              <Description>All Customer Reviews</Description>
+              <URL>http://www.amazon.de/review/product/1846680891%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D1846680891</URL>
+            </ItemLink>
+            <ItemLink>
+              <Description>All Offers</Description>
+              <URL>http://www.amazon.de/gp/offer-listing/1846680891%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D1846680891</URL>
+            </ItemLink>
+          </ItemLinks>
+          <ItemAttributes>
+            <Author>Jane Vass</Author>
+            <Binding>Taschenbuch</Binding>
+            <Creator Role="Autor">Jane Vass</Creator>
+            <EAN>9781846680892</EAN>
+            <Edition>Revised edition</Edition>
+            <ISBN>1846680891</ISBN>
+            <Label>Bertrams</Label>
+            <Manufacturer>Bertrams</Manufacturer>
+            <NumberOfPages>384</NumberOfPages>
+            <PackageDimensions>
+              <Height Units="hundredths-inches">120</Height>
+              <Length Units="hundredths-inches">810</Length>
+              <Weight Units="hundredths-pounds">75</Weight>
+              <Width Units="hundredths-inches">600</Width>
+            </PackageDimensions>
+            <ProductGroup>Book</ProductGroup>
+            <ProductTypeName>ABIS_BOOK</ProductTypeName>
+            <PublicationDate>2008-04-10</PublicationDate>
+            <Publisher>Bertrams</Publisher>
+            <Studio>Bertrams</Studio>
+            <Title>Daily Mail Tax Guide</Title>
+          </ItemAttributes>
+        </Item>
+      </ListItem>
+      <ListItem>
+        <Item>
+          <ASIN>159643130X</ASIN>
+          <DetailPageURL>http://www.amazon.de/Professors-Daughter-Joann-Sfar/dp/159643130X%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D159643130X%26coliid%3DI3S0S2ORL2KB8C%26colid%3D229RA3LVMR97X</DetailPageURL>
+          <ItemLinks>
+            <ItemLink>
+              <Description>Add To Wishlist</Description>
+              <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D159643130X%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D159643130X</URL>
+            </ItemLink>
+            <ItemLink>
+              <Description>Tell A Friend</Description>
+              <URL>http://www.amazon.de/gp/pdp/taf/159643130X%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D159643130X</URL>
+            </ItemLink>
+            <ItemLink>
+              <Description>All Customer Reviews</Description>
+              <URL>http://www.amazon.de/review/product/159643130X%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D159643130X</URL>
+            </ItemLink>
+            <ItemLink>
+              <Description>All Offers</Description>
+              <URL>http://www.amazon.de/gp/offer-listing/159643130X%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D159643130X</URL>
+            </ItemLink>
+          </ItemLinks>
+          <ItemAttributes>
+            <Author>Joann Sfar</Author>
+            <Author>Emmanuel Guibert</Author>
+            <Binding>Taschenbuch</Binding>
+            <Creator Role="Autor">Joann Sfar</Creator>
+            <Creator Role="Autor">Emmanuel Guibert</Creator>
+            <DeweyDecimalNumber>741.5944</DeweyDecimalNumber>
+            <EAN>9781596431300</EAN>
+            <Edition>Revised.</Edition>
+            <ISBN>159643130X</ISBN>
+            <Label>First Second</Label>
+            <Manufacturer>First Second</Manufacturer>
+            <ManufacturerMinimumAge Units="months">168</ManufacturerMinimumAge>
+            <NumberOfPages>80</NumberOfPages>
+            <PackageDimensions>
+              <Height Units="hundredths-inches">40</Height>
+              <Length Units="hundredths-inches">830</Length>
+              <Weight Units="hundredths-pounds">45</Weight>
+              <Width Units="hundredths-inches">600</Width>
+            </PackageDimensions>
+            <ProductGroup>Book</ProductGroup>
+            <ProductTypeName>ABIS_BOOK</ProductTypeName>
+            <PublicationDate>2007-05-01</PublicationDate>
+            <Publisher>First Second</Publisher>
+            <ReadingLevel>Ages 9-12</ReadingLevel>
+            <Studio>First Second</Studio>
+            <Title>The Professor's Daughter</Title>
+          </ItemAttributes>
+        </Item>
+      </ListItem>
+      <ListItem>
+        <Item>
+          <ASIN>0471950718</ASIN>
+          <DetailPageURL>http://www.amazon.de/Late-Night-Guide-C/dp/0471950718%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0471950718%26coliid%3DI1F1RX99IH0GPR%26colid%3D229RA3LVMR97X</DetailPageURL>
+          <ItemLinks>
+            <ItemLink>
+              <Description>Add To Wishlist</Description>
+              <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D0471950718%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D0471950718</URL>
+            </ItemLink>
+            <ItemLink>
+              <Description>Tell A Friend</Description>
+              <URL>http://www.amazon.de/gp/pdp/taf/0471950718%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D0471950718</URL>
+            </ItemLink>
+            <ItemLink>
+              <Description>All Customer Reviews</Description>
+              <URL>http://www.amazon.de/review/product/0471950718%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D0471950718</URL>
+            </ItemLink>
+            <ItemLink>
+              <Description>All Offers</Description>
+              <URL>http://www.amazon.de/gp/offer-listing/0471950718%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D0471950718</URL>
+            </ItemLink>
+          </ItemLinks>
+          <ItemAttributes>
+            <Author>Nigel Chapman</Author>
+            <Binding>Taschenbuch</Binding>
+            <Creator Role="Autor">Nigel Chapman</Creator>
+            <DeweyDecimalNumber>005.133</DeweyDecimalNumber>
+            <EAN>9780471950714</EAN>
+            <ISBN>0471950718</ISBN>
+            <Label>Wiley &amp; Sons</Label>
+            <Manufacturer>Wiley &amp; Sons</Manufacturer>
+            <NumberOfPages>376</NumberOfPages>
+            <PackageDimensions>
+              <Height Units="hundredths-inches">92</Height>
+              <Length Units="hundredths-inches">916</Length>
+              <Weight Units="hundredths-pounds">172</Weight>
+              <Width Units="hundredths-inches">741</Width>
+            </PackageDimensions>
+            <ProductGroup>Book</ProductGroup>
+            <ProductTypeName>ABIS_BOOK</ProductTypeName>
+            <PublicationDate>1996-06</PublicationDate>
+            <Publisher>Wiley &amp; Sons</Publisher>
+            <Studio>Wiley &amp; Sons</Studio>
+            <Title>The Late Night Guide to C++</Title>
+          </ItemAttributes>
+        </Item>
+      </ListItem>
+      <ListItem>
+        <Item>
+          <ASIN>B0000UJLMS</ASIN>
+          <DetailPageURL>http://www.amazon.de/Central-Park-Concert-Dave-Matthews/dp/B0000UJLMS%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB0000UJLMS%26coliid%3DI2I2J9QPQPVHK1%26colid%3D229RA3LVMR97X</DetailPageURL>
+          <ItemLinks>
+            <ItemLink>
+              <Description>Add To Wishlist</Description>
+              <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3DB0000UJLMS%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB0000UJLMS</URL>
+            </ItemLink>
+            <ItemLink>
+              <Description>Tell A Friend</Description>
+              <URL>http://www.amazon.de/gp/pdp/taf/B0000UJLMS%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB0000UJLMS</URL>
+            </ItemLink>
+            <ItemLink>
+              <Description>All Customer Reviews</Description>
+              <URL>http://www.amazon.de/review/product/B0000UJLMS%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB0000UJLMS</URL>
+            </ItemLink>
+            <ItemLink>
+              <Description>All Offers</Description>
+              <URL>http://www.amazon.de/gp/offer-listing/B0000UJLMS%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB0000UJLMS</URL>
+            </ItemLink>
+          </ItemLinks>
+          <ItemAttributes>
+            <Artist>Dave Matthews Band</Artist>
+            <Binding>Audio CD</Binding>
+            <Creator Role="K&#252;nstler">Dave Matthews Band</Creator>
+            <EAN>0828765750127</EAN>
+            <Format>Box-Set</Format>
+            <ItemDimensions>
+              <Weight Units="hundredths-pounds">43</Weight>
+            </ItemDimensions>
+            <Label>RCA</Label>
+            <Manufacturer>RCA</Manufacturer>
+            <NumberOfDiscs>3</NumberOfDiscs>
+            <PackageDimensions>
+              <Height Units="hundredths-inches">100</Height>
+              <Length Units="hundredths-inches">560</Length>
+              <Weight Units="hundredths-pounds">40</Weight>
+              <Width Units="hundredths-inches">500</Width>
+            </PackageDimensions>
+            <ProductGroup>Music</ProductGroup>
+            <ProductTypeName>ABIS_MUSIC</ProductTypeName>
+            <Publisher>RCA</Publisher>
+            <ReleaseDate>2003-11-26</ReleaseDate>
+            <Studio>RCA</Studio>
+            <Title>Central Park Concert,the</Title>
+            <UPC>828765750127</UPC>
+          </ItemAttributes>
+        </Item>
+      </ListItem>
+    </List>
+  </Lists>
+</ListLookupResponse>
