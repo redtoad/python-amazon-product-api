@@ -9,7 +9,7 @@ from amazonproduct import ResultPaginator
 
 if __name__ == '__main__':
     
-    api = API(AWS_KEY, SECRET_KEY)
+    api = API(AWS_KEY, SECRET_KEY, 'us')
     
     paginator = ResultPaginator('ItemPage',
         '//aws:Items/aws:Request/aws:ItemSearchRequest/aws:ItemPage',

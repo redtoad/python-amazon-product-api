@@ -41,7 +41,7 @@ if __name__ == '__main__':
         parser.error('No IDs specified!')
         #sys.exit(1)
     
-    api = API(AWS_KEY, SECRET_KEY)
+    api = API(AWS_KEY, SECRET_KEY, 'de')
     
     params = {
         'ResponseGroup' : 'Images',

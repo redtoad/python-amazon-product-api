@@ -7,7 +7,7 @@ from config import AWS_KEY, SECRET_KEY
 from amazonproduct import API
 from amazonproduct import ResultPaginator
 
-api = API(AWS_KEY, SECRET_KEY)
+api = API(AWS_KEY, SECRET_KEY, 'de')
 
 lists_paginator = ResultPaginator('ListPage',
         '//aws:Lists/aws:Request/aws:ListSearchRequest/aws:ListPage',

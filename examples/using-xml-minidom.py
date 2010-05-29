@@ -28,7 +28,7 @@ def minidom_response_parser(fp):
 
 if __name__ == '__main__':
     
-    api = API(AWS_KEY, SECRET_KEY,
+    api = API(AWS_KEY, SECRET_KEY, 'us',
               processor=minidom_response_parser)
     root = api.item_lookup('0718155157')
     

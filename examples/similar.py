@@ -10,7 +10,7 @@ from amazonproduct import ResultPaginator
 
 if __name__ == '__main__':
     
-    api = API(AWS_KEY, SECRET_KEY)
+    api = API(AWS_KEY, SECRET_KEY, 'us')
     root = api.similarity_lookup('0451462009')
     
     #~ from lxml import etree
