@@ -176,7 +176,7 @@ class API (object):
         AWS_KEY = '...'
         SECRET_KEY = '...'
         
-        api = ProductAdvertisingAPI(AWS_KEY, SECRET_KEY)
+        api = ProductAdvertisingAPI(AWS_KEY, SECRET_KEY, 'us')
         root = api.item_lookup('9783836214063', IdType='ISBN', 
                     SearchIndex='Books', ResponseGroup='Reviews', ReviewPage=1)
         
@@ -209,8 +209,8 @@ class API (object):
     REQUESTS_PER_SECOND = 1 #: max requests per second
     TIMEOUT = 5 #: timeout in seconds
     
-    def __init__(self, access_key_id, secret_access_key, 
-                 locale='de', processor=None):
+    def __init__(self, access_key_id, secret_access_key, locale, 
+                 processor=None):
         """
         :param access_key_id: AWS access key ID.
         :param secret_key_id: AWS secret key.

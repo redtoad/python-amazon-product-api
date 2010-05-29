@@ -22,7 +22,7 @@ if __name__ == '__main__':
 
         isbn = isbn.replace('-', '')
         
-        api = API(AWS_KEY, SECRET_KEY)
+        api = API(AWS_KEY, SECRET_KEY, 'us')
         paginator = ResultPaginator('ReviewPage',
             '//aws:Items/aws:Request/aws:ItemLookupRequest/aws:ReviewPage',
             '//aws:Items/aws:Item/aws:CustomerReviews/aws:TotalReviewPages',
@@ -47,5 +47,5 @@ if __name__ == '__main__':
                                 namespaces={'aws' : nspace})
             for review in reviews:
                 print '%s %-5s %s: %s' % (review.Date, '*' * review.Rating.pyval,  
-                                          unicode(review.Reviewer.Name),
-                                          unicode(review.Summary))
+                    unicode(getattr(review.Reviewer, 'Name', '')) or 'Unknown',
+                    unicode(review.Summary))
