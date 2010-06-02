@@ -55,8 +55,11 @@ from lxml import objectify
 import re
 import socket
 from time import strftime, gmtime
-from urlparse import urlsplit
-from urllib2 import quote, urlopen, HTTPError
+import urlparse
+import urllib2
+
+USER_AGENT = ('python-amazon-product-api/%s '
+    '+http://pypi.python.org/pypi/python-amazon-product-api/' % __version__)
 
 LOCALES = {
     'ca' : 'http://ecs.amazonaws.ca/onca/xml', 
@@ -221,7 +224,7 @@ class API (object):
         self.secret_key = secret_access_key
         
         try:
-            parts = urlsplit(LOCALES[locale])
+            parts = urlparse.urlsplit(LOCALES[locale])
             self.scheme, self.host, self.path = parts[:3]
             self.locale = locale
         except KeyError:
@@ -231,6 +234,7 @@ class API (object):
         
         self.last_call = datetime(1970, 1, 1)
         self.throttle = timedelta(seconds=1)/self.REQUESTS_PER_SECOND
+        self.debug = 0 # set to 1 if you want to see HTTP headers
         
         self.response_processor = processor
         
@@ -260,7 +264,7 @@ class API (object):
         
         # create signature
         keys = sorted(qargs.keys())
-        args = '&'.join('%s=%s' % (key, quote(str(qargs[key]))) 
+        args = '&'.join('%s=%s' % (key, urllib2.quote(str(qargs[key]))) 
                         for key in keys)
         
         msg = 'GET'
@@ -268,7 +272,7 @@ class API (object):
         msg += '\n' + self.path
         msg += '\n' + args.encode('utf-8')
         
-        signature = quote(
+        signature = urllib2.quote(
             b64encode(hmac.new(self.secret_key, msg, sha256).digest()))
         
         url = '%s://%s%s?%s&Signature=%s' % (self.scheme, self.host, self.path, 
@@ -279,6 +283,10 @@ class API (object):
         """
         Calls the Amazon Product Advertising API and objectifies the response.
         """
+        request = urllib2.Request(url)
+        request.add_header('User-Agent', USER_AGENT)
+        request.add_header('Accept-encoding', 'gzip')
+
         # Be nice and wait for some time 
         # before submitting the next request
         while (datetime.now() - self.last_call) < self.throttle: 
@@ -286,8 +294,20 @@ class API (object):
         self.last_call = datetime.now()
         
         try:
-            return urlopen(url)
-        except HTTPError, e:
+            opener = urllib2.build_opener() 
+            handler = urllib2.HTTPHandler(debuglevel=self.debug)
+            opener = urllib2.build_opener(handler) 
+            response = opener.open(request)
+            # handle compressed data
+            # Borrowed from Mark Pilgrim's excellent introduction
+            # http://diveintopython.org/http_web_services/gzip_compression.html
+            if response.headers.get('Content-Encoding') == 'gzip':
+                import StringIO
+                import gzip
+                stream = StringIO.StringIO(response.read())
+                return gzip.GzipFile(fileobj=stream)
+            return response
+        except urllib2.HTTPError, e:
             if e.code == 503:
                 raise TooManyRequests
             # otherwise re-raise
