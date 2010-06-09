@@ -1,0 +1,315 @@
+<ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2009-11-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.3 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+    </HTTPHeaders>
+    <RequestId>f1cd5ec0-c31e-4d6c-aba7-3ebbae52a44c</RequestId>
+    <Arguments>
+      <Argument Name="Operation" Value="ItemSearch"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Version" Value="2009-11-01"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2010-06-09T07:19:11Z"/>
+      <Argument Name="Title" Value="Hunt for Red October"/>
+      <Argument Name="SearchIndex" Value="Books"/>
+    </Arguments>
+    <RequestProcessingTime>0.0564130000000000</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>True</IsValid>
+      <ItemSearchRequest>
+        <Condition>New</Condition>
+        <DeliveryMethod>Ship</DeliveryMethod>
+        <MerchantId>Amazon</MerchantId>
+        <ResponseGroup>Small</ResponseGroup>
+        <ReviewSort>-SubmissionDate</ReviewSort>
+        <SearchIndex>Books</SearchIndex>
+        <Title>Hunt for Red October</Title>
+      </ItemSearchRequest>
+    </Request>
+    <TotalResults>10</TotalResults>
+    <TotalPages>1</TotalPages>
+    <Item>
+      <ASIN>3453721780</ASIN>
+      <DetailPageURL>http://www.amazon.de/Jagd-auf-Roter-Oktober-Roman/dp/3453721780%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3453721780</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D3453721780%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3453721780</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.de/gp/pdp/taf/3453721780%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3453721780</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.de/review/product/3453721780%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3453721780</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.de/gp/offer-listing/3453721780%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3453721780</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>Tom Clancy</Author>
+        <Creator Role="&#220;bersetzer">Hardo Wichmann</Creator>
+        <Manufacturer>Heyne Verlag</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Jagd auf Roter Oktober: Roman</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>B0027V5BEK</ASIN>
+      <DetailPageURL>http://www.amazon.de/Golden-Valley-October-Giving-Seventh/dp/B0027V5BEK%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB0027V5BEK</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3DB0027V5BEK%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB0027V5BEK</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.de/gp/pdp/taf/B0027V5BEK%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB0027V5BEK</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.de/review/product/B0027V5BEK%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB0027V5BEK</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.de/gp/offer-listing/B0027V5BEK%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB0027V5BEK</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>Alan Scholefield/Tom Clancy/Hugh Miller/Irving Wallace</Author>
+        <Manufacturer>Reader's Digest Condensed Books</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>King of the Golden Valley/The Hunt for Red October/This Giving Heart/The Seventh Secret</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>B002UH0GSM</ASIN>
+      <DetailPageURL>http://www.amazon.de/Hunt-Red-October-1st/dp/B002UH0GSM%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB002UH0GSM</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3DB002UH0GSM%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB002UH0GSM</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.de/gp/pdp/taf/B002UH0GSM%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB002UH0GSM</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.de/review/product/B002UH0GSM%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB002UH0GSM</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.de/gp/offer-listing/B002UH0GSM%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB002UH0GSM</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>Tom Clancy</Author>
+        <Manufacturer>NAVAL INSTITUTE PRESS</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>The Hunt for Red October, 1st Edition</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>0583314406</ASIN>
+      <DetailPageURL>http://www.amazon.de/Patriot-Games-Hunt-Red-October/dp/0583314406%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0583314406</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D0583314406%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D0583314406</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.de/gp/pdp/taf/0583314406%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D0583314406</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.de/review/product/0583314406%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D0583314406</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.de/gp/offer-listing/0583314406%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D0583314406</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>Tom Clancy</Author>
+        <Manufacturer>Ted Smart</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Patriot Games and the Hunt for Red October</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>B002KHP13W</ASIN>
+      <DetailPageURL>http://www.amazon.de/Hunt-Red-October-Tom-Clancy/dp/B002KHP13W%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB002KHP13W</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3DB002KHP13W%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB002KHP13W</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.de/gp/pdp/taf/B002KHP13W%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB002KHP13W</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.de/review/product/B002KHP13W%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB002KHP13W</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.de/gp/offer-listing/B002KHP13W%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB002KHP13W</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>Tom Clancy</Author>
+        <Manufacturer>Berkley</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>The Hunt for Red October</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>B0026LFVK0</ASIN>
+      <DetailPageURL>http://www.amazon.de/Hunt-Red-October-Tom-Clancy/dp/B0026LFVK0%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB0026LFVK0</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3DB0026LFVK0%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB0026LFVK0</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.de/gp/pdp/taf/B0026LFVK0%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB0026LFVK0</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.de/review/product/B0026LFVK0%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB0026LFVK0</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.de/gp/offer-listing/B0026LFVK0%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB0026LFVK0</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>Tom Clancy</Author>
+        <Manufacturer>Fontana,</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>The Hunt for Red October</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>B0029B400Y</ASIN>
+      <DetailPageURL>http://www.amazon.de/HUNT-RED-OCTOBER-Tom-Clancy/dp/B0029B400Y%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB0029B400Y</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3DB0029B400Y%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB0029B400Y</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.de/gp/pdp/taf/B0029B400Y%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB0029B400Y</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.de/review/product/B0029B400Y%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB0029B400Y</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.de/gp/offer-listing/B0029B400Y%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB0029B400Y</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>Tom. Clancy</Author>
+        <Manufacturer>Fontana / Collins</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>THE HUNT FOR RED OCTOBER.</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>B0027V7Z7Q</ASIN>
+      <DetailPageURL>http://www.amazon.de/Clancy-Omnibus-Patriot-Games-October/dp/B0027V7Z7Q%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB0027V7Z7Q</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3DB0027V7Z7Q%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB0027V7Z7Q</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.de/gp/pdp/taf/B0027V7Z7Q%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB0027V7Z7Q</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.de/review/product/B0027V7Z7Q%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB0027V7Z7Q</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.de/gp/offer-listing/B0027V7Z7Q%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB0027V7Z7Q</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Manufacturer>Diamond Books</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Tom Clancy Omnibus Patriot Games and the Hunt for Red October</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>B002BHQOCI</ASIN>
+      <DetailPageURL>http://www.amazon.de/Hunt-Red-October-2ND-Printing/dp/B002BHQOCI%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB002BHQOCI</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3DB002BHQOCI%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB002BHQOCI</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.de/gp/pdp/taf/B002BHQOCI%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB002BHQOCI</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.de/review/product/B002BHQOCI%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB002BHQOCI</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.de/gp/offer-listing/B002BHQOCI%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB002BHQOCI</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>Tom Clancy</Author>
+        <Manufacturer>NAVAL INSTITUTE PRESS</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Hunt for Red October 2ND Printing</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>B0025WMSGK</ASIN>
+      <DetailPageURL>http://www.amazon.de/Hunt-Red-October-Englisch/dp/B0025WMSGK%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB0025WMSGK</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3DB0025WMSGK%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB0025WMSGK</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.de/gp/pdp/taf/B0025WMSGK%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB0025WMSGK</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.de/review/product/B0025WMSGK%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB0025WMSGK</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.de/gp/offer-listing/B0025WMSGK%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB0025WMSGK</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>Tom Clancy</Author>
+        <Manufacturer>Fontana London,</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>The Hunt for Red October / Englisch</Title>
+      </ItemAttributes>
+    </Item>
+  </Items>
+</ItemSearchResponse>

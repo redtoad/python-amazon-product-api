@@ -1,0 +1,145 @@
+<ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2009-10-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.3 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+    </HTTPHeaders>
+    <RequestId>96b4d791-4d2f-43c0-ba9c-4a4552d98904</RequestId>
+    <Arguments>
+      <Argument Name="Operation" Value="ItemSearch"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Version" Value="2009-10-01"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2010-06-09T07:19:14Z"/>
+      <Argument Name="Title" Value="Hunt for Red October"/>
+      <Argument Name="SearchIndex" Value="Books"/>
+    </Arguments>
+    <RequestProcessingTime>0.0303740000000000</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>True</IsValid>
+      <ItemSearchRequest>
+        <Condition>New</Condition>
+        <DeliveryMethod>Ship</DeliveryMethod>
+        <MerchantId>Amazon</MerchantId>
+        <ResponseGroup>Small</ResponseGroup>
+        <ReviewSort>-SubmissionDate</ReviewSort>
+        <SearchIndex>Books</SearchIndex>
+        <Title>Hunt for Red October</Title>
+      </ItemSearchRequest>
+    </Request>
+    <TotalResults>4</TotalResults>
+    <TotalPages>1</TotalPages>
+    <Item>
+      <ASIN>0583314406</ASIN>
+      <DetailPageURL>http://www.amazon.fr/Patriot-Games-Hunt-Red-October/dp/0583314406%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0583314406</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.fr/gp/registry/wishlist/add-item.html%3Fasin.0%3D0583314406%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D0583314406</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.fr/gp/pdp/taf/0583314406%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D0583314406</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.fr/review/product/0583314406%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D0583314406</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.fr/gp/offer-listing/0583314406%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D0583314406</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>Tom Clancy</Author>
+        <Manufacturer>Ted Smart</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Patriot Games and the Hunt for Red October</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>1593350031</ASIN>
+      <DetailPageURL>http://www.amazon.fr/Hunt-for-Red-October-The/dp/1593350031%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1593350031</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.fr/gp/registry/wishlist/add-item.html%3Fasin.0%3D1593350031%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D1593350031</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.fr/gp/pdp/taf/1593350031%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D1593350031</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.fr/review/product/1593350031%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D1593350031</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.fr/gp/offer-listing/1593350031%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D1593350031</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Hunt for Red October, The</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>B001S7T93S</ASIN>
+      <DetailPageURL>http://www.amazon.fr/Hunt-Red-October-1st/dp/B001S7T93S%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB001S7T93S</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.fr/gp/registry/wishlist/add-item.html%3Fasin.0%3DB001S7T93S%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3DB001S7T93S</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.fr/gp/pdp/taf/B001S7T93S%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3DB001S7T93S</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.fr/review/product/B001S7T93S%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3DB001S7T93S</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.fr/gp/offer-listing/B001S7T93S%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3DB001S7T93S</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>Tom Clancy</Author>
+        <Manufacturer>NAVAL INSTITUTE PRESS</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>The Hunt for Red October, 1st Edition</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>B002BHQOCI</ASIN>
+      <DetailPageURL>http://www.amazon.fr/Hunt-Red-October-2ND-Printing/dp/B002BHQOCI%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB002BHQOCI</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.fr/gp/registry/wishlist/add-item.html%3Fasin.0%3DB002BHQOCI%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3DB002BHQOCI</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.fr/gp/pdp/taf/B002BHQOCI%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3DB002BHQOCI</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.fr/review/product/B002BHQOCI%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3DB002BHQOCI</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.fr/gp/offer-listing/B002BHQOCI%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3DB002BHQOCI</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>Tom Clancy</Author>
+        <Manufacturer>NAVAL INSTITUTE PRESS</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Hunt for Red October 2ND Printing</Title>
+      </ItemAttributes>
+    </Item>
+  </Items>
+</ItemSearchResponse>
