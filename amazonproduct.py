@@ -51,7 +51,7 @@ except ImportError: # pragma: no cover
     from Crypto.Hash import SHA256 as sha256
     
 import hmac
-from lxml import objectify
+from lxml import objectify, etree
 import re
 import socket
 from time import strftime, gmtime
@@ -237,6 +237,7 @@ class API (object):
         self.debug = 0 # set to 1 if you want to see HTTP headers
         
         self.response_processor = processor
+        self._parser = None # will be set first time _parse is run 
         
     def _build_url(self, **qargs):
         """
@@ -322,7 +323,28 @@ class API (object):
         if self.response_processor:
             return self.response_processor(fp)
         
-        tree = objectify.parse(fp)
+        # define custom class lookup first time this method is called which 
+        # will hopefully reduce execution time (although it's lightning fast!) 
+        if self._parser is None:
+            
+            class SelectiveClassLookup(etree.CustomElementClassLookup):
+                """
+                Lookup mechanism for XML elements to ensure that ItemIds (such 
+                as ASINs) are always StringElements and evaluated as such. 
+                Thanks to Brian Browning for pointing this out.
+                """
+                def lookup(self, node_type, document, namespace, name):
+                    if name == 'ItemId':
+                        return objectify.StringElement
+                    
+            self._parser = etree.XMLParser()
+            lookup = SelectiveClassLookup()
+            lookup.set_fallback(objectify.ObjectifyElementClassLookup())
+#            lookup.set_fallback(etree.ElementNamespaceClassLookup(
+#                                    objectify.ObjectifyElementClassLookup()))
+            self._parser.set_element_class_lookup(lookup)
+        
+        tree = objectify.parse(fp, self._parser)
         root = tree.getroot()
         
         #~ from lxml import etree

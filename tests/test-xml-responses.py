@@ -1,6 +1,7 @@
 
 # import base first because sys.path is changed in order to find amazonproduct!
 from base import XMLResponseTestCase, XMLResponseTestLoader
+from base import XML_TEST_DIR, TESTABLE_API_VERSIONS
 
 from amazonproduct import API, ResultPaginator, LOCALES
 from amazonproduct import AWSError
@@ -9,6 +10,10 @@ from amazonproduct import InvalidSearchIndex, InvalidResponseGroup
 from amazonproduct import InvalidParameterCombination 
 from amazonproduct import NoSimilarityForASIN
 from amazonproduct import NoExactMatchesFound, NotEnoughParameters
+
+from lxml import objectify
+import os, os.path
+import unittest
 
 class ItemLookupTestCase (XMLResponseTestCase):
 
@@ -372,6 +377,40 @@ class BrowseNodeLookupTestCase (XMLResponseTestCase):
         self.assertEquals(children, self.CHILDREN[self.current_locale])
         self.assertEquals(ancestors, self.ANCESTORS[self.current_locale])
         
+
+class XMLParsingTestCase (unittest.TestCase):
+    
+    """
+    Checks that all XML responses are parsed correctly, for instance, that all
+    <ItemId> elements are ``objectify.StringElement``s. 
+    """
+    
+    ACCESS_KEY = SECRET_KEY = ''
+    
+    def setUp(self):
+        """
+        Collect all XML files stored.
+        """
+        # TODO: Skip tests if no XML files are found?
+        self.test_files = [os.path.join(XML_TEST_DIR, dir, f) 
+            for dir in TESTABLE_API_VERSIONS
+            for f in os.listdir(os.path.join(XML_TEST_DIR, dir))
+            if f.lower().endswith('.xml')
+        ]
+        self.api = API(self.ACCESS_KEY, self.SECRET_KEY, 'us')
+        
+        # run API parser with fake XML snippet
+        # so we can use self.api._parser directly in tests
+        from StringIO import StringIO
+        self.api._parse(StringIO('<xml xmlns="http://webservices.amazon.com/AWSECommerceService/2009-11-01"/>'))
+        
+    def test_all_ItemId_elements_are_StringElement(self):
+        for file in self.test_files:
+            tree = objectify.parse(open(file), self.api._parser)
+            nspace = tree.getroot().nsmap.get(None, '')
+            for item_id in tree.xpath('//aws:ItemId', 
+                                      namespaces={'aws' : nspace}):
+                self.assertEquals(item_id.pyval, item_id.text, str(item_id)) 
 
 if __name__ == '__main__':
     import unittest
