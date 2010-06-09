@@ -1,0 +1,24 @@
+
+dist
+build
+python_amazon_product_api.egg-info
+docs/.build
+
+# hide real key data!
+examples/config.py$
+tests/config.py$
+
+# eclipse project files
+.settings
+.project
+.pydevproject
+
+# code coverage files
+.coverage
+
+# use glob syntax.
+syntax: glob
+
+*.pyc
+*.pyo
+

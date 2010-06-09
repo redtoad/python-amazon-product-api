@@ -1,0 +1,123 @@
+<ItemLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2009-10-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+    </HTTPHeaders>
+    <RequestId>6c750947-11c6-4a3c-9dc6-4519dbe7ad18</RequestId>
+    <Arguments>
+      <Argument Name="ReviewPage" Value="1"/>
+      <Argument Name="Operation" Value="ItemLookup"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="ItemId" Value="0747532745"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2009-12-09T16:38:34Z"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="ResponseGroup" Value="Reviews"/>
+      <Argument Name="Version" Value="2009-10-01"/>
+    </Arguments>
+    <RequestProcessingTime>0.0204600000000000</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>True</IsValid>
+      <ItemLookupRequest>
+        <Condition>New</Condition>
+        <DeliveryMethod>Ship</DeliveryMethod>
+        <IdType>ASIN</IdType>
+        <MerchantId>Amazon</MerchantId>
+        <OfferPage>1</OfferPage>
+        <ItemId>0747532745</ItemId>
+        <ResponseGroup>Reviews</ResponseGroup>
+        <ReviewPage>1</ReviewPage>
+        <ReviewSort>-SubmissionDate</ReviewSort>
+        <VariationPage>All</VariationPage>
+      </ItemLookupRequest>
+    </Request>
+    <Item>
+      <ASIN>0747532745</ASIN>
+      <CustomerReviews>
+        <AverageRating>5.0</AverageRating>
+        <TotalReviews>2458</TotalReviews>
+        <TotalReviewPages>492</TotalReviewPages>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>5</Rating>
+          <HelpfulVotes>1</HelpfulVotes>
+          <CustomerId>A2LP770J0HLAJ8</CustomerId>
+          <Reviewer>
+            <CustomerId>A2LP770J0HLAJ8</CustomerId>
+            <Name>Sandra</Name>
+            <Nickname>strickjackale</Nickname>
+            <Location>Feldkirchen</Location>
+          </Reviewer>
+          <TotalVotes>1</TotalVotes>
+          <Date>2009-10-26</Date>
+          <Summary>Bezaubernd</Summary>
+          <Content>Um endlich meine Englischkenntnisse wieder auf Vordermann zu bringen habe ich mich entschlossen mir ein Harry Potter-Buch zu besorgen, da der Hype gerade auf dem H&#246;hepunkt angelangt war. Mittlerweile habe ich das Buch vor 3 Tagen wieder in die Hand genommen und gerade eben ausgelesen - nicht, weil mein Englisch wieder eingerostet war, sondern weil auch ich mich als Erwachsener gerne in diese Welt voller Fantasie entf&#252;hren lasse. Ich versuche logische Fragen (Wo in Rum&#228;nien leben die Drachen? Wurden sie mit einem Unsichtbarzauber belegt, um nicht gesehen zu werden? F&#228;llt den Muggeln wirklich gar nichts auf? Sind Muggel-Eltern nicht zutiefst schockiert, wenn ihr Kind nach Hogwarts gehen soll und keinen "anst&#228;ndigen" Beruf erlernt? Verkraften diese Eltern die Existenz einer solchen Welt wirklich so schnell?) hinten anzustellen. Man muss nicht immer alles erkl&#228;ren k&#246;nnen (leider eine Unart der Erwachsenen). Diese B&#252;cherreihe bietet die Gelegenheit das Kind im Erwachsenen wieder lebendig werden zu lassen. Da werden Geschichten erz&#228;hlt &#252;ber die Entstehung von Freundschaften, es werden Werte vermittelt, es werden &#196;ngste beschrieben und &#252;berstanden, es wird die Liebe als eine ungeheuer gro&#223;e Kraft beschrieben. 
+&lt;br /&gt;Endlich k&#246;nnen die Gro&#223;en, wenn sie es denn wollen, auch bei Kinderb&#252;chern (au&#223;er M&#228;rchen, die ja eigentlich nicht wirklich f&#252;r Kinder gedacht sind) fantastische Abenteuer mit vielen liebevollen, au&#223;ergew&#246;hnlichen Ideen der Autorin und einem gut durchdachten Handlungsbogen, erleben und mitfiebern, wie Harry Potter mit viel Gl&#252;ck und Unterst&#252;tzung ein Abenteuer beginnt, welches noch weitere 6 B&#252;cher umfassen soll.
+&lt;br /&gt;Und die Lesefertigkeit f&#252;r die Harry Potter-Reihe muss nicht perfekt sein - schlie&#223;lich wurden die B&#252;cher f&#252;r Kinder geschrieben. Sie sind leicht verst&#228;ndlich und ein W&#246;rterbuch ist kaum vonn&#246;ten. Viele Vokabeln erkl&#228;ren sich durch das Lesen von selbst.</Content>
+        </Review>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>5</Rating>
+          <HelpfulVotes>1</HelpfulVotes>
+          <CustomerId>A116CZ39CTOZF1</CustomerId>
+          <Reviewer>
+            <CustomerId>A116CZ39CTOZF1</CustomerId>
+            <Name>J. Hager</Name>
+            <Nickname>Sitasher</Nickname>
+            <Location>M&#252;nchen</Location>
+          </Reviewer>
+          <TotalVotes>1</TotalVotes>
+          <Date>2009-10-04</Date>
+          <Summary>Tolle Geschichte in toller englischer Sprache</Summary>
+          <Content>Die Geschichte von Harry Potter ist eine spannende Story f&#252;r jung und alt. Aufgrund der sehr leichten englischen Formulierung ist es auch "Nicht-Englisch-Profis" m&#246;glich, das Buch ohne gro&#223;e Verst&#228;ndnisprobleme zu lesen. Einzig schwierig gestalten sich Passagen in denen Hagrid viel Spricht, da seine Texte in Akzent-Sprache geschrieben sind.</Content>
+        </Review>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>4</Rating>
+          <HelpfulVotes>1</HelpfulVotes>
+          <CustomerId>A2KY9S83RIDJ5A</CustomerId>
+          <Reviewer>
+            <CustomerId>A2KY9S83RIDJ5A</CustomerId>
+            <Name>Chriser1</Name>
+          </Reviewer>
+          <TotalVotes>1</TotalVotes>
+          <Date>2009-09-02</Date>
+          <Summary>Sehr gut</Summary>
+          <Content>Ich hab bis jetzt noch nie ein Harry Potter Buch gelesen. Ich hab nur die ersten filme (1-3) gesehen.
+&lt;br /&gt;Das Buch ist auch f&#252;r nicht so gut englisch sprechenden Menschen gut verst&#228;ndlich. Es ist nach meinem Empfinden, das einfachste der ganzen Buchserie.</Content>
+        </Review>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>5</Rating>
+          <HelpfulVotes>0</HelpfulVotes>
+          <CustomerId>A2OHYDGRHXALEP</CustomerId>
+          <Reviewer>
+            <CustomerId>A2OHYDGRHXALEP</CustomerId>
+            <Name>David Cole</Name>
+          </Reviewer>
+          <TotalVotes>0</TotalVotes>
+          <Date>2009-07-05</Date>
+          <Summary>Vom standhaften Harry Potter-Verweigerer zum totalen Fan</Summary>
+          <Content>Ich muss zugeben, dass ich mich zu Beginn standhaft geweigert habe, Harry Potter zu lesen. Erst als mir jemand das Buch geschenkt hat, musste ich es quasi lesen. Um es kurz zu machen: Ich war mit dem Buch noch nicht einmal fertig, da hab ich mir schon die n&#228;chsten beiden B&#228;nde gekauft! Ab diesem Zeitpunkt geh&#246;rte ich zu den Lesern, die bereits ein halbes Jahr vor Ver&#246;ffentlichung des n&#228;chsten Buches die Vorbestellung aufgegeben und die Tage bis dahin r&#252;ckw&#228;rts gez&#228;hlt haben. </Content>
+        </Review>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>4</Rating>
+          <HelpfulVotes>0</HelpfulVotes>
+          <CustomerId>AY5RKPPQTGOJ4</CustomerId>
+          <Reviewer>
+            <CustomerId>AY5RKPPQTGOJ4</CustomerId>
+            <Name>D. Riehn</Name>
+            <Nickname>Fireth</Nickname>
+          </Reviewer>
+          <TotalVotes>0</TotalVotes>
+          <Date>2009-06-17</Date>
+          <Summary>Leicht zu lesen</Summary>
+          <Content>Au&#223;erhalb meines Englisch-Studiums ist das das erste Buch, welches ich auf Englisch lese. Zwar muss man sich bei Hagrids Aussprache erst ein wenig einfinden, aber das bekommt man schnell raus. Ansonsten ist  das Buch leicht und verst&#228;ndlich geschrieben und auch jemand, der der englischen Sprache noch nicht ganz so m&#228;chtig ist, kommt wunderbar zurecht. Auch wenn man nicht jedes Wort wei&#223;, der Kontext an sich ist sehr gut verst&#228;ndlich. </Content>
+        </Review>
+      </CustomerReviews>
+    </Item>
+  </Items>
+</ItemLookupResponse>

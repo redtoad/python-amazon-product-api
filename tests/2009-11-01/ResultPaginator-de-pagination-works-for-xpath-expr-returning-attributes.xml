@@ -1,0 +1,433 @@
+<ListLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2009-11-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+    </HTTPHeaders>
+    <RequestId>17E98YSF8ZXQWBE3BPPQ</RequestId>
+    <Arguments>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="ProductPage" Value="1"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="ResponseGroup" Value="ItemAttributes,ListInfo"/>
+      <Argument Name="Operation" Value="ListLookup"/>
+      <Argument Name="ListId" Value="229RA3LVMR97X"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Version" Value="2009-11-01"/>
+      <Argument Name="Timestamp" Value="2010-05-22T15:10:39Z"/>
+      <Argument Name="ListType" Value="WishList"/>
+      <Argument Name="IsOmitPurchasedItems" Value="True"/>
+    </Arguments>
+    <RequestProcessingTime>0.191092014312744</RequestProcessingTime>
+  </OperationRequest>
+  <Lists>
+    <Request>
+      <IsValid>True</IsValid>
+      <ListLookupRequest>
+        <ListId>229RA3LVMR97X</ListId>
+        <ListType>WishList</ListType>
+        <ProductPage>1</ProductPage>
+        <ResponseGroup>ItemAttributes</ResponseGroup>
+        <ResponseGroup>ListInfo</ResponseGroup>
+        <IsOmitPurchasedItems>True</IsOmitPurchasedItems>
+      </ListLookupRequest>
+    </Request>
+    <List>
+      <ListId>229RA3LVMR97X</ListId>
+      <ListURL>http://www.amazon.de/gp/registry/wishlist/229RA3LVMR97X</ListURL>
+      <ListName>Wishlist</ListName>
+      <ListType>WishList</ListType>
+      <TotalItems>29</TotalItems>
+      <TotalPages>3</TotalPages>
+      <DateCreated>2001-06-28</DateCreated>
+      <LastModified>2010-05-16</LastModified>
+      <CustomerName>Giacomo Lacava</CustomerName>
+      <ListItem>
+        <Item>
+          <ASIN>0300122950</ASIN>
+          <DetailPageURL>http://www.amazon.de/Property-Outlaws-Squatters-Protesters-Ownership/dp/0300122950%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0300122950%26coliid%3DI31Z6596QATBZK%26colid%3D229RA3LVMR97X</DetailPageURL>
+          <ItemLinks>
+            <ItemLink>
+              <Description>Add To Wishlist</Description>
+              <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D0300122950%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D0300122950</URL>
+            </ItemLink>
+            <ItemLink>
+              <Description>Tell A Friend</Description>
+              <URL>http://www.amazon.de/gp/pdp/taf/0300122950%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D0300122950</URL>
+            </ItemLink>
+            <ItemLink>
+              <Description>All Customer Reviews</Description>
+              <URL>http://www.amazon.de/review/product/0300122950%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D0300122950</URL>
+            </ItemLink>
+            <ItemLink>
+              <Description>All Offers</Description>
+              <URL>http://www.amazon.de/gp/offer-listing/0300122950%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D0300122950</URL>
+            </ItemLink>
+          </ItemLinks>
+          <ItemAttributes>
+            <Author>Eduardo Moises Penalver</Author>
+            <Author>Sonia K. Katyal</Author>
+            <Binding>Taschenbuch</Binding>
+            <Creator Role="Autor">Eduardo Moises Penalver</Creator>
+            <Creator Role="Autor">Sonia K. Katyal</Creator>
+            <DeweyDecimalNumber>346.048</DeweyDecimalNumber>
+            <EAN>9780300122954</EAN>
+            <ISBN>0300122950</ISBN>
+            <IsEligibleForTradeIn>1</IsEligibleForTradeIn>
+            <Label>Yale Univ Pr</Label>
+            <Manufacturer>Yale Univ Pr</Manufacturer>
+            <NumberOfPages>304</NumberOfPages>
+            <PackageDimensions>
+              <Height Units="hundredths-inches">80</Height>
+              <Length Units="hundredths-inches">910</Length>
+              <Weight Units="hundredths-pounds">95</Weight>
+              <Width Units="hundredths-inches">610</Width>
+            </PackageDimensions>
+            <ProductGroup>Book</ProductGroup>
+            <ProductTypeName>ABIS_BOOK</ProductTypeName>
+            <PublicationDate>2010-02-16</PublicationDate>
+            <Publisher>Yale Univ Pr</Publisher>
+            <Studio>Yale Univ Pr</Studio>
+            <Title>Property Outlaws: How Squatters, Pirates, and Protesters Improve the Law of Ownership</Title>
+          </ItemAttributes>
+        </Item>
+      </ListItem>
+      <ListItem>
+        <Item>
+          <ASIN>B001KOB8NS</ASIN>
+          <DetailPageURL>http://www.amazon.de/FX-ANTIREFLEX-Displayschutzfolie-Canon-EOS450D-450-D/dp/B001KOB8NS%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB001KOB8NS%26coliid%3DI1GXEA71ZVD5Q9%26colid%3D229RA3LVMR97X</DetailPageURL>
+          <ItemLinks>
+            <ItemLink>
+              <Description>Add To Wishlist</Description>
+              <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3DB001KOB8NS%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB001KOB8NS</URL>
+            </ItemLink>
+            <ItemLink>
+              <Description>Tell A Friend</Description>
+              <URL>http://www.amazon.de/gp/pdp/taf/B001KOB8NS%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB001KOB8NS</URL>
+            </ItemLink>
+            <ItemLink>
+              <Description>All Customer Reviews</Description>
+              <URL>http://www.amazon.de/review/product/B001KOB8NS%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB001KOB8NS</URL>
+            </ItemLink>
+            <ItemLink>
+              <Description>All Offers</Description>
+              <URL>http://www.amazon.de/gp/offer-listing/B001KOB8NS%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB001KOB8NS</URL>
+            </ItemLink>
+          </ItemLinks>
+          <ItemAttributes>
+            <Brand>FoliX</Brand>
+            <EAN>9911589475497</EAN>
+            <Feature>Pass- und konturgenau f&#252;r Canon EOS 450D Displays zugeschnitten. Garantierte Qualit&#228;tsverarbeitung mit modernsten Pr&#228;zisionsmaschinen (Laserschnitt-Technik) - Made in Germany!</Feature>
+            <Feature>Antireflektierender Displayschutz - Blendfrei und hartbeschichtet! Entspiegelt das Display und erh&#246;ht deutlich die Lesbarkeit der Anzeige beim Arbeiten im Sonnenlicht und unter starken Lichtquellen.</Feature>
+            <Feature>Extrem kratzfeste, hartbeschichtete Oberfl&#228;che! Mit einer Bleistifth&#228;rte von 3H bei 500g Schreibdruck, sehr best&#228;ndig gegen Kratzer.</Feature>
+            <Feature>Sehr einfache Montage - 100% blasenfreie Anbringung bei gereinigtem Display! Die spezielle Silikon Haftschicht verdr&#228;ngt die Luft beim Aufbringen und schmiegt sich damit von selbst an das Display an.</Feature>
+            <Feature>Keine Beeintr&#228;chtigung der Bedienbarkeit! Diese Displayschutzfolie bietet ein angenehmes Schreibgef&#252;hl und ist f&#252;r den Einsatz auf Touchscreens optimiert.</Feature>
+            <ItemDimensions>
+              <Height Units="hundredths-inches">591</Height>
+              <Length Units="hundredths-inches">335</Length>
+              <Weight Units="hundredths-pounds">1</Weight>
+              <Width Units="hundredths-inches">8</Width>
+            </ItemDimensions>
+            <Label>FoliX</Label>
+            <Manufacturer>FoliX</Manufacturer>
+            <MPN>9911589475497</MPN>
+            <PackageQuantity>1</PackageQuantity>
+            <ProductGroup>CE</ProductGroup>
+            <ProductTypeName>CONSUMER_ELECTRONICS</ProductTypeName>
+            <Publisher>FoliX</Publisher>
+            <Studio>FoliX</Studio>
+            <Title>FX-ANTIREFLEX Displayschutzfolie f&#252;r Canon EOS 450D / EOS450D 450-D - Displayschutz antireflektierend!</Title>
+          </ItemAttributes>
+        </Item>
+      </ListItem>
+      <ListItem>
+        <Item>
+          <ASIN>1848564686</ASIN>
+          <DetailPageURL>http://www.amazon.de/Sandman-Neil-Gaiman/dp/1848564686%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1848564686%26coliid%3DI3F2LYRNX2OH2Y%26colid%3D229RA3LVMR97X</DetailPageURL>
+          <ItemLinks>
+            <ItemLink>
+              <Description>Add To Wishlist</Description>
+              <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D1848564686%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D1848564686</URL>
+            </ItemLink>
+            <ItemLink>
+              <Description>Tell A Friend</Description>
+              <URL>http://www.amazon.de/gp/pdp/taf/1848564686%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D1848564686</URL>
+            </ItemLink>
+            <ItemLink>
+              <Description>All Customer Reviews</Description>
+              <URL>http://www.amazon.de/review/product/1848564686%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D1848564686</URL>
+            </ItemLink>
+            <ItemLink>
+              <Description>All Offers</Description>
+              <URL>http://www.amazon.de/gp/offer-listing/1848564686%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D1848564686</URL>
+            </ItemLink>
+          </ItemLinks>
+          <ItemAttributes>
+            <Author>Neil Gaiman</Author>
+            <Binding>Gebundene Ausgabe</Binding>
+            <Creator Role="Autor">Neil Gaiman</Creator>
+            <EAN>9781848564688</EAN>
+            <ISBN>1848564686</ISBN>
+            <Label>Titan Books</Label>
+            <Manufacturer>Titan Books</Manufacturer>
+            <NumberOfPages>144</NumberOfPages>
+            <PackageDimensions>
+              <Height Units="hundredths-inches">55</Height>
+              <Length Units="hundredths-inches">1047</Length>
+              <Weight Units="hundredths-pounds">93</Weight>
+              <Width Units="hundredths-inches">685</Width>
+            </PackageDimensions>
+            <ProductGroup>Book</ProductGroup>
+            <ProductTypeName>ABIS_BOOK</ProductTypeName>
+            <PublicationDate>2009-11-27</PublicationDate>
+            <Publisher>Titan Books</Publisher>
+            <Studio>Titan Books</Studio>
+            <Title>Sandman</Title>
+          </ItemAttributes>
+        </Item>
+      </ListItem>
+      <ListItem>
+        <Item>
+          <ASIN>1595823166</ASIN>
+          <DetailPageURL>http://www.amazon.de/Cages-Dave-McKean/dp/1595823166%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1595823166%26coliid%3DI6EO9ETZRF5EC%26colid%3D229RA3LVMR97X</DetailPageURL>
+          <ItemLinks>
+            <ItemLink>
+              <Description>Add To Wishlist</Description>
+              <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D1595823166%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D1595823166</URL>
+            </ItemLink>
+            <ItemLink>
+              <Description>Tell A Friend</Description>
+              <URL>http://www.amazon.de/gp/pdp/taf/1595823166%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D1595823166</URL>
+            </ItemLink>
+            <ItemLink>
+              <Description>All Customer Reviews</Description>
+              <URL>http://www.amazon.de/review/product/1595823166%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D1595823166</URL>
+            </ItemLink>
+            <ItemLink>
+              <Description>All Offers</Description>
+              <URL>http://www.amazon.de/gp/offer-listing/1595823166%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D1595823166</URL>
+            </ItemLink>
+          </ItemLinks>
+          <ItemAttributes>
+            <Author>Dave McKean</Author>
+            <Binding>Taschenbuch</Binding>
+            <Creator Role="Autor">Dave McKean</Creator>
+            <DeweyDecimalNumber>741</DeweyDecimalNumber>
+            <EAN>9781595823168</EAN>
+            <ISBN>1595823166</ISBN>
+            <Label>Dark Horse Comics</Label>
+            <Manufacturer>Dark Horse Comics</Manufacturer>
+            <NumberOfPages>496</NumberOfPages>
+            <ProductGroup>Book</ProductGroup>
+            <ProductTypeName>ABIS_BOOK</ProductTypeName>
+            <PublicationDate>2009-07-29</PublicationDate>
+            <Publisher>Dark Horse Comics</Publisher>
+            <Studio>Dark Horse Comics</Studio>
+            <Title>Cages</Title>
+          </ItemAttributes>
+        </Item>
+      </ListItem>
+      <ListItem>
+        <Item>
+          <ASIN>1416557083</ASIN>
+          <DetailPageURL>http://www.amazon.de/Gimme-Shelter-Mary-Elizabeth-Williams/dp/1416557083%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1416557083%26coliid%3DI3A0PKC4OJOX21%26colid%3D229RA3LVMR97X</DetailPageURL>
+          <ItemLinks>
+            <ItemLink>
+              <Description>Add To Wishlist</Description>
+              <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D1416557083%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D1416557083</URL>
+            </ItemLink>
+            <ItemLink>
+              <Description>Tell A Friend</Description>
+              <URL>http://www.amazon.de/gp/pdp/taf/1416557083%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D1416557083</URL>
+            </ItemLink>
+            <ItemLink>
+              <Description>All Customer Reviews</Description>
+              <URL>http://www.amazon.de/review/product/1416557083%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D1416557083</URL>
+            </ItemLink>
+            <ItemLink>
+              <Description>All Offers</Description>
+              <URL>http://www.amazon.de/gp/offer-listing/1416557083%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D1416557083</URL>
+            </ItemLink>
+          </ItemLinks>
+          <ItemAttributes>
+            <Author>Mary Elizabeth Williams</Author>
+            <Binding>Gebundene Ausgabe</Binding>
+            <Creator Role="Autor">Mary Elizabeth Williams</Creator>
+            <DeweyDecimalNumber>333.338097471</DeweyDecimalNumber>
+            <EAN>9781416557081</EAN>
+            <Edition>1</Edition>
+            <ISBN>1416557083</ISBN>
+            <ItemDimensions>
+              <Height Units="hundredths-inches">100</Height>
+              <Length Units="hundredths-inches">960</Length>
+              <Weight Units="hundredths-pounds">119</Weight>
+              <Width Units="hundredths-inches">640</Width>
+            </ItemDimensions>
+            <Label>Simon &amp; Schuster</Label>
+            <Manufacturer>Simon &amp; Schuster</Manufacturer>
+            <NumberOfPages>336</NumberOfPages>
+            <PackageDimensions>
+              <Height Units="hundredths-inches">140</Height>
+              <Length Units="hundredths-inches">960</Length>
+              <Weight Units="hundredths-pounds">115</Weight>
+              <Width Units="hundredths-inches">630</Width>
+            </PackageDimensions>
+            <ProductGroup>Book</ProductGroup>
+            <ProductTypeName>ABIS_BOOK</ProductTypeName>
+            <PublicationDate>2009-03-03</PublicationDate>
+            <Publisher>Simon &amp; Schuster</Publisher>
+            <Studio>Simon &amp; Schuster</Studio>
+            <Title>Gimme Shelter</Title>
+          </ItemAttributes>
+        </Item>
+      </ListItem>
+      <ListItem>
+        <Item>
+          <ASIN>B0000246DK</ASIN>
+          <DetailPageURL>http://www.amazon.de/Dream-100-Nations-Trans-Global-Underground/dp/B0000246DK%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB0000246DK%26coliid%3DILWSP46E39R97%26colid%3D229RA3LVMR97X</DetailPageURL>
+          <ItemLinks>
+            <ItemLink>
+              <Description>Add To Wishlist</Description>
+              <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3DB0000246DK%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB0000246DK</URL>
+            </ItemLink>
+            <ItemLink>
+              <Description>Tell A Friend</Description>
+              <URL>http://www.amazon.de/gp/pdp/taf/B0000246DK%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB0000246DK</URL>
+            </ItemLink>
+            <ItemLink>
+              <Description>All Customer Reviews</Description>
+              <URL>http://www.amazon.de/review/product/B0000246DK%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB0000246DK</URL>
+            </ItemLink>
+            <ItemLink>
+              <Description>All Offers</Description>
+              <URL>http://www.amazon.de/gp/offer-listing/B0000246DK%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB0000246DK</URL>
+            </ItemLink>
+          </ItemLinks>
+          <ItemAttributes>
+            <Artist>Trans-Global Underground</Artist>
+            <Artist>Transglobal Underground</Artist>
+            <Binding>Audio CD</Binding>
+            <Creator Role="K&#252;nstler">Trans-Global Underground</Creator>
+            <Creator Role="K&#252;nstler">Transglobal Underground</Creator>
+            <EAN>5018560002124</EAN>
+            <ItemDimensions>
+              <Weight Units="hundredths-pounds">21</Weight>
+            </ItemDimensions>
+            <Label>Nation/Beggars Group (Indigo)</Label>
+            <Manufacturer>Nation/Beggars Group (Indigo)</Manufacturer>
+            <NumberOfDiscs>1</NumberOfDiscs>
+            <PackageDimensions>
+              <Height Units="hundredths-inches">54</Height>
+              <Length Units="hundredths-inches">555</Length>
+              <Weight Units="hundredths-pounds">18</Weight>
+              <Width Units="hundredths-inches">497</Width>
+            </PackageDimensions>
+            <ProductGroup>Music</ProductGroup>
+            <ProductTypeName>ABIS_MUSIC</ProductTypeName>
+            <Publisher>Nation/Beggars Group (Indigo)</Publisher>
+            <ReleaseDate>1998-08-31</ReleaseDate>
+            <Studio>Nation/Beggars Group (Indigo)</Studio>
+            <Title>Dream of 100 Nations</Title>
+          </ItemAttributes>
+        </Item>
+      </ListItem>
+      <ListItem>
+        <Item>
+          <ASIN>1607060922</ASIN>
+          <DetailPageURL>http://www.amazon.de/I-Kill-Giants-Joe-Kelly/dp/1607060922%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1607060922%26coliid%3DI7NX57Q4M56ZF%26colid%3D229RA3LVMR97X</DetailPageURL>
+          <ItemLinks>
+            <ItemLink>
+              <Description>Add To Wishlist</Description>
+              <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D1607060922%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D1607060922</URL>
+            </ItemLink>
+            <ItemLink>
+              <Description>Tell A Friend</Description>
+              <URL>http://www.amazon.de/gp/pdp/taf/1607060922%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D1607060922</URL>
+            </ItemLink>
+            <ItemLink>
+              <Description>All Customer Reviews</Description>
+              <URL>http://www.amazon.de/review/product/1607060922%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D1607060922</URL>
+            </ItemLink>
+            <ItemLink>
+              <Description>All Offers</Description>
+              <URL>http://www.amazon.de/gp/offer-listing/1607060922%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D1607060922</URL>
+            </ItemLink>
+          </ItemLinks>
+          <ItemAttributes>
+            <Author>Joe Kelly</Author>
+            <Binding>Taschenbuch</Binding>
+            <Creator Role="Autor">Joe Kelly</Creator>
+            <Creator Role="Illustrator">J. M. Ken Nimura</Creator>
+            <DeweyDecimalNumber>741</DeweyDecimalNumber>
+            <EAN>9781607060925</EAN>
+            <ISBN>1607060922</ISBN>
+            <IsEligibleForTradeIn>1</IsEligibleForTradeIn>
+            <Label>Image Comics</Label>
+            <Manufacturer>Image Comics</Manufacturer>
+            <NumberOfPages>184</NumberOfPages>
+            <PackageDimensions>
+              <Height Units="hundredths-inches">55</Height>
+              <Length Units="hundredths-inches">1000</Length>
+              <Weight Units="hundredths-pounds">79</Weight>
+              <Width Units="hundredths-inches">654</Width>
+            </PackageDimensions>
+            <ProductGroup>Book</ProductGroup>
+            <ProductTypeName>ABIS_BOOK</ProductTypeName>
+            <PublicationDate>2009-05-27</PublicationDate>
+            <Publisher>Image Comics</Publisher>
+            <Studio>Image Comics</Studio>
+            <Title>I Kill Giants</Title>
+          </ItemAttributes>
+        </Item>
+      </ListItem>
+      <ListItem>
+        <Item>
+          <ASIN>1932416358</ASIN>
+          <DetailPageURL>http://www.amazon.de/Noisy-Outlaws-Unfriendly-Blobs-Things/dp/1932416358%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1932416358%26coliid%3DI2IQZFRLMWDPGP%26colid%3D229RA3LVMR97X</DetailPageURL>
+          <ItemLinks>
+            <ItemLink>
+              <Description>Add To Wishlist</Description>
+              <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D1932416358%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D1932416358</URL>
+            </ItemLink>
+            <ItemLink>
+              <Description>Tell A Friend</Description>
+              <URL>http://www.amazon.de/gp/pdp/taf/1932416358%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D1932416358</URL>
+            </ItemLink>
+            <ItemLink>
+              <Description>All Customer Reviews</Description>
+              <URL>http://www.amazon.de/review/product/1932416358%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D1932416358</URL>
+            </ItemLink>
+            <ItemLink>
+              <Description>All Offers</Description>
+              <URL>http://www.amazon.de/gp/offer-listing/1932416358%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D1932416358</URL>
+            </ItemLink>
+          </ItemLinks>
+          <ItemAttributes>
+            <Binding>Gebundene Ausgabe</Binding>
+            <Creator Role="Herausgeber">Ted Thompson</Creator>
+            <Creator Role="Herausgeber">Eli Horowitz</Creator>
+            <Creator Role="K&#252;nstler">Lemony Snicket</Creator>
+            <EAN>9781932416350</EAN>
+            <ISBN>1932416358</ISBN>
+            <Label>Mcsweeneys</Label>
+            <Manufacturer>Mcsweeneys</Manufacturer>
+            <ManufacturerMinimumAge Units="months">96</ManufacturerMinimumAge>
+            <NumberOfPages>208</NumberOfPages>
+            <PackageDimensions>
+              <Height Units="hundredths-inches">100</Height>
+              <Length Units="hundredths-inches">820</Length>
+              <Weight Units="hundredths-pounds">85</Weight>
+              <Width Units="hundredths-inches">580</Width>
+            </PackageDimensions>
+            <ProductGroup>Book</ProductGroup>
+            <ProductTypeName>ABIS_BOOK</ProductTypeName>
+            <PublicationDate>2005-09-12</PublicationDate>
+            <Publisher>Mcsweeneys</Publisher>
+            <ReadingLevel>Ages 9-12</ReadingLevel>
+            <Studio>Mcsweeneys</Studio>
+            <Title>Noisy Outlaws, Unfriendly Blobs, and Some Other Things . . .: That Aren't as Scary, Maybe, Depending on How You Feel about Lost Lands, Stray Cellphone (Mcsweeneys)</Title>
+          </ItemAttributes>
+        </Item>
+      </ListItem>
+    </List>
+  </Lists>
+</ListLookupResponse>
