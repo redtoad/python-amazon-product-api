@@ -334,7 +334,7 @@ class API (object):
                 Thanks to Brian Browning for pointing this out.
                 """
                 def lookup(self, node_type, document, namespace, name):
-                    if name == 'ItemId':
+                    if name in ('ItemId', 'ASIN'):
                         return objectify.StringElement
                     
             self._parser = etree.XMLParser()

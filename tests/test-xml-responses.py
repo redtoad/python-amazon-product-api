@@ -57,7 +57,7 @@ class ItemSearchTestCase (XMLResponseTestCase):
     Check that all XML responses for ItemSearch are parsed correctly.
     """
     
-    locales = ['de']
+    locales = ['de', 'fr', 'uk', 'us']
     
     def test_no_parameters(self):
         try:
@@ -72,12 +72,16 @@ class ItemSearchTestCase (XMLResponseTestCase):
         
     def test_invalid_search_index(self):
         self.assertRaises(InvalidSearchIndex, self.api.item_search, 
-                          'TopSellers', BrowseNode=132)
+                          '???', BrowseNode=132)
         
     def test_invalid_parameter_combination(self):
         self.assertRaises(InvalidParameterCombination, self.api.item_search, 
                           'All', BrowseNode=132)
-
+        
+    def test_lookup_by_title(self):
+        result = self.api.item_search('Books', Title='Hunt for Red October')
+        for item in result.Items.Item:
+            self.assertEquals(item.ASIN, item.ASIN.pyval, item.ASIN.text) 
         
 class SimilarityLookupTestCase (XMLResponseTestCase):
     
@@ -405,6 +409,14 @@ class XMLParsingTestCase (unittest.TestCase):
         self.api._parse(StringIO('<xml xmlns="http://webservices.amazon.com/AWSECommerceService/2009-11-01"/>'))
         
     def test_all_ItemId_elements_are_StringElement(self):
+        for file in self.test_files:
+            tree = objectify.parse(open(file), self.api._parser)
+            nspace = tree.getroot().nsmap.get(None, '')
+            for item_id in tree.xpath('//aws:ItemId', 
+                                      namespaces={'aws' : nspace}):
+                self.assertEquals(item_id.pyval, item_id.text, str(item_id)) 
+                
+    def test_all_ASIN_elements_are_StringElement(self):
         for file in self.test_files:
             tree = objectify.parse(open(file), self.api._parser)
             nspace = tree.getroot().nsmap.get(None, '')
