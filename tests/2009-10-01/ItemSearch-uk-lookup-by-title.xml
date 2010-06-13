@@ -3,18 +3,18 @@
     <HTTPHeaders>
       <Header Name="UserAgent" Value="python-amazon-product-api/0.2.3 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
     </HTTPHeaders>
-    <RequestId>917c4ade-10d5-4b3f-9dce-90055266ffdb</RequestId>
+    <RequestId>679357d3-457f-4cd1-a11c-6c4f920e449c</RequestId>
     <Arguments>
       <Argument Name="Operation" Value="ItemSearch"/>
       <Argument Name="Service" Value="AWSECommerceService"/>
-      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="Version" Value="2009-10-01"/>
       <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="Timestamp" Value="2010-06-09T07:19:16Z"/>
-      <Argument Name="Title" Value="Hunt for Red October"/>
+      <Argument Name="Timestamp" Value="2010-06-13T12:18:13Z"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Title" Value="Harry Potter"/>
       <Argument Name="SearchIndex" Value="Books"/>
+      <Argument Name="Version" Value="2009-10-01"/>
     </Arguments>
-    <RequestProcessingTime>0.1136200000000000</RequestProcessingTime>
+    <RequestProcessingTime>0.0744570000000000</RequestProcessingTime>
   </OperationRequest>
   <Items>
     <Request>
@@ -26,293 +26,289 @@
         <ResponseGroup>Small</ResponseGroup>
         <ReviewSort>-SubmissionDate</ReviewSort>
         <SearchIndex>Books</SearchIndex>
-        <Title>Hunt for Red October</Title>
+        <Title>Harry Potter</Title>
       </ItemSearchRequest>
     </Request>
-    <TotalResults>73</TotalResults>
-    <TotalPages>8</TotalPages>
+    <TotalResults>2214</TotalResults>
+    <TotalPages>222</TotalPages>
     <Item>
-      <ASIN>0006172768</ASIN>
-      <DetailPageURL>http://www.amazon.co.uk/Hunt-Red-October-Tom-Clancy/dp/0006172768%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0006172768</DetailPageURL>
+      <ASIN>0747532745</ASIN>
+      <DetailPageURL>http://www.amazon.co.uk/Harry-Potter-Philosophers-Stone-Book/dp/0747532745%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0747532745</DetailPageURL>
       <ItemLinks>
         <ItemLink>
           <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3D0006172768%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0006172768</URL>
+          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3D0747532745%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747532745</URL>
         </ItemLink>
         <ItemLink>
           <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.co.uk/gp/pdp/taf/0006172768%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0006172768</URL>
+          <URL>http://www.amazon.co.uk/gp/pdp/taf/0747532745%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747532745</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.co.uk/review/product/0006172768%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0006172768</URL>
+          <URL>http://www.amazon.co.uk/review/product/0747532745%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747532745</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Offers</Description>
-          <URL>http://www.amazon.co.uk/gp/offer-listing/0006172768%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0006172768</URL>
+          <URL>http://www.amazon.co.uk/gp/offer-listing/0747532745%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747532745</URL>
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
-        <Author>Tom Clancy</Author>
-        <Manufacturer>HarperCollins</Manufacturer>
+        <Author>J.K. Rowling</Author>
+        <Manufacturer>Bloomsbury Publishing PLC</Manufacturer>
         <ProductGroup>Book</ProductGroup>
-        <Title>The Hunt for Red October</Title>
+        <Title>Harry Potter and the Philosopher's Stone (Book 1)</Title>
       </ItemAttributes>
     </Item>
     <Item>
-      <ASIN>0765313502</ASIN>
-      <DetailPageURL>http://www.amazon.co.uk/Mutiny-True-Events-Inspired-October/dp/0765313502%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0765313502</DetailPageURL>
+      <ASIN>0747595836</ASIN>
+      <DetailPageURL>http://www.amazon.co.uk/Harry-Potter-Deathly-Hallows-Childrens/dp/0747595836%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0747595836</DetailPageURL>
       <ItemLinks>
         <ItemLink>
           <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3D0765313502%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0765313502</URL>
+          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3D0747595836%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747595836</URL>
         </ItemLink>
         <ItemLink>
           <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.co.uk/gp/pdp/taf/0765313502%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0765313502</URL>
+          <URL>http://www.amazon.co.uk/gp/pdp/taf/0747595836%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747595836</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.co.uk/review/product/0765313502%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0765313502</URL>
+          <URL>http://www.amazon.co.uk/review/product/0747595836%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747595836</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Offers</Description>
-          <URL>http://www.amazon.co.uk/gp/offer-listing/0765313502%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0765313502</URL>
+          <URL>http://www.amazon.co.uk/gp/offer-listing/0747595836%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747595836</URL>
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
-        <Author>David Hagberg</Author>
-        <Author>Boris Gindin</Author>
-        <Manufacturer>Forge</Manufacturer>
+        <Author>J.K. Rowling</Author>
+        <Manufacturer>Bloomsbury Publishing PLC</Manufacturer>
         <ProductGroup>Book</ProductGroup>
-        <Title>Mutiny!: The True Events That Inspired the Hunt for Red October</Title>
+        <Title>Harry Potter and the Deathly Hallows (Book 7) [Children's Edition]</Title>
       </ItemAttributes>
     </Item>
     <Item>
-      <ASIN>1591149924</ASIN>
-      <DetailPageURL>http://www.amazon.co.uk/Last-Sentry-Valery-Sablin-October/dp/1591149924%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1591149924</DetailPageURL>
+      <ASIN>0747538484</ASIN>
+      <DetailPageURL>http://www.amazon.co.uk/Harry-Potter-Chamber-Secrets-Book/dp/0747538484%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0747538484</DetailPageURL>
       <ItemLinks>
         <ItemLink>
           <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3D1591149924%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D1591149924</URL>
+          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3D0747538484%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747538484</URL>
         </ItemLink>
         <ItemLink>
           <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.co.uk/gp/pdp/taf/1591149924%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D1591149924</URL>
+          <URL>http://www.amazon.co.uk/gp/pdp/taf/0747538484%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747538484</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.co.uk/review/product/1591149924%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D1591149924</URL>
+          <URL>http://www.amazon.co.uk/review/product/0747538484%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747538484</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Offers</Description>
-          <URL>http://www.amazon.co.uk/gp/offer-listing/1591149924%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D1591149924</URL>
+          <URL>http://www.amazon.co.uk/gp/offer-listing/0747538484%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747538484</URL>
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
-        <Author>Gregory Young</Author>
-        <Author>Nate Braden</Author>
-        <Manufacturer>Naval Institute Press</Manufacturer>
+        <Author>J.K. Rowling</Author>
+        <Manufacturer>Bloomsbury Publishing PLC</Manufacturer>
         <ProductGroup>Book</ProductGroup>
-        <Title>The Last Sentry: Valery Sablin and the True Hunt for Red October</Title>
+        <Title>Harry Potter and the Chamber of Secrets (Book 2)</Title>
       </ItemAttributes>
     </Item>
     <Item>
-      <ASIN>1441850554</ASIN>
-      <DetailPageURL>http://www.amazon.co.uk/Hunt-Red-October-Tom-Clancy/dp/1441850554%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1441850554</DetailPageURL>
+      <ASIN>0747584680</ASIN>
+      <DetailPageURL>http://www.amazon.co.uk/Harry-Potter-Half-Blood-Prince-Rowling/dp/0747584680%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0747584680</DetailPageURL>
       <ItemLinks>
         <ItemLink>
           <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3D1441850554%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D1441850554</URL>
+          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3D0747584680%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747584680</URL>
         </ItemLink>
         <ItemLink>
           <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.co.uk/gp/pdp/taf/1441850554%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D1441850554</URL>
+          <URL>http://www.amazon.co.uk/gp/pdp/taf/0747584680%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747584680</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.co.uk/review/product/1441850554%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D1441850554</URL>
+          <URL>http://www.amazon.co.uk/review/product/0747584680%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747584680</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Offers</Description>
-          <URL>http://www.amazon.co.uk/gp/offer-listing/1441850554%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D1441850554</URL>
+          <URL>http://www.amazon.co.uk/gp/offer-listing/0747584680%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747584680</URL>
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
-        <Author>Tom Clancy</Author>
-        <Creator Role="Performer">J. Charles</Creator>
-        <Manufacturer>Brilliance Corporation</Manufacturer>
+        <Author>J.K. Rowling</Author>
+        <Manufacturer>Bloomsbury Publishing PLC</Manufacturer>
         <ProductGroup>Book</ProductGroup>
-        <Title>The Hunt for Red October</Title>
+        <Title>Harry Potter and the Half-Blood Prince (Harry Potter 6)[Children's Edition]</Title>
       </ItemAttributes>
     </Item>
     <Item>
-      <ASIN>0870212850</ASIN>
-      <DetailPageURL>http://www.amazon.co.uk/Hunt-Red-October-Tom-Clancy/dp/0870212850%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0870212850</DetailPageURL>
+      <ASIN>0747561079</ASIN>
+      <DetailPageURL>http://www.amazon.co.uk/Harry-Potter-Order-Phoenix-Rowling/dp/0747561079%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0747561079</DetailPageURL>
       <ItemLinks>
         <ItemLink>
           <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3D0870212850%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0870212850</URL>
+          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3D0747561079%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747561079</URL>
         </ItemLink>
         <ItemLink>
           <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.co.uk/gp/pdp/taf/0870212850%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0870212850</URL>
+          <URL>http://www.amazon.co.uk/gp/pdp/taf/0747561079%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747561079</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.co.uk/review/product/0870212850%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0870212850</URL>
+          <URL>http://www.amazon.co.uk/review/product/0747561079%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747561079</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Offers</Description>
-          <URL>http://www.amazon.co.uk/gp/offer-listing/0870212850%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0870212850</URL>
+          <URL>http://www.amazon.co.uk/gp/offer-listing/0747561079%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747561079</URL>
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
-        <Author>Tom Clancy</Author>
-        <Manufacturer>Naval Institute Press</Manufacturer>
+        <Author>J.K. Rowling</Author>
+        <Manufacturer>Bloomsbury</Manufacturer>
         <ProductGroup>Book</ProductGroup>
-        <Title>The Hunt for Red October</Title>
+        <Title>Harry Potter and the Order of the Phoenix (Harry Potter 5)</Title>
       </ItemAttributes>
     </Item>
     <Item>
-      <ASIN>0425133516</ASIN>
-      <DetailPageURL>http://www.amazon.co.uk/Hunt-October-Jack-Ryan-Novels/dp/0425133516%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0425133516</DetailPageURL>
+      <ASIN>0747546290</ASIN>
+      <DetailPageURL>http://www.amazon.co.uk/Harry-Potter-Prisoner-Azkaban-Paperback/dp/0747546290%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0747546290</DetailPageURL>
       <ItemLinks>
         <ItemLink>
           <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3D0425133516%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0425133516</URL>
+          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3D0747546290%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747546290</URL>
         </ItemLink>
         <ItemLink>
           <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.co.uk/gp/pdp/taf/0425133516%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0425133516</URL>
+          <URL>http://www.amazon.co.uk/gp/pdp/taf/0747546290%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747546290</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.co.uk/review/product/0425133516%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0425133516</URL>
+          <URL>http://www.amazon.co.uk/review/product/0747546290%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747546290</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Offers</Description>
-          <URL>http://www.amazon.co.uk/gp/offer-listing/0425133516%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0425133516</URL>
+          <URL>http://www.amazon.co.uk/gp/offer-listing/0747546290%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747546290</URL>
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
-        <Author>CLANCY TOM</Author>
-        <Manufacturer>Penguin Putnam Inc</Manufacturer>
+        <Author>J.K. Rowling</Author>
+        <Manufacturer>Bloomsbury Publishing PLC</Manufacturer>
         <ProductGroup>Book</ProductGroup>
-        <Title>The Hunt for Red October (Jack Ryan Novels)</Title>
+        <Title>Harry Potter and the Prisoner of Azkaban (Book 3) Paperback</Title>
       </ItemAttributes>
     </Item>
     <Item>
-      <ASIN>1441850538</ASIN>
-      <DetailPageURL>http://www.amazon.co.uk/Hunt-Red-October-Tom-Clancy/dp/1441850538%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1441850538</DetailPageURL>
+      <ASIN>0747550999</ASIN>
+      <DetailPageURL>http://www.amazon.co.uk/Harry-Potter-Goblet-Fire-Book/dp/0747550999%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0747550999</DetailPageURL>
       <ItemLinks>
         <ItemLink>
           <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3D1441850538%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D1441850538</URL>
+          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3D0747550999%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747550999</URL>
         </ItemLink>
         <ItemLink>
           <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.co.uk/gp/pdp/taf/1441850538%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D1441850538</URL>
+          <URL>http://www.amazon.co.uk/gp/pdp/taf/0747550999%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747550999</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.co.uk/review/product/1441850538%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D1441850538</URL>
+          <URL>http://www.amazon.co.uk/review/product/0747550999%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747550999</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Offers</Description>
-          <URL>http://www.amazon.co.uk/gp/offer-listing/1441850538%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D1441850538</URL>
+          <URL>http://www.amazon.co.uk/gp/offer-listing/0747550999%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747550999</URL>
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
-        <Author>Tom Clancy</Author>
-        <Creator Role="Performer">J. Charles</Creator>
-        <Manufacturer>Brilliance Corporation</Manufacturer>
+        <Author>J.K. Rowling</Author>
+        <Manufacturer>Bloomsbury Publishing PLC</Manufacturer>
         <ProductGroup>Book</ProductGroup>
-        <Title>The Hunt for Red October</Title>
+        <Title>Harry Potter and the Goblet of Fire (Book 4)</Title>
       </ItemAttributes>
     </Item>
     <Item>
-      <ASIN>0425120279</ASIN>
-      <DetailPageURL>http://www.amazon.co.uk/Hunt-Red-October-Tom-Clancy/dp/0425120279%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0425120279</DetailPageURL>
+      <ASIN>0747595852</ASIN>
+      <DetailPageURL>http://www.amazon.co.uk/Harry-Potter-Paperback-Boxed-Set/dp/0747595852%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0747595852</DetailPageURL>
       <ItemLinks>
         <ItemLink>
           <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3D0425120279%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0425120279</URL>
+          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3D0747595852%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747595852</URL>
         </ItemLink>
         <ItemLink>
           <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.co.uk/gp/pdp/taf/0425120279%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0425120279</URL>
+          <URL>http://www.amazon.co.uk/gp/pdp/taf/0747595852%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747595852</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.co.uk/review/product/0425120279%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0425120279</URL>
+          <URL>http://www.amazon.co.uk/review/product/0747595852%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747595852</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Offers</Description>
-          <URL>http://www.amazon.co.uk/gp/offer-listing/0425120279%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0425120279</URL>
+          <URL>http://www.amazon.co.uk/gp/offer-listing/0747595852%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747595852</URL>
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
-        <Author>Tom Clancy</Author>
-        <Manufacturer>Berkley Pub Group</Manufacturer>
+        <Author>J.K. Rowling</Author>
+        <Manufacturer>Bloomsbury Publishing PLC</Manufacturer>
         <ProductGroup>Book</ProductGroup>
-        <Title>The Hunt for Red October</Title>
+        <Title>Harry Potter Paperback Boxed Set: Contains: Philosopher's Stone / Chamber of Secrets / Prisoner of Azkaban / Goblet of Fire / Order of the Phoenix / Half-Blood Prince / Deathly Hollows</Title>
       </ItemAttributes>
     </Item>
     <Item>
-      <ASIN>0002229277</ASIN>
-      <DetailPageURL>http://www.amazon.co.uk/Hunt-Red-October-Tom-Clancy/dp/0002229277%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0002229277</DetailPageURL>
+      <ASIN>0747595828</ASIN>
+      <DetailPageURL>http://www.amazon.co.uk/Harry-Potter-Deathly-Hallows-Adult/dp/0747595828%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0747595828</DetailPageURL>
       <ItemLinks>
         <ItemLink>
           <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3D0002229277%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0002229277</URL>
+          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3D0747595828%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747595828</URL>
         </ItemLink>
         <ItemLink>
           <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.co.uk/gp/pdp/taf/0002229277%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0002229277</URL>
+          <URL>http://www.amazon.co.uk/gp/pdp/taf/0747595828%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747595828</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.co.uk/review/product/0002229277%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0002229277</URL>
+          <URL>http://www.amazon.co.uk/review/product/0747595828%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747595828</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Offers</Description>
-          <URL>http://www.amazon.co.uk/gp/offer-listing/0002229277%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0002229277</URL>
+          <URL>http://www.amazon.co.uk/gp/offer-listing/0747595828%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747595828</URL>
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
-        <Author>Tom Clancy</Author>
-        <Manufacturer>HarperCollins Publishers Ltd</Manufacturer>
+        <Author>J.K. Rowling</Author>
+        <Manufacturer>Bloomsbury Publishing PLC</Manufacturer>
         <ProductGroup>Book</ProductGroup>
-        <Title>The Hunt for Red October</Title>
+        <Title>Harry Potter and the Deathly Hallows (Book 7) [Adult Edition]</Title>
       </ItemAttributes>
     </Item>
     <Item>
-      <ASIN>0261660004</ASIN>
-      <DetailPageURL>http://www.amazon.co.uk/Patriot-Games-Hunt-Red-October/dp/0261660004%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0261660004</DetailPageURL>
+      <ASIN>0747595844</ASIN>
+      <DetailPageURL>http://www.amazon.co.uk/Harry-Potter-Adult-Paperback-Boxed/dp/0747595844%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0747595844</DetailPageURL>
       <ItemLinks>
         <ItemLink>
           <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3D0261660004%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0261660004</URL>
+          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3D0747595844%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747595844</URL>
         </ItemLink>
         <ItemLink>
           <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.co.uk/gp/pdp/taf/0261660004%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0261660004</URL>
+          <URL>http://www.amazon.co.uk/gp/pdp/taf/0747595844%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747595844</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.co.uk/review/product/0261660004%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0261660004</URL>
+          <URL>http://www.amazon.co.uk/review/product/0747595844%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747595844</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Offers</Description>
-          <URL>http://www.amazon.co.uk/gp/offer-listing/0261660004%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0261660004</URL>
+          <URL>http://www.amazon.co.uk/gp/offer-listing/0747595844%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747595844</URL>
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
-        <Author>Tom Clancy</Author>
-        <Manufacturer>Diamond Books Ltd</Manufacturer>
+        <Author>J.K. Rowling</Author>
+        <Manufacturer>Bloomsbury Publishing PLC</Manufacturer>
         <ProductGroup>Book</ProductGroup>
-        <Title>Patriot Games and The Hunt for Red October</Title>
+        <Title>Harry Potter Adult Paperback Boxed Set: Adult Edition: Contains: Philosopher's Stone / Chamber of Secrets / Prisoner of Azkaban / Goblet of Fire / ... / Deathly Hollows (Harry Potter Adult Cover)</Title>
       </ItemAttributes>
     </Item>
   </Items>

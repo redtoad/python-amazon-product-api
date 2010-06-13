@@ -57,8 +57,6 @@ class ItemSearchTestCase (XMLResponseTestCase):
     Check that all XML responses for ItemSearch are parsed correctly.
     """
     
-    locales = ['de', 'fr', 'uk', 'us']
-    
     def test_no_parameters(self):
         try:
             self.assertRaises(InvalidResponseGroup, 
@@ -78,8 +76,9 @@ class ItemSearchTestCase (XMLResponseTestCase):
         self.assertRaises(InvalidParameterCombination, self.api.item_search, 
                           'All', BrowseNode=132)
         
+    #@ignore_locales('jp')
     def test_lookup_by_title(self):
-        result = self.api.item_search('Books', Title='Hunt for Red October')
+        result = self.api.item_search('Books', Title='Harry Potter')
         for item in result.Items.Item:
             self.assertEquals(item.ASIN, item.ASIN.pyval, item.ASIN.text) 
         
@@ -111,8 +110,6 @@ class ListLookupTestCase (XMLResponseTestCase):
     Check that all XML responses for ListLookup are parsed correctly.
     """
     
-    locales = ['de']
-    
     def test_invalid_list_id(self):
         self.assertRaises(InvalidParameterValue, self.api.list_lookup, '???', 'WishList')
         
@@ -127,14 +124,17 @@ class ListSearchTestCase (XMLResponseTestCase):
     Check that all XML responses for ListSearch are parsed correctly.
     """
      
-    locales = ['de']
+    locales = ['de', 'fr', 'uk']
     
     def test_fails_for_wrong_list_type(self):
         self.assertRaises(InvalidListType, self.api.list_search, '???')
         
     def test_fails_for_missing_search_parameters(self):
         self.assertRaises(NotEnoughParameters, self.api.list_search, 'WishList')
-        self.assertRaises(NotEnoughParameters, self.api.list_search, 'WeddingRegistry')
+        
+        if self.current_locale != 'fr': 
+            self.assertRaises(NotEnoughParameters, self.api.list_search, 
+                              'WeddingRegistry')
         
     def test_no_exact_matches(self):
         self.assertRaises(NoExactMatchesFound, self.api.list_search, 
