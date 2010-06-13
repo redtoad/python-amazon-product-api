@@ -39,7 +39,7 @@ the license in the LICENSE file.
 
 """
 
-__version__ = '0.2.3'
+__version__ = '0.2.4'
 __docformat__ = "restructuredtext en"
 
 from base64 import b64encode
