@@ -152,21 +152,48 @@ class InvalidParameterCombination (Exception):
     Your request contained a restricted parameter combination.
     """
 
-INVALID_VALUE_REG = re.compile(
-    'The value you specified for (?P<parameter>\w+) is invalid.')
+DEFAULT_ERROR_REGS = {
+    'invalid-value' : re.compile(
+        'The value you specified for (?P<parameter>\w+) is invalid.'),
 
-INVALID_PARAMETER_VALUE_REG = re.compile('(?P<value>.+?) is not a valid value '
-    'for (?P<parameter>\w+). Please change this value and retry your request.')
+    'invalid-parameter-value' : re.compile(
+        '(?P<value>.+?) is not a valid value for (?P<parameter>\w+). Please '
+        'change this value and retry your request.'),
 
-NOSIMILARITIES_REG = re.compile(
-    'There are no similar items for this ASIN: (?P<ASIN>\w+).')
+    'no-similarities' : re.compile(
+        'There are no similar items for this ASIN: (?P<ASIN>\w+).'),
 
-NOT_ENOUGH_PARAMETERS_REG = re.compile('Your request should have atleast '
-        '(?P<numer>\d+) of the following parameters: (?P<parameters>[\w ,]+).')
+    'not-enough-parameters' : re.compile(
+        'Your request should have atleast (?P<number>\d+) of the following '
+        'parameters: (?P<parameters>[\w ,]+).'),
 
-INVALID_PARAMETER_COMBINATION_REG = re.compile(
-     'Your request contained a restricted parameter combination.'
-     '\s*(?P<message>\w.*)$') # only the last bit is of interest here
+    'invalid-parameter-combination' : re.compile(
+         'Your request contained a restricted parameter combination.'
+         '\s*(?P<message>\w.*)$') # only the last bit is of interest here
+}
+
+JAPANESE_ERROR_REGS = {
+    'invalid-value' : re.compile(
+        u'(?P<parameter>\w+)\u306b\u6307\u5b9a\u3057\u305f\u5024\u306f\u7121'
+        u'\u52b9\u3067\u3059\u3002'),
+
+    'invalid-parameter-value' : re.compile(
+        u'(?P<value>.+?)\u306f\u3001(?P<parameter>\w+)\u306e\u5024\u3068\u3057'
+        u'\u3066\u7121\u52b9\u3067\u3059\u3002\u5024\u3092\u5909\u66f4\u3057'
+        u'\u3066\u304b\u3089\u3001\u518d\u5ea6\u30ea\u30af\u30a8\u30b9\u30c8'
+        u'\u3092\u5b9f\u884c\u3057\u3066\u304f\u3060\u3055\u3044\u3002'),
+
+    'no-similarities' : re.compile(
+        'There are no similar items for this ASIN: (?P<ASIN>\w+).'),
+
+    'not-enough-parameters' : re.compile(
+        u'\u6b21\u306e\u30d1\u30e9\u30e1\u30fc\u30bf\u306e\u3046\u3061\u3001'
+        u'\u6700\u4f4e1\u500b\u304c\u30ea\u30af\u30a8\u30b9\u30c8\u306b\u542b'
+        u'\u307e\u308c\u3066\u3044\u308b\u5fc5\u8981\u304c\u3042\u308a\u307e'
+        u'\u3059\uff1a(?P<parameters>.+)$'),
+
+    'invalid-parameter-combination' : re.compile('^(?P<message>.*)$'),
+}
 
 class API (object):
     
@@ -314,6 +341,15 @@ class API (object):
             # otherwise re-raise
             raise # pragma: no cover
     
+    def _reg(self, key):
+        """
+        Returns the appropriate regular expression (compiled) to parse an error
+        message depending on the current locale. 
+        """
+        if self.locale == 'jp':
+            return JAPANESE_ERROR_REGS[key]
+        return DEFAULT_ERROR_REGS[key]
+    
     def _parse(self, fp):
         """
         Processes the AWS response (file like object). XML is fed in, some 
@@ -356,27 +392,21 @@ class API (object):
         
         for error in errors:
             
-            if error.Code.text == 'AWS.InvalidParameterValue':
-
-                # simply return error message for Japanese locale
-                # as it doesn't parse very well with the regexps above
-                if self.locale == 'jp':
-                    raise InvalidParameterValue(error.Message.text)
-
-                m = INVALID_PARAMETER_VALUE_REG.search(error.Message.text)
+            code = error.Code.text
+            msg = error.Message.text
+            
+            if code == 'AWS.ECommerceService.NoExactMatches':
+                raise NoExactMatchesFound
+            
+            if code == 'AWS.InvalidParameterValue':
+                m = self._reg('invalid-parameter-value').search(msg)
                 raise InvalidParameterValue(m.group('parameter'), m.group('value'))
             
-            if error.Code.text == 'AWS.RestrictedParameterValueCombination':
-
-                # simply return error message for Japanese locale
-                # as it doesn't parse very well with the regexps above
-                if self.locale == 'jp':
-                    raise InvalidParameterCombination(error.Message.text)
-
-                m = INVALID_PARAMETER_COMBINATION_REG.search(error.Message.text)
+            if code == 'AWS.RestrictedParameterValueCombination':
+                m = self._reg('invalid-parameter-combination').search(msg)
                 raise InvalidParameterCombination(m.group('message'))
-
-            raise AWSError(error.Code.text, error.Message.text)
+            
+            raise AWSError(code, msg)
         
         #~ from lxml import etree
         #~ print etree.tostring(root, pretty_print=True)
@@ -405,7 +435,7 @@ class API (object):
         except AWSError, e:
             
             if (e.code=='AWS.InvalidEnumeratedParameter' 
-            and INVALID_VALUE_REG.search(e.msg).group('parameter')=='SearchIndex'):
+            and self._reg('invalid-value').search(e.msg).group('parameter')=='SearchIndex'):
                 raise InvalidSearchIndex(params.get('SearchIndex'))
             
             if e.code=='AWS.InvalidResponseGroup': 
@@ -454,7 +484,7 @@ class API (object):
         except AWSError, e:
             
             if (e.code=='AWS.InvalidEnumeratedParameter' 
-            and INVALID_VALUE_REG.search(e.msg)):
+            and self._reg('invalid-value').search(e.msg)):
                 raise InvalidSearchIndex(search_index)
             
             if e.code=='AWS.InvalidResponseGroup': 
@@ -490,7 +520,7 @@ class API (object):
         except AWSError, e:
             
             if e.code=='AWS.ECommerceService.NoSimilarities':
-                asin = NOSIMILARITIES_REG.search(e.msg).group('ASIN')
+                asin = self._reg('no-similarities').search(e.msg).group('ASIN')
                 raise NoSimilarityForASIN(asin)
             
     def list_lookup(self, list_id, list_type, **params):
@@ -534,7 +564,7 @@ class API (object):
         except AWSError, e:
             
             if (e.code=='AWS.InvalidEnumeratedParameter' 
-            and INVALID_VALUE_REG.search(e.msg).group('parameter')=='ListType'):
+            and self._reg('invalid-value').search(e.msg).group('parameter')=='ListType'):
                 raise InvalidListType(params.get('ListType'))
             
             # otherwise re-raise exception
@@ -575,11 +605,11 @@ class API (object):
         except AWSError, e:
             
             if (e.code=='AWS.InvalidEnumeratedParameter' 
-            and INVALID_VALUE_REG.search(e.msg).group('parameter')=='ListType'):
+            and self._reg('invalid-value').search(e.msg).group('parameter')=='ListType'):
                 raise InvalidListType(list_type)
             
             if e.code=='AWS.MinimumParameterRequirement': 
-                p = NOT_ENOUGH_PARAMETERS_REG.search(e.msg).group('parameters')
+                p = self._reg('not-enough-parameters').search(e.msg).group('parameters')
                 raise NotEnoughParameters(p)
             
             if e.code=='AWS.ECommerceService.NoExactMatches': 
@@ -622,7 +652,7 @@ class API (object):
             return self._parse(fp)
         except AWSError, e:
             
-            m = INVALID_VALUE_REG.search(e.msg)
+            m = self._reg('invalid-value').search(e.msg)
             if e.code=='AWS.InvalidEnumeratedParameter': 
                 raise ValueError(m.group('parameter'))
                         
@@ -676,7 +706,7 @@ class API (object):
             return self._parse(fp)
         except AWSError, e:
             
-            if e.code=='AWS.InvalidResponseGroup': 
+            if e.code=='AWS.InvalidResponseGroup':
                 raise InvalidResponseGroup(params.get('ResponseGroup'))
             
             # otherwise re-raise exception

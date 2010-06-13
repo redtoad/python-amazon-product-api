@@ -23,9 +23,8 @@ XML_TEST_DIR = _here
 #: Versions of Amazon API to be tested against 
 TESTABLE_API_VERSIONS = '2009-11-01 2009-10-01'.split()
 
-#: Locales to tes against. 
-#: FIXME Anazon Japan has Japanese messages that cannot be matched yet! 
-TESTABLE_LOCALES = [lc for lc in LOCALES if lc != 'jp']
+#: Locales to test against. 
+TESTABLE_LOCALES = LOCALES
 
 ALL = 'all'
 

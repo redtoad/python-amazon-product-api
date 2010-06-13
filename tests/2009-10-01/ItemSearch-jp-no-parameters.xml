@@ -1,0 +1,37 @@
+<ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2009-10-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.3 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+    </HTTPHeaders>
+    <RequestId>a5e7c185-d735-4896-a161-3a9539591869</RequestId>
+    <Arguments>
+      <Argument Name="Operation" Value="ItemSearch"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Version" Value="2009-10-01"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2010-06-13T12:39:17Z"/>
+      <Argument Name="SearchIndex" Value="Books"/>
+    </Arguments>
+    <RequestProcessingTime>0.0036610000000000</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>False</IsValid>
+      <ItemSearchRequest>
+        <Condition>New</Condition>
+        <DeliveryMethod>Ship</DeliveryMethod>
+        <MerchantId>Amazon</MerchantId>
+        <ResponseGroup>Small</ResponseGroup>
+        <ReviewSort>-SubmissionDate</ReviewSort>
+        <SearchIndex>Books</SearchIndex>
+      </ItemSearchRequest>
+      <Errors>
+        <Error>
+          <Code>AWS.MinimumParameterRequirement</Code>
+          <Message>&#27425;&#12398;&#12497;&#12521;&#12513;&#12540;&#12479;&#12398;&#12358;&#12385;&#12289;&#26368;&#20302;1&#20491;&#12364;&#12522;&#12463;&#12456;&#12473;&#12488;&#12395;&#21547;&#12414;&#12428;&#12390;&#12356;&#12427;&#24517;&#35201;&#12364;&#12354;&#12426;&#12414;&#12377;&#65306;'Keywords','Title','Power','BrowseNode','Artist','Author','Actor','Director','AudienceRating','Manufacturer','MusicLabel','Composer','Publisher','Brand','Conductor','Orchestra','TextStream','Cuisine','City','Neighborhood'</Message>
+        </Error>
+      </Errors>
+    </Request>
+  </Items>
+</ItemSearchResponse>
