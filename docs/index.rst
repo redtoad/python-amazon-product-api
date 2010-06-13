@@ -66,9 +66,11 @@ Contents
    pagination
    use-your-own
    
+   faq
+   
    changes
    license
-	
+   
 Indices and tables
 ------------------
 
