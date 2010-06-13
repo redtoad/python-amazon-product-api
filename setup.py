@@ -4,7 +4,7 @@ from setuptools import setup
 import os
 import sys
 
-version = '0.2.3'
+version = '0.2.4'
 
 def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
