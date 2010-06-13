@@ -1,0 +1,121 @@
+<ItemLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2009-11-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+    </HTTPHeaders>
+    <RequestId>d8ea04a4-735b-49fa-aae2-b9cbc15b222d</RequestId>
+    <Arguments>
+      <Argument Name="ReviewPage" Value="8"/>
+      <Argument Name="Operation" Value="ItemLookup"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="ItemId" Value="0747532745"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2010-03-19T13:03:08Z"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="ResponseGroup" Value="Reviews"/>
+      <Argument Name="Version" Value="2009-11-01"/>
+    </Arguments>
+    <RequestProcessingTime>0.0309630000000000</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>True</IsValid>
+      <ItemLookupRequest>
+        <Condition>New</Condition>
+        <DeliveryMethod>Ship</DeliveryMethod>
+        <IdType>ASIN</IdType>
+        <MerchantId>Amazon</MerchantId>
+        <OfferPage>1</OfferPage>
+        <ItemId>0747532745</ItemId>
+        <ResponseGroup>Reviews</ResponseGroup>
+        <ReviewPage>8</ReviewPage>
+        <ReviewSort>-SubmissionDate</ReviewSort>
+        <VariationPage>All</VariationPage>
+      </ItemLookupRequest>
+    </Request>
+    <Item>
+      <ASIN>0747532745</ASIN>
+      <CustomerReviews>
+        <AverageRating>5.0</AverageRating>
+        <TotalReviews>2465</TotalReviews>
+        <TotalReviewPages>493</TotalReviewPages>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>5</Rating>
+          <HelpfulVotes>3</HelpfulVotes>
+          <CustomerId>A2WDS3VDRTQY2K</CustomerId>
+          <Reviewer>
+            <CustomerId>A2WDS3VDRTQY2K</CustomerId>
+            <Name>Nadine Susec</Name>
+            <Nickname>info20382</Nickname>
+            <Location>N&#252;rnberg</Location>
+          </Reviewer>
+          <TotalVotes>5</TotalVotes>
+          <Date>2004-06-24</Date>
+          <Summary>Auf zum Pottern!</Summary>
+          <Content>Ich glaube, dass die Potter- Mania nun ganz Europa erfasst hat. Jeder gibt offen zu, wie ein anonymer Alkoholiker, "Hallo, auch ich lese Harry Potter!". Dazu geh&#246;re ich nun auch, ein bekennender Harry Potter Junkie! &lt;br&gt;Lange habe ich mich gescheut den "Stein der Weisen" zu lesen. Es ist ein Kinderbuch, zur H&#246;lle! Dachte ich immer bei mir und weigerte mich, zu lesen. Ich wollte nicht dazu geh&#246;ren. Aber dann reizte es mich doch. Als "Ausrede" dass es ja dann doch kein Kinderbuch ist, legte ich mir den kompletten bisher erschienenen Satz der Harry Potter B&#252;cher auf Englisch zu. Es war doch nur zur "Fortbildung". Ich genoss jede Seite. Der Wortwitz, die charmanten Figuren. Im Anschluss sah ich mir die Filme an und war ein bisschen entt&#228;usch, denn geniale Teile aus dem Buch waren einfach weg gelassen worden. Aber in das Zauebrspiel "Quidditch" hab ich mich im Buch und im Film sofort verliebt. &lt;br&gt;Also, die Potter- Mania grasiert absolut zu recht. J.K. Rowling hat geniale B&#252;cher geschrieben, die nicht nur etwas f&#252;r Kinder sind, sondern auch ein Muss sind f&#252;r die erwachsenen Leser, die gerne einmal in die magische Potter Welt abtauchen wollen.</Content>
+        </Review>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>5</Rating>
+          <HelpfulVotes>5</HelpfulVotes>
+          <CustomerId>A1YWTULMSHR85</CustomerId>
+          <Reviewer>
+            <CustomerId>A1YWTULMSHR85</CustomerId>
+            <Nickname>arnemaker</Nickname>
+          </Reviewer>
+          <TotalVotes>6</TotalVotes>
+          <Date>2004-06-11</Date>
+          <Summary>noch besser als die deutsche Version!!!</Summary>
+          <Content>Ich mag Harry Potter. Ich mag die B&#252;cher und auch den Film. Nachdem ich also auf deutsch alle B&#252;cher gelesen hatte machte ich mich an die englischen Werke, wusste jedoch nicht so recht was mich da erwarten wird, da ich zuvor noch keine englischen B&#252;cher gelesen habe. Ich hatte dazu auch noch einige Bedenken, ob ich alles verstehe und keine Schwierigkeiten mit der Sprache bekomme. Und im Nachhinein kann ich alle meine Bedenken hinfort blasen. Es ist in einem sehr einfachem Englisch geschrieben, dass nun wirklich jeder, der in der Schule mal ein paar Jahre Englisch hatte versteht. Hinzu kommt f&#252;r mich noch als positiver Gesichtspunkt hinzu, dass man wirklich mal liest was Frau Rowling schrieb und nicht nur die deutsche &#220;bersetzung, die zwar auch gut ist, so wie ich finde jedoch nicht an das englische Original heran kommt. Es macht einfach einen Riesenspa&#223; Harry und seine Freunde auf englisch durch die immer wieder spannende Handlung zu begleiten.&lt;br&gt;Auf jeden Fall lesenswert!!! 5 Sterne!!!</Content>
+        </Review>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>5</Rating>
+          <HelpfulVotes>21</HelpfulVotes>
+          <CustomerId>AGL9O05BTV4O3</CustomerId>
+          <Reviewer>
+            <CustomerId>AGL9O05BTV4O3</CustomerId>
+            <Name>Tobin</Name>
+          </Reviewer>
+          <TotalVotes>21</TotalVotes>
+          <Date>2004-03-07</Date>
+          <Summary>Best Reader</Summary>
+          <Content>There are some people out there, like my one friend, who don't care for that "gay british accent". I, however, quiet like it. I've listened to Potter-Books read by Jim Dale as well as by Rufus Beck, and eventhough I was quiet taken by both their performances, I like Fry's best. I do especially give him credit for being the only reader who doesn't give McGonogall and Hermione a hysteric touch and for leaving Dumbledore energetic, when both, Dale and Beck, make him sound like a wheezy old man. His Hagrid sounds almost exactly like Robbie Coltrane, who does a wonderful job in the movies. &lt;br&gt;Needless to say that the novel itself is one of the best I've read in the past years, as is the whole series. So if you like Audiobooks, this is one I can recommend.</Content>
+        </Review>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>4</Rating>
+          <HelpfulVotes>2</HelpfulVotes>
+          <CustomerId>A3I74UOBLZNQ85</CustomerId>
+          <Reviewer>
+            <CustomerId>A3I74UOBLZNQ85</CustomerId>
+            <Name>andante</Name>
+            <Nickname>peter_berlin</Nickname>
+            <Location>Cologne, Germany</Location>
+          </Reviewer>
+          <TotalVotes>3</TotalVotes>
+          <Date>2004-01-28</Date>
+          <Summary>Even though everybody likes it, it can still be very good</Summary>
+          <Content>After all my friends, without exception, had praised the Harry Potter series for years I have succumbed and started with the first book. well, there is only good news here. I did enjoy reading it, it is fun, well written, has an interesting story and even though I for one do not particularly care for stories  on magic and fantasy, in this book somehow it did not put me off. The characters are nicely developed and presented and at the center of the book is a hero who starts out as some kind of underdog and ugly duckling and become somebody quite special - an easy person to identify with. Even without magic characters in the novel  learn here that not everybody may be what they seem like and you better look twice. I can see that the author creates a universe all to itself that is wonderful to enter and live in. &lt;br&gt;I still cannot get quite the excitement that the publication of the fifth novel caused, but I guess I have only just wetted my feet. After reading three more novels in the series, I will understand it much better and probably join. Recommendable book, at least now you know what everybody's talking about.</Content>
+        </Review>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>5</Rating>
+          <HelpfulVotes>3</HelpfulVotes>
+          <CustomerId>A2X2CCKZ9UR1N</CustomerId>
+          <Reviewer>
+            <CustomerId>A2X2CCKZ9UR1N</CustomerId>
+            <Name>Holly Short</Name>
+            <Nickname>holly_short</Nickname>
+            <Location>Wien, &#214;sterreich</Location>
+          </Reviewer>
+          <TotalVotes>3</TotalVotes>
+          <Date>2003-11-16</Date>
+          <Summary>Pure Magie!</Summary>
+          <Content>Dass Harry Potter toll ist, habe ich nie wirklich bezweifelt. Trotzdem habe ich es lange vor mir hergeschoben, zumindest einmal den ersten Band zur Hand zu nehmen. Wie konnte ich wissen, dass ich so positiv &#252;berrascht sein w&#252;rde?!&lt;p&gt;Ganz ehrlich: Ich hatte selten so viel Spa&#223; beim Lesen. Ich bin selten in ein Buch so hineingesogen worden wie in dieses. Ich konnte nicht anders, als die unglaubliche Phantasie dieser Frau zu bewundern, die mit einer wahnsinnigen Detailliebe eine neue Welt geschaffen hat, und die sich vor Fantasy-"Gottheiten" wie JRR Tolkien nicht verstecken braucht. &lt;p&gt;Was f&#252;r ein starkes, liebenswertes, vor Witz nur so spr&#252;hendes Buch voller Magie - man braucht kein Kind mehr zu sein, um sich die Hexen- und Zaubererschule Hogwarts oder die "Einkaufsstra&#223;e" f&#252;r alles Magische, Diagon Alley, perfekt vorstellen zu k&#246;nnen, so bunt sind Rowlings Beschreibungen, so reich ist ihre Sprache.&lt;p&gt;Einfach pure Magie, der man sich nicht mehr entziehen kann - deshalb werde ich auch so bald wie m&#246;glich auch die anderen Teile lesen. WOW.</Content>
+        </Review>
+      </CustomerReviews>
+    </Item>
+  </Items>
+</ItemLookupResponse>

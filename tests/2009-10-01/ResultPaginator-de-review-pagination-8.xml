@@ -1,0 +1,114 @@
+<ItemLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2009-10-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+    </HTTPHeaders>
+    <RequestId>8d11413f-d3d5-48c5-9ae1-a5f33173cc53</RequestId>
+    <Arguments>
+      <Argument Name="ReviewPage" Value="8"/>
+      <Argument Name="Operation" Value="ItemLookup"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="ItemId" Value="0747532745"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2009-12-09T16:38:40Z"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="ResponseGroup" Value="Reviews"/>
+      <Argument Name="Version" Value="2009-10-01"/>
+    </Arguments>
+    <RequestProcessingTime>0.0391560000000000</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>True</IsValid>
+      <ItemLookupRequest>
+        <Condition>New</Condition>
+        <DeliveryMethod>Ship</DeliveryMethod>
+        <IdType>ASIN</IdType>
+        <MerchantId>Amazon</MerchantId>
+        <OfferPage>1</OfferPage>
+        <ItemId>0747532745</ItemId>
+        <ResponseGroup>Reviews</ResponseGroup>
+        <ReviewPage>8</ReviewPage>
+        <ReviewSort>-SubmissionDate</ReviewSort>
+        <VariationPage>All</VariationPage>
+      </ItemLookupRequest>
+    </Request>
+    <Item>
+      <ASIN>0747532745</ASIN>
+      <CustomerReviews>
+        <AverageRating>5.0</AverageRating>
+        <TotalReviews>2458</TotalReviews>
+        <TotalReviewPages>492</TotalReviewPages>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>5</Rating>
+          <HelpfulVotes>1</HelpfulVotes>
+          <CustomerId>A1341VRADSDWB2</CustomerId>
+          <Reviewer>
+            <CustomerId>A1341VRADSDWB2</CustomerId>
+            <Nickname>avesab</Nickname>
+          </Reviewer>
+          <TotalVotes>2</TotalVotes>
+          <Date>2003-04-29</Date>
+          <Summary>Unglaublich fesselnd!</Summary>
+          <Content>Ich wollte nicht glauben, dass ein Kinderbuch einen Erwachsenen so fesseln kann!  Bis ich den ersten Band anfing zu lesen und ihn nicht wieder weg legen konnte. Ein wirklich empfehlenswertes Buch - nicht nur f&#252;r Kinder!!!</Content>
+        </Review>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>5</Rating>
+          <HelpfulVotes>16</HelpfulVotes>
+          <CustomerId>A3GPOI2OTM4NMJ</CustomerId>
+          <Reviewer>
+            <CustomerId>A3GPOI2OTM4NMJ</CustomerId>
+            <Name>Minya</Name>
+            <Nickname>I would have followed you...my Brother...my Captain...my King</Nickname>
+            <Location>Oldenburg (Oldbg)</Location>
+          </Reviewer>
+          <TotalVotes>18</TotalVotes>
+          <Date>2003-04-27</Date>
+          <Summary>Einfach fabelhaft ....magisch halt!</Summary>
+          <Content>Zu Anfang stand ich ja Harry und dem ganzen Hype um die B&#252;cher eher skeptisch gegen&#252;ber. Was kann einem Kinder- und Jugendbuch schon so einzigartig sein, das die gesamte Welt so begeistert ist. Aber dann hab ich den ersten Band auf Deutsch gelesen und war sofort mit dem Potter-Virus infiziert. Innerhalb k&#252;rzester Zeit hatte ich alle bisher erschienen B&#228;nde in meinem B&#252;cherregal und warte nun gespannt auf den 5. Band den ich mir in Englisch auch schon vorbestellt habe. Irgendwann wollte ich n&#228;mlich wissen wie Harry sich im Original liest und ich kann jedem nur raten die Harry Potter B&#228;nde im Original zu lesen. Wer &#252;ber die normalen Schulenglischkenntnisse verf&#252;gt hat keinerlei Probleme und f&#252;r Sch&#252;ler find ich es eine geniale M&#246;glichkeit Englisch mit Spass zu lernen. Harrys Leben bei den Dursleys und anschliessend sein Werdegang zum Hogwardssch&#252;ler mit seinen Freunden Ron und Hermione (kein Schreibfehler von mir!) so zu erleben wie K.J.Rowlings es aus aus der Feder - oder dem Kugelschreiber - floss ist die reine Freude. Man kommt wirklich sehr schnell rein und gew&#246;hnt sich sogar an englisch zu denken beim Lesen.&lt;br&gt;Also nur Mut!</Content>
+        </Review>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>5</Rating>
+          <HelpfulVotes>5</HelpfulVotes>
+          <TotalVotes>7</TotalVotes>
+          <Date>2003-03-28</Date>
+          <Summary>spannend gelesen</Summary>
+          <Content>ich bin viel im Auto unterwegs und nutze die Zeit, um meine Englischkenntnisse aufzubessern. Ich war absolut begeistert von den Harry Potter-Kassetten, da sie wunderbar spannend gelesen sind. So habe ich mir die Zeit gespart, die B&#252;cher zu lesen.</Content>
+        </Review>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>5</Rating>
+          <HelpfulVotes>1</HelpfulVotes>
+          <CustomerId>A27ZXQ04OI1XOA</CustomerId>
+          <Reviewer>
+            <CustomerId>A27ZXQ04OI1XOA</CustomerId>
+            <Name>Kate</Name>
+            <Location>Deutschland</Location>
+          </Reviewer>
+          <TotalVotes>1</TotalVotes>
+          <Date>2003-02-07</Date>
+          <Summary>Great!</Summary>
+          <Content>I have seen the movie version first, but reading the book was much better. I am not a big reader, but this book made me read every night, I am reading the second part right now. I can recomend it to anyone.</Content>
+        </Review>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>5</Rating>
+          <HelpfulVotes>1</HelpfulVotes>
+          <CustomerId>A2DVIXCV53M9GB</CustomerId>
+          <Reviewer>
+            <CustomerId>A2DVIXCV53M9GB</CustomerId>
+            <Name>Psychic_Medium</Name>
+            <Location>Illinois</Location>
+          </Reviewer>
+          <TotalVotes>3</TotalVotes>
+          <Date>2003-01-14</Date>
+          <Summary>Affordable!</Summary>
+          <Content>I purchased three of these as gifts for my nieces, but I didn't have the chance to read Harry Potter and the Sorcerer's Stone (Book 1), yet.&lt;br&gt;It is recommended for the young at heart though.&lt;br&gt;Also recommending: Gold Heaven</Content>
+        </Review>
+      </CustomerReviews>
+    </Item>
+  </Items>
+</ItemLookupResponse>

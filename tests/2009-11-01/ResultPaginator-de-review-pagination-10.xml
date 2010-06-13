@@ -1,0 +1,102 @@
+<ItemLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2009-11-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+    </HTTPHeaders>
+    <RequestId>1ef277bd-fbed-47ef-96a8-8eabbc71484d</RequestId>
+    <Arguments>
+      <Argument Name="ReviewPage" Value="10"/>
+      <Argument Name="Operation" Value="ItemLookup"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="ItemId" Value="0747532745"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2010-03-19T13:03:10Z"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="ResponseGroup" Value="Reviews"/>
+      <Argument Name="Version" Value="2009-11-01"/>
+    </Arguments>
+    <RequestProcessingTime>0.0435450000000000</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>True</IsValid>
+      <ItemLookupRequest>
+        <Condition>New</Condition>
+        <DeliveryMethod>Ship</DeliveryMethod>
+        <IdType>ASIN</IdType>
+        <MerchantId>Amazon</MerchantId>
+        <OfferPage>1</OfferPage>
+        <ItemId>0747532745</ItemId>
+        <ResponseGroup>Reviews</ResponseGroup>
+        <ReviewPage>10</ReviewPage>
+        <ReviewSort>-SubmissionDate</ReviewSort>
+        <VariationPage>All</VariationPage>
+      </ItemLookupRequest>
+    </Request>
+    <Item>
+      <ASIN>0747532745</ASIN>
+      <CustomerReviews>
+        <AverageRating>5.0</AverageRating>
+        <TotalReviews>2465</TotalReviews>
+        <TotalReviewPages>493</TotalReviewPages>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>5</Rating>
+          <HelpfulVotes>5</HelpfulVotes>
+          <TotalVotes>7</TotalVotes>
+          <Date>2003-03-28</Date>
+          <Summary>spannend gelesen</Summary>
+          <Content>ich bin viel im Auto unterwegs und nutze die Zeit, um meine Englischkenntnisse aufzubessern. Ich war absolut begeistert von den Harry Potter-Kassetten, da sie wunderbar spannend gelesen sind. So habe ich mir die Zeit gespart, die B&#252;cher zu lesen.</Content>
+        </Review>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>1</Rating>
+          <HelpfulVotes>10</HelpfulVotes>
+          <TotalVotes>47</TotalVotes>
+          <Date>2003-03-14</Date>
+          <Summary>Harry Potter and the Chamber of Secrets</Summary>
+          <Content>Ich kenne die gelesenen Harry Potter-H&#246;rbucher sowohl vom Briten Stephen Fry als auch vom Amerikaner Jim Dale und ich kann jedem nur die amerikanische Version anraten: Eine tolle Stimme und extrem gut und packend vorgelesen. Die Versionen von Stephen Fry jedoch finde nicht nur ich furchtbar gelesen und daher kann ich jedem nur abraten diese langweilige britische Ausgabe zu erstehen.</Content>
+        </Review>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>5</Rating>
+          <HelpfulVotes>1</HelpfulVotes>
+          <CustomerId>A27ZXQ04OI1XOA</CustomerId>
+          <Reviewer>
+            <CustomerId>A27ZXQ04OI1XOA</CustomerId>
+            <Name>Kate</Name>
+            <Location>Deutschland</Location>
+          </Reviewer>
+          <TotalVotes>1</TotalVotes>
+          <Date>2003-02-07</Date>
+          <Summary>Great!</Summary>
+          <Content>I have seen the movie version first, but reading the book was much better. I am not a big reader, but this book made me read every night, I am reading the second part right now. I can recomend it to anyone.</Content>
+        </Review>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>5</Rating>
+          <HelpfulVotes>0</HelpfulVotes>
+          <CustomerId>A2DVIXCV53M9GB</CustomerId>
+          <Reviewer>
+            <CustomerId>A2DVIXCV53M9GB</CustomerId>
+            <Name>Psychic_Medium</Name>
+            <Location>Illinois</Location>
+          </Reviewer>
+          <TotalVotes>2</TotalVotes>
+          <Date>2003-01-13</Date>
+          <Summary>Affordable!</Summary>
+          <Content>I purchased three of these as gifts for my nieces, but I didn't have the chance to read Harry Potter and the Sorcerer's Stone (Book 1), yet.&lt;br&gt;It is recommended for the young at heart though.&lt;br&gt;Also recommending: Gold Heaven</Content>
+        </Review>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>5</Rating>
+          <HelpfulVotes>4</HelpfulVotes>
+          <TotalVotes>8</TotalVotes>
+          <Date>2002-12-29</Date>
+          <Summary>Hilfreich</Summary>
+          <Content>Eigentlich habe ich dieses Buch erst in deutsch gelesen. (Wurde mir geschenkt)&lt;br&gt;Doch dann hat mir meine Schwester geraten, das Buch auch in englisch zu lesen, damit ich meine Kenntnisse etwas aufbessern kann. &lt;br&gt;Immerhin ist es ja ein Kinderbuch!&lt;br&gt;Inzwischen habe ich alle Harry Potter - B&#228;nde mit einem Schmunzeln und &#228;ngstlich feuchten H&#228;nden gelesen und habe auch keine Scheu mehr vor Englischer Literatur. Es macht einfach Spa&#223; die Abenteuer hautnah mit Harry mitzuerleben.</Content>
+        </Review>
+      </CustomerReviews>
+    </Item>
+  </Items>
+</ItemLookupResponse>

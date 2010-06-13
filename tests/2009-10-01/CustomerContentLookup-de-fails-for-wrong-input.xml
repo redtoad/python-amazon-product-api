@@ -1,0 +1,32 @@
+<CustomerContentLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2009-10-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+    </HTTPHeaders>
+    <RequestId>1KCBAREYPN35805W1CR6</RequestId>
+    <Arguments>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="CustomerId" Value="???"/>
+      <Argument Name="Operation" Value="CustomerContentLookup"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2010-04-02T20:02:28Z"/>
+      <Argument Name="Version" Value="2009-10-01"/>
+    </Arguments>
+    <RequestProcessingTime>0.00362801551818848</RequestProcessingTime>
+  </OperationRequest>
+  <Customers>
+    <Request>
+      <IsValid>False</IsValid>
+      <CustomerContentLookupRequest>
+        <CustomerId>???</CustomerId>
+      </CustomerContentLookupRequest>
+      <Errors>
+        <Error>
+          <Code>AWS.InvalidParameterValue</Code>
+          <Message>??? is not a valid value for CustomerId. Please change this value and retry your request.</Message>
+        </Error>
+      </Errors>
+    </Request>
+  </Customers>
+</CustomerContentLookupResponse>

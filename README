@@ -1,0 +1,95 @@
+====================================================
+Python bindings for Amazon's Product Advertising API
+====================================================
+
+This module offers a light-weight access to the latest version of the Amazon
+Product Advertising API without getting in your way. 
+
+The Amazon API itself provides programmatic access to Amazon's product
+selection and discovery functionality. It has search and look up capabilities,
+provides information on products and other features such as Customer Reviews,
+Similar Products, Wish Lists and New and Used listings.  More information
+about the API can be found at
+https://affiliate-program.amazon.com/gp/advertising/api/detail/main.html
+
+All requests made by this module are signed as required since August 15, 2009.
+
+Basic usage
+-----------
+
+In order to use this API you'll obviously need an Amazon Associates Web Service
+account for which you must with Amazon at http://aws.amazon.com. Each account
+contains an *AWSAccessKeyId* and a *SecretKey*. 
+
+Here is an example how to use the API to search for books of a certain 
+publisher::
+
+    AWS_KEY = '...'
+    SECRET_KEY = '...'
+    
+    api = API(AWS_KEY, SECRET_KEY, 'de')
+    node = api.item_search('Books', Publisher='Galileo Press')
+
+The ``node`` object returned is a `lxml.objectified`__ element. All its 
+attributes can be accessed the pythonic way::
+    
+    # .pyval will convert the node content into int here
+    total_results = node.Items.TotalResults.pyval
+    total_pages = node.Items.TotalPages.pyval
+    
+    # get all books from result set and 
+    # print author and title
+    for book in node.Items.Item:
+        print '%s: "%s"' % (book.ItemAttributes.Author, 
+                            book.ItemAttributes.Title)
+
+Please refer to the `lxml.objectify`_ documentation for more details.
+
+.. _lxml.objectify: http://codespeak.net/lxml/objectify.html
+__ lxml.objectify_
+
+Status
+------
+
+This module is still undergoing development. The support for the Amazon Product
+API is currently limited to a number of operations. Supported so far are:
+   
+- ``ItemLookup``
+- ``ItemSearch``
+- ``SimilarityLookup``
+- ``ListLookup``
+- ``ListSearch``
+- ``Help``
+- ``BrowseNodeLookup``
+
+More functionality is to follow as development progresses. 
+
+Installation
+------------
+
+In order to install python-amazon-product-api you can use::
+
+    easy_install python-amazon-product-api
+    
+or download the source package from 
+http://pypi.python.org/pypi/python-amazon-product-api, untar it and run ::
+    
+    python setup.py install
+
+You'll also find binaries there to make your life easier if you happen to use
+a Windows system.
+
+The development version is available `bitbucket.org`_. Feel free to clone the 
+repository and add your own features. ::
+    
+    hg clone http://bitbucket.org/basti/python-amazon-product-api/
+    
+If you like what you see, drop me a line at `basti at redtoad dot de`.
+
+.. _bitbucket.org: http://bitbucket.org/basti/python-amazon-product-api/
+
+License
+-------
+
+This module is release under the BSD License. You can find the full text of
+the license in the LICENSE file.

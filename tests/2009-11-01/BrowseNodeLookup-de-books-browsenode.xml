@@ -1,0 +1,147 @@
+<BrowseNodeLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2009-11-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+    </HTTPHeaders>
+    <RequestId>0A14Z4VH8P6H278VTNSH</RequestId>
+    <Arguments>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Operation" Value="BrowseNodeLookup"/>
+      <Argument Name="BrowseNodeId" Value="541686"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2010-04-03T12:41:02Z"/>
+      <Argument Name="Version" Value="2009-11-01"/>
+    </Arguments>
+    <RequestProcessingTime>0.0141940116882324</RequestProcessingTime>
+  </OperationRequest>
+  <BrowseNodes>
+    <Request>
+      <IsValid>True</IsValid>
+      <BrowseNodeLookupRequest>
+        <BrowseNodeId>541686</BrowseNodeId>
+      </BrowseNodeLookupRequest>
+    </Request>
+    <BrowseNode>
+      <BrowseNodeId>541686</BrowseNodeId>
+      <Name>Kategorien</Name>
+      <IsCategoryRoot>1</IsCategoryRoot>
+      <Children>
+        <BrowseNode>
+          <BrowseNodeId>4185461</BrowseNodeId>
+          <Name>Antiquarische B&#252;cher</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>117</BrowseNodeId>
+          <Name>Belletristik</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>187254</BrowseNodeId>
+          <Name>Biografien &amp; Erinnerungen</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>403434</BrowseNodeId>
+          <Name>Business &amp; Karriere</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>120</BrowseNodeId>
+          <Name>B&#246;rse &amp; Geld</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>287621</BrowseNodeId>
+          <Name>Comics &amp; Mangas</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>124</BrowseNodeId>
+          <Name>Computer &amp; Internet</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>11063821</BrowseNodeId>
+          <Name>Erotik</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>340583031</BrowseNodeId>
+          <Name>Esoterik</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>288100</BrowseNodeId>
+          <Name>Fachb&#252;cher</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>548400</BrowseNodeId>
+          <Name>Film, Kunst &amp; Kultur</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>122</BrowseNodeId>
+          <Name>Freizeit, Haus &amp; Garten</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>13690631</BrowseNodeId>
+          <Name>Geschenkb&#252;cher</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>118310011</BrowseNodeId>
+          <Name>Kalender</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>280652</BrowseNodeId>
+          <Name>Kinder- &amp; Jugendb&#252;cher</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>189528</BrowseNodeId>
+          <Name>Kochen &amp; Genie&#223;en</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>287480</BrowseNodeId>
+          <Name>Krimis &amp; Thriller</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>403432</BrowseNodeId>
+          <Name>Lernen &amp; Nachschlagen</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>1199902</BrowseNodeId>
+          <Name>Musiknoten</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>121</BrowseNodeId>
+          <Name>Naturwissenschaften &amp; Technik</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>143</BrowseNodeId>
+          <Name>Politik &amp; Geschichte</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>536302</BrowseNodeId>
+          <Name>Ratgeber</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>298002</BrowseNodeId>
+          <Name>Reise &amp; Abenteuer</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>340513031</BrowseNodeId>
+          <Name>Religion &amp; Glaube</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>142</BrowseNodeId>
+          <Name>Science Fiction, Fantasy &amp; Horror</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>298338</BrowseNodeId>
+          <Name>Sport &amp; Fitness</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>188795</BrowseNodeId>
+          <Name>Religion &amp; Esoterik</Name>
+        </BrowseNode>
+      </Children>
+      <Ancestors>
+        <BrowseNode>
+          <BrowseNodeId>186606</BrowseNodeId>
+          <Name>B&#252;cher</Name>
+        </BrowseNode>
+      </Ancestors>
+    </BrowseNode>
+  </BrowseNodes>
+</BrowseNodeLookupResponse>
