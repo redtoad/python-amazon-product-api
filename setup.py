@@ -4,22 +4,14 @@ from setuptools import setup
 import os
 import sys
 
-version = '0.2.4'
+import amazonproduct
 
 def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
-# Make sure that the version number matches before uploading! This hack is 
-# necessary to avoid ImportErrors for users who have not installed lxml yet.
-# http://bitbucket.org/basti/python-amazon-product-api/issue/11/
-if 'register' in sys.argv or 'upload' in sys.argv:
-    import amazonproduct
-    if version != amazonproduct.__version__:
-        raise ValueError("Version numbers don't match!")
-
 setup(
     name = 'python-amazon-product-api',
-    version = version,
+    version = amazonproduct.__version__,
     author = 'Sebastian Rahlf',
     author_email = 'basti AT redtoad DOT de',
     url="http://bitbucket.org/basti/python-amazon-product-api/downloads/",
