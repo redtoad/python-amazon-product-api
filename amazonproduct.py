@@ -28,8 +28,8 @@ Requirements
 You need an Amazon Webservice account which comes with an access key and a 
 secret key.
 
-You'll also need the python module lxml (>=2.1.5) and, if you're using python 
-2.4, also pycrypto.
+If you don't customise the response processing, you'll also need the python
+module lxml (>=2.1.5) and, if you're using python 2.4, also pycrypto.
 
 License
 -------
@@ -51,7 +51,6 @@ except ImportError: # pragma: no cover
     from Crypto.Hash import SHA256 as sha256
     
 import hmac
-from lxml import objectify, etree
 import re
 import socket
 from time import strftime, gmtime
@@ -195,6 +194,59 @@ JAPANESE_ERROR_REGS = {
     'invalid-parameter-combination' : re.compile('^(?P<message>.*)$'),
 }
 
+
+class LxmlObjectifyResponseProcessor (object):
+
+    """
+    Response processor using ``lxml.objectify``. It uses a custom lookup
+    mechanism for XML elements to ensure that ItemIds (such as ASINs) are
+    always StringElements and evaluated as such.
+    """
+
+    def __init__(self):
+
+        from lxml import etree, objectify
+
+        class SelectiveClassLookup(etree.CustomElementClassLookup):
+            """
+            Lookup mechanism for XML elements to ensure that ItemIds (like
+            ASINs) are always StringElements and evaluated as such.
+            Thanks to Brian Browning for pointing this out.
+            """
+            def lookup(self, node_type, document, namespace, name):
+                if name in ('ItemId', 'ASIN'):
+                    return objectify.StringElement
+
+        parser = etree.XMLParser()
+        lookup = SelectiveClassLookup()
+        lookup.set_fallback(objectify.ObjectifyElementClassLookup())
+        parser.set_element_class_lookup(lookup)
+
+        # provide a parse method to avoid importing lxml.objectify 
+        # every time this processor is called
+        self.parse = lambda fp: objectify.parse(fp, parser)
+
+    def __call__(self, fp):
+        """
+        Parses a file-like object containing the Amazon XML response.
+        """
+        tree = self.parse(fp)
+        root = tree.getroot()
+
+        #~ from lxml import etree
+        #~ print etree.tostring(tree, pretty_print=True)
+
+        nspace = root.nsmap.get(None, '')
+        errors = root.xpath('//aws:Request/aws:Errors/aws:Error',
+                         namespaces={'aws' : nspace})
+        for error in errors:
+            code = error.Code.text
+            msg = error.Message.text
+            raise AWSError(code, msg)
+
+        return root
+
+
 class API (object):
     
     """
@@ -232,7 +284,8 @@ class API (object):
         # ...
         
     Just make sure it raises an ``AWSError`` with the appropriate error code 
-    and message.
+    and message. For a more complex example, have a look at the default 
+    LxmlObjectifyResponseProcessor class.
     """
     
     VERSION = '2009-11-01' #: supported Amazon API version
@@ -263,8 +316,7 @@ class API (object):
         self.throttle = timedelta(seconds=1)/self.REQUESTS_PER_SECOND
         self.debug = 0 # set to 1 if you want to see HTTP headers
         
-        self.response_processor = processor
-        self._parser = None # will be set first time _parse is run 
+        self.response_processor = processor or LxmlObjectifyResponseProcessor()
         
     def _build_url(self, **qargs):
         """
@@ -356,62 +408,24 @@ class API (object):
         usable output comes out. It will use a different result_processor if 
         you have defined one. 
         """
-        if self.response_processor:
+        try:
             return self.response_processor(fp)
-        
-        # define custom class lookup first time this method is called which 
-        # will hopefully reduce execution time (although it's lightning fast!) 
-        if self._parser is None:
-            
-            class SelectiveClassLookup(etree.CustomElementClassLookup):
-                """
-                Lookup mechanism for XML elements to ensure that ItemIds (such 
-                as ASINs) are always StringElements and evaluated as such. 
-                Thanks to Brian Browning for pointing this out.
-                """
-                def lookup(self, node_type, document, namespace, name):
-                    if name in ('ItemId', 'ASIN'):
-                        return objectify.StringElement
-                    
-            self._parser = etree.XMLParser()
-            lookup = SelectiveClassLookup()
-            lookup.set_fallback(objectify.ObjectifyElementClassLookup())
-#            lookup.set_fallback(etree.ElementNamespaceClassLookup(
-#                                    objectify.ObjectifyElementClassLookup()))
-            self._parser.set_element_class_lookup(lookup)
-        
-        tree = objectify.parse(fp, self._parser)
-        root = tree.getroot()
-        
-        #~ from lxml import etree
-        #~ print etree.tostring(tree, pretty_print=True)
-        
-        nspace = root.nsmap.get(None, '')
-        errors = root.xpath('//aws:Request/aws:Errors/aws:Error', 
-                         namespaces={'aws' : nspace})
-        
-        for error in errors:
-            
-            code = error.Code.text
-            msg = error.Message.text
-            
-            if code == 'AWS.ECommerceService.NoExactMatches':
+        except AWSError, e:
+
+            if e.code == 'AWS.ECommerceService.NoExactMatches':
                 raise NoExactMatchesFound
-            
-            if code == 'AWS.InvalidParameterValue':
-                m = self._reg('invalid-parameter-value').search(msg)
+
+            if e.code == 'AWS.InvalidParameterValue':
+                m = self._reg('invalid-parameter-value').search(e.msg)
                 raise InvalidParameterValue(m.group('parameter'), m.group('value'))
-            
-            if code == 'AWS.RestrictedParameterValueCombination':
-                m = self._reg('invalid-parameter-combination').search(msg)
+
+            if e.code == 'AWS.RestrictedParameterValueCombination':
+                m = self._reg('invalid-parameter-combination').search(e.msg)
                 raise InvalidParameterCombination(m.group('message'))
-            
-            raise AWSError(code, msg)
-        
-        #~ from lxml import etree
-        #~ print etree.tostring(root, pretty_print=True)
-        return root
-    
+
+			# otherwise simply re-raise
+            raise
+
     def item_lookup(self, id, **params):
         """
         Given an Item identifier, the ``ItemLookup`` operation returns some or

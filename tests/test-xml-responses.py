@@ -396,33 +396,34 @@ class XMLParsingTestCase (unittest.TestCase):
         Collect all XML files stored.
         """
         # TODO: Skip tests if no XML files are found?
-        self.test_files = [os.path.join(XML_TEST_DIR, dir, f) 
+        self.test_files = [os.path.join(XML_TEST_DIR, dir, f)
             for dir in TESTABLE_API_VERSIONS
             for f in os.listdir(os.path.join(XML_TEST_DIR, dir))
             if f.lower().endswith('.xml')
         ]
         self.api = API(self.ACCESS_KEY, self.SECRET_KEY, 'us')
-        
-        # run API parser with fake XML snippet
-        # so we can use self.api._parser directly in tests
-        from StringIO import StringIO
-        self.api._parse(StringIO('<xml xmlns="http://webservices.amazon.com/AWSECommerceService/2009-11-01"/>'))
-        
+
     def test_all_ItemId_elements_are_StringElement(self):
         for file in self.test_files:
-            tree = objectify.parse(open(file), self.api._parser)
-            nspace = tree.getroot().nsmap.get(None, '')
-            for item_id in tree.xpath('//aws:ItemId', 
-                                      namespaces={'aws' : nspace}):
-                self.assertEquals(item_id.pyval, item_id.text, str(item_id)) 
-                
+            try:
+                tree = self.api.response_processor(open(file))
+                nspace = tree.nsmap.get(None, '')
+                for item_id in tree.xpath('//aws:ItemId',
+                                          namespaces={'aws' : nspace}):
+                    self.assertEquals(item_id.pyval, item_id.text, str(item_id)) 
+            except AWSError:
+                pass
+
     def test_all_ASIN_elements_are_StringElement(self):
         for file in self.test_files:
-            tree = objectify.parse(open(file), self.api._parser)
-            nspace = tree.getroot().nsmap.get(None, '')
-            for item_id in tree.xpath('//aws:ItemId', 
-                                      namespaces={'aws' : nspace}):
-                self.assertEquals(item_id.pyval, item_id.text, str(item_id)) 
+            try:
+                tree = self.api.response_processor(open(file))
+                nspace = tree.nsmap.get(None, '')
+                for item_id in tree.xpath('//aws:ItemId',
+                                          namespaces={'aws' : nspace}):
+                    self.assertEquals(item_id.pyval, item_id.text, str(item_id)) 
+            except AWSError:
+                pass
 
 if __name__ == '__main__':
     import unittest
