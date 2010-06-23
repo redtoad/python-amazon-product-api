@@ -125,6 +125,10 @@ class XMLResponseTestCase (unittest.TestCase):
         unittest.TestCase.__init__(self, *args, **kwargs)
         self.current_locale = 'de'
         self.current_api_version = TESTABLE_API_VERSIONS[-1]
+
+        # make TestCase Python2.4 compatible
+        if not hasattr(self, '_testMethodName'):
+            self._testMethodName = self._TestCase__testMethodName
         
     def setUp(self):
         """
