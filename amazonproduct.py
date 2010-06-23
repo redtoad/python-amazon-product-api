@@ -56,7 +56,13 @@ import re
 import socket
 from time import strftime, gmtime
 import urlparse
+
 import urllib2
+
+try: # make it python2.4 compatible!
+    from urllib2 import quote
+except ImportError: # pragma: no cover
+    from urllib import quote
 
 USER_AGENT = ('python-amazon-product-api/%s '
     '+http://pypi.python.org/pypi/python-amazon-product-api/' % __version__)
@@ -292,7 +298,7 @@ class API (object):
         
         # create signature
         keys = sorted(qargs.keys())
-        args = '&'.join('%s=%s' % (key, urllib2.quote(str(qargs[key]))) 
+        args = '&'.join('%s=%s' % (key, quote(str(qargs[key]))) 
                         for key in keys)
         
         msg = 'GET'
@@ -300,7 +306,7 @@ class API (object):
         msg += '\n' + self.path
         msg += '\n' + args.encode('utf-8')
         
-        signature = urllib2.quote(
+        signature = quote(
             b64encode(hmac.new(self.secret_key, msg, sha256).digest()))
         
         url = '%s://%s%s?%s&Signature=%s' % (self.scheme, self.host, self.path, 
