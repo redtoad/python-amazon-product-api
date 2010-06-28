@@ -1,15 +1,28 @@
 # Copyright (C) 2010 Sebastian Rahlf <basti at redtoad dot de>
 
 """
-Compare performance of different parsing methods,
+Compare performance of different parsing methods. On my netbook the following
+output was generated::
+
+    Collecting test files...
+    Parsing 2020 XML files...
+    minidom 25.83
+    lxml.etree 1.79
+    lxml.objectify 2.43
+
 """
 
-import os, os.path
+import os.path
 import time
 
 import lxml.etree
 import lxml.objectify
 import xml.dom.minidom
+
+# make sure that amazonproduct can be imported
+# from parent directory
+import sys
+sys.path.insert(0, '..')
 
 from amazonproduct import API
 from amazonproduct import AWSError
@@ -42,7 +55,7 @@ def objectify_response_parser(fp):
 def etree_response_parser(fp):
     root = lxml.etree.parse(fp).getroot()
     error = root.find('Error')
-    if error:
+    if error is not None:
         raise AWSError(error.Code.text, error.Message.text)
     return root
 
@@ -57,6 +70,7 @@ if __name__ == '__main__':
         'minidom' : minidom_response_parser, 
     }
 
+    print "Collecting test files..."
     xml_files = [os.path.join(root, file)
         for root, dirs, files in os.walk('.')
         for file in files
@@ -66,12 +80,13 @@ if __name__ == '__main__':
     for label, parser in custom_parsers.items():
         print label, 
         start = time.clock()
-        api = API(AWS_KEY, SECRET_KEY, processor=parser)
+        api = API(AWS_KEY, SECRET_KEY, 'de', processor=parser)
         for i in range(RUNS):
             for path in xml_files:
                 try:
                     api._parse(open(path))
-                except AWSError:
+                except Exception, e:
                     pass
+
         stop = time.clock()
         print stop - start
