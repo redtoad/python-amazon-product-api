@@ -30,7 +30,7 @@ publisher::
     api = API(AWS_KEY, SECRET_KEY, 'de')
     node = api.item_search('Books', Publisher='Galileo Press')
 
-The ``node`` object returned is a `lxml.objectified`__ element. All its 
+The ``node`` object returned is a `lxml.objectified`_ element. All its 
 attributes can be accessed the pythonic way::
     
     # .pyval will convert the node content into int here
@@ -43,10 +43,10 @@ attributes can be accessed the pythonic way::
         print '%s: "%s"' % (book.ItemAttributes.Author, 
                             book.ItemAttributes.Title)
 
-Please refer to the `lxml.objectify`_ documentation for more details.
+Please refer to the `documentation`_ for more details.
 
-.. _lxml.objectify: http://codespeak.net/lxml/objectify.html
-__ lxml.objectify_
+.. _lxml.objectified: http://codespeak.net/lxml/objectify.html
+.. _documentation: http://packages.python.org/python-amazon-product-api/
 
 Status
 ------
