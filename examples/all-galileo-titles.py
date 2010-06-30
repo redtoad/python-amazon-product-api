@@ -9,7 +9,7 @@ from amazonproduct import ResultPaginator
 
 if __name__ == '__main__':
     
-    api = API(AWS_KEY, SECRET_KEY, 'us')
+    api = API(AWS_KEY, SECRET_KEY, 'de')
     
     paginator = ResultPaginator('ItemPage',
         '//aws:Items/aws:Request/aws:ItemSearchRequest/aws:ItemPage',
@@ -18,7 +18,7 @@ if __name__ == '__main__':
         limit=5)
     
     for root in paginator(api.item_search, search_index='Books', 
-                          Publisher='Galileo Press'):
+                          Publisher='Galileo Press', ResponseGroup='Large'):
     
         total_results = root.Items.TotalResults.pyval
         total_pages = root.Items.TotalPages.pyval
@@ -39,5 +39,9 @@ if __name__ == '__main__':
         for book in books:
             print book.ASIN,
             print unicode(book.ItemAttributes.Author), ':', 
-            print unicode(book.ItemAttributes.Title)
-            
+            print unicode(book.ItemAttributes.Title),
+            if hasattr(book.ItemAttributes, 'ListPrice'): 
+                print unicode(book.ItemAttributes.ListPrice.FormattedPrice)
+            elif hasattr(book.OfferSummary, 'LowestUsedPrice'):
+                print u'(used from %s)' % book.OfferSummary.LowestUsedPrice.FormattedPrice
+                            
