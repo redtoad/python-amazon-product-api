@@ -1,0 +1,28 @@
+Source: python-amazon-product-api
+Maintainer: Sebastian Rahlf <basti AT redtoad DOT de>
+Section: python
+Priority: optional
+Build-Depends: python-setuptools (>= 0.6b3), debhelper (>= 7), python-support (>= 0.8.4)
+Standards-Version: 3.7.2
+
+Package: python-amazon-product-api
+Architecture: all
+Depends: ${python:Depends}, python-lxml (>= 2.1.5)
+XB-Python-Version: ${python:Versions}
+Provides: ${python:Provides}
+Description: A Python wrapper for the Amazon Product Advertising API.
+ ====================================================
+ Python bindings for Amazon's Product Advertising API
+ ====================================================
+ .
+ This module offers a light-weight access to the latest version of the Amazon
+ Product Advertising API without getting in your way. 
+ .
+ The Amazon API itself provides programmatic access to Amazon's product
+ selection and discovery functionality. It has search and look up capabilities,
+ provides information on products and other features such as Customer Reviews,
+ Similar Products, Wish Lists and New and Used listings.  More information
+ about the API can be found at
+ https://affiliate-program.amazon.com/gp/advertising/api/detail/main.html
+ .
+ All requests made by this module are signed as required since August 15, 2009.
