@@ -55,7 +55,7 @@ class CustomAPI (API):
         super(CustomAPI, self).__init__(*args, **kwargs)
         self.calls = 0
     
-    def _call(self, url):
+    def _fetch(self, url):
         """
         Uses XML response from (or stores in) local file.
         """

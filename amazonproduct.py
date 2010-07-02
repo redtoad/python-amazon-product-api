@@ -243,7 +243,7 @@ class LxmlObjectifyResponseProcessor (object):
         #~ print etree.tostring(tree, pretty_print=True)
 
         nspace = root.nsmap.get(None, '')
-        errors = root.xpath('//aws:Request/aws:Errors/aws:Error',
+        errors = root.xpath('//aws:Errors/aws:Error',
                          namespaces={'aws' : nspace})
         for error in errors:
             code = error.Code.text
@@ -365,9 +365,9 @@ class API (object):
                                              args, signature)
         return url
     
-    def _call(self, url):
+    def _fetch(self, url):
         """
-        Calls the Amazon Product Advertising API and objectifies the response.
+        Calls the Amazon Product Advertising API and returns the response.
         """
         request = urllib2.Request(url)
         request.add_header('User-Agent', USER_AGENT)
@@ -429,9 +429,23 @@ class API (object):
                 m = self._reg('invalid-parameter-combination').search(e.msg)
                 raise InvalidParameterCombination(m.group('message'))
 
-			# otherwise simply re-raise
+            # otherwise simply re-raise
             raise
 
+    def call(self, **qargs):
+        """
+        Builds a signed URL for the operation, fetches the result from Amazon
+        and parses the XML. If you want to customise things at any stage, simply
+        override the respective method(s):
+        
+        * ``_build_url(**query_parameters)``
+        * ``_fetch(url)``
+        * ``_parse(fp)``
+        """
+        url = self._build_url(**qargs)
+        fp = self._fetch(url)
+        return self._parse(fp)
+    
     def item_lookup(self, id, **params):
         """
         Given an Item identifier, the ``ItemLookup`` operation returns some or
@@ -449,9 +463,7 @@ class API (object):
         by commas. 
         """
         try:
-            url = self._build_url(Operation='ItemLookup', ItemId=id, **params)
-            fp = self._call(url)
-            return self._parse(fp)
+            return self.call(Operation='ItemLookup', ItemId=id, **params)
         except AWSError, e:
             
             if (e.code=='AWS.InvalidEnumeratedParameter' 
@@ -497,10 +509,8 @@ class API (object):
         general, when trying to find an item for sale, you use this operation.
         """
         try:
-            url = self._build_url(Operation='ItemSearch', 
+            return self.call(Operation='ItemSearch', 
                                   SearchIndex=search_index, **params)
-            fp = self._call(url)
-            return self._parse(fp)
         except AWSError, e:
             
             if (e.code=='AWS.InvalidEnumeratedParameter' 
@@ -533,10 +543,8 @@ class API (object):
         """
         item_id = ','.join(ids)
         try:
-            url = self._build_url(Operation='SimilarityLookup', 
-                                  ItemId=item_id, **params)
-            fp = self._call(url)
-            return self._parse(fp)
+            return self.call(Operation='SimilarityLookup', 
+                              ItemId=item_id, **params)
         except AWSError, e:
             
             if e.code=='AWS.ECommerceService.NoSimilarities':
@@ -577,10 +585,8 @@ class API (object):
           wishlist creator wants.  
         """
         try:
-            url = self._build_url(Operation='ListLookup', ListId=list_id,
+            return self.call(Operation='ListLookup', ListId=list_id,
                                   ListType=list_type, **params)
-            fp = self._call(url)
-            return self._parse(fp)
         except AWSError, e:
             
             if (e.code=='AWS.InvalidEnumeratedParameter' 
@@ -618,10 +624,8 @@ class API (object):
         e-mail address or Name. 
         """
         try:
-            url = self._build_url(Operation='ListSearch', 
+            return self.call(Operation='ListSearch', 
                                   ListType=list_type, **params)
-            fp = self._call(url)
-            return self._parse(fp)
         except AWSError, e:
             
             if (e.code=='AWS.InvalidEnumeratedParameter' 
@@ -666,10 +670,8 @@ class API (object):
           with commas.
         """
         try:
-            url = self._build_url(Operation='Help', About=about, 
+            return self.call(Operation='Help', About=about, 
                     HelpType=help_type, ResponseGroup=response_group, **params)
-            fp = self._call(url)
-            return self._parse(fp)
         except AWSError, e:
             
             m = self._reg('invalid-value').search(e.msg)
@@ -719,11 +721,9 @@ class API (object):
           ``TopSellers`` 
         """
         try:
-            url = self._build_url(Operation='BrowseNodeLookup', 
+            return self.call(Operation='BrowseNodeLookup', 
                     BrowseNodeId=browse_node_id, ResponseGroup=response_group, 
                     **params)
-            fp = self._call(url)
-            return self._parse(fp)
         except AWSError, e:
             
             if e.code=='AWS.InvalidResponseGroup':
