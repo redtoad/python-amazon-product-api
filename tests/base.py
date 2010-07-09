@@ -14,7 +14,7 @@ _here = os.path.abspath(os.path.dirname(__file__))
 import sys
 sys.path.insert(0, os.path.join(_here, '..'))
 
-from amazonproduct import API, ResultPaginator, LOCALES
+from amazonproduct import API, ResultPaginator, HOSTS
 
 #: Directory containing XML responses for API versions (one directory for each
 #: API version)
@@ -24,7 +24,7 @@ XML_TEST_DIR = _here
 TESTABLE_API_VERSIONS = '2009-11-01 2009-10-01'.split()
 
 #: Locales to test against. 
-TESTABLE_LOCALES = LOCALES
+TESTABLE_LOCALES = HOSTS.keys()
 
 ALL = 'all'
 
