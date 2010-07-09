@@ -66,13 +66,14 @@ except ImportError: # pragma: no cover
 USER_AGENT = ('python-amazon-product-api/%s '
     '+http://pypi.python.org/pypi/python-amazon-product-api/' % __version__)
 
-LOCALES = {
-    'ca' : 'http://ecs.amazonaws.ca/onca/xml', 
-    'de' : 'http://ecs.amazonaws.de/onca/xml', 
-    'fr' : 'http://ecs.amazonaws.fr/onca/xml', 
-    'jp' : 'http://ecs.amazonaws.jp/onca/xml', 
-    'uk' : 'http://ecs.amazonaws.co.uk/onca/xml', 
-    'us' : 'http://ecs.amazonaws.com/onca/xml', 
+#: Hosts used by Amazon for normal/XSLT operations
+HOSTS = {
+    'ca' : ('ecs.amazonaws.ca', 'xml-ca.amznxslt.com'),  
+    'de' : ('ecs.amazonaws.de', 'xml-de.amznxslt.com'),
+    'fr' : ('ecs.amazonaws.fr', 'xml-fr.amznxslt.com'),
+    'jp' : ('ecs.amazonaws.jp', 'xml-jp.amznxslt.com'),
+    'uk' : ('ecs.amazonaws.co.uk', 'xml-uk.amznxslt.com'),
+    'us' : ('ecs.amazonaws.com', 'xml-us.amznxslt.com'),
 }
 
 class UnknownLocale (Exception):
@@ -310,8 +311,7 @@ class API (object):
         self.secret_key = secret_access_key
         
         try:
-            parts = urlparse.urlsplit(LOCALES[locale])
-            self.scheme, self.host, self.path = parts[:3]
+            self.host = HOSTS[locale]
             self.locale = locale
         except KeyError:
             raise UnknownLocale(locale)
@@ -350,19 +350,21 @@ class API (object):
         
         # create signature
         keys = sorted(qargs.keys())
-        args = '&'.join('%s=%s' % (key, quote(str(qargs[key]))) 
-                        for key in keys)
+        args = '&'.join('%s=%s' % (key, quote(str(qargs[key]).encode('utf-8'), 
+                                              safe='~')) for key in keys)
+        
+        # Amazon uses a different host for XSLT operations 
+        host = self.host['Style' in qargs]
         
         msg = 'GET'
-        msg += '\n' + self.host
-        msg += '\n' + self.path
-        msg += '\n' + args.encode('utf-8')
+        msg += '\n' + host
+        msg += '\n/onca/xml'
+        msg += '\n' + args
         
         signature = quote(
             b64encode(hmac.new(self.secret_key, msg, sha256).digest()))
         
-        url = '%s://%s%s?%s&Signature=%s' % (self.scheme, self.host, self.path, 
-                                             args, signature)
+        url = 'http://%s/onca/xml?%s&Signature=%s' % (host, args, signature)
         return url
     
     def _fetch(self, url):

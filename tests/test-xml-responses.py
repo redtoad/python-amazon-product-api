@@ -3,7 +3,7 @@
 from base import XMLResponseTestCase, XMLResponseTestLoader
 from base import XML_TEST_DIR, TESTABLE_API_VERSIONS
 
-from amazonproduct import API, ResultPaginator, LOCALES
+from amazonproduct import API, ResultPaginator
 from amazonproduct import AWSError
 from amazonproduct import InvalidParameterValue, InvalidListType
 from amazonproduct import InvalidSearchIndex, InvalidResponseGroup
