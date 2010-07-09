@@ -1,7 +1,7 @@
 Why yet another implementation?
 ===============================
 
-.. index:: pyaws, pyamazon, boto, pyecs
+.. index:: pyaws, pyamazon, boto, pyecs, bottlenose
 
 There are a number of alternatives available:
 
@@ -31,7 +31,19 @@ There are a number of alternatives available:
 
 So why write your own then? First and foremost, since August 15, 2009 all calls
 to Amazon's Product Advertising API must be authenticated using request 
-signatures. The existing libraries, at least the ones I found, did not support
-this out of the box at the time. And yes... writing something from scratch is
-always more appealing.
+signatures. The afore mentioned libraries did not support this out of the box at
+the time. And yes... writing something from scratch is always more appealing.
 
+More recently I stumbled across another alternative:
+
+- Dan Loewenherz's `bottlenose <http://pypi.python.org/pypi/bottlenose>`_ makes 
+  sending requests to Amazon as easy as ::
+    
+    import bottlenose
+    amazon = bottlenose.Amazon("access_key_id", "secret_access_key")
+    response = amazon.ItemSearch(ItemId="0596520999", ResponseGroup="Images", 
+        SearchIndex="Books", IdType="ISBN")
+    
+  It has a straight-forward API, is easy to use and supports all operations out
+  of the box. You only have to take care of processing the response. I must 
+  steal some ideas from this module! 

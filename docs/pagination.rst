@@ -7,6 +7,8 @@ Pagination
 .. index:: pagination
    single: results; pagination
 
+.. attention:: The ``ResultPaginator`` only works with ``lxml``!
+
 The Amazon Product Advertising API paginates some its results. In order to get
 all reviews of a product, for instance, subsequent calls have to be made to the
 API.  Let's have a look at an example:
