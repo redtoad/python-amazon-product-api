@@ -3,8 +3,10 @@ Basic usage
 ===========
 
 In order to use this API you'll obviously need an Amazon Associates Web Service
-account for which you must with Amazon at http://aws.amazon.com. Each account
-contains an *AWSAccessKeyId* and a *SecretKey*. 
+account for which you must `register with Amazon`_. Each account contains an
+*AWSAccessKeyId* and a *SecretKey*. 
+
+.. _register with Amazon: https://affiliate-program.amazon.com/gp/advertising/api/detail/your-account.html
 
 Here is an example how to use the API to search for books of a certain 
 publisher::
