@@ -4,7 +4,7 @@ import os
 from setuptools import setup
 import sys
 
-import amazonproduct
+version = '0.2.4.1'
 
 def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
@@ -16,7 +16,7 @@ if sys.version_info[:2] < (2, 5):
 
 setup(
     name = 'python-amazon-product-api',
-    version = amazonproduct.__version__,
+    version = version,
     author = 'Sebastian Rahlf',
     author_email = 'basti AT redtoad DOT de',
     url="http://bitbucket.org/basti/python-amazon-product-api/downloads/",
