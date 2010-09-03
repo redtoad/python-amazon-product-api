@@ -299,8 +299,8 @@ class API (object):
     REQUESTS_PER_SECOND = 1 #: max requests per second
     TIMEOUT = 5 #: timeout in seconds
 
-    def __init__(self, access_key_id, secret_access_key, locale, associate_tag=None,
-                 processor=None):
+    def __init__(self, access_key_id, secret_access_key, locale,
+                 associate_tag=None, processor=None):
         """
         :param access_key_id: AWS access key ID.
         :param secret_key_id: AWS secret key.
@@ -310,9 +310,7 @@ class API (object):
         """
         self.access_key = access_key_id
         self.secret_key = secret_access_key
-
-        if associate_tag:
-            self.associate_tag = associate_tag
+        self.associate_tag = associate_tag
 
         try:
             self.host = HOSTS[locale]
