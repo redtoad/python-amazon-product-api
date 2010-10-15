@@ -1,0 +1,34 @@
+<ListLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2010-06-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.4.1 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+    </HTTPHeaders>
+    <RequestId>10WDNF0P8G8CEBJXY84G</RequestId>
+    <Arguments>
+      <Argument Name="Timestamp" Value="2010-10-15T22:07:17Z"/>
+      <Argument Name="Version" Value="2010-08-06"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Operation" Value="ListLookup"/>
+      <Argument Name="ListId" Value="???"/>
+      <Argument Name="ListType" Value="???"/>
+    </Arguments>
+    <RequestProcessingTime>0.00429201126098633</RequestProcessingTime>
+  </OperationRequest>
+  <Lists>
+    <Request>
+      <IsValid>False</IsValid>
+      <ListLookupRequest>
+        <ListId>???</ListId>
+        <ListType>???</ListType>
+      </ListLookupRequest>
+      <Errors>
+        <Error>
+          <Code>AWS.InvalidEnumeratedParameter</Code>
+          <Message>ListType&#12395;&#25351;&#23450;&#12375;&#12383;&#20516;&#12399;&#28961;&#21177;&#12391;&#12377;&#12290;BabyRegistry&#12289; Listmania&#12289; WeddingRegistry&#12289; WishList&#12394;&#12393;&#12364;&#26377;&#21177;&#12394;&#20516;&#12398;&#20363;&#12391;&#12377;&#12290;</Message>
+        </Error>
+      </Errors>
+    </Request>
+  </Lists>
+</ListLookupResponse>

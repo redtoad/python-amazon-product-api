@@ -1,0 +1,32 @@
+<ListSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2010-06-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.4.1 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+    </HTTPHeaders>
+    <RequestId>14GM8DPYHEA7YPJA30DG</RequestId>
+    <Arguments>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Operation" Value="ListSearch"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2010-10-15T22:07:26Z"/>
+      <Argument Name="Version" Value="2010-08-06"/>
+      <Argument Name="ListType" Value="WishList"/>
+    </Arguments>
+    <RequestProcessingTime>0.00434994697570801</RequestProcessingTime>
+  </OperationRequest>
+  <Lists>
+    <Request>
+      <IsValid>False</IsValid>
+      <ListSearchRequest>
+        <ListType>WishList</ListType>
+      </ListSearchRequest>
+      <Errors>
+        <Error>
+          <Code>AWS.MinimumParameterRequirement</Code>
+          <Message>Your request should have atleast 1 of the following parameters: Name, FirstName, LastName, Email.</Message>
+        </Error>
+      </Errors>
+    </Request>
+  </Lists>
+</ListSearchResponse>
