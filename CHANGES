@@ -1,13 +1,17 @@
 0.2.5 (in development) "Buttercup"
 ----------------------------------
 
-- Support for XSLT requests
+- Support for XSLT requests.
+- Support for Associate tags thanks to Kilian Valkhof.
+- New API versions 2010-09-01 and 2010-08-06 added.. 
+- Fixed #16: Cannot install module under Python 2.4 without pycrypto being 
+  installed first.
 
 
 0.2.4.1 (2010-06-23)
 --------------------
 
-Bugfix release! High time I get some continous integration set up!
+Bugfix release! High time I get some continuous integration set up!
 
 - Fixed #13: The module did not run under Python 2.4. Ooops!
 
@@ -85,7 +89,7 @@ Bugfix release! High time I get some continous integration set up!
 - Default timeout for API calls is set to 5 sec.
 - Test cases for correct parsing of XML responses added. Local XML files are
   used for testing (if available) stored in separate directories 
-  according to API version. These can be overwritten when cofig value
+  according to API version. These can be overwritten when config value
   ``OVERWRITE_TESTS`` is set to ``True``.
 - ``InvalidItemId`` exception is replaced by more general 
   ``InvalidParameterValue`` exception.	
