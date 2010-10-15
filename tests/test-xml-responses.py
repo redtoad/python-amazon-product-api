@@ -21,8 +21,6 @@ class ItemLookupTestCase (XMLResponseTestCase):
     Check that all XML responses for ItemLookup are parsed correctly.
     """
      
-    locales = ['de']
-    
     def test_invalid_item_id(self):
         self.assertRaises(InvalidParameterValue, self.api.item_lookup, '1234567890123')
         
