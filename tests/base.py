@@ -21,7 +21,7 @@ from amazonproduct import API, ResultPaginator, HOSTS
 XML_TEST_DIR = _here
 
 #: Versions of Amazon API to be tested against 
-TESTABLE_API_VERSIONS = '2009-11-01 2009-10-01'.split()
+TESTABLE_API_VERSIONS = '2010-09-01 2010-08-06 2009-11-01 2009-10-01'.split()
 
 #: Locales to test against. 
 TESTABLE_LOCALES = HOSTS.keys()
@@ -176,7 +176,7 @@ class XMLResponseTestLoader (nose.loader.TestLoader):
         testCaseNames = self.getTestCaseNames(testCaseClass)
         tests = []
         for locale in getattr(testCaseClass, 'locales', TESTABLE_LOCALES):
-            for api_version in getattr(self, 'api_versions', TESTABLE_API_VERSIONS):
+            for api_version in getattr(testCaseClass, 'api_versions', TESTABLE_API_VERSIONS):
                 for testCaseName in testCaseNames:
                     testCase = testCaseClass(testCaseName)
                     testCase.current_locale = locale

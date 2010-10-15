@@ -1,19 +1,19 @@
 <BrowseNodeLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2009-10-01">
   <OperationRequest>
     <HTTPHeaders>
-      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.4.1 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
     </HTTPHeaders>
-    <RequestId>18EG1KR8EBRMT01EHMP9</RequestId>
+    <RequestId>19HNFEGPEPWT8093154T</RequestId>
     <Arguments>
       <Argument Name="Service" Value="AWSECommerceService"/>
-      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
       <Argument Name="Operation" Value="BrowseNodeLookup"/>
+      <Argument Name="Timestamp" Value="2010-10-15T22:09:29Z"/>
+      <Argument Name="Version" Value="2009-10-01"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
       <Argument Name="BrowseNodeId" Value="1025612"/>
       <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="Timestamp" Value="2010-04-03T12:41:10Z"/>
-      <Argument Name="Version" Value="2009-10-01"/>
     </Arguments>
-    <RequestProcessingTime>0.0183079242706299</RequestProcessingTime>
+    <RequestProcessingTime>0.0138020515441895</RequestProcessingTime>
   </OperationRequest>
   <BrowseNodes>
     <Request>
@@ -36,12 +36,12 @@
           <Name>Art, Architecture &amp; Photography</Name>
         </BrowseNode>
         <BrowseNode>
-          <BrowseNodeId>267859</BrowseNodeId>
-          <Name>Audio CDs</Name>
-        </BrowseNode>
-        <BrowseNode>
           <BrowseNodeId>51</BrowseNodeId>
           <Name>Audio Cassettes</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>267859</BrowseNodeId>
+          <Name>Audio CDs</Name>
         </BrowseNode>
         <BrowseNode>
           <BrowseNodeId>67</BrowseNodeId>
@@ -70,6 +70,14 @@
         <BrowseNode>
           <BrowseNodeId>72</BrowseNodeId>
           <Name>Crime, Thrillers &amp; Mystery</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>637262</BrowseNodeId>
+          <Name>e-Books</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>279254</BrowseNodeId>
+          <Name>Fantasy</Name>
         </BrowseNode>
         <BrowseNode>
           <BrowseNodeId>62</BrowseNodeId>
@@ -136,8 +144,8 @@
           <Name>Science &amp; Nature</Name>
         </BrowseNode>
         <BrowseNode>
-          <BrowseNodeId>56</BrowseNodeId>
-          <Name>Science Fiction &amp; Fantasy</Name>
+          <BrowseNodeId>279292</BrowseNodeId>
+          <Name>Science Fiction</Name>
         </BrowseNode>
         <BrowseNode>
           <BrowseNodeId>564334</BrowseNodeId>
@@ -162,10 +170,6 @@
         <BrowseNode>
           <BrowseNodeId>52</BrowseNodeId>
           <Name>Young Adult</Name>
-        </BrowseNode>
-        <BrowseNode>
-          <BrowseNodeId>637262</BrowseNodeId>
-          <Name>e-Books</Name>
         </BrowseNode>
       </Children>
       <Ancestors>

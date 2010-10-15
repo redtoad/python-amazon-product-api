@@ -1,0 +1,38 @@
+<HelpResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2010-09-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.4.1 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+    </HTTPHeaders>
+    <RequestId>0NV8EQK5N6FNJ6YYE6WR</RequestId>
+    <Arguments>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="HelpType" Value="Unknown"/>
+      <Argument Name="Operation" Value="Help"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Version" Value="2010-09-01"/>
+      <Argument Name="Timestamp" Value="2010-10-15T22:06:29Z"/>
+      <Argument Name="About" Value="Unknown"/>
+    </Arguments>
+    <RequestProcessingTime>0.0131499767303467</RequestProcessingTime>
+  </OperationRequest>
+  <Information>
+    <Request>
+      <IsValid>False</IsValid>
+      <HelpRequest>
+        <About>Unknown</About>
+        <HelpType>Unknown</HelpType>
+      </HelpRequest>
+      <Errors>
+        <Error>
+          <Code>AWS.InvalidEnumeratedParameter</Code>
+          <Message>The value you specified for About is invalid. Valid values include Accessories, AlternateVersions, BrowseNodeInfo, BrowseNodeLookup, BrowseNodes, Cart, CartAdd, CartClear, CartCreate, CartGet, CartModify, CartNewReleases, CartSimilarities, CartTopSellers, Collections, CustomerContentLookup, CustomerContentSearch, CustomerFull, CustomerInfo, CustomerLists, CustomerReviews, EditorialReview, Fitments, HasPartCompatibility, Help, Images, ItemAttributes, ItemIds, ItemLookup, ItemSearch, Large, ListFull, ListInfo, ListItems, ListLookup, ListMinimum, ListSearch, ListmaniaLists, Medium, MerchantItemAttributes, MostGifted, MostWishedFor, MultiOperation, NewReleases, OfferFull, OfferListings, OfferSummary, Offers, PartBrandBinsSummary, PartBrowseNodeBinsSummary, PromotionDetails, PromotionSummary, PromotionalTag, RelatedItems, Request, Reviews, SalesRank, SearchBins, Seller, SellerListing, SellerListingLookup, SellerListingSearch, SellerLookup, ShippingCharges, Similarities, SimilarityLookup, Small, Subjects, TagLookup, TaggedGuides, TaggedItems, TaggedListmaniaLists, Tags, TagsSummary, TopSellers, Tracks, TransactionDetails, TransactionLookup, VariationImages, VariationMatrix, VariationMinimum, VariationOffers, VariationSummary, Variations, VehicleMakes, VehicleModels, VehicleOptions, VehiclePartFit, VehiclePartLookup, VehiclePartSearch, VehicleParts, VehicleSearch, VehicleTrims, VehicleYears.</Message>
+        </Error>
+        <Error>
+          <Code>AWS.InvalidEnumeratedParameter</Code>
+          <Message>The value you specified for HelpType is invalid. Valid values include Operation, ResponseGroup.</Message>
+        </Error>
+      </Errors>
+    </Request>
+  </Information>
+</HelpResponse>
