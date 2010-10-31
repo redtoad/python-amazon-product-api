@@ -355,7 +355,7 @@ class API (object):
 
         # create signature
         keys = sorted(qargs.keys())
-        args = '&'.join('%s=%s' % (key, quote(str(qargs[key]).encode('utf-8'),
+        args = '&'.join('%s=%s' % (key, quote(unicode(qargs[key]).encode('utf-8'),
                                               safe='~')) for key in keys)
 
         # Amazon uses a different host for XSLT operations

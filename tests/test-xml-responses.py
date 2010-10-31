@@ -62,6 +62,16 @@ class ItemSearchTestCase (XMLResponseTestCase):
         except AWSError, e:
             self.assert_(e.code == 'AWS.MinimumParameterRequirement')
         
+    def test_unicode_parameter(self):
+        # Issue 17: UnicodeDecodeError when python's default encoding is not
+        # utf-8
+        try:
+            self.api.item_search('Books', Author=u'F\xe9lix J. Palma')
+        except NoExactMatchesFound:
+            # doesn't matter if this author is not found in all locales
+            # as long as no UnicodeDecodeError is raised!
+            pass
+
     def test_invalid_response_group(self):
         self.assertRaises(InvalidResponseGroup, self.api.item_search, 
                           'All', ResponseGroup='???')
