@@ -71,7 +71,7 @@ class CustomAPI (API):
         # retrieve it, obfuscate all sensible data and store it 
         # with the name of the TestCase using it
         if not os.path.exists(path) or OVERWRITE_TESTS:
-            tree = etree.parse(API._call(self, url))
+            tree = etree.parse(API._fetch(self, url))
             root = tree.getroot()
             
             # overwrite sensible data
