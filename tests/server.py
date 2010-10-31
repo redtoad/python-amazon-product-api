@@ -4,9 +4,10 @@
 # the license in the LICENSE file.
 
 from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
+import sys
 
 DEFAULT_ADDRESS = 'localhost'
-DEFAULT_PORT = 8080
+DEFAULT_PORT = 0
 
 class TestServer (HTTPServer):
     
@@ -30,6 +31,7 @@ class TestServer (HTTPServer):
         HTTPServer.__init__(self, (host, port), RequestHandler)
         self.file, self.code = (None, 204) # HTTP 204: No Content
         self._thread = None
+        self.logging = False
         
     def serve_file(self, path=None, code=200):
         """
@@ -75,11 +77,9 @@ class RequestHandler(BaseHTTPRequestHandler):
         """
         Overrides standard logging method.
         """
-        #import sys
-        #sys.stdout.write("%s - - [%s] %s\n" %
-        #                 (self.address_string(),
-        #                  self.log_date_time_string(),
-        #                  format%args))
+        if self.server.logging:
+            sys.stdout.write("%s - - [%s] %s\n" % (self.address_string(), 
+                self.log_date_time_string(), format % args))
         
     def do_GET(self):
         """
@@ -98,12 +98,17 @@ class RequestHandler(BaseHTTPRequestHandler):
 
 
 if __name__ == '__main__':
-    server = TestServer(port=8001)
+    server = TestServer()
     server.start()
+    server.logging = True
     
     print 'Test server is running at http://%s:%i' % (server.server_address)
     print 'Type <Ctrl-C> to stop'
-    server.serve_file('./2009-10-01/Help-de-fails-for-wrong-input.xml', 302)
+
+    import os.path
+    xml = os.path.join(os.path.dirname(__file__), '2009-10-01', 
+        'Help-de-fails-for-wrong-input.xml')
+    server.serve_file(xml, 302)
     
     try:
         while True: 
