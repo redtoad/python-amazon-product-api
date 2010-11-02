@@ -31,7 +31,7 @@ class APICallsTestCase (unittest.TestCase):
     
     def setUp(self):
         self.api = API(self.ACCESS_KEY, self.SECRET_KEY, 'uk')
-        self.server = TestServer(port=8002)
+        self.server = TestServer()
         self.api.host = ('%s:%i' % self.server.server_address, )
         self.server.start()
         
