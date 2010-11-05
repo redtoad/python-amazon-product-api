@@ -16,6 +16,15 @@ tests/config.py$
 
 # code coverage files
 .coverage
+cover
+htmlcov
+coverage.xml
+
+# XUnit reports
+nosetests.xml
+
+# pylint reports
+pylint.txt
 
 # use glob syntax.
 syntax: glob
