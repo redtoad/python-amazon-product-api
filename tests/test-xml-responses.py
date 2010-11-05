@@ -435,7 +435,3 @@ class XMLParsingTestCase (unittest.TestCase):
                     self.assertEquals(item_id.pyval, item_id.text, str(item_id)) 
             except AWSError:
                 pass
-
-if __name__ == '__main__':
-    import unittest
-    unittest.main(testLoader=XMLResponseTestLoader())

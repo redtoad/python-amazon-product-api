@@ -45,6 +45,3 @@ class APICallsTestCase (unittest.TestCase):
         self.assertRaises(TooManyRequests, self.api.item_lookup, 
                           '9780747532743', IdType='ISBN', SearchIndex='All', 
                           ResponseGroup='???')
-        
-if __name__ == '__main__':
-    unittest.main()
