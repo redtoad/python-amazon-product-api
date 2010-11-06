@@ -32,7 +32,13 @@ class TestServer (HTTPServer):
         self.file, self.code = (None, 204) # HTTP 204: No Content
         self._thread = None
         self.logging = False
-        
+
+        # Workaround for Python 2.4: using port 0 will bind a free port to the 
+        # underlying socket. The server_address, however, is not reflecting 
+        # this! So we need to adjust it manually.
+        if self.server_address[1] == 0: 
+            self.server_address = (self.server_address[0], self.server_port)
+
     def serve_file(self, path=None, code=200):
         """
         Serves file (with specified HTTP error code) as response to next 
@@ -104,7 +110,7 @@ if __name__ == '__main__':
     
     print 'Test server is running at http://%s:%i' % (server.server_address)
     print 'Type <Ctrl-C> to stop'
-
+    
     import os.path
     xml = os.path.join(os.path.dirname(__file__), '2009-10-01', 
         'Help-de-fails-for-wrong-input.xml')
