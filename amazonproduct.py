@@ -209,6 +209,8 @@ class LxmlObjectifyResponseProcessor (object):
     always StringElements and evaluated as such.
     """
 
+    # pylint: disable-msg=R0903
+
     def __init__(self):
 
         from lxml import etree, objectify
@@ -219,6 +221,7 @@ class LxmlObjectifyResponseProcessor (object):
             ASINs) are always StringElements and evaluated as such.
             Thanks to Brian Browning for pointing this out.
             """
+            # pylint: disable-msg=W0613
             def lookup(self, node_type, document, namespace, name):
                 if name in ('ItemId', 'ASIN'):
                     return objectify.StringElement
