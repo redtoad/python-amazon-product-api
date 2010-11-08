@@ -429,7 +429,8 @@ class API (object):
 
             if e.code == 'AWS.InvalidParameterValue':
                 m = self._reg('invalid-parameter-value').search(e.msg)
-                raise InvalidParameterValue(m.group('parameter'), m.group('value'))
+                raise InvalidParameterValue(m.group('parameter'),
+                                            m.group('value'))
 
             if e.code == 'AWS.RestrictedParameterValueCombination':
                 m = self._reg('invalid-parameter-combination').search(e.msg)
@@ -452,7 +453,7 @@ class API (object):
         fp = self._fetch(url)
         return self._parse(fp)
 
-    def item_lookup(self, id, **params):
+    def item_lookup(self, item_id, **params):
         """
         Given an Item identifier, the ``ItemLookup`` operation returns some or
         all of the item attributes, depending on the response group specified
@@ -469,7 +470,7 @@ class API (object):
         by commas.
         """
         try:
-            return self.call(Operation='ItemLookup', ItemId=id, **params)
+            return self.call(Operation='ItemLookup', ItemId=item_id, **params)
         except AWSError, e:
 
             if (e.code == 'AWS.InvalidEnumeratedParameter'
@@ -642,7 +643,8 @@ class API (object):
                 raise InvalidListType(list_type)
 
             if e.code == 'AWS.MinimumParameterRequirement':
-                p = self._reg('not-enough-parameters').search(e.msg).group('parameters')
+                p = (self._reg('not-enough-parameters')
+                     .search(e.msg).group('parameters'))
                 raise NotEnoughParameters(p)
 
             if e.code == 'AWS.ECommerceService.NoExactMatches':
