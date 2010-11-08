@@ -2,6 +2,7 @@
 import os.path
 from server import TestServer
 import unittest
+import urlparse
 
 # import base first because sys.path is changed in order to find amazonproduct!
 import base
@@ -21,27 +22,47 @@ class LocalesTestCase (unittest.TestCase):
         self.assertRaises(UnknownLocale, API, self.ACCESS_KEY,
                 self.SECRET_KEY, locale='XX')
 
+
 class APICallsTestCase (unittest.TestCase):
-    
+
     """
     Test API calls with ``TestServer`` instance.
     """
-    
+
     ACCESS_KEY = SECRET_KEY = ''
-    
+
     def setUp(self):
         self.api = API(self.ACCESS_KEY, self.SECRET_KEY, 'uk')
         self.server = TestServer()
         self.api.host = ('%s:%i' % self.server.server_address, )
         self.server.start()
-        
+
     def tearDown(self):
         self.server.stop()
-        
+
     def test_fails_for_too_many_requests(self):
-        xml = os.path.join(base.XML_TEST_DIR, 
+        xml = os.path.join(base.XML_TEST_DIR,
             'APICalls-fails-for-too-many-requests.xml')
         self.server.serve_file(xml, 503)
-        self.assertRaises(TooManyRequests, self.api.item_lookup, 
-                          '9780747532743', IdType='ISBN', SearchIndex='All', 
+        self.assertRaises(TooManyRequests, self.api.item_lookup,
+                          '9780747532743', IdType='ISBN', SearchIndex='All',
                           ResponseGroup='???')
+
+
+class APICallsWithOptionalParameters (unittest.TestCase):
+
+    """
+    Tests that optional parameters (like AssociateTag) end up in URL.
+    """
+
+    ACCESS_KEY = SECRET_KEY = ''
+
+    def test_associate_tag_is_written_to_url(self):
+        tag = 'ABC12345'
+        api = API(self.ACCESS_KEY, self.SECRET_KEY, 'de', associate_tag=tag)
+        url = api._build_url(Operation='ItemSearch', SearchIndex='Books')
+
+        qs = urlparse.parse_qs(urlparse.urlparse(url).query)
+        assert qs['AssociateTag'][0] == tag
+
+
