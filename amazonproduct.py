@@ -792,21 +792,23 @@ class ResultPaginator (object):
         """
         Iterate over all paginated results of ``fun``.
         """
-        current_page = 0
-        total_pages = 1
+        self.current_page = 0
+        self.total_pages = 1
+        self.total_results = 0
 
         kwargs[self.counter] = kwargs.get(self.counter, 1)
 
-        while (current_page < total_pages
-        and (self.limit is None or current_page < self.limit)):
+        while (self.current_page < self.total_pages
+        and (self.limit is None or self.current_page < self.limit)):
 
             root = fun(*args, **kwargs)
 
             if self.nspace is None:
                 self.nspace = root.nsmap.get(None, '')
 
-            current_page = self._get_current_page_numer(root)
-            total_pages = self._get_total_page_numer(root)
+            self.current_page = self._get_current_page_numer(root)
+            self.total_pages = self._get_total_page_numer(root)
+            self.total_results = self._get_total_results(root)
 
             yield root
 

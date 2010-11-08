@@ -150,49 +150,42 @@ class ListSearchTestCase (XMLResponseTestCase):
 
 
 class ResultPaginatorTestCase (XMLResponseTestCase):
-    
+
     """
     Check that all XML responses for pagination are parsed correctly.
     """
-    
+
     api_versions = ['2009-10-01', '2009-11-01']
     locales = ['de']
-    
+
     def test_review_pagination(self):
         # reviews for "Harry Potter and the Philosopher's Stone"
         ASIN = '0747532745'
-        
+
         # test values for different API versions
         # version : (total_reviews, review_pages)
         VALUES = {
-            '2009-10-01' : (2458, 492), 
+            '2009-10-01' : (2458, 492),
             '2009-11-01' : (2465, 493),
         }
-        
+
         paginator = ResultPaginator('ReviewPage',
             '//aws:Items/aws:Request/aws:ItemLookupRequest/aws:ReviewPage',
             '//aws:Items/aws:Item/aws:CustomerReviews/aws:TotalReviewPages',
-            '//aws:Items/aws:Item/aws:CustomerReviews/aws:TotalReviews', 
+            '//aws:Items/aws:Item/aws:CustomerReviews/aws:TotalReviews',
             limit=10)
-        
-        for page, root in enumerate(paginator(self.api.item_lookup, 
+
+        for page, root in enumerate(paginator(self.api.item_lookup,
                         ASIN, ResponseGroup='Reviews')):
-            
-            total_reviews = root.Items.Item.CustomerReviews.TotalReviews.pyval
-            review_pages = root.Items.Item.CustomerReviews.TotalReviewPages.pyval
-            try:
-                current_page = root.Items.Request.ItemLookupRequest.ReviewPage.pyval
-            except AttributeError:
-                current_page = 1
-            
+
             (reviews, pages) = VALUES[self.current_api_version]
-            
-            self.assertEquals(total_reviews, reviews)
-            self.assertEquals(review_pages, pages)
-            self.assertEquals(current_page, page+1)
-            
+
+            self.assertEquals(paginator.total_results, reviews)
+            self.assertEquals(paginator.total_pages, pages)
+            self.assertEquals(paginator.current_page, page+1)
+
         self.assertEquals(page, 9)
-        self.assertEquals(current_page, 10)
+        self.assertEquals(paginator.current_page, 10)
 
     def test_pagination_works_for_missing_reviews(self):
         # "Sherlock Holmes (limitierte Steelbook Edition) [Blu-ray]"
@@ -204,7 +197,7 @@ class ResultPaginatorTestCase (XMLResponseTestCase):
             '//aws:Items/aws:Item/aws:CustomerReviews/aws:TotalReviewPages',
             '//aws:Items/aws:Item/aws:CustomerReviews/aws:TotalReviews')
 
-        for page, root in enumerate(paginator(self.api.item_lookup, 
+        for page, root in enumerate(paginator(self.api.item_lookup,
                         ASIN, ResponseGroup='Reviews')):
             self.assertFalse(hasattr(root.Items.Item, 'CustomerReviews'))
 
@@ -224,22 +217,15 @@ class ResultPaginatorTestCase (XMLResponseTestCase):
             '//aws:OperationRequest/aws:Arguments/aws:Argument[@Name="ProductPage"]/@Value',
             '//aws:Lists/aws:List/aws:TotalPages',
             '//aws:Lists/aws:List/aws:TotalItems')
-            
-        for page, root in enumerate(paginator(self.api.list_lookup, 
-                LIST_ID, 'WishList', 
+
+        for page, root in enumerate(paginator(self.api.list_lookup,
+                LIST_ID, 'WishList',
                 ResponseGroup='ItemAttributes,ListInfo',
                 IsOmitPurchasedItems=True)):
-            
-            total_items = root.Lists.List.TotalItems.pyval
-            total_pages = root.Lists.List.TotalPages.pyval
-            try:
-                current_page = root.Lists.Request.ListLookupRequest.ProductPage.pyval
-            except AttributeError:
-                current_page = 1
-            
-            self.assertEquals(total_items, 29)
-            self.assertEquals(total_pages, 3)
-            self.assertEquals(current_page, page+1)
+
+            self.assertEquals(paginator.total_results, 29)
+            self.assertEquals(paginator.total_pages, 3)
+            self.assertEquals(paginator.current_page, page+1)
 
 class HelpTestCase (XMLResponseTestCase):
     
