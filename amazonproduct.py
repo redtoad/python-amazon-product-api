@@ -84,6 +84,7 @@ class AWSError (Exception):
     Generic AWS error message.
     """
     def __init__(self, code, msg):
+        Exception.__init__(self)
         self.code = code
         self.msg = msg
     def __str__(self): # pragma: no cover
@@ -353,8 +354,8 @@ class API (object):
 
         # create signature
         keys = sorted(qargs.keys())
-        args = '&'.join('%s=%s' % (key, quote(unicode(qargs[key]).encode('utf-8'),
-                                              safe='~')) for key in keys)
+        args = '&'.join('%s=%s' % (key, quote(unicode(qargs[key])
+                        .encode('utf-8'),safe='~')) for key in keys)
 
         # Amazon uses a different host for XSLT operations
         host = self.host['Style' in qargs]
@@ -471,11 +472,12 @@ class API (object):
             return self.call(Operation='ItemLookup', ItemId=id, **params)
         except AWSError, e:
 
-            if (e.code=='AWS.InvalidEnumeratedParameter'
-            and self._reg('invalid-value').search(e.msg).group('parameter')=='SearchIndex'):
+            if (e.code == 'AWS.InvalidEnumeratedParameter'
+            and self._reg('invalid-value').search(e.msg)
+                    .group('parameter') == 'SearchIndex'):
                 raise InvalidSearchIndex(params.get('SearchIndex'))
 
-            if e.code=='AWS.InvalidResponseGroup':
+            if e.code == 'AWS.InvalidResponseGroup':
                 raise InvalidResponseGroup(params.get('ResponseGroup'))
 
             # otherwise re-raise exception
@@ -518,11 +520,11 @@ class API (object):
                                   SearchIndex=search_index, **params)
         except AWSError, e:
 
-            if (e.code=='AWS.InvalidEnumeratedParameter'
+            if (e.code == 'AWS.InvalidEnumeratedParameter'
             and self._reg('invalid-value').search(e.msg)):
                 raise InvalidSearchIndex(search_index)
 
-            if e.code=='AWS.InvalidResponseGroup':
+            if e.code == 'AWS.InvalidResponseGroup':
                 raise InvalidResponseGroup(params.get('ResponseGroup'))
 
             # otherwise re-raise exception
@@ -552,7 +554,7 @@ class API (object):
                               ItemId=item_id, **params)
         except AWSError, e:
 
-            if e.code=='AWS.ECommerceService.NoSimilarities':
+            if e.code == 'AWS.ECommerceService.NoSimilarities':
                 asin = self._reg('no-similarities').search(e.msg).group('ASIN')
                 raise NoSimilarityForASIN(asin)
 
@@ -594,8 +596,9 @@ class API (object):
                                   ListType=list_type, **params)
         except AWSError, e:
 
-            if (e.code=='AWS.InvalidEnumeratedParameter'
-            and self._reg('invalid-value').search(e.msg).group('parameter')=='ListType'):
+            if (e.code == 'AWS.InvalidEnumeratedParameter'
+            and self._reg('invalid-value').search(e.msg)
+                                          .group('parameter') == 'ListType'):
                 raise InvalidListType(params.get('ListType'))
 
             # otherwise re-raise exception
@@ -633,15 +636,16 @@ class API (object):
                                   ListType=list_type, **params)
         except AWSError, e:
 
-            if (e.code=='AWS.InvalidEnumeratedParameter'
-            and self._reg('invalid-value').search(e.msg).group('parameter')=='ListType'):
+            if (e.code == 'AWS.InvalidEnumeratedParameter'
+            and self._reg('invalid-value').search(e.msg)
+                                          .group('parameter') == 'ListType'):
                 raise InvalidListType(list_type)
 
-            if e.code=='AWS.MinimumParameterRequirement':
+            if e.code == 'AWS.MinimumParameterRequirement':
                 p = self._reg('not-enough-parameters').search(e.msg).group('parameters')
                 raise NotEnoughParameters(p)
 
-            if e.code=='AWS.ECommerceService.NoExactMatches':
+            if e.code == 'AWS.ECommerceService.NoExactMatches':
                 raise NoExactMatchesFound
 
             # otherwise re-raise exception
@@ -680,7 +684,7 @@ class API (object):
         except AWSError, e:
 
             m = self._reg('invalid-value').search(e.msg)
-            if e.code=='AWS.InvalidEnumeratedParameter':
+            if e.code == 'AWS.InvalidEnumeratedParameter':
                 raise ValueError(m.group('parameter'))
 
             # otherwise re-raise exception
@@ -731,7 +735,7 @@ class API (object):
                     **params)
         except AWSError, e:
 
-            if e.code=='AWS.InvalidResponseGroup':
+            if e.code == 'AWS.InvalidResponseGroup':
                 raise InvalidResponseGroup(params.get('ResponseGroup'))
 
             # otherwise re-raise exception
@@ -797,7 +801,6 @@ class ResultPaginator (object):
                 self.nspace = root.nsmap.get(None, '')
 
             current_page = self._get_current_page_numer(root)
-            total_results = self._get_total_results(root)
             total_pages = self._get_total_page_numer(root)
 
             yield root
