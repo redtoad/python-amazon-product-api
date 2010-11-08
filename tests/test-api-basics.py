@@ -3,7 +3,11 @@ import os.path
 from server import TestServer
 from datetime import datetime, timedelta
 import unittest
-import urlparse
+from urlparse import urlparse
+try:
+    from urlparse import parse_qs
+except ImportError:
+    from cgi import parse_qs
 
 # import base first because sys.path is changed in order to find amazonproduct!
 import base
@@ -51,6 +55,7 @@ class APICallsTestCase (unittest.TestCase):
 
     def test_call_throtteling(self):
         url = self.api._build_url(Operation='ItemSearch', SearchIndex='Books')
+        self.server.code = 200
         start = datetime.now()
         n = 3
         for i in range(n):
@@ -71,7 +76,7 @@ class APICallsWithOptionalParameters (unittest.TestCase):
         api = API(self.ACCESS_KEY, self.SECRET_KEY, 'de', associate_tag=tag)
         url = api._build_url(Operation='ItemSearch', SearchIndex='Books')
 
-        qs = urlparse.parse_qs(urlparse.urlparse(url).query)
+        qs = parse_qs(urlparse(url)[4])
         self.assertEquals(qs['AssociateTag'][0], tag)
 
 
