@@ -54,8 +54,6 @@ import hmac
 import re
 import socket
 from time import strftime, gmtime
-import urlparse
-
 import urllib2
 
 try: # make it python2.4 compatible!
