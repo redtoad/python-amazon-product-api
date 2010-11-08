@@ -1,6 +1,7 @@
 
 import os.path
 from server import TestServer
+from datetime import datetime, timedelta
 import unittest
 import urlparse
 
@@ -48,6 +49,14 @@ class APICallsTestCase (unittest.TestCase):
                           '9780747532743', IdType='ISBN', SearchIndex='All',
                           ResponseGroup='???')
 
+    def test_call_throtteling(self):
+        url = self.api._build_url(Operation='ItemSearch', SearchIndex='Books')
+        start = datetime.now()
+        n = 3
+        for i in range(n):
+            self.api._fetch(url)
+        stop = datetime.now()
+        self.assert_((stop-start) >= (n-1)*self.api.throttle)
 
 class APICallsWithOptionalParameters (unittest.TestCase):
 
@@ -63,6 +72,6 @@ class APICallsWithOptionalParameters (unittest.TestCase):
         url = api._build_url(Operation='ItemSearch', SearchIndex='Books')
 
         qs = urlparse.parse_qs(urlparse.urlparse(url).query)
-        assert qs['AssociateTag'][0] == tag
+        self.assertEquals(qs['AssociateTag'][0], tag)
 
 

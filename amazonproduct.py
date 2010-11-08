@@ -53,7 +53,7 @@ except ImportError: # pragma: no cover
 import hmac
 import re
 import socket
-from time import strftime, gmtime
+from time import strftime, gmtime, sleep
 import urllib2
 
 try: # make it python2.4 compatible!
@@ -384,8 +384,10 @@ class API (object):
 
         # Be nice and wait for some time
         # before submitting the next request
-        while (datetime.now() - self.last_call) < self.throttle:
-            pass # Wait for it! # pragma: no cover
+        delta = datetime.now() - self.last_call
+        if delta < self.throttle:
+            wait = self.throttle-delta
+            sleep(wait.seconds+wait.microseconds/1000000.0) # pragma: no cover
         self.last_call = datetime.now()
 
         try:
