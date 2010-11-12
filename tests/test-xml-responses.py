@@ -110,43 +110,6 @@ class SimilarityLookupTestCase (XMLResponseTestCase):
         # B0024NL0TG Oral-B toothbrush
         self.assertRaises(NoSimilarityForASIN, self.api.similarity_lookup,
                           '0451462009', 'B0024NL0TG')
-        
-        
-class ListLookupTestCase (XMLResponseTestCase):
-
-    """
-    Check that all XML responses for ListLookup are parsed correctly.
-    """
-    
-    def test_invalid_list_id(self):
-        self.assertRaises(InvalidParameterValue, self.api.list_lookup, '???', 'WishList')
-        
-    def test_invalid_list_type(self):
-        self.assertRaises(InvalidListType, self.api.list_lookup, '???', '???')
-        
-
-
-class ListSearchTestCase (XMLResponseTestCase):
-
-    """
-    Check that all XML responses for ListSearch are parsed correctly.
-    """
-     
-    locales = ['de', 'fr', 'uk']
-    
-    def test_fails_for_wrong_list_type(self):
-        self.assertRaises(InvalidListType, self.api.list_search, '???')
-        
-    def test_fails_for_missing_search_parameters(self):
-        self.assertRaises(NotEnoughParameters, self.api.list_search, 'WishList')
-        
-        if self.current_locale != 'fr': 
-            self.assertRaises(NotEnoughParameters, self.api.list_search, 
-                              'WeddingRegistry')
-        
-    def test_no_exact_matches(self):
-        self.assertRaises(NoExactMatchesFound, self.api.list_search, 
-                'WishList', Email='???')
 
 
 class ResultPaginatorTestCase (XMLResponseTestCase):
