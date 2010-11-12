@@ -564,45 +564,6 @@ class API (object):
                 asin = self._reg('no-similarities').search(e.msg).group('ASIN')
                 raise NoSimilarityForASIN(asin)
 
-    def help(self, about, help_type, response_group=None, **params):
-        """
-        The Help operation provides information about Product Advertising API
-        operations and response groups. For operations, Help lists required
-        and optional request parameters, as well as default and optional
-        response groups the operation can use. For response groups, Help lists
-        the operations that can use the response group as well as the response
-        tags returned by the response group in the XML response.
-
-        The Help operation is not often used in customer applications. It can,
-        however, be used to help the developer in the following ways:
-
-        * Provide contextual help in an interactive development environment
-          (IDE) for developers
-        * Automate documentation creation as part of a developer's toolkit.
-
-        :param about: Specifies the operation or response group about which
-          you want more information. All Product Advertising API operations, all
-          Product Advertising API response groups
-        :param help_type: Specifies whether the help topic is an operation or
-          response group. HelpType and About values must both be operations or
-          response groups, not a mixture of the two.
-          Valid Values: ``Operation``, ``ResponseGroup``
-        :param response_group: Specifies the types of values to return. You
-          can specify multiple response groups in one request by separating them
-          with commas.
-        """
-        try:
-            return self.call(Operation='Help', About=about,
-                    HelpType=help_type, ResponseGroup=response_group, **params)
-        except AWSError, e:
-
-            m = self._reg('invalid-value').search(e.msg)
-            if e.code == 'AWS.InvalidEnumeratedParameter':
-                raise ValueError(m.group('parameter'))
-
-            # otherwise re-raise exception
-            raise # pragma: no cover
-
     def browse_node_lookup(self, browse_node_id, response_group=None, **params):
         """
         Given a browse node ID, ``BrowseNodeLookup`` returns the specified
