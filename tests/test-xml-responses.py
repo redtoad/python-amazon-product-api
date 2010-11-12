@@ -166,29 +166,31 @@ class ResultPaginatorTestCase (XMLResponseTestCase):
 
         self.assertEquals(page, 0)
 
-    def test_pagination_works_for_xpath_expr_returning_attributes(self):
-        # Bug reported by Giacomo Lacava:
-        # > I've found an issue with the ResultPaginator: basically your
-        # > code assumes that the xpath results are going to be nodes and calls
-        # > pyval on it, but they might actually be *attributes* and in that
-        # > case you'd get an error (because they don't have pyval). In my 
-        # > code, working with WishLists, I don't get a Page node in the 
-        # > result, so have to rely on the Argument node (which looks like 
-        # > this: <Argument Name="ProductPage" Value="1">).
-        LIST_ID = '229RA3LVMR97X'
-        paginator = ResultPaginator('ProductPage',
-            '//aws:OperationRequest/aws:Arguments/aws:Argument[@Name="ProductPage"]/@Value',
-            '//aws:Lists/aws:List/aws:TotalPages',
-            '//aws:Lists/aws:List/aws:TotalItems')
-
-        for page, root in enumerate(paginator(self.api.list_lookup,
-                LIST_ID, 'WishList',
-                ResponseGroup='ItemAttributes,ListInfo',
-                IsOmitPurchasedItems=True)):
-
-            self.assertEquals(paginator.total_results, 29)
-            self.assertEquals(paginator.total_pages, 3)
-            self.assertEquals(paginator.current_page, page+1)
+# FIXME: ListLookup has since been deprecated! Until I find suitable example to
+# use instead, I'm disabling this test.
+#    def test_pagination_works_for_xpath_expr_returning_attributes(self):
+#        # Bug reported by Giacomo Lacava:
+#        # > I've found an issue with the ResultPaginator: basically your
+#        # > code assumes that the xpath results are going to be nodes and calls
+#        # > pyval on it, but they might actually be *attributes* and in that
+#        # > case you'd get an error (because they don't have pyval). In my 
+#        # > code, working with WishLists, I don't get a Page node in the 
+#        # > result, so have to rely on the Argument node (which looks like 
+#        # > this: <Argument Name="ProductPage" Value="1">).
+#        LIST_ID = '229RA3LVMR97X'
+#        paginator = ResultPaginator('ProductPage',
+#            '//aws:OperationRequest/aws:Arguments/aws:Argument[@Name="ProductPage"]/@Value',
+#            '//aws:Lists/aws:List/aws:TotalPages',
+#            '//aws:Lists/aws:List/aws:TotalItems')
+#
+#        for page, root in enumerate(paginator(self.api.list_lookup,
+#                LIST_ID, 'WishList',
+#                ResponseGroup='ItemAttributes,ListInfo',
+#                IsOmitPurchasedItems=True)):
+#
+#            self.assertEquals(paginator.total_results, 29)
+#            self.assertEquals(paginator.total_pages, 3)
+#            self.assertEquals(paginator.current_page, page+1)
 
 
 class BrowseNodeLookupTestCase (XMLResponseTestCase):
