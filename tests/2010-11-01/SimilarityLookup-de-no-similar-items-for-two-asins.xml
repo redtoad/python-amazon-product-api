@@ -1,0 +1,33 @@
+<SimilarityLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2010-11-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.4.1 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+    </HTTPHeaders>
+    <RequestId>11T2W5H3D5YMQD1BV7YW</RequestId>
+    <Arguments>
+      <Argument Name="ItemId" Value="0451462009,B0024NL0TG"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Operation" Value="SimilarityLookup"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2011-01-15T18:04:37Z"/>
+      <Argument Name="Version" Value="2010-11-01"/>
+    </Arguments>
+    <RequestProcessingTime>0.00971293449401855</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>True</IsValid>
+      <SimilarityLookupRequest>
+        <ItemId>B0024NL0TG</ItemId>
+        <ItemId>0451462009</ItemId>
+      </SimilarityLookupRequest>
+      <Errors>
+        <Error>
+          <Code>AWS.ECommerceService.NoSimilarities</Code>
+          <Message>There are no similar items for this ASIN: B0024NL0TG, 0451462009.</Message>
+        </Error>
+      </Errors>
+    </Request>
+  </Items>
+</SimilarityLookupResponse>
