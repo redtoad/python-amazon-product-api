@@ -1,0 +1,38 @@
+<ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2010-11-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.4.1 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+    </HTTPHeaders>
+    <RequestId>d0db5178-edd8-4794-87d6-e3ade8b742e4</RequestId>
+    <Arguments>
+      <Argument Name="Operation" Value="ItemSearch"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Version" Value="2010-11-01"/>
+      <Argument Name="SearchIndex" Value="All"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2011-01-15T18:03:56Z"/>
+      <Argument Name="ResponseGroup" Value="???"/>
+    </Arguments>
+    <RequestProcessingTime>0.0008600000000000</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>False</IsValid>
+      <ItemSearchRequest>
+        <Condition>New</Condition>
+        <DeliveryMethod>Ship</DeliveryMethod>
+        <MerchantId>Amazon</MerchantId>
+        <ResponseGroup>???</ResponseGroup>
+        <ReviewSort>-SubmissionDate</ReviewSort>
+        <SearchIndex>All</SearchIndex>
+      </ItemSearchRequest>
+      <Errors>
+        <Error>
+          <Code>AWS.InvalidResponseGroup</Code>
+          <Message>Your ResponseGroup parameter is invalid. Valid response groups for ItemSearch requests include Accessories, AlternateVersions, BrowseNodes, Collections, EditorialReview, Images, ItemAttributes, ItemIds, Large, ListmaniaLists, Medium, MerchantItemAttributes, OfferFull, OfferListings, OfferSummary, Offers, PromotionDetails, PromotionSummary, PromotionalTag, RelatedItems, Request, Reviews, SalesRank, SearchBins, SearchInside, ShippingCharges, ShippingOptions, Similarities, Small, Subjects, Tags, TagsSummary, Tracks, VariationImages, VariationMatrix, VariationMinimum, VariationOffers, VariationSummary, Variations.</Message>
+        </Error>
+      </Errors>
+    </Request>
+  </Items>
+</ItemSearchResponse>
