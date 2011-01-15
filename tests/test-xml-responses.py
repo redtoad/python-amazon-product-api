@@ -15,6 +15,20 @@ from lxml import objectify
 import os, os.path
 import unittest
 
+
+class CorrectVersionTestCase (XMLResponseTestCase):
+
+    """
+    Check that each requested API version is also really used.
+    """
+
+    def test_correct_version(self):
+        # any operation will do here
+        root = self.api.item_lookup('0747532745')
+        nspace = root.nsmap.get(None, '')
+        self.assert_(self.current_api_version in nspace)
+
+
 class ItemLookupTestCase (XMLResponseTestCase):
 
     """
