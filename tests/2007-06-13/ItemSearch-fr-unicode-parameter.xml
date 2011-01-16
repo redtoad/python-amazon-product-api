@@ -1,0 +1,45 @@
+<ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2007-06-13">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.4.1 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+    </HTTPHeaders>
+    <RequestId>e6f1c448-e00c-43d1-8452-00067adeef4c</RequestId>
+    <Arguments>
+      <Argument Name="Operation" Value="ItemSearch"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Version" Value="2007-06-13"/>
+      <Argument Name="SearchIndex" Value="Books"/>
+      <Argument Name="Author" Value="F&#233;lix J. Palma"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2011-01-16T00:35:03Z"/>
+    </Arguments>
+    <RequestProcessingTime>0.0575270000000000</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>True</IsValid>
+      <ItemSearchRequest>
+        <Author>F&#233;lix J. Palma</Author>
+        <Condition>New</Condition>
+        <DeliveryMethod>Ship</DeliveryMethod>
+        <MerchantId>Amazon</MerchantId>
+        <ResponseGroup>Small</ResponseGroup>
+        <ReviewSort>-SubmissionDate</ReviewSort>
+        <SearchIndex>Books</SearchIndex>
+      </ItemSearchRequest>
+    </Request>
+    <TotalResults>1</TotalResults>
+    <TotalPages>1</TotalPages>
+    <Item>
+      <ASIN>2221114825</ASIN>
+      <DetailPageURL>http://www.amazon.fr/carte-du-temps-F%C3%A9lix-Palma/dp/2221114825%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D2221114825</DetailPageURL>
+      <ItemAttributes>
+        <Author>F&#233;lix Palma</Author>
+        <Manufacturer>Robert Laffont</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>La carte du temps</Title>
+      </ItemAttributes>
+    </Item>
+  </Items>
+</ItemSearchResponse>
