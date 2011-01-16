@@ -1,0 +1,43 @@
+<ItemLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2007-06-13">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.4.1 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+    </HTTPHeaders>
+    <RequestId>a757651e-b016-4de6-9f68-40e843a11e94</RequestId>
+    <Arguments>
+      <Argument Name="Operation" Value="ItemLookup"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Version" Value="2007-06-13"/>
+      <Argument Name="ItemId" Value="9780747532743"/>
+      <Argument Name="IdType" Value="ISBN"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2011-01-16T00:24:32Z"/>
+    </Arguments>
+    <RequestProcessingTime>0.0026210000000000</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>False</IsValid>
+      <ItemLookupRequest>
+        <Condition>New</Condition>
+        <DeliveryMethod>Ship</DeliveryMethod>
+        <IdType>ISBN</IdType>
+        <MerchantId>Amazon</MerchantId>
+        <OfferPage>1</OfferPage>
+        <ItemId>9780747532743</ItemId>
+        <ResponseGroup>Small</ResponseGroup>
+        <ReviewPage>1</ReviewPage>
+        <ReviewSort>-SubmissionDate</ReviewSort>
+        <VariationPage>All</VariationPage>
+      </ItemLookupRequest>
+      <Errors>
+        <Error>
+          <Code>AWS.MissingParameterValueCombination</Code>
+          <Message>&#12522;&#12463;&#12456;&#12473;&#12488;&#12395;&#12399;&#24517;&#35201;&#12394;&#12497;&#12521;&#12513;&#12540;&#12479;&#12398;&#32068;&#12415;&#21512;&#12431;&#12379;&#12364;&#21547;&#12414;&#12428;&#12390;&#12356;&#12414;&#12379;&#12435;&#12290;IdType&#12364;['DPCI', 'SKU',
+				'UPC', 'EAN','ISBN']&#12391;&#12354;&#12427;&#22580;&#21512;&#12289;SearchIndex&#12364;&#24517;&#35201;&#12391;&#12377;&#12290;</Message>
+        </Error>
+      </Errors>
+    </Request>
+  </Items>
+</ItemLookupResponse>
