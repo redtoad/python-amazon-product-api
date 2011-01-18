@@ -135,6 +135,26 @@ class ResultPaginatorTestCase (XMLResponseTestCase):
     api_versions = ['2009-10-01', '2009-11-01']
     locales = ['de']
 
+    def test_itemsearch_pagination(self):
+
+        results = 272
+        pages = 28
+
+        paginator = ResultPaginator('ItemPage',
+            '//aws:Items/aws:Request/aws:ItemSearchRequest/aws:ItemPage',
+            '//aws:Items/aws:TotalPages',
+            '//aws:Items/aws:TotalResults',
+            limit=10)
+
+        for page, root in enumerate(paginator(self.api.item_search, 'Books', 
+                        Publisher='Galileo Press', Sort='salesrank')):
+            self.assertEquals(paginator.total_results, results)
+            self.assertEquals(paginator.total_pages, pages)
+            self.assertEquals(paginator.current_page, page+1)
+
+        self.assertEquals(page, 9)
+        self.assertEquals(paginator.current_page, 10)
+
     def test_review_pagination(self):
         # reviews for "Harry Potter and the Philosopher's Stone"
         ASIN = '0747532745'
@@ -154,9 +174,7 @@ class ResultPaginatorTestCase (XMLResponseTestCase):
 
         for page, root in enumerate(paginator(self.api.item_lookup,
                         ASIN, ResponseGroup='Reviews')):
-
-            (reviews, pages) = VALUES[self.current_api_version]
-
+            reviews, pages = VALUES[self.current_api_version]
             self.assertEquals(paginator.total_results, reviews)
             self.assertEquals(paginator.total_pages, pages)
             self.assertEquals(paginator.current_page, page+1)
