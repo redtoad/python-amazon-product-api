@@ -1,0 +1,125 @@
+<ItemLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2009-11-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+    </HTTPHeaders>
+    <RequestId>f45d238b-c25f-417f-acc9-51d78b5d591b</RequestId>
+    <Arguments>
+      <Argument Name="ReviewPage" Value="2"/>
+      <Argument Name="Operation" Value="ItemLookup"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="ItemId" Value="0747532745"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2010-03-19T13:03:02Z"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="ResponseGroup" Value="Reviews"/>
+      <Argument Name="Version" Value="2009-11-01"/>
+    </Arguments>
+    <RequestProcessingTime>0.0251390000000000</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>True</IsValid>
+      <ItemLookupRequest>
+        <Condition>New</Condition>
+        <DeliveryMethod>Ship</DeliveryMethod>
+        <IdType>ASIN</IdType>
+        <MerchantId>Amazon</MerchantId>
+        <OfferPage>1</OfferPage>
+        <ItemId>0747532745</ItemId>
+        <ResponseGroup>Reviews</ResponseGroup>
+        <ReviewPage>2</ReviewPage>
+        <ReviewSort>-SubmissionDate</ReviewSort>
+        <VariationPage>All</VariationPage>
+      </ItemLookupRequest>
+    </Request>
+    <Item>
+      <ASIN>0747532745</ASIN>
+      <CustomerReviews>
+        <AverageRating>5.0</AverageRating>
+        <TotalReviews>2465</TotalReviews>
+        <TotalReviewPages>493</TotalReviewPages>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>4</Rating>
+          <HelpfulVotes>0</HelpfulVotes>
+          <CustomerId>AY5RKPPQTGOJ4</CustomerId>
+          <Reviewer>
+            <CustomerId>AY5RKPPQTGOJ4</CustomerId>
+            <Name>D. Riehn</Name>
+            <Nickname>Fireth</Nickname>
+          </Reviewer>
+          <TotalVotes>0</TotalVotes>
+          <Date>2009-06-17</Date>
+          <Summary>Leicht zu lesen</Summary>
+          <Content>Au&#223;erhalb meines Englisch-Studiums ist das das erste Buch, welches ich auf Englisch lese. Zwar muss man sich bei Hagrids Aussprache erst ein wenig einfinden, aber das bekommt man schnell raus. Ansonsten ist  das Buch leicht und verst&#228;ndlich geschrieben und auch jemand, der der englischen Sprache noch nicht ganz so m&#228;chtig ist, kommt wunderbar zurecht. Auch wenn man nicht jedes Wort wei&#223;, der Kontext an sich ist sehr gut verst&#228;ndlich. </Content>
+        </Review>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>5</Rating>
+          <HelpfulVotes>2</HelpfulVotes>
+          <CustomerId>A8GMODOQ0YLOV</CustomerId>
+          <Reviewer>
+            <CustomerId>A8GMODOQ0YLOV</CustomerId>
+            <Name>anmasijo</Name>
+          </Reviewer>
+          <TotalVotes>2</TotalVotes>
+          <Date>2009-05-08</Date>
+          <Summary>So macht H&#246;rbuch, so macht Englisch Spa&#223;!</Summary>
+          <Content>Nach l&#228;ngerer, reiflicher &#220;berlegung entschied ich mich k&#252;rzlich, dieses H&#246;rbuch aufgrund der guten Kritiken (und trotz des quietschigen Covers) zu bestellen. Ich habe es keinen Moment lang bereut! Wie kurzweilig sieben Stunden sein k&#246;nnen, in denen sich das Kino nur im Kopf abspielt, hatte ich nicht geahnt. 
+&lt;br /&gt;Dieser Stephen Fry hat eine wirklich erstaunliche Gabe, das ganze Spektrum der ablaufenden Gef&#252;hle und Geschehnisse stimmlich wiederzugeben. Au&#223;erdem, und das halte ich f&#252;r Nicht-Engl&#228;nder wichtig, gelingt es ihm auch, sich wirklich sehr sehr deutlich zu artikulieren, sodass man mit einem einigerma&#223;en guten Schulenglisch wirklich alles komplett verstehen kann. Selbst Hagrids etwas schnoddrige Sprache bleibt f&#252;r den H&#246;rer verst&#228;ndlich. Und was nat&#252;rlich nicht fehlen darf: es steckt so viel Humor in dieser Erz&#228;hlung, in der Gestaltung der Charaktere, dass wirklich ein Film im Kopf abl&#228;uft. Und genau so soll es sein, nicht wahr?
+&lt;br /&gt;Looking forward to the Chamber of Secrets...! ;-) </Content>
+        </Review>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>4</Rating>
+          <HelpfulVotes>0</HelpfulVotes>
+          <CustomerId>A2J09GAWWL0I3L</CustomerId>
+          <Reviewer>
+            <CustomerId>A2J09GAWWL0I3L</CustomerId>
+            <Name>Chris</Name>
+            <Location>Linz</Location>
+          </Reviewer>
+          <TotalVotes>0</TotalVotes>
+          <Date>2009-04-28</Date>
+          <Summary>Harry Potter 1 and the Philosopher's Stone</Summary>
+          <Content>Der Harry Potter 1 ist meiner Meinung nach auch f&#252;r Personen verst&#228;ndlich, welche nicht so viel &#220;bung mit der englischen Sprache haben. Ich habe mir dieses Buch bestellt, da ich das Lesen und Verstehen der englischen Spache trainieren m&#246;chte.</Content>
+        </Review>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>5</Rating>
+          <HelpfulVotes>1</HelpfulVotes>
+          <CustomerId>ASRZRQX4APS7Y</CustomerId>
+          <Reviewer>
+            <CustomerId>ASRZRQX4APS7Y</CustomerId>
+            <Name>"sunrise"</Name>
+          </Reviewer>
+          <TotalVotes>1</TotalVotes>
+          <Date>2009-04-05</Date>
+          <Summary>Harry Potter and the Philosopher's... read by Stephen Fry</Summary>
+          <Content>Kann ich jemals genug von Harry Potter bekommen, wenn Stephen Fry es liest? Nein, nie! Sooft habe ich Harry, Hermione, Ron, und all die anderen Stimmen in Stephens Interpretation geh&#246;rt und immer wieder geht von diesem britischen Englisch und wie Stephen es liest ein Zauber aus, der mich immer wieder in seinen Bann zieht. Wer Englisch in der Schule hassen gelernt hat, k&#246;nnte es hier wieder lieben lernen. Joanne K. Rowlings wundersch&#246;ne, bildhafte, poetische Sprache bekommt hier eine neue Dimension. Wer ein Audio-Mensch ist und Britisch Englisch liebt, muss einmal oder mehrere Male Harry Potter in Stephens Stimme genossen haben, um zu verstehen, wovon ich hier berichte.</Content>
+        </Review>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>5</Rating>
+          <HelpfulVotes>1</HelpfulVotes>
+          <CustomerId>A2LN14MHSMXL9G</CustomerId>
+          <Reviewer>
+            <CustomerId>A2LN14MHSMXL9G</CustomerId>
+            <Name>Michael Schlimpen</Name>
+            <Nickname>mschlimpen</Nickname>
+            <Location>Sassen</Location>
+          </Reviewer>
+          <TotalVotes>1</TotalVotes>
+          <Date>2008-05-27</Date>
+          <Summary>Der Beginn einer zauberhaften Reise</Summary>
+          <Content>Der erste Band aus der Potter-Reihe ist ein guter Einstieg in die Serie, sowohl von der Sprache her, als auch vom Umfang des Buches. Ich sagte mir bereits als der zweite Band damals rauskam, dass ich warte bis alle 7 B&#252;cher auf dem Markt sind, und dann werden sie alle am St&#252;ck gelesen und dann auf Englisch. Tja, ich wei&#223; gar nicht, wie ich es geschafft habe, so lange zu warten, jetzt wo ich die B&#252;cher kenne.
+&lt;br /&gt;
+&lt;br /&gt;Auf englisch sind die B&#252;cher jedem zu empfehlen, der Originale liebt und noch ein recht ordentliches Englisch drauf hat. Wenn man mal bei Hagrid's w&#252;stem Slang ins straucheln kommt, ist das wohl f&#252;r niemanden dramatisch.
+&lt;br /&gt;
+&lt;br /&gt;Gerade diese Edition mit den Erwachsenen-Cover macht die Potter-Serie zu einem Schmuckst&#252;ck in der privaten Bibliothek.</Content>
+        </Review>
+      </CustomerReviews>
+    </Item>
+  </Items>
+</ItemLookupResponse>
