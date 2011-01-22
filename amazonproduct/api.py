@@ -39,7 +39,6 @@ the license in the LICENSE file.
 
 """
 
-__version__ = '0.2.4.1'
 __docformat__ = "restructuredtext en"
 
 from base64 import b64encode
@@ -61,8 +60,10 @@ try: # make it python2.4 compatible!
 except ImportError: # pragma: no cover
     from urllib import quote
 
+from version import VERSION
+
 USER_AGENT = ('python-amazon-product-api/%s '
-    '+http://pypi.python.org/pypi/python-amazon-product-api/' % __version__)
+    '+http://pypi.python.org/pypi/python-amazon-product-api/' % VERSION)
 
 #: Hosts used by Amazon for normal/XSLT operations
 HOSTS = {
