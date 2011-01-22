@@ -641,13 +641,14 @@ class ResultPaginator (object):
     """
 
     def __init__(self, counter, current_page, total_pages, total_results,
-                 limit=None, nspace=None):
+                 limit=400, nspace=None):
         """
         :param counter: counter variable passed to AWS.
         :param current_page: XPath expression locating current paginator page.
         :param total_pages: XPath expression locating total number of pages.
         :param total_results: XPath expression locating total number of results.
-        :param limit: limit fetched pages to this amount.
+        :param limit: limit fetched pages to this amount (restricted to a 
+        maximum of 400 pages by API itself).
         :param nspace: used XML name space.
         """
         self.counter = counter
