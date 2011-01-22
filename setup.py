@@ -26,7 +26,7 @@ setup(
     long_description=read('README'),
     keywords = 'amazon product advertising api wrapper signed requests',
 
-    py_modules = ['amazonproduct'],
+    packages = ['amazonproduct'],
     install_requires=reqs,
 
     test_suite = 'tests',
