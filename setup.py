@@ -1,13 +1,22 @@
 #!/usr/bin/python
 
-import os
 from setuptools import setup
-import sys
+import os.path, sys
 
-version = '0.2.4.1'
+_here = os.path.dirname(__file__)
+
+def version():
+    # This rather complicated mechanism is employed to avoid importing any 
+    # yet unfulfilled dependencies, for instance when installing under 
+    # Python 2.4 from scratch
+    import imp
+    path = os.path.join(_here, 'amazonproduct', 'version.py')
+    mod = imp.load_source('version', path)
+    return mod.VERSION
 
 def read(fname):
-    return open(os.path.join(os.path.dirname(__file__), fname)).read()
+    # makes sure that setup can be executed from a different location
+    return open(os.path.join(_here, fname)).read()
 
 reqs = []
  # for python2.4
@@ -16,7 +25,7 @@ if sys.version_info[:2] < (2, 5):
 
 setup(
     name = 'python-amazon-product-api',
-    version = version,
+    version = version(),
     author = 'Sebastian Rahlf',
     author_email = 'basti AT redtoad DOT de',
     url="http://bitbucket.org/basti/python-amazon-product-api/downloads/",
