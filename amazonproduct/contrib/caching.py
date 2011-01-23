@@ -7,7 +7,7 @@ try: # make it python2.4 compatible!
 except ImportError: # pragma: no cover
     from md5 import new as md5
 
-from amazonproduct import API
+from amazonproduct.api import API
 
 DEFAULT_CACHE_DIR = tempfile.mkdtemp(prefix='amzn_')
 
@@ -55,7 +55,8 @@ class ResponseCachingAPI (API):
 
         return resp
 
-    def get_hash(self, url):
+    @staticmethod
+    def get_hash(url):
         """
         Calculate hash value for request based on URL.
         """
