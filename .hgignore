@@ -1,6 +1,7 @@
 
 dist
 build
+sandbox
 python_amazon_product_api.egg-info
 docs/.build
 .tox
@@ -9,7 +10,7 @@ docs/.build
 examples/config.py$
 tests/config.py$
 
-# eclipse project files
+# eclipse/PyCharm project files
 .settings
 .project
 .pydevproject
@@ -23,6 +24,7 @@ coverage.xml
 
 # XUnit reports
 nosetests.xml
+nosetests-py\d+.xml
 
 # pylint reports
 pylint.txt
