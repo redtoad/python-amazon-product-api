@@ -1,0 +1,57 @@
+<ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2006-03-08">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.4.1 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+    </HTTPHeaders>
+    <RequestId>558b6dd3-f59b-4d12-b260-386c28626461</RequestId>
+    <Arguments>
+      <Argument Name="Operation" Value="ItemSearch"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Author" Value="F&#233;lix J. Palma"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Version" Value="2006-03-08"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2011-01-16T00:40:50Z"/>
+      <Argument Name="SearchIndex" Value="Books"/>
+    </Arguments>
+    <RequestProcessingTime>0.0210600000000000</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>True</IsValid>
+      <ItemSearchRequest>
+        <Author>F&#233;lix J. Palma</Author>
+        <Condition>New</Condition>
+        <DeliveryMethod>Ship</DeliveryMethod>
+        <MerchantId>Amazon</MerchantId>
+        <ResponseGroup>Small</ResponseGroup>
+        <SearchIndex>Books</SearchIndex>
+      </ItemSearchRequest>
+    </Request>
+    <TotalResults>2</TotalResults>
+    <TotalPages>1</TotalPages>
+    <Item>
+      <ASIN>3463405776</ASIN>
+      <DetailPageURL>http://www.amazon.de/Die-Landkarte-Zeit-F%C3%A9lix-Palma/dp/3463405776%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3463405776</DetailPageURL>
+      <ItemAttributes>
+        <Author>F&#233;lix J. Palma</Author>
+        <Creator Role="&#220;bersetzer">Willi Zurbr&#252;ggen</Creator>
+        <Manufacturer>Kindler</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Die Landkarte der Zeit</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>3839810574</ASIN>
+      <DetailPageURL>http://www.amazon.de/Die-Landkarte-Zeit-F%C3%A9lix-Palma/dp/3839810574%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3839810574</DetailPageURL>
+      <ItemAttributes>
+        <Author>F&#233;lix J. Palma</Author>
+        <Creator Role="Sprecher">Andreas Fr&#246;hlich</Creator>
+        <Creator Role="&#220;bersetzer">Willi Zurbr&#252;ggen</Creator>
+        <Manufacturer>Argon Verlag</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Die Landkarte der Zeit</Title>
+      </ItemAttributes>
+    </Item>
+  </Items>
+</ItemSearchResponse>

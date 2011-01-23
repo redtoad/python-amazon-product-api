@@ -1,0 +1,134 @@
+<ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2006-02-15">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.4.1 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+    </HTTPHeaders>
+    <RequestId>0ec875ac-ed07-4a64-a5b5-43d63d1eb211</RequestId>
+    <Arguments>
+      <Argument Name="Operation" Value="ItemSearch"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Version" Value="2006-02-15"/>
+      <Argument Name="SearchIndex" Value="Books"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2011-01-16T00:51:46Z"/>
+      <Argument Name="Title" Value="Harry Potter"/>
+    </Arguments>
+    <RequestProcessingTime>1.6192580000000000</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>True</IsValid>
+      <ItemSearchRequest>
+        <Condition>New</Condition>
+        <DeliveryMethod>Ship</DeliveryMethod>
+        <MerchantId>Amazon</MerchantId>
+        <ResponseGroup>Small</ResponseGroup>
+        <SearchIndex>Books</SearchIndex>
+        <Title>Harry Potter</Title>
+      </ItemSearchRequest>
+    </Request>
+    <TotalResults>2599</TotalResults>
+    <TotalPages>260</TotalPages>
+    <Item>
+      <ASIN>0747558191</ASIN>
+      <DetailPageURL>http://www.amazon.co.uk/Harry-Potter-Philosophers-Stone-Book/dp/0747558191%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0747558191</DetailPageURL>
+      <ItemAttributes>
+        <Author>J. K. Rowling</Author>
+        <Manufacturer>Bloomsbury Publishing PLC</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Harry Potter and the Philosopher's Stone (Book 1)</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>1408812525</ASIN>
+      <DetailPageURL>http://www.amazon.co.uk/Harry-Potter-Boxed-Set-Philosophers/dp/1408812525%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1408812525</DetailPageURL>
+      <ItemAttributes>
+        <Author>J. K. Rowling</Author>
+        <Manufacturer>Bloomsbury Publishing PLC</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Harry Potter Boxed Set: Contains: Philosopher's Stone / Chamber of Secrets / Prisoner of Azkaban / Goblet of Fire / Order of the Phoenix / Half-Blood ... Hollows (Harry Potter Signature Edition)</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>0747595844</ASIN>
+      <DetailPageURL>http://www.amazon.co.uk/Harry-Potter-Adult-Paperback-Boxed/dp/0747595844%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0747595844</DetailPageURL>
+      <ItemAttributes>
+        <Author>J. K. Rowling</Author>
+        <Manufacturer>Bloomsbury Publishing PLC</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Harry Potter Adult Paperback Boxed Set: Adult Edition: Contains: Philosopher's Stone / Chamber of Secrets / Prisoner of Azkaban / Goblet of Fire / ... / Deathly Hollows (Harry Potter Adult Cover)</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>0747562180</ASIN>
+      <DetailPageURL>http://www.amazon.co.uk/Harry-Potter-Chamber-Secrets-Book/dp/0747562180%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0747562180</DetailPageURL>
+      <ItemAttributes>
+        <Author>J. K. Rowling</Author>
+        <Manufacturer>Bloomsbury Publishing PLC</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Harry Potter and the Chamber of Secrets (Book 2): Celebratory Edition</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>1408810298</ASIN>
+      <DetailPageURL>http://www.amazon.co.uk/Harry-Potter-Deathly-Hallows-Celebratory/dp/1408810298%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1408810298</DetailPageURL>
+      <ItemAttributes>
+        <Author>J. K. Rowling</Author>
+        <Manufacturer>Bloomsbury Publishing PLC</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Harry Potter and the Deathly Hallows (Harry Potter Celebratory Edtn)</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>0593066480</ASIN>
+      <DetailPageURL>http://www.amazon.co.uk/Harry-Potter-Film-Wizardry-Warner/dp/0593066480%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0593066480</DetailPageURL>
+      <ItemAttributes>
+        <Author>Warner Bros</Author>
+        <Manufacturer>Bantam Press</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Harry Potter Film Wizardry</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>074757376X</ASIN>
+      <DetailPageURL>http://www.amazon.co.uk/Harry-Potter-Prisoner-Azkaban-Celebratory/dp/074757376X%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D074757376X</DetailPageURL>
+      <ItemAttributes>
+        <Author>J. K. Rowling</Author>
+        <Manufacturer>Bloomsbury Publishing PLC</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Harry Potter and the Prisoner of Azkaban: Celebratory Edition</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>0747598460</ASIN>
+      <DetailPageURL>http://www.amazon.co.uk/Harry-Potter-Half-blood-Prince-Rowling/dp/0747598460%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0747598460</DetailPageURL>
+      <ItemAttributes>
+        <Author>J. K. Rowling</Author>
+        <Manufacturer>Bloomsbury Publishing PLC</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Harry Potter and the Half-blood Prince</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>0747582386</ASIN>
+      <DetailPageURL>http://www.amazon.co.uk/Harry-Potter-Goblet-Fire-Celebratory/dp/0747582386%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0747582386</DetailPageURL>
+      <ItemAttributes>
+        <Author>J. K. Rowling</Author>
+        <Manufacturer>Bloomsbury Publishing PLC</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Harry Potter and the Goblet of Fire (Celebratory Edition)</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>0747591261</ASIN>
+      <DetailPageURL>http://www.amazon.co.uk/Harry-Potter-Order-Phoenix-Celebratory/dp/0747591261%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0747591261</DetailPageURL>
+      <ItemAttributes>
+        <Author>J. K. Rowling</Author>
+        <Manufacturer>Bloomsbury Publishing PLC</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>"Harry Potter and the Order of the Phoenix" (Harry Potter Celebratory Edtn)</Title>
+      </ItemAttributes>
+    </Item>
+  </Items>
+</ItemSearchResponse>
