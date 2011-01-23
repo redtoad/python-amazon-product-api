@@ -289,9 +289,12 @@ class BrowseNodeLookupTestCase (XMLResponseTestCase):
         #self.assertEquals(nodes.BrowseNode.IsCategoryRoot, 1)
         
         children = [n.BrowseNodeId for n in nodes.BrowseNode.Children.BrowseNode]
-        ancestors = [n.BrowseNodeId for n in nodes.BrowseNode.Ancestors.BrowseNode]
         self.assertEquals(children, self.CHILDREN[self.current_locale])
-        self.assertEquals(ancestors, self.ANCESTORS[self.current_locale])
+
+        # ancestors seem to be part of the response only in APIs > 2006-03-08
+        if self.current_api_version > '2006-03-08':
+            ancestors = [n.BrowseNodeId for n in nodes.BrowseNode.Ancestors.BrowseNode]
+            self.assertEquals(ancestors, self.ANCESTORS[self.current_locale])
         
 
 class XMLParsingTestCase (unittest.TestCase):

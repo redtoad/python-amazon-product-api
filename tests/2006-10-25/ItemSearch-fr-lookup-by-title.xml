@@ -1,0 +1,141 @@
+<ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2006-10-25">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.4.1 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+    </HTTPHeaders>
+    <RequestId>ec4cec9c-6f6f-4b7a-a139-8b8df88b64fe</RequestId>
+    <Arguments>
+      <Argument Name="Operation" Value="ItemSearch"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Version" Value="2006-10-25"/>
+      <Argument Name="SearchIndex" Value="Books"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2011-01-16T00:34:31Z"/>
+      <Argument Name="Title" Value="Harry Potter"/>
+    </Arguments>
+    <RequestProcessingTime>0.1217920000000000</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>True</IsValid>
+      <ItemSearchRequest>
+        <Condition>New</Condition>
+        <DeliveryMethod>Ship</DeliveryMethod>
+        <MerchantId>Amazon</MerchantId>
+        <ResponseGroup>Small</ResponseGroup>
+        <ReviewSort>-SubmissionDate</ReviewSort>
+        <SearchIndex>Books</SearchIndex>
+        <Title>Harry Potter</Title>
+      </ItemSearchRequest>
+    </Request>
+    <TotalResults>734</TotalResults>
+    <TotalPages>74</TotalPages>
+    <Item>
+      <ASIN>2070615375</ASIN>
+      <DetailPageURL>http://www.amazon.fr/Harry-Potter-Reliques-Mort/dp/2070615375%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D2070615375</DetailPageURL>
+      <ItemAttributes>
+        <Author>J-K Rowling</Author>
+        <Author>Jean-Fran&#231;ois M&#233;nard</Author>
+        <Manufacturer>Gallimard-Jeunesse</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Harry Potter, Tome 7 : Harry Potter et les Reliques de la Mort</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>2070612368</ASIN>
+      <DetailPageURL>http://www.amazon.fr/Harry-Potter-%C3%A0-l%C3%A9cole-sorciers/dp/2070612368%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D2070612368</DetailPageURL>
+      <ItemAttributes>
+        <Author>J. K. Rowling</Author>
+        <Creator Role="Traduction">Jean-Francois Menard</Creator>
+        <Manufacturer>Gallimard-Jeunesse</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Harry Potter, Tome 1 : Harry Potter &#224; l'&#233;cole des sorciers</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>2070612376</ASIN>
+      <DetailPageURL>http://www.amazon.fr/Harry-Potter-Chambre-Secrets/dp/2070612376%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D2070612376</DetailPageURL>
+      <ItemAttributes>
+        <Author>J. K. Rowling</Author>
+        <Manufacturer>Gallimard-Jeunesse</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Harry Potter, Tome 2 : Harry Potter et la Chambre des Secrets</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>2070612384</ASIN>
+      <DetailPageURL>http://www.amazon.fr/Harry-Potter-prisonnier-dAzkaban/dp/2070612384%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D2070612384</DetailPageURL>
+      <ItemAttributes>
+        <Author>J. K. Rowling</Author>
+        <Manufacturer>Gallimard-Jeunesse</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Harry Potter, Tome 3 : Harry Potter et le prisonnier d'Azkaban</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>2070612414</ASIN>
+      <DetailPageURL>http://www.amazon.fr/Harry-Potter-Prince-Sang-M%C3%AAl%C3%A9/dp/2070612414%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D2070612414</DetailPageURL>
+      <ItemAttributes>
+        <Author>J. K. Rowling</Author>
+        <Manufacturer>Editions Flammarion</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Harry Potter, Tome 6 : Harry Potter et le Prince de Sang-M&#234;l&#233;</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>2070612392</ASIN>
+      <DetailPageURL>http://www.amazon.fr/Harry-Potter-Coupe-Feu/dp/2070612392%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D2070612392</DetailPageURL>
+      <ItemAttributes>
+        <Author>J. K. Rowling</Author>
+        <Manufacturer>Gallimard-Jeunesse</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Harry Potter, Tome 4 : Harry Potter et la Coupe de Feu</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>2070612406</ASIN>
+      <DetailPageURL>http://www.amazon.fr/Harry-Potter-lOrdre-Ph%C3%A9nix/dp/2070612406%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D2070612406</DetailPageURL>
+      <ItemAttributes>
+        <Author>J. K. Rowling</Author>
+        <Creator Role="Traduction">Jean-Francois Menard</Creator>
+        <Manufacturer>Gallimard-Jeunesse</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Harry Potter, Tome 5 : Harry Potter et l'Ordre du Ph&#233;nix</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>2354251912</ASIN>
+      <DetailPageURL>http://www.amazon.fr/Harry-Potter-Magie-Brian-Sibley/dp/2354251912%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D2354251912</DetailPageURL>
+      <ItemAttributes>
+        <Author>Brian Sibley</Author>
+        <Creator Role="Traduction">Maxime Berr&#233;e</Creator>
+        <Manufacturer>Editions Fetjaine</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Harry Potter : La Magie des Films</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>2070619176</ASIN>
+      <DetailPageURL>http://www.amazon.fr/Harry-Potter-l%C3%A9cole-sorciers-luxe/dp/2070619176%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D2070619176</DetailPageURL>
+      <ItemAttributes>
+        <Author>J-K Rowling</Author>
+        <Creator Role="Traduction">Jean-Fran&#231;ois M&#233;nard</Creator>
+        <Manufacturer>Gallimard-Jeunesse</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Harry Potter, Tome 1 : Harry Potter &#224; l'&#233;cole des sorciers : Edition de luxe</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>2070541274</ASIN>
+      <DetailPageURL>http://www.amazon.fr/Harry-Potter-%C3%A0-l%C3%A9cole-sorciers/dp/2070541274%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D2070541274</DetailPageURL>
+      <ItemAttributes>
+        <Author>Joanne K. Rowling</Author>
+        <Creator Role="Traduction">Jean-Fran&#231;ois M&#233;nard</Creator>
+        <Manufacturer>Gallimard Jeunesse</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Harry Potter, tome 1 : Harry Potter &#224; l'&#233;cole des sorciers</Title>
+      </ItemAttributes>
+    </Item>
+  </Items>
+</ItemSearchResponse>
