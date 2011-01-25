@@ -1,9 +1,9 @@
 #!/usr/bin/python
 
-from setuptools import setup
+from setuptools import setup, find_packages
 import os.path, sys
 
-_here = os.path.dirname(__file__)
+_here = os.path.abspath(os.path.dirname(__file__))
 
 def version():
     # This rather complicated mechanism is employed to avoid importing any 
@@ -35,7 +35,7 @@ setup(
     long_description=read('README'),
     keywords = 'amazon product advertising api wrapper signed requests',
 
-    packages = ['amazonproduct'],
+    packages = find_packages(_here, exclude=['tests']),
     install_requires=reqs,
 
     test_suite = 'tests',
