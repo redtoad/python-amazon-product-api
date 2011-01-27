@@ -1,16 +1,20 @@
 
-import os.path
-from server import TestServer
 from datetime import datetime, timedelta
+from lxml import objectify
+import nose
+import os.path
+import re
+from server import TestServer
 import unittest
-from urlparse import urlparse
+
 try:
-    from urlparse import parse_qs
+    from urlparse import urlparse, parse_qs
 except ImportError:
+    from urlparse import urlparse
     from cgi import parse_qs
 
 # import base first because sys.path is changed in order to find amazonproduct!
-import base
+from base import TESTABLE_API_VERSIONS, XML_TEST_DIR
 
 from amazonproduct import API
 from amazonproduct import UnknownLocale, TooManyRequests
@@ -46,7 +50,7 @@ class APICallsTestCase (unittest.TestCase):
         self.server.stop()
 
     def test_fails_for_too_many_requests(self):
-        xml = os.path.join(base.XML_TEST_DIR,
+        xml = os.path.join(XML_TEST_DIR,
             'APICalls-fails-for-too-many-requests.xml')
         self.server.serve_file(xml, 503)
         self.assertRaises(TooManyRequests, self.api.item_lookup,
@@ -80,3 +84,34 @@ class APICallsWithOptionalParameters (unittest.TestCase):
         self.assertEquals(qs['AssociateTag'][0], tag)
 
 
+def test_API_coverage():
+    """
+    Tests if API class supports all operations which are in the official WSDL
+    from Amazon.
+    """
+    def convert_camel_case(operation):
+        "Converts ``CamelCaseOperationName`` into ``python_style_method_name``."
+        return re.sub('([a-z])([A-Z])', r'\1_\2', operation).lower()
+
+    def extract_operations(path):
+        "Extracts operations from WSDL file."
+        root = objectify.parse(open(path)).getroot()
+        return root.xpath('//ws:operation/@name', 
+                      namespaces={'ws' : 'http://schemas.xmlsoap.org/wsdl/'})
+
+    def check_api(api, operation):
+        "Checks if API class supports specific operation."
+        attr = convert_camel_case(operation)
+        assert hasattr(api, attr), 'API does not support %s!' % operation
+
+    for version in TESTABLE_API_VERSIONS:
+        wsdl = os.path.join(XML_TEST_DIR, version, 'AWSECommerceService.wsdl')
+        if not os.path.exists(wsdl):
+            #def skip(v): raise nose.SkipTest('No WSDL found for API %s!' % v)
+            #yield skip, version
+            continue
+        api = API('', '', 'de')
+        api.VERSION =version
+        for operation in extract_operations(wsdl):
+            check_api.description = 'API %s supports %s' % (version, operation)
+            yield check_api, api, operation
