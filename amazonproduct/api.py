@@ -263,7 +263,7 @@ class API (object):
     LxmlObjectifyResponseProcessor class.
     """
 
-    VERSION = '2010-11-01' #: supported Amazon API version
+    VERSION = '2010-12-01' #: supported Amazon API version
     REQUESTS_PER_SECOND = 1 #: max requests per second
     TIMEOUT = 5 #: timeout in seconds
 

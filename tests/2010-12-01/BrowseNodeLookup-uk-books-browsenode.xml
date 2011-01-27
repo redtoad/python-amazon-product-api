@@ -1,0 +1,179 @@
+<BrowseNodeLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2010-12-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.5pre1 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+    </HTTPHeaders>
+    <RequestId>01ZVDEZK10T40BJ7YFPY</RequestId>
+    <Arguments>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Operation" Value="BrowseNodeLookup"/>
+      <Argument Name="BrowseNodeId" Value="1025612"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2011-01-27T11:58:48Z"/>
+      <Argument Name="Version" Value="2010-12-01"/>
+    </Arguments>
+    <RequestProcessingTime>0.0149309635162354</RequestProcessingTime>
+  </OperationRequest>
+  <BrowseNodes>
+    <Request>
+      <IsValid>True</IsValid>
+      <BrowseNodeLookupRequest>
+        <BrowseNodeId>1025612</BrowseNodeId>
+      </BrowseNodeLookupRequest>
+    </Request>
+    <BrowseNode>
+      <BrowseNodeId>1025612</BrowseNodeId>
+      <Name>Subjects</Name>
+      <IsCategoryRoot>1</IsCategoryRoot>
+      <Children>
+        <BrowseNode>
+          <BrowseNodeId>349777011</BrowseNodeId>
+          <Name>Antiquarian, Rare &amp; Collectable</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>91</BrowseNodeId>
+          <Name>Art, Architecture &amp; Photography</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>51</BrowseNodeId>
+          <Name>Audio Cassettes</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>267859</BrowseNodeId>
+          <Name>Audio CDs</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>67</BrowseNodeId>
+          <Name>Biography</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>68</BrowseNodeId>
+          <Name>Business, Finance &amp; Law</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>507848</BrowseNodeId>
+          <Name>Calendars, Diaries, Annuals &amp; More</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>69</BrowseNodeId>
+          <Name>Children's Books</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>274081</BrowseNodeId>
+          <Name>Comics &amp; Graphic Novels</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>71</BrowseNodeId>
+          <Name>Computing &amp; Internet</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>72</BrowseNodeId>
+          <Name>Crime, Thrillers &amp; Mystery</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>637262</BrowseNodeId>
+          <Name>e-Books</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>279254</BrowseNodeId>
+          <Name>Fantasy</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>62</BrowseNodeId>
+          <Name>Fiction</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>66</BrowseNodeId>
+          <Name>Food &amp; Drink</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>275835</BrowseNodeId>
+          <Name>Gay &amp; Lesbian</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>74</BrowseNodeId>
+          <Name>Health, Family &amp; Lifestyle</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>65</BrowseNodeId>
+          <Name>History</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>64</BrowseNodeId>
+          <Name>Home &amp; Garden</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>63</BrowseNodeId>
+          <Name>Horror</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>89</BrowseNodeId>
+          <Name>Humour</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>275738</BrowseNodeId>
+          <Name>Languages</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>61</BrowseNodeId>
+          <Name>Mind, Body &amp; Spirit</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>73</BrowseNodeId>
+          <Name>Music, Stage &amp; Screen</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>275389</BrowseNodeId>
+          <Name>Poetry, Drama &amp; Criticism</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>59</BrowseNodeId>
+          <Name>Reference</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>58</BrowseNodeId>
+          <Name>Religion &amp; Spirituality</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>88</BrowseNodeId>
+          <Name>Romance</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>57</BrowseNodeId>
+          <Name>Science &amp; Nature</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>279292</BrowseNodeId>
+          <Name>Science Fiction</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>564334</BrowseNodeId>
+          <Name>Scientific, Technical &amp; Medical</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>60</BrowseNodeId>
+          <Name>Society, Politics &amp; Philosophy</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>55</BrowseNodeId>
+          <Name>Sports, Hobbies &amp; Games</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>13384091</BrowseNodeId>
+          <Name>Study Books</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>83</BrowseNodeId>
+          <Name>Travel &amp; Holiday</Name>
+        </BrowseNode>
+      </Children>
+      <Ancestors>
+        <BrowseNode>
+          <BrowseNodeId>266239</BrowseNodeId>
+          <Name>Books</Name>
+        </BrowseNode>
+      </Ancestors>
+    </BrowseNode>
+  </BrowseNodes>
+</BrowseNodeLookupResponse>
