@@ -1,0 +1,21 @@
+<BrowseNodeLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2010-12-01">
+  <OperationRequest>
+    <RequestId>19FJWH9N6SQJRYFK1FC6</RequestId>
+    <RequestProcessingTime>0.00320792198181152</RequestProcessingTime>
+  </OperationRequest>
+  <BrowseNodes>
+    <Request>
+      <IsValid>False</IsValid>
+      <Errors>
+        <Error>
+          <Code>AWS.InvalidResponseGroup</Code>
+          <Message>Your ResponseGroup parameter is invalid. Valid response groups for  requests include Request, BrowseNodeInfo, TopSellers, NewReleases, MostWishedFor, MostGifted.</Message>
+        </Error>
+        <Error>
+          <Code>AWS.InvalidEnumeratedParameter</Code>
+          <Message>The value you specified for ResponseGroup is invalid. Valid values include BrowseNodeInfo, MostGifted, MostWishedFor, NewReleases, Request, TopSellers.</Message>
+        </Error>
+      </Errors>
+    </Request>
+  </BrowseNodes>
+</BrowseNodeLookupResponse>
