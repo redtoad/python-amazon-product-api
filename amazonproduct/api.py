@@ -123,6 +123,16 @@ class InvalidParameterCombination (Exception):
     Your request contained a restricted parameter combination.
     """
 
+class DeprecatedOperation (Exception):
+    """
+    
+    """
+
+class InvalidOperation (Exception):
+    """
+    The specified feature (operation) is deprecated.
+    """
+
 DEFAULT_ERROR_REGS = {
     'invalid-value' : re.compile(
         'The value you specified for (?P<parameter>\w+) is invalid.'),
@@ -212,7 +222,7 @@ class LxmlObjectifyResponseProcessor (object):
         #~ print etree.tostring(tree, pretty_print=True)
 
         nspace = root.nsmap.get(None, '')
-        errors = root.xpath('//aws:Errors/aws:Error',
+        errors = root.xpath('//aws:Error',
                          namespaces={'aws' : nspace})
         for error in errors:
             code = error.Code.text
@@ -395,6 +405,12 @@ class API (object):
             return self.response_processor(fp)
         except AWSError, e:
 
+            if e.code == 'Deprecated':
+                raise DeprecatedOperation(e.msg)
+
+            if e.code == 'AWS.ECommerceService.NoExactMatches':
+                raise NoExactMatchesFound
+
             if e.code == 'AWS.ECommerceService.NoExactMatches':
                 raise NoExactMatchesFound
 
@@ -421,8 +437,15 @@ class API (object):
         * ``_parse(fp)``
         """
         url = self._build_url(**qargs)
-        fp = self._fetch(url)
-        return self._parse(fp)
+        try:
+            fp = self._fetch(url)
+            return self._parse(fp)
+        except urllib2.HTTPError, e:
+            # HTTP errors 400 (Bad Request) and 410 (Gone) send a more detailed
+            # error message as body which can be parsed, too.
+            if e.code in (400, 410):
+                return self._parse(e.fp)
+            raise
 
     def item_lookup(self, item_id, **params):
         """
@@ -580,6 +603,26 @@ class API (object):
 
             # otherwise re-raise exception
             raise # pragma: no cover
+
+    def deprecated_operation(self, *args, **kwargs):
+        """
+        Some operations are deprecated and will be answered with HTTP 410. To
+        avoid unnecessary API calls, a ``DeprecatedOperation`` exception is
+        thrown straight-away.
+        """
+        raise DeprecatedOperation
+
+    # shortcuts for deprecated operations
+    customer_content_lookup = customer_content_search = deprecated_operation
+    help = deprecated_operation
+    list_lookup = list_search = deprecated_operation
+    tag_lookup = deprecated_operation
+    transaction_lookup = deprecated_operation
+    vehicle_part_lookup = vehicle_part_search = deprecated_operation
+    vehicle_search = deprecated_operation
+
+    #: MultiOperation is supported outside this API
+    multi_operation = None
 
 
 class ResultPaginator (object):
