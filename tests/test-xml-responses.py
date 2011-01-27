@@ -1,7 +1,7 @@
 
 # import base first because sys.path is changed in order to find amazonproduct!
 from base import XMLResponseTestCase, XMLResponseTestLoader
-from base import XML_TEST_DIR, TESTABLE_API_VERSIONS
+from base import XML_TEST_DIR, TESTABLE_API_VERSIONS, convert_camel_case
 
 from amazonproduct import API, ResultPaginator
 from amazonproduct import AWSError
@@ -10,6 +10,7 @@ from amazonproduct import InvalidSearchIndex, InvalidResponseGroup
 from amazonproduct import InvalidParameterCombination 
 from amazonproduct import NoSimilarityForASIN
 from amazonproduct import NoExactMatchesFound, NotEnoughParameters
+from amazonproduct import DeprecatedOperation
 
 from lxml import objectify
 import os, os.path
@@ -336,3 +337,45 @@ class XMLParsingTestCase (unittest.TestCase):
                     self.assertEquals(item_id.pyval, item_id.text, str(item_id)) 
             except AWSError:
                 pass
+
+
+class DeprecatedOperationsTestCase (XMLResponseTestCase):
+
+    """
+    Due to low usage, the Product Advertising API operations listed below will
+    not be supported after October 15, 2010:
+
+    * CustomerContentLookup
+    * CustomerContentSearch
+    * Help
+    * ListLookup
+    * ListSearch
+    * TagLookup
+    * TransactionLookup
+    * VehiclePartLookup
+    * VehiclePartSearch
+    * VehicleSearch
+    """
+
+    DEPRECATED_OPRATIONS = [
+        'CustomerContentLookup',
+        'CustomerContentSearch',
+        'Help',
+        'ListLookup',
+        'ListSearch',
+        'TagLookup',
+        'TransactionLookup',
+        'VehiclePartLookup',
+        'VehiclePartSearch',
+        'VehicleSearch', 
+    ]
+
+    def test_calling_deprecated_operations(self):
+        for operation in self.DEPRECATED_OPRATIONS:
+            self.assertRaises(DeprecatedOperation, 
+                              getattr(self.api, convert_camel_case(operation)))
+
+    def test_calling_deprecated_operations_using_call_fails(self):
+        for operation in self.DEPRECATED_OPRATIONS:
+            self.assertRaises(DeprecatedOperation, self.api.call, 
+                              Operation=operation)

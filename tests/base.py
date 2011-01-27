@@ -14,7 +14,7 @@ _here = os.path.abspath(os.path.dirname(__file__))
 import sys
 sys.path.insert(0, os.path.join(_here, '..'))
 
-from amazonproduct import API, ResultPaginator, HOSTS
+from amazonproduct import API, ResultPaginator, HOSTS, AWSError
 
 #: Directory containing XML responses for API versions (one directory for each
 #: API version)
@@ -74,7 +74,20 @@ class CustomAPI (API):
         # retrieve it, obfuscate all sensible data and store it 
         # with the name of the TestCase using it
         if not os.path.exists(path) or OVERWRITE_TESTS:
-            tree = etree.parse(API._fetch(self, url))
+            try:
+                fp = API._fetch(self, url)
+            except urllib2.HTTPError, e:
+                # HTTP errors 400 (Bad Request) and 410 (Gone) send a more 
+                # detailed error message as body which can be parsed, too.
+                if e.code in (400, 410):
+                    fp = e.fp
+                # otherwise re-raise
+                else:
+                    raise
+            try:
+                tree = etree.parse(fp)
+            except AWSError:
+                pass
             root = tree.getroot()
             
             # overwrite sensible data
@@ -187,3 +200,10 @@ class XMLResponseTestLoader (nose.loader.TestLoader):
                     tests += [testCase]
         return self.suiteClass(tests)
         
+
+
+def convert_camel_case(operation):
+    """
+    Converts ``CamelCaseOperationName`` into ``python_style_method_name``.
+    """
+    return re.sub('([a-z])([A-Z])', r'\1_\2', operation).lower()

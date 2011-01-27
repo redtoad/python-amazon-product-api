@@ -14,7 +14,7 @@ except ImportError:
     from cgi import parse_qs
 
 # import base first because sys.path is changed in order to find amazonproduct!
-from base import TESTABLE_API_VERSIONS, XML_TEST_DIR
+from base import TESTABLE_API_VERSIONS, XML_TEST_DIR, convert_camel_case
 
 from amazonproduct import API
 from amazonproduct import UnknownLocale, TooManyRequests
@@ -89,9 +89,6 @@ def test_API_coverage():
     Tests if API class supports all operations which are in the official WSDL
     from Amazon.
     """
-    def convert_camel_case(operation):
-        "Converts ``CamelCaseOperationName`` into ``python_style_method_name``."
-        return re.sub('([a-z])([A-Z])', r'\1_\2', operation).lower()
 
     def extract_operations(path):
         "Extracts operations from WSDL file."
