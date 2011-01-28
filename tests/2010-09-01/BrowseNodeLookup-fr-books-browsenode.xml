@@ -1,0 +1,126 @@
+<BrowseNodeLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2010-09-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.4.1 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+    </HTTPHeaders>
+    <RequestId>19BJZRZYDQGVTVDE56DG</RequestId>
+    <Arguments>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Operation" Value="BrowseNodeLookup"/>
+      <Argument Name="BrowseNodeId" Value="468256"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2010-10-15T22:08:39Z"/>
+      <Argument Name="Version" Value="2010-09-01"/>
+    </Arguments>
+    <RequestProcessingTime>0.0109400749206543</RequestProcessingTime>
+  </OperationRequest>
+  <BrowseNodes>
+    <Request>
+      <IsValid>True</IsValid>
+      <BrowseNodeLookupRequest>
+        <BrowseNodeId>468256</BrowseNodeId>
+      </BrowseNodeLookupRequest>
+    </Request>
+    <BrowseNode>
+      <BrowseNodeId>468256</BrowseNodeId>
+      <Name>Boutiques</Name>
+      <Children>
+        <BrowseNode>
+          <BrowseNodeId>13921201</BrowseNodeId>
+          <Name>Auteurs &#224; l'honneur</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>463892</BrowseNodeId>
+          <Name>Boutique No&#235;l</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>360051011</BrowseNodeId>
+          <Name>Boutique Vacances d' &#233;t&#233;</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>257111011</BrowseNodeId>
+          <Name>Broch&#233;s (grands formats)</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>306966011</BrowseNodeId>
+          <Name>Chercher au Coeur!</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>14122841</BrowseNodeId>
+          <Name>Collection : Pour les nuls</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>401466011</BrowseNodeId>
+          <Name>Content Stores</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>401465011</BrowseNodeId>
+          <Name>Custom Stores</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>310883011</BrowseNodeId>
+          <Name>Harry Potter en Livres</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>735796</BrowseNodeId>
+          <Name>Le Seigneur des Anneaux</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>310884011</BrowseNodeId>
+          <Name>Les livres autour de Harry Potter</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>301145</BrowseNodeId>
+          <Name>Livres &#224; petits prix</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>3498561</BrowseNodeId>
+          <Name>Manga Kana</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>381592011</BrowseNodeId>
+          <Name>Nos boutiques sp&#233;ciales</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>3023891</BrowseNodeId>
+          <Name>Par prix</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>236451011</BrowseNodeId>
+          <Name>Poisson Pilote</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>401467011</BrowseNodeId>
+          <Name>Regular Stores</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>13464941</BrowseNodeId>
+          <Name>Rentr&#233;e universitaire et professionnelle</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>365476011</BrowseNodeId>
+          <Name>Seuil Jeunesse</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>310253011</BrowseNodeId>
+          <Name>Soldes Livres</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>310880011</BrowseNodeId>
+          <Name>Tout sur Dan Brown</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>362944011</BrowseNodeId>
+          <Name>Transformers</Name>
+        </BrowseNode>
+      </Children>
+      <Ancestors>
+        <BrowseNode>
+          <BrowseNodeId>301061</BrowseNodeId>
+          <Name>Livres</Name>
+        </BrowseNode>
+      </Ancestors>
+    </BrowseNode>
+  </BrowseNodes>
+</BrowseNodeLookupResponse>

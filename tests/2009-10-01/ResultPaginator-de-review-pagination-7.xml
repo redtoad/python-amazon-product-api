@@ -1,0 +1,119 @@
+<ItemLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2009-10-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+    </HTTPHeaders>
+    <RequestId>4434d5fd-26f8-4e2b-95c1-ab9bc63b9b0c</RequestId>
+    <Arguments>
+      <Argument Name="ReviewPage" Value="7"/>
+      <Argument Name="Operation" Value="ItemLookup"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="ItemId" Value="0747532745"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2009-12-09T16:38:39Z"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="ResponseGroup" Value="Reviews"/>
+      <Argument Name="Version" Value="2009-10-01"/>
+    </Arguments>
+    <RequestProcessingTime>0.0416220000000000</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>True</IsValid>
+      <ItemLookupRequest>
+        <Condition>New</Condition>
+        <DeliveryMethod>Ship</DeliveryMethod>
+        <IdType>ASIN</IdType>
+        <MerchantId>Amazon</MerchantId>
+        <OfferPage>1</OfferPage>
+        <ItemId>0747532745</ItemId>
+        <ResponseGroup>Reviews</ResponseGroup>
+        <ReviewPage>7</ReviewPage>
+        <ReviewSort>-SubmissionDate</ReviewSort>
+        <VariationPage>All</VariationPage>
+      </ItemLookupRequest>
+    </Request>
+    <Item>
+      <ASIN>0747532745</ASIN>
+      <CustomerReviews>
+        <AverageRating>5.0</AverageRating>
+        <TotalReviews>2458</TotalReviews>
+        <TotalReviewPages>492</TotalReviewPages>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>4</Rating>
+          <HelpfulVotes>2</HelpfulVotes>
+          <CustomerId>A3I74UOBLZNQ85</CustomerId>
+          <Reviewer>
+            <CustomerId>A3I74UOBLZNQ85</CustomerId>
+            <Name>andante</Name>
+            <Nickname>peter_berlin</Nickname>
+            <Location>Cologne, Germany</Location>
+          </Reviewer>
+          <TotalVotes>3</TotalVotes>
+          <Date>2004-01-28</Date>
+          <Summary>Even though everybody likes it, it can still be very good</Summary>
+          <Content>After all my friends, without exception, had praised the Harry Potter series for years I have succumbed and started with the first book. well, there is only good news here. I did enjoy reading it, it is fun, well written, has an interesting story and even though I for one do not particularly care for stories  on magic and fantasy, in this book somehow it did not put me off. The characters are nicely developed and presented and at the center of the book is a hero who starts out as some kind of underdog and ugly duckling and become somebody quite special - an easy person to identify with. Even without magic characters in the novel  learn here that not everybody may be what they seem like and you better look twice. I can see that the author creates a universe all to itself that is wonderful to enter and live in. &lt;br&gt;I still cannot get quite the excitement that the publication of the fifth novel caused, but I guess I have only just wetted my feet. After reading three more novels in the series, I will understand it much better and probably join. Recommendable book, at least now you know what everybody's talking about.</Content>
+        </Review>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>5</Rating>
+          <HelpfulVotes>3</HelpfulVotes>
+          <CustomerId>A2X2CCKZ9UR1N</CustomerId>
+          <Reviewer>
+            <CustomerId>A2X2CCKZ9UR1N</CustomerId>
+            <Name>Holly Short</Name>
+            <Nickname>holly_short</Nickname>
+            <Location>Wien, &#214;sterreich</Location>
+          </Reviewer>
+          <TotalVotes>3</TotalVotes>
+          <Date>2003-11-16</Date>
+          <Summary>Pure Magie!</Summary>
+          <Content>Dass Harry Potter toll ist, habe ich nie wirklich bezweifelt. Trotzdem habe ich es lange vor mir hergeschoben, zumindest einmal den ersten Band zur Hand zu nehmen. Wie konnte ich wissen, dass ich so positiv &#252;berrascht sein w&#252;rde?!&lt;p&gt;Ganz ehrlich: Ich hatte selten so viel Spa&#223; beim Lesen. Ich bin selten in ein Buch so hineingesogen worden wie in dieses. Ich konnte nicht anders, als die unglaubliche Phantasie dieser Frau zu bewundern, die mit einer wahnsinnigen Detailliebe eine neue Welt geschaffen hat, und die sich vor Fantasy-"Gottheiten" wie JRR Tolkien nicht verstecken braucht. &lt;p&gt;Was f&#252;r ein starkes, liebenswertes, vor Witz nur so spr&#252;hendes Buch voller Magie - man braucht kein Kind mehr zu sein, um sich die Hexen- und Zaubererschule Hogwarts oder die "Einkaufsstra&#223;e" f&#252;r alles Magische, Diagon Alley, perfekt vorstellen zu k&#246;nnen, so bunt sind Rowlings Beschreibungen, so reich ist ihre Sprache.&lt;p&gt;Einfach pure Magie, der man sich nicht mehr entziehen kann - deshalb werde ich auch so bald wie m&#246;glich auch die anderen Teile lesen. WOW.</Content>
+        </Review>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>5</Rating>
+          <HelpfulVotes>2</HelpfulVotes>
+          <CustomerId>A2EJOBMZVJ5HB6</CustomerId>
+          <Reviewer>
+            <CustomerId>A2EJOBMZVJ5HB6</CustomerId>
+            <Nickname>cobold0815</Nickname>
+          </Reviewer>
+          <TotalVotes>4</TotalVotes>
+          <Date>2003-08-25</Date>
+          <Summary>eine einmal andere "Kindergeschichte"</Summary>
+          <Content>Liebhaber der anderen Welten, der Zauberer, Feen und Fabelwesen, finden in Harry Potter einen Charakter, der eigentlich ziemlich "normal" ist, aber auf eine andere Art und Weise eben nicht. So sehr er unsereins gleicht, so verschieden sind doch Zauberwelt von der realen, Fabelwesen von allt&#228;glichen und Tagesabl&#228;ufe von den unsrigen.&lt;p&gt;Der Erfolg des Buches spricht f&#252;r sich und auch ich muss mich "leider" zu den Lesern z&#228;hlen, die sich erst nach den Ermunterungen von Freunden an das "Kinderbuch" herangewagt haben, wobei ich vorher noch gegen den Strom schwimmen und es auf gar keinen Fall kaufen wollte...&lt;p&gt;Zusammengefasst:&lt;br&gt;Harry Potter haust bei seinen Verwandten im alten Schrank unter der Treppe bis er eines Tages, kurz nach seinem elften Geburtstag, in der Hogwarts-Schule f&#252;r Hexerei und Zauberei aufgenommen wird. Sein Leben &#228;ndert sich mit diesen Neuigkeiten schlagartig und grundlegend. Beschrieben wird Harry's erstes Jahr in Hogwarts, das Kennenlernen der Schule samt neuer Freunde und Kreaturen, Zauberspr&#252;che, Helferlein und das allm&#228;liche Lichten seiner so lange im Dunkeln gebliebenen Vergangenheit...&lt;p&gt;Ein MUSS f&#252;r Sucher des Buches, das man mal wieder nicht aus der Hand legen will...</Content>
+        </Review>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>5</Rating>
+          <HelpfulVotes>6</HelpfulVotes>
+          <CustomerId>AUUDBCQRAWYRJ</CustomerId>
+          <Reviewer>
+            <CustomerId>AUUDBCQRAWYRJ</CustomerId>
+            <Nickname>liza_k</Nickname>
+          </Reviewer>
+          <TotalVotes>6</TotalVotes>
+          <Date>2003-07-08</Date>
+          <Summary>Mit Abstand die sch&#246;nste Ausgabe</Summary>
+          <Content>Wer sowieso schon Harry Potter Fan ist, wird von diesem Buch erst Recht begeistert sein. Wer Harry Potter noch nicht kennt, wird, selbst wenn ihm die Geschichte nicht 100%ig gef&#228;llt, an diesem Buch seine Freude haben.&lt;br&gt;Liebevoll wird jedes Kapitel mit einer kleinen Zeichnung engeleitet, Briefe, Mitteilungen usw., die in der Geschichte vorkommen, werden entweder ganz "mit der Hand" geschrieben, oder wenigstens "unterschrieben" (nat&#252;rlich gedruckt und nicht wirklich per Hand geschrieben.)&lt;p&gt;Orginell und abwechslungsreich. So macht Harry Potter lesen noch mehr Spa&#223;. &lt;br&gt;Meiner Meinung die sch&#246;nste Ausgabe von Harry Potter, das gilt nat&#252;rlich auch f&#252;r die aneren HP-B&#228;nde dieses Verlages.</Content>
+        </Review>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>5</Rating>
+          <HelpfulVotes>15</HelpfulVotes>
+          <CustomerId>A3UGB3U0L6D30L</CustomerId>
+          <Reviewer>
+            <CustomerId>A3UGB3U0L6D30L</CustomerId>
+            <Nickname>dreifragezeichenfan</Nickname>
+          </Reviewer>
+          <TotalVotes>17</TotalVotes>
+          <Date>2003-07-05</Date>
+          <Summary>Besser als das deutsche Buch</Summary>
+          <Content>In diesem Buch hat Johanne K. Rowling bewieesen, dass sie eine lebhafte Fantasie hat.&lt;br&gt; Sie schreibt sehr sch&#246;n und ich w&#252;rde sagen, dass man das buch ind der Schule verwenden k&#246;nnte. &lt;br&gt;Allerdings erst in der Mittelstufe. Bei Harry Potter and the Philosopher's Stone&lt;br&gt;ist alles viel ausf&#252;hrlicher als bei Harry Potter und der Stein der Weisen.&lt;br&gt;Das ist eindeutig auf die &#220;bersetzungsk&#252;nste von Henning Fritsch zur&#252;ckzuf&#252;hren. &lt;br&gt;Ich hoffe, dass bei den neueren B&#228;nden ein anderer &#220;bersetzer am Werk ist.&lt;br&gt;Obwohl das Buch auf Englisch ist, versteht man mehr an dem Sinn der Geschichte. &lt;br&gt;Da die Autorin so sch&#246;n schreibt ist man f&#252;r ungef&#228;hr eine Woche daran gefesselt&lt;br&gt;(aber nur wenn man kein Engl&#228;nder oder Amerikaner ist). &lt;p&gt;Eine Super-Leistung belohne ich mit f&#252;nf sternen.Das hat das sehr sch&#246;ne Buch sich auch verdient. &lt;br&gt;Gro&#223;es Lob an Johanne Kathreen Rowling.</Content>
+        </Review>
+      </CustomerReviews>
+    </Item>
+  </Items>
+</ItemLookupResponse>
