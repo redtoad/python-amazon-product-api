@@ -14,7 +14,8 @@ _here = os.path.abspath(os.path.dirname(__file__))
 import sys
 sys.path.insert(0, os.path.join(_here, '..'))
 
-from amazonproduct import API, ResultPaginator, HOSTS, AWSError
+from amazonproduct.api import API, HOSTS
+from amazonproduct.errors import AWSError
 
 #: Directory containing XML responses for API versions (one directory for each
 #: API version)
@@ -22,7 +23,7 @@ XML_TEST_DIR = _here
 
 #: Versions of Amazon API to be tested against 
 TESTABLE_API_VERSIONS = [
-    '2010-12-01', '2010-11-01', '2010-10-01', '2010-09-01', '2010-06-01', 
+    '2010-12-01', '2010-11-01', '2010-10-01', '2010-09-01', '2010-06-01',
     '2009-11-01', '2009-10-01'
 ]
 

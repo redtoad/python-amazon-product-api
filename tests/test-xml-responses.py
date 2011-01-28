@@ -3,14 +3,9 @@
 from base import XMLResponseTestCase, XMLResponseTestLoader
 from base import XML_TEST_DIR, TESTABLE_API_VERSIONS, convert_camel_case
 
-from amazonproduct import API, ResultPaginator
-from amazonproduct import AWSError
-from amazonproduct import InvalidParameterValue, InvalidListType
-from amazonproduct import InvalidSearchIndex, InvalidResponseGroup
-from amazonproduct import InvalidParameterCombination 
-from amazonproduct import NoSimilarityForASIN
-from amazonproduct import NoExactMatchesFound, NotEnoughParameters
-from amazonproduct import DeprecatedOperation
+from amazonproduct.api import API
+from amazonproduct.errors import *
+from amazonproduct.paginators import LxmlPaginator
 
 from lxml import objectify
 import os, os.path
@@ -62,49 +57,51 @@ class ItemLookupTestCase (XMLResponseTestCase):
             self.api.item_lookup('9780747532743', IdType='ISBN')
         except AWSError, e:
             self.assert_(e.code == 'AWS.MissingParameterValueCombination')
-        
-        
+
+
 class ItemSearchTestCase (XMLResponseTestCase):
 
     """
     Check that all XML responses for ItemSearch are parsed correctly.
     """
-    
+
     def test_no_parameters(self):
         try:
-            self.assertRaises(InvalidResponseGroup, 
-                              self.api.item_search, 'Books')
+            results = self.api.item_search('Books')
+            self.assertRaises(InvalidResponseGroup, results.next)
         except AWSError, e:
             self.assert_(e.code == 'AWS.MinimumParameterRequirement')
-        
+
     def test_unicode_parameter(self):
         # Issue 17: UnicodeDecodeError when python's default encoding is not
         # utf-8
         try:
-            self.api.item_search('Books', Author=u'F\xe9lix J. Palma')
+            results = self.api.item_search('Books', Author=u'F\xe9lix J. Palma')
+            results.next()
         except NoExactMatchesFound:
             # doesn't matter if this author is not found in all locales
             # as long as no UnicodeDecodeError is raised!
             pass
 
     def test_invalid_response_group(self):
-        self.assertRaises(InvalidResponseGroup, self.api.item_search, 
-                          'All', ResponseGroup='???')
-        
+        results = self.api.item_search('All', ResponseGroup='???')
+        self.assertRaises(InvalidResponseGroup, results.next)
+
     def test_invalid_search_index(self):
-        self.assertRaises(InvalidSearchIndex, self.api.item_search, 
-                          '???', BrowseNode=132)
-        
+        results = self.api.item_search('???', BrowseNode=132)
+        self.assertRaises(InvalidSearchIndex, results.next)
+
     def test_invalid_parameter_combination(self):
-        self.assertRaises(InvalidParameterCombination, self.api.item_search, 
-                          'All', BrowseNode=132)
-        
-    #@ignore_locales('jp')
+        results = self.api.item_search('All', BrowseNode=132)
+        self.assertRaises(InvalidParameterCombination, results.next) 
+
     def test_lookup_by_title(self):
-        result = self.api.item_search('Books', Title='Harry Potter')
-        for item in result.Items.Item:
-            self.assertEquals(item.ASIN, item.ASIN.pyval, item.ASIN.text) 
-        
+        print self.current_api_version, self.current_locale
+        for page in self.api.item_search('Books', Title='Harry Potter', limit=1):
+            for item in page.Items.Item:
+                self.assertEquals(item.ASIN, item.ASIN.pyval, item.ASIN.text) 
+
+
 class SimilarityLookupTestCase (XMLResponseTestCase):
     
     """
@@ -141,20 +138,13 @@ class ResultPaginatorTestCase (XMLResponseTestCase):
         results = 272
         pages = 28
 
-        paginator = ResultPaginator('ItemPage',
-            '//aws:Items/aws:Request/aws:ItemSearchRequest/aws:ItemPage',
-            '//aws:Items/aws:TotalPages',
-            '//aws:Items/aws:TotalResults',
-            limit=10)
-
-        for page, root in enumerate(paginator(self.api.item_search, 'Books', 
-                        Publisher='Galileo Press', Sort='salesrank')):
-            self.assertEquals(paginator.total_results, results)
-            self.assertEquals(paginator.total_pages, pages)
-            self.assertEquals(paginator.current_page, page+1)
-
+        paginator = self.api.item_search('Books', 
+                Publisher='Galileo Press', Sort='salesrank', limit=10)
+        for page, root in enumerate(paginator):
+            self.assertEquals(results, root.Items.TotalResults.pyval)
+            self.assertEquals(pages, root.Items.TotalPages.pyval)
+            self.assertEquals(page+1, root.Items.Request.ItemSearchRequest.ItemPage.pyval)
         self.assertEquals(page, 9)
-        self.assertEquals(paginator.current_page, 10)
 
     def test_review_pagination(self):
         # reviews for "Harry Potter and the Philosopher's Stone"
@@ -167,7 +157,7 @@ class ResultPaginatorTestCase (XMLResponseTestCase):
             '2009-11-01' : (2465, 493),
         }
 
-        paginator = ResultPaginator('ReviewPage',
+        paginator = LxmlPaginator('ReviewPage',
             '//aws:Items/aws:Request/aws:ItemLookupRequest/aws:ReviewPage',
             '//aws:Items/aws:Item/aws:CustomerReviews/aws:TotalReviewPages',
             '//aws:Items/aws:Item/aws:CustomerReviews/aws:TotalReviews',
@@ -176,19 +166,14 @@ class ResultPaginatorTestCase (XMLResponseTestCase):
         for page, root in enumerate(paginator(self.api.item_lookup,
                         ASIN, ResponseGroup='Reviews')):
             reviews, pages = VALUES[self.current_api_version]
-            self.assertEquals(paginator.total_results, reviews)
-            self.assertEquals(paginator.total_pages, pages)
-            self.assertEquals(paginator.current_page, page+1)
-
         self.assertEquals(page, 9)
-        self.assertEquals(paginator.current_page, 10)
 
     def test_pagination_works_for_missing_reviews(self):
         # "Sherlock Holmes (limitierte Steelbook Edition) [Blu-ray]"
         # had no reviews at time of writing
         ASIN = 'B0039NM7Y2'
 
-        paginator = ResultPaginator('ReviewPage',
+        paginator = LxmlPaginator('ReviewPage',
             '//aws:Items/aws:Request/aws:ItemLookupRequest/aws:ReviewPage',
             '//aws:Items/aws:Item/aws:CustomerReviews/aws:TotalReviewPages',
             '//aws:Items/aws:Item/aws:CustomerReviews/aws:TotalReviews')
@@ -357,7 +342,7 @@ class DeprecatedOperationsTestCase (XMLResponseTestCase):
     * VehicleSearch
     """
 
-    DEPRECATED_OPRATIONS = [
+    DEPRECATED_OPERATIONS = [
         'CustomerContentLookup',
         'CustomerContentSearch',
         'Help',
@@ -371,11 +356,11 @@ class DeprecatedOperationsTestCase (XMLResponseTestCase):
     ]
 
     def test_calling_deprecated_operations(self):
-        for operation in self.DEPRECATED_OPRATIONS:
+        for operation in self.DEPRECATED_OPERATIONS:
             self.assertRaises(DeprecatedOperation, 
                               getattr(self.api, convert_camel_case(operation)))
 
     def test_calling_deprecated_operations_using_call_fails(self):
-        for operation in self.DEPRECATED_OPRATIONS:
+        for operation in self.DEPRECATED_OPERATIONS:
             self.assertRaises(DeprecatedOperation, self.api.call, 
                               Operation=operation)

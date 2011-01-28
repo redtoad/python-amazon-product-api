@@ -26,6 +26,9 @@ except ImportError: # pragma: no cover
     from urllib import quote
 
 from amazonproduct.version import VERSION
+from amazonproduct.errors import *
+from amazonproduct.paginators import paginate
+from amazonproduct.processors import LxmlObjectifyProcessor
 
 USER_AGENT = ('python-amazon-product-api/%s '
     '+http://pypi.python.org/pypi/python-amazon-product-api/' % VERSION)
@@ -39,198 +42,6 @@ HOSTS = {
     'uk' : ('ecs.amazonaws.co.uk', 'xml-uk.amznxslt.com'),
     'us' : ('ecs.amazonaws.com', 'xml-us.amznxslt.com'),
 }
-
-class UnknownLocale (Exception):
-    """
-    Raised when unknown locale is specified.
-    """
-
-class AWSError (Exception):
-    """
-    Generic AWS error message.
-    """
-    def __init__(self, code, msg):
-        Exception.__init__(self)
-        self.code = code
-        self.msg = msg
-    def __str__(self): # pragma: no cover
-        return '%(code)s: %(msg)s' % self.__dict__
-
-class InvalidSearchIndex (Exception):
-    """
-    The value specified for SearchIndex is invalid. Valid values include:
-
-    All, Apparel, Automotive, Baby, Beauty, Blended, Books, Classical, DVD,
-    Electronics, ForeignBooks, HealthPersonalCare, HomeGarden, HomeImprovement,
-    Jewelry, Kitchen, Magazines, MP3Downloads, Music, MusicTracks,
-    OfficeProducts, OutdoorLiving, PCHardware, Photo, Shoes, Software,
-    SoftwareVideoGames, SportingGoods, Tools, Toys, VHS, Video, VideoGames,
-    Watches
-    """
-
-class InvalidResponseGroup (Exception):
-    """
-    The specified ResponseGroup parameter is invalid. Valid response groups for
-    ItemLookup requests include:
-
-    Accessories, AlternateVersions, BrowseNodes, Collections, EditorialReview,
-    Images, ItemAttributes, ItemIds, Large, ListmaniaLists, Medium,
-    MerchantItemAttributes, OfferFull, OfferListings, OfferSummary, Offers,
-    PromotionDetails, PromotionSummary, PromotionalTag, RelatedItems, Request,
-    Reviews, SalesRank, SearchBins, SearchInside, ShippingCharges,
-    Similarities, Small, Subjects, Tags, TagsSummary, Tracks, VariationImages,
-    VariationMatrix, VariationMinimum, VariationOffers, VariationSummary,
-    Variations.
-    """
-
-class InvalidParameterValue (Exception):
-    """
-    The specified ItemId parameter is invalid. Please change this value and
-    retry your request.
-    """
-
-class InvalidListType (Exception):
-    """
-    The value you specified for ListType is invalid. Valid values include:
-    BabyRegistry, Listmania, WeddingRegistry, WishList.
-    """
-
-class NoSimilarityForASIN (Exception):
-    """
-    When you specify multiple items, it is possible for there to be no
-    intersection of similar items.
-    """
-
-class NoExactMatchesFound (Exception):
-    """
-    We did not find any matches for your request.
-    """
-
-class TooManyRequests (Exception):
-    """
-    You are submitting requests too quickly and your requests are being
-    throttled. If this is the case, you need to slow your request rate to one
-    request per second.
-    """
-
-class NotEnoughParameters (Exception):
-    """
-    Your request should have at least one parameter which you did not submit.
-    """
-
-class InvalidParameterCombination (Exception):
-    """
-    Your request contained a restricted parameter combination.
-    """
-
-class DeprecatedOperation (Exception):
-    """
-    
-    """
-
-class InvalidOperation (Exception):
-    """
-    The specified feature (operation) is deprecated.
-    """
-
-DEFAULT_ERROR_REGS = {
-    'invalid-value' : re.compile(
-        'The value you specified for (?P<parameter>\w+) is invalid.'),
-
-    'invalid-parameter-value' : re.compile(
-        '(?P<value>.+?) is not a valid value for (?P<parameter>\w+). Please '
-        'change this value and retry your request.'),
-
-    'no-similarities' : re.compile(
-        'There are no similar items for this ASIN: (?P<ASIN>\w+).'),
-
-    'not-enough-parameters' : re.compile(
-        'Your request should have atleast (?P<number>\d+) of the following '
-        'parameters: (?P<parameters>[\w ,]+).'),
-
-    'invalid-parameter-combination' : re.compile(
-         'Your request contained a restricted parameter combination.'
-         '\s*(?P<message>\w.*)$') # only the last bit is of interest here
-}
-
-JAPANESE_ERROR_REGS = {
-    'invalid-value' : re.compile(
-        u'(?P<parameter>\w+)\u306b\u6307\u5b9a\u3057\u305f\u5024\u306f\u7121'
-        u'\u52b9\u3067\u3059\u3002'),
-
-    'invalid-parameter-value' : re.compile(
-        u'(?P<value>.+?)\u306f\u3001(?P<parameter>\w+)\u306e\u5024\u3068\u3057'
-        u'\u3066\u7121\u52b9\u3067\u3059\u3002\u5024\u3092\u5909\u66f4\u3057'
-        u'\u3066\u304b\u3089\u3001\u518d\u5ea6\u30ea\u30af\u30a8\u30b9\u30c8'
-        u'\u3092\u5b9f\u884c\u3057\u3066\u304f\u3060\u3055\u3044\u3002'),
-
-    'no-similarities' : re.compile(
-        'There are no similar items for this ASIN: (?P<ASIN>\w+).'),
-
-    'not-enough-parameters' : re.compile(
-        u'\u6b21\u306e\u30d1\u30e9\u30e1\u30fc\u30bf\u306e\u3046\u3061\u3001'
-        u'\u6700\u4f4e1\u500b\u304c\u30ea\u30af\u30a8\u30b9\u30c8\u306b\u542b'
-        u'\u307e\u308c\u3066\u3044\u308b\u5fc5\u8981\u304c\u3042\u308a\u307e'
-        u'\u3059\uff1a(?P<parameters>.+)$'),
-
-    'invalid-parameter-combination' : re.compile('^(?P<message>.*)$'),
-}
-
-
-class LxmlObjectifyResponseProcessor (object):
-
-    """
-    Response processor using ``lxml.objectify``. It uses a custom lookup
-    mechanism for XML elements to ensure that ItemIds (such as ASINs) are
-    always StringElements and evaluated as such.
-    """
-
-    # pylint: disable-msg=R0903
-
-    def __init__(self):
-
-        from lxml import etree, objectify
-
-        class SelectiveClassLookup(etree.CustomElementClassLookup):
-            """
-            Lookup mechanism for XML elements to ensure that ItemIds (like
-            ASINs) are always StringElements and evaluated as such.
-            Thanks to Brian Browning for pointing this out.
-            """
-            # pylint: disable-msg=W0613
-            def lookup(self, node_type, document, namespace, name):
-                if name in ('ItemId', 'ASIN'):
-                    return objectify.StringElement
-
-        parser = etree.XMLParser()
-        lookup = SelectiveClassLookup()
-        lookup.set_fallback(objectify.ObjectifyElementClassLookup())
-        parser.set_element_class_lookup(lookup)
-
-        # provide a parse method to avoid importing lxml.objectify
-        # every time this processor is called
-        self.parse = lambda fp: objectify.parse(fp, parser)
-
-    def __call__(self, fp):
-        """
-        Parses a file-like object containing the Amazon XML response.
-        """
-        tree = self.parse(fp)
-        root = tree.getroot()
-
-        #~ from lxml import etree
-        #~ print etree.tostring(tree, pretty_print=True)
-
-        nspace = root.nsmap.get(None, '')
-        errors = root.xpath('//aws:Error',
-                         namespaces={'aws' : nspace})
-        for error in errors:
-            code = error.Code.text
-            msg = error.Message.text
-            raise AWSError(code, msg)
-
-        return root
-
 
 class API (object):
 
@@ -302,7 +113,7 @@ class API (object):
         self.throttle = timedelta(seconds=1)/self.REQUESTS_PER_SECOND
         self.debug = 0 # set to 1 if you want to see HTTP headers
 
-        self.response_processor = processor or LxmlObjectifyResponseProcessor()
+        self.response_processor = processor or LxmlObjectifyProcessor()
 
     def _build_url(self, **qargs):
         """
@@ -478,6 +289,7 @@ class API (object):
             # otherwise re-raise exception
             raise # pragma: no cover
 
+    @paginate
     def item_search(self, search_index, **params):
         """
         The ``ItemSearch`` operation returns items that satisfy the search
@@ -525,6 +337,7 @@ class API (object):
             # otherwise re-raise exception
             raise # pragma: no cover
 
+    @paginate
     def similarity_lookup(self, *ids, **params):
         """
         The ``SimilarityLookup`` operation returns up to ten products per page
@@ -624,114 +437,3 @@ class API (object):
     #: MultiOperation is supported outside this API
     multi_operation = None
 
-
-class ResultPaginator (object):
-
-    """
-    Wrapper class for paginated results. This class will call the passed
-    function iteratively until either the specified limit is reached or all
-    result pages are fetched.
-
-    A small example fetching reviews for a book::
-
-        api = API(AWS_KEY, SECRET_KEY)
-        paginator = ResultPaginator('ReviewPage',
-            '//aws:Items/aws:Request/aws:ItemLookupRequest/aws:ReviewPage',
-            '//aws:Items/aws:Item/aws:CustomerReviews/aws:TotalReviewPages',
-            '//aws:Items/aws:Item/aws:CustomerReviews/aws:TotalReviews')
-
-        for root in paginator(api.item_lookup, id=isbn, IdType='ISBN',
-                             SearchIndex='Books', ResponseGroup='Reviews'):
-            ...
-
-    .. note: All three XPath expressions have to return integer values for the
-       pagination to work!
-    """
-
-    def __init__(self, counter, current_page, total_pages, total_results,
-                 limit=400, nspace=None):
-        """
-        :param counter: counter variable passed to AWS.
-        :param current_page: XPath expression locating current paginator page.
-        :param total_pages: XPath expression locating total number of pages.
-        :param total_results: XPath expression locating total number of results.
-        :param limit: limit fetched pages to this amount (restricted to a 
-        maximum of 400 pages by API itself).
-        :param nspace: used XML name space.
-        """
-        self.counter = counter
-        self.current_page_xpath = current_page
-        self.total_pages_xpath = total_pages
-        self.total_results_xpath = total_results
-
-        self.limit = limit
-        self.nspace = nspace
-
-    def __call__(self, fun, *args, **kwargs):
-        """
-        Iterate over all paginated results of ``fun``.
-        """
-        self.current_page = 0
-        self.total_pages = 1
-        self.total_results = 0
-
-        kwargs[self.counter] = kwargs.get(self.counter, 1)
-
-        while (self.current_page < self.total_pages
-        and (self.limit is None or self.current_page < self.limit)):
-
-            root = fun(*args, **kwargs)
-
-            if self.nspace is None:
-                self.nspace = root.nsmap.get(None, '')
-
-            self.current_page = self._get_current_page_numer(root)
-            self.total_pages = self._get_total_page_numer(root)
-            self.total_results = self._get_total_results(root)
-
-            yield root
-
-            kwargs[self.counter] += 1
-
-    def _get_total_page_numer(self, root):
-        """
-        Get total number of paginator pages.
-        """
-        try:
-            node = root.xpath(self.total_pages_xpath,
-                          namespaces={'aws' : self.nspace})[0]
-            return node.pyval
-        except AttributeError:
-            # node has no attribute pyval so it better be a number
-            return int(node)
-        except IndexError:
-            return 0
-
-    def _get_current_page_numer(self, root):
-        """
-        Get number of current paginator page. If it cannot be extracted, it is
-        probably the first.
-        """
-        try:
-            node = root.xpath(self.current_page_xpath,
-                          namespaces={'aws' : self.nspace})[0]
-            return node.pyval
-        except AttributeError:
-            # node has no attribute pyval so it better be a number
-            return int(node)
-        except IndexError:
-            return 1
-
-    def _get_total_results(self, root):
-        """
-        Get total number of results.
-        """
-        try:
-            node = root.xpath(self.total_results_xpath,
-                          namespaces={'aws' : self.nspace})[0]
-            return node.pyval
-        except AttributeError:
-            # node has no attribute pyval so it better be a number
-            return int(node)
-        except IndexError:
-            return 0
