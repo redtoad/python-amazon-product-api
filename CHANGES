@@ -3,10 +3,35 @@
 
 - Support for XSLT requests.
 - Support for Associate tags thanks to Kilian Valkhof.
-- New API versions 2010-09-01 and 2010-08-06 added.. 
+- New API versions 2010-12-01, 2010-11-01, 2010-10-01, 2010-09-01 and 2010-08-06
+  added. 
 - Fixed #16: Cannot install module under Python 2.4 without pycrypto being 
   installed first.
+- `tox`_ (and `hudson`_) are now used for testing all supported Python versions
+  (which includes Python 2.7 now, too).
+- Test server runs by default on random free port (was 8002) which means there
+  can be several ones running at once.
+- Fixed #18: Throttling no longer block CPU (Thanks to Benoit C).
+- Added response-caching API (in ``amazonproduct.contrib.caching``) to ease
+  development.
+- API explicitly warns about deprecated operations.
 
+.. important:: The following operations are deprecated since 15 July 2010 and
+   are now answered with a '410 Gone' (and a ``DeprecatedOperation`` exception):
+   
+   * CustomerContentLookup
+   * CustomerContentSearch
+   * Help
+   * ListLookup
+   * ListSearch
+   * TagLookup
+   * TransactionLookup
+   * VehiclePartLookup
+   * VehiclePartSearch
+   * VehicleSearch
+
+.. _tox: http://codespeak.net/tox/
+.. _hudson: http://rotekroete.de:8080/
 
 0.2.4.1 (2010-06-23)
 --------------------
