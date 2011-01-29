@@ -337,7 +337,6 @@ class API (object):
             # otherwise re-raise exception
             raise # pragma: no cover
 
-    @paginate
     def similarity_lookup(self, *ids, **params):
         """
         The ``SimilarityLookup`` operation returns up to ten products per page
