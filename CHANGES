@@ -13,7 +13,7 @@
   can be several ones running at once.
 - Fixed #18: Throttling no longer block CPU (Thanks to Benoit C).
 - Added response-caching API (in ``amazonproduct.contrib.caching``) to ease
-  development.
+  development (Thanks to Dmitry Chaplinsky for the idea).
 - API explicitly warns about deprecated operations.
 
 .. important:: The following operations are deprecated since 15 July 2010 and
