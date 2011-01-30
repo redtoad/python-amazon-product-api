@@ -93,6 +93,32 @@ class InvalidOperation (Exception):
     The specified feature (operation) is invalid.
     """
 
+class InvalidCartItem (Exception):
+    """
+    The item you specified, ???, is not eligible to be added to the cart. Check
+    the item's availability to make sure it is available.
+    """
+
+class ItemAlreadyInCart (Exception):
+    """
+    The item you specified, ???, is already in your cart.
+    """
+
+class CartInfoMismatch (Exception):
+    """
+    Your request contains an invalid AssociateTag, CartId and HMAC combination.
+    Please verify the AssociateTag, CartId, HMAC and retry.
+
+    Remember that all Cart operations must pass in the CartId and HMAC that were
+    returned to you during the CartCreate operation.
+    """
+
+class InvalidCartId (Exception):
+    """
+    Your request contains an invalid value for CartId. Please check your CartId
+    and retry your request.
+    """
+
 DEFAULT_ERROR_REGS = {
     'invalid-value' : re.compile(
         'The value you specified for (?P<parameter>\w+) is invalid.'),
@@ -109,8 +135,11 @@ DEFAULT_ERROR_REGS = {
         'parameters: (?P<parameters>[\w ,]+).'),
 
     'invalid-parameter-combination' : re.compile(
-         'Your request contained a restricted parameter combination.'
-         '\s*(?P<message>\w.*)$') # only the last bit is of interest here
+        'Your request contained a restricted parameter combination.'
+        '\s*(?P<message>\w.*)$'), # only the last bit is of interest here
+
+    'already-in-cart' : re.compile(
+        'The item you specified, (?P<item>.*?), is already in your cart.'),
 }
 
 JAPANESE_ERROR_REGS = {
@@ -134,5 +163,11 @@ JAPANESE_ERROR_REGS = {
         u'\u3059\uff1a(?P<parameters>.+)$'),
 
     'invalid-parameter-combination' : re.compile('^(?P<message>.*)$'),
+
+    'already-in-cart' : re.compile(
+        u'\u30ea\u30af\u30a8\u30b9\u30c8\u3067\u5546\u54c1\u3068\u3057\u3066'
+        u'\u6307\u5b9a\u3055\u308c\u305f(?P<item>.*?)\u306f\u3001\u3059\u3067'
+        u'\u306b\u30b7\u30e7\u30c3\u30d4\u30f3\u30b0\u30ab\u30fc\u30c8\u306e'
+        u'\u4e2d\u306b\u5165\u3063\u3066\u3044\u307e\u3059\u3002'),
 }
 

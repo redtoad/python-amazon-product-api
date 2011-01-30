@@ -15,7 +15,6 @@ except ImportError: # pragma: no cover
     from Crypto.Hash import SHA256 as sha256
 
 import hmac
-import re
 import socket
 from time import strftime, gmtime, sleep
 import urllib2
@@ -412,6 +411,271 @@ class API (object):
 
             if e.code == 'AWS.InvalidResponseGroup':
                 raise InvalidResponseGroup(params.get('ResponseGroup'))
+
+            # otherwise re-raise exception
+            raise # pragma: no cover
+
+    def _convert_cart_items(self, items, key='ASIN'):
+        """
+        Converts items into correct format for cart operations.
+        """
+        result = {}
+        # TODO ListItemId
+        if type(items) == dict:
+            for no, (item_id, quantity) in enumerate(items.items()):
+                result['Item.%i.%s' % (no+1, key)] = item_id
+                result['Item.%i.Quantity' % (no+1)] = quantity
+        return result
+
+    def cart_create(self, items, **params):
+        """
+        The ``CartCreate`` operation enables you to create a remote shopping
+        cart.  A shopping cart is the metaphor used by most e-commerce
+        solutions. It is a temporary data storage structure that resides on
+        Amazon servers.  The structure contains the items a customer wants to
+        buy. In Product Advertising API, the shopping cart is considered remote
+        because it is hosted by Amazon servers. In this way, the cart is remote
+        to the vendor's web site where the customer views and selects the items
+        they want to purchase.
+
+        Once you add an item to a cart by specifying the item's ListItemId and
+        ASIN, or OfferListing ID, the item is assigned a ``CartItemId`` and
+        accessible only by that value. That is, in subsequent requests, an item
+        in a cart cannot be accessed by its ``ListItemId`` and ``ASIN``, or
+        ``OfferListingId``. ``CartItemId`` is returned by ``CartCreate``,
+        ``CartGet``, and C``artAdd``.
+
+        Because the contents of a cart can change for different reasons, such
+        as item availability, you should not keep a copy of a cart locally.
+        Instead, use the other cart operations to modify the cart contents. For
+        example, to retrieve contents of the cart, which are represented by
+        CartItemIds, use ``CartGet``.
+
+        Available products are added as cart items. Unavailable items, for
+        example, items out of stock, discontinued, or future releases, are
+        added as SaveForLaterItems. No error is generated. The Amazon database
+        changes regularly. You may find a product with an offer listing ID but
+        by the time the item is added to the cart the product is no longer
+        available. The checkout page in the Order Pipeline clearly lists items
+        that are available and those that are SaveForLaterItems.
+
+        It is impossible to create an empty shopping cart. You have to add at
+        least one item to a shopping cart using a single ``CartCreate``
+        request.  You can add specific quantities (up to 999) of each item.
+
+        ``CartCreate`` can be used only once in the life cycle of a cart. To
+        modify the contents of the cart, use one of the other cart operations.
+
+        Carts cannot be deleted. They expire automatically after being unused
+        for 7 days. The lifespan of a cart restarts, however, every time a cart
+        is modified. In this way, a cart can last for more than 7 days. If, for
+        example, on day 6, the customer modifies a cart, the 7 day countdown
+        starts over.
+        """
+        try:
+            params.update(self._convert_cart_items(items))
+            return self.call(Operation='CartCreate', **params)
+        except AWSError, e:
+
+            if e.code == 'AWS.MissingParameters':
+                raise ValueError(e.msg)
+
+            if e.code == 'AWS.ParameterOutOfRange':
+                raise ValueError(e.msg)
+
+            if e.code == 'AWS.ECommerceService.ItemNotEligibleForCart':
+                raise InvalidCartItem(e.msg)
+
+            # otherwise re-raise exception
+            raise # pragma: no cover
+
+    def cart_add(self, cart_id, hmac, items, **params):
+        """
+        The ``CartAdd`` operation enables you to add items to an existing
+        remote shopping cart. ``CartAdd`` can only be used to place a new item
+        in a shopping cart. It cannot be used to increase the quantity of an
+        item already in the cart. If you would like to increase the quantity of
+        an item that is already in the cart, you must use the ``CartModify``
+        operation.
+
+        You add an item to a cart by specifying the item's ``OfferListingId``,
+        or ``ASIN`` and ``ListItemId``. Once in a cart, an item can only be
+        identified by its ``CartItemId``. That is, an item in a cart cannot be
+        accessed by its ASIN or OfferListingId. CartItemId is returned by
+        ``CartCreate``, ``CartGet``, and ``CartAdd``.
+
+        To add items to a cart, you must specify the cart using the ``CartId``
+        and ``HMAC`` values, which are returned by the ``CartCreate``
+        operation.
+
+        If the associated CartCreate request specified an AssociateTag, all
+        ``CartAdd`` requests must also include a value for Associate Tag
+        otherwise the request will fail.
+
+        .. note:: Some manufacturers have a minimum advertised price (MAP) that
+        can be displayed on Amazon's retail web site. In these cases, when
+        performing a Cart operation, the MAP Is returned instead of the actual
+        price. The only way to see the actual price is to add the item to a
+        remote shopping cart and follow the PurchaseURL. The actual price will
+        be the MAP or lower.
+        """
+        try:
+            params.update({
+                'CartId' : cart_id,
+                'HMAC' : hmac,
+            })
+            params.update(self._convert_cart_items(items))
+            return self.call(Operation='CartAdd', **params)
+        except AWSError, e:
+
+            if e.code == 'AWS.ECommerceService.InvalidCartId':
+                raise InvalidCartId
+
+            if e.code == 'AWS.ECommerceService.CartInfoMismatch':
+                raise CartInfoMismatch
+
+            if e.code == 'AWS.MissingParameters':
+                raise ValueError(e.msg)
+
+            if e.code == 'AWS.ParameterOutOfRange':
+                raise ValueError(e.msg)
+
+            if e.code == 'AWS.ECommerceService.ItemNotEligibleForCart':
+                raise InvalidCartItem(e.msg)
+
+            if e.code == 'AWS.ECommerceService.ItemAlreadyInCart':
+                if self.locale == 'jp': print e.msg
+                item = self._reg('already-in-cart').search(e.msg).group('item')
+                raise ItemAlreadyInCart(item)
+
+            # otherwise re-raise exception
+            raise # pragma: no cover
+
+    def cart_modify(self, cart_id, hmac, items, **params):
+        """
+        The ``CartModify`` operation enables you to change the quantity of
+        items that are already in a remote shopping cart and move items from
+        the active area of a cart to the SaveForLater area or the reverse.
+
+        To modify the number of items in a cart, you must specify the cart
+        using the CartId and HMAC values that are returned in the CartCreate
+        operation. A value similar to HMAC, URLEncodedHMAC, is also returned.
+        This value is the URL encoded version of the HMAC. This encoding is
+        necessary because some characters, such as + and /, cannot be included
+        in a URL. Rather than encoding the HMAC yourself, use the
+        URLEncodedHMAC value for the HMAC parameter.
+
+        You can use ``CartModify`` to modify the number of items in a remote
+        shopping cart by setting the value of the Quantity parameter
+        appropriately. You can eliminate an item from a cart by setting the
+        value of the Quantity parameter to zero. Or, you can double the number
+        of a particular item in the cart by doubling its Quantity . You cannot,
+        however, use ``CartModify`` to add new items to a cart.
+
+        If the associated CartCreate request specified an AssociateTag, all
+        ``CartModify`` requests must also include a value for Associate Tag
+        otherwise the request will fail.
+        """
+        # TODO Action=SaveForLater
+        try:
+            params.update({
+                'CartId' : cart_id,
+                'HMAC' : hmac,
+            })
+            params.update(self._convert_cart_items(items, key='CartItemId'))
+            return self.call(Operation='CartModify', **params)
+        except AWSError, e:
+
+            if e.code == 'AWS.ECommerceService.CartInfoMismatch':
+                raise CartInfoMismatch
+
+            if e.code == 'AWS.MissingParameters':
+                raise ValueError(e.msg)
+
+            if e.code == 'AWS.ParameterOutOfRange':
+                raise ValueError(e.msg)
+
+            if e.code == 'AWS.ECommerceService.ItemNotEligibleForCart':
+                raise InvalidCartItem(e.msg)
+
+            # otherwise re-raise exception
+            raise # pragma: no cover
+
+    def cart_get(self, cart_id, hmac, **params):
+        """
+        The ``CartGet`` operation enables you to retrieve the IDs, quantities,
+        and prices of all of the items, including SavedForLater items in a
+        remote shopping cart.
+
+        Because the contents of a cart can change for different reasons, such
+        as availability, you should not keep a copy of a cart locally. Instead,
+        use ``CartGet`` to retrieve the items in a remote shopping cart.
+
+        To retrieve the items in a cart, you must specify the cart using the
+        ``CartId`` and ``HMAC`` values, which are returned in the
+        ``CartCreate`` operation.  A value similar to HMAC, ``URLEncodedHMAC``,
+        is also returned. This value is the URL encoded version of the
+        ``HMAC``. This encoding is necessary because some characters, such as
+        ``+`` and ``/``, cannot be included in a URL.  Rather than encoding the
+        ``HMAC`` yourself, use the ``URLEncodedHMAC`` value for the HMAC
+        parameter.
+
+        ``CartGet`` does not work after the customer has used the
+        ``PurchaseURL`` to either purchase the items or merge them with the
+        items in their Amazon cart.
+
+        If the associated ``CartCreate`` request specified an ``AssociateTag``,
+        all ``CartGet`` requests must also include a value for ``AssociateTag``
+        otherwise the request will fail.
+        """
+        try:
+            params.update({
+                'CartId' : cart_id,
+                'HMAC' : hmac,
+            })
+            return self.call(Operation='CartGet', **params)
+        except AWSError, e:
+
+            if e.code == 'AWS.ECommerceService.CartInfoMismatch':
+                raise CartInfoMismatch
+
+            # otherwise re-raise exception
+            raise # pragma: no cover
+
+    def cart_clear(self, cart_id, hmac, **params):
+        """
+        The ``CartClear`` operation enables you to remove all of the items in a
+        remote shopping cart, including SavedForLater items. To remove only
+        some of the items in a cart or to reduce the quantity of one or more
+        items, use ``CartModify``.
+
+        To delete all of the items from a remote shopping cart, you must
+        specify the cart using the ``CartId`` and ``HMAC`` values, which are
+        returned by the ``CartCreate`` operation. A value similar to the
+        ``HMAC``, ``URLEncodedHMAC``, is also returned. This value is the URL
+        encoded version of the ``HMAC``. This encoding is necessary because
+        some characters, such as ``+`` and ``/``, cannot be included in a URL.
+        Rather than encoding the ``HMAC`` yourself, use the U``RLEncodedHMAC``
+        value for the HMAC parameter.
+
+        ``CartClear`` does not work after the customer has used the
+        ``PurchaseURL`` to either purchase the items or merge them with the
+        items in their Amazon cart.
+
+        Carts exist even though they have been emptied. The lifespan of a cart
+        is 7 days since the last time it was acted upon. For example, if a cart
+        created 6 days ago is modified, the cart lifespan is reset to 7 days.
+        """
+        try:
+            params.update({
+                'CartId' : cart_id,
+                'HMAC' : hmac,
+            })
+            return self.call(Operation='CartClear', **params)
+        except AWSError, e:
+
+            if e.code == 'AWS.ECommerceService.CartInfoMismatch':
+                raise CartInfoMismatch
 
             # otherwise re-raise exception
             raise # pragma: no cover

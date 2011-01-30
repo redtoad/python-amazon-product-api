@@ -14,7 +14,8 @@ except ImportError:
     from cgi import parse_qs
 
 # import base first because sys.path is changed in order to find amazonproduct!
-from base import TESTABLE_API_VERSIONS, XML_TEST_DIR, convert_camel_case
+from base import TESTABLE_API_VERSIONS, XML_TEST_DIR
+from utils import convert_camel_case
 
 from amazonproduct import API
 from amazonproduct import UnknownLocale, TooManyRequests

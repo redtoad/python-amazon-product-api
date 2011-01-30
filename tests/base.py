@@ -200,11 +200,3 @@ class XMLResponseTestLoader (nose.loader.TestLoader):
                     testCase.current_api_version = api_version
                     tests += [testCase]
         return self.suiteClass(tests)
-        
-
-
-def convert_camel_case(operation):
-    """
-    Converts ``CamelCaseOperationName`` into ``python_style_method_name``.
-    """
-    return re.sub('([a-z])([A-Z])', r'\1_\2', operation).lower()

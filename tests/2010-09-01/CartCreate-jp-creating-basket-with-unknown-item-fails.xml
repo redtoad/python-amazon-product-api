@@ -1,0 +1,38 @@
+<CartCreateResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2010-09-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.5a2 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+    </HTTPHeaders>
+    <RequestId>0TGJRX5S07C42JBGPE56</RequestId>
+    <Arguments>
+      <Argument Name="Timestamp" Value="2011-01-30T17:01:03Z"/>
+      <Argument Name="Version" Value="2010-09-01"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Item.1.Quantity" Value="1"/>
+      <Argument Name="Operation" Value="CartCreate"/>
+      <Argument Name="Item.1.ASIN" Value="021554"/>
+    </Arguments>
+    <RequestProcessingTime>0.0200319290161133</RequestProcessingTime>
+  </OperationRequest>
+  <Cart>
+    <Request>
+      <IsValid>True</IsValid>
+      <CartCreateRequest>
+        <Items>
+          <Item>
+            <ASIN>021554</ASIN>
+            <Quantity>1</Quantity>
+          </Item>
+        </Items>
+      </CartCreateRequest>
+      <Errors>
+        <Error>
+          <Code>AWS.ECommerceService.ItemNotEligibleForCart</Code>
+          <Message>&#12522;&#12463;&#12456;&#12473;&#12488;&#12391;&#21830;&#21697;&#12392;&#12375;&#12390;&#25351;&#23450;&#12373;&#12428;&#12383;&#12399;&#12289;&#12459;&#12540;&#12488;&#12395;&#36861;&#21152;&#12377;&#12427;&#21830;&#21697;&#12392;&#12375;&#12390;&#12289;&#36969;&#26684;&#12391;&#12399;&#12354;&#12426;&#12414;&#12379;&#12435;&#12290;&#21830;&#21697;&#12398;&#22312;&#24235;&#12364;&#12354;&#12427;&#12363;&#12393;&#12358;&#12363;&#30906;&#12363;&#12417;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290;</Message>
+        </Error>
+      </Errors>
+    </Request>
+  </Cart>
+</CartCreateResponse>
