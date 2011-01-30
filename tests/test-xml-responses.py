@@ -1,7 +1,7 @@
 
 # import base first because sys.path is changed in order to find amazonproduct!
 from base import XMLResponseTestCase, XMLResponseTestLoader
-from base import XML_TEST_DIR, TESTABLE_API_VERSIONS, convert_camel_case
+from base import XML_TEST_DIR, TESTABLE_API_VERSIONS
 
 from amazonproduct.api import API
 from amazonproduct.errors import *
@@ -11,6 +11,7 @@ from lxml import objectify
 import os, os.path
 import unittest
 
+from utils import convert_camel_case, Cart
 
 class CorrectVersionTestCase (XMLResponseTestCase):
 
@@ -279,6 +280,190 @@ class BrowseNodeLookupTestCase (XMLResponseTestCase):
         self.assertEquals(children, self.CHILDREN[self.current_locale])
         self.assertEquals(ancestors, self.ANCESTORS[self.current_locale])
         
+
+
+class CartCreateTestCase (XMLResponseTestCase):
+
+    """
+    Check that all XML responses for CartCreate are parsed correctly.
+    """
+
+    def test_creating_basket_with_empty_items_fails(self):
+        self.assertRaises(ValueError, self.api.cart_create, {})
+        self.assertRaises(ValueError, self.api.cart_create, {'0451462009' : 0})
+
+    def test_creating_basket_with_negative_item_quantity_fails(self):
+        self.assertRaises(ValueError, self.api.cart_create, {'0201896834' : -1})
+
+    def test_creating_basket_with_quantity_too_high_fails(self):
+        self.assertRaises(ValueError, self.api.cart_create, {'0201896834' : 1000})
+
+    def test_creating_basket_with_unknown_item_fails(self):
+        self.assertRaises(InvalidCartItem, self.api.cart_create, {'021554' : 1})
+
+    def test_create_cart(self):
+        root = self.api.cart_create({
+            '0201896834' : 1, # The Art of Computer Programming Vol. 1
+            '0201896842' : 1, # The Art of Computer Programming Vol. 2
+       })
+        cart = Cart.from_xml(root.Cart)
+        assert len(cart.items) == 2
+        assert cart['0201896834'].quantity == 1
+        assert cart['0201896842'].quantity == 1
+
+class CartAddTestCase (XMLResponseTestCase):
+
+    """
+    Check that all XML responses for CartAdd are parsed correctly.
+    """
+
+    def setUp(self):
+        XMLResponseTestCase.setUp(self)
+        items = {
+            '0201896834' : 1, # The Art of Computer Programming Vol. 1
+            '0201896842' : 1, # The Art of Computer Programming Vol. 2
+        }
+        cart = self.api.cart_create(items).Cart
+        self.cart_id = cart.CartId
+        self.hmac = cart.HMAC
+
+    def test_adding_with_wrong_cartid_hmac_fails(self):
+        self.assertRaises(CartInfoMismatch, self.api.cart_add, '???', self.hmac, {'0201896834' : 1})
+        self.assertRaises(CartInfoMismatch, self.api.cart_add, self.cart_id, '???', {'0201896834' : 1})
+
+    def test_adding_empty_items_fails(self):
+        self.assertRaises(ValueError, self.api.cart_add, self.cart_id, self.hmac, {})
+        self.assertRaises(ValueError, self.api.cart_add, self.cart_id, self.hmac, {'0451462009' : 0})
+
+    def test_adding_negative_item_quantity_fails(self):
+        self.assertRaises(ValueError, self.api.cart_add, self.cart_id, self.hmac, {'0201896834' : -1})
+
+    def test_adding_item_quantity_too_high_fails(self):
+        self.assertRaises(ValueError, self.api.cart_add, self.cart_id, self.hmac, {'0201896834' : 1000})
+
+    def test_adding_unknown_item_fails(self):
+        self.assertRaises(InvalidCartItem, self.api.cart_add, self.cart_id, self.hmac, {'021554' : 1})
+
+    def test_adding_item_already_in_cart_fails(self):
+        self.assertRaises(ItemAlreadyInCart, self.api.cart_add, self.cart_id, 
+                          self.hmac, {'0201896842' : 2})
+
+    def test_adding_item(self):
+        root = self.api.cart_add(self.cart_id, self.hmac, {
+            '0201896850' : 1, # The Art of Computer Programming Vol. 3
+        })
+        cart = Cart.from_xml(root.Cart)
+        item = cart['0201896850']
+        self.assertEquals(item.quantity, 1)
+        self.assertEquals(item.asin, '0201896850')
+
+
+class CartModifyTestCase (XMLResponseTestCase):
+
+    """
+    Check that all XML responses for CartModify are parsed correctly.
+    """
+
+    def setUp(self):
+        XMLResponseTestCase.setUp(self)
+        items = {
+            '0201896834' : 1, # The Art of Computer Programming Vol. 1
+        }
+        cart = self.api.cart_create(items).Cart
+        self.cart_id = cart.CartId
+        self.hmac = cart.HMAC
+
+    def tearDown(self):
+        self.api.cart_clear(self.cart_id, self.hmac)
+
+    def test_modifying_with_wrong_cartid_hmac_fails(self):
+        self.assertRaises(CartInfoMismatch, self.api.cart_modify, '???', self.hmac, {'0201896834' : 1})
+        self.assertRaises(CartInfoMismatch, self.api.cart_modify, self.cart_id, '???', {'0201896834' : 1})
+
+    def test_modifying_empty_items_fails(self):
+        self.assertRaises(ValueError, self.api.cart_modify, self.cart_id, self.hmac, {})
+
+    def test_modifying_negative_item_quantity_fails(self):
+        self.assertRaises(ValueError, self.api.cart_modify, self.cart_id, self.hmac, {'0201896834' : -1})
+
+    def test_modifying_item_quantity_too_high_fails(self):
+        self.assertRaises(ValueError, self.api.cart_modify, self.cart_id, self.hmac, {'0201896834' : 1000})
+
+    def test_modfying_item(self):
+        root = self.api.cart_modify(self.cart_id, self.hmac, {
+            '0201896834' : 0, # The Art of Computer Programming Vol. 1
+            '0201896842' : 1, # The Art of Computer Programming Vol. 2
+        })
+        cart = Cart.from_xml(root.Cart)
+        from lxml import etree
+        print etree.tostring(root.Cart, pretty_print=True)
+        self.assertEquals(len(cart.items), 1)
+        item = cart['0201896842']
+        self.assertEquals(item.quantity, 1)
+        self.assertEquals(item.asin, '0201896842')
+
+
+class CartGetTestCase (XMLResponseTestCase):
+
+    """
+    Check that all XML responses for CartGet are parsed correctly.
+    """
+
+    def setUp(self):
+        XMLResponseTestCase.setUp(self)
+        items = {
+            '0201896834' : 1, # The Art of Computer Programming Vol. 1
+        }
+        cart = self.api.cart_create(items).Cart
+        self.cart_id = cart.CartId
+        self.hmac = cart.HMAC
+
+    def tearDown(self):
+        try:
+            self.api.cart_clear(self.cart_id, self.hmac)
+        except:
+            pass
+
+    def test_getting_with_wrong_cartid_hmac_fails(self):
+        self.assertRaises(CartInfoMismatch, self.api.cart_get, '???', self.hmac)
+        self.assertRaises(CartInfoMismatch, self.api.cart_get, self.cart_id, '???')
+
+    def test_getting_cart(self):
+        root = self.api.cart_get(self.cart_id, self.hmac)
+        cart = Cart.from_xml(root.Cart)
+        self.assertEquals(len(cart.items), 1)
+
+
+class CartClearTestCase (XMLResponseTestCase):
+
+    """
+    Check that all XML responses for CartClear are parsed correctly.
+    """
+
+    def setUp(self):
+        XMLResponseTestCase.setUp(self)
+        items = {
+            '0201896834' : 1, # The Art of Computer Programming Vol. 1
+        }
+        cart = self.api.cart_create(items).Cart
+        self.cart_id = cart.CartId
+        self.hmac = cart.HMAC
+
+    def tearDown(self):
+        try:
+            self.api.cart_clear(self.cart_id, self.hmac)
+        except:
+            pass
+
+    def test_clearing_with_wrong_cartid_hmac_fails(self):
+        self.assertRaises(CartInfoMismatch, self.api.cart_clear, '???', self.hmac)
+        self.assertRaises(CartInfoMismatch, self.api.cart_clear, self.cart_id, '???')
+
+    def test_clearing_cart(self):
+        root = self.api.cart_clear(self.cart_id, self.hmac)
+        cart = Cart.from_xml(root.Cart)
+        self.assertEquals(len(cart.items), 0)
+
 
 class XMLParsingTestCase (unittest.TestCase):
     

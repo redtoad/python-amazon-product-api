@@ -1,0 +1,78 @@
+<CartModifyResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2010-12-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.5a2 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+    </HTTPHeaders>
+    <RequestId>12ZGN1DWS35DM1X5GXDX</RequestId>
+    <Arguments>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Item.1.Quantity" Value="1"/>
+      <Argument Name="Item.1.CartItemId" Value="0201896842"/>
+      <Argument Name="Item.2.Quantity" Value="0"/>
+      <Argument Name="HMAC" Value="JI+VdlkDv9drCdZB1tkS168zH2A="/>
+      <Argument Name="Operation" Value="CartModify"/>
+      <Argument Name="Item.2.CartItemId" Value="0201896834"/>
+      <Argument Name="CartId" Value="183-2868719-5774412"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2011-01-30T17:21:42Z"/>
+      <Argument Name="Version" Value="2010-12-01"/>
+    </Arguments>
+    <RequestProcessingTime>0.0431029796600342</RequestProcessingTime>
+  </OperationRequest>
+  <Cart>
+    <Request>
+      <IsValid>True</IsValid>
+      <CartModifyRequest>
+        <CartId>183-2868719-5774412</CartId>
+        <HMAC>JI+VdlkDv9drCdZB1tkS168zH2A=</HMAC>
+        <Items>
+          <Item>
+            <CartItemId>0201896842</CartItemId>
+            <Quantity>1</Quantity>
+          </Item>
+          <Item>
+            <CartItemId>0201896834</CartItemId>
+            <Quantity>0</Quantity>
+          </Item>
+        </Items>
+      </CartModifyRequest>
+    </Request>
+    <CartId>183-2868719-5774412</CartId>
+    <HMAC>JI+VdlkDv9drCdZB1tkS168zH2A=</HMAC>
+    <URLEncodedHMAC>JI%2BVdlkDv9drCdZB1tkS168zH2A%3D</URLEncodedHMAC>
+    <PurchaseURL>https://www.amazon.com/gp/cart/aws-merge.html?cart-id=183-2868719-5774412%26associate-id=ws%26hmac=JI%2BVdlkDv9drCdZB1tkS168zH2A=%26SubscriptionId=XXXXXXXXXXXXXXX%26MergeCart=False</PurchaseURL>
+    <SubTotal>
+      <Amount>5349</Amount>
+      <CurrencyCode>USD</CurrencyCode>
+      <FormattedPrice>$53.49</FormattedPrice>
+    </SubTotal>
+    <CartItems>
+      <SubTotal>
+        <Amount>5349</Amount>
+        <CurrencyCode>USD</CurrencyCode>
+        <FormattedPrice>$53.49</FormattedPrice>
+      </SubTotal>
+      <CartItem>
+        <CartItemId>U1R5P2OIZBR21I</CartItemId>
+        <ASIN>0201896834</ASIN>
+        <MerchantId>ATVPDKIKX0DER</MerchantId>
+        <SellerId>A2R2RITDJNW1Q6</SellerId>
+        <SellerNickname>Amazon.com</SellerNickname>
+        <Quantity>1</Quantity>
+        <Title>Art of Computer Programming, Volume 1: Fundamental Algorithms (3rd Edition)</Title>
+        <ProductGroup>Book</ProductGroup>
+        <Price>
+          <Amount>5349</Amount>
+          <CurrencyCode>USD</CurrencyCode>
+          <FormattedPrice>$53.49</FormattedPrice>
+        </Price>
+        <ItemTotal>
+          <Amount>5349</Amount>
+          <CurrencyCode>USD</CurrencyCode>
+          <FormattedPrice>$53.49</FormattedPrice>
+        </ItemTotal>
+      </CartItem>
+    </CartItems>
+  </Cart>
+</CartModifyResponse>

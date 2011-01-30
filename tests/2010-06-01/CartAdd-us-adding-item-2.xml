@@ -1,0 +1,112 @@
+<CartAddResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2010-06-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.5a2 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+    </HTTPHeaders>
+    <RequestId>14CA26XARX6BY2Q47W6G</RequestId>
+    <Arguments>
+      <Argument Name="Item.1.ASIN" Value="0201896850"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Item.1.Quantity" Value="1"/>
+      <Argument Name="HMAC" Value="+1yFkogOUYu2NJmF5tKn0CTG9q4="/>
+      <Argument Name="Operation" Value="CartAdd"/>
+      <Argument Name="CartId" Value="177-3918786-1672236"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Version" Value="2010-06-01"/>
+      <Argument Name="Timestamp" Value="2011-01-30T16:53:57Z"/>
+    </Arguments>
+    <RequestProcessingTime>0.11664605140686</RequestProcessingTime>
+  </OperationRequest>
+  <Cart>
+    <Request>
+      <IsValid>True</IsValid>
+      <CartAddRequest>
+        <CartId>177-3918786-1672236</CartId>
+        <HMAC>+1yFkogOUYu2NJmF5tKn0CTG9q4=</HMAC>
+        <Items>
+          <Item>
+            <ASIN>0201896850</ASIN>
+            <Quantity>1</Quantity>
+          </Item>
+        </Items>
+      </CartAddRequest>
+    </Request>
+    <CartId>177-3918786-1672236</CartId>
+    <HMAC>+1yFkogOUYu2NJmF5tKn0CTG9q4=</HMAC>
+    <URLEncodedHMAC>%2B1yFkogOUYu2NJmF5tKn0CTG9q4%3D</URLEncodedHMAC>
+    <PurchaseURL>https://www.amazon.com/gp/cart/aws-merge.html?cart-id=177-3918786-1672236%26associate-id=ws%26hmac=%2B1yFkogOUYu2NJmF5tKn0CTG9q4=%26SubscriptionId=XXXXXXXXXXXXXXX%26MergeCart=False</PurchaseURL>
+    <SubTotal>
+      <Amount>16085</Amount>
+      <CurrencyCode>USD</CurrencyCode>
+      <FormattedPrice>$160.85</FormattedPrice>
+    </SubTotal>
+    <CartItems>
+      <SubTotal>
+        <Amount>16085</Amount>
+        <CurrencyCode>USD</CurrencyCode>
+        <FormattedPrice>$160.85</FormattedPrice>
+      </SubTotal>
+      <CartItem>
+        <CartItemId>U1QE6QG6W4SHTX</CartItemId>
+        <ASIN>0201896850</ASIN>
+        <MerchantId>ATVPDKIKX0DER</MerchantId>
+        <SellerId>A2R2RITDJNW1Q6</SellerId>
+        <SellerNickname>Amazon.com</SellerNickname>
+        <Quantity>1</Quantity>
+        <Title>Art of Computer Programming, Volume 3: Sorting and Searching (2nd Edition)</Title>
+        <ProductGroup>Book</ProductGroup>
+        <Price>
+          <Amount>5368</Amount>
+          <CurrencyCode>USD</CurrencyCode>
+          <FormattedPrice>$53.68</FormattedPrice>
+        </Price>
+        <ItemTotal>
+          <Amount>5368</Amount>
+          <CurrencyCode>USD</CurrencyCode>
+          <FormattedPrice>$53.68</FormattedPrice>
+        </ItemTotal>
+      </CartItem>
+      <CartItem>
+        <CartItemId>U24FI3NHT8Y1PC</CartItemId>
+        <ASIN>0201896842</ASIN>
+        <MerchantId>ATVPDKIKX0DER</MerchantId>
+        <SellerId>A2R2RITDJNW1Q6</SellerId>
+        <SellerNickname>Amazon.com</SellerNickname>
+        <Quantity>1</Quantity>
+        <Title>Art of Computer Programming, Volume 2: Seminumerical Algorithms (3rd Edition)</Title>
+        <ProductGroup>Book</ProductGroup>
+        <Price>
+          <Amount>5368</Amount>
+          <CurrencyCode>USD</CurrencyCode>
+          <FormattedPrice>$53.68</FormattedPrice>
+        </Price>
+        <ItemTotal>
+          <Amount>5368</Amount>
+          <CurrencyCode>USD</CurrencyCode>
+          <FormattedPrice>$53.68</FormattedPrice>
+        </ItemTotal>
+      </CartItem>
+      <CartItem>
+        <CartItemId>U1R5P2OIZBR21I</CartItemId>
+        <ASIN>0201896834</ASIN>
+        <MerchantId>ATVPDKIKX0DER</MerchantId>
+        <SellerId>A2R2RITDJNW1Q6</SellerId>
+        <SellerNickname>Amazon.com</SellerNickname>
+        <Quantity>1</Quantity>
+        <Title>Art of Computer Programming, Volume 1: Fundamental Algorithms (3rd Edition)</Title>
+        <ProductGroup>Book</ProductGroup>
+        <Price>
+          <Amount>5349</Amount>
+          <CurrencyCode>USD</CurrencyCode>
+          <FormattedPrice>$53.49</FormattedPrice>
+        </Price>
+        <ItemTotal>
+          <Amount>5349</Amount>
+          <CurrencyCode>USD</CurrencyCode>
+          <FormattedPrice>$53.49</FormattedPrice>
+        </ItemTotal>
+      </CartItem>
+    </CartItems>
+  </Cart>
+</CartAddResponse>

@@ -1,0 +1,34 @@
+<CartAddResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2009-10-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.5a2 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+    </HTTPHeaders>
+    <RequestId>1GGZKVKRYWP9Q9ZN9VTD</RequestId>
+    <Arguments>
+      <Argument Name="Version" Value="2009-10-01"/>
+      <Argument Name="Timestamp" Value="2011-01-30T16:52:53Z"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="CartId" Value="375-5805625-1269260"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Operation" Value="CartAdd"/>
+      <Argument Name="HMAC" Value="OesFdQlmN1+i2gq6AMRmyin8MYg="/>
+    </Arguments>
+    <RequestProcessingTime>0.0038449764251709</RequestProcessingTime>
+  </OperationRequest>
+  <Cart>
+    <Request>
+      <IsValid>False</IsValid>
+      <CartAddRequest>
+        <CartId>375-5805625-1269260</CartId>
+        <HMAC>OesFdQlmN1+i2gq6AMRmyin8MYg=</HMAC>
+      </CartAddRequest>
+      <Errors>
+        <Error>
+          <Code>AWS.MissingParameters</Code>
+          <Message>&#12522;&#12463;&#12456;&#12473;&#12488;&#12395;&#12399;&#12289;&#24517;&#35201;&#12394;&#12497;&#12521;&#12513;&#12540;&#12479;&#12364;&#21547;&#12414;&#12428;&#12390;&#12356;&#12414;&#12379;&#12435;&#12290;&#24517;&#35201;&#12394;&#12497;&#12521;&#12513;&#12540;&#12479;&#12395;&#12399;&#12289;Items&#12394;&#12393;&#12364;&#12354;&#12426;&#12414;&#12377;&#12290;</Message>
+        </Error>
+      </Errors>
+    </Request>
+  </Cart>
+</CartAddResponse>

@@ -1,0 +1,34 @@
+<CartClearResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2009-10-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.5a2 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+    </HTTPHeaders>
+    <RequestId>1G84HPE0FJMYPX44CXC5</RequestId>
+    <Arguments>
+      <Argument Name="Version" Value="2009-10-01"/>
+      <Argument Name="Timestamp" Value="2011-01-30T16:58:39Z"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="CartId" Value="???"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Operation" Value="CartClear"/>
+      <Argument Name="HMAC" Value="o+1QlWoysGWtDcoxrWPfxyzZAaA="/>
+    </Arguments>
+    <RequestProcessingTime>0.0156478881835938</RequestProcessingTime>
+  </OperationRequest>
+  <Cart>
+    <Request>
+      <IsValid>True</IsValid>
+      <CartClearRequest>
+        <CartId>???</CartId>
+        <HMAC>o+1QlWoysGWtDcoxrWPfxyzZAaA=</HMAC>
+      </CartClearRequest>
+      <Errors>
+        <Error>
+          <Code>AWS.ECommerceService.CartInfoMismatch</Code>
+          <Message>&#12522;&#12463;&#12456;&#12473;&#12488;&#12395;&#25351;&#23450;&#12373;&#12428;&#12383;AssociateTag&#12289;CartId&#12289;&#12362;&#12424;&#12403;HMAC&#12398;&#32068;&#12415;&#21512;&#12431;&#12379;&#12364;&#19981;&#27491;&#12391;&#12377;&#12290;AssociateTag&#12289;CartId&#12289;&#12362;&#12424;&#12403;HMAC&#12398;&#20516;&#12434;&#30906;&#35469;&#12375;&#12390;&#20877;&#24230;&#23455;&#34892;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290;&#12394;&#12362;&#12289;&#12471;&#12519;&#12483;&#12500;&#12531;&#12464;&#12459;&#12540;&#12488;&#12434;&#25805;&#20316;&#12377;&#12427;&#12289;CartCreate&#20197;&#22806;&#12398;&#12377;&#12409;&#12390;&#12398;&#12458;&#12506;&#12524;&#12540;&#12471;&#12519;&#12531;&#12391;&#12289;CartCreate&#12458;&#12506;&#12524;&#12540;&#12471;&#12519;&#12531;&#12391;&#36820;&#12373;&#12428;&#12427;CartId&#12392;HMAC&#12364;&#24517;&#35201;&#12395;&#12394;&#12427;&#12398;&#12391;&#27880;&#24847;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290;</Message>
+        </Error>
+      </Errors>
+    </Request>
+  </Cart>
+</CartClearResponse>
