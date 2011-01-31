@@ -1,6 +1,6 @@
 import os
 import tempfile
-import xml.dom.minidom
+from lxml import etree
 
 try: # make it python2.4 compatible!
     from hashlib import md5
@@ -46,10 +46,7 @@ class ResponseCachingAPI (API):
 
         if self.cache:
             fp = open(path, 'w+')
-            node = xml.dom.minidom.parseString(resp.read())
-            fp.write(node.toprettyxml())
-            #from lxml import etree
-            #fp.write(etree.tostring(etree.parse(resp), pretty_print=True))
+            fp.write(etree.tostring(etree.parse(resp), pretty_print=True))
             fp.seek(0)
             return fp
 
