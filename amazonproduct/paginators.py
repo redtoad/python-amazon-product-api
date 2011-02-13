@@ -11,9 +11,9 @@ class BaseResultPaginator (object):
     for a book::
 
         api = API(AWS_KEY, SECRET_KEY)
-        class ReviewPaginator (BasePaginator):
-            # specify attributes counter and limit, as well as and methods 
-            # get_current_page, get_total_pages and get_total_results
+        class ReviewPaginator (BaseResultPaginator):
+            # specify attributes counter and limit, as well as and method
+            # extract_data
             # ...
 
         paginator = ReviewPaginator()
@@ -23,54 +23,41 @@ class BaseResultPaginator (object):
 
     """
 
-    def __init__(self, counter, limit=400):
+    def __init__(self, fun, args, kwargs, counter, limit=400):
         """
         :param counter: counter variable passed to AWS.
         :param limit: limit fetched pages to this amount (restricted to a 
         maximum of 400 pages by API itself).
         """
+        self.fun = fun
+        self.args, self.kwargs = args, kwargs
         self.counter = counter
         self.limit = limit
 
-    def __call__(self, fun, *args, **kwargs):
+        # fetch first page to get pagination parameters
+        self._first_page = self.page(1)
+
+    def __iter__(self):
         """
         Iterate over all paginated results of ``fun``.
         """
-        current_page = 0
-        total_pages = 1
-        total_results = 0
+        # return cached first page
+        yield self._first_page
+        while self.current < self.pages and self.current < self.limit:
+            yield self.page(self.current + 1) 
 
-        kwargs[self.counter] = kwargs.get(self.counter, 1)
-        limit = kwargs.get('limit', self.limit)
-
-        while (current_page < total_pages
-        and (limit is None or current_page < limit)):
-
-            root = fun(*args, **kwargs)
-
-            current_page = self.get_current_page(root)
-            total_pages = self.get_total_pages(root)
-            total_results = self.get_total_results(root)
-
-            yield root
-
-            kwargs[self.counter] += 1
-
-    def get_current_page(self, node):
+    def page(self, index):
         """
-        Extracts current page (as ``int``) from XML node.
+        Fetch single page from results.
         """
-        raise NotImplementedError
-
-    def get_total_pages(self, node):
+        self.kwargs[self.counter] = index
+        root = self.fun(*self.args, **self.kwargs)
+        self.current, self.pages, self.results = self.extract_data(root)
+        return root
+        
+    def extract_data(self, node):
         """
-        Extracts number of total result pages (as ``int``) from XML node.
-        """
-        raise NotImplementedError
-
-    def get_total_results(self, node):
-        """
-        Extracts number of total results (as ``int``) from XML node.
+        Extracts pagination data from XML node.
         """
         raise NotImplementedError
 
@@ -84,8 +71,9 @@ def paginate(fnc):
         processor = api.response_processor
         try:
             # try to return the OPERATION_paginator from API instance
-            paginator = getattr(processor, '%s_paginator' % fnc.__name__)
-            return paginator(fnc, api, *args, **kwargs)
+            klass = getattr(processor, '%s_paginator' % fnc.__name__)
+            method = lambda *a, **b: fnc(api, *a, **b)
+            return klass(method, args, kwargs)
         except AttributeError:
             return fnc(api, *args, **kwargs)
     return wrapped
@@ -93,84 +81,51 @@ def paginate(fnc):
 
 class LxmlPaginator (BaseResultPaginator):
 
+
     """
-    A small example fetching reviews for a book::
-
-        api = API(AWS_KEY, SECRET_KEY)
-        paginator = ResultPaginator('ReviewPage',
-            '//aws:Items/aws:Request/aws:ItemLookupRequest/aws:ReviewPage',
-            '//aws:Items/aws:Item/aws:CustomerReviews/aws:TotalReviewPages',
-            '//aws:Items/aws:Item/aws:CustomerReviews/aws:TotalReviews')
-
-        for root in paginator(api.item_lookup, id=isbn, IdType='ISBN',
-                             SearchIndex='Books', ResponseGroup='Reviews'):
-            ...
-
-    .. note: All three XPath expressions have to return integer values for the
-       pagination to work!
+    Result paginator using lxml and XPath expressions to extract page and
+    result information from XML.
     """
 
-    def __init__(self, counter, current_page, total_pages, total_results,
-                 limit=400):
-        """
-        :param counter: counter variable passed to AWS.
-        :param current_page: XPath expression locating current paginator page.
-        :param total_pages: XPath expression locating total number of pages.
-        :param total_results: XPath expression locating total number of results.
-        :param limit: limit fetched pages to this amount (restricted to a 
-        maximum of 400 pages by API itself).
-        :param nspace: used XML name space.
-        """
-        super(LxmlPaginator, self).__init__(counter, limit)
-        self.current_page_xpath = current_page
-        self.total_pages_xpath = total_pages
-        self.total_results_xpath = total_results
-        self.nspace = None
+    counter = None
+    current_page_xpath = None
+    total_pages_xpath = None
+    total_results_xpath = None
 
-    def namespace(fnc):
-        """
-        Decorator extracting default namespace which is required for XPath
-        expressions.
-        """
-        def wrapped(obj, root):
-            obj.nspace = root.nsmap.get(None, '')
-            return fnc(obj, root)
-        return wrapped
+    def __init__(self, fun, args, kwargs, **options):
+        super(LxmlPaginator, self).__init__(
+                fun, args, kwargs, self.counter, **options)
 
-    @namespace
-    def get_total_pages(self, root):
-        try:
-            node = root.xpath(self.total_pages_xpath,
-                          namespaces={'aws' : self.nspace})[0]
-            return node.pyval
-        except AttributeError:
-            # node has no attribute pyval so it better be a number
-            return int(node)
-        except IndexError:
-            return 0
-
-    @namespace
-    def get_current_page(self, root):
-        try:
-            node = root.xpath(self.current_page_xpath,
-                          namespaces={'aws' : self.nspace})[0]
-            return node.pyval
-        except AttributeError:
-            # node has no attribute pyval so it better be a number
-            return int(node)
-        except IndexError:
-            return 1
-
-    @namespace
-    def get_total_results(self, root):
-        try:
-            node = root.xpath(self.total_results_xpath,
-                          namespaces={'aws' : self.nspace})[0]
-            return node.pyval
-        except AttributeError:
-            # node has no attribute pyval so it better be a number
-            return int(node)
-        except IndexError:
-            return 0
+    def extract_data(self, root):
+        nspace = root.nsmap.get(None, '')
+        values = []
+        def fetch_value(xpath, default=0):
+            try:
+                node = root.xpath(xpath, namespaces={'aws' : nspace})[0]
+                return node.pyval
+            except AttributeError:
+                # node has no attribute pyval so it better be a number
+                return int(node)
+            except IndexError:
+                return default
+        return map(fetch_value, [
+            self.current_page_xpath, 
+            self.total_pages_xpath, 
+            self.total_results_xpath
+        ])
 
 
+class LxmlItemSearchPaginator (LxmlPaginator):
+
+    counter = 'ItemPage'
+    current_page_xpath = '//aws:Items/aws:Request/aws:ItemSearchRequest/aws:ItemPage'
+    total_pages_xpath = '//aws:Items/aws:TotalPages'
+    total_results_xpath = '//aws:Items/aws:TotalResults'
+
+    def __init__(self, fnc, args, kwargs, **extra):
+        # Amazon limits returned pages to 5
+        # if SearchIndex "All" is used!
+        if args[0] == 'All':
+            extra['limit'] = 5
+        super(LxmlItemSearchPaginator, self).__init__(
+            fnc, args, kwargs, **extra)

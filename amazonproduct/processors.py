@@ -1,6 +1,6 @@
 
 from amazonproduct.errors import AWSError
-from amazonproduct.paginators import LxmlPaginator
+from amazonproduct.paginators import LxmlItemSearchPaginator
 
 class LxmlObjectifyProcessor (object):
 
@@ -59,7 +59,4 @@ class LxmlObjectifyProcessor (object):
 
         return root
 
-    item_search_paginator = LxmlPaginator('ItemPage',
-        '//aws:Items/aws:Request/aws:ItemSearchRequest/aws:ItemPage',
-        '//aws:Items/aws:TotalPages',
-        '//aws:Items/aws:TotalResults')
+    item_search_paginator = LxmlItemSearchPaginator
