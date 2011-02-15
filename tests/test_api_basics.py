@@ -11,7 +11,7 @@ except ImportError:
     from cgi import parse_qs
 
 from tests import TESTABLE_API_VERSIONS, XML_TEST_DIR
-from tests.base import convert_camel_case
+from tests.utils import convert_camel_case
 from server import TestServer
 
 from amazonproduct import API
@@ -109,7 +109,7 @@ def test_API_coverage():
         if not os.path.exists(wsdl):
             continue
         api = API('', '', 'de')
-        api.VERSION =version
+        api.VERSION = version
         for operation in extract_operations(wsdl):
             check_api.description = 'API %s supports %s' % (version, operation)
             yield check_api, api, operation

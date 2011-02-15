@@ -2,7 +2,7 @@
 import os
 import pytest
 
-from tests.base import CustomAPI, convert_camel_case
+from tests.utils import CustomAPI, convert_camel_case
 from tests import XML_TEST_DIR, TESTABLE_API_VERSIONS, TESTABLE_LOCALES
 from tests import AWS_KEY, SECRET_KEY
 
@@ -39,10 +39,6 @@ def pytest_generate_tests(metafunc):
 #
 #def teardown_module(module):
 #    module._monkeypatch.undo()
-
-class XMLResponseTestCase (object): 
-    def setup_class(cls):
-        print 'setup_class'
 
 class TestCorrectVersion (object):
 
