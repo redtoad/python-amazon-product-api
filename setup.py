@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-from setuptools import setup, find_packages
+from setuptools import setup, find_packages, Command
 import os.path, sys
 
 _here = os.path.abspath(os.path.dirname(__file__))
@@ -23,6 +23,18 @@ reqs = []
 if sys.version_info[:2] < (2, 5):
     reqs += ['pycrypto']
 
+class PyTest(Command):
+    """
+    setuptools/distutils command to run py.test.
+    """
+    user_options = []
+    def initialize_options(self): pass
+    def finalize_options(self): pass
+    def run(self):
+        import subprocess
+        errno = subprocess.call([sys.executable, os.path.join(_here, 'tests', 'runtests.py')])
+        raise SystemExit(errno)
+
 setup(
     name = 'python-amazon-product-api',
     version = version(),
@@ -38,9 +50,7 @@ setup(
     packages = find_packages(_here, exclude=['tests']),
     install_requires=reqs,
 
-    test_suite = 'tests',
-    test_loader = 'tests:XMLResponseTestLoader',
-    tests_require = ['nose', 'lxml>=2.1.5'],
+    cmdclass = {'test': PyTest},
 
     classifiers = [
         'Operating System :: OS Independent',

@@ -18,12 +18,12 @@ class BaseResultPaginator (object):
 
         paginator = ReviewPaginator()
         for root in paginator(api.item_lookup, id=isbn, IdType='ISBN',
-                             SearchIndex='Books', ResponseGroup='Reviews'):
+                    SearchIndex='Books', ResponseGroup='Reviews', limit=10):
             print root.Review.AttributeOfInterest
 
     """
 
-    def __init__(self, fun, args, kwargs, counter, limit=400):
+    def __init__(self, fun, args, kwargs, counter):
         """
         :param counter: counter variable passed to AWS.
         :param limit: limit fetched pages to this amount (restricted to a 
@@ -32,7 +32,7 @@ class BaseResultPaginator (object):
         self.fun = fun
         self.args, self.kwargs = args, kwargs
         self.counter = counter
-        self.limit = limit
+        self.limit = kwargs.get('limit', 400)
 
         # fetch first page to get pagination parameters
         self._first_page = self.page(1)
@@ -73,7 +73,7 @@ def paginate(fnc):
             # try to return the OPERATION_paginator from API instance
             klass = getattr(processor, '%s_paginator' % fnc.__name__)
             method = lambda *a, **b: fnc(api, *a, **b)
-            return klass(method, args, kwargs)
+            return klass(method, *args, **kwargs)
         except AttributeError:
             return fnc(api, *args, **kwargs)
     return wrapped
@@ -92,9 +92,8 @@ class LxmlPaginator (BaseResultPaginator):
     total_pages_xpath = None
     total_results_xpath = None
 
-    def __init__(self, fun, args, kwargs, **options):
-        super(LxmlPaginator, self).__init__(
-                fun, args, kwargs, self.counter, **options)
+    def __init__(self, fun, *args, **kwargs):
+        super(LxmlPaginator, self).__init__(fun, args, kwargs, self.counter)
 
     def extract_data(self, root):
         nspace = root.nsmap.get(None, '')
@@ -122,10 +121,9 @@ class LxmlItemSearchPaginator (LxmlPaginator):
     total_pages_xpath = '//aws:Items/aws:TotalPages'
     total_results_xpath = '//aws:Items/aws:TotalResults'
 
-    def __init__(self, fnc, args, kwargs, **extra):
+    def __init__(self, fnc, *args, **kwargs):
         # Amazon limits returned pages to 5
         # if SearchIndex "All" is used!
         if args[0] == 'All':
-            extra['limit'] = 5
-        super(LxmlItemSearchPaginator, self).__init__(
-            fnc, args, kwargs, **extra)
+            kwargs['limit'] = 5
+        super(LxmlItemSearchPaginator, self).__init__(fnc, *args, **kwargs)
