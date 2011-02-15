@@ -50,7 +50,7 @@ repository and add your own features. ::
     
 If you like what you see, drop me a line at `basti at redtoad dot de`.
 
-.. _Cheeseshop: http://pypi.python.org/pypi/python-amazon-product-advertising-api/
+.. _Cheeseshop: http://pypi.python.org/pypi/python-amazon-product-api/
 .. _setuptools: http://peak.telecommunity.com/DevCenter/EasyInstall
 .. _bitbucket.org: http://bitbucket.org/basti/python-amazon-product-api/
 
