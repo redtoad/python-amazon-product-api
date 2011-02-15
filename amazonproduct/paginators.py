@@ -98,7 +98,7 @@ class LxmlPaginator (BaseResultPaginator):
     def extract_data(self, root):
         nspace = root.nsmap.get(None, '')
         values = []
-        def fetch_value(xpath, default=0):
+        def fetch_value(xpath, default):
             try:
                 node = root.xpath(xpath, namespaces={'aws' : nspace})[0]
                 return node.pyval
@@ -107,10 +107,10 @@ class LxmlPaginator (BaseResultPaginator):
                 return int(node)
             except IndexError:
                 return default
-        return map(fetch_value, [
-            self.current_page_xpath, 
-            self.total_pages_xpath, 
-            self.total_results_xpath
+        return map(lambda a: fetch_value(*a), [
+            (self.current_page_xpath, 1),
+            (self.total_pages_xpath, 0),
+            (self.total_results_xpath, 0)
         ])
 
 
