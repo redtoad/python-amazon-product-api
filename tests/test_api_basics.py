@@ -1,11 +1,8 @@
 
 from datetime import datetime, timedelta
 from lxml import objectify
-import nose
+import pytest
 import os.path
-import re
-from server import TestServer
-import unittest
 
 try:
     from urlparse import urlparse, parse_qs
@@ -13,13 +10,14 @@ except ImportError:
     from urlparse import urlparse
     from cgi import parse_qs
 
-# import base first because sys.path is changed in order to find amazonproduct!
-from base import TESTABLE_API_VERSIONS, XML_TEST_DIR, convert_camel_case
+from tests import TESTABLE_API_VERSIONS, XML_TEST_DIR
+from tests.base import convert_camel_case
+from server import TestServer
 
 from amazonproduct import API
 from amazonproduct import UnknownLocale, TooManyRequests
 
-class LocalesTestCase (unittest.TestCase):
+class TestAPILocales (object):
 
     """
     Testing initialising API with different locales.
@@ -28,11 +26,11 @@ class LocalesTestCase (unittest.TestCase):
     ACCESS_KEY = SECRET_KEY = ''
 
     def test_fails_for_invalid_locale(self):
-        self.assertRaises(UnknownLocale, API, self.ACCESS_KEY,
+        pytest.raises(UnknownLocale, API, self.ACCESS_KEY,
                 self.SECRET_KEY, locale='XX')
 
 
-class APICallsTestCase (unittest.TestCase):
+class TestAPICalls (object):
 
     """
     Test API calls with ``TestServer`` instance.
@@ -40,23 +38,23 @@ class APICallsTestCase (unittest.TestCase):
 
     ACCESS_KEY = SECRET_KEY = ''
 
-    def setUp(self):
-        self.api = API(self.ACCESS_KEY, self.SECRET_KEY, 'uk')
-        self.server = TestServer()
-        self.api.host = ('%s:%i' % self.server.server_address, )
-        self.server.start()
+    def setup_class(cls):
+        cls.api = API(cls.ACCESS_KEY, cls.SECRET_KEY, 'uk')
+        cls.server = TestServer()
+        cls.api.host = ('%s:%i' % cls.server.server_address, )
+        cls.server.start()
 
-    def tearDown(self):
-        self.server.stop()
+    def teardown_class(cls):
+        cls.server.stop()
 
     def test_fails_for_too_many_requests(self):
         xml = os.path.join(XML_TEST_DIR,
             'APICalls-fails-for-too-many-requests.xml')
         self.server.serve_file(xml, 503)
-        self.assertRaises(TooManyRequests, self.api.item_lookup,
-                          '9780747532743', IdType='ISBN', SearchIndex='All',
-                          ResponseGroup='???')
+        pytest.raises(TooManyRequests, self.api.item_lookup, '9780747532743', 
+            IdType='ISBN', SearchIndex='All', ResponseGroup='???')
 
+    @pytest.mark.slowtest
     def test_call_throtteling(self):
         url = self.api._build_url(Operation='ItemSearch', SearchIndex='Books')
         self.server.code = 200
@@ -65,9 +63,9 @@ class APICallsTestCase (unittest.TestCase):
         for i in range(n):
             self.api._fetch(url)
         stop = datetime.now()
-        self.assert_((stop-start) >= (n-1)*self.api.throttle)
+        assert (stop-start) >= (n-1)*self.api.throttle
 
-class APICallsWithOptionalParameters (unittest.TestCase):
+class TestAPICallsWithOptionalParameters (object):
 
     """
     Tests that optional parameters (like AssociateTag) end up in URL.
@@ -81,7 +79,7 @@ class APICallsWithOptionalParameters (unittest.TestCase):
         url = api._build_url(Operation='ItemSearch', SearchIndex='Books')
 
         qs = parse_qs(urlparse(url)[4])
-        self.assertEquals(qs['AssociateTag'][0], tag)
+        assert qs['AssociateTag'][0] == tag
 
 
 def test_API_coverage():
@@ -98,14 +96,17 @@ def test_API_coverage():
 
     def check_api(api, operation):
         "Checks if API class supports specific operation."
+
+        if operation in ('CartAdd CartModify CartCreate CartGet CartClear '
+        'SellerLookup SellerListingLookup SellerListingSearch').split():
+                pytest.xfail('Not yet fully implemented!')
+
         attr = convert_camel_case(operation)
         assert hasattr(api, attr), 'API does not support %s!' % operation
 
     for version in TESTABLE_API_VERSIONS:
         wsdl = os.path.join(XML_TEST_DIR, version, 'AWSECommerceService.wsdl')
         if not os.path.exists(wsdl):
-            #def skip(v): raise nose.SkipTest('No WSDL found for API %s!' % v)
-            #yield skip, version
             continue
         api = API('', '', 'de')
         api.VERSION =version

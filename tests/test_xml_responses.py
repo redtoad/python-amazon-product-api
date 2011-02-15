@@ -1,9 +1,12 @@
 
-# import base first because sys.path is changed in order to find amazonproduct!
-from base import XMLResponseTestCase, XMLResponseTestLoader
-from base import XML_TEST_DIR, TESTABLE_API_VERSIONS, convert_camel_case
+import os
+import pytest
 
-from amazonproduct import API, ResultPaginator
+from tests.base import CustomAPI, convert_camel_case
+from tests import XML_TEST_DIR, TESTABLE_API_VERSIONS, TESTABLE_LOCALES
+from tests import AWS_KEY, SECRET_KEY
+
+from amazonproduct.api import API, ResultPaginator
 from amazonproduct import AWSError
 from amazonproduct import InvalidParameterValue, InvalidListType
 from amazonproduct import InvalidSearchIndex, InvalidResponseGroup
@@ -12,100 +15,124 @@ from amazonproduct import NoSimilarityForASIN
 from amazonproduct import NoExactMatchesFound, NotEnoughParameters
 from amazonproduct import DeprecatedOperation
 
-from lxml import objectify
-import os, os.path
-import unittest
+def pytest_generate_tests(metafunc):
+    # called once per each test function
+    if 'api' in metafunc.funcargnames:
+        api_versions = getattr(metafunc.function, 'api_versions',
+            getattr(metafunc.cls, 'api_versions', TESTABLE_API_VERSIONS))
+        for version in api_versions:
+            locales = getattr(metafunc.function, 'locales',
+                getattr(metafunc.cls, 'locales', TESTABLE_LOCALES))
+            for locale in locales:
+                api = CustomAPI(AWS_KEY, SECRET_KEY, locale)
+                api.VERSION = version
+                api.local_file = os.path.join(XML_TEST_DIR, version,
+                    '%s-%s-%s.xml' % (metafunc.cls.__name__[4:], locale, 
+                    metafunc.function.__name__[5:].replace('_', '-')))
+                metafunc.addcall(
+                    id='%s/%s' % (version, locale), 
+                    funcargs={'api' : api})
 
+#def setup_module(module):
+#    import _pytest
+#    module._monkeypatch = _pytest.monkeypatch.monkeypatch()
+#
+#def teardown_module(module):
+#    module._monkeypatch.undo()
 
-class CorrectVersionTestCase (XMLResponseTestCase):
+class XMLResponseTestCase (object): 
+    def setup_class(cls):
+        print 'setup_class'
+
+class TestCorrectVersion (object):
 
     """
     Check that each requested API version is also really used.
     """
 
-    def test_correct_version(self):
+    def test_correct_version(self, api):
         # any operation will do here
-        root = self.api.item_lookup('0747532745')
+        root = api.item_lookup('0747532745')
         nspace = root.nsmap.get(None, '')
-        self.assert_(self.current_api_version in nspace)
+        assert api.VERSION in nspace
 
 
-class ItemLookupTestCase (XMLResponseTestCase):
+class TestItemLookup (object):
 
     """
     Check that all XML responses for ItemLookup are parsed correctly.
     """
      
-    def test_invalid_item_id(self):
-        self.assertRaises(InvalidParameterValue, self.api.item_lookup, '1234567890123')
+    def test_invalid_item_id(self, api):
+        pytest.raises(InvalidParameterValue, api.item_lookup, '1234567890123')
         
-    def test_valid_asin(self):
+    def test_valid_asin(self, api):
         # Harry Potter and the Philosopher's Stone
-        self.api.item_lookup('0747532745')
+        api.item_lookup('0747532745')
         
-    def test_valid_isbn(self):
+    def test_valid_isbn(self, api):
         # Harry Potter and the Philosopher's Stone
-        self.api.item_lookup('9780747532743', IdType='ISBN', SearchIndex='All')
+        api.item_lookup('9780747532743', IdType='ISBN', SearchIndex='All')
         
-    def test_invalid_search_index(self):
-        self.assertRaises(InvalidSearchIndex, self.api.item_lookup, 
-                          '9780747532743', IdType='ISBN', SearchIndex='???')
+    def test_invalid_search_index(self, api):
+        pytest.raises(InvalidSearchIndex, api.item_lookup, '9780747532743', 
+            IdType='ISBN', SearchIndex='???')
         
-    def test_invalid_response_group(self):
-        self.assertRaises(InvalidResponseGroup, self.api.item_lookup, 
-                          '9780747532743', IdType='ISBN', SearchIndex='All', 
-                          ResponseGroup='???')
+    def test_invalid_response_group(self, api):
+        pytest.raises(InvalidResponseGroup, api.item_lookup, '9780747532743', 
+            IdType='ISBN', SearchIndex='All', ResponseGroup='???')
         
-    def test_valid_isbn_no_searchindex(self):
+    def test_valid_isbn_no_searchindex(self, api):
         # Harry Potter and the Philosopher's Stone
         try:
-            self.api.item_lookup('9780747532743', IdType='ISBN')
+            api.item_lookup('9780747532743', IdType='ISBN')
         except AWSError, e:
-            self.assert_(e.code == 'AWS.MissingParameterValueCombination')
+            assert e.code == 'AWS.MissingParameterValueCombination'
         
         
-class ItemSearchTestCase (XMLResponseTestCase):
+class TestItemSearch (object):
 
     """
     Check that all XML responses for ItemSearch are parsed correctly.
     """
     
-    def test_no_parameters(self):
+    def test_no_parameters(self, api):
         try:
-            self.assertRaises(InvalidResponseGroup, 
-                              self.api.item_search, 'Books')
+            pytest.raises(InvalidResponseGroup, 
+                              api.item_search, 'Books')
         except AWSError, e:
-            self.assert_(e.code == 'AWS.MinimumParameterRequirement')
+            assert e.code == 'AWS.MinimumParameterRequirement'
         
-    def test_unicode_parameter(self):
+    def test_unicode_parameter(self, api):
         # Issue 17: UnicodeDecodeError when python's default encoding is not
         # utf-8
         try:
-            self.api.item_search('Books', Author=u'F\xe9lix J. Palma')
+            api.item_search('Books', Author=u'F\xe9lix J. Palma')
         except NoExactMatchesFound:
             # doesn't matter if this author is not found in all locales
             # as long as no UnicodeDecodeError is raised!
             pass
 
-    def test_invalid_response_group(self):
-        self.assertRaises(InvalidResponseGroup, self.api.item_search, 
+    def test_invalid_response_group(self, api):
+        pytest.raises(InvalidResponseGroup, api.item_search, 
                           'All', ResponseGroup='???')
         
-    def test_invalid_search_index(self):
-        self.assertRaises(InvalidSearchIndex, self.api.item_search, 
+    def test_invalid_search_index(self, api):
+        pytest.raises(InvalidSearchIndex, api.item_search, 
                           '???', BrowseNode=132)
         
-    def test_invalid_parameter_combination(self):
-        self.assertRaises(InvalidParameterCombination, self.api.item_search, 
+    def test_invalid_parameter_combination(self, api):
+        pytest.raises(InvalidParameterCombination, api.item_search, 
                           'All', BrowseNode=132)
         
     #@ignore_locales('jp')
-    def test_lookup_by_title(self):
-        result = self.api.item_search('Books', Title='Harry Potter')
+    def test_lookup_by_title(self, api):
+        result = api.item_search('Books', Title='Harry Potter')
         for item in result.Items.Item:
-            self.assertEquals(item.ASIN, item.ASIN.pyval, item.ASIN.text) 
+            assert item.ASIN == item.ASIN.pyval == item.ASIN.text
         
-class SimilarityLookupTestCase (XMLResponseTestCase):
+
+class TestSimilarityLookup (object):
     
     """
     Check that all XML responses for SimilarityLookup are parsed correctly.
@@ -113,21 +140,21 @@ class SimilarityLookupTestCase (XMLResponseTestCase):
     
     locales = ['de']
     
-    def test_similar_items(self):
+    def test_similar_items(self, api):
         # 0451462009 Small Favor: A Novel of the Dresden Files 
-        root = self.api.similarity_lookup('0451462009')
+        root = api.similarity_lookup('0451462009')
         
-        self.assertEquals(root.Items.Request.IsValid.text, 'True')
-        self.assert_(len(root.Items.Item) > 0)
+        assert root.Items.Request.IsValid.text == 'True'
+        assert len(root.Items.Item) > 0
         
-    def test_no_similar_items_for_two_asins(self):
+    def test_no_similar_items_for_two_asins(self, api):
         # 0451462009 Small Favor: A Novel of the Dresden Files
         # B0024NL0TG Oral-B toothbrush
-        self.assertRaises(NoSimilarityForASIN, self.api.similarity_lookup,
+        pytest.raises(NoSimilarityForASIN, api.similarity_lookup,
                           '0451462009', 'B0024NL0TG')
 
 
-class ResultPaginatorTestCase (XMLResponseTestCase):
+class TestResultPaginator (object):
 
     """
     Check that all XML responses for pagination are parsed correctly.
@@ -136,7 +163,7 @@ class ResultPaginatorTestCase (XMLResponseTestCase):
     api_versions = ['2009-10-01', '2009-11-01']
     locales = ['de']
 
-    def test_itemsearch_pagination(self):
+    def test_itemsearch_pagination(self, api):
 
         results = 272
         pages = 28
@@ -147,16 +174,16 @@ class ResultPaginatorTestCase (XMLResponseTestCase):
             '//aws:Items/aws:TotalResults',
             limit=10)
 
-        for page, root in enumerate(paginator(self.api.item_search, 'Books', 
+        for page, root in enumerate(paginator(api.item_search, 'Books', 
                         Publisher='Galileo Press', Sort='salesrank')):
-            self.assertEquals(paginator.total_results, results)
-            self.assertEquals(paginator.total_pages, pages)
-            self.assertEquals(paginator.current_page, page+1)
+            assert paginator.total_results == results
+            assert paginator.total_pages == pages
+            assert paginator.current_page == page+1
 
-        self.assertEquals(page, 9)
-        self.assertEquals(paginator.current_page, 10)
+        assert page == 9
+        assert paginator.current_page == 10
 
-    def test_review_pagination(self):
+    def test_review_pagination(self, api):
         # reviews for "Harry Potter and the Philosopher's Stone"
         ASIN = '0747532745'
 
@@ -173,17 +200,17 @@ class ResultPaginatorTestCase (XMLResponseTestCase):
             '//aws:Items/aws:Item/aws:CustomerReviews/aws:TotalReviews',
             limit=10)
 
-        for page, root in enumerate(paginator(self.api.item_lookup,
+        for page, root in enumerate(paginator(api.item_lookup,
                         ASIN, ResponseGroup='Reviews')):
-            reviews, pages = VALUES[self.current_api_version]
-            self.assertEquals(paginator.total_results, reviews)
-            self.assertEquals(paginator.total_pages, pages)
-            self.assertEquals(paginator.current_page, page+1)
+            reviews, pages = VALUES[api.VERSION]
+            assert paginator.total_results == reviews
+            assert paginator.total_pages == pages
+            assert paginator.current_page == page+1
 
-        self.assertEquals(page, 9)
-        self.assertEquals(paginator.current_page, 10)
+        assert page == 9
+        assert paginator.current_page == 10
 
-    def test_pagination_works_for_missing_reviews(self):
+    def test_pagination_works_for_missing_reviews(self, api):
         # "Sherlock Holmes (limitierte Steelbook Edition) [Blu-ray]"
         # had no reviews at time of writing
         ASIN = 'B0039NM7Y2'
@@ -193,11 +220,11 @@ class ResultPaginatorTestCase (XMLResponseTestCase):
             '//aws:Items/aws:Item/aws:CustomerReviews/aws:TotalReviewPages',
             '//aws:Items/aws:Item/aws:CustomerReviews/aws:TotalReviews')
 
-        for page, root in enumerate(paginator(self.api.item_lookup,
+        for page, root in enumerate(paginator(api.item_lookup,
                         ASIN, ResponseGroup='Reviews')):
-            self.assertFalse(hasattr(root.Items.Item, 'CustomerReviews'))
+            assert not hasattr(root.Items.Item, 'CustomerReviews')
 
-        self.assertEquals(page, 0)
+        assert page == 0
 
 # FIXME: ListLookup has since been deprecated! Until I find suitable example to
 # use instead, I'm disabling this test.
@@ -226,7 +253,7 @@ class ResultPaginatorTestCase (XMLResponseTestCase):
 #            self.assertEquals(paginator.current_page, page+1)
 
 
-class BrowseNodeLookupTestCase (XMLResponseTestCase):
+class TestBrowseNodeLookup (object):
     
     """
     Check that all XML responses for ListLookup are parsed correctly.
@@ -278,68 +305,24 @@ class BrowseNodeLookupTestCase (XMLResponseTestCase):
         'us' : [283155],
     }
     
-    def test_fails_for_wrong_input(self):
-        self.assertRaises(InvalidParameterValue, self.api.browse_node_lookup, '???')
-        self.assertRaises(InvalidResponseGroup, self.api.browse_node_lookup, 
-                self.BOOKS_ROOT_NODE[self.current_locale], '???')
+    def test_fails_for_wrong_input(self, api):
+        pytest.raises(InvalidParameterValue, api.browse_node_lookup, '???')
+        pytest.raises(InvalidResponseGroup, api.browse_node_lookup, 
+                self.BOOKS_ROOT_NODE[api.locale], '???')
         
-    def test_books_browsenode(self):
-        nodes = self.api.browse_node_lookup(self.BOOKS_ROOT_NODE[self.current_locale]).BrowseNodes
-        self.assertEquals(nodes.Request.IsValid.text, 'True')
-        self.assertEquals(nodes.BrowseNode.BrowseNodeId, self.BOOKS_ROOT_NODE[self.current_locale])
+    def test_books_browsenode(self, api):
+        nodes = api.browse_node_lookup(self.BOOKS_ROOT_NODE[api.locale]).BrowseNodes
+        assert nodes.Request.IsValid.text == 'True'
+        assert nodes.BrowseNode.BrowseNodeId == self.BOOKS_ROOT_NODE[api.locale]
         #self.assertEquals(nodes.BrowseNode.IsCategoryRoot, 1)
         
         children = [n.BrowseNodeId for n in nodes.BrowseNode.Children.BrowseNode]
         ancestors = [n.BrowseNodeId for n in nodes.BrowseNode.Ancestors.BrowseNode]
-        self.assertEquals(children, self.CHILDREN[self.current_locale])
-        self.assertEquals(ancestors, self.ANCESTORS[self.current_locale])
+        assert children == self.CHILDREN[api.locale]
+        assert ancestors == self.ANCESTORS[api.locale]
         
 
-class XMLParsingTestCase (unittest.TestCase):
-    
-    """
-    Checks that all XML responses are parsed correctly, for instance, that all
-    <ItemId> elements are ``objectify.StringElement``s. 
-    """
-    
-    ACCESS_KEY = SECRET_KEY = ''
-    
-    def setUp(self):
-        """
-        Collect all XML files stored.
-        """
-        # TODO: Skip tests if no XML files are found?
-        self.test_files = [os.path.join(XML_TEST_DIR, dir, f)
-            for dir in TESTABLE_API_VERSIONS
-            for f in os.listdir(os.path.join(XML_TEST_DIR, dir))
-            if f.lower().endswith('.xml')
-        ]
-        self.api = API(self.ACCESS_KEY, self.SECRET_KEY, 'us')
-
-    def test_all_ItemId_elements_are_StringElement(self):
-        for file in self.test_files:
-            try:
-                tree = self.api.response_processor(open(file))
-                nspace = tree.nsmap.get(None, '')
-                for item_id in tree.xpath('//aws:ItemId',
-                                          namespaces={'aws' : nspace}):
-                    self.assertEquals(item_id.pyval, item_id.text, str(item_id)) 
-            except AWSError:
-                pass
-
-    def test_all_ASIN_elements_are_StringElement(self):
-        for file in self.test_files:
-            try:
-                tree = self.api.response_processor(open(file))
-                nspace = tree.nsmap.get(None, '')
-                for item_id in tree.xpath('//aws:ItemId',
-                                          namespaces={'aws' : nspace}):
-                    self.assertEquals(item_id.pyval, item_id.text, str(item_id)) 
-            except AWSError:
-                pass
-
-
-class DeprecatedOperationsTestCase (XMLResponseTestCase):
+class TestDeprecatedOperations (object):
 
     """
     Due to low usage, the Product Advertising API operations listed below will
@@ -370,12 +353,57 @@ class DeprecatedOperationsTestCase (XMLResponseTestCase):
         'VehicleSearch', 
     ]
 
-    def test_calling_deprecated_operations(self):
+    def test_calling_deprecated_operations(self, api):
         for operation in self.DEPRECATED_OPRATIONS:
-            self.assertRaises(DeprecatedOperation, 
-                              getattr(self.api, convert_camel_case(operation)))
+            method = getattr(api, convert_camel_case(operation))
+            pytest.raises(DeprecatedOperation, method)
 
-    def test_calling_deprecated_operations_using_call_fails(self):
+    def test_calling_deprecated_operations_using_call_fails(self, api):
         for operation in self.DEPRECATED_OPRATIONS:
-            self.assertRaises(DeprecatedOperation, self.api.call, 
-                              Operation=operation)
+            pytest.raises(DeprecatedOperation, api.call, Operation=operation)
+
+
+class TestXMLParsing (object):
+    
+    """
+    Checks that all XML responses are parsed correctly, for instance, that all
+    <ItemId> elements are ``objectify.StringElement``s. 
+    """
+    
+    ACCESS_KEY = SECRET_KEY = ''
+    
+    def setup_class(cls):
+        """
+        Collect all XML files stored.
+        """
+        # TODO: Skip tests if no XML files are found?
+        cls.test_files = [os.path.join(XML_TEST_DIR, dir, f)
+            for dir in TESTABLE_API_VERSIONS
+            for f in os.listdir(os.path.join(XML_TEST_DIR, dir))
+            if f.lower().endswith('.xml')
+        ]
+        cls.api = API(cls.ACCESS_KEY, cls.SECRET_KEY, 'us')
+
+    def test_all_ItemId_elements_are_StringElement(self):
+        for file in self.test_files:
+            try:
+                tree = self.api.response_processor(open(file))
+                nspace = tree.nsmap.get(None, '')
+                for item_id in tree.xpath('//aws:ItemId',
+                                          namespaces={'aws' : nspace}):
+                    assert item_id.pyval == item_id.text == str(item_id)
+            except AWSError:
+                pass
+
+    def test_all_ASIN_elements_are_StringElement(self):
+        for file in self.test_files:
+            try:
+                tree = self.api.response_processor(open(file))
+                nspace = tree.nsmap.get(None, '')
+                for item_id in tree.xpath('//aws:ItemId',
+                                          namespaces={'aws' : nspace}):
+                    assert item_id.pyval == item_id.text == str(item_id)
+            except AWSError:
+                pass
+
+

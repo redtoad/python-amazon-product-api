@@ -7,44 +7,13 @@ from StringIO import StringIO
 import unittest
 import urllib2
 
-_here = os.path.abspath(os.path.dirname(__file__))
-
-# Prepend parent directory to PYTHONPATH to ensure that this amazonproduct
-# module can be imported and will take precedence over an existing one
-import sys
-sys.path.insert(0, os.path.join(_here, '..'))
-
 from amazonproduct import API, ResultPaginator, HOSTS, AWSError
 
-#: Directory containing XML responses for API versions (one directory for each
-#: API version)
-XML_TEST_DIR = _here
+import tests
+print tests
 
-#: Versions of Amazon API to be tested against 
-TESTABLE_API_VERSIONS = [
-    '2010-12-01', '2010-11-01', '2010-10-01', '2010-09-01', '2010-06-01', 
-    '2009-11-01', '2009-10-01'
-]
-
-#: Locales to test against. 
-TESTABLE_LOCALES = HOSTS.keys()
-
-ALL = 'all'
-
-def get_config_value(key, default=None):
-    """
-    Loads value from config.py or from environment variable or return default
-    (in that order).
-    """
-    try:
-        config = __import__('config')
-        return getattr(config, key)
-    except (ImportError, AttributeError):
-        return os.environ.get(key, default)
-
-AWS_KEY = get_config_value('AWS_KEY', '')
-SECRET_KEY = get_config_value('SECRET_KEY', '')
-OVERWRITE_TESTS = get_config_value('OVERWRITE_TESTS', False)
+from tests import XML_TEST_DIR, TESTABLE_API_VERSIONS, TESTABLE_LOCALES
+from tests import AWS_KEY, SECRET_KEY, OVERWRITE_TESTS 
 
 class CustomAPI (API):
     
