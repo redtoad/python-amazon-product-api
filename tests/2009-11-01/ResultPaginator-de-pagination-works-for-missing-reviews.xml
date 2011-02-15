@@ -1,21 +1,21 @@
 <ItemLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2009-11-01">
   <OperationRequest>
     <HTTPHeaders>
-      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.5a2 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
     </HTTPHeaders>
-    <RequestId>dbcbd05d-7fb1-46b1-84c8-7d17b94667c8</RequestId>
+    <RequestId>5219703e-2bca-4a3c-a640-cdd14add2452</RequestId>
     <Arguments>
       <Argument Name="ReviewPage" Value="1"/>
       <Argument Name="Operation" Value="ItemLookup"/>
       <Argument Name="Service" Value="AWSECommerceService"/>
       <Argument Name="ItemId" Value="B0039NM7Y2"/>
       <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="Timestamp" Value="2010-03-19T13:01:36Z"/>
+      <Argument Name="Timestamp" Value="2011-02-15T18:10:45Z"/>
       <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="ResponseGroup" Value="Reviews"/>
+      <Argument Name="ResponseGroup" Value="EditorialReview"/>
       <Argument Name="Version" Value="2009-11-01"/>
     </Arguments>
-    <RequestProcessingTime>0.0188230000000000</RequestProcessingTime>
+    <RequestProcessingTime>0.0128540000000000</RequestProcessingTime>
   </OperationRequest>
   <Items>
     <Request>
@@ -27,7 +27,7 @@
         <MerchantId>Amazon</MerchantId>
         <OfferPage>1</OfferPage>
         <ItemId>B0039NM7Y2</ItemId>
-        <ResponseGroup>Reviews</ResponseGroup>
+        <ResponseGroup>EditorialReview</ResponseGroup>
         <ReviewPage>1</ReviewPage>
         <ReviewSort>-SubmissionDate</ReviewSort>
         <VariationPage>All</VariationPage>
@@ -35,6 +35,12 @@
     </Request>
     <Item>
       <ASIN>B0039NM7Y2</ASIN>
+      <EditorialReviews>
+        <EditorialReview>
+          <Content>&lt;div class="aplus"&gt;Arthur Conan Doyles ber&#252;hmteste Figuren kehren in einer dynamischen Kinoversion auf die Leinwand zur&#252;ck: In &lt;em&gt;Sherlock Holmes&lt;/em&gt; muss der gefeierte Detektiv mit seinem unersch&#252;tterlichen Partner Watson einen &#228;u&#223;erst kniffligen Fall l&#246;sen. Holmes beweist dabei, dass er seine Kampftechniken ebenso t&#246;dlich einzusetzen wei&#223; wie seinen legend&#228;ren Verstand: In einem beispiellosen Duell nimmt er es mit einem neuen Erzfeind auf, um dessen m&#246;rderisches Komplott aufzudecken und das gesamte Land vor dem sicheren Untergang zu bewahren. &lt;br /&gt;&lt;br /&gt;&lt;div class="third-col"&gt; &lt;div class="centerImage"&gt;&lt;img src="http://g-ecx.images-amazon.com/images/G/03/video/niki/szenenbilder/sherlock_1.jpg" /&gt;&lt;/div&gt; &lt;/div&gt; &lt;div class="third-col"&gt; &lt;div class="centerImage"&gt;&lt;img src="http://g-ecx.images-amazon.com/images/G/03/video/niki/szenenbilder/sherlock_2.jpg" /&gt;&lt;/div&gt; &lt;/div&gt; &lt;div class="third-col last"&gt; &lt;div class="centerImage"&gt;&lt;img src="http://g-ecx.images-amazon.com/images/G/03/video/niki/szenenbilder/sherlock_3.jpg" /&gt;&lt;br /&gt;&lt;/div&gt; &lt;/div&gt; Das geheimnisvolle Action-Abenteuer &lt;em&gt;Sherlock Holmes&lt;/em&gt; inszeniert der renommierte Filmemacher Guy Ritchie f&#252;r Warner Bros. Pictures und Village Roadshow Pictures. Robert Downey Jr. leiht dem sagenhaften Detektiv seine Gestalt, und Jude Law spielt Holmes&#8217; zuverl&#228;ssigen Kollegen Watson, der Sherlock Holmes als Arzt und Kriegsveteran tatkr&#228;ftig unterst&#252;tzt. Rachel McAdams spielt Irene Adler, die einzige Frau, die den Detektiv je &#252;bertroffen hat &#8211; seitdem verbindet die beiden eine st&#252;rmische Beziehung. Mark Strong ist als ihr undurchsichtiger neuen Widersacher Blackwood zu sehen, und Kelly Reilly &#252;bernimmt die Rolle von Watsons Freundin Mary.&lt;/div&gt;</Content>
+          <IsLinkSuppressed>0</IsLinkSuppressed>
+        </EditorialReview>
+      </EditorialReviews>
     </Item>
   </Items>
 </ItemLookupResponse>

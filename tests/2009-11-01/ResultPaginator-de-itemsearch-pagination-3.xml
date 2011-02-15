@@ -1,22 +1,23 @@
 <ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2009-11-01">
   <OperationRequest>
     <HTTPHeaders>
-      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.4.1 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.5a2 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
     </HTTPHeaders>
-    <RequestId>6296208d-d86c-4b31-a05a-285b424bf0f0</RequestId>
+    <RequestId>b7455202-32ac-4e08-aa39-77d72114c83d</RequestId>
     <Arguments>
       <Argument Name="Operation" Value="ItemSearch"/>
       <Argument Name="Service" Value="AWSECommerceService"/>
       <Argument Name="ItemPage" Value="3"/>
       <Argument Name="Version" Value="2009-11-01"/>
+      <Argument Name="limit" Value="10"/>
       <Argument Name="Sort" Value="salesrank"/>
       <Argument Name="Publisher" Value="Galileo Press"/>
       <Argument Name="SearchIndex" Value="Books"/>
       <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
       <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="Timestamp" Value="2011-01-18T16:57:34Z"/>
+      <Argument Name="Timestamp" Value="2011-02-15T17:53:22Z"/>
     </Arguments>
-    <RequestProcessingTime>0.2060080000000000</RequestProcessingTime>
+    <RequestProcessingTime>0.3020490000000000</RequestProcessingTime>
   </OperationRequest>
   <Items>
     <Request>
@@ -36,254 +37,283 @@
     <TotalResults>272</TotalResults>
     <TotalPages>28</TotalPages>
     <Item>
-      <ASIN>3898422240</ASIN>
-      <DetailPageURL>http://www.amazon.de/Rendering-mit-Maya-4-5-Mental/dp/3898422240%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3898422240</DetailPageURL>
+      <ASIN>3934358586</ASIN>
+      <DetailPageURL>http://www.amazon.de/UML-projektorientiert-Gesch%C3%A4ftsproze%C3%9Fmodellierung-System-Spezifikation-Systemintegration/dp/3934358586%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3934358586</DetailPageURL>
       <ItemLinks>
         <ItemLink>
           <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D3898422240%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898422240</URL>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D3934358586%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358586</URL>
         </ItemLink>
         <ItemLink>
           <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.de/gp/pdp/taf/3898422240%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898422240</URL>
+          <URL>http://www.amazon.de/gp/pdp/taf/3934358586%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358586</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.de/review/product/3898422240%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898422240</URL>
+          <URL>http://www.amazon.de/review/product/3934358586%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358586</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Offers</Description>
-          <URL>http://www.amazon.de/gp/offer-listing/3898422240%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898422240</URL>
+          <URL>http://www.amazon.de/gp/offer-listing/3934358586%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358586</URL>
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
-        <Author>Christoph Berndt</Author>
-        <Author>Thomas Loeder</Author>
+        <Author>Patrick Gr&#228;ssle</Author>
+        <Author>Henriette Baumann</Author>
+        <Author>Philippe Baumann</Author>
         <Manufacturer>Galileo Press</Manufacturer>
         <ProductGroup>Book</ProductGroup>
-        <Title>Rendering mit Maya 4.5 - und Mental Ray for Maya, mit CD</Title>
+        <Title>UML projektorientiert - Gesch&#228;ftsproze&#223;modellierung, IT-System-Spezifikation und Systemintegration mit der UML (Galileo Computing)</Title>
       </ItemAttributes>
     </Item>
     <Item>
-      <ASIN>3934358667</ASIN>
-      <DetailPageURL>http://www.amazon.de/Java-Patterns-Idioms-Java-Zertifizierung-mit/dp/3934358667%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3934358667</DetailPageURL>
+      <ASIN>3898422143</ASIN>
+      <DetailPageURL>http://www.amazon.de/Texten-f%C3%BCr-das-Internet-Online-Redakteure/dp/3898422143%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3898422143</DetailPageURL>
       <ItemLinks>
         <ItemLink>
           <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D3934358667%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358667</URL>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D3898422143%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898422143</URL>
         </ItemLink>
         <ItemLink>
           <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.de/gp/pdp/taf/3934358667%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358667</URL>
+          <URL>http://www.amazon.de/gp/pdp/taf/3898422143%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898422143</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.de/review/product/3934358667%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358667</URL>
+          <URL>http://www.amazon.de/review/product/3898422143%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898422143</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Offers</Description>
-          <URL>http://www.amazon.de/gp/offer-listing/3934358667%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358667</URL>
+          <URL>http://www.amazon.de/gp/offer-listing/3898422143%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898422143</URL>
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
-        <Author>Friedrich Esser</Author>
+        <Author>Saim Rolf Alkan</Author>
         <Manufacturer>Galileo Press</Manufacturer>
         <ProductGroup>Book</ProductGroup>
-        <Title>Java 2 - Patterns, Idioms, Java-Zertifizierung, mit CD</Title>
+        <Title>Texten f&#252;r das Internet: Ein Handbuch f&#252;r Online-Redakteure und Webdesigner (Galileo Design)</Title>
       </ItemAttributes>
     </Item>
     <Item>
-      <ASIN>3934358780</ASIN>
-      <DetailPageURL>http://www.amazon.de/ADO-2-5-VB-Datenbankprogrammierung-f%C3%BCr-Profis/dp/3934358780%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3934358780</DetailPageURL>
+      <ASIN>3898422313</ASIN>
+      <DetailPageURL>http://www.amazon.de/Effizientes-Direktmarketing-Kundenkommunikation-Messages-Galileo/dp/3898422313%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3898422313</DetailPageURL>
       <ItemLinks>
         <ItemLink>
           <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D3934358780%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358780</URL>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D3898422313%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898422313</URL>
         </ItemLink>
         <ItemLink>
           <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.de/gp/pdp/taf/3934358780%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358780</URL>
+          <URL>http://www.amazon.de/gp/pdp/taf/3898422313%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898422313</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.de/review/product/3934358780%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358780</URL>
+          <URL>http://www.amazon.de/review/product/3898422313%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898422313</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Offers</Description>
-          <URL>http://www.amazon.de/gp/offer-listing/3934358780%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358780</URL>
+          <URL>http://www.amazon.de/gp/offer-listing/3898422313%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898422313</URL>
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
-        <Author>William R. Vaughn</Author>
+        <Author>Thomas Striegl</Author>
+        <Author>Bernd Wetzenbacher</Author>
         <Manufacturer>Galileo Press</Manufacturer>
         <ProductGroup>Book</ProductGroup>
-        <Title>ADO 2.5 - VB-Datenbankprogrammierung f&#252;r Profis, mit CD</Title>
+        <Title>Effizientes Direktmarketing - Kundenkommunikation per E-Mail und Mobile Messages (Galileo Design)</Title>
       </ItemAttributes>
     </Item>
     <Item>
-      <ASIN>3898423735</ASIN>
-      <DetailPageURL>http://www.amazon.de/mySAP-Personalwirtschaft-Prozessorientierte-Einf%C3%BChrung-Rollenbasierte/dp/3898423735%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3898423735</DetailPageURL>
+      <ASIN>3898422674</ASIN>
+      <DetailPageURL>http://www.amazon.de/Collaborative-Planning-Forecasting-Replenishment-Pre-Print-/dp/3898422674%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3898422674</DetailPageURL>
       <ItemLinks>
         <ItemLink>
           <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D3898423735%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898423735</URL>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D3898422674%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898422674</URL>
         </ItemLink>
         <ItemLink>
           <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.de/gp/pdp/taf/3898423735%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898423735</URL>
+          <URL>http://www.amazon.de/gp/pdp/taf/3898422674%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898422674</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.de/review/product/3898423735%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898423735</URL>
+          <URL>http://www.amazon.de/review/product/3898422674%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898422674</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Offers</Description>
-          <URL>http://www.amazon.de/gp/offer-listing/3898423735%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898423735</URL>
+          <URL>http://www.amazon.de/gp/offer-listing/3898422674%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898422674</URL>
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
-        <Author>Christian Kr&#228;mer</Author>
-        <Author>Christian L&#252;bke</Author>
-        <Author>Sven Ringling</Author>
+        <Author>Dirk Seifert</Author>
         <Manufacturer>Galileo Press</Manufacturer>
         <ProductGroup>Book</ProductGroup>
-        <Title>mySAP HR Personalwirtschaft - Prozessorientierte Einf&#252;hrung - Rollenbasierte Anwendung.</Title>
+        <Title>Collaborative Planning, Forecasting and Replenishment - How to create a Supply Chain Advantage. Pre-Print-Edition</Title>
       </ItemAttributes>
     </Item>
     <Item>
-      <ASIN>3934358063</ASIN>
-      <DetailPageURL>http://www.amazon.de/Finanzwesen-mit-SAP-Betriebswirtschaftliches-Customizingwissen/dp/3934358063%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3934358063</DetailPageURL>
+      <ASIN>3898421155</ASIN>
+      <DetailPageURL>http://www.amazon.de/Community-Building-Strategien-erfolgreicher-Web-Communities/dp/3898421155%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3898421155</DetailPageURL>
       <ItemLinks>
         <ItemLink>
           <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D3934358063%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358063</URL>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D3898421155%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898421155</URL>
         </ItemLink>
         <ItemLink>
           <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.de/gp/pdp/taf/3934358063%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358063</URL>
+          <URL>http://www.amazon.de/gp/pdp/taf/3898421155%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898421155</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.de/review/product/3934358063%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358063</URL>
+          <URL>http://www.amazon.de/review/product/3898421155%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898421155</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Offers</Description>
-          <URL>http://www.amazon.de/gp/offer-listing/3934358063%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358063</URL>
+          <URL>http://www.amazon.de/gp/offer-listing/3898421155%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898421155</URL>
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
-        <Author>Sandra Brinkmann</Author>
-        <Author>Axel Zeilinger</Author>
+        <Author>Amy Jo Kim</Author>
         <Manufacturer>Galileo Press</Manufacturer>
         <ProductGroup>Book</ProductGroup>
-        <Title>Finanzwesen mit SAP R/3: Betriebswirtschaftliches Customizingwissen f&#252;r SAP R/3-FI (SAP PRESS)</Title>
+        <Title>Community Building - Strategien f&#252;r den Aufbau erfolgreicher Web-Communities</Title>
       </ItemAttributes>
     </Item>
     <Item>
-      <ASIN>3898423050</ASIN>
-      <DetailPageURL>http://www.amazon.de/Intelligentes-Couponing-Planung-Umsetzung-Erfolgskontrolle/dp/3898423050%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3898423050</DetailPageURL>
+      <ASIN>389842359X</ASIN>
+      <DetailPageURL>http://www.amazon.de/Einstieg-Java-Programmieranf%C3%A4nger-Galileo-Computing/dp/389842359X%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D389842359X</DetailPageURL>
       <ItemLinks>
         <ItemLink>
           <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D3898423050%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898423050</URL>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D389842359X%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D389842359X</URL>
         </ItemLink>
         <ItemLink>
           <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.de/gp/pdp/taf/3898423050%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898423050</URL>
+          <URL>http://www.amazon.de/gp/pdp/taf/389842359X%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D389842359X</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.de/review/product/3898423050%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898423050</URL>
+          <URL>http://www.amazon.de/review/product/389842359X%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D389842359X</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Offers</Description>
-          <URL>http://www.amazon.de/gp/offer-listing/3898423050%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898423050</URL>
+          <URL>http://www.amazon.de/gp/offer-listing/389842359X%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D389842359X</URL>
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
-        <Author>Dirk Ploss</Author>
-        <Author>Andreas Berger</Author>
+        <Author>Bernhard Steppan</Author>
         <Manufacturer>Galileo Press</Manufacturer>
         <ProductGroup>Book</ProductGroup>
-        <Title>Intelligentes Couponing - Planung, Umsetzung, Erfolgskontrolle</Title>
+        <Title>Einstieg in Java - F&#252;r Programmieranf&#228;nger, mit CD (Galileo Computing)</Title>
       </ItemAttributes>
     </Item>
     <Item>
-      <ASIN>3898422453</ASIN>
-      <DetailPageURL>http://www.amazon.de/Perl-f%C3%BCrs-CGI-Anwendungen-Galileo-Computing/dp/3898422453%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3898422453</DetailPageURL>
+      <ASIN>3934358896</ASIN>
+      <DetailPageURL>http://www.amazon.de/Scans-Prints-Proofs-Ergebnisse-Scannen/dp/3934358896%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3934358896</DetailPageURL>
       <ItemLinks>
         <ItemLink>
           <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D3898422453%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898422453</URL>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D3934358896%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358896</URL>
         </ItemLink>
         <ItemLink>
           <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.de/gp/pdp/taf/3898422453%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898422453</URL>
+          <URL>http://www.amazon.de/gp/pdp/taf/3934358896%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358896</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.de/review/product/3898422453%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898422453</URL>
+          <URL>http://www.amazon.de/review/product/3934358896%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358896</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Offers</Description>
-          <URL>http://www.amazon.de/gp/offer-listing/3898422453%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898422453</URL>
+          <URL>http://www.amazon.de/gp/offer-listing/3934358896%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358896</URL>
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
-        <Author>Martin K&#228;stner</Author>
+        <Author>Helmut Kraus</Author>
         <Manufacturer>Galileo Press</Manufacturer>
         <ProductGroup>Book</ProductGroup>
-        <Title>Perl f&#252;rs Web. CGI-Anwendungen im Web, mit CD. (Galileo Computing)</Title>
+        <Title>Scans, Prints &amp; Proofs - Beste Ergebnisse beim Scannen und Drucken (Galileo Design)</Title>
       </ItemAttributes>
     </Item>
     <Item>
-      <ASIN>3934358071</ASIN>
-      <DetailPageURL>http://www.amazon.de/Qualit%C3%A4tsmanagement-Proze%C3%9Fmodellierung-Customizing-Anwendung-CD-Rom/dp/3934358071%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3934358071</DetailPageURL>
+      <ASIN>3898421724</ASIN>
+      <DetailPageURL>http://www.amazon.de/Rational-Rose-UML-Anleitung-Praxiseinsatz/dp/3898421724%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3898421724</DetailPageURL>
       <ItemLinks>
         <ItemLink>
           <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D3934358071%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358071</URL>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D3898421724%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898421724</URL>
         </ItemLink>
         <ItemLink>
           <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.de/gp/pdp/taf/3934358071%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358071</URL>
+          <URL>http://www.amazon.de/gp/pdp/taf/3898421724%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898421724</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.de/review/product/3934358071%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358071</URL>
+          <URL>http://www.amazon.de/review/product/3898421724%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898421724</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Offers</Description>
-          <URL>http://www.amazon.de/gp/offer-listing/3934358071%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358071</URL>
+          <URL>http://www.amazon.de/gp/offer-listing/3898421724%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898421724</URL>
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
-        <Author>Michael H&#246;lzer</Author>
-        <Author>Michael Schramm</Author>
+        <Author>Alf Borrmann</Author>
+        <Author>Manfred R&#228;tzmann</Author>
+        <Author>J&#246;rg Sauer</Author>
+        <Author>Jan Mat&#232;rne</Author>
+        <Author>Gunnar Landgrebe</Author>
         <Manufacturer>Galileo Press</Manufacturer>
         <ProductGroup>Book</ProductGroup>
-        <Title>Qualit&#228;tsmanagement mit SAP R/3. Proze&#223;modellierung, Customizing, Anwendung von R/3- QM. (m. CD-Rom)</Title>
+        <Title>Rational Rose und UML - Anleitung zum Praxiseinsatz, mit CD (Galileo Computing)</Title>
       </ItemAttributes>
     </Item>
     <Item>
-      <ASIN>393435811X</ASIN>
-      <DetailPageURL>http://www.amazon.de/Instandhaltung-mit-Rollenbasierte-Gesch%C3%A4ftsproze%C3%9Foptimierung-CD-ROM/dp/393435811X%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D393435811X</DetailPageURL>
+      <ASIN>3934358160</ASIN>
+      <DetailPageURL>http://www.amazon.de/SAP-3-Einf%C3%BChrung-mit-ASAP-Implementierung/dp/3934358160%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3934358160</DetailPageURL>
       <ItemLinks>
         <ItemLink>
           <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D393435811X%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D393435811X</URL>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D3934358160%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358160</URL>
         </ItemLink>
         <ItemLink>
           <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.de/gp/pdp/taf/393435811X%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D393435811X</URL>
+          <URL>http://www.amazon.de/gp/pdp/taf/3934358160%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358160</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.de/review/product/393435811X%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D393435811X</URL>
+          <URL>http://www.amazon.de/review/product/3934358160%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358160</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Offers</Description>
-          <URL>http://www.amazon.de/gp/offer-listing/393435811X%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D393435811X</URL>
+          <URL>http://www.amazon.de/gp/offer-listing/3934358160%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358160</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>Hartwig Brand</Author>
+        <Manufacturer>Galileo Press</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>SAP R/3-Einf&#252;hrung mit ASAP: Technische Implementierung von R/3 planen und realisieren (SAP PRESS)</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>3898422895</ASIN>
+      <DetailPageURL>http://www.amazon.de/Instandhaltung-mit-SAP-rollenbasierte-Gesch%C3%A4ftsprozessoptimierung/dp/3898422895%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3898422895</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D3898422895%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898422895</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.de/gp/pdp/taf/3898422895%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898422895</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.de/review/product/3898422895%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898422895</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.de/gp/offer-listing/3898422895%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898422895</URL>
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
@@ -291,38 +321,7 @@
         <Author>Reinhard Ematinger</Author>
         <Manufacturer>Galileo Press</Manufacturer>
         <ProductGroup>Book</ProductGroup>
-        <Title>Instandhaltung  mit SAP R/3. Rollenbasierte Gesch&#228;ftsproze&#223;optimierung mit PM. (Mit CD-ROM)</Title>
-      </ItemAttributes>
-    </Item>
-    <Item>
-      <ASIN>3934358861</ASIN>
-      <DetailPageURL>http://www.amazon.de/Web-Content-Management-professionell-betreiben/dp/3934358861%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3934358861</DetailPageURL>
-      <ItemLinks>
-        <ItemLink>
-          <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D3934358861%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358861</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.de/gp/pdp/taf/3934358861%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358861</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.de/review/product/3934358861%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358861</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>All Offers</Description>
-          <URL>http://www.amazon.de/gp/offer-listing/3934358861%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358861</URL>
-        </ItemLink>
-      </ItemLinks>
-      <ItemAttributes>
-        <Author>Heino B&#252;chner</Author>
-        <Author>Dennis Traub</Author>
-        <Author>Rik Zahradka</Author>
-        <Author>Oliver Zschau</Author>
-        <Manufacturer>Galileo Press</Manufacturer>
-        <ProductGroup>Book</ProductGroup>
-        <Title>Web Content Management: Websites professionell betreiben</Title>
+        <Title>Instandhaltung mit SAP - Handbuch f&#252;r eine rollenbasierte Gesch&#228;ftsprozessoptimierung (SAP PRESS)</Title>
       </ItemAttributes>
     </Item>
   </Items>
