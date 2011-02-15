@@ -1,0 +1,117 @@
+<ItemLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2009-11-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+    </HTTPHeaders>
+    <RequestId>c6e5a7e4-d243-4cf3-b082-b075a19f0e7a</RequestId>
+    <Arguments>
+      <Argument Name="ReviewPage" Value="9"/>
+      <Argument Name="Operation" Value="ItemLookup"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="ItemId" Value="0747532745"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2010-03-19T13:03:09Z"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="ResponseGroup" Value="Reviews"/>
+      <Argument Name="Version" Value="2009-11-01"/>
+    </Arguments>
+    <RequestProcessingTime>0.0446580000000000</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>True</IsValid>
+      <ItemLookupRequest>
+        <Condition>New</Condition>
+        <DeliveryMethod>Ship</DeliveryMethod>
+        <IdType>ASIN</IdType>
+        <MerchantId>Amazon</MerchantId>
+        <OfferPage>1</OfferPage>
+        <ItemId>0747532745</ItemId>
+        <ResponseGroup>Reviews</ResponseGroup>
+        <ReviewPage>9</ReviewPage>
+        <ReviewSort>-SubmissionDate</ReviewSort>
+        <VariationPage>All</VariationPage>
+      </ItemLookupRequest>
+    </Request>
+    <Item>
+      <ASIN>0747532745</ASIN>
+      <CustomerReviews>
+        <AverageRating>5.0</AverageRating>
+        <TotalReviews>2465</TotalReviews>
+        <TotalReviewPages>493</TotalReviewPages>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>5</Rating>
+          <HelpfulVotes>2</HelpfulVotes>
+          <CustomerId>A2EJOBMZVJ5HB6</CustomerId>
+          <Reviewer>
+            <CustomerId>A2EJOBMZVJ5HB6</CustomerId>
+            <Nickname>cobold0815</Nickname>
+          </Reviewer>
+          <TotalVotes>4</TotalVotes>
+          <Date>2003-08-25</Date>
+          <Summary>eine einmal andere "Kindergeschichte"</Summary>
+          <Content>Liebhaber der anderen Welten, der Zauberer, Feen und Fabelwesen, finden in Harry Potter einen Charakter, der eigentlich ziemlich "normal" ist, aber auf eine andere Art und Weise eben nicht. So sehr er unsereins gleicht, so verschieden sind doch Zauberwelt von der realen, Fabelwesen von allt&#228;glichen und Tagesabl&#228;ufe von den unsrigen.&lt;p&gt;Der Erfolg des Buches spricht f&#252;r sich und auch ich muss mich "leider" zu den Lesern z&#228;hlen, die sich erst nach den Ermunterungen von Freunden an das "Kinderbuch" herangewagt haben, wobei ich vorher noch gegen den Strom schwimmen und es auf gar keinen Fall kaufen wollte...&lt;p&gt;Zusammengefasst:&lt;br&gt;Harry Potter haust bei seinen Verwandten im alten Schrank unter der Treppe bis er eines Tages, kurz nach seinem elften Geburtstag, in der Hogwarts-Schule f&#252;r Hexerei und Zauberei aufgenommen wird. Sein Leben &#228;ndert sich mit diesen Neuigkeiten schlagartig und grundlegend. Beschrieben wird Harry's erstes Jahr in Hogwarts, das Kennenlernen der Schule samt neuer Freunde und Kreaturen, Zauberspr&#252;che, Helferlein und das allm&#228;liche Lichten seiner so lange im Dunkeln gebliebenen Vergangenheit...&lt;p&gt;Ein MUSS f&#252;r Sucher des Buches, das man mal wieder nicht aus der Hand legen will...</Content>
+        </Review>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>5</Rating>
+          <HelpfulVotes>6</HelpfulVotes>
+          <CustomerId>AUUDBCQRAWYRJ</CustomerId>
+          <Reviewer>
+            <CustomerId>AUUDBCQRAWYRJ</CustomerId>
+            <Nickname>liza_k</Nickname>
+          </Reviewer>
+          <TotalVotes>6</TotalVotes>
+          <Date>2003-07-08</Date>
+          <Summary>Mit Abstand die sch&#246;nste Ausgabe</Summary>
+          <Content>Wer sowieso schon Harry Potter Fan ist, wird von diesem Buch erst Recht begeistert sein. Wer Harry Potter noch nicht kennt, wird, selbst wenn ihm die Geschichte nicht 100%ig gef&#228;llt, an diesem Buch seine Freude haben.&lt;br&gt;Liebevoll wird jedes Kapitel mit einer kleinen Zeichnung engeleitet, Briefe, Mitteilungen usw., die in der Geschichte vorkommen, werden entweder ganz "mit der Hand" geschrieben, oder wenigstens "unterschrieben" (nat&#252;rlich gedruckt und nicht wirklich per Hand geschrieben.)&lt;p&gt;Orginell und abwechslungsreich. So macht Harry Potter lesen noch mehr Spa&#223;. &lt;br&gt;Meiner Meinung die sch&#246;nste Ausgabe von Harry Potter, das gilt nat&#252;rlich auch f&#252;r die aneren HP-B&#228;nde dieses Verlages.</Content>
+        </Review>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>5</Rating>
+          <HelpfulVotes>8</HelpfulVotes>
+          <CustomerId>A3UGB3U0L6D30L</CustomerId>
+          <Reviewer>
+            <CustomerId>A3UGB3U0L6D30L</CustomerId>
+            <Nickname>dreifragezeichenfan</Nickname>
+          </Reviewer>
+          <TotalVotes>10</TotalVotes>
+          <Date>2003-07-05</Date>
+          <Summary>Besser als das deutsche Buch</Summary>
+          <Content>In diesem Buch hat Johanne K. Rowling bewieesen, dass sie eine lebhafte Fantasie hat.&lt;br&gt; Sie schreibt sehr sch&#246;n und ich w&#252;rde sagen, dass man das buch ind der Schule verwenden k&#246;nnte. &lt;br&gt;Allerdings erst in der Mittelstufe. Bei Harry Potter and the Philosopher's Stone&lt;br&gt;ist alles viel ausf&#252;hrlicher als bei Harry Potter und der Stein der Weisen.&lt;br&gt;Das ist eindeutig auf die &#220;bersetzungsk&#252;nste von Henning Fritsch zur&#252;ckzuf&#252;hren. &lt;br&gt;Ich hoffe, dass bei den neueren B&#228;nden ein anderer &#220;bersetzer am Werk ist.&lt;br&gt;Obwohl das Buch auf Englisch ist, versteht man mehr an dem Sinn der Geschichte. &lt;br&gt;Da die Autorin so sch&#246;n schreibt ist man f&#252;r ungef&#228;hr eine Woche daran gefesselt&lt;br&gt;(aber nur wenn man kein Engl&#228;nder oder Amerikaner ist). &lt;p&gt;Eine Super-Leistung belohne ich mit f&#252;nf sternen.Das hat das sehr sch&#246;ne Buch sich auch verdient. &lt;br&gt;Gro&#223;es Lob an Johanne Kathreen Rowling.</Content>
+        </Review>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>5</Rating>
+          <HelpfulVotes>1</HelpfulVotes>
+          <CustomerId>A1341VRADSDWB2</CustomerId>
+          <Reviewer>
+            <CustomerId>A1341VRADSDWB2</CustomerId>
+            <Nickname>avesab</Nickname>
+          </Reviewer>
+          <TotalVotes>1</TotalVotes>
+          <Date>2003-04-29</Date>
+          <Summary>Unglaublich fesselnd!</Summary>
+          <Content>Ich wollte nicht glauben, dass ein Kinderbuch einen Erwachsenen so fesseln kann!  Bis ich den ersten Band anfing zu lesen und ihn nicht wieder weg legen konnte. Ein wirklich empfehlenswertes Buch - nicht nur f&#252;r Kinder!!!</Content>
+        </Review>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>5</Rating>
+          <HelpfulVotes>15</HelpfulVotes>
+          <CustomerId>A3GPOI2OTM4NMJ</CustomerId>
+          <Reviewer>
+            <CustomerId>A3GPOI2OTM4NMJ</CustomerId>
+            <Name>Minya</Name>
+            <Nickname>I would have followed you...my Brother...my Captain...my King</Nickname>
+            <Location>Oldenburg (Oldbg)</Location>
+          </Reviewer>
+          <TotalVotes>17</TotalVotes>
+          <Date>2003-04-27</Date>
+          <Summary>Einfach fabelhaft ....magisch halt!</Summary>
+          <Content>Zu Anfang stand ich ja Harry und dem ganzen Hype um die B&#252;cher eher skeptisch gegen&#252;ber. Was kann einem Kinder- und Jugendbuch schon so einzigartig sein, das die gesamte Welt so begeistert ist. Aber dann hab ich den ersten Band auf Deutsch gelesen und war sofort mit dem Potter-Virus infiziert. Innerhalb k&#252;rzester Zeit hatte ich alle bisher erschienen B&#228;nde in meinem B&#252;cherregal und warte nun gespannt auf den 5. Band den ich mir in Englisch auch schon vorbestellt habe. Irgendwann wollte ich n&#228;mlich wissen wie Harry sich im Original liest und ich kann jedem nur raten die Harry Potter B&#228;nde im Original zu lesen. Wer &#252;ber die normalen Schulenglischkenntnisse verf&#252;gt hat keinerlei Probleme und f&#252;r Sch&#252;ler find ich es eine geniale M&#246;glichkeit Englisch mit Spass zu lernen. Harrys Leben bei den Dursleys und anschliessend sein Werdegang zum Hogwardssch&#252;ler mit seinen Freunden Ron und Hermione (kein Schreibfehler von mir!) so zu erleben wie K.J.Rowlings es aus aus der Feder - oder dem Kugelschreiber - floss ist die reine Freude. Man kommt wirklich sehr schnell rein und gew&#246;hnt sich sogar an englisch zu denken beim Lesen.&lt;br&gt;Also nur Mut!</Content>
+        </Review>
+      </CustomerReviews>
+    </Item>
+  </Items>
+</ItemLookupResponse>

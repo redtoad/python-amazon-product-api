@@ -1,0 +1,330 @@
+<ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2009-11-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.3 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+    </HTTPHeaders>
+    <RequestId>fe39211a-175d-4413-948d-f4194c0bcdc7</RequestId>
+    <Arguments>
+      <Argument Name="Operation" Value="ItemSearch"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Version" Value="2009-11-01"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2010-06-13T12:39:15Z"/>
+      <Argument Name="Title" Value="Harry Potter"/>
+      <Argument Name="SearchIndex" Value="Books"/>
+    </Arguments>
+    <RequestProcessingTime>0.1763300000000000</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>True</IsValid>
+      <ItemSearchRequest>
+        <Condition>New</Condition>
+        <DeliveryMethod>Ship</DeliveryMethod>
+        <MerchantId>Amazon</MerchantId>
+        <ResponseGroup>Small</ResponseGroup>
+        <ReviewSort>-SubmissionDate</ReviewSort>
+        <SearchIndex>Books</SearchIndex>
+        <Title>Harry Potter</Title>
+      </ItemSearchRequest>
+    </Request>
+    <TotalResults>74</TotalResults>
+    <TotalPages>8</TotalPages>
+    <Item>
+      <ASIN>4915512630</ASIN>
+      <DetailPageURL>http://www.amazon.co.jp/%E3%80%8C%E3%83%8F%E3%83%AA%E3%83%BC%E3%83%BB%E3%83%9D%E3%83%83%E3%82%BF%E3%83%BC%E3%81%A8%E6%AD%BB%E3%81%AE%E7%A7%98%E5%AE%9D%E3%80%8D-%E4%B8%8A%E4%B8%8B%E5%B7%BB%E3%82%BB%E3%83%83%E3%83%88-%E3%83%8F%E3%83%AA%E3%83%BC%E3%83%BB%E3%83%9D%E3%83%83%E3%82%BF%E3%83%BC%E3%82%B7%E3%83%AA%E3%83%BC%E3%82%BA%E7%AC%AC%E4%B8%83%E5%B7%BB-J-%E3%83%AD%E3%83%BC%E3%83%AA%E3%83%B3%E3%82%B0/dp/4915512630%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4915512630</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.co.jp/gp/registry/wishlist/add-item.html%3Fasin.0%3D4915512630%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D5143%26creativeASIN%3D4915512630</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.co.jp/gp/pdp/taf/4915512630%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D5143%26creativeASIN%3D4915512630</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.co.jp/review/product/4915512630%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D5143%26creativeASIN%3D4915512630</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.co.jp/gp/offer-listing/4915512630%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D5143%26creativeASIN%3D4915512630</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>J. K. &#12525;&#12540;&#12522;&#12531;&#12464;</Author>
+        <Creator Role="&#32763;&#35379;">&#26494;&#23713; &#20305;&#23376;</Creator>
+        <Manufacturer>&#38745;&#23665;&#31038;</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>&#12300;&#12495;&#12522;&#12540;&#12539;&#12509;&#12483;&#12479;&#12540;&#12392;&#27515;&#12398;&#31192;&#23453;&#12301; (&#19978;&#19979;&#24059;&#12475;&#12483;&#12488;) (&#12495;&#12522;&#12540;&#12539;&#12509;&#12483;&#12479;&#12540;&#12471;&#12522;&#12540;&#12474;&#31532;&#19971;&#24059;)</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>4915512576</ASIN>
+      <DetailPageURL>http://www.amazon.co.jp/%E3%83%8F%E3%83%AA%E3%83%BC%E3%83%BB%E3%83%9D%E3%83%83%E3%82%BF%E3%83%BC%E3%81%A8%E8%AC%8E%E3%81%AE%E3%83%97%E3%83%AA%E3%83%B3%E3%82%B9-%E3%83%8F%E3%83%AA%E3%83%BC%E3%83%BB%E3%83%9D%E3%83%83%E3%82%BF%E3%83%BC%E3%82%B7%E3%83%AA%E3%83%BC%E3%82%BA%E7%AC%AC%E5%85%AD%E5%B7%BB-%E4%B8%8A%E4%B8%8B%E5%B7%BB2%E5%86%8A%E3%82%BB%E3%83%83%E3%83%88-J-%E3%83%AD%E3%83%BC%E3%83%AA%E3%83%B3%E3%82%B0/dp/4915512576%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4915512576</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.co.jp/gp/registry/wishlist/add-item.html%3Fasin.0%3D4915512576%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D5143%26creativeASIN%3D4915512576</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.co.jp/gp/pdp/taf/4915512576%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D5143%26creativeASIN%3D4915512576</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.co.jp/review/product/4915512576%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D5143%26creativeASIN%3D4915512576</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.co.jp/gp/offer-listing/4915512576%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D5143%26creativeASIN%3D4915512576</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>J. K. &#12525;&#12540;&#12522;&#12531;&#12464;</Author>
+        <Creator Role="&#21407;&#33879;">J. K. Rowling</Creator>
+        <Creator Role="&#32763;&#35379;">&#26494;&#23713; &#20305;&#23376;</Creator>
+        <Manufacturer>&#38745;&#23665;&#31038;</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>&#12495;&#12522;&#12540;&#12539;&#12509;&#12483;&#12479;&#12540;&#12392;&#35598;&#12398;&#12503;&#12522;&#12531;&#12473; &#12495;&#12522;&#12540;&#12539;&#12509;&#12483;&#12479;&#12540;&#12471;&#12522;&#12540;&#12474;&#31532;&#20845;&#24059; &#19978;&#19979;&#24059;2&#20874;&#12475;&#12483;&#12488; (6)</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>4915512517</ASIN>
+      <DetailPageURL>http://www.amazon.co.jp/%E3%83%8F%E3%83%AA%E3%83%BC%E3%83%BB%E3%83%9D%E3%83%83%E3%82%BF%E3%83%BC%E3%81%A8%E4%B8%8D%E6%AD%BB%E9%B3%A5%E3%81%AE%E9%A8%8E%E5%A3%AB%E5%9B%A3-%E3%83%8F%E3%83%AA%E3%83%BC%E3%83%BB%E3%83%9D%E3%83%83%E3%82%BF%E3%83%BC%E3%82%B7%E3%83%AA%E3%83%BC%E3%82%BA%E7%AC%AC%E4%BA%94%E5%B7%BB-%E4%B8%8A%E4%B8%8B%E5%B7%BB2%E5%86%8A%E3%82%BB%E3%83%83%E3%83%88-J-%E3%83%AD%E3%83%BC%E3%83%AA%E3%83%B3%E3%82%B0/dp/4915512517%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4915512517</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.co.jp/gp/registry/wishlist/add-item.html%3Fasin.0%3D4915512517%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D5143%26creativeASIN%3D4915512517</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.co.jp/gp/pdp/taf/4915512517%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D5143%26creativeASIN%3D4915512517</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.co.jp/review/product/4915512517%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D5143%26creativeASIN%3D4915512517</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.co.jp/gp/offer-listing/4915512517%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D5143%26creativeASIN%3D4915512517</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>J. K. &#12525;&#12540;&#12522;&#12531;&#12464;</Author>
+        <Creator Role="&#21407;&#33879;">J. K. Rowling</Creator>
+        <Creator Role="&#32763;&#35379;">&#26494;&#23713; &#20305;&#23376;</Creator>
+        <Manufacturer>&#38745;&#23665;&#31038;</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>&#12495;&#12522;&#12540;&#12539;&#12509;&#12483;&#12479;&#12540;&#12392;&#19981;&#27515;&#40165;&#12398;&#39438;&#22763;&#22243; &#12495;&#12522;&#12540;&#12539;&#12509;&#12483;&#12479;&#12540;&#12471;&#12522;&#12540;&#12474;&#31532;&#20116;&#24059; &#19978;&#19979;&#24059;2&#20874;&#12475;&#12483;&#12488;(5)</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>4915512495</ASIN>
+      <DetailPageURL>http://www.amazon.co.jp/%E3%83%8F%E3%83%AA%E3%83%BC%E3%83%BB%E3%83%9D%E3%83%83%E3%82%BF%E3%83%BC%E3%81%A8%E8%B3%A2%E8%80%85%E3%81%AE%E7%9F%B3-%E6%90%BA%E5%B8%AF%E7%89%88-J%E3%83%BBK%E3%83%BB%E3%83%AD%E3%83%BC%E3%83%AA%E3%83%B3%E3%82%B0/dp/4915512495%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4915512495</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.co.jp/gp/registry/wishlist/add-item.html%3Fasin.0%3D4915512495%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D5143%26creativeASIN%3D4915512495</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.co.jp/gp/pdp/taf/4915512495%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D5143%26creativeASIN%3D4915512495</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.co.jp/review/product/4915512495%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D5143%26creativeASIN%3D4915512495</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.co.jp/gp/offer-listing/4915512495%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D5143%26creativeASIN%3D4915512495</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>J&#12539;K&#12539;&#12525;&#12540;&#12522;&#12531;&#12464;</Author>
+        <Creator Role="&#32763;&#35379;">&#26494;&#23713; &#20305;&#23376;</Creator>
+        <Manufacturer>&#38745;&#23665;&#31038;</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>&#12495;&#12522;&#12540;&#12539;&#12509;&#12483;&#12479;&#12540;&#12392;&#36066;&#32773;&#12398;&#30707;(&#25658;&#24111;&#29256;)</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>4915512452</ASIN>
+      <DetailPageURL>http://www.amazon.co.jp/%E3%83%8F%E3%83%AA%E3%83%BC%E3%83%BB%E3%83%9D%E3%83%83%E3%82%BF%E3%83%BC%E3%81%A8%E7%82%8E%E3%81%AE%E3%82%B4%E3%83%96%E3%83%AC%E3%83%83%E3%83%88-%E4%B8%8A%E4%B8%8B%E5%B7%BB2%E5%86%8A%E3%82%BB%E3%83%83%E3%83%88-J-K-%E3%83%AD%E3%83%BC%E3%83%AA%E3%83%B3%E3%82%B0/dp/4915512452%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4915512452</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.co.jp/gp/registry/wishlist/add-item.html%3Fasin.0%3D4915512452%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D5143%26creativeASIN%3D4915512452</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.co.jp/gp/pdp/taf/4915512452%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D5143%26creativeASIN%3D4915512452</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.co.jp/review/product/4915512452%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D5143%26creativeASIN%3D4915512452</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.co.jp/gp/offer-listing/4915512452%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D5143%26creativeASIN%3D4915512452</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>J. K. &#12525;&#12540;&#12522;&#12531;&#12464;</Author>
+        <Author>J. K. Rowling</Author>
+        <Creator Role="&#32763;&#35379;">&#26494;&#23713; &#20305;&#23376;</Creator>
+        <Manufacturer>&#38745;&#23665;&#31038;</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>&#12495;&#12522;&#12540;&#12539;&#12509;&#12483;&#12479;&#12540;&#12392;&#28814;&#12398;&#12468;&#12502;&#12524;&#12483;&#12488; &#19978;&#19979;&#24059;2&#20874;&#12475;&#12483;&#12488; (4)</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>4915512371</ASIN>
+      <DetailPageURL>http://www.amazon.co.jp/%E3%83%8F%E3%83%AA%E3%83%BC%E3%83%BB%E3%83%9D%E3%83%83%E3%82%BF%E3%83%BC%E3%81%A8%E8%B3%A2%E8%80%85%E3%81%AE%E7%9F%B3-1-J-K-%E3%83%AD%E3%83%BC%E3%83%AA%E3%83%B3%E3%82%B0/dp/4915512371%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4915512371</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.co.jp/gp/registry/wishlist/add-item.html%3Fasin.0%3D4915512371%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D5143%26creativeASIN%3D4915512371</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.co.jp/gp/pdp/taf/4915512371%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D5143%26creativeASIN%3D4915512371</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.co.jp/review/product/4915512371%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D5143%26creativeASIN%3D4915512371</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.co.jp/gp/offer-listing/4915512371%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D5143%26creativeASIN%3D4915512371</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>J.K. &#12525;&#12540;&#12522;&#12531;&#12464;</Author>
+        <Creator Role="&#21407;&#33879;">J.K. Rowling</Creator>
+        <Creator Role="&#32763;&#35379;">&#26494;&#23713; &#20305;&#23376;</Creator>
+        <Manufacturer>&#38745;&#23665;&#31038;</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>&#12495;&#12522;&#12540;&#12539;&#12509;&#12483;&#12479;&#12540;&#12392;&#36066;&#32773;&#12398;&#30707; (1)</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>4915512401</ASIN>
+      <DetailPageURL>http://www.amazon.co.jp/%E3%83%8F%E3%83%AA%E3%83%BC%E3%83%BB%E3%83%9D%E3%83%83%E3%82%BF%E3%83%BC%E3%81%A8%E3%82%A2%E3%82%BA%E3%82%AB%E3%83%90%E3%83%B3%E3%81%AE%E5%9B%9A%E4%BA%BA-3-J-K-%E3%83%AD%E3%83%BC%E3%83%AA%E3%83%B3%E3%82%B0/dp/4915512401%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4915512401</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.co.jp/gp/registry/wishlist/add-item.html%3Fasin.0%3D4915512401%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D5143%26creativeASIN%3D4915512401</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.co.jp/gp/pdp/taf/4915512401%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D5143%26creativeASIN%3D4915512401</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.co.jp/review/product/4915512401%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D5143%26creativeASIN%3D4915512401</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.co.jp/gp/offer-listing/4915512401%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D5143%26creativeASIN%3D4915512401</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>J.K. &#12525;&#12540;&#12522;&#12531;&#12464;</Author>
+        <Author>J.K. Rowling</Author>
+        <Creator Role="&#32763;&#35379;">&#26494;&#23713; &#20305;&#23376;</Creator>
+        <Manufacturer>&#38745;&#23665;&#31038;</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>&#12495;&#12522;&#12540;&#12539;&#12509;&#12483;&#12479;&#12540;&#12392;&#12450;&#12474;&#12459;&#12496;&#12531;&#12398;&#22234;&#20154; (3)</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>4915512398</ASIN>
+      <DetailPageURL>http://www.amazon.co.jp/%E3%83%8F%E3%83%AA%E3%83%BC%E3%83%BB%E3%83%9D%E3%83%83%E3%82%BF%E3%83%BC%E3%81%A8%E7%A7%98%E5%AF%86%E3%81%AE%E9%83%A8%E5%B1%8B-2-J-K-%E3%83%AD%E3%83%BC%E3%83%AA%E3%83%B3%E3%82%B0/dp/4915512398%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4915512398</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.co.jp/gp/registry/wishlist/add-item.html%3Fasin.0%3D4915512398%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D5143%26creativeASIN%3D4915512398</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.co.jp/gp/pdp/taf/4915512398%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D5143%26creativeASIN%3D4915512398</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.co.jp/review/product/4915512398%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D5143%26creativeASIN%3D4915512398</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.co.jp/gp/offer-listing/4915512398%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D5143%26creativeASIN%3D4915512398</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>J.K. &#12525;&#12540;&#12522;&#12531;&#12464;</Author>
+        <Creator Role="&#21407;&#33879;">Joanne Kathleen Rowling</Creator>
+        <Creator Role="&#32763;&#35379;">&#26494;&#23713; &#20305;&#23376;</Creator>
+        <Manufacturer>&#38745;&#23665;&#31038;</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>&#12495;&#12522;&#12540;&#12539;&#12509;&#12483;&#12479;&#12540;&#12392;&#31192;&#23494;&#12398;&#37096;&#23627; (2)</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>4491018499</ASIN>
+      <DetailPageURL>http://www.amazon.co.jp/%E3%83%8F%E3%83%AA%E3%83%BC%E3%83%BB%E3%83%9D%E3%83%83%E3%82%BF%E3%83%BC%E5%A4%A7%E4%BA%8B%E5%85%B8-%E2%80%95-Encyclopedia-Harry-Potter/dp/4491018499%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4491018499</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.co.jp/gp/registry/wishlist/add-item.html%3Fasin.0%3D4491018499%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D5143%26creativeASIN%3D4491018499</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.co.jp/gp/pdp/taf/4491018499%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D5143%26creativeASIN%3D4491018499</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.co.jp/review/product/4491018499%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D5143%26creativeASIN%3D4491018499</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.co.jp/gp/offer-listing/4491018499%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D5143%26creativeASIN%3D4491018499</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>&#23546;&#23798; &#20037;&#32654;&#23376;</Author>
+        <Manufacturer>&#26481;&#27915;&#39208;&#20986;&#29256;&#31038;</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>&#12495;&#12522;&#12540;&#12539;&#12509;&#12483;&#12479;&#12540;&#22823;&#20107;&#20856; &#8213; The Encyclopedia of Harry Potter</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>4810427439</ASIN>
+      <DetailPageURL>http://www.amazon.co.jp/%E9%82%AA%E6%82%AA%E3%81%AE%E7%9F%B3-%E6%9C%AC%E5%BD%93%E3%81%AF%E6%81%90%E3%82%8D%E3%81%97%E3%81%84%E3%83%8F%E3%83%AA%E3%83%BC%E3%83%BB%E3%83%9D%E3%83%83%E3%82%BF%E3%83%BC-P-%E3%82%B0%E3%83%AC%E3%82%B4%E3%83%AA%E3%83%BC/dp/4810427439%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4810427439</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.co.jp/gp/registry/wishlist/add-item.html%3Fasin.0%3D4810427439%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D5143%26creativeASIN%3D4810427439</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.co.jp/gp/pdp/taf/4810427439%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D5143%26creativeASIN%3D4810427439</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.co.jp/review/product/4810427439%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D5143%26creativeASIN%3D4810427439</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.co.jp/gp/offer-listing/4810427439%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D5143%26creativeASIN%3D4810427439</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>P.&#12464;&#12524;&#12468;&#12522;&#12540;</Author>
+        <Creator Role="&#32763;&#35379;">&#28171;&#35895; &#24184;&#38596;</Creator>
+        <Manufacturer>&#21516;&#26379;&#33294;</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>&#37034;&#24746;&#12398;&#30707;:&#26412;&#24403;&#12399;&#24656;&#12429;&#12375;&#12356;&#12495;&#12522;&#12540;&#12539;&#12509;&#12483;&#12479;&#12540;</Title>
+      </ItemAttributes>
+    </Item>
+  </Items>
+</ItemSearchResponse>
