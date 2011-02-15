@@ -175,6 +175,16 @@ class TestResultPaginator (object):
         assert page == 9
         assert paginator.current == 10
 
+    def test_itemsearch_with_responsegroup_all_is_limited_to_five(self, api):
+        paginator = api.item_search('All', Keywords='Michael Jackson')
+        assert len(list(paginator)) == 5
+        assert paginator.current == 5
+
+    def test_itemsearch_with_responsegroup_all_can_be_limited(self, api):
+        paginator = api.item_search('All', Keywords='Michael Jackson', limit=2)
+        assert len(list(paginator)) == 2
+        assert paginator.current == 2
+
     def test_review_pagination(self, api):
         # reviews for "Harry Potter and the Philosopher's Stone"
         ASIN = '0747532745'
