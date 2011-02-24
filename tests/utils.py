@@ -1,5 +1,5 @@
 
-from lxml import etree
+from lxml import etree, objectify
 import os.path
 import re
 from StringIO import StringIO
@@ -85,6 +85,14 @@ def convert_camel_case(operation):
     Converts ``CamelCaseOperationName`` into ``python_style_method_name``.
     """
     return re.sub('([a-z])([A-Z])', r'\1_\2', operation).lower()
+
+def extract_operations_from_wsdl(path):
+    """
+    Extracts operations from Amazon's WSDL file.
+    """
+    root = objectify.parse(open(path)).getroot()
+    wsdlns = 'http://schemas.xmlsoap.org/wsdl/'
+    return set(root.xpath('//ws:operation/@name', namespaces={'ws' : wsdlns}))
 
 
 class Cart (object):
