@@ -1,6 +1,5 @@
 
 from datetime import datetime, timedelta
-from lxml import objectify
 import pytest
 import os.path
 
@@ -11,7 +10,7 @@ except ImportError:
     from cgi import parse_qs
 
 from tests import TESTABLE_API_VERSIONS, XML_TEST_DIR
-from tests.utils import convert_camel_case
+from tests.utils import convert_camel_case, extract_operations_from_wsdl
 from server import TestServer
 
 from amazonproduct import API
@@ -82,34 +81,31 @@ class TestAPICallsWithOptionalParameters (object):
         assert qs['AssociateTag'][0] == tag
 
 
-def test_API_coverage():
+def pytest_generate_tests(metafunc):
+    # called once per each test function
+    if 'api' in metafunc.funcargnames and 'operation' in metafunc.funcargnames:
+        for version in TESTABLE_API_VERSIONS:
+            wsdl = os.path.join(XML_TEST_DIR, version, 
+                'AWSECommerceService.wsdl')
+            if not os.path.exists(wsdl):
+                continue
+            api = API('', '', 'de')
+            api.VERSION = version
+            for operation in extract_operations_from_wsdl(wsdl):
+                metafunc.addcall(
+                    id='%s/%s' % (version, operation),
+                    funcargs={'api' : api, 'operation' : operation})
+
+def test_API_coverage(api, operation):
     """
     Tests if API class supports all operations which are in the official WSDL
     from Amazon.
     """
+    # a few operations are not yet implemented!
+    notyetimpltd = 'SellerLookup SellerListingLookup SellerListingSearch'
+    if operation in notyetimpltd.split():
+        pytest.xfail('Not yet fully implemented!')
 
-    def extract_operations(path):
-        "Extracts operations from WSDL file."
-        root = objectify.parse(open(path)).getroot()
-        return root.xpath('//ws:operation/@name', 
-                      namespaces={'ws' : 'http://schemas.xmlsoap.org/wsdl/'})
+    attr = convert_camel_case(operation)
+    assert hasattr(api, attr), 'API does not support %s!' % operation
 
-    def check_api(api, operation):
-        "Checks if API class supports specific operation."
-
-        if operation in ('CartAdd CartModify CartCreate CartGet CartClear '
-        'SellerLookup SellerListingLookup SellerListingSearch').split():
-                pytest.xfail('Not yet fully implemented!')
-
-        attr = convert_camel_case(operation)
-        assert hasattr(api, attr), 'API does not support %s!' % operation
-
-    for version in TESTABLE_API_VERSIONS:
-        wsdl = os.path.join(XML_TEST_DIR, version, 'AWSECommerceService.wsdl')
-        if not os.path.exists(wsdl):
-            continue
-        api = API('', '', 'de')
-        api.VERSION = version
-        for operation in extract_operations(wsdl):
-            check_api.description = 'API %s supports %s' % (version, operation)
-            yield check_api, api, operation
