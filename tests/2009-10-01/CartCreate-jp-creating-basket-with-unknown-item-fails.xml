@@ -3,18 +3,18 @@
     <HTTPHeaders>
       <Header Name="UserAgent" Value="python-amazon-product-api/0.2.5a2 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
     </HTTPHeaders>
-    <RequestId>1B4DH7JBVEYZV7A62ST4</RequestId>
+    <RequestId>07D3ARMG9HPHYBXMNW6Z</RequestId>
     <Arguments>
-      <Argument Name="Timestamp" Value="2011-01-30T17:01:13Z"/>
-      <Argument Name="Version" Value="2009-10-01"/>
-      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Item.1.ASIN" Value="021554"/>
       <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Version" Value="2009-10-01"/>
+      <Argument Name="Timestamp" Value="2011-02-25T15:31:44Z"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
       <Argument Name="Item.1.Quantity" Value="1"/>
       <Argument Name="Operation" Value="CartCreate"/>
-      <Argument Name="Item.1.ASIN" Value="021554"/>
     </Arguments>
-    <RequestProcessingTime>0.0349760055541992</RequestProcessingTime>
+    <RequestProcessingTime>0.0562388896942139</RequestProcessingTime>
   </OperationRequest>
   <Cart>
     <Request>

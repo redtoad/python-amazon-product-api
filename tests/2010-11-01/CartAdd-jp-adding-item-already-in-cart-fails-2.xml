@@ -3,27 +3,27 @@
     <HTTPHeaders>
       <Header Name="UserAgent" Value="python-amazon-product-api/0.2.5a2 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
     </HTTPHeaders>
-    <RequestId>0CWT75NC87Y8R0751N4B</RequestId>
+    <RequestId>1WG2GYY93Y2FPPS62WQY</RequestId>
     <Arguments>
+      <Argument Name="Timestamp" Value="2011-02-25T15:57:01Z"/>
       <Argument Name="Version" Value="2010-11-01"/>
-      <Argument Name="Timestamp" Value="2011-01-30T16:51:53Z"/>
       <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="CartId" Value="378-8206895-5299157"/>
+      <Argument Name="CartId" Value="377-9778299-9060458"/>
       <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
       <Argument Name="Service" Value="AWSECommerceService"/>
       <Argument Name="Item.1.Quantity" Value="2"/>
       <Argument Name="Operation" Value="CartAdd"/>
       <Argument Name="Item.1.ASIN" Value="0201896842"/>
-      <Argument Name="HMAC" Value="0/TNgbgJIpJMoC0W1mv+s7x725M="/>
+      <Argument Name="HMAC" Value="SYNarS0WWjcMgU057JcEXGMtnIk="/>
     </Arguments>
-    <RequestProcessingTime>0.107583999633789</RequestProcessingTime>
+    <RequestProcessingTime>0.105085134506226</RequestProcessingTime>
   </OperationRequest>
   <Cart>
     <Request>
       <IsValid>True</IsValid>
       <CartAddRequest>
-        <CartId>378-8206895-5299157</CartId>
-        <HMAC>0/TNgbgJIpJMoC0W1mv+s7x725M=</HMAC>
+        <CartId>377-9778299-9060458</CartId>
+        <HMAC>SYNarS0WWjcMgU057JcEXGMtnIk=</HMAC>
         <Items>
           <Item>
             <ASIN>0201896842</ASIN>
@@ -38,20 +38,20 @@
         </Error>
       </Errors>
     </Request>
-    <CartId>378-8206895-5299157</CartId>
-    <HMAC>0/TNgbgJIpJMoC0W1mv+s7x725M=</HMAC>
-    <URLEncodedHMAC>0%2FTNgbgJIpJMoC0W1mv%2Bs7x725M%3D</URLEncodedHMAC>
-    <PurchaseURL>https://www.amazon.co.jp/gp/cart/aws-merge.html?cart-id=378-8206895-5299157%26associate-id=ws%26hmac=0/TNgbgJIpJMoC0W1mv%2Bs7x725M=%26SubscriptionId=XXXXXXXXXXXXXXX%26MergeCart=False</PurchaseURL>
+    <CartId>377-9778299-9060458</CartId>
+    <HMAC>SYNarS0WWjcMgU057JcEXGMtnIk=</HMAC>
+    <URLEncodedHMAC>SYNarS0WWjcMgU057JcEXGMtnIk%3D</URLEncodedHMAC>
+    <PurchaseURL>https://www.amazon.co.jp/gp/cart/aws-merge.html?cart-id=377-9778299-9060458%26associate-id=ws%26hmac=SYNarS0WWjcMgU057JcEXGMtnIk=%26SubscriptionId=XXXXXXXXXXXXXXX%26MergeCart=False</PurchaseURL>
     <SubTotal>
-      <Amount>12694</Amount>
+      <Amount>19270</Amount>
       <CurrencyCode>JPY</CurrencyCode>
-      <FormattedPrice>&#65509; 12,694</FormattedPrice>
+      <FormattedPrice>&#65509; 19,270</FormattedPrice>
     </SubTotal>
     <CartItems>
       <SubTotal>
-        <Amount>12694</Amount>
+        <Amount>19270</Amount>
         <CurrencyCode>JPY</CurrencyCode>
-        <FormattedPrice>&#65509; 12,694</FormattedPrice>
+        <FormattedPrice>&#65509; 19,270</FormattedPrice>
       </SubTotal>
       <CartItem>
         <CartItemId>U2WDLE16L0VGBK</CartItemId>
@@ -59,18 +59,18 @@
         <MerchantId>AN1VRQENFRJN5</MerchantId>
         <SellerId>AN1VRQENFRJN5</SellerId>
         <SellerNickname>Amazon.co.jp</SellerNickname>
-        <Quantity>1</Quantity>
+        <Quantity>2</Quantity>
         <Title>Art of Computer Programming, Volume 2: Seminumerical Algorithms (3rd Edition) (Art of Computer Programming Volume 2)</Title>
         <ProductGroup>Book</ProductGroup>
         <Price>
-          <Amount>6370</Amount>
+          <Amount>6420</Amount>
           <CurrencyCode>JPY</CurrencyCode>
-          <FormattedPrice>&#65509; 6,370</FormattedPrice>
+          <FormattedPrice>&#65509; 6,420</FormattedPrice>
         </Price>
         <ItemTotal>
-          <Amount>6370</Amount>
+          <Amount>12840</Amount>
           <CurrencyCode>JPY</CurrencyCode>
-          <FormattedPrice>&#65509; 6,370</FormattedPrice>
+          <FormattedPrice>&#65509; 12,840</FormattedPrice>
         </ItemTotal>
       </CartItem>
       <CartItem>
@@ -83,14 +83,14 @@
         <Title>Art of Computer Programming, Volume 1: Fundamental Algorithms (3rd Edition) (Art of Computer Programming Volume 1)</Title>
         <ProductGroup>Book</ProductGroup>
         <Price>
-          <Amount>6324</Amount>
+          <Amount>6430</Amount>
           <CurrencyCode>JPY</CurrencyCode>
-          <FormattedPrice>&#65509; 6,324</FormattedPrice>
+          <FormattedPrice>&#65509; 6,430</FormattedPrice>
         </Price>
         <ItemTotal>
-          <Amount>6324</Amount>
+          <Amount>6430</Amount>
           <CurrencyCode>JPY</CurrencyCode>
-          <FormattedPrice>&#65509; 6,324</FormattedPrice>
+          <FormattedPrice>&#65509; 6,430</FormattedPrice>
         </ItemTotal>
       </CartItem>
     </CartItems>

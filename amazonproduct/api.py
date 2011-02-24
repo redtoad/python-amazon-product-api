@@ -443,7 +443,7 @@ class API (object):
         accessible only by that value. That is, in subsequent requests, an item
         in a cart cannot be accessed by its ``ListItemId`` and ``ASIN``, or
         ``OfferListingId``. ``CartItemId`` is returned by ``CartCreate``,
-        ``CartGet``, and C``artAdd``.
+        ``CartGet``, and ``CartAdd``.
 
         Because the contents of a cart can change for different reasons, such
         as item availability, you should not keep a copy of a cart locally.
@@ -551,7 +551,7 @@ class API (object):
             # otherwise re-raise exception
             raise # pragma: no cover
 
-    def cart_modify(self, cart_id, hmac, items, **params):
+    def cart_modify(self, cart_id, hmac, item_ids, **params):
         """
         The ``CartModify`` operation enables you to change the quantity of
         items that are already in a remote shopping cart and move items from
@@ -582,7 +582,7 @@ class API (object):
                 'CartId' : cart_id,
                 'HMAC' : hmac,
             })
-            params.update(self._convert_cart_items(items, key='CartItemId'))
+            params.update(self._convert_cart_items(item_ids, key='CartItemId'))
             return self.call(Operation='CartModify', **params)
         except AWSError, e:
 

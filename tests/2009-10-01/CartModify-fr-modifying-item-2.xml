@@ -1,0 +1,72 @@
+<CartModifyResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2009-10-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.5a2 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+    </HTTPHeaders>
+    <RequestId>1XED7QV5TV0ATEG3285Y</RequestId>
+    <Arguments>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Item.1.Quantity" Value="0"/>
+      <Argument Name="Item.1.CartItemId" Value="U275ZDN4F50I7T"/>
+      <Argument Name="HMAC" Value="B6dcG1G0JHZbNI9clySVv3jHJno="/>
+      <Argument Name="Operation" Value="CartModify"/>
+      <Argument Name="CartId" Value="277-7636270-8413257"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2011-02-25T15:33:44Z"/>
+      <Argument Name="Version" Value="2009-10-01"/>
+    </Arguments>
+    <RequestProcessingTime>0.0774180889129639</RequestProcessingTime>
+  </OperationRequest>
+  <Cart>
+    <Request>
+      <IsValid>True</IsValid>
+      <CartModifyRequest>
+        <CartId>277-7636270-8413257</CartId>
+        <HMAC>B6dcG1G0JHZbNI9clySVv3jHJno=</HMAC>
+        <Items>
+          <Item>
+            <CartItemId>U275ZDN4F50I7T</CartItemId>
+            <Quantity>0</Quantity>
+          </Item>
+        </Items>
+      </CartModifyRequest>
+    </Request>
+    <CartId>277-7636270-8413257</CartId>
+    <HMAC>B6dcG1G0JHZbNI9clySVv3jHJno=</HMAC>
+    <URLEncodedHMAC>B6dcG1G0JHZbNI9clySVv3jHJno%3D</URLEncodedHMAC>
+    <PurchaseURL>https://www.amazon.fr/gp/cart/aws-merge.html?cart-id=277-7636270-8413257%26associate-id=ws%26hmac=B6dcG1G0JHZbNI9clySVv3jHJno=%26SubscriptionId=XXXXXXXXXXXXXXX%26MergeCart=False</PurchaseURL>
+    <SubTotal>
+      <Amount>4667</Amount>
+      <CurrencyCode>EUR</CurrencyCode>
+      <FormattedPrice>EUR 46,67</FormattedPrice>
+    </SubTotal>
+    <CartItems>
+      <SubTotal>
+        <Amount>4667</Amount>
+        <CurrencyCode>EUR</CurrencyCode>
+        <FormattedPrice>EUR 46,67</FormattedPrice>
+      </SubTotal>
+      <CartItem>
+        <CartItemId>U1JPSM5GXOR7ON</CartItemId>
+        <ASIN>0201896834</ASIN>
+        <MerchantId>A1X6FK5RDHNB96</MerchantId>
+        <SellerId>A1X6FK5RDHNB96</SellerId>
+        <SellerNickname>Amazon.fr</SellerNickname>
+        <Quantity>1</Quantity>
+        <Title>Art of Computer Programming, Volume 1: Fundamental Algorithms</Title>
+        <ProductGroup>Book</ProductGroup>
+        <Price>
+          <Amount>4667</Amount>
+          <CurrencyCode>EUR</CurrencyCode>
+          <FormattedPrice>EUR 46,67</FormattedPrice>
+        </Price>
+        <ItemTotal>
+          <Amount>4667</Amount>
+          <CurrencyCode>EUR</CurrencyCode>
+          <FormattedPrice>EUR 46,67</FormattedPrice>
+        </ItemTotal>
+      </CartItem>
+    </CartItems>
+  </Cart>
+</CartModifyResponse>

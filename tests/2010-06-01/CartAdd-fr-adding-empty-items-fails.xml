@@ -3,20 +3,20 @@
     <HTTPHeaders>
       <Header Name="UserAgent" Value="python-amazon-product-api/0.2.5a2 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
     </HTTPHeaders>
-    <RequestId>1QWAN8MMW73PXCWST3YF</RequestId>
+    <RequestId>0R4VR2H7M7RTC0CHW5MM</RequestId>
     <Arguments>
       <Argument Name="Item.1.ASIN" Value="0201896842"/>
       <Argument Name="Service" Value="AWSECommerceService"/>
       <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
       <Argument Name="Item.2.ASIN" Value="0201896834"/>
-      <Argument Name="Item.1.Quantity" Value="1"/>
+      <Argument Name="Item.1.Quantity" Value="2"/>
       <Argument Name="Item.2.Quantity" Value="1"/>
       <Argument Name="Operation" Value="CartCreate"/>
       <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2011-02-25T15:46:17Z"/>
       <Argument Name="Version" Value="2010-06-01"/>
-      <Argument Name="Timestamp" Value="2011-01-30T16:48:56Z"/>
     </Arguments>
-    <RequestProcessingTime>0.188638925552368</RequestProcessingTime>
+    <RequestProcessingTime>0.129833936691284</RequestProcessingTime>
   </OperationRequest>
   <Cart>
     <Request>
@@ -25,7 +25,7 @@
         <Items>
           <Item>
             <ASIN>0201896842</ASIN>
-            <Quantity>1</Quantity>
+            <Quantity>2</Quantity>
           </Item>
           <Item>
             <ASIN>0201896834</ASIN>
@@ -34,20 +34,20 @@
         </Items>
       </CartCreateRequest>
     </Request>
-    <CartId>276-5071765-7657916</CartId>
-    <HMAC>meuJTyivsdujciCXNKJswZx+0T0=</HMAC>
-    <URLEncodedHMAC>meuJTyivsdujciCXNKJswZx%2B0T0%3D</URLEncodedHMAC>
-    <PurchaseURL>https://www.amazon.fr/gp/cart/aws-merge.html?cart-id=276-5071765-7657916%26associate-id=ws%26hmac=meuJTyivsdujciCXNKJswZx%2B0T0=%26SubscriptionId=XXXXXXXXXXXXXXX%26MergeCart=False</PurchaseURL>
+    <CartId>278-2328180-6955667</CartId>
+    <HMAC>uYfli4+P+06Ptb9buQXS9hcPD5c=</HMAC>
+    <URLEncodedHMAC>uYfli4%2BP%2B06Ptb9buQXS9hcPD5c%3D</URLEncodedHMAC>
+    <PurchaseURL>https://www.amazon.fr/gp/cart/aws-merge.html?cart-id=278-2328180-6955667%26associate-id=ws%26hmac=uYfli4%2BP%2B06Ptb9buQXS9hcPD5c=%26SubscriptionId=XXXXXXXXXXXXXXX%26MergeCart=False</PurchaseURL>
     <SubTotal>
-      <Amount>11087</Amount>
+      <Amount>13599</Amount>
       <CurrencyCode>EUR</CurrencyCode>
-      <FormattedPrice>EUR 110,87</FormattedPrice>
+      <FormattedPrice>EUR 135,99</FormattedPrice>
     </SubTotal>
     <CartItems>
       <SubTotal>
-        <Amount>11087</Amount>
+        <Amount>13599</Amount>
         <CurrencyCode>EUR</CurrencyCode>
-        <FormattedPrice>EUR 110,87</FormattedPrice>
+        <FormattedPrice>EUR 135,99</FormattedPrice>
       </SubTotal>
       <CartItem>
         <CartItemId>U275ZDN4F50I7T</CartItemId>
@@ -55,18 +55,18 @@
         <MerchantId>A1X6FK5RDHNB96</MerchantId>
         <SellerId>A1X6FK5RDHNB96</SellerId>
         <SellerNickname>Amazon.fr</SellerNickname>
-        <Quantity>1</Quantity>
-        <Title>The Art of Computer Programming: Seminumerical Algorithms</Title>
+        <Quantity>2</Quantity>
+        <Title>Art of Computer Programming, Volume 2: Seminumerical Algorithms</Title>
         <ProductGroup>Book</ProductGroup>
         <Price>
-          <Amount>5472</Amount>
+          <Amount>4466</Amount>
           <CurrencyCode>EUR</CurrencyCode>
-          <FormattedPrice>EUR 54,72</FormattedPrice>
+          <FormattedPrice>EUR 44,66</FormattedPrice>
         </Price>
         <ItemTotal>
-          <Amount>5472</Amount>
+          <Amount>8932</Amount>
           <CurrencyCode>EUR</CurrencyCode>
-          <FormattedPrice>EUR 54,72</FormattedPrice>
+          <FormattedPrice>EUR 89,32</FormattedPrice>
         </ItemTotal>
       </CartItem>
       <CartItem>
@@ -76,17 +76,17 @@
         <SellerId>A1X6FK5RDHNB96</SellerId>
         <SellerNickname>Amazon.fr</SellerNickname>
         <Quantity>1</Quantity>
-        <Title>The Art of Computer Programming: Fundamental Algorithms</Title>
+        <Title>Art of Computer Programming, Volume 1: Fundamental Algorithms</Title>
         <ProductGroup>Book</ProductGroup>
         <Price>
-          <Amount>5615</Amount>
+          <Amount>4667</Amount>
           <CurrencyCode>EUR</CurrencyCode>
-          <FormattedPrice>EUR 56,15</FormattedPrice>
+          <FormattedPrice>EUR 46,67</FormattedPrice>
         </Price>
         <ItemTotal>
-          <Amount>5615</Amount>
+          <Amount>4667</Amount>
           <CurrencyCode>EUR</CurrencyCode>
-          <FormattedPrice>EUR 56,15</FormattedPrice>
+          <FormattedPrice>EUR 46,67</FormattedPrice>
         </ItemTotal>
       </CartItem>
     </CartItems>

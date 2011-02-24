@@ -3,42 +3,62 @@
     <HTTPHeaders>
       <Header Name="UserAgent" Value="python-amazon-product-api/0.2.5a2 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
     </HTTPHeaders>
-    <RequestId>0CFAW84CRYZ1HV6Q3021</RequestId>
+    <RequestId>1EG6VTJPVHCDYVE2DVN9</RequestId>
     <Arguments>
       <Argument Name="Version" Value="2009-11-01"/>
-      <Argument Name="Timestamp" Value="2011-01-30T17:04:04Z"/>
+      <Argument Name="Timestamp" Value="2011-02-25T15:39:09Z"/>
       <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="CartId" Value="378-4819952-2374843"/>
+      <Argument Name="CartId" Value="375-9584270-2716132"/>
       <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
       <Argument Name="Service" Value="AWSECommerceService"/>
       <Argument Name="Operation" Value="CartGet"/>
-      <Argument Name="HMAC" Value="VCCVR+qw+mWLxJv1EaxQO6wpklA="/>
+      <Argument Name="HMAC" Value="yq2i4xmZOQXi9hiWXYRXgZ7V1U8="/>
     </Arguments>
-    <RequestProcessingTime>0.0521221160888672</RequestProcessingTime>
+    <RequestProcessingTime>0.071566104888916</RequestProcessingTime>
   </OperationRequest>
   <Cart>
     <Request>
       <IsValid>True</IsValid>
       <CartGetRequest>
-        <CartId>378-4819952-2374843</CartId>
-        <HMAC>VCCVR+qw+mWLxJv1EaxQO6wpklA=</HMAC>
+        <CartId>375-9584270-2716132</CartId>
+        <HMAC>yq2i4xmZOQXi9hiWXYRXgZ7V1U8=</HMAC>
       </CartGetRequest>
     </Request>
-    <CartId>378-4819952-2374843</CartId>
-    <HMAC>VCCVR+qw+mWLxJv1EaxQO6wpklA=</HMAC>
-    <URLEncodedHMAC>VCCVR%2Bqw%2BmWLxJv1EaxQO6wpklA%3D</URLEncodedHMAC>
-    <PurchaseURL>https://www.amazon.co.jp/gp/cart/aws-merge.html?cart-id=378-4819952-2374843%26associate-id=ws%26hmac=VCCVR%2Bqw%2BmWLxJv1EaxQO6wpklA=%26SubscriptionId=XXXXXXXXXXXXXXX%26MergeCart=False</PurchaseURL>
+    <CartId>375-9584270-2716132</CartId>
+    <HMAC>yq2i4xmZOQXi9hiWXYRXgZ7V1U8=</HMAC>
+    <URLEncodedHMAC>yq2i4xmZOQXi9hiWXYRXgZ7V1U8%3D</URLEncodedHMAC>
+    <PurchaseURL>https://www.amazon.co.jp/gp/cart/aws-merge.html?cart-id=375-9584270-2716132%26associate-id=ws%26hmac=yq2i4xmZOQXi9hiWXYRXgZ7V1U8=%26SubscriptionId=XXXXXXXXXXXXXXX%26MergeCart=False</PurchaseURL>
     <SubTotal>
-      <Amount>6324</Amount>
+      <Amount>19270</Amount>
       <CurrencyCode>JPY</CurrencyCode>
-      <FormattedPrice>&#65509; 6,324</FormattedPrice>
+      <FormattedPrice>&#65509; 19,270</FormattedPrice>
     </SubTotal>
     <CartItems>
       <SubTotal>
-        <Amount>6324</Amount>
+        <Amount>19270</Amount>
         <CurrencyCode>JPY</CurrencyCode>
-        <FormattedPrice>&#65509; 6,324</FormattedPrice>
+        <FormattedPrice>&#65509; 19,270</FormattedPrice>
       </SubTotal>
+      <CartItem>
+        <CartItemId>U2WDLE16L0VGBK</CartItemId>
+        <ASIN>0201896842</ASIN>
+        <MerchantId>AN1VRQENFRJN5</MerchantId>
+        <SellerId>AN1VRQENFRJN5</SellerId>
+        <SellerNickname>Amazon.co.jp</SellerNickname>
+        <Quantity>2</Quantity>
+        <Title>Art of Computer Programming, Volume 2: Seminumerical Algorithms (3rd Edition) (Art of Computer Programming Volume 2)</Title>
+        <ProductGroup>Book</ProductGroup>
+        <Price>
+          <Amount>6420</Amount>
+          <CurrencyCode>JPY</CurrencyCode>
+          <FormattedPrice>&#65509; 6,420</FormattedPrice>
+        </Price>
+        <ItemTotal>
+          <Amount>12840</Amount>
+          <CurrencyCode>JPY</CurrencyCode>
+          <FormattedPrice>&#65509; 12,840</FormattedPrice>
+        </ItemTotal>
+      </CartItem>
       <CartItem>
         <CartItemId>U29KZN7NZ01S6J</CartItemId>
         <ASIN>0201896834</ASIN>
@@ -49,14 +69,14 @@
         <Title>Art of Computer Programming, Volume 1: Fundamental Algorithms (3rd Edition) (Art of Computer Programming Volume 1)</Title>
         <ProductGroup>Book</ProductGroup>
         <Price>
-          <Amount>6324</Amount>
+          <Amount>6430</Amount>
           <CurrencyCode>JPY</CurrencyCode>
-          <FormattedPrice>&#65509; 6,324</FormattedPrice>
+          <FormattedPrice>&#65509; 6,430</FormattedPrice>
         </Price>
         <ItemTotal>
-          <Amount>6324</Amount>
+          <Amount>6430</Amount>
           <CurrencyCode>JPY</CurrencyCode>
-          <FormattedPrice>&#65509; 6,324</FormattedPrice>
+          <FormattedPrice>&#65509; 6,430</FormattedPrice>
         </ItemTotal>
       </CartItem>
     </CartItems>

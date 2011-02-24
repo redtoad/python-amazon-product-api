@@ -3,42 +3,62 @@
     <HTTPHeaders>
       <Header Name="UserAgent" Value="python-amazon-product-api/0.2.5a2 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
     </HTTPHeaders>
-    <RequestId>0PS2FDAD08PE70890QR0</RequestId>
+    <RequestId>096DYXM24Y1TWPDHTT75</RequestId>
     <Arguments>
       <Argument Name="Service" Value="AWSECommerceService"/>
-      <Argument Name="Operation" Value="CartGet"/>
-      <Argument Name="Version" Value="2010-12-01"/>
-      <Argument Name="Timestamp" Value="2011-01-30T17:20:23Z"/>
       <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="HMAC" Value="PteKK5W3KEhHm56/un9JFFiO3gM="/>
-      <Argument Name="CartId" Value="275-0083605-1451546"/>
+      <Argument Name="HMAC" Value="e8vdhizrDV9OAEmai3WT+iDrwPc="/>
+      <Argument Name="Operation" Value="CartGet"/>
+      <Argument Name="CartId" Value="277-9721678-5189903"/>
       <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Version" Value="2010-12-01"/>
+      <Argument Name="Timestamp" Value="2011-02-25T15:37:56Z"/>
     </Arguments>
-    <RequestProcessingTime>0.0515689849853516</RequestProcessingTime>
+    <RequestProcessingTime>0.137550830841064</RequestProcessingTime>
   </OperationRequest>
   <Cart>
     <Request>
       <IsValid>True</IsValid>
       <CartGetRequest>
-        <CartId>275-0083605-1451546</CartId>
-        <HMAC>PteKK5W3KEhHm56/un9JFFiO3gM=</HMAC>
+        <CartId>277-9721678-5189903</CartId>
+        <HMAC>e8vdhizrDV9OAEmai3WT+iDrwPc=</HMAC>
       </CartGetRequest>
     </Request>
-    <CartId>275-0083605-1451546</CartId>
-    <HMAC>PteKK5W3KEhHm56/un9JFFiO3gM=</HMAC>
-    <URLEncodedHMAC>PteKK5W3KEhHm56%2Fun9JFFiO3gM%3D</URLEncodedHMAC>
-    <PurchaseURL>https://www.amazon.de/gp/cart/aws-merge.html?cart-id=275-0083605-1451546%26associate-id=ws%26hmac=PteKK5W3KEhHm56/un9JFFiO3gM=%26SubscriptionId=XXXXXXXXXXXXXXX%26MergeCart=False</PurchaseURL>
+    <CartId>277-9721678-5189903</CartId>
+    <HMAC>e8vdhizrDV9OAEmai3WT+iDrwPc=</HMAC>
+    <URLEncodedHMAC>e8vdhizrDV9OAEmai3WT%2BiDrwPc%3D</URLEncodedHMAC>
+    <PurchaseURL>https://www.amazon.de/gp/cart/aws-merge.html?cart-id=277-9721678-5189903%26associate-id=ws%26hmac=e8vdhizrDV9OAEmai3WT%2BiDrwPc=%26SubscriptionId=XXXXXXXXXXXXXXX%26MergeCart=False</PurchaseURL>
     <SubTotal>
-      <Amount>3895</Amount>
+      <Amount>11685</Amount>
       <CurrencyCode>EUR</CurrencyCode>
-      <FormattedPrice>EUR 38,95</FormattedPrice>
+      <FormattedPrice>EUR 116,85</FormattedPrice>
     </SubTotal>
     <CartItems>
       <SubTotal>
-        <Amount>3895</Amount>
+        <Amount>11685</Amount>
         <CurrencyCode>EUR</CurrencyCode>
-        <FormattedPrice>EUR 38,95</FormattedPrice>
+        <FormattedPrice>EUR 116,85</FormattedPrice>
       </SubTotal>
+      <CartItem>
+        <CartItemId>U22YH4R7VGJ6BA</CartItemId>
+        <ASIN>0201896842</ASIN>
+        <MerchantId>A3JWKAKR8XB7XF</MerchantId>
+        <SellerId>A3JWKAKR8XB7XF</SellerId>
+        <SellerNickname>Amazon.de</SellerNickname>
+        <Quantity>2</Quantity>
+        <Title>The Art of Computer Programming 2. Seminumerical Algorithms</Title>
+        <ProductGroup>Book</ProductGroup>
+        <Price>
+          <Amount>3895</Amount>
+          <CurrencyCode>EUR</CurrencyCode>
+          <FormattedPrice>EUR 38,95</FormattedPrice>
+        </Price>
+        <ItemTotal>
+          <Amount>7790</Amount>
+          <CurrencyCode>EUR</CurrencyCode>
+          <FormattedPrice>EUR 77,90</FormattedPrice>
+        </ItemTotal>
+      </CartItem>
       <CartItem>
         <CartItemId>U2RKVV1ZD39FA8</CartItemId>
         <ASIN>0201896834</ASIN>

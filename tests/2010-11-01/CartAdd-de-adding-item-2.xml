@@ -3,49 +3,49 @@
     <HTTPHeaders>
       <Header Name="UserAgent" Value="python-amazon-product-api/0.2.5a2 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
     </HTTPHeaders>
-    <RequestId>0A079BXK3CZNJXFXZVBN</RequestId>
+    <RequestId>03J9CSRHSZANVAXZXKNF</RequestId>
     <Arguments>
       <Argument Name="Item.1.ASIN" Value="0201896850"/>
       <Argument Name="Service" Value="AWSECommerceService"/>
       <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="Item.1.Quantity" Value="1"/>
-      <Argument Name="HMAC" Value="cJzhaZWKmaH8oYLm//+tL+LeuGc="/>
+      <Argument Name="Item.1.Quantity" Value="3"/>
+      <Argument Name="HMAC" Value="ueWUou2H9Mwbcr46tX6W9RQVmts="/>
       <Argument Name="Operation" Value="CartAdd"/>
-      <Argument Name="CartId" Value="276-9205435-8473843"/>
+      <Argument Name="CartId" Value="277-6135272-0327150"/>
       <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2011-02-25T16:04:16Z"/>
       <Argument Name="Version" Value="2010-11-01"/>
-      <Argument Name="Timestamp" Value="2011-01-30T16:50:41Z"/>
     </Arguments>
-    <RequestProcessingTime>0.152112007141113</RequestProcessingTime>
+    <RequestProcessingTime>0.19877290725708</RequestProcessingTime>
   </OperationRequest>
   <Cart>
     <Request>
       <IsValid>True</IsValid>
       <CartAddRequest>
-        <CartId>276-9205435-8473843</CartId>
-        <HMAC>cJzhaZWKmaH8oYLm//+tL+LeuGc=</HMAC>
+        <CartId>277-6135272-0327150</CartId>
+        <HMAC>ueWUou2H9Mwbcr46tX6W9RQVmts=</HMAC>
         <Items>
           <Item>
             <ASIN>0201896850</ASIN>
-            <Quantity>1</Quantity>
+            <Quantity>3</Quantity>
           </Item>
         </Items>
       </CartAddRequest>
     </Request>
-    <CartId>276-9205435-8473843</CartId>
-    <HMAC>cJzhaZWKmaH8oYLm//+tL+LeuGc=</HMAC>
-    <URLEncodedHMAC>cJzhaZWKmaH8oYLm%2F%2F%2BtL%2BLeuGc%3D</URLEncodedHMAC>
-    <PurchaseURL>https://www.amazon.de/gp/cart/aws-merge.html?cart-id=276-9205435-8473843%26associate-id=ws%26hmac=cJzhaZWKmaH8oYLm//%2BtL%2BLeuGc=%26SubscriptionId=XXXXXXXXXXXXXXX%26MergeCart=False</PurchaseURL>
+    <CartId>277-6135272-0327150</CartId>
+    <HMAC>ueWUou2H9Mwbcr46tX6W9RQVmts=</HMAC>
+    <URLEncodedHMAC>ueWUou2H9Mwbcr46tX6W9RQVmts%3D</URLEncodedHMAC>
+    <PurchaseURL>https://www.amazon.de/gp/cart/aws-merge.html?cart-id=277-6135272-0327150%26associate-id=ws%26hmac=ueWUou2H9Mwbcr46tX6W9RQVmts=%26SubscriptionId=XXXXXXXXXXXXXXX%26MergeCart=False</PurchaseURL>
     <SubTotal>
-      <Amount>14874</Amount>
+      <Amount>23670</Amount>
       <CurrencyCode>EUR</CurrencyCode>
-      <FormattedPrice>EUR 148,74</FormattedPrice>
+      <FormattedPrice>EUR 236,70</FormattedPrice>
     </SubTotal>
     <CartItems>
       <SubTotal>
-        <Amount>14874</Amount>
+        <Amount>23670</Amount>
         <CurrencyCode>EUR</CurrencyCode>
-        <FormattedPrice>EUR 148,74</FormattedPrice>
+        <FormattedPrice>EUR 236,70</FormattedPrice>
       </SubTotal>
       <CartItem>
         <CartItemId>U1HF6HE6EOTDKT</CartItemId>
@@ -53,18 +53,18 @@
         <MerchantId>A3JWKAKR8XB7XF</MerchantId>
         <SellerId>A3JWKAKR8XB7XF</SellerId>
         <SellerNickname>Amazon.de</SellerNickname>
-        <Quantity>1</Quantity>
+        <Quantity>3</Quantity>
         <Title>The Art of Computer Programming 3. Sorting and Searching: The Classic Work Newly Updated and Revised</Title>
         <ProductGroup>Book</ProductGroup>
         <Price>
-          <Amount>5999</Amount>
+          <Amount>3995</Amount>
           <CurrencyCode>EUR</CurrencyCode>
-          <FormattedPrice>EUR 59,99</FormattedPrice>
+          <FormattedPrice>EUR 39,95</FormattedPrice>
         </Price>
         <ItemTotal>
-          <Amount>5999</Amount>
+          <Amount>11985</Amount>
           <CurrencyCode>EUR</CurrencyCode>
-          <FormattedPrice>EUR 59,99</FormattedPrice>
+          <FormattedPrice>EUR 119,85</FormattedPrice>
         </ItemTotal>
       </CartItem>
       <CartItem>
@@ -73,18 +73,18 @@
         <MerchantId>A3JWKAKR8XB7XF</MerchantId>
         <SellerId>A3JWKAKR8XB7XF</SellerId>
         <SellerNickname>Amazon.de</SellerNickname>
-        <Quantity>1</Quantity>
+        <Quantity>2</Quantity>
         <Title>The Art of Computer Programming 2. Seminumerical Algorithms</Title>
         <ProductGroup>Book</ProductGroup>
         <Price>
-          <Amount>4980</Amount>
+          <Amount>3895</Amount>
           <CurrencyCode>EUR</CurrencyCode>
-          <FormattedPrice>EUR 49,80</FormattedPrice>
+          <FormattedPrice>EUR 38,95</FormattedPrice>
         </Price>
         <ItemTotal>
-          <Amount>4980</Amount>
+          <Amount>7790</Amount>
           <CurrencyCode>EUR</CurrencyCode>
-          <FormattedPrice>EUR 49,80</FormattedPrice>
+          <FormattedPrice>EUR 77,90</FormattedPrice>
         </ItemTotal>
       </CartItem>
       <CartItem>

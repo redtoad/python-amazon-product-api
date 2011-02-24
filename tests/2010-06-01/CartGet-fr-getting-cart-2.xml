@@ -3,42 +3,62 @@
     <HTTPHeaders>
       <Header Name="UserAgent" Value="python-amazon-product-api/0.2.5a2 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
     </HTTPHeaders>
-    <RequestId>13FVBWM7PM931A93J43T</RequestId>
+    <RequestId>1PM0P4N9TPJZFD6CD97Q</RequestId>
     <Arguments>
       <Argument Name="Service" Value="AWSECommerceService"/>
       <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="HMAC" Value="VvsyafDC53mJNCVXEvNZumeNZkE="/>
+      <Argument Name="HMAC" Value="ltSQUjmJnUMFVmiiwCSCTgSPprM="/>
       <Argument Name="Operation" Value="CartGet"/>
-      <Argument Name="CartId" Value="276-3698001-0291116"/>
+      <Argument Name="CartId" Value="276-8688805-5365663"/>
       <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
       <Argument Name="Version" Value="2010-06-01"/>
-      <Argument Name="Timestamp" Value="2011-01-30T17:02:10Z"/>
+      <Argument Name="Timestamp" Value="2011-02-25T15:38:47Z"/>
     </Arguments>
-    <RequestProcessingTime>0.092972993850708</RequestProcessingTime>
+    <RequestProcessingTime>0.115156173706055</RequestProcessingTime>
   </OperationRequest>
   <Cart>
     <Request>
       <IsValid>True</IsValid>
       <CartGetRequest>
-        <CartId>276-3698001-0291116</CartId>
-        <HMAC>VvsyafDC53mJNCVXEvNZumeNZkE=</HMAC>
+        <CartId>276-8688805-5365663</CartId>
+        <HMAC>ltSQUjmJnUMFVmiiwCSCTgSPprM=</HMAC>
       </CartGetRequest>
     </Request>
-    <CartId>276-3698001-0291116</CartId>
-    <HMAC>VvsyafDC53mJNCVXEvNZumeNZkE=</HMAC>
-    <URLEncodedHMAC>VvsyafDC53mJNCVXEvNZumeNZkE%3D</URLEncodedHMAC>
-    <PurchaseURL>https://www.amazon.fr/gp/cart/aws-merge.html?cart-id=276-3698001-0291116%26associate-id=ws%26hmac=VvsyafDC53mJNCVXEvNZumeNZkE=%26SubscriptionId=XXXXXXXXXXXXXXX%26MergeCart=False</PurchaseURL>
+    <CartId>276-8688805-5365663</CartId>
+    <HMAC>ltSQUjmJnUMFVmiiwCSCTgSPprM=</HMAC>
+    <URLEncodedHMAC>ltSQUjmJnUMFVmiiwCSCTgSPprM%3D</URLEncodedHMAC>
+    <PurchaseURL>https://www.amazon.fr/gp/cart/aws-merge.html?cart-id=276-8688805-5365663%26associate-id=ws%26hmac=ltSQUjmJnUMFVmiiwCSCTgSPprM=%26SubscriptionId=XXXXXXXXXXXXXXX%26MergeCart=False</PurchaseURL>
     <SubTotal>
-      <Amount>5615</Amount>
+      <Amount>13599</Amount>
       <CurrencyCode>EUR</CurrencyCode>
-      <FormattedPrice>EUR 56,15</FormattedPrice>
+      <FormattedPrice>EUR 135,99</FormattedPrice>
     </SubTotal>
     <CartItems>
       <SubTotal>
-        <Amount>5615</Amount>
+        <Amount>13599</Amount>
         <CurrencyCode>EUR</CurrencyCode>
-        <FormattedPrice>EUR 56,15</FormattedPrice>
+        <FormattedPrice>EUR 135,99</FormattedPrice>
       </SubTotal>
+      <CartItem>
+        <CartItemId>U275ZDN4F50I7T</CartItemId>
+        <ASIN>0201896842</ASIN>
+        <MerchantId>A1X6FK5RDHNB96</MerchantId>
+        <SellerId>A1X6FK5RDHNB96</SellerId>
+        <SellerNickname>Amazon.fr</SellerNickname>
+        <Quantity>2</Quantity>
+        <Title>Art of Computer Programming, Volume 2: Seminumerical Algorithms</Title>
+        <ProductGroup>Book</ProductGroup>
+        <Price>
+          <Amount>4466</Amount>
+          <CurrencyCode>EUR</CurrencyCode>
+          <FormattedPrice>EUR 44,66</FormattedPrice>
+        </Price>
+        <ItemTotal>
+          <Amount>8932</Amount>
+          <CurrencyCode>EUR</CurrencyCode>
+          <FormattedPrice>EUR 89,32</FormattedPrice>
+        </ItemTotal>
+      </CartItem>
       <CartItem>
         <CartItemId>U1JPSM5GXOR7ON</CartItemId>
         <ASIN>0201896834</ASIN>
@@ -46,17 +66,17 @@
         <SellerId>A1X6FK5RDHNB96</SellerId>
         <SellerNickname>Amazon.fr</SellerNickname>
         <Quantity>1</Quantity>
-        <Title>The Art of Computer Programming: Fundamental Algorithms</Title>
+        <Title>Art of Computer Programming, Volume 1: Fundamental Algorithms</Title>
         <ProductGroup>Book</ProductGroup>
         <Price>
-          <Amount>5615</Amount>
+          <Amount>4667</Amount>
           <CurrencyCode>EUR</CurrencyCode>
-          <FormattedPrice>EUR 56,15</FormattedPrice>
+          <FormattedPrice>EUR 46,67</FormattedPrice>
         </Price>
         <ItemTotal>
-          <Amount>5615</Amount>
+          <Amount>4667</Amount>
           <CurrencyCode>EUR</CurrencyCode>
-          <FormattedPrice>EUR 56,15</FormattedPrice>
+          <FormattedPrice>EUR 46,67</FormattedPrice>
         </ItemTotal>
       </CartItem>
     </CartItems>
