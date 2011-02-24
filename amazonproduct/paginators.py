@@ -122,8 +122,9 @@ class LxmlItemSearchPaginator (LxmlPaginator):
     total_results_xpath = '//aws:Items/aws:TotalResults'
 
     def __init__(self, fnc, *args, **kwargs):
-        # Amazon limits returned pages to 5
+        # Amazon limits returned pages to max 5
         # if SearchIndex "All" is used!
-        if args[0] == 'All':
+        if args[0] == 'All' and kwargs.get('limit', 400) > 5:
             kwargs['limit'] = 5
         super(LxmlItemSearchPaginator, self).__init__(fnc, *args, **kwargs)
+
