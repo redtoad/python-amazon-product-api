@@ -175,14 +175,22 @@ class TestResultPaginator (object):
         assert page == 9
         assert paginator.current == 10
 
-    def test_itemsearch_with_responsegroup_all_is_limited_to_five(self, api):
+    def test_itemsearch_over_all_is_limited_to_five(self, api):
         paginator = api.item_search('All', Keywords='Michael Jackson')
-        assert len(list(paginator)) == 5
+        pages = list(paginator)
+        assert len(pages) == 5
         assert paginator.current == 5
 
-    def test_itemsearch_with_responsegroup_all_can_be_limited(self, api):
+    def test_itemsearch_over_all_is_limited_to_five_even_for_higher_limits(self, api):
+        paginator = api.item_search('All', Keywords='Michael Jackson', limit=20)
+        pages = list(paginator)
+        assert len(pages) == 5
+        assert paginator.current == 5
+
+    def test_itemsearch_over_all_can_be_further_limited(self, api):
         paginator = api.item_search('All', Keywords='Michael Jackson', limit=2)
-        assert len(list(paginator)) == 2
+        pages = list(paginator)
+        assert len(pages) == 2
         assert paginator.current == 2
 
     def test_review_pagination(self, api):

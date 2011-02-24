@@ -1,0 +1,320 @@
+<ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2009-10-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.5a2 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+    </HTTPHeaders>
+    <RequestId>c3fb08ae-10cb-4fad-a230-f4ca3aaa0762</RequestId>
+    <Arguments>
+      <Argument Name="Operation" Value="ItemSearch"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="ItemPage" Value="2"/>
+      <Argument Name="Version" Value="2009-10-01"/>
+      <Argument Name="Keywords" Value="Michael Jackson"/>
+      <Argument Name="limit" Value="5"/>
+      <Argument Name="SearchIndex" Value="All"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2011-02-25T13:46:48Z"/>
+    </Arguments>
+    <RequestProcessingTime>0.3500110000000000</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>True</IsValid>
+      <ItemSearchRequest>
+        <Condition>New</Condition>
+        <DeliveryMethod>Ship</DeliveryMethod>
+        <ItemPage>2</ItemPage>
+        <Keywords>Michael Jackson</Keywords>
+        <MerchantId>Amazon</MerchantId>
+        <ResponseGroup>Small</ResponseGroup>
+        <ReviewSort>-SubmissionDate</ReviewSort>
+        <SearchIndex>All</SearchIndex>
+      </ItemSearchRequest>
+    </Request>
+    <TotalResults>10414</TotalResults>
+    <TotalPages>1042</TotalPages>
+    <Item>
+      <ASIN>3981312708</ASIN>
+      <DetailPageURL>http://www.amazon.de/Michael-Jackson-weltweit-autorisierte-Biografie/dp/3981312708%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3981312708</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D3981312708%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3981312708</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.de/gp/pdp/taf/3981312708%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3981312708</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.de/review/product/3981312708%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3981312708</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.de/gp/offer-listing/3981312708%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3981312708</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>Christian Marks</Author>
+        <Manufacturer>X-Medien</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Michael Jackson - King Of Pop: Die weltweit einzige von Michael Jackson selbst autorisierte Biografie</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>B00002663R</ASIN>
+      <DetailPageURL>http://www.amazon.de/Thriller-Michael-Jackson/dp/B00002663R%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00002663R</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3DB00002663R%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB00002663R</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.de/gp/pdp/taf/B00002663R%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB00002663R</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.de/review/product/B00002663R%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB00002663R</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.de/gp/offer-listing/B00002663R%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB00002663R</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Artist>Michael Jackson</Artist>
+        <Manufacturer>Columbia d (Sony Music)</Manufacturer>
+        <ProductGroup>Music</ProductGroup>
+        <Title>Thriller</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>B002C6BYHS</ASIN>
+      <DetailPageURL>http://www.amazon.de/Original-Michael-Jackson-Billie-Kost%C3%BCm/dp/B002C6BYHS%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB002C6BYHS</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3DB002C6BYHS%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB002C6BYHS</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.de/gp/pdp/taf/B002C6BYHS%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB002C6BYHS</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.de/review/product/B002C6BYHS%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB002C6BYHS</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.de/gp/offer-listing/B002C6BYHS%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB002C6BYHS</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Manufacturer>Smiffys</Manufacturer>
+        <ProductGroup>Toy</ProductGroup>
+        <Title>Original Michael Jackson Billie Jean Kost&#252;m M</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>B00005NUZO</ASIN>
+      <DetailPageURL>http://www.amazon.de/Bad-Michael-Jackson/dp/B00005NUZO%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00005NUZO</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3DB00005NUZO%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB00005NUZO</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.de/gp/pdp/taf/B00005NUZO%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB00005NUZO</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.de/review/product/B00005NUZO%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB00005NUZO</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.de/gp/offer-listing/B00005NUZO%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB00005NUZO</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Artist>Michael Jackson</Artist>
+        <Manufacturer>Epc (Sony Music)</Manufacturer>
+        <ProductGroup>Music</ProductGroup>
+        <Title>Bad</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>B00005RSCH</ASIN>
+      <DetailPageURL>http://www.amazon.de/Michael-Jackson-HIStory-Greatest-Video/dp/B00005RSCH%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00005RSCH</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3DB00005RSCH%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB00005RSCH</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.de/gp/pdp/taf/B00005RSCH%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB00005RSCH</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.de/review/product/B00005RSCH%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB00005RSCH</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.de/gp/offer-listing/B00005RSCH%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB00005RSCH</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Actor>Michael Jackson</Actor>
+        <Creator Role="Hauptdarsteller">Michael Jackson</Creator>
+        <Manufacturer>Sony Music Entertainment</Manufacturer>
+        <ProductGroup>DVD</ProductGroup>
+        <Title>Michael Jackson - HIStory Greatest Video Hits</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>B004D6VCKE</ASIN>
+      <DetailPageURL>http://www.amazon.de/Hold-My-Hand-Duet-Akon/dp/B004D6VCKE%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB004D6VCKE</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3DB004D6VCKE%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB004D6VCKE</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.de/gp/pdp/taf/B004D6VCKE%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB004D6VCKE</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.de/review/product/B004D6VCKE%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB004D6VCKE</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.de/gp/offer-listing/B004D6VCKE%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB004D6VCKE</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Artist>Michael Jackson Duet With Akon</Artist>
+        <Manufacturer>Smi Epc (Sony Music)</Manufacturer>
+        <ProductGroup>Music</ProductGroup>
+        <Title>Hold My Hand (Duet With Akon)</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>3453169409</ASIN>
+      <DetailPageURL>http://www.amazon.de/Moonwalk-Das-Original-Jetzt-Farbbildteil/dp/3453169409%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3453169409</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D3453169409%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3453169409</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.de/gp/pdp/taf/3453169409%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3453169409</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.de/review/product/3453169409%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3453169409</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.de/gp/offer-listing/3453169409%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3453169409</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>Michael Jackson</Author>
+        <Creator Role="&#220;bersetzer">Thomas Ziegler</Creator>
+        <Manufacturer>Heyne Verlag</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Moonwalk: Das Original- Jetzt mit Farbbildteil</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>B004F6XI1I</ASIN>
+      <DetailPageURL>http://www.amazon.de/Michael/dp/B004F6XI1I%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB004F6XI1I</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3DB004F6XI1I%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB004F6XI1I</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.de/gp/pdp/taf/B004F6XI1I%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB004F6XI1I</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.de/review/product/B004F6XI1I%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB004F6XI1I</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.de/gp/offer-listing/B004F6XI1I%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB004F6XI1I</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Creator Role="Hauptdarsteller">Michael Jackson</Creator>
+        <Manufacturer>Epic</Manufacturer>
+        <ProductGroup>Digital Music Album</ProductGroup>
+        <Title>Michael</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>B002ZB8734</ASIN>
+      <DetailPageURL>http://www.amazon.de/Michael-Jacksons-This-Special-DVDs/dp/B002ZB8734%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB002ZB8734</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3DB002ZB8734%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB002ZB8734</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.de/gp/pdp/taf/B002ZB8734%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB002ZB8734</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.de/review/product/B002ZB8734%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB002ZB8734</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.de/gp/offer-listing/B002ZB8734%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB002ZB8734</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Actor>Michael Jackson</Actor>
+        <Creator Role="Hauptdarsteller">Michael Jackson</Creator>
+        <Manufacturer>Sony Pictures Home Entertainment</Manufacturer>
+        <ProductGroup>DVD</ProductGroup>
+        <Title>Michael Jackson's This Is It (Special Edition, 2 DVDs)</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>B000024IFB</ASIN>
+      <DetailPageURL>http://www.amazon.de/HIStory-Past-Present-Future-Book/dp/B000024IFB%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB000024IFB</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3DB000024IFB%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB000024IFB</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.de/gp/pdp/taf/B000024IFB%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB000024IFB</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.de/review/product/B000024IFB%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB000024IFB</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.de/gp/offer-listing/B000024IFB%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB000024IFB</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Artist>Michael Jackson</Artist>
+        <Manufacturer>Epc (Sony Music)</Manufacturer>
+        <ProductGroup>Music</ProductGroup>
+        <Title>HIStory - Past, Present And Future - Book 1</Title>
+      </ItemAttributes>
+    </Item>
+  </Items>
+</ItemSearchResponse>

@@ -1,22 +1,22 @@
-<ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2009-10-01">
+<ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2009-11-01">
   <OperationRequest>
     <HTTPHeaders>
       <Header Name="UserAgent" Value="python-amazon-product-api/0.2.5a2 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
     </HTTPHeaders>
-    <RequestId>73aa7bb3-d252-4820-bca9-301027fa3cba</RequestId>
+    <RequestId>2673b8c7-e3cc-459a-9c30-f372215842ef</RequestId>
     <Arguments>
-      <Argument Name="limit" Value="2"/>
       <Argument Name="Operation" Value="ItemSearch"/>
       <Argument Name="Service" Value="AWSECommerceService"/>
-      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="Timestamp" Value="2011-02-15T20:53:10Z"/>
-      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
       <Argument Name="ItemPage" Value="1"/>
-      <Argument Name="SearchIndex" Value="All"/>
-      <Argument Name="Version" Value="2009-10-01"/>
+      <Argument Name="Version" Value="2009-11-01"/>
       <Argument Name="Keywords" Value="Michael Jackson"/>
+      <Argument Name="limit" Value="5"/>
+      <Argument Name="SearchIndex" Value="All"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2011-02-25T13:47:00Z"/>
     </Arguments>
-    <RequestProcessingTime>0.0507460000000000</RequestProcessingTime>
+    <RequestProcessingTime>0.0570990000000000</RequestProcessingTime>
   </OperationRequest>
   <Items>
     <Request>
@@ -32,8 +32,8 @@
         <SearchIndex>All</SearchIndex>
       </ItemSearchRequest>
     </Request>
-    <TotalResults>10395</TotalResults>
-    <TotalPages>1040</TotalPages>
+    <TotalResults>10418</TotalResults>
+    <TotalPages>1042</TotalPages>
     <Item>
       <ASIN>B004ASO3W4</ASIN>
       <DetailPageURL>http://www.amazon.de/Michael-Jackson/dp/B004ASO3W4%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB004ASO3W4</DetailPageURL>
@@ -63,34 +63,6 @@
       </ItemAttributes>
     </Item>
     <Item>
-      <ASIN>B001CRKQGI</ASIN>
-      <DetailPageURL>http://www.amazon.de/King-Pop-Michael-Jackson/dp/B001CRKQGI%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB001CRKQGI</DetailPageURL>
-      <ItemLinks>
-        <ItemLink>
-          <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3DB001CRKQGI%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB001CRKQGI</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.de/gp/pdp/taf/B001CRKQGI%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB001CRKQGI</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.de/review/product/B001CRKQGI%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB001CRKQGI</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>All Offers</Description>
-          <URL>http://www.amazon.de/gp/offer-listing/B001CRKQGI%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB001CRKQGI</URL>
-        </ItemLink>
-      </ItemLinks>
-      <ItemAttributes>
-        <Artist>Michael Jackson</Artist>
-        <Manufacturer>Sme Media (Sony Music)</Manufacturer>
-        <ProductGroup>Music</ProductGroup>
-        <Title>King of Pop</Title>
-      </ItemAttributes>
-    </Item>
-    <Item>
       <ASIN>B004498KPU</ASIN>
       <DetailPageURL>http://www.amazon.de/Michael-Jacksons-Vision-Deluxe-DVDs/dp/B004498KPU%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB004498KPU</DetailPageURL>
       <ItemLinks>
@@ -117,6 +89,34 @@
         <Manufacturer>Sony Music Entertainment GmbH (Sony BMG)</Manufacturer>
         <ProductGroup>DVD</ProductGroup>
         <Title>Michael Jackson's Vision [Deluxe Edition] [3 DVDs]</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>B001CRKQGI</ASIN>
+      <DetailPageURL>http://www.amazon.de/King-Pop-Michael-Jackson/dp/B001CRKQGI%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB001CRKQGI</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3DB001CRKQGI%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB001CRKQGI</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.de/gp/pdp/taf/B001CRKQGI%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB001CRKQGI</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.de/review/product/B001CRKQGI%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB001CRKQGI</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.de/gp/offer-listing/B001CRKQGI%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB001CRKQGI</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Artist>Michael Jackson</Artist>
+        <Manufacturer>Sme Media (Sony Music)</Manufacturer>
+        <ProductGroup>Music</ProductGroup>
+        <Title>King of Pop</Title>
       </ItemAttributes>
     </Item>
     <Item>
@@ -227,36 +227,37 @@
       </ItemLinks>
       <ItemAttributes>
         <Artist>Michael Jackson</Artist>
-        <Manufacturer>"No,Butyes! (Sony BMG)"</Manufacturer>
+        <Manufacturer>Smi Epc (Sony Music)</Manufacturer>
         <ProductGroup>Music</ProductGroup>
         <Title>Michael Jackson's This Is It (Extended Version)</Title>
       </ItemAttributes>
     </Item>
     <Item>
-      <ASIN>B002H1RKFS</ASIN>
-      <DetailPageURL>http://www.amazon.de/1art1-48186-Michael-Jackson-Moonwalk/dp/B002H1RKFS%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB002H1RKFS</DetailPageURL>
+      <ASIN>B004CM4ODG</ASIN>
+      <DetailPageURL>http://www.amazon.de/Hold-My-Hand-Duet-Akon/dp/B004CM4ODG%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB004CM4ODG</DetailPageURL>
       <ItemLinks>
         <ItemLink>
           <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3DB002H1RKFS%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB002H1RKFS</URL>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3DB004CM4ODG%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB004CM4ODG</URL>
         </ItemLink>
         <ItemLink>
           <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.de/gp/pdp/taf/B002H1RKFS%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB002H1RKFS</URL>
+          <URL>http://www.amazon.de/gp/pdp/taf/B004CM4ODG%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB004CM4ODG</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.de/review/product/B002H1RKFS%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB002H1RKFS</URL>
+          <URL>http://www.amazon.de/review/product/B004CM4ODG%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB004CM4ODG</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Offers</Description>
-          <URL>http://www.amazon.de/gp/offer-listing/B002H1RKFS%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB002H1RKFS</URL>
+          <URL>http://www.amazon.de/gp/offer-listing/B004CM4ODG%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB004CM4ODG</URL>
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
-        <Manufacturer>1art1</Manufacturer>
-        <ProductGroup>Kitchen</ProductGroup>
-        <Title>1art1 48186 Michael Jackson - Moonwalk I Poster (91 x 61 cm)</Title>
+        <Creator Role="Hauptdarsteller">Michael Jackson Duet with Akon</Creator>
+        <Manufacturer>Epic</Manufacturer>
+        <ProductGroup>Digital Music Track</ProductGroup>
+        <Title>Hold My Hand (Duet With Akon)</Title>
       </ItemAttributes>
     </Item>
     <Item>
@@ -289,31 +290,30 @@
       </ItemAttributes>
     </Item>
     <Item>
-      <ASIN>B004CM4ODG</ASIN>
-      <DetailPageURL>http://www.amazon.de/Hold-My-Hand-Duet-Akon/dp/B004CM4ODG%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB004CM4ODG</DetailPageURL>
+      <ASIN>B002H1RKFS</ASIN>
+      <DetailPageURL>http://www.amazon.de/1art1-48186-Michael-Jackson-Moonwalk/dp/B002H1RKFS%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB002H1RKFS</DetailPageURL>
       <ItemLinks>
         <ItemLink>
           <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3DB004CM4ODG%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB004CM4ODG</URL>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3DB002H1RKFS%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB002H1RKFS</URL>
         </ItemLink>
         <ItemLink>
           <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.de/gp/pdp/taf/B004CM4ODG%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB004CM4ODG</URL>
+          <URL>http://www.amazon.de/gp/pdp/taf/B002H1RKFS%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB002H1RKFS</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.de/review/product/B004CM4ODG%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB004CM4ODG</URL>
+          <URL>http://www.amazon.de/review/product/B002H1RKFS%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB002H1RKFS</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Offers</Description>
-          <URL>http://www.amazon.de/gp/offer-listing/B004CM4ODG%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB004CM4ODG</URL>
+          <URL>http://www.amazon.de/gp/offer-listing/B002H1RKFS%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB002H1RKFS</URL>
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
-        <Creator Role="Hauptdarsteller">Michael Jackson Duet with Akon</Creator>
-        <Manufacturer>Epic</Manufacturer>
-        <ProductGroup>Digital Music Track</ProductGroup>
-        <Title>Hold My Hand (Duet With Akon)</Title>
+        <Manufacturer>1art1</Manufacturer>
+        <ProductGroup>Kitchen</ProductGroup>
+        <Title>1art1 48186 Michael Jackson - Moonwalk I Poster (91 x 61 cm)</Title>
       </ItemAttributes>
     </Item>
   </Items>
