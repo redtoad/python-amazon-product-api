@@ -3,27 +3,27 @@
     <HTTPHeaders>
       <Header Name="UserAgent" Value="python-amazon-product-api/0.2.5a2 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
     </HTTPHeaders>
-    <RequestId>1DJ6H432T80BWQA3PBT6</RequestId>
+    <RequestId>115DMJPDMSDMY0BHN4XA</RequestId>
     <Arguments>
       <Argument Name="Item.1.ASIN" Value="0201896834"/>
       <Argument Name="Service" Value="AWSECommerceService"/>
       <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
       <Argument Name="Item.1.Quantity" Value="-1"/>
-      <Argument Name="HMAC" Value="3noTs4P0LIVuEF9CO1y4cMWeBi4="/>
+      <Argument Name="HMAC" Value="5XFpUK5C+YRxiulDLrlg9N1V38E="/>
       <Argument Name="Operation" Value="CartAdd"/>
-      <Argument Name="CartId" Value="279-2888511-7971465"/>
+      <Argument Name="CartId" Value="278-7362911-1831813"/>
       <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2011-02-25T15:48:07Z"/>
       <Argument Name="Version" Value="2010-09-01"/>
-      <Argument Name="Timestamp" Value="2011-01-30T16:55:12Z"/>
     </Arguments>
-    <RequestProcessingTime>0.00383996963500977</RequestProcessingTime>
+    <RequestProcessingTime>0.00397896766662598</RequestProcessingTime>
   </OperationRequest>
   <Cart>
     <Request>
       <IsValid>False</IsValid>
       <CartAddRequest>
-        <CartId>279-2888511-7971465</CartId>
-        <HMAC>3noTs4P0LIVuEF9CO1y4cMWeBi4=</HMAC>
+        <CartId>278-7362911-1831813</CartId>
+        <HMAC>5XFpUK5C+YRxiulDLrlg9N1V38E=</HMAC>
         <Items>
           <Item>
             <ASIN>0201896834</ASIN>

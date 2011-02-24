@@ -3,42 +3,62 @@
     <HTTPHeaders>
       <Header Name="UserAgent" Value="python-amazon-product-api/0.2.5a2 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
     </HTTPHeaders>
-    <RequestId>0WJABMZM5GEWXJJ1CPP7</RequestId>
+    <RequestId>0D1XMW6YVVQ9E2XBTJ4E</RequestId>
     <Arguments>
       <Argument Name="Service" Value="AWSECommerceService"/>
       <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="HMAC" Value="GKA1pXYvBGJHb1b9dB4pOyjmrGE="/>
+      <Argument Name="HMAC" Value="6ObxSEPmMFUhuAp/bBXzt3jiItI="/>
       <Argument Name="Operation" Value="CartGet"/>
-      <Argument Name="CartId" Value="176-9727553-4638464"/>
+      <Argument Name="CartId" Value="186-0000517-8880818"/>
       <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
       <Argument Name="Version" Value="2009-10-01"/>
-      <Argument Name="Timestamp" Value="2011-01-30T17:04:44Z"/>
+      <Argument Name="Timestamp" Value="2011-02-25T15:39:25Z"/>
     </Arguments>
-    <RequestProcessingTime>0.051400899887085</RequestProcessingTime>
+    <RequestProcessingTime>0.0698580741882324</RequestProcessingTime>
   </OperationRequest>
   <Cart>
     <Request>
       <IsValid>True</IsValid>
       <CartGetRequest>
-        <CartId>176-9727553-4638464</CartId>
-        <HMAC>GKA1pXYvBGJHb1b9dB4pOyjmrGE=</HMAC>
+        <CartId>186-0000517-8880818</CartId>
+        <HMAC>6ObxSEPmMFUhuAp/bBXzt3jiItI=</HMAC>
       </CartGetRequest>
     </Request>
-    <CartId>176-9727553-4638464</CartId>
-    <HMAC>GKA1pXYvBGJHb1b9dB4pOyjmrGE=</HMAC>
-    <URLEncodedHMAC>GKA1pXYvBGJHb1b9dB4pOyjmrGE%3D</URLEncodedHMAC>
-    <PurchaseURL>https://www.amazon.com/gp/cart/aws-merge.html?cart-id=176-9727553-4638464%26associate-id=ws%26hmac=GKA1pXYvBGJHb1b9dB4pOyjmrGE=%26SubscriptionId=XXXXXXXXXXXXXXX%26MergeCart=False</PurchaseURL>
+    <CartId>186-0000517-8880818</CartId>
+    <HMAC>6ObxSEPmMFUhuAp/bBXzt3jiItI=</HMAC>
+    <URLEncodedHMAC>6ObxSEPmMFUhuAp%2FbBXzt3jiItI%3D</URLEncodedHMAC>
+    <PurchaseURL>https://www.amazon.com/gp/cart/aws-merge.html?cart-id=186-0000517-8880818%26associate-id=ws%26hmac=6ObxSEPmMFUhuAp/bBXzt3jiItI=%26SubscriptionId=XXXXXXXXXXXXXXX%26MergeCart=False</PurchaseURL>
     <SubTotal>
-      <Amount>5349</Amount>
+      <Amount>17592</Amount>
       <CurrencyCode>USD</CurrencyCode>
-      <FormattedPrice>$53.49</FormattedPrice>
+      <FormattedPrice>$175.92</FormattedPrice>
     </SubTotal>
     <CartItems>
       <SubTotal>
-        <Amount>5349</Amount>
+        <Amount>17592</Amount>
         <CurrencyCode>USD</CurrencyCode>
-        <FormattedPrice>$53.49</FormattedPrice>
+        <FormattedPrice>$175.92</FormattedPrice>
       </SubTotal>
+      <CartItem>
+        <CartItemId>U24FI3NHT8Y1PC</CartItemId>
+        <ASIN>0201896842</ASIN>
+        <MerchantId>ATVPDKIKX0DER</MerchantId>
+        <SellerId>A2R2RITDJNW1Q6</SellerId>
+        <SellerNickname>Amazon.com</SellerNickname>
+        <Quantity>2</Quantity>
+        <Title>Art of Computer Programming, Volume 2: Seminumerical Algorithms (3rd Edition)</Title>
+        <ProductGroup>Book</ProductGroup>
+        <Price>
+          <Amount>6017</Amount>
+          <CurrencyCode>USD</CurrencyCode>
+          <FormattedPrice>$60.17</FormattedPrice>
+        </Price>
+        <ItemTotal>
+          <Amount>12034</Amount>
+          <CurrencyCode>USD</CurrencyCode>
+          <FormattedPrice>$120.34</FormattedPrice>
+        </ItemTotal>
+      </CartItem>
       <CartItem>
         <CartItemId>U1R5P2OIZBR21I</CartItemId>
         <ASIN>0201896834</ASIN>
@@ -49,14 +69,14 @@
         <Title>Art of Computer Programming, Volume 1: Fundamental Algorithms (3rd Edition)</Title>
         <ProductGroup>Book</ProductGroup>
         <Price>
-          <Amount>5349</Amount>
+          <Amount>5558</Amount>
           <CurrencyCode>USD</CurrencyCode>
-          <FormattedPrice>$53.49</FormattedPrice>
+          <FormattedPrice>$55.58</FormattedPrice>
         </Price>
         <ItemTotal>
-          <Amount>5349</Amount>
+          <Amount>5558</Amount>
           <CurrencyCode>USD</CurrencyCode>
-          <FormattedPrice>$53.49</FormattedPrice>
+          <FormattedPrice>$55.58</FormattedPrice>
         </ItemTotal>
       </CartItem>
     </CartItems>

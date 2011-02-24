@@ -359,11 +359,18 @@ def pytest_funcarg__cart(request):
     api = request._funcargs['api']
     items = {
         '0201896834' : 1, # The Art of Computer Programming Vol. 1
-        '0201896842' : 1, # The Art of Computer Programming Vol. 2
+        '0201896842' : 2, # The Art of Computer Programming Vol. 2
     }
-    cart = api.cart_create(items).Cart
-    print cart.__dict__
-    return cart
+    def create_cart():
+        root = api.cart_create(items)
+        cart = Cart.from_xml(root.Cart)
+        print 'Cart created:', cart
+        return cart
+    def destroy_cart(cart):
+        api.cart_clear(cart.cart_id, cart.hmac)
+        print 'Cart cleared.'
+    return request.cached_setup(
+        setup=create_cart, teardown=destroy_cart, scope='function')
 
 
 class TestCartAdd (object):
@@ -373,33 +380,39 @@ class TestCartAdd (object):
     """
 
     def test_adding_with_wrong_cartid_hmac_fails(self, api, cart):
-        pytest.raises(CartInfoMismatch, api.cart_add, '???', cart.HMAC, {'0201896834' : 1})
-        pytest.raises(CartInfoMismatch, api.cart_add, cart.CartId, '???', {'0201896834' : 1})
+        pytest.raises(CartInfoMismatch, api.cart_add, '???', cart.hmac, {'0201896834' : 1})
+        pytest.raises(CartInfoMismatch, api.cart_add, cart.cart_id, '???', {'0201896834' : 1})
 
     def test_adding_empty_items_fails(self, api, cart):
-        pytest.raises(ValueError, api.cart_add, cart.CartId, cart.HMAC, {})
-        pytest.raises(ValueError, api.cart_add, cart.CartId, cart.HMAC, {'0451462009' : 0})
+        pytest.raises(ValueError, api.cart_add, cart.cart_id, cart.hmac, {})
+        pytest.raises(ValueError, api.cart_add, cart.cart_id, cart.hmac, {'0451462009' : 0})
 
     def test_adding_negative_item_quantity_fails(self, api, cart):
-        pytest.raises(ValueError, api.cart_add, cart.CartId, cart.HMAC, {'0201896834' : -1})
+        pytest.raises(ValueError, api.cart_add, cart.cart_id, cart.hmac, {'0201896834' : -1})
 
     def test_adding_item_quantity_too_high_fails(self, api, cart):
-        pytest.raises(ValueError, api.cart_add, cart.CartId, cart.HMAC, {'0201896834' : 1000})
+        pytest.raises(ValueError, api.cart_add, cart.cart_id, cart.hmac, {'0201896834' : 1000})
 
     def test_adding_unknown_item_fails(self, api, cart):
-        pytest.raises(InvalidCartItem, api.cart_add, cart.CartId, cart.HMAC, {'021554' : 1})
+        pytest.raises(InvalidCartItem, api.cart_add, cart.cart_id, cart.hmac, {'021554' : 1})
 
     def test_adding_item_already_in_cart_fails(self, api, cart):
-        pytest.raises(ItemAlreadyInCart, api.cart_add, cart.CartId, 
-                          cart.HMAC, {'0201896842' : 2})
+        pytest.raises(ItemAlreadyInCart, api.cart_add, cart.cart_id, 
+                          cart.hmac, {'0201896842' : 2})
 
     def test_adding_item(self, api, cart):
-        root = api.cart_add(cart.CartId, cart.HMAC, {
-            '0201896850' : 1, # The Art of Computer Programming Vol. 3
+        root = api.cart_add(cart.cart_id, cart.hmac, {
+            '0201896850' : 3, # The Art of Computer Programming Vol. 3
         })
+        from lxml import etree
+        print etree.tostring(root.Cart, pretty_print=True)
+
         cart = Cart.from_xml(root.Cart)
+        assert len(cart) == 6
+        assert len(cart.items) == 3
+
         item = cart['0201896850']
-        assert item.quantity == 1
+        assert item.quantity == 3
         assert item.asin == '0201896850'
 
 
@@ -410,30 +423,49 @@ class TestCartModify (object):
     """
 
     def test_modifying_with_wrong_cartid_hmac_fails(self, api, cart):
-        pytest.raises(CartInfoMismatch, api.cart_modify, '???', cart.HMAC, {'0201896834' : 1})
-        pytest.raises(CartInfoMismatch, api.cart_modify, cart.CartId, '???', {'0201896834' : 1})
+        pytest.raises(CartInfoMismatch, api.cart_modify, '???', cart.hmac, {'0201896834' : 1})
+        pytest.raises(CartInfoMismatch, api.cart_modify, cart.cart_id, '???', {'0201896834' : 1})
 
     def test_modifying_empty_items_fails(self, api, cart):
-        pytest.raises(ValueError, api.cart_modify, cart.CartId, cart.HMAC, {})
+        pytest.raises(ValueError, api.cart_modify, cart.cart_id, cart.hmac, {})
 
     def test_modifying_negative_item_quantity_fails(self, api, cart):
-        pytest.raises(ValueError, api.cart_modify, cart.CartId, cart.HMAC, {'0201896834' : -1})
+        pytest.raises(ValueError, api.cart_modify, cart.cart_id, cart.hmac, {'0201896834' : -1})
 
     def test_modifying_item_quantity_too_high_fails(self, api, cart):
-        pytest.raises(ValueError, api.cart_modify, cart.CartId, cart.HMAC, {'0201896834' : 1000})
+        pytest.raises(ValueError, api.cart_modify, cart.cart_id, cart.hmac, {'0201896834' : 1000})
 
-    def test_modfying_item(self, api, cart):
-        root = api.cart_modify(cart.CartId, cart.HMAC, {
-            '0201896834' : 0, # The Art of Computer Programming Vol. 1
-            '0201896842' : 1, # The Art of Computer Programming Vol. 2
+    def test_modifying_item(self, api, cart):
+        root = api.cart_modify(cart.cart_id, cart.hmac, {
+            # The Art of Computer Programming Vol. 2
+            cart.get_itemid_for_asin('0201896842'): 0, 
         })
-        cart = Cart.from_xml(root.Cart)
         from lxml import etree
         print etree.tostring(root.Cart, pretty_print=True)
+
+        cart = Cart.from_xml(root.Cart)
+        assert len(cart) == 1
         assert len(cart.items) == 1
-        item = cart['0201896842']
+
+        # 0201896842 is gone!
+        pytest.raises(IndexError, lambda x: cart[x], '0201896842')
+
+        # 0201896834 is still here!
+        item = cart['0201896834']
         assert item.quantity == 1
-        assert item.asin == '0201896842'
+        assert item.asin == '0201896834'
+
+    def test_modifying_does_not_work_with_asin(self, api, cart):
+        root = api.cart_modify(cart.cart_id, cart.hmac, {
+            # The Art of Computer Programming Vol. 3
+            '0201896842': 0, 
+        })
+        from lxml import etree
+        print etree.tostring(root.Cart, pretty_print=True)
+
+        cart = Cart.from_xml(root.Cart)
+        assert len(cart) == 3
+        assert len(cart.items) == 2
 
 
 class TestCartGet (object):
@@ -443,13 +475,14 @@ class TestCartGet (object):
     """
 
     def test_getting_with_wrong_cartid_hmac_fails(self, api, cart):
-        pytest.raises(CartInfoMismatch, api.cart_get, '???', cart.HMAC)
-        pytest.raises(CartInfoMismatch, api.cart_get, cart.CartId, '???')
+        pytest.raises(CartInfoMismatch, api.cart_get, '???', cart.hmac)
+        pytest.raises(CartInfoMismatch, api.cart_get, cart.cart_id, '???')
 
     def test_getting_cart(self, api, cart):
-        root = api.cart_get(cart.CartId, cart.HMAC)
+        root = api.cart_get(cart.cart_id, cart.hmac)
         cart = Cart.from_xml(root.Cart)
-        assert len(cart.items) == 1
+        assert len(cart) == 3
+        assert len(cart.items) == 2
 
 
 class TestCartClear (object):
@@ -459,11 +492,11 @@ class TestCartClear (object):
     """
 
     def test_clearing_with_wrong_cartid_hmac_fails(self, api, cart):
-        pytest.raises(CartInfoMismatch, api.cart_clear, '???', cart.HMAC)
-        pytest.raises(CartInfoMismatch, api.cart_clear, cart.CartId, '???')
+        pytest.raises(CartInfoMismatch, api.cart_clear, '???', cart.hmac)
+        pytest.raises(CartInfoMismatch, api.cart_clear, cart.cart_id, '???')
 
     def test_clearing_cart(self, api, cart):
-        root = api.cart_clear(cart.CartId, cart.HMAC)
+        root = api.cart_clear(cart.cart_id, cart.hmac)
         cart = Cart.from_xml(root.Cart)
         assert len(cart.items) == 0
 

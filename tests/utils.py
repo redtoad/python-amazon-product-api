@@ -102,6 +102,10 @@ class Cart (object):
     """
 
     class Item (object):
+
+        def __repr__(self):
+            return '<Item %sx %s>' % (self.quantity, self.asin)
+
         @staticmethod
         def from_xml(node):
             """
@@ -131,10 +135,22 @@ class Cart (object):
 
     def __getitem__(self, key):
         for item in self.items:
-            print item.item_id, item.asin
             if key in (item.asin, item.item_id):
                 return item
         raise IndexError(key)
+
+    def __len__(self):
+        return sum([item.quantity for item in self.items])
+
+    def __repr__(self):
+        return '<Cart %s %s %.2f %s>' % (self.cart_id, self.items, 
+            self.subtotal[0]/100.0, self.subtotal[1])
+
+    def get_itemid_for_asin(self, asin):
+        for item in self.items:
+            if asin == item.asin:
+                return item.item_id
+        raise None
 
     @staticmethod
     def from_xml(node):

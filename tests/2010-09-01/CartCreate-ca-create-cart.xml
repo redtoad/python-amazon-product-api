@@ -3,7 +3,7 @@
     <HTTPHeaders>
       <Header Name="UserAgent" Value="python-amazon-product-api/0.2.5a2 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
     </HTTPHeaders>
-    <RequestId>14ENT1RZ3KTQ59K22XX5</RequestId>
+    <RequestId>0GA5JMKK7C9RYA9ZF7PV</RequestId>
     <Arguments>
       <Argument Name="Item.1.ASIN" Value="0201896842"/>
       <Argument Name="Service" Value="AWSECommerceService"/>
@@ -13,10 +13,10 @@
       <Argument Name="Item.2.Quantity" Value="1"/>
       <Argument Name="Operation" Value="CartCreate"/>
       <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2011-02-25T15:31:52Z"/>
       <Argument Name="Version" Value="2010-09-01"/>
-      <Argument Name="Timestamp" Value="2011-01-30T17:00:28Z"/>
     </Arguments>
-    <RequestProcessingTime>0.169717073440552</RequestProcessingTime>
+    <RequestProcessingTime>0.184863090515137</RequestProcessingTime>
   </OperationRequest>
   <Cart>
     <Request>
@@ -34,20 +34,20 @@
         </Items>
       </CartCreateRequest>
     </Request>
-    <CartId>187-2390308-7848100</CartId>
-    <HMAC>gsCtwgoLDfwtykPIR+8a8DbWdhU=</HMAC>
-    <URLEncodedHMAC>gsCtwgoLDfwtykPIR%2B8a8DbWdhU%3D</URLEncodedHMAC>
-    <PurchaseURL>https://www.amazon.ca/gp/cart/aws-merge.html?cart-id=187-2390308-7848100%26associate-id=ws%26hmac=gsCtwgoLDfwtykPIR%2B8a8DbWdhU=%26SubscriptionId=XXXXXXXXXXXXXXX%26MergeCart=False</PurchaseURL>
+    <CartId>191-2650027-3228957</CartId>
+    <HMAC>6Zw4rzp8VadRUvkx6cvAec0NydY=</HMAC>
+    <URLEncodedHMAC>6Zw4rzp8VadRUvkx6cvAec0NydY%3D</URLEncodedHMAC>
+    <PurchaseURL>https://www.amazon.ca/gp/cart/aws-merge.html?cart-id=191-2650027-3228957%26associate-id=ws%26hmac=6Zw4rzp8VadRUvkx6cvAec0NydY=%26SubscriptionId=XXXXXXXXXXXXXXX%26MergeCart=False</PurchaseURL>
     <SubTotal>
-      <Amount>14398</Amount>
+      <Amount>12890</Amount>
       <CurrencyCode>CAD</CurrencyCode>
-      <FormattedPrice>CDN$ 143.98</FormattedPrice>
+      <FormattedPrice>CDN$ 128.90</FormattedPrice>
     </SubTotal>
     <CartItems>
       <SubTotal>
-        <Amount>14398</Amount>
+        <Amount>12890</Amount>
         <CurrencyCode>CAD</CurrencyCode>
-        <FormattedPrice>CDN$ 143.98</FormattedPrice>
+        <FormattedPrice>CDN$ 128.90</FormattedPrice>
       </SubTotal>
       <CartItem>
         <CartItemId>U1BO8U3ZYW2PV6</CartItemId>
@@ -59,14 +59,14 @@
         <Title>Art of Computer Programming, Volume 2: Seminumerical Algorithms</Title>
         <ProductGroup>Book</ProductGroup>
         <Price>
-          <Amount>7199</Amount>
+          <Amount>6445</Amount>
           <CurrencyCode>CAD</CurrencyCode>
-          <FormattedPrice>CDN$ 71.99</FormattedPrice>
+          <FormattedPrice>CDN$ 64.45</FormattedPrice>
         </Price>
         <ItemTotal>
-          <Amount>7199</Amount>
+          <Amount>6445</Amount>
           <CurrencyCode>CAD</CurrencyCode>
-          <FormattedPrice>CDN$ 71.99</FormattedPrice>
+          <FormattedPrice>CDN$ 64.45</FormattedPrice>
         </ItemTotal>
       </CartItem>
       <CartItem>
@@ -79,14 +79,14 @@
         <Title>Art of Computer Programming, Volume 1: Fundamental Algorithms</Title>
         <ProductGroup>Book</ProductGroup>
         <Price>
-          <Amount>7199</Amount>
+          <Amount>6445</Amount>
           <CurrencyCode>CAD</CurrencyCode>
-          <FormattedPrice>CDN$ 71.99</FormattedPrice>
+          <FormattedPrice>CDN$ 64.45</FormattedPrice>
         </Price>
         <ItemTotal>
-          <Amount>7199</Amount>
+          <Amount>6445</Amount>
           <CurrencyCode>CAD</CurrencyCode>
-          <FormattedPrice>CDN$ 71.99</FormattedPrice>
+          <FormattedPrice>CDN$ 64.45</FormattedPrice>
         </ItemTotal>
       </CartItem>
     </CartItems>

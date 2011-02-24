@@ -3,27 +3,27 @@
     <HTTPHeaders>
       <Header Name="UserAgent" Value="python-amazon-product-api/0.2.5a2 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
     </HTTPHeaders>
-    <RequestId>07D8Z9D045A3F5A6WKP3</RequestId>
+    <RequestId>0D0DJ64Z7T58EWYKBWZ1</RequestId>
     <Arguments>
       <Argument Name="Item.1.ASIN" Value="0201896842"/>
       <Argument Name="Service" Value="AWSECommerceService"/>
       <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
       <Argument Name="Item.1.Quantity" Value="2"/>
-      <Argument Name="HMAC" Value="38C/eMtzr6pdJuRKNXlFFQCUF5g="/>
+      <Argument Name="HMAC" Value="Kc2Z4cPo6XTdD0ly9qxnVqQlAK4="/>
       <Argument Name="Operation" Value="CartAdd"/>
-      <Argument Name="CartId" Value="276-2825191-0822524"/>
+      <Argument Name="CartId" Value="277-1723357-7498561"/>
       <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2011-02-25T15:57:05Z"/>
       <Argument Name="Version" Value="2010-11-01"/>
-      <Argument Name="Timestamp" Value="2011-01-30T16:54:42Z"/>
     </Arguments>
-    <RequestProcessingTime>0.127642869949341</RequestProcessingTime>
+    <RequestProcessingTime>0.0849831104278564</RequestProcessingTime>
   </OperationRequest>
   <Cart>
     <Request>
       <IsValid>True</IsValid>
       <CartAddRequest>
-        <CartId>276-2825191-0822524</CartId>
-        <HMAC>38C/eMtzr6pdJuRKNXlFFQCUF5g=</HMAC>
+        <CartId>277-1723357-7498561</CartId>
+        <HMAC>Kc2Z4cPo6XTdD0ly9qxnVqQlAK4=</HMAC>
         <Items>
           <Item>
             <ASIN>0201896842</ASIN>
@@ -38,20 +38,20 @@
         </Error>
       </Errors>
     </Request>
-    <CartId>276-2825191-0822524</CartId>
-    <HMAC>38C/eMtzr6pdJuRKNXlFFQCUF5g=</HMAC>
-    <URLEncodedHMAC>38C%2FeMtzr6pdJuRKNXlFFQCUF5g%3D</URLEncodedHMAC>
-    <PurchaseURL>https://www.amazon.co.uk/gp/cart/aws-merge.html?cart-id=276-2825191-0822524%26associate-id=ws%26hmac=38C/eMtzr6pdJuRKNXlFFQCUF5g=%26SubscriptionId=XXXXXXXXXXXXXXX%26MergeCart=False</PurchaseURL>
+    <CartId>277-1723357-7498561</CartId>
+    <HMAC>Kc2Z4cPo6XTdD0ly9qxnVqQlAK4=</HMAC>
+    <URLEncodedHMAC>Kc2Z4cPo6XTdD0ly9qxnVqQlAK4%3D</URLEncodedHMAC>
+    <PurchaseURL>https://www.amazon.co.uk/gp/cart/aws-merge.html?cart-id=277-1723357-7498561%26associate-id=ws%26hmac=Kc2Z4cPo6XTdD0ly9qxnVqQlAK4=%26SubscriptionId=XXXXXXXXXXXXXXX%26MergeCart=False</PurchaseURL>
     <SubTotal>
-      <Amount>8345</Amount>
+      <Amount>12784</Amount>
       <CurrencyCode>GBP</CurrencyCode>
-      <FormattedPrice>&#163;83.45</FormattedPrice>
+      <FormattedPrice>&#163;127.84</FormattedPrice>
     </SubTotal>
     <CartItems>
       <SubTotal>
-        <Amount>8345</Amount>
+        <Amount>12784</Amount>
         <CurrencyCode>GBP</CurrencyCode>
-        <FormattedPrice>&#163;83.45</FormattedPrice>
+        <FormattedPrice>&#163;127.84</FormattedPrice>
       </SubTotal>
       <CartItem>
         <CartItemId>U1KDP0UOUZ8Q17</CartItemId>
@@ -59,7 +59,7 @@
         <MerchantId>A3P5ROKL5A1OLE</MerchantId>
         <SellerId>A3P5ROKL5A1OLE</SellerId>
         <SellerNickname>Amazon.co.uk</SellerNickname>
-        <Quantity>1</Quantity>
+        <Quantity>2</Quantity>
         <Title>The Art of Computer Programming: Seminumerical Algorithms v. 2</Title>
         <ProductGroup>Book</ProductGroup>
         <Price>
@@ -68,9 +68,9 @@
           <FormattedPrice>&#163;45.89</FormattedPrice>
         </Price>
         <ItemTotal>
-          <Amount>4589</Amount>
+          <Amount>9178</Amount>
           <CurrencyCode>GBP</CurrencyCode>
-          <FormattedPrice>&#163;45.89</FormattedPrice>
+          <FormattedPrice>&#163;91.78</FormattedPrice>
         </ItemTotal>
       </CartItem>
       <CartItem>
@@ -83,14 +83,14 @@
         <Title>The Art of Computer Programming: Fundamental Algorithms v. 1</Title>
         <ProductGroup>Book</ProductGroup>
         <Price>
-          <Amount>3756</Amount>
+          <Amount>3606</Amount>
           <CurrencyCode>GBP</CurrencyCode>
-          <FormattedPrice>&#163;37.56</FormattedPrice>
+          <FormattedPrice>&#163;36.06</FormattedPrice>
         </Price>
         <ItemTotal>
-          <Amount>3756</Amount>
+          <Amount>3606</Amount>
           <CurrencyCode>GBP</CurrencyCode>
-          <FormattedPrice>&#163;37.56</FormattedPrice>
+          <FormattedPrice>&#163;36.06</FormattedPrice>
         </ItemTotal>
       </CartItem>
     </CartItems>
