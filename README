@@ -12,10 +12,8 @@ Similar Products, Wish Lists and New and Used listings.  More information
 about the API can be found at
 https://affiliate-program.amazon.com/gp/advertising/api/detail/main.html
 
-All requests made by this module are signed as required since August 15, 2009.
-
 Basic usage
------------
+===========
 
 In order to use this API you'll obviously need an Amazon Associates Web Service
 account for which you must with Amazon at http://aws.amazon.com. Each account
@@ -33,7 +31,6 @@ publisher::
 The ``node`` object returned is a `lxml.objectified`_ element. All its 
 attributes can be accessed the pythonic way::
     
-    # .pyval will convert the node content into int here
     total_results = node.Items.TotalResults.pyval
     total_pages = node.Items.TotalPages.pyval
     
@@ -43,33 +40,32 @@ attributes can be accessed the pythonic way::
         print '%s: "%s"' % (book.ItemAttributes.Author, 
                             book.ItemAttributes.Title)
 
-Please refer to the `documentation`_ for more details.
+Please refer to the more extensive `documentation`_ for more details.
 
 .. _lxml.objectified: http://codespeak.net/lxml/objectify.html
 .. _documentation: http://packages.python.org/python-amazon-product-api/
 
 Status
-------
+======
 
-This module is still undergoing development. The support for the Amazon Product
-API is currently limited to a number of operations. Supported so far are:
+This module is still undergoing development. All operations can be used with
+the API's ``call(Operation=...)`` method. Additionally, there is a number of 
+convenience methods that include for instance additional error checking.
+These are currently limited to:
    
 - ``ItemLookup``
 - ``ItemSearch``
 - ``SimilarityLookup``
-- ``ListLookup``
-- ``ListSearch``
-- ``Help``
 - ``BrowseNodeLookup``
 
 More functionality is to follow as development progresses. 
 
 Installation
-------------
+============
 
 In order to install python-amazon-product-api you can use::
 
-    easy_install python-amazon-product-api
+    pip python-amazon-product-api
     
 or download the source package from 
 http://pypi.python.org/pypi/python-amazon-product-api, untar it and run ::
@@ -77,19 +73,28 @@ http://pypi.python.org/pypi/python-amazon-product-api, untar it and run ::
     python setup.py install
 
 You'll also find binaries there to make your life easier if you happen to use
-a Windows system.
+a Windows system. If not, please send me an e-mail and complain loudly!
+
+Development
+===========
 
 The development version is available `bitbucket.org`_. Feel free to clone the 
 repository and add your own features. ::
     
     hg clone http://bitbucket.org/basti/python-amazon-product-api/
     
-If you like what you see, drop me a line at `basti at redtoad dot de`.
+Patches are always welcome! Please make sure that your change does not break 
+the tests!
 
 .. _bitbucket.org: http://bitbucket.org/basti/python-amazon-product-api/
 
 License
--------
+=======
 
 This module is release under the BSD License. You can find the full text of
 the license in the LICENSE file.
+
+Changelog
+=========
+
+.. include:: CHANGES
