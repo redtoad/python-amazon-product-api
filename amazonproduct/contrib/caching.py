@@ -1,6 +1,6 @@
 import os
 import tempfile
-import xml.dom.minidom
+from lxml import etree
 
 try: # make it python2.4 compatible!
     from hashlib import md5
