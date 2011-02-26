@@ -1,8 +1,17 @@
 
+import imp
+import os.path
+
 from amazonproduct import HOSTS
 
-import os.path
 _here = os.path.abspath(os.path.dirname(__file__))
+
+
+try:
+    fp, path, desc = imp.find_module('config', [_here])
+    _config = imp.load_module('config', fp, _here, desc)
+except ImportError:
+    _config = None
 
 #: Directory containing XML responses for API versions (one directory for each
 #: API version)
@@ -23,11 +32,11 @@ def get_config_value(key, default=None):
     (in that order).
     """
     try:
-        config = __import__('config')
-        return getattr(config, key)
-    except (ImportError, AttributeError):
+        return getattr(_config, key)
+    except AttributeError:
         return os.environ.get(key, default)
 
 AWS_KEY = get_config_value('AWS_KEY', '')
 SECRET_KEY = get_config_value('SECRET_KEY', '')
 OVERWRITE_TESTS = get_config_value('OVERWRITE_TESTS', '')
+
