@@ -1,0 +1,41 @@
+<ItemLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2009-10-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+    </HTTPHeaders>
+    <RequestId>ab9ed2eb-0d3d-4ec7-a63e-c04b9dfe1db6</RequestId>
+    <Arguments>
+      <Argument Name="Operation" Value="ItemLookup"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="ItemId" Value="1234567890123"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2009-12-02T21:57:36Z"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Version" Value="2009-10-01"/>
+    </Arguments>
+    <RequestProcessingTime>0.0043780000000000</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>True</IsValid>
+      <ItemLookupRequest>
+        <Condition>New</Condition>
+        <DeliveryMethod>Ship</DeliveryMethod>
+        <IdType>ASIN</IdType>
+        <MerchantId>Amazon</MerchantId>
+        <OfferPage>1</OfferPage>
+        <ItemId>1234567890123</ItemId>
+        <ResponseGroup>Small</ResponseGroup>
+        <ReviewPage>1</ReviewPage>
+        <ReviewSort>-SubmissionDate</ReviewSort>
+        <VariationPage>All</VariationPage>
+      </ItemLookupRequest>
+      <Errors>
+        <Error>
+          <Code>AWS.InvalidParameterValue</Code>
+          <Message>1234567890123 is not a valid value for ItemId. Please change this value and retry your request.</Message>
+        </Error>
+      </Errors>
+    </Request>
+  </Items>
+</ItemLookupResponse>

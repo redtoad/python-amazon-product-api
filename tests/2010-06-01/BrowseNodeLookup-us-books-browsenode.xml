@@ -1,0 +1,151 @@
+<BrowseNodeLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2010-06-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.4.1 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+    </HTTPHeaders>
+    <RequestId>0APZZGPHCC71W2SJ84FJ</RequestId>
+    <Arguments>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Operation" Value="BrowseNodeLookup"/>
+      <Argument Name="Timestamp" Value="2010-10-15T22:09:19Z"/>
+      <Argument Name="Version" Value="2010-08-06"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="BrowseNodeId" Value="1000"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+    </Arguments>
+    <RequestProcessingTime>0.0122129917144775</RequestProcessingTime>
+  </OperationRequest>
+  <BrowseNodes>
+    <Request>
+      <IsValid>True</IsValid>
+      <BrowseNodeLookupRequest>
+        <BrowseNodeId>1000</BrowseNodeId>
+      </BrowseNodeLookupRequest>
+    </Request>
+    <BrowseNode>
+      <BrowseNodeId>1000</BrowseNodeId>
+      <Name>Subjects</Name>
+      <IsCategoryRoot>1</IsCategoryRoot>
+      <Children>
+        <BrowseNode>
+          <BrowseNodeId>1</BrowseNodeId>
+          <Name>Arts &amp; Photography</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>2</BrowseNodeId>
+          <Name>Biographies &amp; Memoirs</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>3</BrowseNodeId>
+          <Name>Business &amp; Investing</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>4</BrowseNodeId>
+          <Name>Children's Books</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>4366</BrowseNodeId>
+          <Name>Comics &amp; Graphic Novels</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>5</BrowseNodeId>
+          <Name>Computers &amp; Internet</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>6</BrowseNodeId>
+          <Name>Cooking, Food &amp; Wine</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>86</BrowseNodeId>
+          <Name>Entertainment</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>301889</BrowseNodeId>
+          <Name>Gay &amp; Lesbian</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>10</BrowseNodeId>
+          <Name>Health, Mind &amp; Body</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>9</BrowseNodeId>
+          <Name>History</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>48</BrowseNodeId>
+          <Name>Home &amp; Garden</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>10777</BrowseNodeId>
+          <Name>Law</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>17</BrowseNodeId>
+          <Name>Literature &amp; Fiction</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>13996</BrowseNodeId>
+          <Name>Medicine</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>18</BrowseNodeId>
+          <Name>Mystery &amp; Thrillers</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>53</BrowseNodeId>
+          <Name>Nonfiction</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>290060</BrowseNodeId>
+          <Name>Outdoors &amp; Nature</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>20</BrowseNodeId>
+          <Name>Parenting &amp; Families</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>173507</BrowseNodeId>
+          <Name>Professional &amp; Technical</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>21</BrowseNodeId>
+          <Name>Reference</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>22</BrowseNodeId>
+          <Name>Religion &amp; Spirituality</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>23</BrowseNodeId>
+          <Name>Romance</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>75</BrowseNodeId>
+          <Name>Science</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>25</BrowseNodeId>
+          <Name>Science Fiction &amp; Fantasy</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>26</BrowseNodeId>
+          <Name>Sports</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>28</BrowseNodeId>
+          <Name>Teens</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>27</BrowseNodeId>
+          <Name>Travel</Name>
+        </BrowseNode>
+      </Children>
+      <Ancestors>
+        <BrowseNode>
+          <BrowseNodeId>283155</BrowseNodeId>
+          <Name>Books</Name>
+        </BrowseNode>
+      </Ancestors>
+    </BrowseNode>
+  </BrowseNodes>
+</BrowseNodeLookupResponse>

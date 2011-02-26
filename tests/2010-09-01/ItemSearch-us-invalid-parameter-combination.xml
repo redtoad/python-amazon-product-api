@@ -1,0 +1,39 @@
+<ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2010-09-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.4.1 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+    </HTTPHeaders>
+    <RequestId>d298dc2d-7aff-4e61-838d-00033b4e6e13</RequestId>
+    <Arguments>
+      <Argument Name="Operation" Value="ItemSearch"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2010-10-15T22:06:54Z"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="SearchIndex" Value="All"/>
+      <Argument Name="BrowseNode" Value="132"/>
+      <Argument Name="Version" Value="2010-09-01"/>
+    </Arguments>
+    <RequestProcessingTime>0.0030100000000000</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>False</IsValid>
+      <ItemSearchRequest>
+        <BrowseNode>132</BrowseNode>
+        <Condition>New</Condition>
+        <DeliveryMethod>Ship</DeliveryMethod>
+        <MerchantId>Amazon</MerchantId>
+        <ResponseGroup>Small</ResponseGroup>
+        <ReviewSort>-SubmissionDate</ReviewSort>
+        <SearchIndex>All</SearchIndex>
+      </ItemSearchRequest>
+      <Errors>
+        <Error>
+          <Code>AWS.RestrictedParameterValueCombination</Code>
+          <Message>Your request contained a restricted parameter combination.  When SearchIndex equals All, BrowseNode cannot be present.</Message>
+        </Error>
+      </Errors>
+    </Request>
+  </Items>
+</ItemSearchResponse>

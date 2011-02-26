@@ -1,0 +1,32 @@
+<ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2010-06-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.4.1 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+    </HTTPHeaders>
+    <RequestId>0KMHJW79D7DM471PY0Q6</RequestId>
+    <Arguments>
+      <Argument Name="SearchIndex" Value="Books"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Operation" Value="ItemSearch"/>
+      <Argument Name="Timestamp" Value="2010-10-15T22:06:46Z"/>
+      <Argument Name="Version" Value="2010-08-06"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+    </Arguments>
+    <RequestProcessingTime>0.0195691585540771</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>False</IsValid>
+      <ItemSearchRequest>
+        <SearchIndex>Books</SearchIndex>
+      </ItemSearchRequest>
+      <Errors>
+        <Error>
+          <Code>AWS.MinimumParameterRequirement</Code>
+          <Message>Your request should have atleast 1 of the following parameters: Keywords, Title, Power, BrowseNode, Artist, Author, Actor, Director, AudienceRating, Manufacturer, MusicLabel, Composer, Publisher, Brand, Conductor, Orchestra, TextStream, Cuisine, City, Neighborhood.</Message>
+        </Error>
+      </Errors>
+    </Request>
+  </Items>
+</ItemSearchResponse>

@@ -1,0 +1,38 @@
+<ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2010-11-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.4.1 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+    </HTTPHeaders>
+    <RequestId>877dfdc3-acf5-403e-bf72-7ec36a471d19</RequestId>
+    <Arguments>
+      <Argument Name="Operation" Value="ItemSearch"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Version" Value="2010-11-01"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2011-01-15T18:04:16Z"/>
+      <Argument Name="ResponseGroup" Value="???"/>
+      <Argument Name="SearchIndex" Value="All"/>
+    </Arguments>
+    <RequestProcessingTime>0.0008210000000000</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>False</IsValid>
+      <ItemSearchRequest>
+        <Condition>New</Condition>
+        <DeliveryMethod>Ship</DeliveryMethod>
+        <MerchantId>Amazon</MerchantId>
+        <ResponseGroup>???</ResponseGroup>
+        <ReviewSort>-SubmissionDate</ReviewSort>
+        <SearchIndex>All</SearchIndex>
+      </ItemSearchRequest>
+      <Errors>
+        <Error>
+          <Code>AWS.InvalidResponseGroup</Code>
+          <Message>ResponseGroup&#12497;&#12521;&#12513;&#12540;&#12479;&#12364;&#28961;&#21177;&#12391;&#12377;&#12290;ItemSearch&#12522;&#12463;&#12456;&#12473;&#12488;&#12391;&#26377;&#21177;&#12394;&#12524;&#12473;&#12509;&#12531;&#12473;&#12539;&#12464;&#12523;&#12540;&#12503;&#12399;&#12289;Accessories, AlternateVersions, BrowseNodes, Collections, EditorialReview, Images, ItemAttributes, ItemIds, Large, ListmaniaLists, Medium, MerchantItemAttributes, OfferFull, OfferListings, OfferSummary, Offers, PromotionDetails, PromotionSummary, PromotionalTag, RelatedItems, Request, Reviews, SalesRank, SearchBins, SearchInside, ShippingCharges, ShippingOptions, Similarities, Small, Subjects, Tags, TagsSummary, Tracks, VariationImages, VariationMatrix, VariationMinimum, VariationOffers, VariationSummary, Variations&#12394;&#12393;&#12391;&#12377;&#12290;</Message>
+        </Error>
+      </Errors>
+    </Request>
+  </Items>
+</ItemSearchResponse>
