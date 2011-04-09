@@ -124,7 +124,12 @@ class LxmlItemSearchPaginator (LxmlPaginator):
     def __init__(self, fnc, *args, **kwargs):
         # Amazon limits returned pages to max 5
         # if SearchIndex "All" is used!
-        if args[0] == 'All' and kwargs.get('limit', 400) > 5:
+        try:
+            search_index = args[0]
+        except IndexError:
+            search_index = kwargs['search_index']
+        print args, kwargs, search_index
+        if search_index == 'All' and kwargs.get('limit', 400) > 5:
             kwargs['limit'] = 5
         super(LxmlItemSearchPaginator, self).__init__(fnc, *args, **kwargs)
 
