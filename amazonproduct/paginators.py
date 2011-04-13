@@ -128,7 +128,7 @@ class LxmlItemSearchPaginator (LxmlPaginator):
             search_index = args[0]
         except IndexError:
             search_index = kwargs['search_index']
-        print args, kwargs, search_index
+        #print args, kwargs, search_index
         if search_index == 'All' and kwargs.get('limit', 400) > 5:
             kwargs['limit'] = 5
         super(LxmlItemSearchPaginator, self).__init__(fnc, *args, **kwargs)
