@@ -513,11 +513,11 @@ class API (object):
         otherwise the request will fail.
 
         .. note:: Some manufacturers have a minimum advertised price (MAP) that
-        can be displayed on Amazon's retail web site. In these cases, when
-        performing a Cart operation, the MAP Is returned instead of the actual
-        price. The only way to see the actual price is to add the item to a
-        remote shopping cart and follow the PurchaseURL. The actual price will
-        be the MAP or lower.
+           can be displayed on Amazon's retail web site. In these cases, when
+           performing a Cart operation, the MAP Is returned instead of the
+           actual price. The only way to see the actual price is to add the
+           item to a remote shopping cart and follow the PurchaseURL. The
+           actual price will be the MAP or lower.
         """
         try:
             params.update({
