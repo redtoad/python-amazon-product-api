@@ -177,7 +177,6 @@ class API (object):
         self.last_call = datetime.now()
 
         try:
-            opener = urllib2.build_opener()
             handler = urllib2.HTTPHandler(debuglevel=self.debug)
             opener = urllib2.build_opener(handler)
             response = opener.open(request)
