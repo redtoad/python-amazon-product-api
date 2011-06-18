@@ -49,9 +49,12 @@ class LxmlObjectifyProcessor (object):
         #~ from lxml import etree
         #~ print etree.tostring(tree, pretty_print=True)
 
-        nspace = root.nsmap.get(None, '')
-        errors = root.xpath('//aws:Error',
-                         namespaces={'aws' : nspace})
+        try:
+            nspace = root.nsmap[None]
+            errors = root.xpath('//aws:Error', namespaces={'aws' : nspace})
+        except KeyError:
+            errors = root.xpath('//Error')
+
         for error in errors:
             code = error.Code.text
             msg = error.Message.text
