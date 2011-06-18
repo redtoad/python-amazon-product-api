@@ -2,8 +2,9 @@
 import os
 import pytest
 
-from tests.utils import CustomAPI, convert_camel_case, Cart
-from tests import XML_TEST_DIR, TESTABLE_API_VERSIONS, TESTABLE_LOCALES
+from tests.utils import convert_camel_case, Cart
+from tests import XML_TEST_DIR
+from tests import TESTABLE_API_VERSIONS, TESTABLE_LOCALES
 from tests import AWS_KEY, SECRET_KEY
 
 from amazonproduct.api import API
@@ -11,7 +12,11 @@ from amazonproduct.errors import *
 from amazonproduct.paginators import LxmlPaginator
 
 def pytest_generate_tests(metafunc):
-    # called once per each test function
+    """
+    All test methods is called once for each API version and locale. Test
+    classes and methods can (optionally) use attributes ``locales`` and
+    ``api_versions`` to specify which one are used.
+    """
     if 'api' in metafunc.funcargnames:
         api_versions = getattr(metafunc.function, 'api_versions',
             getattr(metafunc.cls, 'api_versions', TESTABLE_API_VERSIONS))
@@ -19,21 +24,63 @@ def pytest_generate_tests(metafunc):
             locales = getattr(metafunc.function, 'locales',
                 getattr(metafunc.cls, 'locales', TESTABLE_LOCALES))
             for locale in locales:
-                api = CustomAPI(AWS_KEY, SECRET_KEY, locale)
-                api.VERSION = version
-                api.local_file = os.path.join(XML_TEST_DIR, version,
+                # file containing previously fetched response
+                local_file = os.path.join(XML_TEST_DIR, version,
                     '%s-%s-%s.xml' % (metafunc.cls.__name__[4:], locale, 
                     metafunc.function.__name__[5:].replace('_', '-')))
                 metafunc.addcall(
                     id='%s/%s' % (version, locale), 
-                    funcargs={'api' : api})
+                    param={
+                        'version' : version, 
+                        'locale' : locale, 
+                        'xml_response' : local_file
+                    })
 
-##def setup_module(module):
-##    import _pytest
-##    module._monkeypatch = _pytest.monkeypatch.monkeypatch()
-##
-##def teardown_module(module):
-##    module._monkeypatch.undo()
+def pytest_funcarg__server(request):
+    """
+    Is the same as funcarg `httpserver` from plugin pytest-localserver with the
+    difference that it has a module-wide scope.
+    """
+    def setup():
+        try:
+            localserver = request.config.pluginmanager.getplugin('localserver')
+        except KeyError:
+            raise pytest.skip('This test needs plugin pytest-localserver!')
+        server = localserver.http.Server()
+        server.start()
+        return server
+    def teardown(server):
+        server.stop()
+    return request.cached_setup(setup, teardown, 'module')
+
+def pytest_funcarg__api(request):
+    """
+    Initialises API for each test call (formerly done with ``setup_method()``).
+    """
+    server = request.getfuncargvalue('server')
+
+    api = API(AWS_KEY, SECRET_KEY, request.param['locale'])
+    api.VERSION = request.param['version']
+    api.REQUESTS_PER_SECOND = 10000 # just for here!
+    api.host = ['%s:%s' % server.server_address for _ in range(2)]
+    
+    def counter(fnc):
+        """Keeps track of the times ``_fetch`` has been called and adjusts the
+        corresponding XML response."""
+        api._count = 0
+        def wrapped(*args, **kwargs):
+            api._count += 1
+            path = request.param['xml_response']
+            if api._count > 1:
+                root, ext = os.path.splitext(path)
+                path = '%s-%i%s' % (root, api._count, ext)
+            server.serve_content(open(path, 'r').read())
+            return fnc(*args, **kwargs)
+        return wrapped
+    
+    api._fetch = counter(api._fetch)
+    return api
+
 
 class TestCorrectVersion (object):
 

@@ -51,6 +51,7 @@ setup(
     install_requires=reqs,
 
     cmdclass = {'test': PyTest},
+    test_requires=['pytest>=2.0.3', 'pytest-localserver'],
 
     classifiers = [
         'Operating System :: OS Independent',
