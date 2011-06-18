@@ -109,7 +109,6 @@ class API (object):
         socket.setdefaulttimeout(self.TIMEOUT)
 
         self.last_call = datetime(1970, 1, 1)
-        self.throttle = timedelta(seconds=1)/self.REQUESTS_PER_SECOND
         self.debug = 0 # set to 1 if you want to see HTTP headers
 
         self.response_processor = processor or LxmlObjectifyProcessor()
@@ -171,8 +170,9 @@ class API (object):
         # Be nice and wait for some time
         # before submitting the next request
         delta = datetime.now() - self.last_call
-        if delta < self.throttle:
-            wait = self.throttle-delta
+        throttle = timedelta(seconds=1)/self.REQUESTS_PER_SECOND
+        if delta < throttle:
+            wait = throttle-delta
             sleep(wait.seconds+wait.microseconds/1000000.0) # pragma: no cover
         self.last_call = datetime.now()
 

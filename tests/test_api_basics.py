@@ -62,7 +62,8 @@ class TestAPICalls (object):
         for i in range(n):
             self.api._fetch(url)
         stop = datetime.now()
-        assert (stop-start) >= (n-1)*self.api.throttle
+        throttle = timedelta(seconds=1)/self.api.REQUESTS_PER_SECOND
+        assert (stop-start) >= (n-1)*throttle
 
 class TestAPICallsWithOptionalParameters (object):
 
