@@ -10,7 +10,7 @@ from base64 import b64encode
 from datetime import datetime, timedelta
 
 try: # make it python2.4 compatible!
-    from hashlib import sha256
+    from hashlib import sha256 # pylint: disable-msg=E0611
 except ImportError: # pragma: no cover
     from Crypto.Hash import SHA256 as sha256
 

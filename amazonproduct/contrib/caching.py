@@ -3,7 +3,7 @@ import tempfile
 from lxml import etree
 
 try: # make it python2.4 compatible!
-    from hashlib import md5
+    from hashlib import md5 # pylint: disable-msg=E0611
 except ImportError: # pragma: no cover
     from md5 import new as md5
 
