@@ -1,6 +1,8 @@
 
 import os
 import pytest
+import re
+import urllib2
 
 from tests.utils import convert_camel_case, Cart
 from tests import XML_TEST_DIR
@@ -58,26 +60,45 @@ def pytest_funcarg__api(request):
     Initialises API for each test call (formerly done with ``setup_method()``).
     """
     server = request.getfuncargvalue('server')
+    url_reg = re.compile(r'^http://(?P<host>[\w\-\.]+)(?P<path>/onca/xml.*)$')
 
     api = API(AWS_KEY, SECRET_KEY, request.param['locale'])
     api.VERSION = request.param['version']
     api.REQUESTS_PER_SECOND = 10000 # just for here!
-    api.host = ['%s:%s' % server.server_address for _ in range(2)]
-    
+
     def counter(fnc):
-        """Keeps track of the times ``_fetch`` has been called and adjusts the
-        corresponding XML response."""
+        """
+        Wrapper function for ``_fetch`` which
+
+        1. keeps track of the times has been called and adjusts the path to the 
+           corresponding XML response
+        2. Fetches any response that has not been cached from the live servers
+        """
         api._count = 0
-        def wrapped(*args, **kwargs):
+        def wrapped(url):
             api._count += 1
             path = request.param['xml_response']
             if api._count > 1:
                 root, ext = os.path.splitext(path)
                 path = '%s-%i%s' % (root, api._count, ext)
-            server.serve_content(open(path, 'r').read())
-            return fnc(*args, **kwargs)
+            try:
+                content = open(path, 'r').read()
+            except IOError:
+                if not all([AWS_KEY, SECRET_KEY]): 
+                    raise pytest.skip('No cached XML response found!')
+                content = urllib2.urlopen(url).read()
+                if not os.path.exists(os.path.dirname(path)):
+                    os.mkdir(os.path.dirname(path))
+                open(path, 'wb').write(content)
+            # We simply exchange the real host with the local one now!
+            # Note: Although strictly speaking it does not matter which URL is
+            # called exactly, to appeal to one's sense of correctness, let's
+            # keep at least correct path!
+            url = url_reg.sub(r'%s\g<path>' % server.url, url)
+            server.serve_content(content)
+            return fnc(url)
         return wrapped
-    
+
     api._fetch = counter(api._fetch)
     return api
 
