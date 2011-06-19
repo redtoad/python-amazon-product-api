@@ -1,4 +1,8 @@
 
+"""
+Contains all result processors.
+"""
+
 from amazonproduct.errors import AWSError
 from amazonproduct.paginators import LxmlItemSearchPaginator
 

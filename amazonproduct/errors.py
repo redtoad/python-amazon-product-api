@@ -1,4 +1,18 @@
+
+"""
+Contains all errors specific to this package.
+"""
+
 import re
+
+__all__ = [
+    'AWSError', 'CartInfoMismatch', 'DEFAULT_ERROR_REGS', 'DeprecatedOperation',
+    'InvalidCartId', 'InvalidCartItem', 'InvalidListType', 'InvalidOperation',
+    'InvalidParameterCombination', 'InvalidParameterValue',
+    'InvalidResponseGroup', 'InvalidSearchIndex', 'ItemAlreadyInCart',
+    'JAPANESE_ERROR_REGS', 'NoExactMatchesFound', 'NoSimilarityForASIN',
+    'NotEnoughParameters', 'TooManyRequests', 'UnknownLocale'
+]
 
 class UnknownLocale (Exception):
     """
