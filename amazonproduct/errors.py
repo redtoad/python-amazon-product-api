@@ -6,8 +6,9 @@ Contains all errors specific to this package.
 import re
 
 __all__ = [
-    'AWSError', 'CartInfoMismatch', 'DEFAULT_ERROR_REGS', 'DeprecatedOperation',
-    'InvalidCartId', 'InvalidCartItem', 'InvalidListType', 'InvalidOperation',
+    'AWSError', 'CartInfoMismatch', 'DEFAULT_ERROR_REGS',
+    'InvalidClientTokenId', 'DeprecatedOperation', 'InvalidCartId',
+    'InvalidCartItem', 'InvalidListType', 'InvalidOperation',
     'InvalidParameterCombination', 'InvalidParameterValue',
     'InvalidResponseGroup', 'InvalidSearchIndex', 'ItemAlreadyInCart',
     'JAPANESE_ERROR_REGS', 'NoExactMatchesFound', 'NoSimilarityForASIN',
@@ -29,6 +30,11 @@ class AWSError (Exception):
         self.msg = msg
     def __str__(self): # pragma: no cover
         return '%(code)s: %(msg)s' % self.__dict__
+
+class InvalidClientTokenId (Exception):
+    """
+    The AWS Access Key Id you provided does not exist in Amazon's records.
+    """
 
 class InvalidSearchIndex (Exception):
     """

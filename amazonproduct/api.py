@@ -214,6 +214,9 @@ class API (object):
             return self.response_processor(fp)
         except AWSError, e:
 
+            if e.code == 'InvalidClientTokenId':
+                raise InvalidClientTokenId
+
             if e.code == 'Deprecated':
                 raise DeprecatedOperation(e.msg)
 
@@ -250,9 +253,10 @@ class API (object):
             fp = self._fetch(url)
             return self._parse(fp)
         except urllib2.HTTPError, e:
-            # HTTP errors 400 (Bad Request) and 410 (Gone) send a more detailed
-            # error message as body which can be parsed, too.
-            if e.code in (400, 410):
+            # HTTP errors 400 (Bad Request), 403 (Unauthorised)  and 410 (Gone)
+            # send a more detailed error message as body which can be parsed
+            # too.
+            if e.code in (400, 403, 410):
                 return self._parse(e.fp)
             raise
 

@@ -13,7 +13,7 @@ from tests import TESTABLE_API_VERSIONS, XML_TEST_DIR
 from tests.utils import convert_camel_case, extract_operations_from_wsdl
 
 from amazonproduct.api import API
-from amazonproduct.errors import UnknownLocale, TooManyRequests
+from amazonproduct.errors import UnknownLocale, TooManyRequests, InvalidClientTokenId
 
 
 class TestAPILocales (object):
@@ -92,6 +92,12 @@ class TestAPICalls (object):
     """
     Test API calls with ``TestServer`` instance.
     """
+
+    def test_fails_for_wrong_aws_key(self, api, server):
+        xml = open(os.path.join(XML_TEST_DIR,
+            'APICalls-fails-for-wrong-aws-key.xml')).read()
+        server.serve_content(xml, 403)
+        pytest.raises(InvalidClientTokenId, api.item_lookup, '9780747532743')
 
     def test_fails_for_too_many_requests(self, api, server):
         xml = open(os.path.join(XML_TEST_DIR,
