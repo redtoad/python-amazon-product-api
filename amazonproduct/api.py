@@ -8,6 +8,7 @@ __docformat__ = "restructuredtext en"
 
 from base64 import b64encode
 from datetime import datetime, timedelta
+import gzip
 
 try: # make it python2.4 compatible!
     from hashlib import sha256 # pylint: disable-msg=E0611
@@ -16,6 +17,7 @@ except ImportError: # pragma: no cover
 
 import hmac
 import socket
+import StringIO
 from time import strftime, gmtime, sleep
 import urllib2
 
@@ -41,6 +43,32 @@ HOSTS = {
     'uk' : ('ecs.amazonaws.co.uk', 'xml-uk.amznxslt.com'),
     'us' : ('ecs.amazonaws.com', 'xml-us.amznxslt.com'),
 }
+
+
+class GZipHandler(urllib2.BaseHandler):
+
+    """
+    A handler to deal with gzip encoded content.
+    Borrowed from Andrew Rowls
+    http://techknack.net/python-urllib2-handlers/
+    """
+
+    def http_request(self, req):
+        req.add_header('Accept-Encoding', 'gzip')
+        return req
+
+    def http_response(self, req, resp):
+        if resp.headers.get('content-encoding') == 'gzip':
+            gz = gzip.GzipFile(fileobj=StringIO.StringIO(resp.read()), mode='r')
+            old = resp
+            resp = urllib2.addinfourl(gz, old.headers, old.url)
+            resp.msg = old.msg
+            resp.code = old.code # support for Python2.4/2.5
+        return resp
+
+    https_request = http_request
+    https_response = http_response
+
 
 class API (object):
 
@@ -165,7 +193,6 @@ class API (object):
         """
         request = urllib2.Request(url)
         request.add_header('User-Agent', USER_AGENT)
-        request.add_header('Accept-encoding', 'gzip')
 
         # Be nice and wait for some time
         # before submitting the next request
@@ -177,16 +204,8 @@ class API (object):
         self.last_call = datetime.now()
 
         handler = urllib2.HTTPHandler(debuglevel=self.debug)
-        opener = urllib2.build_opener(handler)
+        opener = urllib2.build_opener(handler, GZipHandler())
         response = opener.open(request)
-        # handle compressed data
-        # Borrowed from Mark Pilgrim's excellent introduction
-        # http://diveintopython.org/http_web_services/gzip_compression.html
-        if response.headers.get('Content-Encoding') == 'gzip':
-            import StringIO
-            import gzip
-            stream = StringIO.StringIO(response.read())
-            return gzip.GzipFile(fileobj=stream)
         return response
 
     def _reg(self, key):
