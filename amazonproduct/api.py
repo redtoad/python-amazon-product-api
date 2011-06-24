@@ -176,24 +176,18 @@ class API (object):
             sleep(wait.seconds+wait.microseconds/1000000.0) # pragma: no cover
         self.last_call = datetime.now()
 
-        try:
-            handler = urllib2.HTTPHandler(debuglevel=self.debug)
-            opener = urllib2.build_opener(handler)
-            response = opener.open(request)
-            # handle compressed data
-            # Borrowed from Mark Pilgrim's excellent introduction
-            # http://diveintopython.org/http_web_services/gzip_compression.html
-            if response.headers.get('Content-Encoding') == 'gzip':
-                import StringIO
-                import gzip
-                stream = StringIO.StringIO(response.read())
-                return gzip.GzipFile(fileobj=stream)
-            return response
-        except urllib2.HTTPError, e:
-            if e.code == 503:
-                raise TooManyRequests
-            # otherwise re-raise
-            raise # pragma: no cover
+        handler = urllib2.HTTPHandler(debuglevel=self.debug)
+        opener = urllib2.build_opener(handler)
+        response = opener.open(request)
+        # handle compressed data
+        # Borrowed from Mark Pilgrim's excellent introduction
+        # http://diveintopython.org/http_web_services/gzip_compression.html
+        if response.headers.get('Content-Encoding') == 'gzip':
+            import StringIO
+            import gzip
+            stream = StringIO.StringIO(response.read())
+            return gzip.GzipFile(fileobj=stream)
+        return response
 
     def _reg(self, key):
         """
@@ -216,6 +210,9 @@ class API (object):
 
             if e.code == 'InvalidClientTokenId':
                 raise InvalidClientTokenId
+
+            if e.code == 'RequestThrottled':
+                raise TooManyRequests
 
             if e.code == 'Deprecated':
                 raise DeprecatedOperation(e.msg)
@@ -253,10 +250,13 @@ class API (object):
             fp = self._fetch(url)
             return self._parse(fp)
         except urllib2.HTTPError, e:
-            # HTTP errors 400 (Bad Request), 403 (Unauthorised)  and 410 (Gone)
-            # send a more detailed error message as body which can be parsed
-            # too.
-            if e.code in (400, 403, 410):
+            # Some HTTP send a more detailed error message as body which can be
+            # parsed too.
+            # - 400 (Bad Request)
+            # - 403 (Unauthorised)
+            # - 410 (Gone)
+            # - 503 (Service unavailable)
+            if e.code in (400, 403, 410, 503):
                 return self._parse(e.fp)
             raise
 
