@@ -1,4 +1,4 @@
-# Copyright (C) 2009 Sebastian Rahlf <basti at redtoad dot de>
+# Copyright (C) 2009-2011 Sebastian Rahlf <basti at redtoad dot de>
 #
 # This program is release under the BSD License. You can find the full text of
 # the license in the LICENSE file.
@@ -229,6 +229,9 @@ class API (object):
 
             if e.code == 'InvalidClientTokenId':
                 raise InvalidClientTokenId
+
+            if e.code == 'MissingClientTokenId':
+                raise MissingClientTokenId
 
             if e.code == 'RequestThrottled':
                 raise TooManyRequests

@@ -7,8 +7,8 @@ import re
 
 __all__ = [
     'AWSError', 'CartInfoMismatch', 'DEFAULT_ERROR_REGS',
-    'InvalidClientTokenId', 'DeprecatedOperation', 'InvalidCartId',
-    'InvalidCartItem', 'InvalidListType', 'InvalidOperation',
+    'InvalidClientTokenId', 'MissingClientTokenId', 'DeprecatedOperation',
+    'InvalidCartId', 'InvalidCartItem', 'InvalidListType', 'InvalidOperation',
     'InvalidParameterCombination', 'InvalidParameterValue',
     'InvalidResponseGroup', 'InvalidSearchIndex', 'ItemAlreadyInCart',
     'JAPANESE_ERROR_REGS', 'NoExactMatchesFound', 'NoSimilarityForASIN',
@@ -34,6 +34,11 @@ class AWSError (Exception):
 class InvalidClientTokenId (Exception):
     """
     The AWS Access Key Id you provided does not exist in Amazon's records.
+    """
+
+class MissingClientTokenId (Exception):
+    """
+    Request must contain AWSAccessKeyId or X.509 certificate.
     """
 
 class InvalidSearchIndex (Exception):
