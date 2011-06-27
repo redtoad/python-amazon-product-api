@@ -569,7 +569,6 @@ class API (object):
                 raise InvalidCartItem(e.msg)
 
             if e.code == 'AWS.ECommerceService.ItemAlreadyInCart':
-                if self.locale == 'jp': print e.msg
                 item = self._reg('already-in-cart').search(e.msg).group('item')
                 raise ItemAlreadyInCart(item)
 
