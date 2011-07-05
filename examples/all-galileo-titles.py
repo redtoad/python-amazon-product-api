@@ -4,22 +4,16 @@ Get all books published by "Galileo Press".
 """
 
 from config import AWS_KEY, SECRET_KEY
-from amazonproduct import API
-from amazonproduct import ResultPaginator
+from amazonproduct.api import API
 
 if __name__ == '__main__':
     
     api = API(AWS_KEY, SECRET_KEY, 'de')
     
-    paginator = ResultPaginator('ItemPage',
-        '//aws:Items/aws:Request/aws:ItemSearchRequest/aws:ItemPage',
-        '//aws:Items/aws:TotalPages',
-        '//aws:Items/aws:TotalResults', 
-        limit=5)
-    
-    for root in paginator(api.item_search, search_index='Books', 
-                          Publisher='Galileo Press', ResponseGroup='Large'):
-    
+    for root in api.item_search('Books', Publisher='Galileo Press',
+                                ResponseGroup='Large'):
+
+        # extract paging information
         total_results = root.Items.TotalResults.pyval
         total_pages = root.Items.TotalPages.pyval
         try:

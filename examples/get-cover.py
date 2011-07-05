@@ -11,7 +11,7 @@ import sys
 import urllib2
 
 from config import AWS_KEY, SECRET_KEY
-from amazonproduct import API
+from amazonproduct.api import API
 
 ASIN = 'ASIN'
 EAN = 'EAN'
@@ -29,17 +29,22 @@ def fetch_image(url, dest_path):
 if __name__ == '__main__':
     
     parser = OptionParser(__doc__.strip())
-    parser.set_defaults(id_type=EAN)
-    parser.add_option('--ean', action='store_const', dest='id_type', const=EAN)
-    parser.add_option('--asin', action='store_const', dest='id_type', const=ASIN)
+    parser.set_defaults(id_type=EAN, verbose=True)
+    parser.add_option('--ean', action='store_const', dest='id_type', const=EAN,
+        help='ID is an European Article Number (EAN) [default]')
+    parser.add_option('--asin', action='store_const', dest='id_type', const=ASIN,
+        help='ID is an Amazon Standard Identification Number (ASIN).')
+    parser.add_option('--upc', action='store_const', dest='id_type', const=UPC,
+        help='ID is an Universal Product Code (UPC).')
+    parser.add_option('--sku', action='store_const', dest='id_type', const=SKU,
+        help='ID is an Stock Keeping Unit (SKU).')
     parser.add_option('-q', '--quiet', action='store_false', dest='verbose', 
-                      default=True, help='Suppress output.')
+        help='Suppress output.')
     
     (options, ids) = parser.parse_args(sys.argv[1:])
     
     if len(ids) == 0:
         parser.error('No IDs specified!')
-        #sys.exit(1)
     
     api = API(AWS_KEY, SECRET_KEY, 'de')
     
@@ -49,6 +54,10 @@ if __name__ == '__main__':
         'IdType' : options.id_type, 
     }
     
+    # When IdType equals ASIN, SearchIndex cannot be present.
+    if options.id_type == ASIN:
+        del params['SearchIndex']
+
     for id in ids:
         
         id = id.replace('-', '')

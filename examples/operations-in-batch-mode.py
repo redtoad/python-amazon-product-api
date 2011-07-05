@@ -1,17 +1,20 @@
 
 from config import AWS_KEY, SECRET_KEY
-from amazonproduct import API
+from amazonproduct.api import API
+from amazonproduct.errors import AWSError
+
+class ExceededMaxBatchRequestsPerOperation (Exception): 
+    """
+    You have exceeded the maximum number of batch requests per operation.  Each
+    operation may include no more than 2 batch requests.
+    """
 
 class BatchModeAPI(API):
 
     """
-    Custom API supporting Batch and Multiple Requests
+    Custom API supporting Batch Requests
     
-    This API can send requests which include up to two operations, called 
-    multiple operations requests. These can be a combination of any number of 
-    simple and/or batch requests. 
-    
-    http://docs.amazonwebservices.com/AWSECommerceService/2009-11-01/DG/index.html?BatchandMultipleOperationRequests.html
+    http://docs.amazonwebservices.com/AWSECommerceService/2010-11-01/DG/index.html?BatchRequests.html
     """
 
     def __init__(self, *args, **kwargs):
@@ -19,8 +22,7 @@ class BatchModeAPI(API):
         self.batch_mode = False
 
     def call(self, **qargs):
-        # if in batch mode collect all operations
-        # but do nothing else
+        # if in batch mode collect all operations but do nothing else
         # TODO: Maybe use co-routines?
         if self.batch_mode:
             operation = qargs['Operation']
@@ -54,9 +56,15 @@ class BatchModeAPI(API):
         self.batch_mode = False
         del self._operations
 
-        url = api._build_url(**arguments)
-        fp = self._fetch(url)
-        return self._parse(fp)
+        try:
+            url = api._build_url(**arguments)
+            fp = self._fetch(url)
+            return self._parse(fp)
+        except AWSError, e:
+            if e.code == 'AWS.ExceededMaxBatchRequestsPerOperation':
+                raise ExceededMaxBatchRequestsPerOperation
+            # otherwise re-raise
+            raise
 
 if __name__ == '__main__':
 
@@ -66,18 +74,8 @@ if __name__ == '__main__':
     api.start_batch_request()
     api.item_lookup('0201896834') # The Art of Computer Programming Vol. 1
     api.item_lookup('0201896842') # The Art of Computer Programming Vol. 2
-    # A third opration of the same type would raise the exception 
-    # "AWS.ExceededMaxBatchRequestsPerOperation"
-    # api.item_lookup('0201896842')
-    root = api.collect_batch_results()
-
-    from lxml.etree import tostring
-    print tostring(root, pretty_print=True)
-
-    # multiple operation: different operations with same request
-    api.start_batch_request()
-    api.item_lookup('0976925524', IdType='ASIN')
-    api.similarity_lookup('0976925524')
+    # A third opration of the same type would raise an exception 
+    #api.item_lookup('0201896842')
     root = api.collect_batch_results()
 
     from lxml.etree import tostring

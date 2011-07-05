@@ -1,15 +1,14 @@
 # ~*~ encoding: iso-8859-1
 
 """
-Get all reviews for books with the specified ISBNs.
+Get all editorial reviews for books with the specified ISBNs.
 """
 
 import sys
 from textwrap import fill
 
 from config import AWS_KEY, SECRET_KEY
-from amazonproduct import API
-from amazonproduct import ResultPaginator
+from amazonproduct.api import API
 
 if __name__ == '__main__':
     
@@ -23,29 +22,12 @@ if __name__ == '__main__':
         isbn = isbn.replace('-', '')
         
         api = API(AWS_KEY, SECRET_KEY, 'us')
-        paginator = ResultPaginator('ReviewPage',
-            '//aws:Items/aws:Request/aws:ItemLookupRequest/aws:ReviewPage',
-            '//aws:Items/aws:Item/aws:CustomerReviews/aws:TotalReviewPages',
-            '//aws:Items/aws:Item/aws:CustomerReviews/aws:TotalReviews')
-        
-        for root in paginator(api.item_lookup, isbn, IdType='ISBN', 
-                             SearchIndex='Books', ResponseGroup='Reviews'):
-        
-            rating = root.Items.Item.CustomerReviews.AverageRating.pyval
-            total_reviews = root.Items.Item.CustomerReviews.TotalReviews.pyval
-            review_pages = root.Items.Item.CustomerReviews.TotalReviewPages.pyval
-            try:
-                current_page = root.Items.Request.ItemLookupRequest.ReviewPage.pyval
-            except AttributeError:
-                current_page = 1
-                
-            print '%d reviews' % total_reviews,
-            print 'requested page %d of %d' % (current_page, review_pages)
-            
+        for root in api.item_lookup(isbn, IdType='ISBN', 
+                             SearchIndex='Books', ResponseGroup='EditorialReview'):
             nspace = root.nsmap.get(None, '')
-            reviews = root.xpath('//aws:CustomerReviews/aws:Review', 
+            reviews = root.xpath('//aws:EditorialReview', 
                                 namespaces={'aws' : nspace})
             for review in reviews:
-                print '%s %-5s %s: %s' % (review.Date, '*' * review.Rating.pyval,  
-                    unicode(getattr(review.Reviewer, 'Name', '')) or 'Unknown',
-                    unicode(review.Summary))
+                print str(review.Source)
+                print '-' * 40
+                print str(review.Content)
