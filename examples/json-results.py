@@ -4,7 +4,8 @@ All calls to the API will be translated to JSON via XSLT.
 """
 
 from config import AWS_KEY, SECRET_KEY
-from amazonproduct import API, AWSError
+from amazonproduct.api import API
+from amazonproduct.errors import AWSError
 
 import simplejson
 

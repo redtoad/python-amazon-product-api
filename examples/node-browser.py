@@ -7,7 +7,7 @@ corresponding node from the web service.
 
 import gtk
 from config import AWS_KEY, SECRET_KEY
-from amazonproduct import API
+from amazonproduct.api import API
 
 #: a list of root nodes retrieved from
 #: http://docs.amazonwebservices.com/AWSECommerceService/2009-11-01/DG/index.html?BrowseNodeIDs.html

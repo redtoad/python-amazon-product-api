@@ -5,8 +5,8 @@ Find similar items to "Small Favor: A Novel of the Dresden Files"
 """
 
 from config import AWS_KEY, SECRET_KEY
-from amazonproduct import API, AWSError
-from amazonproduct import ResultPaginator
+from amazonproduct.api import API
+from amazonproduct.errors import AWSError
 
 from xml.dom.minidom import parse
 
