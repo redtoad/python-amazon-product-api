@@ -9,22 +9,22 @@ __docformat__ = "restructuredtext en"
 from base64 import b64encode
 from datetime import datetime, timedelta
 import gzip
-
-try: # make it python2.4 compatible!
-    from hashlib import sha256 # pylint: disable-msg=E0611
-except ImportError: # pragma: no cover
-    from Crypto.Hash import SHA256 as sha256
-
 import hmac
 import socket
 import StringIO
+import sys
 from time import strftime, gmtime, sleep
 import urllib2
 
-try: # make it python2.4 compatible!
+# For historic reasons, this module also supports Python 2.4. To make this
+# happen, a few things have to be imported differently, e.g. pycrypto is needed
+# to create URL signatures.
+if sys.version_info[:2] > (2, 4): # pragma: no cover
     from urllib2 import quote
-except ImportError: # pragma: no cover
+    from hashlib import sha256 # pylint: disable-msg=E0611
+else:
     from urllib import quote
+    from Crypto.Hash import SHA256 as sha256
 
 from amazonproduct.version import VERSION
 from amazonproduct.errors import *
