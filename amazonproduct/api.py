@@ -197,7 +197,7 @@ class API (object):
         # Be nice and wait for some time
         # before submitting the next request
         delta = datetime.now() - self.last_call
-        throttle = timedelta(seconds=1)/self.REQUESTS_PER_SECOND
+        throttle = timedelta(seconds=1/self.REQUESTS_PER_SECOND)
         if delta < throttle:
             wait = throttle-delta
             sleep(wait.seconds+wait.microseconds/1000000.0) # pragma: no cover
