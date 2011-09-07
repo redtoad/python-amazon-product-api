@@ -1,13 +1,13 @@
 
+import lxml.etree
 import os
 import pytest
 import re
-import urllib2
 
-from tests.utils import convert_camel_case, Cart
+from tests import utils
 from tests import XML_TEST_DIR
 from tests import TESTABLE_API_VERSIONS, TESTABLE_LOCALES
-from tests import AWS_KEY, SECRET_KEY
+from tests import AWS_KEY, SECRET_KEY, OVERWRITE_TESTS
 
 from amazonproduct.api import API
 from amazonproduct.errors import *
@@ -62,38 +62,58 @@ def pytest_funcarg__api(request):
     server = request.getfuncargvalue('server')
     url_reg = re.compile(r'^http://(?P<host>[\w\-\.]+)(?P<path>/onca/xml.*)$')
 
-    api = API(AWS_KEY, SECRET_KEY, request.param['locale'])
-    api.VERSION = request.param['version']
+    # the following parameters are injected by pytest_generate_tests
+    locale = request.param['locale']
+    version = request.param['version']
+    xml_response = request.param['xml_response']
+
+    api = API(AWS_KEY, SECRET_KEY, locale)
+    api.VERSION = version
     api.REQUESTS_PER_SECOND = 10000 # just for here!
 
     def counter(fnc):
         """
         Wrapper function for ``_fetch`` which
 
-        1. keeps track of the times has been called and adjusts the path to the 
+        1. keeps track of the times has been called and adjusts the path to the
            corresponding XML response
         2. Fetches any response that has not been cached from the live servers
         """
         api._count = 0
         def wrapped(url):
             api._count += 1
-            path = request.param['xml_response']
+            path = xml_response
             if api._count > 1:
                 root, ext = os.path.splitext(path)
                 path = '%s-%i%s' % (root, api._count, ext)
             try:
                 content = open(path, 'r').read()
-            except IOError:
+                # If the XML response has been previously fetched compare
+                # request arguments in order to see if there are any changes
+                try:
+                    cached_params = utils.arguments_from_cached_xml(content)
+                    current_params = utils.arguments_from_url(url)
+                    if cached_params != current_params:
+                        if OVERWRITE_TESTS:
+                            raise ValueError
+                        else:
+                            raise pytest.skip('Cached arguments differ from '
+                                      'the ones currently tested against!')
+                except AttributeError:
+                    # XML for error messages have no Argument elements!
+                    pass
+            except (IOError, ValueError):
                 if not all([AWS_KEY, SECRET_KEY]): 
                     raise pytest.skip('No cached XML response found!')
-                content = urllib2.urlopen(url).read()
+                tree = lxml.etree.parse(url)
+                content = lxml.etree.tostring(tree, pretty_print=True)
                 if not os.path.exists(os.path.dirname(path)):
                     os.mkdir(os.path.dirname(path))
                 open(path, 'wb').write(content)
             # We simply exchange the real host with the local one now!
             # Note: Although strictly speaking it does not matter which URL is
             # called exactly, to appeal to one's sense of correctness, let's
-            # keep at least correct path!
+            # keep at least the correct path!
             url = url_reg.sub(r'%s\g<path>' % server.url, url)
             server.serve_content(content)
             return fnc(url)
@@ -417,7 +437,7 @@ class TestCartCreate (object):
             '0201896834' : 1, # The Art of Computer Programming Vol. 1
             '0201896842' : 1, # The Art of Computer Programming Vol. 2
        })
-        cart = Cart.from_xml(root.Cart)
+        cart = utils.Cart.from_xml(root.Cart)
         assert len(cart.items) == 2
         assert cart['0201896834'].quantity == 1
         assert cart['0201896842'].quantity == 1
@@ -431,7 +451,7 @@ def pytest_funcarg__cart(request):
     }
     def create_cart():
         root = api.cart_create(items)
-        cart = Cart.from_xml(root.Cart)
+        cart = utils.Cart.from_xml(root.Cart)
         print 'Cart created:', cart
         return cart
     def destroy_cart(cart):
@@ -475,7 +495,7 @@ class TestCartAdd (object):
         from lxml import etree
         print etree.tostring(root.Cart, pretty_print=True)
 
-        cart = Cart.from_xml(root.Cart)
+        cart = utils.Cart.from_xml(root.Cart)
         assert len(cart) == 6
         assert len(cart.items) == 3
 
@@ -511,7 +531,7 @@ class TestCartModify (object):
         from lxml import etree
         print etree.tostring(root.Cart, pretty_print=True)
 
-        cart = Cart.from_xml(root.Cart)
+        cart = utils.Cart.from_xml(root.Cart)
         assert len(cart) == 1
         assert len(cart.items) == 1
 
@@ -531,7 +551,7 @@ class TestCartModify (object):
         from lxml import etree
         print etree.tostring(root.Cart, pretty_print=True)
 
-        cart = Cart.from_xml(root.Cart)
+        cart = utils.Cart.from_xml(root.Cart)
         assert len(cart) == 3
         assert len(cart.items) == 2
 
@@ -548,7 +568,7 @@ class TestCartGet (object):
 
     def test_getting_cart(self, api, cart):
         root = api.cart_get(cart.cart_id, cart.hmac)
-        cart = Cart.from_xml(root.Cart)
+        cart = utils.Cart.from_xml(root.Cart)
         assert len(cart) == 3
         assert len(cart.items) == 2
 
@@ -565,7 +585,7 @@ class TestCartClear (object):
 
     def test_clearing_cart(self, api, cart):
         root = api.cart_clear(cart.cart_id, cart.hmac)
-        cart = Cart.from_xml(root.Cart)
+        cart = utils.Cart.from_xml(root.Cart)
         assert len(cart.items) == 0
 
 
@@ -602,7 +622,7 @@ class TestDeprecatedOperations (object):
 
     def test_calling_deprecated_operations(self, api):
         for operation in self.DEPRECATED_OPERATIONS:
-            method = getattr(api, convert_camel_case(operation))
+            method = getattr(api, utils.convert_camel_case(operation))
             pytest.raises(DeprecatedOperation, method)
 
     def test_calling_deprecated_operations_using_call_fails(self, api):
