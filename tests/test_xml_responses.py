@@ -22,9 +22,17 @@ def pytest_generate_tests(metafunc):
     if 'api' in metafunc.funcargnames:
         api_versions = getattr(metafunc.function, 'api_versions',
             getattr(metafunc.cls, 'api_versions', TESTABLE_API_VERSIONS))
+        # if --api-version is used get intersecting versions
+        if metafunc.config.option.versions:
+            is_specified = lambda x: x in metafunc.config.option.versions
+            api_versions = filter(is_specified, api_versions)
         for version in api_versions:
             locales = getattr(metafunc.function, 'locales',
                 getattr(metafunc.cls, 'locales', TESTABLE_LOCALES))
+            # if --locale is used get intersecting locales
+            if metafunc.config.option.locales:
+                is_specified = lambda x: x in metafunc.config.option.locales
+                locales = filter(is_specified, locales)
             for locale in locales:
                 # file containing previously fetched response
                 local_file = os.path.join(XML_TEST_DIR, version,
