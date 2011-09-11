@@ -47,7 +47,7 @@ class TestAPICallsWithOptionalParameters (object):
 def pytest_generate_tests(metafunc):
     # called once per each test function
     if 'api' in metafunc.funcargnames and 'operation' in metafunc.funcargnames:
-        for version in TESTABLE_API_VERSIONS:
+        for version in metafunc.config.option.versions or TESTABLE_API_VERSIONS:
             wsdl = os.path.join(XML_TEST_DIR, version, 
                                 'AWSECommerceService.wsdl')
             if not os.path.exists(wsdl):
