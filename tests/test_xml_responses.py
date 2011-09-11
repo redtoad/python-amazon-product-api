@@ -106,6 +106,12 @@ def pytest_funcarg__api(request):
                 if not all([AWS_KEY, SECRET_KEY]): 
                     raise pytest.skip('No cached XML response found!')
                 tree = lxml.etree.parse(url)
+                # overwrite sensitive information in XML document.
+                root = tree.getroot()
+                for arg in root.xpath('//aws:Argument',
+                        namespaces={'aws': root.nsmap[None]}):
+                    if arg.get('Name') in ('Signature', 'AWSAccessKeyId'):
+                        arg.set('Value', 'X'*15)
                 content = lxml.etree.tostring(tree, pretty_print=True)
                 if not os.path.exists(os.path.dirname(path)):
                     os.mkdir(os.path.dirname(path))
