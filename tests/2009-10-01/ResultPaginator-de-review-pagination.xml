@@ -1,10 +1,8 @@
 <ItemLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2009-10-01">
   <OperationRequest>
-    <HTTPHeaders>
-      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
-    </HTTPHeaders>
-    <RequestId>6c750947-11c6-4a3c-9dc6-4519dbe7ad18</RequestId>
+    <RequestId>1a2832f0-5e83-46dd-af63-1f2930d3f753</RequestId>
     <Arguments>
+      <Argument Name="limit" Value="10"/>
       <Argument Name="ReviewPage" Value="1"/>
       <Argument Name="Operation" Value="ItemLookup"/>
       <Argument Name="Service" Value="AWSECommerceService"/>
