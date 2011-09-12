@@ -3,13 +3,13 @@
 # This program is release under the BSD License. You can find the full text of
 # the license in the LICENSE file.
 
-
 __docformat__ = "restructuredtext en"
 
 from base64 import b64encode
 from datetime import datetime, timedelta
 import gzip
 import hmac
+import os
 import socket
 import StringIO
 import sys
@@ -29,7 +29,10 @@ else:
 from amazonproduct.version import VERSION
 from amazonproduct.errors import *
 from amazonproduct.paginators import paginate
-from amazonproduct.processors import LxmlObjectifyProcessor
+from amazonproduct import processors
+
+#: Is this module running on Google App Engine (GAE)?
+RUNNING_ON_GAE = 'Google' in os.environ.get('SERVER_SOFTWARE', '')
 
 USER_AGENT = ('python-amazon-product-api/%s '
     '+http://pypi.python.org/pypi/python-amazon-product-api/' % VERSION)
@@ -134,12 +137,18 @@ class API (object):
         except KeyError:
             raise UnknownLocale(locale)
 
-        socket.setdefaulttimeout(self.TIMEOUT)
+        # GAE does not allow timeouts to be specified manually
+        if not RUNNING_ON_GAE:
+            socket.setdefaulttimeout(self.TIMEOUT)
 
         self.last_call = datetime(1970, 1, 1)
         self.debug = 0 # set to 1 if you want to see HTTP headers
 
-        self.response_processor = processor or LxmlObjectifyProcessor()
+        if RUNNING_ON_GAE:
+            default_processor = processors.MinidomProcessor
+        else:
+            default_processor = processors.LxmlObjectifyProcessor
+        self.response_processor = processor or default_processor()
 
     def _build_url(self, **qargs):
         """
