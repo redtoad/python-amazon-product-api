@@ -1,0 +1,114 @@
+<ItemLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2009-10-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+    </HTTPHeaders>
+    <RequestId>c1b03310-020f-44b5-91df-dc297b3a45e3</RequestId>
+    <Arguments>
+      <Argument Name="ReviewPage" Value="6"/>
+      <Argument Name="Operation" Value="ItemLookup"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="ItemId" Value="0747532745"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2009-12-09T16:38:38Z"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="ResponseGroup" Value="Reviews"/>
+      <Argument Name="Version" Value="2009-10-01"/>
+    </Arguments>
+    <RequestProcessingTime>0.0445500000000000</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>True</IsValid>
+      <ItemLookupRequest>
+        <Condition>New</Condition>
+        <DeliveryMethod>Ship</DeliveryMethod>
+        <IdType>ASIN</IdType>
+        <MerchantId>Amazon</MerchantId>
+        <OfferPage>1</OfferPage>
+        <ItemId>0747532745</ItemId>
+        <ResponseGroup>Reviews</ResponseGroup>
+        <ReviewPage>6</ReviewPage>
+        <ReviewSort>-SubmissionDate</ReviewSort>
+        <VariationPage>All</VariationPage>
+      </ItemLookupRequest>
+    </Request>
+    <Item>
+      <ASIN>0747532745</ASIN>
+      <CustomerReviews>
+        <AverageRating>5.0</AverageRating>
+        <TotalReviews>2458</TotalReviews>
+        <TotalReviewPages>492</TotalReviewPages>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>5</Rating>
+          <HelpfulVotes>11</HelpfulVotes>
+          <TotalVotes>14</TotalVotes>
+          <Date>2004-07-21</Date>
+          <Summary>Just Harry Potter!!!!!</Summary>
+          <Content>&#220;ber den Inhalt braucht man bei diesem Buch wohl wenig sagen.&lt;br&gt;Das Englisch in diesem Buch ist leicht und fl&#252;ssig zu lesen. Schwierigkeiten k&#246;nnten lediglich die Textpassagen von Hagrid machen, da diese "Umgangsprachlich" gehalten sind. Mann kommt jedoch schnell hinter das System!!&lt;br&gt;Sehr gut um seine Englischkenntnisse zu verbessern und seinen Wortschatz zu erweitern.&lt;br&gt;Sehr sehr gutes Preis-Leistungsverh&#228;ltniss!!!</Content>
+        </Review>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>5</Rating>
+          <HelpfulVotes>0</HelpfulVotes>
+          <CustomerId>AJQ0BURSJUC2V</CustomerId>
+          <Reviewer>
+            <CustomerId>AJQ0BURSJUC2V</CustomerId>
+            <Nickname>wibtu</Nickname>
+          </Reviewer>
+          <TotalVotes>2</TotalVotes>
+          <Date>2004-07-15</Date>
+          <Summary>Die Englische Versuchung</Summary>
+          <Content>Wenn sie Harry Potter schon auf Deutsch gelesen haben, dann auf zum n&#228;chsten B&#252;cherladen! Denn diese Buch ist sehr einfach zu Verstehen, ich habe selbst erst drei Jahre Englisch und kam damit sehr gut zu recht.In dem Buch geht es wie bekannt um Harry Potter, der ohne Eltern bei seinem Onkel und bei seiner Tante aufw&#228;chst, bis er schlie&#223;lich erf&#228;hrt das er ein Zauberer ist und von dem Bewahrer der Hogwarts L&#228;nderreien mit genommen wird nach Hogwarts. Hogwarts ist die Schule auf der Herry inzwischen das 5.Jahr ist.Schwierige W&#246;rter gibt es vereinzelt am Anfang und hinten auf der R&#252;ckseite z.B.beetle-eyed.(etwa schlitz&#228;ugig schauend)Ansonsten fesselt die spannene Geschichte um den Stein der Wei&#223;en mit vielen &#220;berraschungen z.B. das Herry ein Sucher wird(sp&#228;ter n&#228;her erkl&#228;rt)wobei sein Vater ein sehr guter Quidditch Spieler war und das spannende Quidditch auf fliegenden Besen das wie Baskeball nur in der Luft ist, wobei es 700 M&#246;glichkeiten gibt einen Spieler zu faulen und Spannung wie ein b&#246;ser Hund der Musik mag.-Viel Spa&#223;&lt;br&gt;Wussten sie das der neue Band The half-blood Prince lautet? Das ist die Nummer 6</Content>
+        </Review>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>5</Rating>
+          <HelpfulVotes>2</HelpfulVotes>
+          <CustomerId>A1RD1I0UI27Z84</CustomerId>
+          <Reviewer>
+            <CustomerId>A1RD1I0UI27Z84</CustomerId>
+            <Name>FastFood</Name>
+            <Nickname>ff44</Nickname>
+            <Location>S&#252;ddeutschland</Location>
+          </Reviewer>
+          <TotalVotes>4</TotalVotes>
+          <Date>2004-07-03</Date>
+          <Summary>Einfach und fl&#252;ssig zu lesen........</Summary>
+          <Content>Lange wollte ich nichts von diesem Harry Potter-Kult wissen.&lt;br&gt;Nun habe ich das erste Buch gelesen und jetzt bin ich auch infiziert.&lt;br&gt;Das Buch ist in Orginalsprache sehr einfach, fl&#252;ssig und mit viel Spass zu lesen.</Content>
+        </Review>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>5</Rating>
+          <HelpfulVotes>4</HelpfulVotes>
+          <CustomerId>A2WDS3VDRTQY2K</CustomerId>
+          <Reviewer>
+            <CustomerId>A2WDS3VDRTQY2K</CustomerId>
+            <Name>Nadine Susec</Name>
+            <Nickname>info20382</Nickname>
+            <Location>N&#252;rnberg</Location>
+          </Reviewer>
+          <TotalVotes>7</TotalVotes>
+          <Date>2004-06-24</Date>
+          <Summary>Auf zum Pottern!</Summary>
+          <Content>Ich glaube, dass die Potter- Mania nun ganz Europa erfasst hat. Jeder gibt offen zu, wie ein anonymer Alkoholiker, "Hallo, auch ich lese Harry Potter!". Dazu geh&#246;re ich nun auch, ein bekennender Harry Potter Junkie! &lt;br&gt;Lange habe ich mich gescheut den "Stein der Weisen" zu lesen. Es ist ein Kinderbuch, zur H&#246;lle! Dachte ich immer bei mir und weigerte mich, zu lesen. Ich wollte nicht dazu geh&#246;ren. Aber dann reizte es mich doch. Als "Ausrede" dass es ja dann doch kein Kinderbuch ist, legte ich mir den kompletten bisher erschienenen Satz der Harry Potter B&#252;cher auf Englisch zu. Es war doch nur zur "Fortbildung". Ich genoss jede Seite. Der Wortwitz, die charmanten Figuren. Im Anschluss sah ich mir die Filme an und war ein bisschen entt&#228;usch, denn geniale Teile aus dem Buch waren einfach weg gelassen worden. Aber in das Zauebrspiel "Quidditch" hab ich mich im Buch und im Film sofort verliebt. &lt;br&gt;Also, die Potter- Mania grasiert absolut zu recht. J.K. Rowling hat geniale B&#252;cher geschrieben, die nicht nur etwas f&#252;r Kinder sind, sondern auch ein Muss sind f&#252;r die erwachsenen Leser, die gerne einmal in die magische Potter Welt abtauchen wollen.</Content>
+        </Review>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>5</Rating>
+          <HelpfulVotes>5</HelpfulVotes>
+          <CustomerId>A1YWTULMSHR85</CustomerId>
+          <Reviewer>
+            <CustomerId>A1YWTULMSHR85</CustomerId>
+            <Nickname>arnemaker</Nickname>
+          </Reviewer>
+          <TotalVotes>6</TotalVotes>
+          <Date>2004-06-11</Date>
+          <Summary>noch besser als die deutsche Version!!!</Summary>
+          <Content>Ich mag Harry Potter. Ich mag die B&#252;cher und auch den Film. Nachdem ich also auf deutsch alle B&#252;cher gelesen hatte machte ich mich an die englischen Werke, wusste jedoch nicht so recht was mich da erwarten wird, da ich zuvor noch keine englischen B&#252;cher gelesen habe. Ich hatte dazu auch noch einige Bedenken, ob ich alles verstehe und keine Schwierigkeiten mit der Sprache bekomme. Und im Nachhinein kann ich alle meine Bedenken hinfort blasen. Es ist in einem sehr einfachem Englisch geschrieben, dass nun wirklich jeder, der in der Schule mal ein paar Jahre Englisch hatte versteht. Hinzu kommt f&#252;r mich noch als positiver Gesichtspunkt hinzu, dass man wirklich mal liest was Frau Rowling schrieb und nicht nur die deutsche &#220;bersetzung, die zwar auch gut ist, so wie ich finde jedoch nicht an das englische Original heran kommt. Es macht einfach einen Riesenspa&#223; Harry und seine Freunde auf englisch durch die immer wieder spannende Handlung zu begleiten.&lt;br&gt;Auf jeden Fall lesenswert!!! 5 Sterne!!!</Content>
+        </Review>
+      </CustomerReviews>
+    </Item>
+  </Items>
+</ItemLookupResponse>

@@ -1,0 +1,46 @@
+<ItemLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2010-10-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.4.1 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+    </HTTPHeaders>
+    <RequestId>9ced52c9-4183-4cb3-91bf-da6ed28614e9</RequestId>
+    <Arguments>
+      <Argument Name="Operation" Value="ItemLookup"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Version" Value="2010-10-01"/>
+      <Argument Name="ItemId" Value="9780747532743"/>
+      <Argument Name="IdType" Value="ISBN"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2010-11-12T14:20:21Z"/>
+      <Argument Name="SearchIndex" Value="???"/>
+    </Arguments>
+    <RequestProcessingTime>0.0030400000000000</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>False</IsValid>
+      <ItemLookupRequest>
+        <Condition>New</Condition>
+        <DeliveryMethod>Ship</DeliveryMethod>
+        <IdType>ISBN</IdType>
+        <MerchantId>Amazon</MerchantId>
+        <OfferPage>1</OfferPage>
+        <ItemId>9780747532743</ItemId>
+        <ResponseGroup>Small</ResponseGroup>
+        <ReviewPage>1</ReviewPage>
+        <ReviewSort>-SubmissionDate</ReviewSort>
+        <SearchIndex>???</SearchIndex>
+        <VariationPage>All</VariationPage>
+      </ItemLookupRequest>
+      <Errors>
+        <Error>
+          <Code>AWS.InvalidEnumeratedParameter</Code>
+          <Message>SearchIndex&#12395;&#25351;&#23450;&#12375;&#12383;&#20516;&#12399;&#28961;&#21177;&#12391;&#12377;&#12290;[
+				'All','Apparel','Automotive','Baby','Beauty','Blended','Books','Classical','DVD','Electronics','ForeignBooks','Grocery','HealthPersonalCare','Hobbies','HomeImprovement','Jewelry','Kitchen','Music','MP3Downloads','MusicalInstruments','MusicTracks','OfficeProducts','PCHardware','PetSupplies','Shoes','Software','SportingGoods','Toys','VHS','Video','VideoGames','Watches'
+				]&#12394;&#12393;&#12364;&#26377;&#21177;&#12394;&#20516;&#12398;&#20363;&#12391;&#12377;&#12290;</Message>
+        </Error>
+      </Errors>
+    </Request>
+  </Items>
+</ItemLookupResponse>

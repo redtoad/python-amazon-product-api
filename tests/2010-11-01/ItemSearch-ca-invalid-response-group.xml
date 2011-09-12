@@ -1,0 +1,25 @@
+<ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2010-11-01">
+  <OperationRequest>
+    <RequestId>13BFP8JXBK73SEVCA5C8</RequestId>
+    <RequestProcessingTime>0.0210740566253662</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>False</IsValid>
+      <Errors>
+        <Error>
+          <Code>AWS.InvalidResponseGroup</Code>
+          <Message>Your ResponseGroup parameter is invalid. Valid response groups for  requests include Request, ItemIds, Small, Medium, Large, Offers, OfferFull, OfferSummary, OfferListings, PromotionSummary, PromotionDetails, VariationMinimum, VariationSummary, VariationMatrix, VariationOffers, Variations, TagsSummary, Tags, ItemAttributes, MerchantItemAttributes, Tracks, Accessories, EditorialReview, SalesRank, BrowseNodes, Images, Similarities, Subjects, Reviews, ListmaniaLists, SearchInside, PromotionalTag, SearchBins, AlternateVersions, Collections, RelatedItems, ShippingCharges.</Message>
+        </Error>
+        <Error>
+          <Code>AWS.InvalidEnumeratedParameter</Code>
+          <Message>The value you specified for ResponseGroup is invalid. Valid values include Accessories, AlternateVersions, BrowseNodes, Collections, EditorialReview, Images, ItemAttributes, ItemIds, Large, ListmaniaLists, Medium, MerchantItemAttributes, OfferFull, OfferListings, OfferSummary, Offers, PromotionDetails, PromotionSummary, PromotionalTag, RelatedItems, Request, Reviews, SalesRank, SearchBins, SearchInside, ShippingCharges, Similarities, Small, Subjects, Tags, TagsSummary, Tracks, VariationMatrix, VariationMinimum, VariationOffers, VariationSummary, Variations.</Message>
+        </Error>
+        <Error>
+          <Code>AWS.MinimumParameterRequirement</Code>
+          <Message>Your request should have atleast 1 of the following parameters: Keywords, Title, Power, BrowseNode, Artist, Author, Actor, Director, AudienceRating, Manufacturer, MusicLabel, Composer, Publisher, Brand, Conductor, Orchestra, TextStream, Cuisine, City, Neighborhood.</Message>
+        </Error>
+      </Errors>
+    </Request>
+  </Items>
+</ItemSearchResponse>

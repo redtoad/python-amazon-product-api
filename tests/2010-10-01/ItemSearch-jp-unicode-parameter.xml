@@ -1,0 +1,41 @@
+<ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2010-10-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.4.1 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+    </HTTPHeaders>
+    <RequestId>62836144-ee74-48bd-82bb-6638bbe3f80b</RequestId>
+    <Arguments>
+      <Argument Name="Operation" Value="ItemSearch"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Author" Value="F&#233;lix J. Palma"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Version" Value="2010-10-01"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2010-11-12T14:20:32Z"/>
+      <Argument Name="SearchIndex" Value="Books"/>
+    </Arguments>
+    <RequestProcessingTime>0.0199470000000000</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>True</IsValid>
+      <ItemSearchRequest>
+        <Author>F&#233;lix J. Palma</Author>
+        <Condition>New</Condition>
+        <DeliveryMethod>Ship</DeliveryMethod>
+        <MerchantId>Amazon</MerchantId>
+        <ResponseGroup>Small</ResponseGroup>
+        <ReviewSort>-SubmissionDate</ReviewSort>
+        <SearchIndex>Books</SearchIndex>
+      </ItemSearchRequest>
+      <Errors>
+        <Error>
+          <Code>AWS.ECommerceService.NoExactMatches</Code>
+          <Message>&#12522;&#12463;&#12456;&#12473;&#12488;&#12395;&#35442;&#24403;&#12377;&#12427;&#32080;&#26524;&#12364;&#12354;&#12426;&#12414;&#12379;&#12435;&#12290;</Message>
+        </Error>
+      </Errors>
+    </Request>
+    <TotalResults>0</TotalResults>
+    <TotalPages>0</TotalPages>
+  </Items>
+</ItemSearchResponse>

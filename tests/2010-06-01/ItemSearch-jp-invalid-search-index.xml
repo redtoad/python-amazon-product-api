@@ -1,0 +1,49 @@
+<ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2010-06-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.4.1 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+    </HTTPHeaders>
+    <RequestId>67ded9c4-438a-405f-81c3-c31f9ac271cc</RequestId>
+    <Arguments>
+      <Argument Name="Operation" Value="ItemSearch"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="BrowseNode" Value="132"/>
+      <Argument Name="Version" Value="2010-08-06"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2010-10-15T22:06:53Z"/>
+      <Argument Name="SearchIndex" Value="???"/>
+    </Arguments>
+    <RequestProcessingTime>0.0030450000000000</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>False</IsValid>
+      <ItemSearchRequest>
+        <BrowseNode>132</BrowseNode>
+        <Condition>New</Condition>
+        <DeliveryMethod>Ship</DeliveryMethod>
+        <MerchantId>Amazon</MerchantId>
+        <ResponseGroup>Small</ResponseGroup>
+        <ReviewSort>-SubmissionDate</ReviewSort>
+        <SearchIndex>???</SearchIndex>
+      </ItemSearchRequest>
+      <Errors>
+        <Error>
+          <Code>AWS.InvalidEnumeratedParameter</Code>
+          <Message>SearchIndex&#12395;&#25351;&#23450;&#12375;&#12383;&#20516;&#12399;&#28961;&#21177;&#12391;&#12377;&#12290;[
+				'All','Apparel','Automotive','Baby','Beauty','Blended','Books','Classical','DVD','Electronics','ForeignBooks','Grocery','HealthPersonalCare','Hobbies','HomeImprovement','Jewelry','Kitchen','Music','MusicalInstruments','MusicTracks','OfficeProducts','Shoes','Software','SportingGoods','Toys','VHS','Video','VideoGames','Watches'
+				]&#12394;&#12393;&#12364;&#26377;&#21177;&#12394;&#20516;&#12398;&#20363;&#12391;&#12377;&#12290;</Message>
+        </Error>
+        <Error>
+          <Code>AWS.RestrictedParameterValueCombination</Code>
+          <Message>&#12522;&#12463;&#12456;&#12473;&#12488;&#12395;&#12399;&#12289;&#20351;&#29992;&#12391;&#12365;&#12394;&#12356;&#12497;&#12521;&#12513;&#12540;&#12479;&#12398;&#32068;&#12415;&#21512;&#12431;&#12379;&#12364;&#21547;&#12414;&#12428;&#12390;&#12356;&#12414;&#12377;&#12290;SearchIndex&#12364;???&#12391;&#12354;&#12427;&#22580;&#21512;&#12289; BrowseNode&#12399;&#20351;&#12360;&#12414;&#12379;&#12435;&#12290;</Message>
+        </Error>
+        <Error>
+          <Code>AWS.RestrictedParameterValueCombination</Code>
+          <Message>&#12522;&#12463;&#12456;&#12473;&#12488;&#12395;&#12399;&#12289;&#20351;&#29992;&#12391;&#12365;&#12394;&#12356;&#12497;&#12521;&#12513;&#12540;&#12479;&#12398;&#32068;&#12415;&#21512;&#12431;&#12379;&#12364;&#21547;&#12414;&#12428;&#12390;&#12356;&#12414;&#12377;&#12290;SearchIndex&#12364;???&#12391;&#12354;&#12427;&#22580;&#21512;&#12289; MerchantId&#12399;&#20351;&#12360;&#12414;&#12379;&#12435;&#12290;</Message>
+        </Error>
+      </Errors>
+    </Request>
+  </Items>
+</ItemSearchResponse>

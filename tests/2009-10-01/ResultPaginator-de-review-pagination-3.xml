@@ -1,0 +1,125 @@
+<ItemLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2009-10-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+    </HTTPHeaders>
+    <RequestId>46e9784b-4d29-46da-8856-fe16975efd5a</RequestId>
+    <Arguments>
+      <Argument Name="ReviewPage" Value="3"/>
+      <Argument Name="Operation" Value="ItemLookup"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="ItemId" Value="0747532745"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2009-12-09T16:38:35Z"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="ResponseGroup" Value="Reviews"/>
+      <Argument Name="Version" Value="2009-10-01"/>
+    </Arguments>
+    <RequestProcessingTime>0.0207050000000000</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>True</IsValid>
+      <ItemLookupRequest>
+        <Condition>New</Condition>
+        <DeliveryMethod>Ship</DeliveryMethod>
+        <IdType>ASIN</IdType>
+        <MerchantId>Amazon</MerchantId>
+        <OfferPage>1</OfferPage>
+        <ItemId>0747532745</ItemId>
+        <ResponseGroup>Reviews</ResponseGroup>
+        <ReviewPage>3</ReviewPage>
+        <ReviewSort>-SubmissionDate</ReviewSort>
+        <VariationPage>All</VariationPage>
+      </ItemLookupRequest>
+    </Request>
+    <Item>
+      <ASIN>0747532745</ASIN>
+      <CustomerReviews>
+        <AverageRating>5.0</AverageRating>
+        <TotalReviews>2458</TotalReviews>
+        <TotalReviewPages>492</TotalReviewPages>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>5</Rating>
+          <HelpfulVotes>8</HelpfulVotes>
+          <CustomerId>A2CS0AGPCX4S95</CustomerId>
+          <Reviewer>
+            <CustomerId>A2CS0AGPCX4S95</CustomerId>
+            <Name>M. Bangert</Name>
+          </Reviewer>
+          <TotalVotes>10</TotalVotes>
+          <Date>2007-07-18</Date>
+          <Summary>Das Buch ist leicht zu verstehen...</Summary>
+          <Content>Also ich bin schon immer nicht gut in Englisch und hatte immer ne 4 in der Schule gehabt. Ich wollte dieses Buch lesen damit sich mein Englisch verbessert. Es ist ganz einfach. Klar dass man mal paar W&#246;rter nach gucken muss, aber ich empfehle es f&#252;r jeden die ihr Englisch auffrischen wollen. Einfach ein tolles Buch!!! </Content>
+        </Review>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>5</Rating>
+          <HelpfulVotes>9</HelpfulVotes>
+          <CustomerId>A3A3SN6IRD08QG</CustomerId>
+          <Reviewer>
+            <CustomerId>A3A3SN6IRD08QG</CustomerId>
+            <Name>C. Jansen</Name>
+          </Reviewer>
+          <TotalVotes>11</TotalVotes>
+          <Date>2007-05-16</Date>
+          <Summary>Leichter als man denkt!</Summary>
+          <Content>Nat&#252;rlich ist Harry Potter ein muss f&#252;r jeden Fantasy-Fan. Die deutsche ist super, die englische ist aber einfach noch vieeeel besser. Das ganze ist viel lustiger und teilweise noch &#252;bertriebener (besonders die Szenen mit Dudley).
+&lt;br /&gt;
+&lt;br /&gt;Wer jetzt denkt: "Englisch und diese ganzen Zauberw&#246;rter sind schwer!", wird &#252;berrascht seinb, wie leicht es dann zu lesen ist. Auch bei Vokabeln, die man nicht versteht erschlie&#223;t sich das Wort meistens aus dem Kontext. 3 Jahre Englisch sind genug.</Content>
+        </Review>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>5</Rating>
+          <HelpfulVotes>21</HelpfulVotes>
+          <CustomerId>AHYHVU7XDIQ07</CustomerId>
+          <Reviewer>
+            <CustomerId>AHYHVU7XDIQ07</CustomerId>
+            <Name>Franc Dupoine</Name>
+          </Reviewer>
+          <TotalVotes>23</TotalVotes>
+          <Date>2006-08-07</Date>
+          <Summary>Easy reading</Summary>
+          <Content>Ich wei&#223; nicht mehr genau, wie ich dazu kam mir die Harry Potter B&#252;cher auf englisch zu kaufen. Ich glaube, ich sah den ersten Band billig als Taschenbuch Version im Buchladen und da ich sowieso Spa&#223; und Interesse an Englisch habe, habe ich es probiert.
+&lt;br /&gt;Ich muss sagen, das Buch war leicht zu lesen und da Harry sowieso auch ein Neuling im Bereich der Zauberei und Magie ist, ist es mit ein paar Grundwortschatz&#252;bersetzungen wie Zauberstab, Kessel und Besen gar nicht mal all zu schwer. Allerdings sollte man auf seine Englischlehrer h&#246;ren und nicht alles Wort f&#252;r Wort &#252;bersetzen und verstehen wollen. Beherzigt man das, ist "Harry Potter and the Philosopher's Stone" ein echtes Lesevergn&#252;gen. Aber das ist es f&#252;r mich sowieso, weil es das Original ist und keine &#220;bersetzung wirklich an Originale kommt. Try 'Quest' von George Kostantinos--super bestselling buch. Dank</Content>
+        </Review>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>5</Rating>
+          <HelpfulVotes>25</HelpfulVotes>
+          <CustomerId>A2BRJIFAMW3BVQ</CustomerId>
+          <Reviewer>
+            <CustomerId>A2BRJIFAMW3BVQ</CustomerId>
+            <Name>Nebelweib</Name>
+            <Location>Leipzig</Location>
+          </Reviewer>
+          <TotalVotes>30</TotalVotes>
+          <Date>2006-05-31</Date>
+          <Summary>I love it!!!</Summary>
+          <Content>Ich habe immer gesagt, ich w&#252;rde niemals die B&#252;cher von J.K. Rowling lesen. Ganz einfach, weil ich bis dato nie mit dem Strom schwimmen und Bestseller lesen wollte. Aber vor 2 Wochen habe ich mir Teil 1 der Harry-Potter-Reihe bestellt, da ich meine Englischkenntnisse f&#252;r meine bevorstehenden Pr&#252;fungen verbessern wollte. Was soll ich sagen? Ich konnte nicht aufh&#246;ren zu lesen und mit jedem einzelnen Kapitel wuchs meine Leidenschaft f&#252;r diese Story. Etwa in der Mitte des Buches war ich schon so derma&#223;en involviert in die Geschichte, dass ich das Gef&#252;hl hatte, selbst ein Teil davon zu sein. 
+&lt;br /&gt;
+&lt;br /&gt;Meine Englischkenntnisse haben sich auf jeden Fall um ein vielfaches verbessert und ich lege jedem, der ebenfalls sein Schulenglisch auffrischen und Harry Potter eventuell noch gar nicht gelesen hat, w&#228;rmstens ans Herz. 
+&lt;br /&gt;
+&lt;br /&gt;UNBEDINGT in Originalsprache lesen - es lohnt sich!</Content>
+        </Review>
+        <Review>
+          <ASIN>0747532745</ASIN>
+          <Rating>5</Rating>
+          <HelpfulVotes>10</HelpfulVotes>
+          <CustomerId>A19E5UVVABKF0Q</CustomerId>
+          <Reviewer>
+            <CustomerId>A19E5UVVABKF0Q</CustomerId>
+            <Name>Jason Beign</Name>
+            <Nickname>type1a</Nickname>
+          </Reviewer>
+          <TotalVotes>13</TotalVotes>
+          <Date>2006-05-18</Date>
+          <Summary>Ich glaube, dass die Potter</Summary>
+          <Content>Mania nun ganz Europa erfasst hat. Jeder gibt offen zu, wie ein anonymer Alkoholiker, "Hallo, auch ich lese Harry Potter!". Dazu geh&#246;re ich nun auch, ein bekennender Harry Potter Junkie! 
+&lt;br /&gt;Lange habe ich mich gescheut den "Stein der Weisen" zu lesen. Es ist ein Kinderbuch, zur H&#246;lle! Dachte ich immer bei mir und weigerte mich, zu lesen. Ich wollte nicht dazu geh&#246;ren. Aber dann reizte es mich doch. Als "Ausrede" dass es ja dann doch kein Kinderbuch ist, legte ich mir den kompletten bisher erschienenen Satz der Harry Potter B&#252;cher auf Englisch zu. Es war doch nur zur "Fortbildung". Ich genoss jede Seite. Der Wortwitz, die charmanten Figuren. Im Anschluss sah ich mir die Filme an und war ein bisschen entt&#228;usch, denn geniale Teile aus dem Buch waren einfach weg gelassen worden. Aber in das Zauebrspiel "Quidditch" hab ich mich im Buch und im Film sofort verliebt.</Content>
+        </Review>
+      </CustomerReviews>
+    </Item>
+  </Items>
+</ItemLookupResponse>
