@@ -27,8 +27,8 @@ def pytest_generate_tests(metafunc):
             is_specified = lambda x: x in metafunc.config.option.versions
             api_versions = filter(is_specified, api_versions)
             if not api_versions:
-                pytest.skip('Test cannot run for specified '
-                             'API versions %s.' % (api_versions, ))
+                pytest.skip('Test cannot run for specified API versions '
+                            '%s.' % (metafunc.config.option.versions, ))
         for version in api_versions:
             locales = getattr(metafunc.function, 'locales',
                 getattr(metafunc.cls, 'locales', TESTABLE_LOCALES))
@@ -37,8 +37,8 @@ def pytest_generate_tests(metafunc):
                 is_specified = lambda x: x in metafunc.config.option.locales
                 locales = filter(is_specified, locales)
                 if not locales:
-                    pytest.skip('Test cannot run for specified '
-                                 'locales %s.' % (locales, ))
+                    pytest.skip('Test cannot run for specified locales '
+                                '%s.' % (metafunc.config.option.locales, ))
             for locale in locales:
                 # file containing previously fetched response
                 local_file = os.path.join(XML_TEST_DIR, version,
@@ -111,8 +111,10 @@ def pytest_funcarg__api(request):
                         if OVERWRITE_TESTS:
                             raise ValueError
                         else:
-                            raise pytest.skip('Cached arguments differ from '
-                                      'the ones currently tested against!')
+                            raise pytest.skip('Cached arguments in %s differ '
+                            'from the ones currently tested against!' % path)
+                            #'\ncached=%r\ncurrent=%r' % (path,
+                            #cached_params, current_params))
                 except AttributeError:
                     # XML for error messages have no Argument elements!
                     pass
