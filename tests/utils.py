@@ -233,6 +233,9 @@ def arguments_from_url(url):
     """
     params = parse_qs(urlparse(url).query)
     for key, val in params.items():
+        # turn everything into unicode
+        if type(val) == list:
+            val = map(lambda x: unicode(x, encoding='utf-8'), val)
         # reduce lists to single value
         if type(val) == list and len(val) == 1:
             params[key] = val[0]
