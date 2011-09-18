@@ -351,9 +351,13 @@ class API (object):
                                   SearchIndex=search_index, **params)
         except AWSError, e:
 
-            if (e.code == 'AWS.InvalidEnumeratedParameter'
-            and self._reg('invalid-value').search(e.msg)):
-                raise InvalidSearchIndex(search_index)
+            if e.code == 'AWS.InvalidEnumeratedParameter':
+                m = self._reg('invalid-value').search(e.msg)
+                if m is not None:
+                    if m.group('parameter') == 'ResponseGroup':
+                        raise InvalidResponseGroup(params.get('ResponseGroup'))
+                    elif m.group('parameter') == 'SearchIndex':
+                        raise InvalidSearchIndex(search_index)
 
             if e.code == 'AWS.InvalidResponseGroup':
                 raise InvalidResponseGroup(params.get('ResponseGroup'))
