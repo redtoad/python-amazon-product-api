@@ -5,6 +5,8 @@ sandbox
 python_amazon_product_api.egg-info
 docs/.build
 .tox
+testsc
+.venv
 
 # hide real key data!
 examples/config.py$
@@ -25,6 +27,7 @@ coverage.xml
 # XUnit reports
 nosetests.xml
 nosetests-py\d+.xml
+junit-py\d+.xml
 
 # pylint reports
 pylint.txt
@@ -34,4 +37,3 @@ syntax: glob
 
 *.pyc
 *.pyo
-
