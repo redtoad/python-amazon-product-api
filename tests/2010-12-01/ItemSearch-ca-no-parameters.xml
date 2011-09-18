@@ -1,30 +1,32 @@
 <ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2010-12-01">
   <OperationRequest>
     <HTTPHeaders>
-      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.5pre1 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+      <Header Name="UserAgent" Value="Jakarta Commons-HttpClient/3.0.1"/>
     </HTTPHeaders>
-    <RequestId>1E1TPAXX2V9WV4F4BM4G</RequestId>
+    <RequestId>1R79YS6NYJN58HSABBP8</RequestId>
     <Arguments>
       <Argument Name="SearchIndex" Value="Books"/>
+      <Argument Name="ItemPage" Value="1"/>
       <Argument Name="Service" Value="AWSECommerceService"/>
-      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
       <Argument Name="Operation" Value="ItemSearch"/>
-      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="Timestamp" Value="2011-01-27T11:59:02Z"/>
       <Argument Name="Version" Value="2010-12-01"/>
+      <Argument Name="Timestamp" Value="2011-09-18T21:17:41Z"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
     </Arguments>
-    <RequestProcessingTime>0.0203218460083008</RequestProcessingTime>
+    <RequestProcessingTime>0.021522045135498</RequestProcessingTime>
   </OperationRequest>
   <Items>
     <Request>
       <IsValid>False</IsValid>
       <ItemSearchRequest>
+        <ItemPage>1</ItemPage>
         <SearchIndex>Books</SearchIndex>
       </ItemSearchRequest>
       <Errors>
         <Error>
           <Code>AWS.MinimumParameterRequirement</Code>
-          <Message>Your request should have atleast 1 of the following parameters: Keywords, Title, Power, BrowseNode, Artist, Author, Actor, Director, AudienceRating, Manufacturer, MusicLabel, Composer, Publisher, Brand, Conductor, Orchestra, TextStream, Cuisine, City, Neighborhood.</Message>
+          <Message>Your request should have atleast 1 of the following parameters: Keywords, Title, Power, BrowseNode, Artist, Author, Actor, Director, AudienceRating, Manufacturer, MusicLabel, Composer, Publisher, Brand, Conductor, Orchestra, TextStream.</Message>
         </Error>
       </Errors>
     </Request>

@@ -1,20 +1,19 @@
 <ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2010-06-01">
   <OperationRequest>
-    <HTTPHeaders>
-      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.4.1 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
-    </HTTPHeaders>
-    <RequestId>3eb3e330-5516-4767-afa3-9d84d2ccc0c3</RequestId>
+    <RequestId>13365c8f-2c23-4802-be78-127f0ad8e5b9</RequestId>
     <Arguments>
       <Argument Name="Operation" Value="ItemSearch"/>
       <Argument Name="Service" Value="AWSECommerceService"/>
       <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="ItemPage" Value="1"/>
       <Argument Name="Version" Value="2010-06-01"/>
+      <Argument Name="limit" Value="1"/>
       <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="Timestamp" Value="2010-10-15T22:06:57Z"/>
+      <Argument Name="Timestamp" Value="2011-09-18T21:18:56Z"/>
       <Argument Name="Title" Value="Harry Potter"/>
       <Argument Name="SearchIndex" Value="Books"/>
     </Arguments>
-    <RequestProcessingTime>0.3753360000000000</RequestProcessingTime>
+    <RequestProcessingTime>0.2916810000000000</RequestProcessingTime>
   </OperationRequest>
   <Items>
     <Request>
@@ -22,6 +21,7 @@
       <ItemSearchRequest>
         <Condition>New</Condition>
         <DeliveryMethod>Ship</DeliveryMethod>
+        <ItemPage>1</ItemPage>
         <MerchantId>Amazon</MerchantId>
         <ResponseGroup>Small</ResponseGroup>
         <ReviewSort>-SubmissionDate</ReviewSort>
@@ -29,119 +29,201 @@
         <Title>Harry Potter</Title>
       </ItemSearchRequest>
     </Request>
-    <TotalResults>2683</TotalResults>
-    <TotalPages>269</TotalPages>
+    <TotalResults>3262</TotalResults>
+    <TotalPages>327</TotalPages>
     <Item>
-      <ASIN>0545139708</ASIN>
-      <DetailPageURL>http://www.amazon.com/Harry-Potter-Deathly-Hallows-Book/dp/0545139708%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0545139708</DetailPageURL>
+      <ASIN>B004TTHLQ4</ASIN>
+      <DetailPageURL>http://www.amazon.com/Unofficial-Potter-Cookbook-Presents-ebook/dp/B004TTHLQ4%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB004TTHLQ4</DetailPageURL>
       <ItemLinks>
         <ItemLink>
           <Description>Technical Details</Description>
-          <URL>http://www.amazon.com/Harry-Potter-Deathly-Hallows-Book/dp/tech-data/0545139708%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0545139708</URL>
+          <URL>http://www.amazon.com/Unofficial-Potter-Cookbook-Presents-ebook/dp/tech-data/B004TTHLQ4%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB004TTHLQ4</URL>
         </ItemLink>
         <ItemLink>
           <Description>Add To Baby Registry</Description>
-          <URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D0545139708%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0545139708</URL>
+          <URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3DB004TTHLQ4%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB004TTHLQ4</URL>
         </ItemLink>
         <ItemLink>
           <Description>Add To Wedding Registry</Description>
-          <URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D0545139708%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0545139708</URL>
+          <URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3DB004TTHLQ4%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB004TTHLQ4</URL>
         </ItemLink>
         <ItemLink>
           <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D0545139708%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0545139708</URL>
+          <URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3DB004TTHLQ4%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB004TTHLQ4</URL>
         </ItemLink>
         <ItemLink>
           <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.com/gp/pdp/taf/0545139708%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0545139708</URL>
+          <URL>http://www.amazon.com/gp/pdp/taf/B004TTHLQ4%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB004TTHLQ4</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.com/review/product/0545139708%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0545139708</URL>
+          <URL>http://www.amazon.com/review/product/B004TTHLQ4%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB004TTHLQ4</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Offers</Description>
-          <URL>http://www.amazon.com/gp/offer-listing/0545139708%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0545139708</URL>
+          <URL>http://www.amazon.com/gp/offer-listing/B004TTHLQ4%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB004TTHLQ4</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>Dinah Bucholz</Author>
+        <Manufacturer>Adams Media</Manufacturer>
+        <ProductGroup>eBooks</ProductGroup>
+        <Title>The Unofficial Harry Potter Cookbook Presents - 10 Summertime Treats</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>0545044251</ASIN>
+      <DetailPageURL>http://www.amazon.com/Harry-Potter-Hardcover-Boxed-Set/dp/0545044251%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0545044251</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Technical Details</Description>
+          <URL>http://www.amazon.com/Harry-Potter-Hardcover-Boxed-Set/dp/tech-data/0545044251%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0545044251</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Add To Baby Registry</Description>
+          <URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D0545044251%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0545044251</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Add To Wedding Registry</Description>
+          <URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D0545044251%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0545044251</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D0545044251%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0545044251</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.com/gp/pdp/taf/0545044251%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0545044251</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.com/review/product/0545044251%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0545044251</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.com/gp/offer-listing/0545044251%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0545044251</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>J. K. Rowling</Author>
+        <Manufacturer>Arthur A. Levine Books</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Harry Potter Hardcover Boxed Set: Books #1-7</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>054506967X</ASIN>
+      <DetailPageURL>http://www.amazon.com/Harry-Potter-Sorcerers-Stone-Anniversary/dp/054506967X%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D054506967X</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Technical Details</Description>
+          <URL>http://www.amazon.com/Harry-Potter-Sorcerers-Stone-Anniversary/dp/tech-data/054506967X%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D054506967X</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Add To Baby Registry</Description>
+          <URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D054506967X%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D054506967X</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Add To Wedding Registry</Description>
+          <URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D054506967X%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D054506967X</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D054506967X%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D054506967X</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.com/gp/pdp/taf/054506967X%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D054506967X</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.com/review/product/054506967X%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D054506967X</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.com/gp/offer-listing/054506967X%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D054506967X</URL>
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
         <Author>J.K. Rowling</Author>
-        <Manufacturer>Arthur A. Levine Books</Manufacturer>
+        <Creator Role="Illustrator">Mary GrandPr&#233;</Creator>
+        <Manufacturer>Scholastic Inc.</Manufacturer>
         <ProductGroup>Book</ProductGroup>
-        <Title>Harry Potter and the Deathly Hallows (Book 7)</Title>
+        <Title>Harry Potter and the Sorcerer's Stone, 10th Anniversary Edition</Title>
       </ItemAttributes>
     </Item>
     <Item>
-      <ASIN>0545162076</ASIN>
-      <DetailPageURL>http://www.amazon.com/Harry-Potter-Paperback-Box-Books/dp/0545162076%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0545162076</DetailPageURL>
+      <ASIN>0545029376</ASIN>
+      <DetailPageURL>http://www.amazon.com/Harry-Potter-Deathly-Hallows-Deluxe/dp/0545029376%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0545029376</DetailPageURL>
       <ItemLinks>
         <ItemLink>
           <Description>Technical Details</Description>
-          <URL>http://www.amazon.com/Harry-Potter-Paperback-Box-Books/dp/tech-data/0545162076%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0545162076</URL>
+          <URL>http://www.amazon.com/Harry-Potter-Deathly-Hallows-Deluxe/dp/tech-data/0545029376%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0545029376</URL>
         </ItemLink>
         <ItemLink>
           <Description>Add To Baby Registry</Description>
-          <URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D0545162076%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0545162076</URL>
+          <URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D0545029376%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0545029376</URL>
         </ItemLink>
         <ItemLink>
           <Description>Add To Wedding Registry</Description>
-          <URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D0545162076%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0545162076</URL>
+          <URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D0545029376%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0545029376</URL>
         </ItemLink>
         <ItemLink>
           <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D0545162076%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0545162076</URL>
+          <URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D0545029376%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0545029376</URL>
         </ItemLink>
         <ItemLink>
           <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.com/gp/pdp/taf/0545162076%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0545162076</URL>
+          <URL>http://www.amazon.com/gp/pdp/taf/0545029376%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0545029376</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.com/review/product/0545162076%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0545162076</URL>
+          <URL>http://www.amazon.com/review/product/0545029376%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0545029376</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Offers</Description>
-          <URL>http://www.amazon.com/gp/offer-listing/0545162076%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0545162076</URL>
+          <URL>http://www.amazon.com/gp/offer-listing/0545029376%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0545029376</URL>
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
-        <Author>J.K. Rowling</Author>
+        <Author>J. K. Rowling</Author>
+        <Creator Role="Illustrator">Mary GrandPr&#233;</Creator>
         <Manufacturer>Arthur A. Levine Books</Manufacturer>
         <ProductGroup>Book</ProductGroup>
-        <Title>Harry Potter Paperback Box Set (Books 1-7)</Title>
+        <Title>Harry Potter and the Deathly Hallows (Book 7) (Deluxe Edition)</Title>
       </ItemAttributes>
     </Item>
     <Item>
-      <ASIN>0807281956</ASIN>
-      <DetailPageURL>http://www.amazon.com/Harry-Potter-Sorcerers-Stone-Book/dp/0807281956%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0807281956</DetailPageURL>
+      <ASIN>0807281948</ASIN>
+      <DetailPageURL>http://www.amazon.com/Harry-Potter-Chamber-Secrets-Book/dp/0807281948%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0807281948</DetailPageURL>
       <ItemLinks>
         <ItemLink>
           <Description>Technical Details</Description>
-          <URL>http://www.amazon.com/Harry-Potter-Sorcerers-Stone-Book/dp/tech-data/0807281956%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0807281956</URL>
+          <URL>http://www.amazon.com/Harry-Potter-Chamber-Secrets-Book/dp/tech-data/0807281948%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0807281948</URL>
         </ItemLink>
         <ItemLink>
           <Description>Add To Baby Registry</Description>
-          <URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D0807281956%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0807281956</URL>
+          <URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D0807281948%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0807281948</URL>
         </ItemLink>
         <ItemLink>
           <Description>Add To Wedding Registry</Description>
-          <URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D0807281956%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0807281956</URL>
+          <URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D0807281948%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0807281948</URL>
         </ItemLink>
         <ItemLink>
           <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D0807281956%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0807281956</URL>
+          <URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D0807281948%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0807281948</URL>
         </ItemLink>
         <ItemLink>
           <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.com/gp/pdp/taf/0807281956%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0807281956</URL>
+          <URL>http://www.amazon.com/gp/pdp/taf/0807281948%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0807281948</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.com/review/product/0807281956%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0807281956</URL>
+          <URL>http://www.amazon.com/review/product/0807281948%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0807281948</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Offers</Description>
-          <URL>http://www.amazon.com/gp/offer-listing/0807281956%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0807281956</URL>
+          <URL>http://www.amazon.com/gp/offer-listing/0807281948%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0807281948</URL>
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
@@ -149,40 +231,122 @@
         <Creator Role="Narrator">Jim Dale</Creator>
         <Manufacturer>Listening Library (Audio)</Manufacturer>
         <ProductGroup>Book</ProductGroup>
-        <Title>Harry Potter and the Sorcerer's Stone (Book 1)</Title>
+        <Title>Harry Potter and the Chamber of Secrets (Book 2)</Title>
       </ItemAttributes>
     </Item>
     <Item>
-      <ASIN>0439785960</ASIN>
-      <DetailPageURL>http://www.amazon.com/Harry-Potter-Half-Blood-Prince-Book/dp/0439785960%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0439785960</DetailPageURL>
+      <ASIN>0756967651</ASIN>
+      <DetailPageURL>http://www.amazon.com/Harry-Potter-Half-Blood-Prince-Rowling/dp/0756967651%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0756967651</DetailPageURL>
       <ItemLinks>
         <ItemLink>
           <Description>Technical Details</Description>
-          <URL>http://www.amazon.com/Harry-Potter-Half-Blood-Prince-Book/dp/tech-data/0439785960%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0439785960</URL>
+          <URL>http://www.amazon.com/Harry-Potter-Half-Blood-Prince-Rowling/dp/tech-data/0756967651%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0756967651</URL>
         </ItemLink>
         <ItemLink>
           <Description>Add To Baby Registry</Description>
-          <URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D0439785960%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0439785960</URL>
+          <URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D0756967651%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0756967651</URL>
         </ItemLink>
         <ItemLink>
           <Description>Add To Wedding Registry</Description>
-          <URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D0439785960%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0439785960</URL>
+          <URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D0756967651%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0756967651</URL>
         </ItemLink>
         <ItemLink>
           <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D0439785960%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0439785960</URL>
+          <URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D0756967651%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0756967651</URL>
         </ItemLink>
         <ItemLink>
           <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.com/gp/pdp/taf/0439785960%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0439785960</URL>
+          <URL>http://www.amazon.com/gp/pdp/taf/0756967651%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0756967651</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.com/review/product/0439785960%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0439785960</URL>
+          <URL>http://www.amazon.com/review/product/0756967651%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0756967651</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Offers</Description>
-          <URL>http://www.amazon.com/gp/offer-listing/0439785960%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0439785960</URL>
+          <URL>http://www.amazon.com/gp/offer-listing/0756967651%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0756967651</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>J. K. Rowling</Author>
+        <Creator Role="Illustrator">Mary GrandPre</Creator>
+        <Manufacturer>Perfection Learning</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Harry Potter and the Half-Blood Prince</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>0807220299</ASIN>
+      <DetailPageURL>http://www.amazon.com/Harry-Potter-Order-Phoenix-Book/dp/0807220299%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0807220299</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Technical Details</Description>
+          <URL>http://www.amazon.com/Harry-Potter-Order-Phoenix-Book/dp/tech-data/0807220299%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0807220299</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Add To Baby Registry</Description>
+          <URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D0807220299%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0807220299</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Add To Wedding Registry</Description>
+          <URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D0807220299%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0807220299</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D0807220299%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0807220299</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.com/gp/pdp/taf/0807220299%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0807220299</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.com/review/product/0807220299%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0807220299</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.com/gp/offer-listing/0807220299%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0807220299</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>J.K. Rowling</Author>
+        <Creator Role="Reader">Jim Dale</Creator>
+        <Manufacturer>Listening Library (Audio)</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Harry Potter and the Order of the Phoenix (Book 5)</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>0439136369</ASIN>
+      <DetailPageURL>http://www.amazon.com/Harry-Potter-Prisoner-Azkaban-Rowling/dp/0439136369%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0439136369</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Technical Details</Description>
+          <URL>http://www.amazon.com/Harry-Potter-Prisoner-Azkaban-Rowling/dp/tech-data/0439136369%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0439136369</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Add To Baby Registry</Description>
+          <URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D0439136369%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0439136369</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Add To Wedding Registry</Description>
+          <URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D0439136369%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0439136369</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D0439136369%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0439136369</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.com/gp/pdp/taf/0439136369%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0439136369</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.com/review/product/0439136369%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0439136369</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.com/gp/offer-listing/0439136369%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0439136369</URL>
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
@@ -190,249 +354,89 @@
         <Creator Role="Illustrator">Mary GrandPr&#233;</Creator>
         <Manufacturer>Scholastic Paperbacks</Manufacturer>
         <ProductGroup>Book</ProductGroup>
-        <Title>Harry Potter and the Half-Blood Prince (Book 6)</Title>
+        <Title>Harry Potter and the Prisoner of Azkaban</Title>
       </ItemAttributes>
     </Item>
     <Item>
-      <ASIN>B003048ISY</ASIN>
-      <DetailPageURL>http://www.amazon.com/Harry-Potter-Order-Phoenix-Hardcover/dp/B003048ISY%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB003048ISY</DetailPageURL>
+      <ASIN>0807282596</ASIN>
+      <DetailPageURL>http://www.amazon.com/Harry-Potter-Goblet-Fire-Book/dp/0807282596%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0807282596</DetailPageURL>
       <ItemLinks>
         <ItemLink>
           <Description>Technical Details</Description>
-          <URL>http://www.amazon.com/Harry-Potter-Order-Phoenix-Hardcover/dp/tech-data/B003048ISY%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB003048ISY</URL>
+          <URL>http://www.amazon.com/Harry-Potter-Goblet-Fire-Book/dp/tech-data/0807282596%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0807282596</URL>
         </ItemLink>
         <ItemLink>
           <Description>Add To Baby Registry</Description>
-          <URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3DB003048ISY%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB003048ISY</URL>
+          <URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D0807282596%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0807282596</URL>
         </ItemLink>
         <ItemLink>
           <Description>Add To Wedding Registry</Description>
-          <URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3DB003048ISY%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB003048ISY</URL>
+          <URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D0807282596%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0807282596</URL>
         </ItemLink>
         <ItemLink>
           <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3DB003048ISY%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB003048ISY</URL>
+          <URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D0807282596%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0807282596</URL>
         </ItemLink>
         <ItemLink>
           <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.com/gp/pdp/taf/B003048ISY%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB003048ISY</URL>
+          <URL>http://www.amazon.com/gp/pdp/taf/0807282596%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0807282596</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.com/review/product/B003048ISY%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB003048ISY</URL>
+          <URL>http://www.amazon.com/review/product/0807282596%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0807282596</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Offers</Description>
-          <URL>http://www.amazon.com/gp/offer-listing/B003048ISY%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB003048ISY</URL>
-        </ItemLink>
-      </ItemLinks>
-      <ItemAttributes>
-        <Author>J. K. Rowling (Author) Mary GrandPr&#195;?&#194;&#169; (Illustrator)</Author>
-        <Manufacturer>Scholastic</Manufacturer>
-        <ProductGroup>Book</ProductGroup>
-        <Title>Harry Potter and the Order of the Phoenix (Book 5) (Hardcover)</Title>
-      </ItemAttributes>
-    </Item>
-    <Item>
-      <ASIN>0439064872</ASIN>
-      <DetailPageURL>http://www.amazon.com/Harry-Potter-Chamber-Secrets-Book/dp/0439064872%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0439064872</DetailPageURL>
-      <ItemLinks>
-        <ItemLink>
-          <Description>Technical Details</Description>
-          <URL>http://www.amazon.com/Harry-Potter-Chamber-Secrets-Book/dp/tech-data/0439064872%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0439064872</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>Add To Baby Registry</Description>
-          <URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D0439064872%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0439064872</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>Add To Wedding Registry</Description>
-          <URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D0439064872%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0439064872</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D0439064872%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0439064872</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.com/gp/pdp/taf/0439064872%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0439064872</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.com/review/product/0439064872%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0439064872</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>All Offers</Description>
-          <URL>http://www.amazon.com/gp/offer-listing/0439064872%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0439064872</URL>
-        </ItemLink>
-      </ItemLinks>
-      <ItemAttributes>
-        <Author>J. K. Rowling</Author>
-        <Author>Mary GrandPr&#233;</Author>
-        <Manufacturer>Scholastic Paperbacks</Manufacturer>
-        <ProductGroup>Book</ProductGroup>
-        <Title>Harry Potter and the Chamber of Secrets (Book 2)</Title>
-      </ItemAttributes>
-    </Item>
-    <Item>
-      <ASIN>0807282316</ASIN>
-      <DetailPageURL>http://www.amazon.com/Harry-Potter-Prisoner-Azkaban-Book/dp/0807282316%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0807282316</DetailPageURL>
-      <ItemLinks>
-        <ItemLink>
-          <Description>Technical Details</Description>
-          <URL>http://www.amazon.com/Harry-Potter-Prisoner-Azkaban-Book/dp/tech-data/0807282316%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0807282316</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>Add To Baby Registry</Description>
-          <URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D0807282316%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0807282316</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>Add To Wedding Registry</Description>
-          <URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D0807282316%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0807282316</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D0807282316%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0807282316</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.com/gp/pdp/taf/0807282316%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0807282316</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.com/review/product/0807282316%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0807282316</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>All Offers</Description>
-          <URL>http://www.amazon.com/gp/offer-listing/0807282316%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0807282316</URL>
+          <URL>http://www.amazon.com/gp/offer-listing/0807282596%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0807282596</URL>
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
         <Author>J.K. Rowling</Author>
         <Creator Role="Narrator">Jim Dale</Creator>
-        <Manufacturer>Listening Library</Manufacturer>
+        <Manufacturer>Listening Library (Audio)</Manufacturer>
         <ProductGroup>Book</ProductGroup>
-        <Title>Harry Potter and the Prisoner of Azkaban (Book 3)</Title>
+        <Title>Harry Potter and the Goblet of Fire (Book 4)</Title>
       </ItemAttributes>
     </Item>
     <Item>
-      <ASIN>1435238117</ASIN>
-      <DetailPageURL>http://www.amazon.com/Harry-Potter-Goblet-Fire-Rowling/dp/1435238117%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1435238117</DetailPageURL>
+      <ASIN>0807283150</ASIN>
+      <DetailPageURL>http://www.amazon.com/Harry-Potter-Prisoner-Azkaban/dp/0807283150%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0807283150</DetailPageURL>
       <ItemLinks>
         <ItemLink>
           <Description>Technical Details</Description>
-          <URL>http://www.amazon.com/Harry-Potter-Goblet-Fire-Rowling/dp/tech-data/1435238117%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1435238117</URL>
+          <URL>http://www.amazon.com/Harry-Potter-Prisoner-Azkaban/dp/tech-data/0807283150%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0807283150</URL>
         </ItemLink>
         <ItemLink>
           <Description>Add To Baby Registry</Description>
-          <URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D1435238117%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1435238117</URL>
+          <URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D0807283150%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0807283150</URL>
         </ItemLink>
         <ItemLink>
           <Description>Add To Wedding Registry</Description>
-          <URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D1435238117%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1435238117</URL>
+          <URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D0807283150%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0807283150</URL>
         </ItemLink>
         <ItemLink>
           <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D1435238117%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1435238117</URL>
+          <URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D0807283150%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0807283150</URL>
         </ItemLink>
         <ItemLink>
           <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.com/gp/pdp/taf/1435238117%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1435238117</URL>
+          <URL>http://www.amazon.com/gp/pdp/taf/0807283150%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0807283150</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.com/review/product/1435238117%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1435238117</URL>
+          <URL>http://www.amazon.com/review/product/0807283150%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0807283150</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Offers</Description>
-          <URL>http://www.amazon.com/gp/offer-listing/1435238117%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1435238117</URL>
+          <URL>http://www.amazon.com/gp/offer-listing/0807283150%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0807283150</URL>
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
-        <Author>J. K. Rowling</Author>
-        <Creator Role="Illustrator">Mary GrandPre</Creator>
-        <ProductGroup>Book</ProductGroup>
-        <Title>Harry Potter and the Goblet of Fire</Title>
-      </ItemAttributes>
-    </Item>
-    <Item>
-      <ASIN>1440503257</ASIN>
-      <DetailPageURL>http://www.amazon.com/Unofficial-Harry-Potter-Cookbook-Knickerbocker/dp/1440503257%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1440503257</DetailPageURL>
-      <ItemLinks>
-        <ItemLink>
-          <Description>Technical Details</Description>
-          <URL>http://www.amazon.com/Unofficial-Harry-Potter-Cookbook-Knickerbocker/dp/tech-data/1440503257%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1440503257</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>Add To Baby Registry</Description>
-          <URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D1440503257%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1440503257</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>Add To Wedding Registry</Description>
-          <URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D1440503257%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1440503257</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D1440503257%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1440503257</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.com/gp/pdp/taf/1440503257%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1440503257</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.com/review/product/1440503257%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1440503257</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>All Offers</Description>
-          <URL>http://www.amazon.com/gp/offer-listing/1440503257%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1440503257</URL>
-        </ItemLink>
-      </ItemLinks>
-      <ItemAttributes>
-        <Author>Dinah Bucholz</Author>
-        <Manufacturer>Adams Media</Manufacturer>
-        <ProductGroup>Book</ProductGroup>
-        <Title>The Unofficial Harry Potter Cookbook: From Cauldron Cakes to Knickerbocker Glory--More Than 150 Magical Recipes for Muggles and Wizards</Title>
-      </ItemAttributes>
-    </Item>
-    <Item>
-      <ASIN>0061997811</ASIN>
-      <DetailPageURL>http://www.amazon.com/Harry-Potter-Wizardry-Brian-Sibley/dp/0061997811%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0061997811</DetailPageURL>
-      <ItemLinks>
-        <ItemLink>
-          <Description>Technical Details</Description>
-          <URL>http://www.amazon.com/Harry-Potter-Wizardry-Brian-Sibley/dp/tech-data/0061997811%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0061997811</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>Add To Baby Registry</Description>
-          <URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D0061997811%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0061997811</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>Add To Wedding Registry</Description>
-          <URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D0061997811%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0061997811</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D0061997811%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0061997811</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.com/gp/pdp/taf/0061997811%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0061997811</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.com/review/product/0061997811%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0061997811</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>All Offers</Description>
-          <URL>http://www.amazon.com/gp/offer-listing/0061997811%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0061997811</URL>
-        </ItemLink>
-      </ItemLinks>
-      <ItemAttributes>
-        <Author>Brian Sibley</Author>
-        <Manufacturer>Collins Design</Manufacturer>
-        <ProductGroup>Book</ProductGroup>
-        <Title>Harry Potter Film Wizardry</Title>
+        <Author>J K Rowling</Author>
+        <Creator Role="Narrator">Jim Dale</Creator>
+        <Manufacturer>Books on Tape</Manufacturer>
+        <ProductGroup>Home</ProductGroup>
+        <Title>Harry Potter and the Prisoner of Azkaban</Title>
       </ItemAttributes>
     </Item>
   </Items>

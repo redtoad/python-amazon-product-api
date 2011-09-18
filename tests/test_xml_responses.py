@@ -69,6 +69,18 @@ def pytest_funcarg__server(request):
         server.stop()
     return request.cached_setup(setup, teardown, 'module')
 
+
+class ArgumentMismatch (Exception):
+    """
+    The request arguments stored in XML response previously fetched differs
+    from the ones used in current request.
+    """
+
+class ResponseRequired (Exception):
+    """
+    XML response from live API required.
+    """
+
 def pytest_funcarg__api(request):
     """
     Initialises API for each test call (formerly done with ``setup_method()``).
@@ -101,26 +113,33 @@ def pytest_funcarg__api(request):
                 root, ext = os.path.splitext(path)
                 path = '%s-%i%s' % (root, api._count, ext)
             try:
-                content = open(path, 'r').read()
-                # If the XML response has been previously fetched compare
-                # request arguments in order to see if there are any changes
+                if request.config.option.fetch == 'all':
+                    raise ResponseRequired
                 try:
+                    content = open(path, 'r').read()
+                    # If the XML response has been previously fetched compare
+                    # request arguments in order to see if there are any changes
                     cached_params = utils.arguments_from_cached_xml(content)
                     current_params = utils.arguments_from_url(url)
                     if cached_params != current_params:
-                        if OVERWRITE_TESTS:
-                            raise ValueError
-                        else:
-                            raise pytest.skip('Cached arguments in %s differ '
-                            'from the ones currently tested against!' % path)
-                            #'\ncached=%r\ncurrent=%r' % (path,
-                            #cached_params, current_params))
+                        raise ArgumentMismatch
+                except IOError:
+                    if request.config.option.fetch in ('outdated', 'missing'):
+                        raise ResponseRequired
+                    raise pytest.skip('No cached XML response found!')
+                except ArgumentMismatch:
+                    if request.config.option.fetch == 'outdated':
+                        raise ResponseRequired
+                    return pytest.skip('Cached arguments in %s differ from the '
+                        'ones currently tested against!' % path)
+                        #'\ncached=%r\ncurrent=%r' % (path,
+                        #cached_params, current_params))
                 except AttributeError:
                     # XML for error messages have no Argument elements!
                     pass
-            except (IOError, ValueError):
+            except ResponseRequired:
                 if not all([AWS_KEY, SECRET_KEY]): 
-                    raise pytest.skip('No cached XML response found!')
+                    raise pytest.error('Cannot fetch XML response without credentials!')
                 tree = lxml.etree.parse(url)
                 # overwrite sensitive information in XML document.
                 root = tree.getroot()

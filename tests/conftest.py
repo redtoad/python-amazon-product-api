@@ -12,3 +12,9 @@ def pytest_addoption(parser):
             'option can be used more than once. Note that tests with specific '
             'versions defined which do not match the ones specified by this '
             'option will NOT be run.')
+    group._addoption('--refetch', action='store', type='choice', dest='fetch',
+        metavar='method', choices=['no', 'missing', 'outdated', 'all'],
+        default='no', help='Fetch responses from live server and overwrite '
+            'previously cached XML file: one of no (default)|missing|outdated|'
+            'all.')
+

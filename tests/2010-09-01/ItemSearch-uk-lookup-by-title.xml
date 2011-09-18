@@ -1,20 +1,19 @@
 <ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2010-09-01">
   <OperationRequest>
-    <HTTPHeaders>
-      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.4.1 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
-    </HTTPHeaders>
-    <RequestId>6708c2b0-9c85-4c7b-8e7c-0b1a28e9589a</RequestId>
+    <RequestId>4efd7777-8a52-4afd-a683-b421dfef698f</RequestId>
     <Arguments>
       <Argument Name="Operation" Value="ItemSearch"/>
       <Argument Name="Service" Value="AWSECommerceService"/>
-      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="Timestamp" Value="2010-10-15T22:06:59Z"/>
       <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="ItemPage" Value="1"/>
+      <Argument Name="Version" Value="2010-09-01"/>
+      <Argument Name="limit" Value="1"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2011-09-18T21:18:53Z"/>
       <Argument Name="Title" Value="Harry Potter"/>
       <Argument Name="SearchIndex" Value="Books"/>
-      <Argument Name="Version" Value="2010-09-01"/>
     </Arguments>
-    <RequestProcessingTime>0.3844470000000000</RequestProcessingTime>
+    <RequestProcessingTime>0.0809290000000000</RequestProcessingTime>
   </OperationRequest>
   <Items>
     <Request>
@@ -22,6 +21,7 @@
       <ItemSearchRequest>
         <Condition>New</Condition>
         <DeliveryMethod>Ship</DeliveryMethod>
+        <ItemPage>1</ItemPage>
         <MerchantId>Amazon</MerchantId>
         <ResponseGroup>Small</ResponseGroup>
         <ReviewSort>-SubmissionDate</ReviewSort>
@@ -29,287 +29,286 @@
         <Title>Harry Potter</Title>
       </ItemSearchRequest>
     </Request>
-    <TotalResults>2545</TotalResults>
-    <TotalPages>255</TotalPages>
+    <TotalResults>3524</TotalResults>
+    <TotalPages>353</TotalPages>
     <Item>
-      <ASIN>0747532745</ASIN>
-      <DetailPageURL>http://www.amazon.co.uk/Harry-Potter-Philosophers-Stone-Book/dp/0747532745%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0747532745</DetailPageURL>
+      <ASIN>0747558191</ASIN>
+      <DetailPageURL>http://www.amazon.co.uk/Harry-Potter-Philosophers-Stone-Book/dp/0747558191%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0747558191</DetailPageURL>
       <ItemLinks>
         <ItemLink>
           <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3D0747532745%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747532745</URL>
+          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3D0747558191%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747558191</URL>
         </ItemLink>
         <ItemLink>
           <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.co.uk/gp/pdp/taf/0747532745%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747532745</URL>
+          <URL>http://www.amazon.co.uk/gp/pdp/taf/0747558191%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747558191</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.co.uk/review/product/0747532745%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747532745</URL>
+          <URL>http://www.amazon.co.uk/review/product/0747558191%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747558191</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Offers</Description>
-          <URL>http://www.amazon.co.uk/gp/offer-listing/0747532745%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747532745</URL>
+          <URL>http://www.amazon.co.uk/gp/offer-listing/0747558191%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747558191</URL>
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
-        <Author>J.K. Rowling</Author>
+        <Author>J. K. Rowling</Author>
         <Manufacturer>Bloomsbury Publishing PLC</Manufacturer>
         <ProductGroup>Book</ProductGroup>
         <Title>Harry Potter and the Philosopher's Stone (Book 1)</Title>
       </ItemAttributes>
     </Item>
     <Item>
-      <ASIN>0747538484</ASIN>
-      <DetailPageURL>http://www.amazon.co.uk/Harry-Potter-Chamber-Secrets-Book/dp/0747538484%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0747538484</DetailPageURL>
+      <ASIN>1408812525</ASIN>
+      <DetailPageURL>http://www.amazon.co.uk/Harry-Potter-Paperback-Boxed-Set/dp/1408812525%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1408812525</DetailPageURL>
       <ItemLinks>
         <ItemLink>
           <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3D0747538484%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747538484</URL>
+          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3D1408812525%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D1408812525</URL>
         </ItemLink>
         <ItemLink>
           <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.co.uk/gp/pdp/taf/0747538484%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747538484</URL>
+          <URL>http://www.amazon.co.uk/gp/pdp/taf/1408812525%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D1408812525</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.co.uk/review/product/0747538484%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747538484</URL>
+          <URL>http://www.amazon.co.uk/review/product/1408812525%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D1408812525</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Offers</Description>
-          <URL>http://www.amazon.co.uk/gp/offer-listing/0747538484%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747538484</URL>
+          <URL>http://www.amazon.co.uk/gp/offer-listing/1408812525%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D1408812525</URL>
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
-        <Author>J.K. Rowling</Author>
+        <Author>J. K. Rowling</Author>
         <Manufacturer>Bloomsbury Publishing PLC</Manufacturer>
         <ProductGroup>Book</ProductGroup>
-        <Title>Harry Potter and the Chamber of Secrets (Book 2)</Title>
+        <Title>Harry Potter Paperback Boxed Set: Contains: Philosopher's Stone / Chamber of Secrets / Prisoner of Azkaban / Goblet of Fire / Order of the Phoenix / ... Hollows (Harry Potter Signature Edition)</Title>
       </ItemAttributes>
     </Item>
     <Item>
-      <ASIN>0747546290</ASIN>
-      <DetailPageURL>http://www.amazon.co.uk/Harry-Potter-Prisoner-Azkaban-Paperback/dp/0747546290%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0747546290</DetailPageURL>
+      <ASIN>0747562180</ASIN>
+      <DetailPageURL>http://www.amazon.co.uk/Harry-Potter-Chamber-Secrets-Book/dp/0747562180%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0747562180</DetailPageURL>
       <ItemLinks>
         <ItemLink>
           <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3D0747546290%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747546290</URL>
+          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3D0747562180%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747562180</URL>
         </ItemLink>
         <ItemLink>
           <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.co.uk/gp/pdp/taf/0747546290%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747546290</URL>
+          <URL>http://www.amazon.co.uk/gp/pdp/taf/0747562180%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747562180</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.co.uk/review/product/0747546290%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747546290</URL>
+          <URL>http://www.amazon.co.uk/review/product/0747562180%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747562180</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Offers</Description>
-          <URL>http://www.amazon.co.uk/gp/offer-listing/0747546290%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747546290</URL>
+          <URL>http://www.amazon.co.uk/gp/offer-listing/0747562180%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747562180</URL>
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
-        <Author>J.K. Rowling</Author>
+        <Author>J. K. Rowling</Author>
         <Manufacturer>Bloomsbury Publishing PLC</Manufacturer>
         <ProductGroup>Book</ProductGroup>
-        <Title>Harry Potter and the Prisoner of Azkaban (Book 3) Paperback</Title>
+        <Title>Harry Potter and the Chamber of Secrets (Book 2): Celebratory Edition</Title>
       </ItemAttributes>
     </Item>
     <Item>
-      <ASIN>0747595836</ASIN>
-      <DetailPageURL>http://www.amazon.co.uk/Harry-Potter-Deathly-Hallows-Childrens/dp/0747595836%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0747595836</DetailPageURL>
+      <ASIN>074757376X</ASIN>
+      <DetailPageURL>http://www.amazon.co.uk/Harry-Potter-Prisoner-Azkaban-Celebratory/dp/074757376X%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D074757376X</DetailPageURL>
       <ItemLinks>
         <ItemLink>
           <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3D0747595836%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747595836</URL>
+          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3D074757376X%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D074757376X</URL>
         </ItemLink>
         <ItemLink>
           <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.co.uk/gp/pdp/taf/0747595836%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747595836</URL>
+          <URL>http://www.amazon.co.uk/gp/pdp/taf/074757376X%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D074757376X</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.co.uk/review/product/0747595836%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747595836</URL>
+          <URL>http://www.amazon.co.uk/review/product/074757376X%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D074757376X</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Offers</Description>
-          <URL>http://www.amazon.co.uk/gp/offer-listing/0747595836%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747595836</URL>
+          <URL>http://www.amazon.co.uk/gp/offer-listing/074757376X%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D074757376X</URL>
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
-        <Author>J.K. Rowling</Author>
+        <Author>J. K. Rowling</Author>
         <Manufacturer>Bloomsbury Publishing PLC</Manufacturer>
         <ProductGroup>Book</ProductGroup>
-        <Title>Harry Potter and the Deathly Hallows (Book 7) [Children's Edition]</Title>
+        <Title>Harry Potter and the Prisoner of Azkaban: Celebratory Edition</Title>
       </ItemAttributes>
     </Item>
     <Item>
-      <ASIN>0747561079</ASIN>
-      <DetailPageURL>http://www.amazon.co.uk/Harry-Potter-Order-Phoenix/dp/0747561079%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0747561079</DetailPageURL>
+      <ASIN>0747598460</ASIN>
+      <DetailPageURL>http://www.amazon.co.uk/Harry-Potter-Half-Blood-Prince-Rowling/dp/0747598460%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0747598460</DetailPageURL>
       <ItemLinks>
         <ItemLink>
           <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3D0747561079%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747561079</URL>
+          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3D0747598460%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747598460</URL>
         </ItemLink>
         <ItemLink>
           <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.co.uk/gp/pdp/taf/0747561079%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747561079</URL>
+          <URL>http://www.amazon.co.uk/gp/pdp/taf/0747598460%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747598460</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.co.uk/review/product/0747561079%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747561079</URL>
+          <URL>http://www.amazon.co.uk/review/product/0747598460%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747598460</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Offers</Description>
-          <URL>http://www.amazon.co.uk/gp/offer-listing/0747561079%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747561079</URL>
+          <URL>http://www.amazon.co.uk/gp/offer-listing/0747598460%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747598460</URL>
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
-        <Author>J.K. Rowling</Author>
+        <Author>J. K. Rowling</Author>
+        <Manufacturer>Bloomsbury Publishing PLC</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Harry Potter and the Half-Blood Prince</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>1405366451</ASIN>
+      <DetailPageURL>http://www.amazon.co.uk/LEGO%C2%AE-Harry-Potter-Building-Magical/dp/1405366451%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1405366451</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3D1405366451%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D1405366451</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.co.uk/gp/pdp/taf/1405366451%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D1405366451</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.co.uk/review/product/1405366451%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D1405366451</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.co.uk/gp/offer-listing/1405366451%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D1405366451</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>DK</Author>
+        <Manufacturer>Dorling Kindersley</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>LEGO&#174; Harry Potter Building the Magical World</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>0747591261</ASIN>
+      <DetailPageURL>http://www.amazon.co.uk/Harry-Potter-Order-Phoenix-Celebratory/dp/0747591261%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0747591261</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3D0747591261%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747591261</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.co.uk/gp/pdp/taf/0747591261%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747591261</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.co.uk/review/product/0747591261%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747591261</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.co.uk/gp/offer-listing/0747591261%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747591261</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>J. K. Rowling</Author>
+        <Manufacturer>Bloomsbury Publishing PLC</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>"Harry Potter and the Order of the Phoenix" (Harry Potter Celebratory Edtn)</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>0747582386</ASIN>
+      <DetailPageURL>http://www.amazon.co.uk/Harry-Potter-Goblet-Fire-Celebratory/dp/0747582386%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0747582386</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3D0747582386%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747582386</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.co.uk/gp/pdp/taf/0747582386%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747582386</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.co.uk/review/product/0747582386%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747582386</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.co.uk/gp/offer-listing/0747582386%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747582386</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>J. K. Rowling</Author>
+        <Manufacturer>Bloomsbury Publishing PLC</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Harry Potter and the Goblet of Fire (Celebratory Edition)</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>1408810298</ASIN>
+      <DetailPageURL>http://www.amazon.co.uk/Harry-Potter-Deathly-Hallows-Celebratory/dp/1408810298%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1408810298</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3D1408810298%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D1408810298</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.co.uk/gp/pdp/taf/1408810298%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D1408810298</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.co.uk/review/product/1408810298%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D1408810298</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.co.uk/gp/offer-listing/1408810298%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D1408810298</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>J. K. Rowling</Author>
+        <Manufacturer>Bloomsbury Publishing PLC</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Harry Potter and the Deathly Hallows (Harry Potter Celebratory Edtn)</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>0747591059</ASIN>
+      <DetailPageURL>http://www.amazon.co.uk/Harry-Potter-Deathly-Hallows-Childrens/dp/0747591059%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0747591059</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3D0747591059%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747591059</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.co.uk/gp/pdp/taf/0747591059%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747591059</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.co.uk/review/product/0747591059%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747591059</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.co.uk/gp/offer-listing/0747591059%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747591059</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>J. K. Rowling</Author>
         <Manufacturer>Bloomsbury</Manufacturer>
         <ProductGroup>Book</ProductGroup>
-        <Title>Harry Potter and the Order of the Phoenix (Harry Potter 5)</Title>
-      </ItemAttributes>
-    </Item>
-    <Item>
-      <ASIN>0747595844</ASIN>
-      <DetailPageURL>http://www.amazon.co.uk/Harry-Potter-Adult-Paperback-Boxed/dp/0747595844%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0747595844</DetailPageURL>
-      <ItemLinks>
-        <ItemLink>
-          <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3D0747595844%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747595844</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.co.uk/gp/pdp/taf/0747595844%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747595844</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.co.uk/review/product/0747595844%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747595844</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>All Offers</Description>
-          <URL>http://www.amazon.co.uk/gp/offer-listing/0747595844%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747595844</URL>
-        </ItemLink>
-      </ItemLinks>
-      <ItemAttributes>
-        <Author>J.K. Rowling</Author>
-        <Manufacturer>Bloomsbury Publishing PLC</Manufacturer>
-        <ProductGroup>Book</ProductGroup>
-        <Title>Harry Potter Adult Paperback Boxed Set: Adult Edition: Contains: Philosopher's Stone / Chamber of Secrets / Prisoner of Azkaban / Goblet of Fire / ... / Deathly Hollows (Harry Potter Adult Cover)</Title>
-      </ItemAttributes>
-    </Item>
-    <Item>
-      <ASIN>0747595828</ASIN>
-      <DetailPageURL>http://www.amazon.co.uk/Harry-Potter-Deathly-Hallows-Adult/dp/0747595828%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0747595828</DetailPageURL>
-      <ItemLinks>
-        <ItemLink>
-          <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3D0747595828%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747595828</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.co.uk/gp/pdp/taf/0747595828%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747595828</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.co.uk/review/product/0747595828%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747595828</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>All Offers</Description>
-          <URL>http://www.amazon.co.uk/gp/offer-listing/0747595828%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747595828</URL>
-        </ItemLink>
-      </ItemLinks>
-      <ItemAttributes>
-        <Author>J.K. Rowling</Author>
-        <Manufacturer>Bloomsbury Publishing PLC</Manufacturer>
-        <ProductGroup>Book</ProductGroup>
-        <Title>Harry Potter and the Deathly Hallows (Book 7) [Adult Edition]</Title>
-      </ItemAttributes>
-    </Item>
-    <Item>
-      <ASIN>0747550999</ASIN>
-      <DetailPageURL>http://www.amazon.co.uk/Harry-Potter-Goblet-Fire-Book/dp/0747550999%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0747550999</DetailPageURL>
-      <ItemLinks>
-        <ItemLink>
-          <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3D0747550999%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747550999</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.co.uk/gp/pdp/taf/0747550999%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747550999</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.co.uk/review/product/0747550999%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747550999</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>All Offers</Description>
-          <URL>http://www.amazon.co.uk/gp/offer-listing/0747550999%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747550999</URL>
-        </ItemLink>
-      </ItemLinks>
-      <ItemAttributes>
-        <Author>J.K. Rowling</Author>
-        <Manufacturer>Bloomsbury Publishing PLC</Manufacturer>
-        <ProductGroup>Book</ProductGroup>
-        <Title>Harry Potter and the Goblet of Fire (Book 4)</Title>
-      </ItemAttributes>
-    </Item>
-    <Item>
-      <ASIN>0747584680</ASIN>
-      <DetailPageURL>http://www.amazon.co.uk/Harry-Potter-Half-Blood-Prince-Childrens/dp/0747584680%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0747584680</DetailPageURL>
-      <ItemLinks>
-        <ItemLink>
-          <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3D0747584680%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747584680</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.co.uk/gp/pdp/taf/0747584680%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747584680</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.co.uk/review/product/0747584680%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747584680</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>All Offers</Description>
-          <URL>http://www.amazon.co.uk/gp/offer-listing/0747584680%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747584680</URL>
-        </ItemLink>
-      </ItemLinks>
-      <ItemAttributes>
-        <Author>J.K. Rowling</Author>
-        <Manufacturer>Bloomsbury Publishing PLC</Manufacturer>
-        <ProductGroup>Book</ProductGroup>
-        <Title>Harry Potter and the Half-Blood Prince (Harry Potter 6)[Children's Edition]</Title>
-      </ItemAttributes>
-    </Item>
-    <Item>
-      <ASIN>190754500X</ASIN>
-      <DetailPageURL>http://www.amazon.co.uk/Harry-Potter-Philosophers-Stone-Unabridged/dp/190754500X%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D190754500X</DetailPageURL>
-      <ItemLinks>
-        <ItemLink>
-          <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3D190754500X%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D190754500X</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.co.uk/gp/pdp/taf/190754500X%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D190754500X</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.co.uk/review/product/190754500X%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D190754500X</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>All Offers</Description>
-          <URL>http://www.amazon.co.uk/gp/offer-listing/190754500X%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D190754500X</URL>
-        </ItemLink>
-      </ItemLinks>
-      <ItemAttributes>
-        <Author>J.K. Rowling</Author>
-        <Creator Role="Reader">Stephen Fry</Creator>
-        <Manufacturer>HNP</Manufacturer>
-        <ProductGroup>Book</ProductGroup>
-        <Title>Harry Potter and the Philosopher's Stone - Unabridged 7 Audio CD Set</Title>
+        <Title>Harry Potter and the Deathly Hallows (Book 7) [Children's Edition]</Title>
       </ItemAttributes>
     </Item>
   </Items>
