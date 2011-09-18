@@ -245,6 +245,15 @@ class API (object):
             if e.code == 'AWS.ECommerceService.NoExactMatches':
                 raise NoExactMatchesFound
 
+            if e.code == 'AWS.InvalidEnumeratedParameter':
+                m = self._reg('invalid-value').search(e.msg)
+                print m.groups(), e.msg
+                if m is not None:
+                    if m.group('parameter') == 'ResponseGroup':
+                        raise InvalidResponseGroup()
+                    elif m.group('parameter') == 'SearchIndex':
+                        raise InvalidSearchIndex()
+
             if e.code == 'AWS.InvalidParameterValue':
                 m = self._reg('invalid-parameter-value').search(e.msg)
                 raise InvalidParameterValue(m.group('parameter'),
@@ -350,14 +359,6 @@ class API (object):
             return self.call(Operation='ItemSearch',
                                   SearchIndex=search_index, **params)
         except AWSError, e:
-
-            if e.code == 'AWS.InvalidEnumeratedParameter':
-                m = self._reg('invalid-value').search(e.msg)
-                if m is not None:
-                    if m.group('parameter') == 'ResponseGroup':
-                        raise InvalidResponseGroup(params.get('ResponseGroup'))
-                    elif m.group('parameter') == 'SearchIndex':
-                        raise InvalidSearchIndex(search_index)
 
             if e.code == 'AWS.InvalidResponseGroup':
                 raise InvalidResponseGroup(params.get('ResponseGroup'))
