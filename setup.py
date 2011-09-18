@@ -2,6 +2,7 @@
 
 from setuptools import setup, find_packages, Command
 import os.path, sys
+import re
 
 _here = os.path.abspath(os.path.dirname(__file__))
 
@@ -17,6 +18,12 @@ def version():
 def read(fname):
     # makes sure that setup can be executed from a different location
     return open(os.path.join(_here, fname)).read()
+
+def readme():
+    # substitute all include statements.
+    def insert_include(matchobj):
+        return read(matchobj.group(1))
+    return re.sub(r'\.\. include:: (\w+)', insert_include, read('README'))
 
 reqs = []
  # for python2.4
@@ -44,7 +51,7 @@ setup(
     license='bsd',
 
     description = 'A Python wrapper for the Amazon Product Advertising API.',
-    long_description=read('README'),
+    long_description=readme(),
     keywords = 'amazon product advertising api wrapper signed requests',
 
     packages = find_packages(_here, exclude=['tests']),
