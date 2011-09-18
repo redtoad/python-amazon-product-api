@@ -1,0 +1,152 @@
+0.2.5 (2011-09-19) "Buttercup"
+------------------------------
+
+- Support for XSLT requests.
+- Support for Associate tags thanks to Kilian Valkhof.
+- New API versions 2010-12-01, 2010-11-01, 2010-10-01, 2010-09-01 and 2010-08-06
+  added. 
+- Fixed #16: Cannot install module under Python 2.4 without pycrypto being 
+  installed first.
+- `tox`_ (and `hudson`_) are now used for testing all supported Python versions
+  (which includes Python 2.7 now, too).
+- Test server is replaced with `pytest-localserver`_.
+- Fixed #18: Throttling no longer block CPU (Thanks to Benoit C).
+- Added response-caching API (in ``amazonproduct.contrib.caching``) to ease
+  development (Thanks to Dmitry Chaplinsky for the idea).
+- API explicitly warns about deprecated operations.
+
+.. important:: The following operations are deprecated since 15 July 2010 and
+   are now answered with a '410 Gone' (and a ``DeprecatedOperation`` exception):
+   
+   * CustomerContentLookup
+   * CustomerContentSearch
+   * Help
+   * ListLookup
+   * ListSearch
+   * TagLookup
+   * TransactionLookup
+   * VehiclePartLookup
+   * VehiclePartSearch
+   * VehicleSearch
+
+- Added new exceptions InvalidClientTokenId and MissingClientTokenId.
+- ``REQUESTS_PER_SECONDS`` can now be floats as well (e.g. 2500/3600.0).
+- Added test options options ``--api-version``, ``--locale`` and ``--refetch``.
+
+.. _tox: http://codespeak.net/tox/
+.. _hudson: http://rotekroete.de:8080/
+.. _pytest-localserver: http://pypi.python.org/pypi/pytest-localserver/
+
+0.2.4.1 (2010-06-23)
+--------------------
+
+Bugfix release! High time I get some continuous integration set up!
+
+- Fixed #13: The module did not run under Python 2.4. Ooops!
+
+
+0.2.4 (2010-06-13)
+------------------
+
+- Locale parameter is now required at initialisation. ::
+
+      # before you could write
+      api = API(AWS_KEY, SECRET_KEY)
+      
+      # now you have to specify your locale
+      api = API(AWS_KEY, SECRET_KEY, 'de')
+
+- Custom test server (``tests.server.TestServer``) added. It runs on localhost 
+  and mimicks the Amazon webservice by replaying local XML files.
+- Testing now supports multiple locales. Please not that you have to run 
+  ``python setup.py test`` to run the unittests.
+- ResultPaginator now also works with XPath expressions for attributes (Bug 
+  reported Giacomo Lacava).
+- Custom lookup for XML elements (during parsing) ensures that ``<ItemId/>``
+  and ``<ASIN>`` are now always ``objectify.StringElement`` (Bug reported by 
+  Brian Browning).
+- Fixed #11: Module can now be installed library without lxml being installed 
+  first.
+- Regular expressions for parsing error messages can now deal with the Japanese
+  version.
+
+  .. warning:: The support for the Japanese locale (``jp``) is still very 
+     experimental! A few error messages have still to be translated and the
+     functionality has to be confirmed. If you know Japanese, get in touch!
+
+
+0.2.3 (2010-03-20)
+------------------
+
+- Tests run now for all API versions. Test cases can now be told which versions
+  to use (class attribute ``api_versions`` set to i.e. ``['2009-10-01']``).
+- A custom AWS response processor can now be defined. For instance, here is one 
+  using ``xml.minidom`` instead of ``lxml``::
+      
+      def minidom_response_parser(fp):
+          root = parse(fp)
+          # parse errors
+          for error in root.getElementsByTagName('Error'):
+              code = error.getElementsByTagName('Code')[0].firstChild.nodeValue
+              msg = error.getElementsByTagName('Message')[0].firstChild.nodeValue
+                  raise AWSError(code, msg)
+              return root
+          api = API(AWS_KEY, SECRET_KEY, processor=minidom_response_parser)
+          root = api.item_lookup('0718155157')
+          print root.toprettyxml()
+          # ...
+      
+- Fixed #3: Support for API Version 2009-11-01.
+- Fixed #4: When using a bad parameter combination, an 
+  ``InvalidParameterCombination`` exception is raised. 
+- Fixed #5: ``InvalidSearchIndex`` is raised when unknown ``SearchIndex`` is 
+  specified.
+- Fixed #7: Specifying API versions works now for more than just one test per 
+  test case.
+- The ``setup.py`` command has been empowered a bit with the following 
+  additional options: ``test``, ``build_sphinx``, ``upload_sphinx``.
+- ``ResultPaginator`` attributes ``_get_current_page_numer``, 
+  ``_get_total_results`` and ``_get_total_page_numer`` are now private.
+
+
+0.2.2 (2010-01-30)
+------------------
+
+- ``browse_node_lookup`` operation added.	
+- ``help`` operation added.	
+- ``list_lookup`` and ``list_search`` operations added.
+- Default timeout for API calls is set to 5 sec.
+- Test cases for correct parsing of XML responses added. Local XML files are
+  used for testing (if available) stored in separate directories 
+  according to API version. These can be overwritten when config value
+  ``OVERWRITE_TESTS`` is set to ``True``.
+- ``InvalidItemId`` exception is replaced by more general 
+  ``InvalidParameterValue`` exception.	
+
+
+0.2.1 (2009-11-20)
+------------------
+
+- Support for Python 2.4 added. 
+- Fixed #2: ResultPaginator now returns ``None`` if the XPath expression doesn't 
+  find the node it's looking for.
+  
+
+0.2.0 (2009-11-07) "Westley"
+----------------------------
+
+This is the first `public` release. We're now available via the Cheeseshop!
+http://pypi.python.org/pypi/python-amazon-product-api
+
+- The module is no longer a package. Please use ``import amazonproduct`` 
+  (instead of ``import amazon.product``) now.
+- SimilarityLookup is now supported.
+- Updated to support version 2009-10-01.
+- Documentation added (made with http://sphinx.pocoo.org).
+- New artwork.
+
+
+0.1 (2009-09-30) "Fezzik"
+-------------------------
+
+Initial release.
