@@ -63,7 +63,6 @@ Contents
    why
    basic-usage
    operations
-   pagination
    use-your-own
    
    faq
