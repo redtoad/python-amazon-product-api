@@ -1,50 +1,81 @@
 <ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2010-10-01">
   <OperationRequest>
     <HTTPHeaders>
-      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.4.1 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+      <Header Name="UserAgent" Value="Jakarta Commons-HttpClient/3.0.1"/>
     </HTTPHeaders>
-    <RequestId>1S1NTTJSN94S0MSA9K43</RequestId>
+    <RequestId>0TYHB4H3ZJ5EV6D05VC2</RequestId>
     <Arguments>
       <Argument Name="SearchIndex" Value="Books"/>
+      <Argument Name="ItemPage" Value="1"/>
       <Argument Name="Service" Value="AWSECommerceService"/>
-      <Argument Name="Operation" Value="ItemSearch"/>
-      <Argument Name="Version" Value="2010-10-01"/>
-      <Argument Name="Timestamp" Value="2010-11-12T14:20:27Z"/>
       <Argument Name="Title" Value="Harry Potter"/>
       <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="limit" Value="1"/>
+      <Argument Name="Operation" Value="ItemSearch"/>
       <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2011-09-18T21:18:48Z"/>
+      <Argument Name="Version" Value="2010-10-01"/>
     </Arguments>
-    <RequestProcessingTime>0.0985569953918457</RequestProcessingTime>
+    <RequestProcessingTime>0.108989953994751</RequestProcessingTime>
   </OperationRequest>
   <Items>
     <Request>
       <IsValid>True</IsValid>
       <ItemSearchRequest>
+        <ItemPage>1</ItemPage>
         <SearchIndex>Books</SearchIndex>
         <Title>Harry Potter</Title>
       </ItemSearchRequest>
     </Request>
-    <TotalResults>1681</TotalResults>
-    <TotalPages>169</TotalPages>
+    <TotalResults>2123</TotalResults>
+    <TotalPages>213</TotalPages>
     <Item>
-      <ASIN>0061997811</ASIN>
-      <DetailPageURL>http://www.amazon.ca/Harry-Potter-Wizardry-Brian-Sibley/dp/0061997811%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0061997811</DetailPageURL>
+      <ASIN>1408812525</ASIN>
+      <DetailPageURL>http://www.amazon.ca/Harry-Potter-Signature-JK-Rowling/dp/1408812525%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1408812525</DetailPageURL>
       <ItemLinks>
         <ItemLink>
           <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.ca/gp/registry/wishlist/add-item.html%3Fasin.0%3D0061997811%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D0061997811</URL>
+          <URL>http://www.amazon.ca/gp/registry/wishlist/add-item.html%3Fasin.0%3D1408812525%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1408812525</URL>
         </ItemLink>
         <ItemLink>
           <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.ca/gp/pdp/taf/0061997811%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D0061997811</URL>
+          <URL>http://www.amazon.ca/gp/pdp/taf/1408812525%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1408812525</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.ca/review/product/0061997811%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D0061997811</URL>
+          <URL>http://www.amazon.ca/review/product/1408812525%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1408812525</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Offers</Description>
-          <URL>http://www.amazon.ca/gp/offer-listing/0061997811%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D0061997811</URL>
+          <URL>http://www.amazon.ca/gp/offer-listing/1408812525%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1408812525</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>JK Rowling</Author>
+        <Manufacturer>Bloomsbury UK</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Harry Potter Signature Edition 7</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>0061997811</ASIN>
+      <DetailPageURL>http://www.amazon.ca/Harry-Potter-Wizardry-Brian-Sibley/dp/0061997811%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0061997811</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.ca/gp/registry/wishlist/add-item.html%3Fasin.0%3D0061997811%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D0061997811</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.ca/gp/pdp/taf/0061997811%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D0061997811</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.ca/review/product/0061997811%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D0061997811</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.ca/gp/offer-listing/0061997811%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D0061997811</URL>
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
@@ -55,255 +86,227 @@
       </ItemAttributes>
     </Item>
     <Item>
-      <ASIN>1551929767</ASIN>
-      <DetailPageURL>http://www.amazon.ca/Harry-Potter-Deathly-Hallows-Book/dp/1551929767%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1551929767</DetailPageURL>
+      <ASIN>1408810581</ASIN>
+      <DetailPageURL>http://www.amazon.ca/Harry-Potter-Half-Blood-Prince-Rowling/dp/1408810581%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1408810581</DetailPageURL>
       <ItemLinks>
         <ItemLink>
           <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.ca/gp/registry/wishlist/add-item.html%3Fasin.0%3D1551929767%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1551929767</URL>
+          <URL>http://www.amazon.ca/gp/registry/wishlist/add-item.html%3Fasin.0%3D1408810581%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1408810581</URL>
         </ItemLink>
         <ItemLink>
           <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.ca/gp/pdp/taf/1551929767%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1551929767</URL>
+          <URL>http://www.amazon.ca/gp/pdp/taf/1408810581%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1408810581</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.ca/review/product/1551929767%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1551929767</URL>
+          <URL>http://www.amazon.ca/review/product/1408810581%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1408810581</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Offers</Description>
-          <URL>http://www.amazon.ca/gp/offer-listing/1551929767%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1551929767</URL>
-        </ItemLink>
-      </ItemLinks>
-      <ItemAttributes>
-        <Author>J. K. Rowling</Author>
-        <Manufacturer>Raincoast Books</Manufacturer>
-        <ProductGroup>Book</ProductGroup>
-        <Title>Harry Potter and the Deathly Hallows (Book 7)</Title>
-      </ItemAttributes>
-    </Item>
-    <Item>
-      <ASIN>1551923963</ASIN>
-      <DetailPageURL>http://www.amazon.ca/Harry-Potter-Philosophers-Stone-Rowling/dp/1551923963%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1551923963</DetailPageURL>
-      <ItemLinks>
-        <ItemLink>
-          <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.ca/gp/registry/wishlist/add-item.html%3Fasin.0%3D1551923963%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1551923963</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.ca/gp/pdp/taf/1551923963%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1551923963</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.ca/review/product/1551923963%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1551923963</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>All Offers</Description>
-          <URL>http://www.amazon.ca/gp/offer-listing/1551923963%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1551923963</URL>
+          <URL>http://www.amazon.ca/gp/offer-listing/1408810581%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1408810581</URL>
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
         <Author>J.K. Rowling</Author>
-        <Manufacturer>Raincoast Books</Manufacturer>
+        <Manufacturer>Penguin</Manufacturer>
         <ProductGroup>Book</ProductGroup>
-        <Title>Harry Potter and the Philosopher's Stone</Title>
+        <Title>Harry Potter &amp; the Half-Blood Prince</Title>
       </ItemAttributes>
     </Item>
     <Item>
-      <ASIN>0747595828</ASIN>
-      <DetailPageURL>http://www.amazon.ca/Harry-Potter-Deathly-Hallows-Format/dp/0747595828%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0747595828</DetailPageURL>
+      <ASIN>1408810603</ASIN>
+      <DetailPageURL>http://www.amazon.ca/Harry-Potter-Deathly-Hallows-Rowling/dp/1408810603%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1408810603</DetailPageURL>
       <ItemLinks>
         <ItemLink>
           <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.ca/gp/registry/wishlist/add-item.html%3Fasin.0%3D0747595828%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D0747595828</URL>
+          <URL>http://www.amazon.ca/gp/registry/wishlist/add-item.html%3Fasin.0%3D1408810603%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1408810603</URL>
         </ItemLink>
         <ItemLink>
           <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.ca/gp/pdp/taf/0747595828%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D0747595828</URL>
+          <URL>http://www.amazon.ca/gp/pdp/taf/1408810603%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1408810603</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.ca/review/product/0747595828%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D0747595828</URL>
+          <URL>http://www.amazon.ca/review/product/1408810603%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1408810603</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Offers</Description>
-          <URL>http://www.amazon.ca/gp/offer-listing/0747595828%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D0747595828</URL>
-        </ItemLink>
-      </ItemLinks>
-      <ItemAttributes>
-        <Author>J. K. Rowling</Author>
-        <Manufacturer>Bloomsbury UK</Manufacturer>
-        <ProductGroup>Book</ProductGroup>
-        <Title>Harry Potter and the Deathly Hallows, A-Format</Title>
-      </ItemAttributes>
-    </Item>
-    <Item>
-      <ASIN>1551929120</ASIN>
-      <DetailPageURL>http://www.amazon.ca/Harry-Potter-Box-Set-Books/dp/1551929120%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1551929120</DetailPageURL>
-      <ItemLinks>
-        <ItemLink>
-          <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.ca/gp/registry/wishlist/add-item.html%3Fasin.0%3D1551929120%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1551929120</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.ca/gp/pdp/taf/1551929120%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1551929120</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.ca/review/product/1551929120%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1551929120</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>All Offers</Description>
-          <URL>http://www.amazon.ca/gp/offer-listing/1551929120%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1551929120</URL>
-        </ItemLink>
-      </ItemLinks>
-      <ItemAttributes>
-        <Author>J. K. Rowling</Author>
-        <Manufacturer>Raincoast Books</Manufacturer>
-        <ProductGroup>Book</ProductGroup>
-        <Title>Harry Potter Box Set, Books 1 - 7 : Adult Cloth</Title>
-      </ItemAttributes>
-    </Item>
-    <Item>
-      <ASIN>1408812525</ASIN>
-      <DetailPageURL>http://www.amazon.ca/Harry-Potter-Signature-Paperback-Boxed/dp/1408812525%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1408812525</DetailPageURL>
-      <ItemLinks>
-        <ItemLink>
-          <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.ca/gp/registry/wishlist/add-item.html%3Fasin.0%3D1408812525%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1408812525</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.ca/gp/pdp/taf/1408812525%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1408812525</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.ca/review/product/1408812525%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1408812525</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>All Offers</Description>
-          <URL>http://www.amazon.ca/gp/offer-listing/1408812525%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1408812525</URL>
-        </ItemLink>
-      </ItemLinks>
-      <ItemAttributes>
-        <Author>J Rowling</Author>
-        <Manufacturer>Bloomsbury UK</Manufacturer>
-        <ProductGroup>Book</ProductGroup>
-        <Title>Harry Potter Signature Edition Paperback Boxed Set X 7</Title>
-      </ItemAttributes>
-    </Item>
-    <Item>
-      <ASIN>155192398X</ASIN>
-      <DetailPageURL>http://www.amazon.ca/Harry-Potter-Philosophers-Childrens-Paperback/dp/155192398X%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D155192398X</DetailPageURL>
-      <ItemLinks>
-        <ItemLink>
-          <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.ca/gp/registry/wishlist/add-item.html%3Fasin.0%3D155192398X%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D155192398X</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.ca/gp/pdp/taf/155192398X%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D155192398X</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.ca/review/product/155192398X%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D155192398X</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>All Offers</Description>
-          <URL>http://www.amazon.ca/gp/offer-listing/155192398X%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D155192398X</URL>
+          <URL>http://www.amazon.ca/gp/offer-listing/1408810603%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1408810603</URL>
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
         <Author>J.K. Rowling</Author>
-        <Manufacturer>Raincoast Books</Manufacturer>
+        <Manufacturer>Penguin</Manufacturer>
         <ProductGroup>Book</ProductGroup>
-        <Title>Harry Potter and the Philosopher's Stone Children's Paperback Edition</Title>
+        <Title>Harry Potter &amp; The Deathly Hallows</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>0756682576</ASIN>
+      <DetailPageURL>http://www.amazon.ca/Lego-Harry-Potter-Building-Magical/dp/0756682576%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0756682576</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.ca/gp/registry/wishlist/add-item.html%3Fasin.0%3D0756682576%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D0756682576</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.ca/gp/pdp/taf/0756682576%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D0756682576</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.ca/review/product/0756682576%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D0756682576</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.ca/gp/offer-listing/0756682576%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D0756682576</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>Dorling Kindersley</Author>
+        <Manufacturer>Dorling Kindersley</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Lego: Harry Potter: Building the Magical World of Harry Potter</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>1408810549</ASIN>
+      <DetailPageURL>http://www.amazon.ca/Harry-Potter-Philosophers-Stone-Rowling/dp/1408810549%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1408810549</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.ca/gp/registry/wishlist/add-item.html%3Fasin.0%3D1408810549%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1408810549</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.ca/gp/pdp/taf/1408810549%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1408810549</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.ca/review/product/1408810549%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1408810549</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.ca/gp/offer-listing/1408810549%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1408810549</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>J.K. Rowling</Author>
+        <Manufacturer>Penguin</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Harry Potter &amp; the Philosopher's Stone</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>140881059X</ASIN>
+      <DetailPageURL>http://www.amazon.ca/Harry-Potter-Order-Phoenix-Rowling/dp/140881059X%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D140881059X</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.ca/gp/registry/wishlist/add-item.html%3Fasin.0%3D140881059X%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D140881059X</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.ca/gp/pdp/taf/140881059X%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D140881059X</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.ca/review/product/140881059X%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D140881059X</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.ca/gp/offer-listing/140881059X%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D140881059X</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>J.K. Rowling</Author>
+        <Manufacturer>Penguin</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Harry Potter &amp; the Order of the Phoenix</Title>
       </ItemAttributes>
     </Item>
     <Item>
       <ASIN>2070612368</ASIN>
-      <DetailPageURL>http://www.amazon.ca/HARRY-POTTER-T01-L%C3%83%C2%89COLE-SORCIERS/dp/2070612368%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D2070612368</DetailPageURL>
+      <DetailPageURL>http://www.amazon.ca/HARRY-POTTER-T01-Potter-sorciers/dp/2070612368%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D2070612368</DetailPageURL>
       <ItemLinks>
         <ItemLink>
           <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.ca/gp/registry/wishlist/add-item.html%3Fasin.0%3D2070612368%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D2070612368</URL>
+          <URL>http://www.amazon.ca/gp/registry/wishlist/add-item.html%3Fasin.0%3D2070612368%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D2070612368</URL>
         </ItemLink>
         <ItemLink>
           <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.ca/gp/pdp/taf/2070612368%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D2070612368</URL>
+          <URL>http://www.amazon.ca/gp/pdp/taf/2070612368%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D2070612368</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.ca/review/product/2070612368%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D2070612368</URL>
+          <URL>http://www.amazon.ca/review/product/2070612368%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D2070612368</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Offers</Description>
-          <URL>http://www.amazon.ca/gp/offer-listing/2070612368%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D2070612368</URL>
+          <URL>http://www.amazon.ca/gp/offer-listing/2070612368%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D2070612368</URL>
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
         <Author>JOANNE KATHLEEN ROWLING</Author>
         <Manufacturer>GALLIMARD (&#201;DITIONS)</Manufacturer>
         <ProductGroup>Book</ProductGroup>
-        <Title>HARRY POTTER T01 : &#192; L'&#201;COLE DES SORCIERS N.P.</Title>
+        <Title>HARRY POTTER T01 : Harry Potter a L'ecole des sorciers</Title>
       </ItemAttributes>
     </Item>
     <Item>
-      <ASIN>1551925702</ASIN>
-      <DetailPageURL>http://www.amazon.ca/Harry-Potter-Order-Phoenix-Rowling/dp/1551925702%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1551925702</DetailPageURL>
+      <ASIN>1408810565</ASIN>
+      <DetailPageURL>http://www.amazon.ca/Harry-Potter-Prisoner-Azkaban-Rowling/dp/1408810565%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1408810565</DetailPageURL>
       <ItemLinks>
         <ItemLink>
           <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.ca/gp/registry/wishlist/add-item.html%3Fasin.0%3D1551925702%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1551925702</URL>
+          <URL>http://www.amazon.ca/gp/registry/wishlist/add-item.html%3Fasin.0%3D1408810565%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1408810565</URL>
         </ItemLink>
         <ItemLink>
           <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.ca/gp/pdp/taf/1551925702%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1551925702</URL>
+          <URL>http://www.amazon.ca/gp/pdp/taf/1408810565%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1408810565</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.ca/review/product/1551925702%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1551925702</URL>
+          <URL>http://www.amazon.ca/review/product/1408810565%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1408810565</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Offers</Description>
-          <URL>http://www.amazon.ca/gp/offer-listing/1551925702%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1551925702</URL>
+          <URL>http://www.amazon.ca/gp/offer-listing/1408810565%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1408810565</URL>
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
         <Author>J.K. Rowling</Author>
-        <Manufacturer>Raincoast Books</Manufacturer>
+        <Manufacturer>Penguin</Manufacturer>
         <ProductGroup>Book</ProductGroup>
-        <Title>Harry Potter and the Order of the Phoenix</Title>
+        <Title>Harry Potter &amp; the Prisoner of Azkaban</Title>
       </ItemAttributes>
     </Item>
     <Item>
-      <ASIN>155192756X</ASIN>
-      <DetailPageURL>http://www.amazon.ca/Harry-Potter-Half-Blood-Prince-Book/dp/155192756X%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D155192756X</DetailPageURL>
+      <ASIN>1408810573</ASIN>
+      <DetailPageURL>http://www.amazon.ca/Harry-Potter-Goblet-Fire-Rowling/dp/1408810573%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1408810573</DetailPageURL>
       <ItemLinks>
         <ItemLink>
           <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.ca/gp/registry/wishlist/add-item.html%3Fasin.0%3D155192756X%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D155192756X</URL>
+          <URL>http://www.amazon.ca/gp/registry/wishlist/add-item.html%3Fasin.0%3D1408810573%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1408810573</URL>
         </ItemLink>
         <ItemLink>
           <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.ca/gp/pdp/taf/155192756X%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D155192756X</URL>
+          <URL>http://www.amazon.ca/gp/pdp/taf/1408810573%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1408810573</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.ca/review/product/155192756X%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D155192756X</URL>
+          <URL>http://www.amazon.ca/review/product/1408810573%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1408810573</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Offers</Description>
-          <URL>http://www.amazon.ca/gp/offer-listing/155192756X%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D155192756X</URL>
+          <URL>http://www.amazon.ca/gp/offer-listing/1408810573%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1408810573</URL>
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
-        <Author>J. K. Rowling</Author>
-        <Manufacturer>Raincoast Books</Manufacturer>
+        <Author>J.K. Rowling</Author>
+        <Manufacturer>Penguin</Manufacturer>
         <ProductGroup>Book</ProductGroup>
-        <Title>Harry Potter and the Half-Blood Prince (Book 6)</Title>
+        <Title>Harry Potter &amp; the Goblet of Fire</Title>
       </ItemAttributes>
     </Item>
   </Items>

@@ -1,19 +1,17 @@
 <ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2010-09-01">
   <OperationRequest>
-    <HTTPHeaders>
-      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.4.1 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
-    </HTTPHeaders>
-    <RequestId>eb915033-79c3-460b-b4e6-4f011ac92b44</RequestId>
+    <RequestId>0ac04057-2ee5-476c-8ffe-ec0af9148872</RequestId>
     <Arguments>
       <Argument Name="Operation" Value="ItemSearch"/>
       <Argument Name="Service" Value="AWSECommerceService"/>
-      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="Version" Value="2010-09-01"/>
       <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="Timestamp" Value="2010-10-15T22:06:59Z"/>
+      <Argument Name="Timestamp" Value="2011-09-18T21:17:53Z"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="ItemPage" Value="1"/>
       <Argument Name="SearchIndex" Value="Books"/>
+      <Argument Name="Version" Value="2010-09-01"/>
     </Arguments>
-    <RequestProcessingTime>0.0028130000000000</RequestProcessingTime>
+    <RequestProcessingTime>0.0025330000000000</RequestProcessingTime>
   </OperationRequest>
   <Items>
     <Request>
@@ -21,6 +19,7 @@
       <ItemSearchRequest>
         <Condition>New</Condition>
         <DeliveryMethod>Ship</DeliveryMethod>
+        <ItemPage>1</ItemPage>
         <MerchantId>Amazon</MerchantId>
         <ResponseGroup>Small</ResponseGroup>
         <ReviewSort>-SubmissionDate</ReviewSort>

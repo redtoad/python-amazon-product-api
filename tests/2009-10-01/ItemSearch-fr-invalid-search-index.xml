@@ -1,20 +1,18 @@
 <ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2009-10-01">
   <OperationRequest>
-    <HTTPHeaders>
-      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.3 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
-    </HTTPHeaders>
-    <RequestId>f96d0846-1bd9-4a86-ab42-2c2148394af5</RequestId>
+    <RequestId>2bfd0102-b4d4-4299-b254-3c9cb8b30742</RequestId>
     <Arguments>
       <Argument Name="Operation" Value="ItemSearch"/>
       <Argument Name="Service" Value="AWSECommerceService"/>
-      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="Timestamp" Value="2010-06-09T07:19:14Z"/>
       <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="SearchIndex" Value="???"/>
+      <Argument Name="ItemPage" Value="1"/>
       <Argument Name="BrowseNode" Value="132"/>
       <Argument Name="Version" Value="2009-10-01"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2011-09-18T21:18:16Z"/>
+      <Argument Name="SearchIndex" Value="???"/>
     </Arguments>
-    <RequestProcessingTime>0.0031130000000000</RequestProcessingTime>
+    <RequestProcessingTime>0.0029980000000000</RequestProcessingTime>
   </OperationRequest>
   <Items>
     <Request>
@@ -23,6 +21,7 @@
         <BrowseNode>132</BrowseNode>
         <Condition>New</Condition>
         <DeliveryMethod>Ship</DeliveryMethod>
+        <ItemPage>1</ItemPage>
         <MerchantId>Amazon</MerchantId>
         <ResponseGroup>Small</ResponseGroup>
         <ReviewSort>-SubmissionDate</ReviewSort>
@@ -32,8 +31,12 @@
         <Error>
           <Code>AWS.InvalidEnumeratedParameter</Code>
           <Message>The value you specified for SearchIndex is invalid. Valid values include [
-				'All','Baby','Beauty','Blended','Books','Classical','DVD','Electronics','ForeignBooks','HealthPersonalCare','Jewelry','Kitchen','Lighting','MP3Downloads','Music','MusicTracks','OfficeProducts','Shoes','Software','SoftwareVideoGames','SportingGoods','Toys','VHS','Video','VideoGames','Watches'
+				'All','Apparel','Baby','Beauty','Blended','Books','Classical','DVD','Electronics','ForeignBooks','HealthPersonalCare','Jewelry','Kitchen','Lighting','MP3Downloads','Music','MusicalInstruments','MusicTracks','OfficeProducts','PCHardware','Shoes','Software','SoftwareVideoGames','SportingGoods','Toys','VHS','Video','VideoGames','Watches'
 				].</Message>
+        </Error>
+        <Error>
+          <Code>AWS.RestrictedParameterValueCombination</Code>
+          <Message>Your request contained a restricted parameter combination.  When SearchIndex equals ???, ItemPage cannot be present.</Message>
         </Error>
         <Error>
           <Code>AWS.RestrictedParameterValueCombination</Code>

@@ -1,20 +1,18 @@
 <ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2009-10-01">
   <OperationRequest>
-    <HTTPHeaders>
-      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.3 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
-    </HTTPHeaders>
-    <RequestId>9e27bef4-519f-4216-8055-20f3d901fa88</RequestId>
+    <RequestId>58e0d28c-e8e7-4377-ba5a-8bad91611ed4</RequestId>
     <Arguments>
       <Argument Name="Operation" Value="ItemSearch"/>
       <Argument Name="Service" Value="AWSECommerceService"/>
       <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="ItemPage" Value="1"/>
       <Argument Name="BrowseNode" Value="132"/>
       <Argument Name="Version" Value="2009-10-01"/>
       <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="Timestamp" Value="2010-06-09T07:19:19Z"/>
+      <Argument Name="Timestamp" Value="2011-09-18T21:18:18Z"/>
       <Argument Name="SearchIndex" Value="???"/>
     </Arguments>
-    <RequestProcessingTime>0.0041500000000000</RequestProcessingTime>
+    <RequestProcessingTime>0.0025360000000000</RequestProcessingTime>
   </OperationRequest>
   <Items>
     <Request>
@@ -23,6 +21,7 @@
         <BrowseNode>132</BrowseNode>
         <Condition>New</Condition>
         <DeliveryMethod>Ship</DeliveryMethod>
+        <ItemPage>1</ItemPage>
         <MerchantId>Amazon</MerchantId>
         <ResponseGroup>Small</ResponseGroup>
         <ReviewSort>-SubmissionDate</ReviewSort>
@@ -32,7 +31,7 @@
         <Error>
           <Code>AWS.InvalidEnumeratedParameter</Code>
           <Message>The value you specified for SearchIndex is invalid. Valid values include [
-				'All','Apparel','Automotive','Baby','Beauty','Blended','Books','Classical','DVD','DigitalMusic','Electronics','GourmetFood','Grocery','HealthPersonalCare','HomeGarden','Industrial','Jewelry','KindleStore','Kitchen','MP3Downloads','Magazines','Merchants','Miscellaneous','Music','MusicTracks','MusicalInstruments','OfficeProducts','OutdoorLiving','PCHardware','PetSupplies','Photo','Shoes','SilverMerchants','Software','SportingGoods','Tools','Toys','UnboxVideo','VHS','Video','VideoGames','Watches','Wireless','WirelessAccessories'
+				'All','Apparel','Appliances','ArtsAndCrafts','Automotive','Baby','Beauty','Blended','Books','Classical','DVD','DigitalMusic','Electronics','GiftCards','GourmetFood','Grocery','HealthPersonalCare','HomeGarden','Industrial','Jewelry','KindleStore','Kitchen','MP3Downloads','Magazines','Merchants','Miscellaneous','Music','MusicTracks','MusicalInstruments','MobileApps','OfficeProducts','OutdoorLiving','PCHardware','PetSupplies','Photo','Shoes','SilverMerchants','Software','SportingGoods','Tools','Toys','UnboxVideo','VHS','Video','VideoGames','Watches','Wireless','WirelessAccessories'
 				].</Message>
         </Error>
         <Error>

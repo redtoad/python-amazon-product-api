@@ -1,22 +1,19 @@
 <ItemLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2010-10-01">
   <OperationRequest>
-    <HTTPHeaders>
-      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.4.1 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
-    </HTTPHeaders>
-    <RequestId>00166522-2a74-4dcf-bfee-bababb494445</RequestId>
+    <RequestId>d1724fda-16ab-4e0c-8576-72ad4959da49</RequestId>
     <Arguments>
       <Argument Name="Operation" Value="ItemLookup"/>
       <Argument Name="Service" Value="AWSECommerceService"/>
-      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="Version" Value="2010-10-01"/>
       <Argument Name="ItemId" Value="9780747532743"/>
       <Argument Name="IdType" Value="ISBN"/>
       <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="Timestamp" Value="2010-11-12T14:20:23Z"/>
+      <Argument Name="Timestamp" Value="2011-09-18T21:29:54Z"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
       <Argument Name="ResponseGroup" Value="???"/>
       <Argument Name="SearchIndex" Value="All"/>
+      <Argument Name="Version" Value="2010-10-01"/>
     </Arguments>
-    <RequestProcessingTime>0.0008530000000000</RequestProcessingTime>
+    <RequestProcessingTime>0.0029100000000000</RequestProcessingTime>
   </OperationRequest>
   <Items>
     <Request>
@@ -36,8 +33,35 @@
       </ItemLookupRequest>
       <Errors>
         <Error>
+          <Code>AWS.InvalidEnumeratedParameter</Code>
+          <Message>The value you specified for ResponseGroup is invalid. Valid values include [
+    		'Tags', 'Help', 'ListMinimum', 'VariationSummary', 'VariationMatrix',
+    		'TransactionDetails', 'VariationMinimum', 'VariationImages',
+    		'PartBrandBinsSummary', 'CustomerFull', 'CartNewReleases',
+    		'ItemIds', 'SalesRank', 'TagsSummary', 'Fitments',
+    		'Subjects', 'Medium', 'ListmaniaLists',
+    		'PartBrowseNodeBinsSummary', 'TopSellers', 'Request',
+    		'HasPartCompatibility', 'PromotionDetails', 'ListFull',
+    		'Small', 'Seller', 'OfferFull', 'Accessories',
+    		'VehicleMakes', 'MerchantItemAttributes', 'TaggedItems',
+    		'VehicleParts', 'BrowseNodeInfo', 'ItemAttributes',
+    		'PromotionalTag', 'VehicleOptions', 'ListItems', 'Offers',
+    		'TaggedGuides', 'NewReleases', 'VehiclePartFit',
+    		'OfferSummary', 'VariationOffers', 'CartSimilarities',
+    		'Reviews', 'ShippingCharges', 'ShippingOptions', 'EditorialReview',
+    		'CustomerInfo', 'PromotionSummary', 'BrowseNodes',
+    		'PartnerTransactionDetails', 'VehicleYears', 'SearchBins',
+    		'VehicleTrims', 'Similarities', 'AlternateVersions',
+    		'SearchInside', 'CustomerReviews', 'SellerListing',
+    		'OfferListings', 'Cart', 'TaggedListmaniaLists',
+    		'VehicleModels', 'ListInfo', 'Large', 'CustomerLists',
+    		'Tracks', 'CartTopSellers', 'Images', 'Variations',
+    	'RelatedItems','Collections'
+    	].</Message>
+        </Error>
+        <Error>
           <Code>AWS.InvalidResponseGroup</Code>
-          <Message>Your ResponseGroup parameter is invalid. Valid response groups for ItemLookup requests include Accessories, AlternateVersions, BrowseNodes, Collections, EditorialReview, Images, ItemAttributes, ItemIds, Large, ListmaniaLists, Medium, MerchantItemAttributes, OfferFull, OfferListings, OfferSummary, Offers, PromotionDetails, PromotionSummary, PromotionalTag, RelatedItems, Request, Reviews, SalesRank, SearchBins, SearchInside, ShippingCharges, ShippingOptions, Similarities, Small, Subjects, Tags, TagsSummary, Tracks, VariationImages, VariationMatrix, VariationMinimum, VariationOffers, VariationSummary, Variations.</Message>
+          <Message>Your ResponseGroup parameter is invalid. Valid response groups for ItemLookup requests include ['Request','ItemIds','Small','Medium','Large','Offers','OfferFull','OfferSummary','OfferListings','PromotionSummary','PromotionDetails','Variations','VariationImages','VariationMinimum','VariationSummary','TagsSummary','Tags','VariationMatrix','VariationOffers','ItemAttributes','MerchantItemAttributes','Tracks','Accessories','EditorialReview','SalesRank','BrowseNodes','Images','Similarities','Subjects','Reviews','ListmaniaLists','SearchInside','PromotionalTag','AlternateVersions','Collections','ShippingCharges','RelatedItems','ShippingOptions'].</Message>
         </Error>
       </Errors>
     </Request>
