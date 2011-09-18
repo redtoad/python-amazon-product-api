@@ -17,7 +17,7 @@ here is one using ``xml.minidom``::
             return root
     
     # Now let's use this instead of the default one
-    api = API(AWS_KEY, SECRET_KEY, processor=minidom_response_parser)
+    api = API(AWS_KEY, SECRET_KEY, 'uk', processor=minidom_response_parser)
     root = api.item_lookup('0718155157')
     print root.toprettyxml()
     # ...
