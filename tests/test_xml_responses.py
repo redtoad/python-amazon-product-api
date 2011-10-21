@@ -7,7 +7,6 @@ import re
 from tests import utils
 from tests import XML_TEST_DIR
 from tests import TESTABLE_API_VERSIONS, TESTABLE_LOCALES
-from tests import AWS_KEY, SECRET_KEY, OVERWRITE_TESTS
 
 from amazonproduct.api import API
 from amazonproduct.errors import *
@@ -75,7 +74,7 @@ def pytest_funcarg__api(request):
     version = request.param['version']
     xml_response = request.param['xml_response']
 
-    api = API(AWS_KEY, SECRET_KEY, locale)
+    api = API(locale=locale)
     api.VERSION = version
     api.REQUESTS_PER_SECOND = 10000 # just for here!
 
@@ -120,8 +119,6 @@ def pytest_funcarg__api(request):
                     # XML for error messages have no Argument elements!
                     pass
             except ResponseRequired:
-                if not all([AWS_KEY, SECRET_KEY]): 
-                    raise pytest.error('Cannot fetch XML response without credentials!')
                 tree = lxml.etree.parse(url)
                 # overwrite sensitive information in XML document.
                 root = tree.getroot()
@@ -130,6 +127,8 @@ def pytest_funcarg__api(request):
                     if arg.get('Name') in ('Signature', 'AWSAccessKeyId'):
                         arg.set('Value', 'X'*15)
                 content = lxml.etree.tostring(tree, pretty_print=True)
+                if 'MissingClientTokenId' in content:
+                    raise pytest.error('Cannot fetch XML response without credentials!')
                 if not os.path.exists(os.path.dirname(path)):
                     os.mkdir(os.path.dirname(path))
                 open(path, 'wb').write(content)
