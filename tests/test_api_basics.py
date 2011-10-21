@@ -145,16 +145,3 @@ class TestAPICalls (object):
         throttle = timedelta(seconds=1)/api.REQUESTS_PER_SECOND
         assert (stop-start) >= (n-1)*throttle
 
-def test_API_coverage(api, operation):
-    """
-    Tests if API class supports all operations which are in the official WSDL
-    from Amazon.
-    """
-    # a few operations are not yet implemented!
-    notyetimpltd = 'SellerLookup SellerListingLookup SellerListingSearch'
-    if operation in notyetimpltd.split():
-        pytest.xfail('Not yet fully implemented!')
-
-    attr = convert_camel_case(operation)
-    assert hasattr(api, attr), 'API does not support %s!' % operation
-
