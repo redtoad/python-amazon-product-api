@@ -30,6 +30,7 @@ from amazonproduct.version import VERSION
 from amazonproduct.errors import *
 from amazonproduct.paginators import paginate
 from amazonproduct.processors import LxmlObjectifyProcessor
+from amazonproduct.utils import load_config
 
 USER_AGENT = ('python-amazon-product-api/%s '
     '+http://pypi.python.org/pypi/python-amazon-product-api/' % VERSION)
@@ -115,7 +116,7 @@ class API (object):
     REQUESTS_PER_SECOND = 1 #: max requests per second
     TIMEOUT = 5 #: timeout in seconds
 
-    def __init__(self, access_key_id, secret_access_key, locale,
+    def __init__(self, access_key_id=None, secret_access_key=None, locale=None,
                  associate_tag=None, processor=None):
         """
         :param access_key_id: AWS access key ID.
@@ -127,10 +128,18 @@ class API (object):
         self.access_key = access_key_id
         self.secret_key = secret_access_key
         self.associate_tag = associate_tag
+        self.locale = locale
+
+        # load missing valued from config file
+        required_keys = ['access_key', 'secret_key', 'associate_tag', 'locale']
+        if not all(getattr(self, key, False) for key in required_keys):
+            cfg = load_config()
+            for key in required_keys:
+                if getattr(self, key, '???') is None and key in cfg:
+                    setattr(self, key, cfg[key])
 
         try:
-            self.host = HOSTS[locale]
-            self.locale = locale
+            self.host = HOSTS[self.locale]
         except KeyError:
             raise UnknownLocale(locale)
 
