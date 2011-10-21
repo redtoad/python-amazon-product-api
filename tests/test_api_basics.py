@@ -44,6 +44,46 @@ class TestAPICallsWithOptionalParameters (object):
         assert qs['AssociateTag'][0] == tag
 
 
+class TestAPIInitialisation (object):
+
+    """
+    Test all the different ways an API instance can be instantiated.
+    """
+
+    def test_init_with_parameters(self):
+        api = API('ACCESS_KEY', 'SECRET_KEY', 'de', 'associate-tag')
+
+    def test_init_with_config_file(self, configfiles):
+        configfiles.add_file("""
+        [Credentials]
+        aws_access_key_id = ABCDEFGH12345
+        aws_secret_access_key = abcdegf43
+        aws_product_locale = de""") 
+        api = API()
+
+    def test_init_with_config_file(self, configfiles):
+        configfiles.add_file("""
+        [Credentials]
+        aws_access_key_id = ABCDEFGH12345
+        aws_secret_access_key = abcdegf43
+        aws_product_locale = de""") 
+        api = API()
+
+    def test_init_with_config_file_and_parameters(self, configfiles):
+        configfiles.add_file("""
+        [Credentials]
+        aws_access_key_id = ABCDEFGH12345
+        aws_secret_access_key = abcdegf43""") 
+        API(locale='de')
+
+    def test_init_with_incomplete_config_file(self, configfiles):
+        configfiles.add_file("""
+        [Credentials]
+        aws_access_key_id = ABCDEFGH12345
+        aws_secret_access_key = abcdegf43""") 
+        pytest.raises(UnknownLocale, API)
+
+
 def pytest_generate_tests(metafunc):
     # called once per each test function
     if 'api' in metafunc.funcargnames and 'operation' in metafunc.funcargnames:
