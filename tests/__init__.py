@@ -3,19 +3,11 @@ import imp
 import os.path
 
 from amazonproduct import HOSTS
-
-_here = os.path.abspath(os.path.dirname(__file__))
-
-
-try:
-    fp, path, desc = imp.find_module('config', [_here])
-    _config = imp.load_module('config', fp, _here, desc)
-except ImportError:
-    _config = None
+from amazonproduct.utils import load_config
 
 #: Directory containing XML responses for API versions (one directory for each
 #: API version)
-XML_TEST_DIR = _here
+XML_TEST_DIR = os.path.abspath(os.path.dirname(__file__))
 
 #: Versions of Amazon API to be tested against 
 TESTABLE_API_VERSIONS = [
@@ -26,17 +18,6 @@ TESTABLE_API_VERSIONS = [
 #: Locales to test against. 
 TESTABLE_LOCALES = HOSTS.keys()
 
-def get_config_value(key, default=None):
-    """
-    Loads value from config.py or from environment variable or return default
-    (in that order).
-    """
-    try:
-        return getattr(_config, key)
-    except AttributeError:
-        return os.environ.get(key, default)
-
-AWS_KEY = get_config_value('AWS_KEY', '')
-SECRET_KEY = get_config_value('SECRET_KEY', '')
-OVERWRITE_TESTS = get_config_value('OVERWRITE_TESTS', '')
-
+_config = load_config()
+AWS_KEY = _config.get('access_key', '')
+SECRET_KEY = _config.get('secret_key', '')
