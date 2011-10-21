@@ -146,6 +146,17 @@ def pytest_funcarg__api(request):
     return api
 
 
+class TestAPICredentials (object):
+
+    """
+    Check that API will complain about missing credentials.
+    """
+
+    def test_without_credentials_fails(self, api):
+        api.access_key = api.secret_key = ''
+        pytest.raises(MissingClientTokenId, api.item_lookup, '???')
+
+
 class TestCorrectVersion (object):
 
     """
