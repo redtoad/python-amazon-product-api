@@ -112,7 +112,7 @@ class API (object):
     LxmlObjectifyResponseProcessor class.
     """
 
-    VERSION = '2010-12-01' #: supported Amazon API version
+    VERSION = '2011-08-01' #: supported Amazon API version
     REQUESTS_PER_SECOND = 1 #: max requests per second
     TIMEOUT = 5 #: timeout in seconds
 
@@ -738,6 +738,10 @@ class API (object):
     transaction_lookup = deprecated_operation
     vehicle_part_lookup = vehicle_part_search = deprecated_operation
     vehicle_search = deprecated_operation
+
+    # deprecated since 2011-08-01
+    seller_lookup = deprecated_operation
+    seller_listing_lookup = seller_listing_search = deprecated_operation
 
     #: MultiOperation is supported outside this API
     multi_operation = None

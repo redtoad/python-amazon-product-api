@@ -638,6 +638,12 @@ class TestDeprecatedOperations (object):
     * VehiclePartLookup
     * VehiclePartSearch
     * VehicleSearch
+
+    and the following after October 25, 2011:
+
+    * SellerLookup
+    * SellerListingLookup
+    * SellerListingSearch 
     """
 
     DEPRECATED_OPERATIONS = [
@@ -646,11 +652,14 @@ class TestDeprecatedOperations (object):
         'Help',
         'ListLookup',
         'ListSearch',
+        'SellerLookup',
+        'SellerListingLookup',
+        'SellerListingSearch', 
         'TagLookup',
         'TransactionLookup',
         'VehiclePartLookup',
         'VehiclePartSearch',
-        'VehicleSearch', 
+        'VehicleSearch',
     ]
 
     def test_calling_deprecated_operations(self, api):
