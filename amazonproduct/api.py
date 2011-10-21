@@ -242,6 +242,10 @@ class API (object):
             if e.code == 'MissingClientTokenId':
                 raise MissingClientTokenId
 
+            if e.code == 'AWS.MissingParameters':
+                m = self._reg('missing-parameters').search(e.msg)
+                raise MissingParameters(m.group('parameter'))
+
             if e.code == 'RequestThrottled':
                 raise TooManyRequests
 

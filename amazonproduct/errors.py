@@ -7,12 +7,13 @@ import re
 
 __all__ = [
     'AWSError', 'CartInfoMismatch', 'DEFAULT_ERROR_REGS',
-    'InvalidClientTokenId', 'MissingClientTokenId', 'DeprecatedOperation',
-    'InvalidCartId', 'InvalidCartItem', 'InvalidListType', 'InvalidOperation',
-    'InvalidParameterCombination', 'InvalidParameterValue',
-    'InvalidResponseGroup', 'InvalidSearchIndex', 'ItemAlreadyInCart',
-    'JAPANESE_ERROR_REGS', 'NoExactMatchesFound', 'NoSimilarityForASIN',
-    'NotEnoughParameters', 'TooManyRequests', 'UnknownLocale'
+    'InvalidClientTokenId', 'MissingClientTokenId', 'MissingParameters',
+    'DeprecatedOperation', 'InvalidCartId', 'InvalidCartItem',
+    'InvalidListType', 'InvalidOperation', 'InvalidParameterCombination',
+    'InvalidParameterValue', 'InvalidResponseGroup', 'InvalidSearchIndex',
+    'ItemAlreadyInCart', 'JAPANESE_ERROR_REGS', 'NoExactMatchesFound',
+    'NoSimilarityForASIN', 'NotEnoughParameters', 'TooManyRequests',
+    'UnknownLocale'
 ]
 
 class UnknownLocale (Exception):
@@ -39,6 +40,12 @@ class InvalidClientTokenId (Exception):
 class MissingClientTokenId (Exception):
     """
     Request must contain AWSAccessKeyId or X.509 certificate.
+    """
+
+class MissingParameters (Exception):
+    """
+    Your request is missing required parameters. Required parameters include
+    XXX.
     """
 
 class InvalidSearchIndex (Exception):
@@ -165,6 +172,10 @@ DEFAULT_ERROR_REGS = {
 
     'already-in-cart' : re.compile(
         'The item you specified, (?P<item>.*?), is already in your cart.'),
+
+    'missing-parameters': re.compile(
+        'Your request is missing required parameters. Required parameters '
+        'include (?P<parameter>\w+).'),
 }
 
 JAPANESE_ERROR_REGS = {
@@ -194,5 +205,12 @@ JAPANESE_ERROR_REGS = {
         u'\u6307\u5b9a\u3055\u308c\u305f(?P<item>.*?)\u306f\u3001\u3059\u3067'
         u'\u306b\u30b7\u30e7\u30c3\u30d4\u30f3\u30b0\u30ab\u30fc\u30c8\u306e'
         u'\u4e2d\u306b\u5165\u3063\u3066\u3044\u307e\u3059\u3002'),
+
+    'missing-parameters': re.compile(
+        u'\u30ea\u30af\u30a8\u30b9\u30c8\u306b\u306f\u3001\u5fc5\u8981\u306a'
+        u'\u30d1\u30e9\u30e1\u30fc\u30bf\u304c\u542b\u307e\u308c\u3066\u3044'
+        u'\u307e\u305b\u3093\u3002\u5fc5\u8981\u306a\u30d1\u30e9\u30e1\u30fc'
+        u'\u30bf\u306b\u306f\u3001(?P<parameter>\w+)\u306a\u3069\u304c\u3042'
+        u'\u308a\u307e\u3059\u3002'),
 }
 
