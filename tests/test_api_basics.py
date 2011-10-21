@@ -60,19 +60,6 @@ def pytest_generate_tests(metafunc):
                     param={'operation' : operation, 'version' : version,
                            'wsdl_path' : wsdl})
 
-def pytest_funcarg__server(request):
-    def setup():
-        try:
-            localserver = request.config.pluginmanager.getplugin('localserver')
-        except KeyError:
-            raise pytest.skip('This test needs plugin pytest-localserver!')
-        server = localserver.http.Server()
-        server.start()
-        return server
-    def teardown(server):
-        server.stop()
-    return request.cached_setup(setup, teardown, 'module')
-
 def pytest_funcarg__api(request):
     server = request.getfuncargvalue('server')
     api = API('XXX', 'XXX', 'uk') # locale does not matter here!

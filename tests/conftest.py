@@ -18,3 +18,20 @@ def pytest_addoption(parser):
             'previously cached XML file: one of no (default)|missing|outdated|'
             'all.')
 
+def pytest_funcarg__server(request):
+    """
+    Is the same as funcarg `httpserver` from plugin pytest-localserver with the
+    difference that it has a module-wide scope.
+    """
+    def setup():
+        try:
+            localserver = request.config.pluginmanager.getplugin('localserver')
+        except KeyError:
+            raise pytest.skip('This test needs plugin pytest-localserver!')
+        server = localserver.http.Server()
+        server.start()
+        return server
+    def teardown(server):
+        server.stop()
+    return request.cached_setup(setup, teardown, 'module')
+
