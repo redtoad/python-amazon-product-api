@@ -128,7 +128,7 @@ def pytest_funcarg__api(request):
                         arg.set('Value', 'X'*15)
                 content = lxml.etree.tostring(tree, pretty_print=True)
                 if 'MissingClientTokenId' in content:
-                    raise pytest.error('Cannot fetch XML response without credentials!')
+                    raise pytest.fail('Cannot fetch XML response without credentials!')
                 if not os.path.exists(os.path.dirname(path)):
                     os.mkdir(os.path.dirname(path))
                 open(path, 'wb').write(content)
