@@ -111,7 +111,7 @@ class Cart (object):
         return cart
 
 #: list of changeable and/or sensitive (thus ignorable) request arguments
-IGNORABLE_REQUEST_ARGUMENTS = ('Signature', 'AWSAccessKeyId', 'Timestamp')
+IGNORABLE_REQUEST_ARGUMENTS = ('Signature', 'AWSAccessKeyId', 'Timestamp', 'AssociateTag')
 
 def arguments_from_cached_xml(xml):
     """
