@@ -125,9 +125,9 @@ class API (object):
         :param locale: localise results by using one value from ``LOCALES``.
         :param processor: result processing function (``None`` if unsure).
         """
-        self.access_key = access_key_id
-        self.secret_key = secret_access_key
-        self.associate_tag = associate_tag
+        self.access_key = access_key_id or ''
+        self.secret_key = secret_access_key or ''
+        self.associate_tag = associate_tag or ''
         self.locale = locale
 
         # load missing valued from config file
