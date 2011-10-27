@@ -131,7 +131,8 @@ def pytest_funcarg__api(request):
                 # overwrite sensitive information in XML document.
                 for arg in root.xpath('//aws:Argument',
                         namespaces={'aws': root.nsmap[None]}):
-                    if arg.get('Name') in ('Signature', 'AWSAccessKeyId'):
+                    if arg.get('Name') in ('Signature', 'AWSAccessKeyId',
+                                                             'AssociateTag'):
                         arg.set('Value', 'X'*15)
                 content = lxml.etree.tostring(root, pretty_print=True)
                 if 'MissingClientTokenId' in content:
