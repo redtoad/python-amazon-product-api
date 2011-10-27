@@ -3,6 +3,7 @@ import lxml.etree
 import os
 import pytest
 import re
+import urllib2
 
 from tests import utils
 from tests import XML_TEST_DIR
@@ -119,14 +120,20 @@ def pytest_funcarg__api(request):
                     # XML for error messages have no Argument elements!
                     pass
             except ResponseRequired:
-                tree = lxml.etree.parse(url)
+                # fetch XML via urllib2 rather than directly via
+                # lxml.etree.parse() to avoid, for instance, problems with HTTP
+                # 403 errors
+                try:
+                    xml = urllib2.urlopen(url).read()
+                except urllib2.HTTPError, e:
+                    xml = e.read()
+                root = lxml.etree.fromstring(xml)
                 # overwrite sensitive information in XML document.
-                root = tree.getroot()
                 for arg in root.xpath('//aws:Argument',
                         namespaces={'aws': root.nsmap[None]}):
                     if arg.get('Name') in ('Signature', 'AWSAccessKeyId'):
                         arg.set('Value', 'X'*15)
-                content = lxml.etree.tostring(tree, pretty_print=True)
+                content = lxml.etree.tostring(root, pretty_print=True)
                 if 'MissingClientTokenId' in content:
                     raise pytest.fail('Cannot fetch XML response without credentials!')
                 if not os.path.exists(os.path.dirname(path)):
