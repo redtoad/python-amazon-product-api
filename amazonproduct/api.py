@@ -191,7 +191,7 @@ class API (object):
         msg += '\n' + args
 
         signature = quote(
-            b64encode(hmac.new(self.secret_key, msg, sha256).digest()))
+            b64encode(hmac.new(self.secret_key or '', msg, sha256).digest()))
 
         url = 'http://%s/onca/xml?%s&Signature=%s' % (host, args, signature)
         return url
