@@ -556,7 +556,7 @@ class TestCartModify (object):
         pytest.raises(CartInfoMismatch, api.cart_modify, cart.cart_id, '???', {'0201896834' : 1})
 
     def test_modifying_empty_items_fails(self, api, cart):
-        pytest.raises(ValueError, api.cart_modify, cart.cart_id, cart.hmac, {})
+        pytest.raises(MissingParameters, api.cart_modify, cart.cart_id, cart.hmac, {})
 
     def test_modifying_negative_item_quantity_fails(self, api, cart):
         pytest.raises(ValueError, api.cart_modify, cart.cart_id, cart.hmac, {'0201896834' : -1})
