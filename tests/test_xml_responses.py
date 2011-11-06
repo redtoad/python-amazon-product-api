@@ -513,7 +513,7 @@ class TestCartAdd (object):
         pytest.raises(CartInfoMismatch, api.cart_add, cart.cart_id, '???', {'0201896834' : 1})
 
     def test_adding_empty_items_fails(self, api, cart):
-        pytest.raises(ValueError, api.cart_add, cart.cart_id, cart.hmac, {})
+        pytest.raises(MissingParameters, api.cart_add, cart.cart_id, cart.hmac, {})
         pytest.raises(ValueError, api.cart_add, cart.cart_id, cart.hmac, {'0451462009' : 0})
 
     def test_adding_negative_item_quantity_fails(self, api, cart):
