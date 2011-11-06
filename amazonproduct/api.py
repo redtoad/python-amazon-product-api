@@ -260,7 +260,6 @@ class API (object):
 
             if e.code == 'AWS.InvalidEnumeratedParameter':
                 m = self._reg('invalid-value').search(e.msg)
-                print m.groups(), e.msg
                 if m is not None:
                     if m.group('parameter') == 'ResponseGroup':
                         raise InvalidResponseGroup()
