@@ -26,6 +26,17 @@ else:
     from urllib import quote
     from Crypto.Hash import SHA256 as sha256
 
+    # builtin function all() is only available from Python 2.5 onward!
+    def all(iterable):
+        """
+        Returns True if all elements of the iterable are true (or if the
+        iterable is empty).
+        """
+        for element in iterable:
+            if not element:
+                return False
+        return True
+
 from amazonproduct.version import VERSION
 from amazonproduct.errors import *
 from amazonproduct.paginators import paginate
