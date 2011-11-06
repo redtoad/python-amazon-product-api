@@ -82,6 +82,8 @@ class Cart (object):
         return sum([item.quantity for item in self.items])
 
     def __repr__(self):
+        if self.subtotal is None:
+            return '<Cart %s %s>' % (self.cart_id, self.items)
         return '<Cart %s %s %.2f %s>' % (self.cart_id, self.items, 
             self.subtotal[0]/100.0, self.subtotal[1])
 
