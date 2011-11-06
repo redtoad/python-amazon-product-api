@@ -135,7 +135,10 @@ def pytest_funcarg__api(request):
                                                              'AssociateTag'):
                         arg.set('Value', 'X'*15)
                 content = lxml.etree.tostring(root, pretty_print=True)
-                if 'MissingClientTokenId' in content:
+                # complain loudly about missing credentials
+                # UNLESS it was actually on purpose!
+                if ('MissingClientTokenId' in content
+                and getattr(request.function, 'refetch', True)):
                     raise pytest.fail('Cannot fetch XML response without credentials!')
                 if not os.path.exists(os.path.dirname(path)):
                     os.mkdir(os.path.dirname(path))
@@ -163,6 +166,9 @@ class TestAPICredentials (object):
         api.access_key = api.secret_key = ''
         pytest.raises(MissingClientTokenId, api.item_lookup, '???')
 
+    # Don't complain about missing credentials!
+    test_without_credentials_fails.refetch = False
+    
 
 class TestCorrectVersion (object):
 
