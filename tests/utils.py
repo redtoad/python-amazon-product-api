@@ -89,7 +89,7 @@ class Cart (object):
         for item in self.items:
             if asin == item.asin:
                 return item.item_id
-        raise None
+        return None
 
     @staticmethod
     def from_xml(node):
