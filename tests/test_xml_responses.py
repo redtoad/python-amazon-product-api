@@ -461,7 +461,7 @@ class TestCartCreate (object):
     """
 
     def test_creating_basket_with_empty_items_fails(self, api):
-        pytest.raises(ValueError, api.cart_create, {})
+        pytest.raises(MissingParameters, api.cart_create, {}) # Items missing
         pytest.raises(ValueError, api.cart_create, {'0451462009' : 0})
 
     def test_creating_basket_with_negative_item_quantity_fails(self, api):
