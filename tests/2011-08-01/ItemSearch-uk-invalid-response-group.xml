@@ -1,0 +1,69 @@
+<ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+    </HTTPHeaders>
+    <RequestId>639ef0a4-a1c3-482f-a30f-d52902387699</RequestId>
+    <Arguments>
+      <Argument Name="Operation" Value="ItemSearch"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="ItemPage" Value="1"/>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Version" Value="2011-08-01"/>
+      <Argument Name="limit" Value="5"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2011-11-08T21:14:43Z"/>
+      <Argument Name="ResponseGroup" Value="???"/>
+      <Argument Name="SearchIndex" Value="All"/>
+    </Arguments>
+    <RequestProcessingTime>0.0026140000000000</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>False</IsValid>
+      <ItemSearchRequest>
+        <ItemPage>1</ItemPage>
+        <ResponseGroup>???</ResponseGroup>
+        <SearchIndex>All</SearchIndex>
+      </ItemSearchRequest>
+      <Errors>
+        <Error>
+          <Code>AWS.InvalidEnumeratedParameter</Code>
+          <Message>The value you specified for ResponseGroup is invalid. Valid values include [
+    		'Tags', 'Help', 'ListMinimum', 'VariationSummary', 'VariationMatrix',
+    		'TransactionDetails', 'VariationMinimum', 'VariationImages',
+    		'PartBrandBinsSummary', 'CustomerFull', 'CartNewReleases',
+    		'ItemIds', 'SalesRank', 'TagsSummary', 'Fitments',
+    		'Subjects', 'Medium', 'ListmaniaLists',
+    		'PartBrowseNodeBinsSummary', 'TopSellers', 'Request',
+    		'HasPartCompatibility', 'PromotionDetails', 'ListFull',
+    		'Small', 'Seller', 'OfferFull', 'Accessories',
+    		'VehicleMakes', 'MerchantItemAttributes', 'TaggedItems',
+    		'VehicleParts', 'BrowseNodeInfo', 'ItemAttributes',
+    		'PromotionalTag', 'VehicleOptions', 'ListItems', 'Offers',
+    		'TaggedGuides', 'NewReleases', 'VehiclePartFit',
+    		'OfferSummary', 'VariationOffers', 'CartSimilarities',
+    		'Reviews', 'ShippingCharges', 'ShippingOptions', 'EditorialReview',
+    		'CustomerInfo', 'PromotionSummary', 'BrowseNodes',
+    		'PartnerTransactionDetails', 'VehicleYears', 'SearchBins',
+    		'VehicleTrims', 'Similarities', 'AlternateVersions',
+    		'SearchInside', 'CustomerReviews', 'SellerListing',
+    		'OfferListings', 'Cart', 'TaggedListmaniaLists',
+    		'VehicleModels', 'ListInfo', 'Large', 'CustomerLists',
+    		'Tracks', 'CartTopSellers', 'Images', 'Variations',
+    	'RelatedItems','Collections'
+    	].</Message>
+        </Error>
+        <Error>
+          <Code>AWS.InvalidResponseGroup</Code>
+          <Message>Your ResponseGroup parameter is invalid. Valid response groups for ItemLookup requests include ['Request','ItemIds','Small','Medium','Large','Offers','OfferFull','OfferSummary','OfferListings','PromotionSummary','PromotionDetails','VariationMinimum','VariationSummary','VariationMatrix','VariationOffers','Variations','TagsSummary','Tags','ItemAttributes','MerchantItemAttributes','Tracks','Accessories','EditorialReview','SalesRank','BrowseNodes','Images','Similarities','Subjects','Reviews','ListmaniaLists','SearchInside','PromotionalTag','SearchBins','AlternateVersions','Collections','RelatedItems','ShippingCharges','ShippingOptions'].</Message>
+        </Error>
+        <Error>
+          <Code>AWS.MinimumParameterRequirement</Code>
+          <Message>Your request should have atleast 1 of the following parameters: 'Keywords','Title','Power','BrowseNode','Artist','Author','Actor','Director','AudienceRating','Manufacturer','MusicLabel','Composer','Publisher','Brand','Conductor','Orchestra','TextStream','Cuisine','City','Neighborhood'.</Message>
+        </Error>
+      </Errors>
+    </Request>
+  </Items>
+</ItemSearchResponse>

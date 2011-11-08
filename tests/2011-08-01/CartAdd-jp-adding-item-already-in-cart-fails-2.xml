@@ -1,0 +1,96 @@
+<CartAddResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+    </HTTPHeaders>
+    <RequestId>1RFVK7G7G3A3CSWN46QA</RequestId>
+    <Arguments>
+      <Argument Name="Timestamp" Value="2011-11-08T21:46:50Z"/>
+      <Argument Name="Version" Value="2011-08-01"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="CartId" Value="376-6827017-0134867"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Item.1.Quantity" Value="2"/>
+      <Argument Name="Operation" Value="CartAdd"/>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Item.1.ASIN" Value="0201896842"/>
+      <Argument Name="HMAC" Value="OjN3LDXA+9zIOEm4GK6/XDGpSIE="/>
+    </Arguments>
+    <RequestProcessingTime>0.0832221508026123</RequestProcessingTime>
+  </OperationRequest>
+  <Cart>
+    <Request>
+      <IsValid>True</IsValid>
+      <CartAddRequest>
+        <CartId>376-6827017-0134867</CartId>
+        <HMAC>OjN3LDXA+9zIOEm4GK6/XDGpSIE=</HMAC>
+        <Items>
+          <Item>
+            <ASIN>0201896842</ASIN>
+            <Quantity>2</Quantity>
+          </Item>
+        </Items>
+      </CartAddRequest>
+      <Errors>
+        <Error>
+          <Code>AWS.ECommerceService.ItemAlreadyInCart</Code>
+          <Message>&#12522;&#12463;&#12456;&#12473;&#12488;&#12391;&#21830;&#21697;&#12392;&#12375;&#12390;&#25351;&#23450;&#12373;&#12428;&#12383;0201896842&#12399;&#12289;&#12377;&#12391;&#12395;&#12471;&#12519;&#12483;&#12500;&#12531;&#12464;&#12459;&#12540;&#12488;&#12398;&#20013;&#12395;&#20837;&#12387;&#12390;&#12356;&#12414;&#12377;&#12290;</Message>
+        </Error>
+      </Errors>
+    </Request>
+    <CartId>376-6827017-0134867</CartId>
+    <HMAC>OjN3LDXA+9zIOEm4GK6/XDGpSIE=</HMAC>
+    <URLEncodedHMAC>OjN3LDXA%2B9zIOEm4GK6%2FXDGpSIE%3D</URLEncodedHMAC>
+    <PurchaseURL>https://www.amazon.co.jp/gp/cart/aws-merge.html?cart-id=376-6827017-0134867%26associate-id=redtoad-21%26hmac=OjN3LDXA%2B9zIOEm4GK6/XDGpSIE=%26SubscriptionId=AKIAJTJID3GQ4PAFYOEQ%26MergeCart=False</PurchaseURL>
+    <MobileCartURL>http://www.amazon.co.jp/gp/aw/rcart?cart-id=376-6827017-0134867%26associate-id=redtoad-21%26hmac=OjN3LDXA%2B9zIOEm4GK6/XDGpSIE=%26SubscriptionId=AKIAJTJID3GQ4PAFYOEQ%26MergeCart=False%26uid=NULLGWDOCOMO</MobileCartURL>
+    <SubTotal>
+      <Amount>16638</Amount>
+      <CurrencyCode>JPY</CurrencyCode>
+      <FormattedPrice>&#65509; 16,638</FormattedPrice>
+    </SubTotal>
+    <CartItems>
+      <SubTotal>
+        <Amount>16638</Amount>
+        <CurrencyCode>JPY</CurrencyCode>
+        <FormattedPrice>&#65509; 16,638</FormattedPrice>
+      </SubTotal>
+      <CartItem>
+        <CartItemId>U2WDLE16L0VGBK</CartItemId>
+        <ASIN>0201896842</ASIN>
+        <SellerNickname>Amazon.co.jp</SellerNickname>
+        <Quantity>2</Quantity>
+        <Title>Art of Computer Programming, Volume 2: Seminumerical Algorithms (Art of Computer Programming Volume 2)</Title>
+        <ProductGroup>Book</ProductGroup>
+        <Price>
+          <Amount>5546</Amount>
+          <CurrencyCode>JPY</CurrencyCode>
+          <FormattedPrice>&#65509; 5,546</FormattedPrice>
+        </Price>
+        <ItemTotal>
+          <Amount>11092</Amount>
+          <CurrencyCode>JPY</CurrencyCode>
+          <FormattedPrice>&#65509; 11,092</FormattedPrice>
+        </ItemTotal>
+      </CartItem>
+      <CartItem>
+        <CartItemId>U29KZN7NZ01S6J</CartItemId>
+        <ASIN>0201896834</ASIN>
+        <SellerNickname>Amazon.co.jp</SellerNickname>
+        <Quantity>1</Quantity>
+        <Title>Art of Computer Programming, Volume 1: Fundamental Algorithms (Art of Computer Programming Volume 1)</Title>
+        <ProductGroup>Book</ProductGroup>
+        <Price>
+          <Amount>5546</Amount>
+          <CurrencyCode>JPY</CurrencyCode>
+          <FormattedPrice>&#65509; 5,546</FormattedPrice>
+        </Price>
+        <ItemTotal>
+          <Amount>5546</Amount>
+          <CurrencyCode>JPY</CurrencyCode>
+          <FormattedPrice>&#65509; 5,546</FormattedPrice>
+        </ItemTotal>
+      </CartItem>
+    </CartItems>
+  </Cart>
+</CartAddResponse>

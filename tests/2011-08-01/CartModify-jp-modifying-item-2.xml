@@ -1,0 +1,72 @@
+<CartModifyResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+    </HTTPHeaders>
+    <RequestId>02CKBMCA9K28C7DHNVYK</RequestId>
+    <Arguments>
+      <Argument Name="Timestamp" Value="2011-11-08T21:47:44Z"/>
+      <Argument Name="Version" Value="2011-08-01"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Item.1.CartItemId" Value="U2WDLE16L0VGBK"/>
+      <Argument Name="CartId" Value="376-3845384-7388458"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Item.1.Quantity" Value="0"/>
+      <Argument Name="Operation" Value="CartModify"/>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="HMAC" Value="N8avwzTbfw0W47jDVSW3XBzDOR0="/>
+    </Arguments>
+    <RequestProcessingTime>0.0724210739135742</RequestProcessingTime>
+  </OperationRequest>
+  <Cart>
+    <Request>
+      <IsValid>True</IsValid>
+      <CartModifyRequest>
+        <CartId>376-3845384-7388458</CartId>
+        <HMAC>N8avwzTbfw0W47jDVSW3XBzDOR0=</HMAC>
+        <Items>
+          <Item>
+            <CartItemId>U2WDLE16L0VGBK</CartItemId>
+            <Quantity>0</Quantity>
+          </Item>
+        </Items>
+      </CartModifyRequest>
+    </Request>
+    <CartId>376-3845384-7388458</CartId>
+    <HMAC>N8avwzTbfw0W47jDVSW3XBzDOR0=</HMAC>
+    <URLEncodedHMAC>N8avwzTbfw0W47jDVSW3XBzDOR0%3D</URLEncodedHMAC>
+    <PurchaseURL>https://www.amazon.co.jp/gp/cart/aws-merge.html?cart-id=376-3845384-7388458%26associate-id=redtoad-21%26hmac=N8avwzTbfw0W47jDVSW3XBzDOR0=%26SubscriptionId=AKIAJTJID3GQ4PAFYOEQ%26MergeCart=False</PurchaseURL>
+    <MobileCartURL>http://www.amazon.co.jp/gp/aw/rcart?cart-id=376-3845384-7388458%26associate-id=redtoad-21%26hmac=N8avwzTbfw0W47jDVSW3XBzDOR0=%26SubscriptionId=AKIAJTJID3GQ4PAFYOEQ%26MergeCart=False%26uid=NULLGWDOCOMO</MobileCartURL>
+    <SubTotal>
+      <Amount>5546</Amount>
+      <CurrencyCode>JPY</CurrencyCode>
+      <FormattedPrice>&#65509; 5,546</FormattedPrice>
+    </SubTotal>
+    <CartItems>
+      <SubTotal>
+        <Amount>5546</Amount>
+        <CurrencyCode>JPY</CurrencyCode>
+        <FormattedPrice>&#65509; 5,546</FormattedPrice>
+      </SubTotal>
+      <CartItem>
+        <CartItemId>U29KZN7NZ01S6J</CartItemId>
+        <ASIN>0201896834</ASIN>
+        <SellerNickname>Amazon.co.jp</SellerNickname>
+        <Quantity>1</Quantity>
+        <Title>Art of Computer Programming, Volume 1: Fundamental Algorithms (Art of Computer Programming Volume 1)</Title>
+        <ProductGroup>Book</ProductGroup>
+        <Price>
+          <Amount>5546</Amount>
+          <CurrencyCode>JPY</CurrencyCode>
+          <FormattedPrice>&#65509; 5,546</FormattedPrice>
+        </Price>
+        <ItemTotal>
+          <Amount>5546</Amount>
+          <CurrencyCode>JPY</CurrencyCode>
+          <FormattedPrice>&#65509; 5,546</FormattedPrice>
+        </ItemTotal>
+      </CartItem>
+    </CartItems>
+  </Cart>
+</CartModifyResponse>
