@@ -1,19 +1,20 @@
 <BrowseNodeLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2010-12-01">
   <OperationRequest>
     <HTTPHeaders>
-      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.5pre1 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
     </HTTPHeaders>
-    <RequestId>19MR7M9YCZQ32FWGZJXB</RequestId>
+    <RequestId>14MPBX9D07BT7E29KD5E</RequestId>
     <Arguments>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
       <Argument Name="Service" Value="AWSECommerceService"/>
       <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
       <Argument Name="Operation" Value="BrowseNodeLookup"/>
       <Argument Name="BrowseNodeId" Value="468256"/>
       <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="Timestamp" Value="2011-01-27T11:58:40Z"/>
+      <Argument Name="Timestamp" Value="2011-11-08T21:56:20Z"/>
       <Argument Name="Version" Value="2010-12-01"/>
     </Arguments>
-    <RequestProcessingTime>0.0104348659515381</RequestProcessingTime>
+    <RequestProcessingTime>0.0104470252990723</RequestProcessingTime>
   </OperationRequest>
   <BrowseNodes>
     <Request>
@@ -73,10 +74,6 @@
         <BrowseNode>
           <BrowseNodeId>301145</BrowseNodeId>
           <Name>Livres &#224; petits prix</Name>
-        </BrowseNode>
-        <BrowseNode>
-          <BrowseNodeId>3498561</BrowseNodeId>
-          <Name>Manga Kana</Name>
         </BrowseNode>
         <BrowseNode>
           <BrowseNodeId>381592011</BrowseNodeId>

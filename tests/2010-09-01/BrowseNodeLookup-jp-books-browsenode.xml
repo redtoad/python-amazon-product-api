@@ -1,19 +1,20 @@
 <BrowseNodeLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2010-09-01">
   <OperationRequest>
     <HTTPHeaders>
-      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.4.1 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
     </HTTPHeaders>
-    <RequestId>1D3KS8KFSA5XJW2PPRZX</RequestId>
+    <RequestId>084ZGEZT03D9HDB8AGNX</RequestId>
     <Arguments>
-      <Argument Name="Timestamp" Value="2010-10-15T22:09:10Z"/>
+      <Argument Name="Timestamp" Value="2011-11-08T21:56:27Z"/>
       <Argument Name="Version" Value="2010-09-01"/>
       <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
       <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
       <Argument Name="Service" Value="AWSECommerceService"/>
       <Argument Name="Operation" Value="BrowseNodeLookup"/>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
       <Argument Name="BrowseNodeId" Value="465610"/>
     </Arguments>
-    <RequestProcessingTime>0.0123770236968994</RequestProcessingTime>
+    <RequestProcessingTime>0.0127379894256592</RequestProcessingTime>
   </OperationRequest>
   <BrowseNodes>
     <Request>
@@ -85,7 +86,7 @@
         </BrowseNode>
         <BrowseNode>
           <BrowseNodeId>492090</BrowseNodeId>
-          <Name>&#26053;&#34892;&#12460;&#12452;&#12489;</Name>
+          <Name>&#26053;&#34892;&#12460;&#12452;&#12489;&#12539;&#12510;&#12483;&#12503;</Name>
         </BrowseNode>
         <BrowseNode>
           <BrowseNodeId>466302</BrowseNodeId>
@@ -97,7 +98,7 @@
         </BrowseNode>
         <BrowseNode>
           <BrowseNodeId>466306</BrowseNodeId>
-          <Name>&#12371;&#12393;&#12418;</Name>
+          <Name>&#32117;&#26412;&#12539;&#20816;&#31461;&#26360;</Name>
         </BrowseNode>
         <BrowseNode>
           <BrowseNodeId>466280</BrowseNodeId>
@@ -109,7 +110,7 @@
         </BrowseNode>
         <BrowseNode>
           <BrowseNodeId>492266</BrowseNodeId>
-          <Name>&#12466;&#12540;&#12512;&#25915;&#30053;&#26412;</Name>
+          <Name>&#12466;&#12540;&#12512;&#25915;&#30053;&#12539;&#12466;&#12540;&#12512;&#12502;&#12483;&#12463;</Name>
         </BrowseNode>
         <BrowseNode>
           <BrowseNodeId>466296</BrowseNodeId>

@@ -1,19 +1,20 @@
 <BrowseNodeLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2010-12-01">
   <OperationRequest>
     <HTTPHeaders>
-      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.5pre1 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
     </HTTPHeaders>
-    <RequestId>06E2DWZMH3518ZQ0KEYA</RequestId>
+    <RequestId>0SB8W2J9B9G1NC7TJBCV</RequestId>
     <Arguments>
       <Argument Name="Service" Value="AWSECommerceService"/>
-      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
       <Argument Name="Operation" Value="BrowseNodeLookup"/>
+      <Argument Name="Timestamp" Value="2011-11-08T21:56:21Z"/>
+      <Argument Name="Version" Value="2010-12-01"/>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
       <Argument Name="BrowseNodeId" Value="1000"/>
       <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="Timestamp" Value="2011-01-27T11:58:46Z"/>
-      <Argument Name="Version" Value="2010-12-01"/>
     </Arguments>
-    <RequestProcessingTime>0.0121619701385498</RequestProcessingTime>
+    <RequestProcessingTime>0.0155339241027832</RequestProcessingTime>
   </OperationRequest>
   <BrowseNodes>
     <Request>
@@ -138,6 +139,10 @@
         <BrowseNode>
           <BrowseNodeId>27</BrowseNodeId>
           <Name>Travel</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>3248857011</BrowseNodeId>
+          <Name>Calendars</Name>
         </BrowseNode>
       </Children>
       <Ancestors>

@@ -1,19 +1,20 @@
 <BrowseNodeLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2010-11-01">
   <OperationRequest>
     <HTTPHeaders>
-      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.4.1 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
     </HTTPHeaders>
-    <RequestId>01FEPKVVVWT894J9T6XM</RequestId>
+    <RequestId>0ZANZ2QAGK7ETHMX9QFP</RequestId>
     <Arguments>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
       <Argument Name="Service" Value="AWSECommerceService"/>
       <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
       <Argument Name="Operation" Value="BrowseNodeLookup"/>
       <Argument Name="BrowseNodeId" Value="541686"/>
       <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="Timestamp" Value="2011-01-15T18:02:51Z"/>
+      <Argument Name="Timestamp" Value="2011-11-08T21:56:23Z"/>
       <Argument Name="Version" Value="2010-11-01"/>
     </Arguments>
-    <RequestProcessingTime>0.012408971786499</RequestProcessingTime>
+    <RequestProcessingTime>0.0123779773712158</RequestProcessingTime>
   </OperationRequest>
   <BrowseNodes>
     <Request>
@@ -126,10 +127,6 @@
         <BrowseNode>
           <BrowseNodeId>298002</BrowseNodeId>
           <Name>Reise &amp; Abenteuer</Name>
-        </BrowseNode>
-        <BrowseNode>
-          <BrowseNodeId>188795</BrowseNodeId>
-          <Name>Religion &amp; Esoterik</Name>
         </BrowseNode>
         <BrowseNode>
           <BrowseNodeId>340513031</BrowseNodeId>
