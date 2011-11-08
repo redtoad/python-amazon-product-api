@@ -54,10 +54,7 @@ class Cart (object):
             item = Cart.Item()
             item.item_id = node.CartItemId.pyval
             item.asin = node.ASIN.pyval
-            item.merchant_id = node.MerchantId.pyval
-            item.seller = (
-                node.SellerId.pyval, 
-                node.SellerNickname.pyval)
+            item.seller = node.SellerNickname.pyval
             item.quantity = node.Quantity.pyval
             item.title = node.Title.pyval
             item.product_group = node.ProductGroup.pyval
