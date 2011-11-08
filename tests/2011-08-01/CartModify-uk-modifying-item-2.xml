@@ -1,0 +1,71 @@
+<CartModifyResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+    </HTTPHeaders>
+    <RequestId>12RXTQ8N43HWBWJKW8PZ</RequestId>
+    <Arguments>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Item.1.Quantity" Value="0"/>
+      <Argument Name="Item.1.CartItemId" Value="U1KDP0UOUZ8Q17"/>
+      <Argument Name="HMAC" Value="fYqFc9nw2VfoUnrqT00g1JRztXI="/>
+      <Argument Name="Operation" Value="CartModify"/>
+      <Argument Name="CartId" Value="280-8537880-9790325"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2011-11-08T21:47:47Z"/>
+      <Argument Name="Version" Value="2011-08-01"/>
+    </Arguments>
+    <RequestProcessingTime>0.0983321666717529</RequestProcessingTime>
+  </OperationRequest>
+  <Cart>
+    <Request>
+      <IsValid>True</IsValid>
+      <CartModifyRequest>
+        <CartId>280-8537880-9790325</CartId>
+        <HMAC>fYqFc9nw2VfoUnrqT00g1JRztXI=</HMAC>
+        <Items>
+          <Item>
+            <CartItemId>U1KDP0UOUZ8Q17</CartItemId>
+            <Quantity>0</Quantity>
+          </Item>
+        </Items>
+      </CartModifyRequest>
+    </Request>
+    <CartId>280-8537880-9790325</CartId>
+    <HMAC>fYqFc9nw2VfoUnrqT00g1JRztXI=</HMAC>
+    <URLEncodedHMAC>fYqFc9nw2VfoUnrqT00g1JRztXI%3D</URLEncodedHMAC>
+    <PurchaseURL>https://www.amazon.co.uk/gp/cart/aws-merge.html?cart-id=280-8537880-9790325%26associate-id=redtoad-21%26hmac=fYqFc9nw2VfoUnrqT00g1JRztXI=%26SubscriptionId=AKIAJTJID3GQ4PAFYOEQ%26MergeCart=False</PurchaseURL>
+    <SubTotal>
+      <Amount>4589</Amount>
+      <CurrencyCode>GBP</CurrencyCode>
+      <FormattedPrice>&#163;45.89</FormattedPrice>
+    </SubTotal>
+    <CartItems>
+      <SubTotal>
+        <Amount>4589</Amount>
+        <CurrencyCode>GBP</CurrencyCode>
+        <FormattedPrice>&#163;45.89</FormattedPrice>
+      </SubTotal>
+      <CartItem>
+        <CartItemId>U3CQZQPMGMHQZP</CartItemId>
+        <ASIN>0201896834</ASIN>
+        <SellerNickname>Amazon.co.uk</SellerNickname>
+        <Quantity>1</Quantity>
+        <Title>The Art of Computer Programming: Fundamental Algorithms v. 1</Title>
+        <ProductGroup>Book</ProductGroup>
+        <Price>
+          <Amount>4589</Amount>
+          <CurrencyCode>GBP</CurrencyCode>
+          <FormattedPrice>&#163;45.89</FormattedPrice>
+        </Price>
+        <ItemTotal>
+          <Amount>4589</Amount>
+          <CurrencyCode>GBP</CurrencyCode>
+          <FormattedPrice>&#163;45.89</FormattedPrice>
+        </ItemTotal>
+      </CartItem>
+    </CartItems>
+  </Cart>
+</CartModifyResponse>

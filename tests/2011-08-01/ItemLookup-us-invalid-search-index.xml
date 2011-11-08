@@ -1,0 +1,41 @@
+<ItemLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+    </HTTPHeaders>
+    <RequestId>da803c8e-4640-4c7d-bfbb-c3eb6e4aa94b</RequestId>
+    <Arguments>
+      <Argument Name="Operation" Value="ItemLookup"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="ItemId" Value="9780747532743"/>
+      <Argument Name="IdType" Value="ISBN"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2011-11-08T21:14:31Z"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="SearchIndex" Value="???"/>
+      <Argument Name="Version" Value="2011-08-01"/>
+    </Arguments>
+    <RequestProcessingTime>0.0022170000000000</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>False</IsValid>
+      <ItemLookupRequest>
+        <IdType>ISBN</IdType>
+        <ItemId>9780747532743</ItemId>
+        <ResponseGroup>Small</ResponseGroup>
+        <SearchIndex>???</SearchIndex>
+        <VariationPage>All</VariationPage>
+      </ItemLookupRequest>
+      <Errors>
+        <Error>
+          <Code>AWS.InvalidEnumeratedParameter</Code>
+          <Message>The value you specified for SearchIndex is invalid. Valid values include [
+				'All','Apparel','Appliances','ArtsAndCrafts','Automotive','Baby','Beauty','Blended','Books','Classical','DVD','DigitalMusic','Electronics','GiftCards','GourmetFood','Grocery','HealthPersonalCare','HomeGarden','Industrial','Jewelry','KindleStore','Kitchen','MP3Downloads','Magazines','Merchants','Miscellaneous','Music','MusicTracks','MusicalInstruments','MobileApps','OfficeProducts','OutdoorLiving','PCHardware','PetSupplies','Photo','Shoes','SilverMerchants','Software','SportingGoods','Tools','Toys','UnboxVideo','VHS','Video','VideoGames','Watches','Wireless','WirelessAccessories'
+				].</Message>
+        </Error>
+      </Errors>
+    </Request>
+  </Items>
+</ItemLookupResponse>

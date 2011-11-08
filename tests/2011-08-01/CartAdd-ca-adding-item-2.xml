@@ -1,0 +1,107 @@
+<CartAddResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+    </HTTPHeaders>
+    <RequestId>0JNX0SGC64W5DDAVAEWH</RequestId>
+    <Arguments>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Item.1.Quantity" Value="3"/>
+      <Argument Name="Operation" Value="CartAdd"/>
+      <Argument Name="Timestamp" Value="2011-11-08T21:46:56Z"/>
+      <Argument Name="Version" Value="2011-08-01"/>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Item.1.ASIN" Value="0201896850"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="HMAC" Value="Vgr3LTugCb3g7oi5qUvRmp88piQ="/>
+      <Argument Name="CartId" Value="190-6051697-6399821"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+    </Arguments>
+    <RequestProcessingTime>0.167913913726807</RequestProcessingTime>
+  </OperationRequest>
+  <Cart>
+    <Request>
+      <IsValid>True</IsValid>
+      <CartAddRequest>
+        <CartId>190-6051697-6399821</CartId>
+        <HMAC>Vgr3LTugCb3g7oi5qUvRmp88piQ=</HMAC>
+        <Items>
+          <Item>
+            <ASIN>0201896850</ASIN>
+            <Quantity>3</Quantity>
+          </Item>
+        </Items>
+      </CartAddRequest>
+    </Request>
+    <CartId>190-6051697-6399821</CartId>
+    <HMAC>Vgr3LTugCb3g7oi5qUvRmp88piQ=</HMAC>
+    <URLEncodedHMAC>Vgr3LTugCb3g7oi5qUvRmp88piQ%3D</URLEncodedHMAC>
+    <PurchaseURL>https://www.amazon.ca/gp/cart/aws-merge.html?cart-id=190-6051697-6399821%26associate-id=redtoad-21%26hmac=Vgr3LTugCb3g7oi5qUvRmp88piQ=%26SubscriptionId=AKIAJTJID3GQ4PAFYOEQ%26MergeCart=False</PurchaseURL>
+    <SubTotal>
+      <Amount>35174</Amount>
+      <CurrencyCode>CAD</CurrencyCode>
+      <FormattedPrice>CDN$ 351.74</FormattedPrice>
+    </SubTotal>
+    <CartItems>
+      <SubTotal>
+        <Amount>35174</Amount>
+        <CurrencyCode>CAD</CurrencyCode>
+        <FormattedPrice>CDN$ 351.74</FormattedPrice>
+      </SubTotal>
+      <CartItem>
+        <CartItemId>U2GSR45PLJRRI9</CartItemId>
+        <ASIN>0201896850</ASIN>
+        <SellerNickname>Amazon.ca</SellerNickname>
+        <Quantity>3</Quantity>
+        <Title>Art of Computer Programming, Volume 3: Sorting and Searching</Title>
+        <ProductGroup>Book</ProductGroup>
+        <Price>
+          <Amount>6301</Amount>
+          <CurrencyCode>CAD</CurrencyCode>
+          <FormattedPrice>CDN$ 63.01</FormattedPrice>
+        </Price>
+        <ItemTotal>
+          <Amount>18903</Amount>
+          <CurrencyCode>CAD</CurrencyCode>
+          <FormattedPrice>CDN$ 189.03</FormattedPrice>
+        </ItemTotal>
+      </CartItem>
+      <CartItem>
+        <CartItemId>U1BO8U3ZYW2PV6</CartItemId>
+        <ASIN>0201896842</ASIN>
+        <SellerNickname>Amazon.ca</SellerNickname>
+        <Quantity>2</Quantity>
+        <Title>Art of Computer Programming, Volume 2: Seminumerical Algorithms</Title>
+        <ProductGroup>Book</ProductGroup>
+        <Price>
+          <Amount>4976</Amount>
+          <CurrencyCode>CAD</CurrencyCode>
+          <FormattedPrice>CDN$ 49.76</FormattedPrice>
+        </Price>
+        <ItemTotal>
+          <Amount>9952</Amount>
+          <CurrencyCode>CAD</CurrencyCode>
+          <FormattedPrice>CDN$ 99.52</FormattedPrice>
+        </ItemTotal>
+      </CartItem>
+      <CartItem>
+        <CartItemId>U24U0TK50FRSUK</CartItemId>
+        <ASIN>0201896834</ASIN>
+        <SellerNickname>Amazon.ca</SellerNickname>
+        <Quantity>1</Quantity>
+        <Title>Art of Computer Programming, Volume 1: Fundamental Algorithms</Title>
+        <ProductGroup>Book</ProductGroup>
+        <Price>
+          <Amount>6319</Amount>
+          <CurrencyCode>CAD</CurrencyCode>
+          <FormattedPrice>CDN$ 63.19</FormattedPrice>
+        </Price>
+        <ItemTotal>
+          <Amount>6319</Amount>
+          <CurrencyCode>CAD</CurrencyCode>
+          <FormattedPrice>CDN$ 63.19</FormattedPrice>
+        </ItemTotal>
+      </CartItem>
+    </CartItems>
+  </Cart>
+</CartAddResponse>

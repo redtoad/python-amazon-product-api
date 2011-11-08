@@ -1,0 +1,61 @@
+<ItemLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+    </HTTPHeaders>
+    <RequestId>47c494bb-dabb-4061-a74c-1a38164a0aa4</RequestId>
+    <Arguments>
+      <Argument Name="Operation" Value="ItemLookup"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Version" Value="2011-08-01"/>
+      <Argument Name="ItemId" Value="9780747532743"/>
+      <Argument Name="IdType" Value="ISBN"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2011-11-08T21:14:28Z"/>
+      <Argument Name="SearchIndex" Value="All"/>
+    </Arguments>
+    <RequestProcessingTime>0.0263440000000000</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>True</IsValid>
+      <ItemLookupRequest>
+        <IdType>ISBN</IdType>
+        <ItemId>9780747532743</ItemId>
+        <ResponseGroup>Small</ResponseGroup>
+        <SearchIndex>All</SearchIndex>
+        <VariationPage>All</VariationPage>
+      </ItemLookupRequest>
+    </Request>
+    <Item>
+      <ASIN>0747532745</ASIN>
+      <DetailPageURL>http://www.amazon.ca/Potter-Philosophers-British-Childrens-Paperback/dp/0747532745%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0747532745</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.ca/gp/registry/wishlist/add-item.html%3Fasin.0%3D0747532745%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D0747532745</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.ca/gp/pdp/taf/0747532745%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D0747532745</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.ca/review/product/0747532745%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D0747532745</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.ca/gp/offer-listing/0747532745%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D0747532745</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>J.K. Rowling</Author>
+        <Manufacturer>Macmillan Distribution Limited</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Harry Potter and the Philosopher's Stone British Children's Paperback Edition</Title>
+      </ItemAttributes>
+    </Item>
+  </Items>
+</ItemLookupResponse>
