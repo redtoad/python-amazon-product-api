@@ -247,6 +247,9 @@ class API (object):
             return self.response_processor(fp)
         except AWSError, e:
 
+            if e.code == 'InternalError':
+                raise InternalError
+
             if e.code == 'InvalidClientTokenId':
                 raise InvalidClientTokenId
 
@@ -312,6 +315,8 @@ class API (object):
             # - 503 (Service unavailable)
             if e.code in (400, 403, 410, 503):
                 return self._parse(e.fp)
+            if e.code == 500:
+                raise InternalError
             raise
 
     def item_lookup(self, item_id, **params):

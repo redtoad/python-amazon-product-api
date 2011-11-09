@@ -8,7 +8,7 @@ import re
 __all__ = [
     'AWSError', 'CartInfoMismatch', 'DEFAULT_ERROR_REGS',
     'InvalidClientTokenId', 'MissingClientTokenId', 'MissingParameters',
-    'DeprecatedOperation', 'InvalidCartId', 'InvalidCartItem',
+    'DeprecatedOperation', 'InternalError', 'InvalidCartId', 'InvalidCartItem',
     'InvalidListType', 'InvalidOperation', 'InvalidParameterCombination',
     'InvalidParameterValue', 'InvalidResponseGroup', 'InvalidSearchIndex',
     'ItemAlreadyInCart', 'JAPANESE_ERROR_REGS', 'NoExactMatchesFound',
@@ -31,6 +31,11 @@ class AWSError (Exception):
         self.msg = msg
     def __str__(self): # pragma: no cover
         return '%(code)s: %(msg)s' % self.__dict__
+
+class InternalError (Exception):
+    """
+    Amazon encountered an internal error. Please try again.
+    """
 
 class InvalidClientTokenId (Exception):
     """
