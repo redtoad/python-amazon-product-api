@@ -1,0 +1,56 @@
+<ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+    </HTTPHeaders>
+    <RequestId>dbadcb23-cc19-4c94-a7c0-8145bfaff4f2</RequestId>
+    <Arguments>
+      <Argument Name="Operation" Value="ItemSearch"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Author" Value="F&#233;lix J. Palma"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2011-11-09T08:25:51Z"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="ItemPage" Value="1"/>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="SearchIndex" Value="Books"/>
+      <Argument Name="Version" Value="2011-08-01"/>
+    </Arguments>
+    <RequestProcessingTime>0.2400040000000000</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>True</IsValid>
+      <ItemSearchRequest>
+        <Author>F&#233;lix J. Palma</Author>
+        <ItemPage>1</ItemPage>
+        <ResponseGroup>Small</ResponseGroup>
+        <SearchIndex>Books</SearchIndex>
+      </ItemSearchRequest>
+    </Request>
+    <TotalResults>2</TotalResults>
+    <TotalPages>1</TotalPages>
+    <MoreSearchResultsUrl>http://www.amazon.it/gp/redirect.html?camp=2025&amp;creative=165953&amp;location=http%3A%2F%2Fwww.amazon.it%2Fgp%2Fsearch%3Fkeywords%3DF%25C3%25A9lix%2BJ.%2BPalma%26url%3Dsearch-alias%253Dstripbooks&amp;linkCode=xm2&amp;tag=redtoad-21&amp;SubscriptionId=AKIAJTJID3GQ4PAFYOEQ</MoreSearchResultsUrl>
+    <Item>
+      <ASIN>8876154892</ASIN>
+      <DetailPageURL>http://www.amazon.it/mappa-del-tempo-Narrativa/dp/8876154892%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D8876154892</DetailPageURL>
+      <ItemAttributes>
+        <Author>F&#233;lix J. Palma</Author>
+        <Creator Role="Traduttore">P. Marchetti</Creator>
+        <Manufacturer>Castelvecchi</Manufacturer>
+        <ProductGroup>Libro</ProductGroup>
+        <Title>La mappa del tempo (Narrativa)</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>B0059ECT7O</ASIN>
+      <DetailPageURL>http://www.amazon.it/Palma-Felix-Author-Hardcover-28-Jun-2011/dp/B0059ECT7O%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB0059ECT7O</DetailPageURL>
+      <ItemAttributes>
+        <Author>Felix J. Palma</Author>
+        <Manufacturer>Atria Books</Manufacturer>
+        <ProductGroup>Libro</ProductGroup>
+        <Title>THE MAP OF TIME By Palma, Felix J. (Author) Hardcover on 28-Jun-2011</Title>
+      </ItemAttributes>
+    </Item>
+  </Items>
+</ItemSearchResponse>

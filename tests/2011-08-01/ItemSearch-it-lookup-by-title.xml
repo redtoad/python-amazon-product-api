@@ -1,0 +1,153 @@
+<ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+    </HTTPHeaders>
+    <RequestId>6ec6a3e5-f502-413b-8df4-13d070e90740</RequestId>
+    <Arguments>
+      <Argument Name="limit" Value="1"/>
+      <Argument Name="Operation" Value="ItemSearch"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2011-11-09T08:25:52Z"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Title" Value="Harry Potter"/>
+      <Argument Name="ItemPage" Value="1"/>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="SearchIndex" Value="Books"/>
+      <Argument Name="Version" Value="2011-08-01"/>
+    </Arguments>
+    <RequestProcessingTime>0.6278710000000000</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>True</IsValid>
+      <ItemSearchRequest>
+        <ItemPage>1</ItemPage>
+        <ResponseGroup>Small</ResponseGroup>
+        <SearchIndex>Books</SearchIndex>
+        <Title>Harry Potter</Title>
+      </ItemSearchRequest>
+    </Request>
+    <TotalResults>167</TotalResults>
+    <TotalPages>17</TotalPages>
+    <MoreSearchResultsUrl>http://www.amazon.it/gp/redirect.html?camp=2025&amp;creative=165953&amp;location=http%3A%2F%2Fwww.amazon.it%2Fgp%2Fsearch%3Fkeywords%3DHarry%2BPotter%26url%3Dsearch-alias%253Dstripbooks&amp;linkCode=xm2&amp;tag=redtoad-21&amp;SubscriptionId=AKIAJTJID3GQ4PAFYOEQ</MoreSearchResultsUrl>
+    <Item>
+      <ASIN>8862562829</ASIN>
+      <DetailPageURL>http://www.amazon.it/Harry-Potter-Principe-Mezzosangue-Rowling/dp/8862562829%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D8862562829</DetailPageURL>
+      <ItemAttributes>
+        <Author>J. K. Rowling</Author>
+        <Creator Role="Traduttore">B. Masini</Creator>
+        <Manufacturer>Salani</Manufacturer>
+        <ProductGroup>Libro</ProductGroup>
+        <Title>Harry Potter e il Principe Mezzosangue</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>8862561687</ASIN>
+      <DetailPageURL>http://www.amazon.it/Potter-Pietra-Filosofale-Biblioteca-economica/dp/8862561687%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D8862561687</DetailPageURL>
+      <ItemAttributes>
+        <Author>J.K. Rowling</Author>
+        <Manufacturer>Salani Casa Editrice</Manufacturer>
+        <ProductGroup>Libro</ProductGroup>
+        <Title>Harry Potter e La Pietra Filosofale (Biblioteca economica Salani)</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>8877828528</ASIN>
+      <DetailPageURL>http://www.amazon.it/Harry-Potter-prigioniero-Azkaban-3/dp/8877828528%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D8877828528</DetailPageURL>
+      <ItemAttributes>
+        <Author>J. K. Rowling</Author>
+        <Creator Role="Redattore">S. Daniele</Creator>
+        <Creator Role="Illustratore">S. Riglietti</Creator>
+        <Creator Role="Traduttore">B. Masini</Creator>
+        <Manufacturer>Salani</Manufacturer>
+        <ProductGroup>Libro</ProductGroup>
+        <Title>Harry Potter e il prigioniero di Azkaban: 3</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>8862561520</ASIN>
+      <DetailPageURL>http://www.amazon.it/Harry-Potter-lOrdine-della-Fenice/dp/8862561520%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D8862561520</DetailPageURL>
+      <ItemAttributes>
+        <Author>J. K. Rowling</Author>
+        <Creator Role="Redattore">D. Gamba</Creator>
+        <Creator Role="Traduttore">B. Masini</Creator>
+        <Creator Role="Traduttore">V. Daniele</Creator>
+        <Creator Role="Traduttore">A. Ragusa</Creator>
+        <Manufacturer>Salani</Manufacturer>
+        <ProductGroup>Libro</ProductGroup>
+        <Title>Harry Potter e l'Ordine della Fenice: 5</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>8863468346</ASIN>
+      <DetailPageURL>http://www.amazon.it/Harry-Potter-magia-dei-film/dp/8863468346%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D8863468346</DetailPageURL>
+      <ItemAttributes>
+        <Manufacturer>Panini Comics</Manufacturer>
+        <ProductGroup>Libro</ProductGroup>
+        <Title>Harry Potter. La magia dei film</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>8884518784</ASIN>
+      <DetailPageURL>http://www.amazon.it/Harry-Potter-doni-della-morte/dp/8884518784%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D8884518784</DetailPageURL>
+      <ItemAttributes>
+        <Author>J. K. Rowling</Author>
+        <Creator Role="Redattore">D. Gamba</Creator>
+        <Creator Role="Traduttore">B. Masini</Creator>
+        <Manufacturer>Salani</Manufacturer>
+        <ProductGroup>Libro</ProductGroup>
+        <Title>Harry Potter e i doni della morte</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>8848308457</ASIN>
+      <DetailPageURL>http://www.amazon.it/Harry-Potter-test-Quante-sai/dp/8848308457%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D8848308457</DetailPageURL>
+      <ItemAttributes>
+        <Author>Marina Lenti</Author>
+        <Creator Role="Illustratore">G. Vannini</Creator>
+        <Manufacturer>Alpha Test</Manufacturer>
+        <ProductGroup>Libro</ProductGroup>
+        <Title>Harry Potter a test (Quante ne sai?)</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>8862561512</ASIN>
+      <DetailPageURL>http://www.amazon.it/Harry-Potter-calice-fuoco-4/dp/8862561512%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D8862561512</DetailPageURL>
+      <ItemAttributes>
+        <Author>J. K. Rowling</Author>
+        <Creator Role="Redattore">S. Daniele</Creator>
+        <Creator Role="Illustratore">S. Riglietti</Creator>
+        <Creator Role="Traduttore">B. Masini</Creator>
+        <Manufacturer>Salani</Manufacturer>
+        <ProductGroup>Libro</ProductGroup>
+        <Title>Harry Potter e il calice di fuoco: 4</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>8862561695</ASIN>
+      <DetailPageURL>http://www.amazon.it/Potter-camera-segreti-Biblioteca-economica/dp/8862561695%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D8862561695</DetailPageURL>
+      <ItemAttributes>
+        <Author>J. K. Rowling</Author>
+        <Creator Role="Redattore">S. Bartezzaghi</Creator>
+        <Manufacturer>Salani</Manufacturer>
+        <ProductGroup>Libro</ProductGroup>
+        <Title>Harry Potter e la camera dei segreti (Biblioteca economica Salani)</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>8884516110</ASIN>
+      <DetailPageURL>http://www.amazon.it/Harry-Potter-camera-dei-segreti/dp/8884516110%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D8884516110</DetailPageURL>
+      <ItemAttributes>
+        <Author>J. K. Rowling</Author>
+        <Creator Role="Redattore">S. Daniele</Creator>
+        <Creator Role="Illustratore">S. Riglietti</Creator>
+        <Creator Role="Traduttore">M. Astrologo</Creator>
+        <Manufacturer>Salani</Manufacturer>
+        <ProductGroup>Libro</ProductGroup>
+        <Title>Harry Potter e la camera dei segreti</Title>
+      </ItemAttributes>
+    </Item>
+  </Items>
+</ItemSearchResponse>
