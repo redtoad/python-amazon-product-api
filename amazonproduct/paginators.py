@@ -32,7 +32,7 @@ class BaseResultPaginator (object):
         self.fun = fun
         self.args, self.kwargs = args, kwargs
         self.counter = counter
-        self.limit = kwargs.get('limit', 400)
+        self.limit = kwargs.get('limit', 10)
 
         # fetch first page to get pagination parameters
         self._first_page = self.page(1)
@@ -129,7 +129,7 @@ class LxmlItemSearchPaginator (LxmlPaginator):
         except IndexError:
             search_index = kwargs['search_index']
         #print args, kwargs, search_index
-        if search_index == 'All' and kwargs.get('limit', 400) > 5:
+        if search_index == 'All' and kwargs.get('limit', 10) > 5:
             kwargs['limit'] = 5
         super(LxmlItemSearchPaginator, self).__init__(fnc, *args, **kwargs)
 
