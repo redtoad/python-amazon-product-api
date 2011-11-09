@@ -48,12 +48,15 @@ USER_AGENT = ('python-amazon-product-api/%s '
 
 #: Hosts used by Amazon for normal/XSLT operations
 HOSTS = {
-    'ca' : ('ecs.amazonaws.ca', 'xml-ca.amznxslt.com'),
-    'de' : ('ecs.amazonaws.de', 'xml-de.amznxslt.com'),
-    'fr' : ('ecs.amazonaws.fr', 'xml-fr.amznxslt.com'),
-    'jp' : ('ecs.amazonaws.jp', 'xml-jp.amznxslt.com'),
-    'uk' : ('ecs.amazonaws.co.uk', 'xml-uk.amznxslt.com'),
-    'us' : ('ecs.amazonaws.com', 'xml-us.amznxslt.com'),
+    'ca': ('ecs.amazonaws.ca', 'xml-ca.amznxslt.com'),
+    'cn': ('webservices.amazon.cn', 'xml-cn.amznxslt.com'),
+    'de': ('ecs.amazonaws.de', 'xml-de.amznxslt.com'),
+    'es': ('webservices.amazon.es', 'xml-es.amznxslt.com'),
+    'fr': ('ecs.amazonaws.fr', 'xml-fr.amznxslt.com'),
+    'it': ('webservices.amazon.it', 'xml-it.amznxslt.com'),
+    'jp': ('ecs.amazonaws.jp', 'xml-jp.amznxslt.com'),
+    'uk': ('ecs.amazonaws.co.uk', 'xml-uk.amznxslt.com'),
+    'us': ('ecs.amazonaws.com', 'xml-us.amznxslt.com'),
 }
 
 
