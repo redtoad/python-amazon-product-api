@@ -39,6 +39,15 @@ def pytest_generate_tests(metafunc):
                 if not locales:
                     pytest.skip('Test cannot run for specified locales '
                                 '%s.' % (metafunc.config.option.locales, ))
+            # FIXME: For the time being we support all API versions. This will
+            # no longer be neccessary from February 21, 2012 when all versions
+            # previous to 2011-08-01 will no longer be supported!
+            if version < '2011-08-01':
+                for unsupported in ['cn', 'es', 'it']:
+                    try:
+                        locales.remove(unsupported)
+                    except ValueError:
+                        pass
             for locale in locales:
                 # file containing previously fetched response
                 local_file = os.path.join(XML_TEST_DIR, version,
