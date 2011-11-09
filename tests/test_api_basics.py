@@ -13,7 +13,7 @@ from tests import TESTABLE_API_VERSIONS, XML_TEST_DIR
 from tests.utils import convert_camel_case, extract_operations_from_wsdl
 
 from amazonproduct.api import API
-from amazonproduct.errors import UnknownLocale, TooManyRequests, InvalidClientTokenId
+from amazonproduct.errors import *
 
 
 class TestAPILocales (object):
@@ -131,6 +131,13 @@ class TestAPICalls (object):
             'APICalls-fails-for-too-many-requests.xml')).read()
         server.serve_content(xml, 503)
         pytest.raises(TooManyRequests, api.item_lookup, '9780747532743',
+            IdType='ISBN', SearchIndex='All', ResponseGroup='???')
+
+    def test_fails_for_internal_error(self, api, server):
+        xml = open(os.path.join(XML_TEST_DIR,
+            'internal-error.xml')).read()
+        server.serve_content(xml, 500)
+        pytest.raises(InternalError, api.item_lookup, '9780747532743',
             IdType='ISBN', SearchIndex='All', ResponseGroup='???')
 
     @pytest.mark.slowtest
