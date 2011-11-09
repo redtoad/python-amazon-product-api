@@ -110,7 +110,7 @@ class Cart (object):
         return cart
 
 #: list of changeable and/or sensitive (thus ignorable) request arguments
-IGNORABLE_REQUEST_ARGUMENTS = ('Signature', 'AWSAccessKeyId', 'Timestamp', 'AssociateTag')
+IGNORABLE_ARGUMENTS = ('Signature', 'AWSAccessKeyId', 'Timestamp', 'AssociateTag')
 
 def arguments_from_cached_xml(xml):
     """
@@ -133,7 +133,7 @@ def arguments_from_cached_xml(xml):
     root = objectify.fromstring(xml).getroottree().getroot()
     return dict((arg.get('Name'), arg.get('Value'))
                 for arg in root.OperationRequest.Arguments.Argument
-                if arg.get('Name') not in IGNORABLE_REQUEST_ARGUMENTS)
+                if arg.get('Name') not in IGNORABLE_ARGUMENTS)
 
 def arguments_from_url(url):
     """
@@ -147,6 +147,6 @@ def arguments_from_url(url):
         # reduce lists to single value
         if type(val) == list and len(val) == 1:
             params[key] = val[0]
-        if key in IGNORABLE_REQUEST_ARGUMENTS:
+        if key in IGNORABLE_ARGUMENTS:
             del params[key]
     return params
