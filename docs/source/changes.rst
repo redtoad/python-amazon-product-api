@@ -6,4 +6,4 @@
 Changes
 =======
 
-.. include:: ../CHANGES
+.. include:: ../../CHANGES
