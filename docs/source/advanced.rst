@@ -1,8 +1,13 @@
 
+Advances uses
+=============
+
 Use your own XML parsing library
 --------------------------------
 
-Since version 0.2.3 you no longer need to use ``lxml.objectify``. A custom
+.. versionadded:: 0.2.3
+
+You don't need to use ``lxml.objectify``. A custom
 response processor can be defined using any mechanism you like. For instance,
 here is one using ``xml.minidom``::
     
@@ -26,3 +31,8 @@ here is one using ``xml.minidom``::
    Make sure your response parser raises an ``AWSError`` with the appropriate
    error code and message.
 
+Using batch operations
+----------------------
+
+Caching responses
+-----------------
