@@ -7,26 +7,42 @@ Here is a growing collection of questions that pop up regularly.
 Which locale should I use and why is this important?
 ----------------------------------------------------
 
-Amazon is a world-wide venture. Product Advertising API is as well. 
+Amazon is a world-wide venture. Product Advertising API is as well.
 Product Advertising API operates in six locales:
 
-* CA
-* DE
-* FR
-* JP
-* UK
-* US
+* CA (Canada)
+* CN (China)
+* DE (Germany)
+* ES (Spain)
+* FR (France)
+* IT (Italy)
+* JP (Japan)
+* UK (United Kingdom)
+* US (United States of Amerika)
 
-Each of these locales is serviced by an Amazon web site that uses the local 
-language, local customs, and local formatting. For example, when you look at 
-the DE homepage for Amazon, you see the listings in German. If you purchased an 
-item, you would find the price in Euros, and, if you were to purchase a movie, 
-you would find that the movie rating would conform to the movie rating system 
+Each of these locales is serviced by an Amazon web site that uses the local
+language, local customs, and local formatting. For example, when you look at
+the DE homepage for Amazon, you see the listings in German. If you purchased an
+item, you would find the price in Euros, and, if you were to purchase a movie,
+you would find that the movie rating would conform to the movie rating system
 used in Germany. 
 
-Product Advertising API responses contain the same localized information. 
-Product Advertising API determines the correct locale by examining the endpoint 
-in the request.
+Product Advertising API responses contain the same localized information. The
+correct locale is determined by examining the endpoint in the request.
+
+
+Can I use this wrapper on Google App Engine (GAE)?
+--------------------------------------------------
+
+This wrapper relies by default on `lxml.objectify`_ to parse the returned XML
+responses from Amazon which is built with libxml, a C library. `And this will
+not work on GAE`_.
+
+For the time being there is no solution that will work out of the box.
+You can, however, use a different XML parser (see :ref:`custom-xml-parser`)!
+
+.. _lxml.objectify: http://codespeak.net/lxml/objectify.html
+.. _And this will not work on GAE: http://code.google.com/p/googleappengine/issues/detail?id=18
 
 
 I keep getting ``InvalidParameterValue`` errors. What am I doing wrong?
@@ -114,3 +130,4 @@ You can do two things:
 
 .. _list of know issues: http://bitbucket.org/basti/python-amazon-product-api/issues/
 .. _mailing list: http://groups.google.com/group/python-amazon-product-api-devel
+

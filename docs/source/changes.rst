@@ -1,5 +1,5 @@
 
-:tocdepth: 2
+:tocdepth: 1
 
 .. _changes:
 
