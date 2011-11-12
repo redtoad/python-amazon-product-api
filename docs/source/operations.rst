@@ -5,21 +5,18 @@ Operations
 Lookup and search operations
 ----------------------------
 
-.. currentmodule:: amazonproduct
-.. class:: API
+.. automethod:: amazonproduct.api.API.item_search(searchindex)
+.. automethod:: amazonproduct.api.API.item_lookup
+.. automethod:: amazonproduct.api.API.similarity_lookup
 
-    .. automethod:: item_search
-    .. automethod:: item_lookup
-    .. automethod:: similarity_lookup
+.. automethod:: amazonproduct.api.API.browse_node_lookup
 
 Cart operations
 ---------------
 
-.. class:: API
-
-    .. automethod:: cart_create
-    .. automethod:: cart_get
-    .. automethod:: cart_add
-    .. automethod:: cart_modify
-    .. automethod:: cart_clear
+.. automethod:: amazonproduct.api.API.cart_create
+.. automethod:: amazonproduct.api.API.cart_get
+.. automethod:: amazonproduct.api.API.cart_add
+.. automethod:: amazonproduct.api.API.cart_modify
+.. automethod:: amazonproduct.api.API.cart_clear
 
