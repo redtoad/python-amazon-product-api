@@ -76,6 +76,7 @@ def paginate(fnc):
             return klass(method, *args, **kwargs)
         except AttributeError:
             return fnc(api, *args, **kwargs)
+    wrapped.__doc__ = fnc.__doc__
     return wrapped
 
 
