@@ -140,7 +140,7 @@ class ItemAlreadyInCart (Exception):
     """
     The item you specified, ???, is already in your cart.
     
-    .. deprecated:: API version 0.2.6
+    .. deprecated:: 0.2.6
     """
 
 class CartInfoMismatch (Exception):
