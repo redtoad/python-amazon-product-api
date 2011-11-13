@@ -1,0 +1,35 @@
+<CartClearResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2010-09-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+    </HTTPHeaders>
+    <RequestId>085NHTWNMRHXJPGRS7NP</RequestId>
+    <Arguments>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Operation" Value="CartClear"/>
+      <Argument Name="Timestamp" Value="2011-11-13T13:04:09Z"/>
+      <Argument Name="Version" Value="2010-09-01"/>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="HMAC" Value="+ndyqzqxPH8CdXFZZDY8w1BOeHI="/>
+      <Argument Name="CartId" Value="191-4225081-1507204"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+    </Arguments>
+    <RequestProcessingTime>2.19491291046143</RequestProcessingTime>
+  </OperationRequest>
+  <Cart>
+    <Request>
+      <IsValid>True</IsValid>
+      <CartClearRequest>
+        <CartId>191-4225081-1507204</CartId>
+        <HMAC>+ndyqzqxPH8CdXFZZDY8w1BOeHI=</HMAC>
+      </CartClearRequest>
+      <Errors>
+        <Error>
+          <Code>AWS.InternalError</Code>
+          <Message>We are unable to process your request at this time. Please retry your request.</Message>
+        </Error>
+      </Errors>
+    </Request>
+  </Cart>
+</CartClearResponse>
