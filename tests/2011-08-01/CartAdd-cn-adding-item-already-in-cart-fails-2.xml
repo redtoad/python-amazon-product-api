@@ -1,0 +1,99 @@
+<CartAddResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+    </HTTPHeaders>
+    <RequestId>1YJYATGPFCK9857XJ8Z9</RequestId>
+    <Arguments>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Item.1.ASIN" Value="B005DRCQZ2"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Item.1.Quantity" Value="2"/>
+      <Argument Name="HMAC" Value="7WFs9mvgn3TOHGIHp7kbCNcBK/I="/>
+      <Argument Name="Operation" Value="CartAdd"/>
+      <Argument Name="CartId" Value="478-4414408-0964107"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2011-11-13T13:03:08Z"/>
+      <Argument Name="Version" Value="2011-08-01"/>
+    </Arguments>
+    <RequestProcessingTime>0.0670139789581299</RequestProcessingTime>
+  </OperationRequest>
+  <Cart>
+    <Request>
+      <IsValid>True</IsValid>
+      <CartAddRequest>
+        <CartId>478-4414408-0964107</CartId>
+        <HMAC>7WFs9mvgn3TOHGIHp7kbCNcBK/I=</HMAC>
+        <Items>
+          <Item>
+            <ASIN>B005DRCQZ2</ASIN>
+            <Quantity>2</Quantity>
+          </Item>
+        </Items>
+      </CartAddRequest>
+      <Errors>
+        <Error>
+          <Code>AWS.ECommerceService.InvalidQuantity</Code>
+          <Message>You have exceeded the maximum quantity allowed for the following items: B005DRCQZ2.</Message>
+        </Error>
+        <Error>
+          <Code>AWS.ECommerceService.ItemAlreadyInCart</Code>
+          <Message>The item you specified, B005DRCQZ2, is already in your cart.</Message>
+        </Error>
+      </Errors>
+    </Request>
+    <CartId>478-4414408-0964107</CartId>
+    <HMAC>7WFs9mvgn3TOHGIHp7kbCNcBK/I=</HMAC>
+    <URLEncodedHMAC>7WFs9mvgn3TOHGIHp7kbCNcBK%2FI%3D</URLEncodedHMAC>
+    <PurchaseURL>https://www.amazon.cn/gp/cart/aws-merge.html?cart-id=478-4414408-0964107&amp;associate-id=redtoad-21&amp;hmac=7WFs9mvgn3TOHGIHp7kbCNcBK/I=&amp;SubscriptionId=AKIAJTJID3GQ4PAFYOEQ&amp;MergeCart=False</PurchaseURL>
+    <SubTotal>
+      <Amount>4370</Amount>
+      <CurrencyCode>CNY</CurrencyCode>
+      <FormattedPrice>&#65509; 43.70</FormattedPrice>
+    </SubTotal>
+    <CartItems>
+      <SubTotal>
+        <Amount>4370</Amount>
+        <CurrencyCode>CNY</CurrencyCode>
+        <FormattedPrice>&#65509; 43.70</FormattedPrice>
+      </SubTotal>
+      <CartItem>
+        <CartItemId>U211YONUOFE6MV</CartItemId>
+        <ASIN>B005DRCQZ2</ASIN>
+        <SellerNickname>Amazon.cn</SellerNickname>
+        <Quantity>1</Quantity>
+        <Title>&#25746;&#21704;&#25289;&#30340;&#25925;&#20107;</Title>
+        <ProductGroup>Book</ProductGroup>
+        <Price>
+          <Amount>1470</Amount>
+          <CurrencyCode>CNY</CurrencyCode>
+          <FormattedPrice>&#65509; 14.70</FormattedPrice>
+        </Price>
+        <ItemTotal>
+          <Amount>1470</Amount>
+          <CurrencyCode>CNY</CurrencyCode>
+          <FormattedPrice>&#65509; 14.70</FormattedPrice>
+        </ItemTotal>
+      </CartItem>
+      <CartItem>
+        <CartItemId>U190WNS335356K</CartItemId>
+        <ASIN>B005DRCPVM</ASIN>
+        <SellerNickname>Amazon.cn</SellerNickname>
+        <Quantity>2</Quantity>
+        <Title>&#26790;&#37324;&#33457;&#33853;&#30693;&#22810;&#23569;</Title>
+        <ProductGroup>Book</ProductGroup>
+        <Price>
+          <Amount>1450</Amount>
+          <CurrencyCode>CNY</CurrencyCode>
+          <FormattedPrice>&#65509; 14.50</FormattedPrice>
+        </Price>
+        <ItemTotal>
+          <Amount>2900</Amount>
+          <CurrencyCode>CNY</CurrencyCode>
+          <FormattedPrice>&#65509; 29.00</FormattedPrice>
+        </ItemTotal>
+      </CartItem>
+    </CartItems>
+  </Cart>
+</CartAddResponse>

@@ -1,0 +1,71 @@
+<CartModifyResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+    </HTTPHeaders>
+    <RequestId>09TGXTBKQHF17BJXSHDB</RequestId>
+    <Arguments>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Item.1.Quantity" Value="0"/>
+      <Argument Name="Item.1.CartItemId" Value="U190WNS335356K"/>
+      <Argument Name="HMAC" Value="ktCTmK7HLhGvERfsaEbg05vHDQ4="/>
+      <Argument Name="Operation" Value="CartModify"/>
+      <Argument Name="CartId" Value="480-3127431-0626335"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2011-11-13T12:20:50Z"/>
+      <Argument Name="Version" Value="2011-08-01"/>
+    </Arguments>
+    <RequestProcessingTime>0.0605678558349609</RequestProcessingTime>
+  </OperationRequest>
+  <Cart>
+    <Request>
+      <IsValid>True</IsValid>
+      <CartModifyRequest>
+        <CartId>480-3127431-0626335</CartId>
+        <HMAC>ktCTmK7HLhGvERfsaEbg05vHDQ4=</HMAC>
+        <Items>
+          <Item>
+            <CartItemId>U190WNS335356K</CartItemId>
+            <Quantity>0</Quantity>
+          </Item>
+        </Items>
+      </CartModifyRequest>
+    </Request>
+    <CartId>480-3127431-0626335</CartId>
+    <HMAC>ktCTmK7HLhGvERfsaEbg05vHDQ4=</HMAC>
+    <URLEncodedHMAC>ktCTmK7HLhGvERfsaEbg05vHDQ4%3D</URLEncodedHMAC>
+    <PurchaseURL>https://www.amazon.cn/gp/cart/aws-merge.html?cart-id=480-3127431-0626335&amp;associate-id=redtoad-21&amp;hmac=ktCTmK7HLhGvERfsaEbg05vHDQ4=&amp;SubscriptionId=AKIAJTJID3GQ4PAFYOEQ&amp;MergeCart=False</PurchaseURL>
+    <SubTotal>
+      <Amount>1470</Amount>
+      <CurrencyCode>CNY</CurrencyCode>
+      <FormattedPrice>&#65509; 14.70</FormattedPrice>
+    </SubTotal>
+    <CartItems>
+      <SubTotal>
+        <Amount>1470</Amount>
+        <CurrencyCode>CNY</CurrencyCode>
+        <FormattedPrice>&#65509; 14.70</FormattedPrice>
+      </SubTotal>
+      <CartItem>
+        <CartItemId>U211YONUOFE6MV</CartItemId>
+        <ASIN>B005DRCQZ2</ASIN>
+        <SellerNickname>Amazon.cn</SellerNickname>
+        <Quantity>1</Quantity>
+        <Title>&#25746;&#21704;&#25289;&#30340;&#25925;&#20107;</Title>
+        <ProductGroup>Book</ProductGroup>
+        <Price>
+          <Amount>1470</Amount>
+          <CurrencyCode>CNY</CurrencyCode>
+          <FormattedPrice>&#65509; 14.70</FormattedPrice>
+        </Price>
+        <ItemTotal>
+          <Amount>1470</Amount>
+          <CurrencyCode>CNY</CurrencyCode>
+          <FormattedPrice>&#65509; 14.70</FormattedPrice>
+        </ItemTotal>
+      </CartItem>
+    </CartItems>
+  </Cart>
+</CartModifyResponse>
