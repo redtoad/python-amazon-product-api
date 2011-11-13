@@ -1,0 +1,41 @@
+<ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+    </HTTPHeaders>
+    <RequestId>ca1afed0-ca79-4f08-93cc-d9f79967473f</RequestId>
+    <Arguments>
+      <Argument Name="Operation" Value="ItemSearch"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Author" Value="F&#233;lix J. Palma"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2011-11-13T11:42:47Z"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="ItemPage" Value="1"/>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="SearchIndex" Value="Books"/>
+      <Argument Name="Version" Value="2011-08-01"/>
+    </Arguments>
+    <RequestProcessingTime>0.0174190000000000</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>True</IsValid>
+      <ItemSearchRequest>
+        <Author>F&#233;lix J. Palma</Author>
+        <ItemPage>1</ItemPage>
+        <ResponseGroup>Small</ResponseGroup>
+        <SearchIndex>Books</SearchIndex>
+      </ItemSearchRequest>
+      <Errors>
+        <Error>
+          <Code>AWS.ECommerceService.NoExactMatches</Code>
+          <Message>We did not find any matches for your request.</Message>
+        </Error>
+      </Errors>
+    </Request>
+    <TotalResults>0</TotalResults>
+    <TotalPages>0</TotalPages>
+    <MoreSearchResultsUrl>http://www.amazon.cn/gp/redirect.html?camp=2025&amp;creative=165953&amp;location=http%3A%2F%2Fwww.amazon.cn%2Fgp%2Fsearch%3Fkeywords%3DF%25C3%25A9lix%2BJ.%2BPalma%26url%3Dsearch-alias%253Dbooks&amp;linkCode=xm2&amp;tag=redtoad-21&amp;SubscriptionId=AKIAJTJID3GQ4PAFYOEQ</MoreSearchResultsUrl>
+  </Items>
+</ItemSearchResponse>

@@ -1,0 +1,58 @@
+<BrowseNodeLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+    </HTTPHeaders>
+    <RequestId>0YZBTDXMBN99B1WRFWQ9</RequestId>
+    <Arguments>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Operation" Value="BrowseNodeLookup"/>
+      <Argument Name="BrowseNodeId" Value="658390051"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Version" Value="2011-08-01"/>
+      <Argument Name="Timestamp" Value="2011-11-13T11:48:47Z"/>
+    </Arguments>
+    <RequestProcessingTime>0.0145299434661865</RequestProcessingTime>
+  </OperationRequest>
+  <BrowseNodes>
+    <Request>
+      <IsValid>True</IsValid>
+      <BrowseNodeLookupRequest>
+        <BrowseNodeId>658390051</BrowseNodeId>
+      </BrowseNodeLookupRequest>
+    </Request>
+    <BrowseNode>
+      <BrowseNodeId>658390051</BrowseNodeId>
+      <Name>&#22270;&#20070;</Name>
+      <Children>
+        <BrowseNode>
+          <BrowseNodeId>658391051</BrowseNodeId>
+          <Name>&#31867;&#21035;</Name>
+          <IsCategoryRoot>1</IsCategoryRoot>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>664969051</BrowseNodeId>
+          <Name>&#31579;&#36873;</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>664974051</BrowseNodeId>
+          <Name>&#19987;&#21334;&#24215;</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>664975051</BrowseNodeId>
+          <Name>&#29305;&#27530;&#21151;&#33021;</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>664976051</BrowseNodeId>
+          <Name>&#25512;&#33616;&#20998;&#31867;</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>2146619051</BrowseNodeId>
+          <Name>Self Service</Name>
+        </BrowseNode>
+      </Children>
+    </BrowseNode>
+  </BrowseNodes>
+</BrowseNodeLookupResponse>
