@@ -1,31 +1,32 @@
 <CartClearResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2010-11-01">
   <OperationRequest>
     <HTTPHeaders>
-      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.5a2 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.6pre/613e2c5f4c5a+ +http://pypi.python.org/pypi/python-amazon-product-api/"/>
     </HTTPHeaders>
-    <RequestId>1REY8JEE3821ES9DGB71</RequestId>
+    <RequestId>0NS421EAY2F387AGBWNJ</RequestId>
     <Arguments>
       <Argument Name="Service" Value="AWSECommerceService"/>
-      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="HMAC" Value="/tMUzeFK/i/rUji8+gRWjaqOTU4="/>
       <Argument Name="Operation" Value="CartClear"/>
-      <Argument Name="CartId" Value="186-2734142-1590063"/>
-      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2011-11-13T13:35:54Z"/>
       <Argument Name="Version" Value="2010-11-01"/>
-      <Argument Name="Timestamp" Value="2011-02-25T15:34:22Z"/>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="HMAC" Value="vpOSc/4fSfkBbduyb1TvQMsJscc="/>
+      <Argument Name="CartId" Value="189-5977426-0774937"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
     </Arguments>
-    <RequestProcessingTime>0.0301778316497803</RequestProcessingTime>
+    <RequestProcessingTime>0.0620219707489014</RequestProcessingTime>
   </OperationRequest>
   <Cart>
     <Request>
       <IsValid>True</IsValid>
       <CartClearRequest>
-        <CartId>186-2734142-1590063</CartId>
-        <HMAC>/tMUzeFK/i/rUji8+gRWjaqOTU4=</HMAC>
+        <CartId>189-5977426-0774937</CartId>
+        <HMAC>vpOSc/4fSfkBbduyb1TvQMsJscc=</HMAC>
       </CartClearRequest>
     </Request>
-    <CartId>186-2734142-1590063</CartId>
-    <HMAC>/tMUzeFK/i/rUji8+gRWjaqOTU4=</HMAC>
-    <URLEncodedHMAC>%2FtMUzeFK%2Fi%2FrUji8%2BgRWjaqOTU4%3D</URLEncodedHMAC>
+    <CartId>189-5977426-0774937</CartId>
+    <HMAC>vpOSc/4fSfkBbduyb1TvQMsJscc=</HMAC>
+    <URLEncodedHMAC>vpOSc%2F4fSfkBbduyb1TvQMsJscc%3D</URLEncodedHMAC>
   </Cart>
 </CartClearResponse>

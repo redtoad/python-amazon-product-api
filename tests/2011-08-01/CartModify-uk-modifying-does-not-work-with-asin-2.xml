@@ -1,42 +1,42 @@
 <CartModifyResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
   <OperationRequest>
     <HTTPHeaders>
-      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.6pre/613e2c5f4c5a+ +http://pypi.python.org/pypi/python-amazon-product-api/"/>
     </HTTPHeaders>
-    <RequestId>044PEBXVHYYZPY49B6DD</RequestId>
+    <RequestId>1K8G4616EETX69YM2267</RequestId>
     <Arguments>
       <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
       <Argument Name="Service" Value="AWSECommerceService"/>
       <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
       <Argument Name="Item.1.Quantity" Value="0"/>
-      <Argument Name="Item.1.CartItemId" Value="0201896842"/>
-      <Argument Name="HMAC" Value="aqFFpvMUNUbZ6wFiF0ZvmElDv2g="/>
+      <Argument Name="Item.1.CartItemId" Value="0201896834"/>
+      <Argument Name="HMAC" Value="mt9BF5DUx4yBOlN+YT4xuajfwPE="/>
       <Argument Name="Operation" Value="CartModify"/>
-      <Argument Name="CartId" Value="278-5515377-3704069"/>
+      <Argument Name="CartId" Value="279-5371640-4068649"/>
       <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="Timestamp" Value="2011-11-08T21:47:57Z"/>
+      <Argument Name="Timestamp" Value="2011-11-13T13:35:30Z"/>
       <Argument Name="Version" Value="2011-08-01"/>
     </Arguments>
-    <RequestProcessingTime>0.0597259998321533</RequestProcessingTime>
+    <RequestProcessingTime>0.0591371059417725</RequestProcessingTime>
   </OperationRequest>
   <Cart>
     <Request>
       <IsValid>True</IsValid>
       <CartModifyRequest>
-        <CartId>278-5515377-3704069</CartId>
-        <HMAC>aqFFpvMUNUbZ6wFiF0ZvmElDv2g=</HMAC>
+        <CartId>279-5371640-4068649</CartId>
+        <HMAC>mt9BF5DUx4yBOlN+YT4xuajfwPE=</HMAC>
         <Items>
           <Item>
-            <CartItemId>0201896842</CartItemId>
+            <CartItemId>0201896834</CartItemId>
             <Quantity>0</Quantity>
           </Item>
         </Items>
       </CartModifyRequest>
     </Request>
-    <CartId>278-5515377-3704069</CartId>
-    <HMAC>aqFFpvMUNUbZ6wFiF0ZvmElDv2g=</HMAC>
-    <URLEncodedHMAC>aqFFpvMUNUbZ6wFiF0ZvmElDv2g%3D</URLEncodedHMAC>
-    <PurchaseURL>https://www.amazon.co.uk/gp/cart/aws-merge.html?cart-id=278-5515377-3704069%26associate-id=redtoad-21%26hmac=aqFFpvMUNUbZ6wFiF0ZvmElDv2g=%26SubscriptionId=AKIAJTJID3GQ4PAFYOEQ%26MergeCart=False</PurchaseURL>
+    <CartId>279-5371640-4068649</CartId>
+    <HMAC>mt9BF5DUx4yBOlN+YT4xuajfwPE=</HMAC>
+    <URLEncodedHMAC>mt9BF5DUx4yBOlN%2BYT4xuajfwPE%3D</URLEncodedHMAC>
+    <PurchaseURL>https://www.amazon.co.uk/gp/cart/aws-merge.html?cart-id=279-5371640-4068649%26associate-id=redtoad-21%26hmac=mt9BF5DUx4yBOlN%2BYT4xuajfwPE=%26SubscriptionId=AKIAJTJID3GQ4PAFYOEQ%26MergeCart=False</PurchaseURL>
     <SubTotal>
       <Amount>13767</Amount>
       <CurrencyCode>GBP</CurrencyCode>

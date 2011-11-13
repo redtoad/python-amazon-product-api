@@ -1,41 +1,42 @@
 <CartModifyResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2009-11-01">
   <OperationRequest>
     <HTTPHeaders>
-      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.5a2 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.6pre/613e2c5f4c5a+ +http://pypi.python.org/pypi/python-amazon-product-api/"/>
     </HTTPHeaders>
-    <RequestId>09KP7X1F8AXNKX77HY4G</RequestId>
+    <RequestId>0G9CT17N31KY31BZ94WR</RequestId>
     <Arguments>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
       <Argument Name="Service" Value="AWSECommerceService"/>
       <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
       <Argument Name="Item.1.Quantity" Value="0"/>
-      <Argument Name="Item.1.CartItemId" Value="0201896842"/>
-      <Argument Name="HMAC" Value="gly4wY3ND7QYfKNr7y+D7Xi4M9M="/>
+      <Argument Name="Item.1.CartItemId" Value="0201896834"/>
+      <Argument Name="HMAC" Value="70zFBeoKw9d87Y3GG9aNq5SIEbY="/>
       <Argument Name="Operation" Value="CartModify"/>
-      <Argument Name="CartId" Value="278-2957657-1149843"/>
+      <Argument Name="CartId" Value="275-7684583-7267605"/>
       <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="Timestamp" Value="2011-02-25T15:35:11Z"/>
+      <Argument Name="Timestamp" Value="2011-11-13T13:36:26Z"/>
       <Argument Name="Version" Value="2009-11-01"/>
     </Arguments>
-    <RequestProcessingTime>0.0906291007995605</RequestProcessingTime>
+    <RequestProcessingTime>0.120349884033203</RequestProcessingTime>
   </OperationRequest>
   <Cart>
     <Request>
       <IsValid>True</IsValid>
       <CartModifyRequest>
-        <CartId>278-2957657-1149843</CartId>
-        <HMAC>gly4wY3ND7QYfKNr7y+D7Xi4M9M=</HMAC>
+        <CartId>275-7684583-7267605</CartId>
+        <HMAC>70zFBeoKw9d87Y3GG9aNq5SIEbY=</HMAC>
         <Items>
           <Item>
-            <CartItemId>0201896842</CartItemId>
+            <CartItemId>0201896834</CartItemId>
             <Quantity>0</Quantity>
           </Item>
         </Items>
       </CartModifyRequest>
     </Request>
-    <CartId>278-2957657-1149843</CartId>
-    <HMAC>gly4wY3ND7QYfKNr7y+D7Xi4M9M=</HMAC>
-    <URLEncodedHMAC>gly4wY3ND7QYfKNr7y%2BD7Xi4M9M%3D</URLEncodedHMAC>
-    <PurchaseURL>https://www.amazon.de/gp/cart/aws-merge.html?cart-id=278-2957657-1149843%26associate-id=ws%26hmac=gly4wY3ND7QYfKNr7y%2BD7Xi4M9M=%26SubscriptionId=XXXXXXXXXXXXXXX%26MergeCart=False</PurchaseURL>
+    <CartId>275-7684583-7267605</CartId>
+    <HMAC>70zFBeoKw9d87Y3GG9aNq5SIEbY=</HMAC>
+    <URLEncodedHMAC>70zFBeoKw9d87Y3GG9aNq5SIEbY%3D</URLEncodedHMAC>
+    <PurchaseURL>https://www.amazon.de/gp/cart/aws-merge.html?cart-id=275-7684583-7267605%26associate-id=redtoad-21%26hmac=70zFBeoKw9d87Y3GG9aNq5SIEbY=%26SubscriptionId=AKIAJTJID3GQ4PAFYOEQ%26MergeCart=False</PurchaseURL>
     <SubTotal>
       <Amount>11685</Amount>
       <CurrencyCode>EUR</CurrencyCode>
@@ -50,8 +51,7 @@
       <CartItem>
         <CartItemId>U22YH4R7VGJ6BA</CartItemId>
         <ASIN>0201896842</ASIN>
-        <MerchantId>A3JWKAKR8XB7XF</MerchantId>
-        <SellerId>A3JWKAKR8XB7XF</SellerId>
+        <MerchantId>Deprecated</MerchantId>
         <SellerNickname>Amazon.de</SellerNickname>
         <Quantity>2</Quantity>
         <Title>The Art of Computer Programming 2. Seminumerical Algorithms</Title>
@@ -70,8 +70,7 @@
       <CartItem>
         <CartItemId>U2RKVV1ZD39FA8</CartItemId>
         <ASIN>0201896834</ASIN>
-        <MerchantId>A3JWKAKR8XB7XF</MerchantId>
-        <SellerId>A3JWKAKR8XB7XF</SellerId>
+        <MerchantId>Deprecated</MerchantId>
         <SellerNickname>Amazon.de</SellerNickname>
         <Quantity>1</Quantity>
         <Title>The Art of Computer Programming 1. Fundamental Algorithms (Art of Computer Programming Volume 1)</Title>

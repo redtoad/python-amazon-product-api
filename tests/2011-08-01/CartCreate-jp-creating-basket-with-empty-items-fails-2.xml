@@ -3,19 +3,19 @@
     <HTTPHeaders>
       <Header Name="UserAgent" Value="Python-urllib/2.6"/>
     </HTTPHeaders>
-    <RequestId>1ME9SJ0E8Z3XQ1DV2KCZ</RequestId>
+    <RequestId>0X2AG1ECDKBY9H4RAEDW</RequestId>
     <Arguments>
       <Argument Name="Service" Value="AWSECommerceService"/>
       <Argument Name="Item.1.Quantity" Value="0"/>
       <Argument Name="Operation" Value="CartCreate"/>
-      <Argument Name="Timestamp" Value="2011-11-08T21:45:48Z"/>
+      <Argument Name="Timestamp" Value="2011-11-13T13:23:33Z"/>
       <Argument Name="Version" Value="2011-08-01"/>
       <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="Item.1.ASIN" Value="0451462009"/>
+      <Argument Name="Item.1.ASIN" Value="0201896834"/>
       <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
       <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
     </Arguments>
-    <RequestProcessingTime>0.00369811058044434</RequestProcessingTime>
+    <RequestProcessingTime>0.00393509864807129</RequestProcessingTime>
   </OperationRequest>
   <Cart>
     <Request>
@@ -23,7 +23,7 @@
       <CartCreateRequest>
         <Items>
           <Item>
-            <ASIN>0451462009</ASIN>
+            <ASIN>0201896834</ASIN>
             <Quantity>0</Quantity>
           </Item>
         </Items>

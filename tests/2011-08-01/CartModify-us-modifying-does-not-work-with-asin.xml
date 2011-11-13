@@ -1,14 +1,14 @@
 <CartCreateResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
   <OperationRequest>
     <HTTPHeaders>
-      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.6pre/613e2c5f4c5a+ +http://pypi.python.org/pypi/python-amazon-product-api/"/>
     </HTTPHeaders>
-    <RequestId>08XSKNVETDKMV33RTDCT</RequestId>
+    <RequestId>11BBA803CTHYJ866RFPQ</RequestId>
     <Arguments>
       <Argument Name="Service" Value="AWSECommerceService"/>
       <Argument Name="Item.1.Quantity" Value="2"/>
       <Argument Name="Operation" Value="CartCreate"/>
-      <Argument Name="Timestamp" Value="2011-11-08T21:47:54Z"/>
+      <Argument Name="Timestamp" Value="2011-11-13T13:35:35Z"/>
       <Argument Name="Version" Value="2011-08-01"/>
       <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
       <Argument Name="Item.1.ASIN" Value="0201896842"/>
@@ -17,7 +17,7 @@
       <Argument Name="Item.2.Quantity" Value="1"/>
       <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
     </Arguments>
-    <RequestProcessingTime>0.17901611328125</RequestProcessingTime>
+    <RequestProcessingTime>0.167249917984009</RequestProcessingTime>
   </OperationRequest>
   <Cart>
     <Request>
@@ -35,10 +35,10 @@
         </Items>
       </CartCreateRequest>
     </Request>
-    <CartId>180-0046289-0604664</CartId>
-    <HMAC>LNJ5zgf0XTLZ6TqwQULlqnW9GYw=</HMAC>
-    <URLEncodedHMAC>LNJ5zgf0XTLZ6TqwQULlqnW9GYw%3D</URLEncodedHMAC>
-    <PurchaseURL>https://www.amazon.com/gp/cart/aws-merge.html?cart-id=180-0046289-0604664%26associate-id=redtoad-21%26hmac=LNJ5zgf0XTLZ6TqwQULlqnW9GYw=%26SubscriptionId=AKIAJTJID3GQ4PAFYOEQ%26MergeCart=False</PurchaseURL>
+    <CartId>181-2235166-5049319</CartId>
+    <HMAC>KIEJw/abN5etO0MOuxfJBu2KxdI=</HMAC>
+    <URLEncodedHMAC>KIEJw%2FabN5etO0MOuxfJBu2KxdI%3D</URLEncodedHMAC>
+    <PurchaseURL>https://www.amazon.com/gp/cart/aws-merge.html?cart-id=181-2235166-5049319%26associate-id=redtoad-21%26hmac=KIEJw/abN5etO0MOuxfJBu2KxdI=%26SubscriptionId=AKIAJTJID3GQ4PAFYOEQ%26MergeCart=False</PurchaseURL>
     <SubTotal>
       <Amount>17451</Amount>
       <CurrencyCode>USD</CurrencyCode>

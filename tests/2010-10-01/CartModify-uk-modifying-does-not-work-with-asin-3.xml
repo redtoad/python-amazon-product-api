@@ -1,31 +1,32 @@
 <CartClearResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2010-10-01">
   <OperationRequest>
     <HTTPHeaders>
-      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.5a2 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.6pre/613e2c5f4c5a+ +http://pypi.python.org/pypi/python-amazon-product-api/"/>
     </HTTPHeaders>
-    <RequestId>0SHHGHYYRT1T1PJK2QMY</RequestId>
+    <RequestId>1R7T2MN0RT3QB6BS2PEB</RequestId>
     <Arguments>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
       <Argument Name="Service" Value="AWSECommerceService"/>
       <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="HMAC" Value="2eH/Bj7YerTVe2PehwSG6QF0kIg="/>
+      <Argument Name="HMAC" Value="Bozb4sCpvmnJI9Mgk2ewLLlAbTM="/>
       <Argument Name="Operation" Value="CartClear"/>
-      <Argument Name="CartId" Value="277-7017884-9747902"/>
+      <Argument Name="CartId" Value="280-2598945-6273427"/>
       <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2011-11-13T13:35:56Z"/>
       <Argument Name="Version" Value="2010-10-01"/>
-      <Argument Name="Timestamp" Value="2011-02-25T15:34:38Z"/>
     </Arguments>
-    <RequestProcessingTime>0.0433270931243896</RequestProcessingTime>
+    <RequestProcessingTime>0.0275800228118896</RequestProcessingTime>
   </OperationRequest>
   <Cart>
     <Request>
       <IsValid>True</IsValid>
       <CartClearRequest>
-        <CartId>277-7017884-9747902</CartId>
-        <HMAC>2eH/Bj7YerTVe2PehwSG6QF0kIg=</HMAC>
+        <CartId>280-2598945-6273427</CartId>
+        <HMAC>Bozb4sCpvmnJI9Mgk2ewLLlAbTM=</HMAC>
       </CartClearRequest>
     </Request>
-    <CartId>277-7017884-9747902</CartId>
-    <HMAC>2eH/Bj7YerTVe2PehwSG6QF0kIg=</HMAC>
-    <URLEncodedHMAC>2eH%2FBj7YerTVe2PehwSG6QF0kIg%3D</URLEncodedHMAC>
+    <CartId>280-2598945-6273427</CartId>
+    <HMAC>Bozb4sCpvmnJI9Mgk2ewLLlAbTM=</HMAC>
+    <URLEncodedHMAC>Bozb4sCpvmnJI9Mgk2ewLLlAbTM%3D</URLEncodedHMAC>
   </Cart>
 </CartClearResponse>
