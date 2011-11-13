@@ -1,32 +1,32 @@
 <CartClearResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
   <OperationRequest>
     <HTTPHeaders>
-      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.6pre/613e2c5f4c5a+ +http://pypi.python.org/pypi/python-amazon-product-api/"/>
     </HTTPHeaders>
-    <RequestId>0K8P1H3CFJ17BHV8T4F0</RequestId>
+    <RequestId>0NQK6EZYTJ6331E08HNA</RequestId>
     <Arguments>
       <Argument Name="Service" Value="AWSECommerceService"/>
       <Argument Name="Operation" Value="CartClear"/>
-      <Argument Name="Timestamp" Value="2011-11-08T21:47:55Z"/>
+      <Argument Name="Timestamp" Value="2011-11-13T13:35:36Z"/>
       <Argument Name="Version" Value="2011-08-01"/>
       <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
       <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="HMAC" Value="LNJ5zgf0XTLZ6TqwQULlqnW9GYw="/>
-      <Argument Name="CartId" Value="180-0046289-0604664"/>
+      <Argument Name="HMAC" Value="KIEJw/abN5etO0MOuxfJBu2KxdI="/>
+      <Argument Name="CartId" Value="181-2235166-5049319"/>
       <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
     </Arguments>
-    <RequestProcessingTime>0.0504701137542725</RequestProcessingTime>
+    <RequestProcessingTime>0.0337979793548584</RequestProcessingTime>
   </OperationRequest>
   <Cart>
     <Request>
       <IsValid>True</IsValid>
       <CartClearRequest>
-        <CartId>180-0046289-0604664</CartId>
-        <HMAC>LNJ5zgf0XTLZ6TqwQULlqnW9GYw=</HMAC>
+        <CartId>181-2235166-5049319</CartId>
+        <HMAC>KIEJw/abN5etO0MOuxfJBu2KxdI=</HMAC>
       </CartClearRequest>
     </Request>
-    <CartId>180-0046289-0604664</CartId>
-    <HMAC>LNJ5zgf0XTLZ6TqwQULlqnW9GYw=</HMAC>
-    <URLEncodedHMAC>LNJ5zgf0XTLZ6TqwQULlqnW9GYw%3D</URLEncodedHMAC>
+    <CartId>181-2235166-5049319</CartId>
+    <HMAC>KIEJw/abN5etO0MOuxfJBu2KxdI=</HMAC>
+    <URLEncodedHMAC>KIEJw%2FabN5etO0MOuxfJBu2KxdI%3D</URLEncodedHMAC>
   </Cart>
 </CartClearResponse>

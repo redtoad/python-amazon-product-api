@@ -9,7 +9,7 @@ from tests import utils
 from tests import XML_TEST_DIR
 from tests import TESTABLE_API_VERSIONS, TESTABLE_LOCALES
 
-from amazonproduct.api import API
+from amazonproduct.api import API, USER_AGENT
 from amazonproduct.errors import *
 from amazonproduct.paginators import LxmlPaginator
 
@@ -133,7 +133,8 @@ def pytest_funcarg__api(request):
                 # lxml.etree.parse() to avoid, for instance, problems with HTTP
                 # 403 errors
                 try:
-                    xml = urllib2.urlopen(url).read()
+                    req = urllib2.Request(url, headers={'User-Agent': USER_AGENT})
+                    xml = urllib2.urlopen(req).read()
                 except urllib2.HTTPError, e:
                     xml = e.read()
                 root = lxml.etree.fromstring(xml)
@@ -479,46 +480,78 @@ class TestBrowseNodeLookup (object):
             assert ancestors == self.ANCESTORS[api.locale]
 
 
+# Cart items for testing for each locale. None is the default fallback.
+_CART_ITEMS = {
+    'cn': [
+        'B005DRCQZ2', # Sahara's story San Mao
+        'B005DRCPVM', # Dream Whispering Colour San Mao
+        'B005EFU3T4', # Gentle night San Mao
+    ],
+    None: [
+        '0201896834', # The Art of Computer Programming Vol. 1
+        '0201896842', # The Art of Computer Programming Vol. 2
+        '0201896850', # The Art of Computer Programming Vol. 3
+    ],
+}
+
+def pytest_funcarg__items(request):
+    """
+    Returns test items which can be used to test that particular API.
+    """
+    api = request.getfuncargvalue('api')
+    try:
+        return _CART_ITEMS[api.locale]
+    except KeyError:
+        return _CART_ITEMS[None]
+    
+def pytest_funcarg__item(request):
+    """
+    Returns one random test item which can be used to test that particular API.
+    """
+    return request.getfuncargvalue('items')[0]
+    
+
 class TestCartCreate (object):
 
     """
     Check that all XML responses for CartCreate are parsed correctly.
     """
 
-    def test_creating_basket_with_empty_items_fails(self, api):
+    def test_creating_basket_with_empty_items_fails(self, api, item):
         pytest.raises(MissingParameters, api.cart_create, {}) # Items missing
-        pytest.raises(ValueError, api.cart_create, {'0451462009' : 0})
+        pytest.raises(ValueError, api.cart_create, {item: 0})
 
-    def test_creating_basket_with_negative_item_quantity_fails(self, api):
-        pytest.raises(ValueError, api.cart_create, {'0201896834' : -1})
+    def test_creating_basket_with_negative_item_quantity_fails(self, api, item):
+        pytest.raises(ValueError, api.cart_create, {item: -1})
 
-    def test_creating_basket_with_quantity_too_high_fails(self, api):
-        pytest.raises(ValueError, api.cart_create, {'0201896834' : 1000})
+    def test_creating_basket_with_quantity_too_high_fails(self, api, item):
+        pytest.raises(ValueError, api.cart_create, {item: 1000})
 
-    def test_creating_basket_with_unknown_item_fails(self, api):
+    def test_creating_basket_with_unknown_item_fails(self, api, item):
         pytest.raises(InvalidCartItem, api.cart_create, {'021554' : 1})
 
-    def test_create_cart(self, api):
-        root = api.cart_create({
-            '0201896834' : 1, # The Art of Computer Programming Vol. 1
-            '0201896842' : 1, # The Art of Computer Programming Vol. 2
-       })
+    def test_create_cart(self, api, items):
+        first, second = items[:2]
+        root = api.cart_create({first: 1, second: 1})
         cart = utils.Cart.from_xml(root.Cart)
         assert len(cart.items) == 2
-        assert cart['0201896834'].quantity == 1
-        assert cart['0201896842'].quantity == 1
+        assert cart[first].quantity == 1
+        assert cart[second].quantity == 1
 
 
 def pytest_funcarg__cart(request):
-    api = request._funcargs['api']
-    items = {
-        '0201896834' : 1, # The Art of Computer Programming Vol. 1
-        '0201896842' : 2, # The Art of Computer Programming Vol. 2
-    }
+    """
+    Calls ``create_cart`` with two items.
+    """
+    api = request.getfuncargvalue('api')
+    fst, snd = request.getfuncargvalue('items')[:2]
+    items = {fst: 1, snd: 2}
     def create_cart():
         root = api.cart_create(items)
         cart = utils.Cart.from_xml(root.Cart)
         print 'Cart created:', cart
+        from lxml import etree
+        print etree.tostring(root.Cart, pretty_print=True)
         return cart
     def destroy_cart(cart):
         api.cart_clear(cart.cart_id, cart.hmac)
@@ -533,41 +566,36 @@ class TestCartAdd (object):
     Check that all XML responses for CartAdd are parsed correctly.
     """
 
-    def test_adding_with_wrong_cartid_hmac_fails(self, api, cart):
-        pytest.raises(CartInfoMismatch, api.cart_add, '???', cart.hmac, {'0201896834' : 1})
-        pytest.raises(CartInfoMismatch, api.cart_add, cart.cart_id, '???', {'0201896834' : 1})
+    def test_adding_with_wrong_cartid_hmac_fails(self, api, cart, item):
+        pytest.raises(CartInfoMismatch, api.cart_add, '???', cart.hmac, {item: 1})
+        pytest.raises(CartInfoMismatch, api.cart_add, cart.cart_id, '???', {item: 1})
 
-    def test_adding_empty_items_fails(self, api, cart):
+    def test_adding_empty_items_fails(self, api, cart, item):
         pytest.raises(MissingParameters, api.cart_add, cart.cart_id, cart.hmac, {})
-        pytest.raises(ValueError, api.cart_add, cart.cart_id, cart.hmac, {'0451462009' : 0})
+        pytest.raises(ValueError, api.cart_add, cart.cart_id, cart.hmac, {item: 0})
 
-    def test_adding_negative_item_quantity_fails(self, api, cart):
-        pytest.raises(ValueError, api.cart_add, cart.cart_id, cart.hmac, {'0201896834' : -1})
+    def test_adding_negative_item_quantity_fails(self, api, cart, item):
+        pytest.raises(ValueError, api.cart_add, cart.cart_id, cart.hmac, {item: -1})
 
-    def test_adding_item_quantity_too_high_fails(self, api, cart):
-        pytest.raises(ValueError, api.cart_add, cart.cart_id, cart.hmac, {'0201896834' : 1000})
+    def test_adding_item_quantity_too_high_fails(self, api, cart, item):
+        pytest.raises(ValueError, api.cart_add, cart.cart_id, cart.hmac, {item: 1000})
 
     def test_adding_unknown_item_fails(self, api, cart):
-        pytest.raises(InvalidCartItem, api.cart_add, cart.cart_id, cart.hmac, {'021554' : 1})
+        pytest.raises(InvalidCartItem, api.cart_add, cart.cart_id, cart.hmac, {'021554': 1})
 
-    def test_adding_item_already_in_cart_fails(self, api, cart):
-        pytest.raises(ItemAlreadyInCart, api.cart_add, cart.cart_id, 
-                          cart.hmac, {'0201896842' : 2})
-
-    def test_adding_item(self, api, cart):
-        root = api.cart_add(cart.cart_id, cart.hmac, {
-            '0201896850' : 3, # The Art of Computer Programming Vol. 3
-        })
-        from lxml import etree
-        print etree.tostring(root.Cart, pretty_print=True)
+    def test_adding_item(self, api, cart, items):
+        third = items[2]
+        root = api.cart_add(cart.cart_id, cart.hmac, {third: 3})
+        # from lxml import etree
+        #print etree.tostring(root.Cart, pretty_print=True)
 
         cart = utils.Cart.from_xml(root.Cart)
         assert len(cart) == 6
         assert len(cart.items) == 3
 
-        item = cart['0201896850']
+        item = cart[third]
         assert item.quantity == 3
-        assert item.asin == '0201896850'
+        assert item.asin == third
 
 
 class TestCartModify (object):
@@ -576,47 +604,43 @@ class TestCartModify (object):
     Check that all XML responses for CartModify are parsed correctly.
     """
 
-    def test_modifying_with_wrong_cartid_hmac_fails(self, api, cart):
-        pytest.raises(CartInfoMismatch, api.cart_modify, '???', cart.hmac, {'0201896834' : 1})
-        pytest.raises(CartInfoMismatch, api.cart_modify, cart.cart_id, '???', {'0201896834' : 1})
+    def test_modifying_with_wrong_cartid_hmac_fails(self, api, cart, item):
+        pytest.raises(CartInfoMismatch, api.cart_modify, '???', cart.hmac, {item: 1})
+        pytest.raises(CartInfoMismatch, api.cart_modify, cart.cart_id, '???', {item: 1})
 
-    def test_modifying_empty_items_fails(self, api, cart):
+    def test_modifying_empty_items_fails(self, api, cart, item):
         pytest.raises(MissingParameters, api.cart_modify, cart.cart_id, cart.hmac, {})
 
-    def test_modifying_negative_item_quantity_fails(self, api, cart):
-        pytest.raises(ValueError, api.cart_modify, cart.cart_id, cart.hmac, {'0201896834' : -1})
+    def test_modifying_negative_item_quantity_fails(self, api, cart, item):
+        pytest.raises(ValueError, api.cart_modify, cart.cart_id, cart.hmac, {item: -1})
 
-    def test_modifying_item_quantity_too_high_fails(self, api, cart):
-        pytest.raises(ValueError, api.cart_modify, cart.cart_id, cart.hmac, {'0201896834' : 1000})
+    def test_modifying_item_quantity_too_high_fails(self, api, cart, item):
+        pytest.raises(ValueError, api.cart_modify, cart.cart_id, cart.hmac, {item: 1000})
 
-    def test_modifying_item(self, api, cart):
+    def test_modifying_item(self, api, cart, items):
+        first, second = items[:2]
         root = api.cart_modify(cart.cart_id, cart.hmac, {
-            # The Art of Computer Programming Vol. 2
-            cart.get_itemid_for_asin('0201896842'): 0, 
+            cart.get_itemid_for_asin(second): 0, 
         })
-        from lxml import etree
-        print etree.tostring(root.Cart, pretty_print=True)
+        # from lxml import etree
+        # print etree.tostring(root.Cart, pretty_print=True)
 
         cart = utils.Cart.from_xml(root.Cart)
         assert len(cart) == 1
         assert len(cart.items) == 1
 
-        # 0201896842 is gone!
-        pytest.raises(IndexError, lambda x: cart[x], '0201896842')
+        # secod item is gone!
+        pytest.raises(IndexError, lambda x: cart[x], second)
 
-        # 0201896834 is still here!
-        item = cart['0201896834']
+        # first item is still here!
+        item = cart[first]
         assert item.quantity == 1
-        assert item.asin == '0201896834'
+        assert item.asin == first
 
-    def test_modifying_does_not_work_with_asin(self, api, cart):
-        root = api.cart_modify(cart.cart_id, cart.hmac, {
-            # The Art of Computer Programming Vol. 3
-            '0201896842': 0, 
-        })
-        from lxml import etree
-        print etree.tostring(root.Cart, pretty_print=True)
-
+    def test_modifying_does_not_work_with_asin(self, api, cart, item):
+        root = api.cart_modify(cart.cart_id, cart.hmac, {item: 0})
+        # from lxml import etree
+        # print etree.tostring(root.Cart, pretty_print=True)
         cart = utils.Cart.from_xml(root.Cart)
         assert len(cart) == 3
         assert len(cart.items) == 2

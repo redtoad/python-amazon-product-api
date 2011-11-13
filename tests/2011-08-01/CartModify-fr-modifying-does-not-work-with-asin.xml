@@ -1,9 +1,9 @@
 <CartCreateResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
   <OperationRequest>
     <HTTPHeaders>
-      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.6pre/613e2c5f4c5a+ +http://pypi.python.org/pypi/python-amazon-product-api/"/>
     </HTTPHeaders>
-    <RequestId>0VBGSK5DD6K35M0MKZNP</RequestId>
+    <RequestId>002TJ5T8RG6HR7ZANB59</RequestId>
     <Arguments>
       <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
       <Argument Name="Item.1.ASIN" Value="0201896842"/>
@@ -14,10 +14,10 @@
       <Argument Name="Item.2.Quantity" Value="1"/>
       <Argument Name="Operation" Value="CartCreate"/>
       <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="Timestamp" Value="2011-11-08T21:47:47Z"/>
+      <Argument Name="Timestamp" Value="2011-11-13T13:35:28Z"/>
       <Argument Name="Version" Value="2011-08-01"/>
     </Arguments>
-    <RequestProcessingTime>0.189790964126587</RequestProcessingTime>
+    <RequestProcessingTime>0.251806020736694</RequestProcessingTime>
   </OperationRequest>
   <Cart>
     <Request>
@@ -35,10 +35,10 @@
         </Items>
       </CartCreateRequest>
     </Request>
-    <CartId>275-7576624-4314101</CartId>
-    <HMAC>R8dV0Gwvh8woizewLWbewHC3sjY=</HMAC>
-    <URLEncodedHMAC>R8dV0Gwvh8woizewLWbewHC3sjY%3D</URLEncodedHMAC>
-    <PurchaseURL>https://www.amazon.fr/gp/cart/aws-merge.html?cart-id=275-7576624-4314101%26associate-id=redtoad-21%26hmac=R8dV0Gwvh8woizewLWbewHC3sjY=%26SubscriptionId=AKIAJTJID3GQ4PAFYOEQ%26MergeCart=False</PurchaseURL>
+    <CartId>280-3495611-5363820</CartId>
+    <HMAC>QY+Y4HAbJxDzjFk39WTJmUxANQA=</HMAC>
+    <URLEncodedHMAC>QY%2BY4HAbJxDzjFk39WTJmUxANQA%3D</URLEncodedHMAC>
+    <PurchaseURL>https://www.amazon.fr/gp/cart/aws-merge.html?cart-id=280-3495611-5363820%26associate-id=redtoad-21%26hmac=QY%2BY4HAbJxDzjFk39WTJmUxANQA=%26SubscriptionId=AKIAJTJID3GQ4PAFYOEQ%26MergeCart=False</PurchaseURL>
     <SubTotal>
       <Amount>17176</Amount>
       <CurrencyCode>EUR</CurrencyCode>

@@ -3,21 +3,21 @@
     <HTTPHeaders>
       <Header Name="UserAgent" Value="Python-urllib/2.6"/>
     </HTTPHeaders>
-    <RequestId>1AWT3FHCFHA1R5ATRBWW</RequestId>
+    <RequestId>1VB95Y5ETMNP6A54E8N3</RequestId>
     <Arguments>
-      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="Item.1.ASIN" Value="0451462009"/>
       <Argument Name="Service" Value="AWSECommerceService"/>
-      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
       <Argument Name="Item.1.Quantity" Value="0"/>
-      <Argument Name="HMAC" Value="nxKMKnT0EG9SEXD3uytFhE9lsY0="/>
       <Argument Name="Operation" Value="CartAdd"/>
+      <Argument Name="Timestamp" Value="2011-11-13T13:23:58Z"/>
+      <Argument Name="Version" Value="2011-08-01"/>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Item.1.ASIN" Value="0201896834"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="HMAC" Value="nxKMKnT0EG9SEXD3uytFhE9lsY0="/>
       <Argument Name="CartId" Value="280-1923975-7292268"/>
       <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="Timestamp" Value="2011-11-08T21:46:15Z"/>
-      <Argument Name="Version" Value="2011-08-01"/>
     </Arguments>
-    <RequestProcessingTime>0.00415515899658203</RequestProcessingTime>
+    <RequestProcessingTime>0.00394082069396973</RequestProcessingTime>
   </OperationRequest>
   <Cart>
     <Request>
@@ -27,7 +27,7 @@
         <HMAC>nxKMKnT0EG9SEXD3uytFhE9lsY0=</HMAC>
         <Items>
           <Item>
-            <ASIN>0451462009</ASIN>
+            <ASIN>0201896834</ASIN>
             <Quantity>0</Quantity>
           </Item>
         </Items>
