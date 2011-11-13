@@ -1,0 +1,31 @@
+<CartClearResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2010-10-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.5a2 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+    </HTTPHeaders>
+    <RequestId>0Y693GZQXQW769DVGXYE</RequestId>
+    <Arguments>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="HMAC" Value="St7a3WxnHFNgL7idU+oQdKv+9H4="/>
+      <Argument Name="Operation" Value="CartClear"/>
+      <Argument Name="CartId" Value="187-3081765-0463847"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Version" Value="2010-10-01"/>
+      <Argument Name="Timestamp" Value="2011-02-25T15:34:36Z"/>
+    </Arguments>
+    <RequestProcessingTime>0.0315370559692383</RequestProcessingTime>
+  </OperationRequest>
+  <Cart>
+    <Request>
+      <IsValid>True</IsValid>
+      <CartClearRequest>
+        <CartId>187-3081765-0463847</CartId>
+        <HMAC>St7a3WxnHFNgL7idU+oQdKv+9H4=</HMAC>
+      </CartClearRequest>
+    </Request>
+    <CartId>187-3081765-0463847</CartId>
+    <HMAC>St7a3WxnHFNgL7idU+oQdKv+9H4=</HMAC>
+    <URLEncodedHMAC>St7a3WxnHFNgL7idU%2BoQdKv%2B9H4%3D</URLEncodedHMAC>
+  </Cart>
+</CartClearResponse>

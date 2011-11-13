@@ -1,0 +1,44 @@
+<ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+    </HTTPHeaders>
+    <RequestId>a3a1f412-40cf-42f3-9fba-644afed38fdd</RequestId>
+    <Arguments>
+      <Argument Name="Operation" Value="ItemSearch"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="ItemPage" Value="1"/>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="BrowseNode" Value="132"/>
+      <Argument Name="Version" Value="2011-08-01"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2011-11-08T21:14:44Z"/>
+      <Argument Name="SearchIndex" Value="???"/>
+    </Arguments>
+    <RequestProcessingTime>0.0025840000000000</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>False</IsValid>
+      <ItemSearchRequest>
+        <BrowseNode>132</BrowseNode>
+        <ItemPage>1</ItemPage>
+        <ResponseGroup>Small</ResponseGroup>
+        <SearchIndex>???</SearchIndex>
+      </ItemSearchRequest>
+      <Errors>
+        <Error>
+          <Code>AWS.InvalidEnumeratedParameter</Code>
+          <Message>The value you specified for SearchIndex is invalid. Valid values include [
+				'All','Blended','Books','Classical','DVD','Electronics','ForeignBooks','Kitchen','Music','SportingGoods','Software','SoftwareVideoGames','Tools','VHS','Video','VideoGames','Watches'
+				].</Message>
+        </Error>
+        <Error>
+          <Code>AWS.RestrictedParameterValueCombination</Code>
+          <Message>Your request contained a restricted parameter combination.  When SearchIndex equals ???, BrowseNode cannot be present.</Message>
+        </Error>
+      </Errors>
+    </Request>
+  </Items>
+</ItemSearchResponse>

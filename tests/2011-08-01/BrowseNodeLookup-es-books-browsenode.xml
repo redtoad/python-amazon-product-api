@@ -1,0 +1,54 @@
+<BrowseNodeLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+    </HTTPHeaders>
+    <RequestId>0PGEY26H3C76BK5P6VFR</RequestId>
+    <Arguments>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Operation" Value="BrowseNodeLookup"/>
+      <Argument Name="BrowseNodeId" Value="599364031"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2011-11-09T07:49:18Z"/>
+      <Argument Name="Version" Value="2011-08-01"/>
+    </Arguments>
+    <RequestProcessingTime>0.0177061557769775</RequestProcessingTime>
+  </OperationRequest>
+  <BrowseNodes>
+    <Request>
+      <IsValid>True</IsValid>
+      <BrowseNodeLookupRequest>
+        <BrowseNodeId>599364031</BrowseNodeId>
+      </BrowseNodeLookupRequest>
+    </Request>
+    <BrowseNode>
+      <BrowseNodeId>599364031</BrowseNodeId>
+      <Name>Libros</Name>
+      <Children>
+        <BrowseNode>
+          <BrowseNodeId>599365031</BrowseNodeId>
+          <Name>Categor&#237;as</Name>
+          <IsCategoryRoot>1</IsCategoryRoot>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>599366031</BrowseNodeId>
+          <Name>Featured Categories</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>665395031</BrowseNodeId>
+          <Name>Shops</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>667333031</BrowseNodeId>
+          <Name>B&#250;squeda avanzada</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>675789031</BrowseNodeId>
+          <Name>Self Service</Name>
+        </BrowseNode>
+      </Children>
+    </BrowseNode>
+  </BrowseNodes>
+</BrowseNodeLookupResponse>

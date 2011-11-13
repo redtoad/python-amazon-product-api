@@ -1,0 +1,34 @@
+<CartAddResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2010-10-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.5a2 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+    </HTTPHeaders>
+    <RequestId>0VMQ07A49V2QPME3WMM4</RequestId>
+    <Arguments>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="HMAC" Value="lF080LSPYNCJ1QKIfTCOlmRlnUw="/>
+      <Argument Name="Operation" Value="CartAdd"/>
+      <Argument Name="CartId" Value="276-6252805-8514364"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Version" Value="2010-10-01"/>
+      <Argument Name="Timestamp" Value="2011-02-25T15:45:54Z"/>
+    </Arguments>
+    <RequestProcessingTime>0.00357985496520996</RequestProcessingTime>
+  </OperationRequest>
+  <Cart>
+    <Request>
+      <IsValid>False</IsValid>
+      <CartAddRequest>
+        <CartId>276-6252805-8514364</CartId>
+        <HMAC>lF080LSPYNCJ1QKIfTCOlmRlnUw=</HMAC>
+      </CartAddRequest>
+      <Errors>
+        <Error>
+          <Code>AWS.MissingParameters</Code>
+          <Message>Your request is missing required parameters. Required parameters include Items.</Message>
+        </Error>
+      </Errors>
+    </Request>
+  </Cart>
+</CartAddResponse>

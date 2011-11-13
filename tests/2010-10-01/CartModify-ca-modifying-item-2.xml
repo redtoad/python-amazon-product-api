@@ -1,0 +1,72 @@
+<CartModifyResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2010-10-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.5a2 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+    </HTTPHeaders>
+    <RequestId>148A0VVK2SKT0AQ3MGD3</RequestId>
+    <Arguments>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Item.1.Quantity" Value="0"/>
+      <Argument Name="Item.1.CartItemId" Value="U1BO8U3ZYW2PV6"/>
+      <Argument Name="HMAC" Value="PtWO9x7lPD7gg0QPELeRF0eemrM="/>
+      <Argument Name="Operation" Value="CartModify"/>
+      <Argument Name="CartId" Value="178-7115212-1032947"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2011-02-25T15:32:49Z"/>
+      <Argument Name="Version" Value="2010-10-01"/>
+    </Arguments>
+    <RequestProcessingTime>0.100883960723877</RequestProcessingTime>
+  </OperationRequest>
+  <Cart>
+    <Request>
+      <IsValid>True</IsValid>
+      <CartModifyRequest>
+        <CartId>178-7115212-1032947</CartId>
+        <HMAC>PtWO9x7lPD7gg0QPELeRF0eemrM=</HMAC>
+        <Items>
+          <Item>
+            <CartItemId>U1BO8U3ZYW2PV6</CartItemId>
+            <Quantity>0</Quantity>
+          </Item>
+        </Items>
+      </CartModifyRequest>
+    </Request>
+    <CartId>178-7115212-1032947</CartId>
+    <HMAC>PtWO9x7lPD7gg0QPELeRF0eemrM=</HMAC>
+    <URLEncodedHMAC>PtWO9x7lPD7gg0QPELeRF0eemrM%3D</URLEncodedHMAC>
+    <PurchaseURL>https://www.amazon.ca/gp/cart/aws-merge.html?cart-id=178-7115212-1032947%26associate-id=ws%26hmac=PtWO9x7lPD7gg0QPELeRF0eemrM=%26SubscriptionId=XXXXXXXXXXXXXXX%26MergeCart=False</PurchaseURL>
+    <SubTotal>
+      <Amount>6445</Amount>
+      <CurrencyCode>CAD</CurrencyCode>
+      <FormattedPrice>CDN$ 64.45</FormattedPrice>
+    </SubTotal>
+    <CartItems>
+      <SubTotal>
+        <Amount>6445</Amount>
+        <CurrencyCode>CAD</CurrencyCode>
+        <FormattedPrice>CDN$ 64.45</FormattedPrice>
+      </SubTotal>
+      <CartItem>
+        <CartItemId>U24U0TK50FRSUK</CartItemId>
+        <ASIN>0201896834</ASIN>
+        <MerchantId>A3DWYIK6Y9EEQB</MerchantId>
+        <SellerId>A3DWYIK6Y9EEQB</SellerId>
+        <SellerNickname>Amazon.ca</SellerNickname>
+        <Quantity>1</Quantity>
+        <Title>Art of Computer Programming, Volume 1: Fundamental Algorithms</Title>
+        <ProductGroup>Book</ProductGroup>
+        <Price>
+          <Amount>6445</Amount>
+          <CurrencyCode>CAD</CurrencyCode>
+          <FormattedPrice>CDN$ 64.45</FormattedPrice>
+        </Price>
+        <ItemTotal>
+          <Amount>6445</Amount>
+          <CurrencyCode>CAD</CurrencyCode>
+          <FormattedPrice>CDN$ 64.45</FormattedPrice>
+        </ItemTotal>
+      </CartItem>
+    </CartItems>
+  </Cart>
+</CartModifyResponse>
