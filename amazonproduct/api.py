@@ -164,6 +164,9 @@ class API (object):
 
         self.response_processor = processor or LxmlObjectifyProcessor()
 
+    def __repr__(self):
+        return '<API(%s/%s) at %s>' % (self.VERSION, self.locale, hex(id(self)))
+
     def _build_url(self, **qargs):
         """
         Builds a signed URL for querying Amazon AWS.  This function is based
