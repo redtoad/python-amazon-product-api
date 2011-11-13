@@ -388,6 +388,9 @@ class API (object):
 
         ``ItemSearch`` is the operation that is used most often in requests. In
         general, when trying to find an item for sale, you use this operation.
+
+        .. versionchanged:: 2011-08-01
+           You can only fetch up to 10 result pages (instead of 400).
         """
         try:
             return self.call(Operation='ItemSearch',
