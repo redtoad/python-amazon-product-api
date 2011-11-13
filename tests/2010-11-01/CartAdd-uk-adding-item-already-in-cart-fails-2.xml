@@ -1,0 +1,101 @@
+<CartAddResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2010-11-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+    </HTTPHeaders>
+    <RequestId>1R2WGZBSRJ7EEWR3XBX1</RequestId>
+    <Arguments>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Item.1.ASIN" Value="0201896834"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Item.1.Quantity" Value="2"/>
+      <Argument Name="HMAC" Value="Vxf++6gjmJmsAkIoc3lAb8OkU4A="/>
+      <Argument Name="Operation" Value="CartAdd"/>
+      <Argument Name="CartId" Value="280-3834931-6171609"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2011-11-13T13:03:43Z"/>
+      <Argument Name="Version" Value="2010-11-01"/>
+    </Arguments>
+    <RequestProcessingTime>0.112112045288086</RequestProcessingTime>
+  </OperationRequest>
+  <Cart>
+    <Request>
+      <IsValid>True</IsValid>
+      <CartAddRequest>
+        <CartId>280-3834931-6171609</CartId>
+        <HMAC>Vxf++6gjmJmsAkIoc3lAb8OkU4A=</HMAC>
+        <Items>
+          <Item>
+            <ASIN>0201896834</ASIN>
+            <Quantity>2</Quantity>
+          </Item>
+        </Items>
+      </CartAddRequest>
+      <Errors>
+        <Error>
+          <Code>AWS.ECommerceService.InvalidQuantity</Code>
+          <Message>You have exceeded the maximum quantity allowed for the following items: 0201896834.</Message>
+        </Error>
+        <Error>
+          <Code>AWS.ECommerceService.ItemAlreadyInCart</Code>
+          <Message>The item you specified, 0201896834, is already in your cart.</Message>
+        </Error>
+      </Errors>
+    </Request>
+    <CartId>280-3834931-6171609</CartId>
+    <HMAC>Vxf++6gjmJmsAkIoc3lAb8OkU4A=</HMAC>
+    <URLEncodedHMAC>Vxf%2B%2B6gjmJmsAkIoc3lAb8OkU4A%3D</URLEncodedHMAC>
+    <PurchaseURL>https://www.amazon.co.uk/gp/cart/aws-merge.html?cart-id=280-3834931-6171609%26associate-id=redtoad-21%26hmac=Vxf%2B%2B6gjmJmsAkIoc3lAb8OkU4A=%26SubscriptionId=AKIAJTJID3GQ4PAFYOEQ%26MergeCart=False</PurchaseURL>
+    <SubTotal>
+      <Amount>13767</Amount>
+      <CurrencyCode>GBP</CurrencyCode>
+      <FormattedPrice>&#163;137.67</FormattedPrice>
+    </SubTotal>
+    <CartItems>
+      <SubTotal>
+        <Amount>13767</Amount>
+        <CurrencyCode>GBP</CurrencyCode>
+        <FormattedPrice>&#163;137.67</FormattedPrice>
+      </SubTotal>
+      <CartItem>
+        <CartItemId>U3CQZQPMGMHQZP</CartItemId>
+        <ASIN>0201896834</ASIN>
+        <MerchantId>Deprecated</MerchantId>
+        <SellerNickname>Amazon.co.uk</SellerNickname>
+        <Quantity>1</Quantity>
+        <Title>The Art of Computer Programming: Fundamental Algorithms v. 1</Title>
+        <ProductGroup>Book</ProductGroup>
+        <Price>
+          <Amount>4589</Amount>
+          <CurrencyCode>GBP</CurrencyCode>
+          <FormattedPrice>&#163;45.89</FormattedPrice>
+        </Price>
+        <ItemTotal>
+          <Amount>4589</Amount>
+          <CurrencyCode>GBP</CurrencyCode>
+          <FormattedPrice>&#163;45.89</FormattedPrice>
+        </ItemTotal>
+      </CartItem>
+      <CartItem>
+        <CartItemId>U1KDP0UOUZ8Q17</CartItemId>
+        <ASIN>0201896842</ASIN>
+        <MerchantId>Deprecated</MerchantId>
+        <SellerNickname>Amazon.co.uk</SellerNickname>
+        <Quantity>2</Quantity>
+        <Title>The Art of Computer Programming: Seminumerical Algorithms v. 2</Title>
+        <ProductGroup>Book</ProductGroup>
+        <Price>
+          <Amount>4589</Amount>
+          <CurrencyCode>GBP</CurrencyCode>
+          <FormattedPrice>&#163;45.89</FormattedPrice>
+        </Price>
+        <ItemTotal>
+          <Amount>9178</Amount>
+          <CurrencyCode>GBP</CurrencyCode>
+          <FormattedPrice>&#163;91.78</FormattedPrice>
+        </ItemTotal>
+      </CartItem>
+    </CartItems>
+  </Cart>
+</CartAddResponse>
