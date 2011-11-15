@@ -433,42 +433,101 @@ class API (object):
 
     def browse_node_lookup(self, browse_node_id, response_group=None, **params):
         """
-        Given a browse node ID, ``BrowseNodeLookup`` returns the specified
-        browse node's name, children, and ancestors. The names and browse node
-        IDs of the children and ancestor browse nodes are also returned.
-        ``BrowseNodeLookup`` enables you to traverse the browse node hierarchy
-        to find a browse node.
+        Given a ``browse_node_id``, this method returns the specified browse
+        node's name, children, and ancestors. The names and browse node IDs of
+        the children and ancestor browse nodes are also returned.
+        :meth:`browse_node_lookup` enables you to traverse the browse node
+        hierarchy to find a browse node.
 
         As you traverse down the hierarchy, you refine your search and limit
         the number of items returned. For example, you might traverse the
-        following hierarchy: ``DVD>Used DVDs>Kids and Family``, to select out
-        of all the DVDs offered by Amazon only those that are appropriate for
-        family viewing. Returning the items associated with ``Kids and Family``
-        produces a much more targeted result than a search based at the level
-        of ``Used DVDs``.
+        following hierarchy: ``Books>Children's Books>Science``, to select out
+        of all the science books offered by Amazon only those that are
+        appropriate for children::
 
-        Alternatively, by traversing up the browse node tree, you can
-        determine the root category of an item. You might do that, for
-        example, to return the top seller of the root product category using
-        the ``TopSeller`` response group in an ``ItemSearch`` request.
+            >>> api = API(locale='us')
+            >>> node_id = 3207 # Books > Children's Books > Science
+            >>> result = api.browse_node_lookup(node_id)
+            >>> for child in result.BrowseNodes.BrowseNode.Children.BrowseNode:
+            ...     print '%s (%sa)' % (child.Name, child.BrowseNodeId)
+            ...
+            Agriculture (3208)
+            Anatomy & Physiology (3209)
+            Astronomy & Space (3210)
+            Biology (3214)
+            Botany (3215)
+            Chemistry (3216)
+            Earth Sciences (3217)
+            Electricity & Electronics (3220)
+            Engineering (16244041)
+            Environment & Ecology (3221)
+            Experiments & Projects (3224)
+            Geography (16244051)
+            Health (3230)
+            Heavy Machinery (3249)
+            How Things Work (3250)
+            Inventions & Inventors (16244711)
+            Light & Sound (16244701)
+            Math (3253)
+            Mystery & Wonders (15356851)
+            Nature (3261)
+            Physics (3283)
+            Social Science (3143)
+            Zoology (3301)
+        
+        Returning the items associated with children's science books produces a
+        much more targeted result than a search based at the level of books.
 
-        You can use ``BrowseNodeLookup`` iteratively to navigate through the
-        browse node hierarchy to reach the node that most appropriately suits
-        your search. Then you can use the browse node ID in an ItemSearch
-        request. This response would be far more targeted than, for example,
-        searching through all of the browse nodes in a search index.
+        Alternatively, by traversing up the browse node tree, you can determine
+        the root category of an item. You might do that, for example, to return
+        the top seller of the root product category using the ``TopSellers``
+        response group in an :meth:`browse_node_lookup` request::
+
+            >>> # extract all category roots
+            >>> result = api.item_lookup('031603438X', # Keith Richards: Life
+            ...     ResponseGroup='BrowseNodes')
+            >>> root_ids = result.xpath(
+            ...     '//aws:BrowseNode[aws:IsCategoryRoot=1]/aws:BrowseNodeId',
+            ...     namespaces={'aws': result.nsmap.get(None)})
+
+            >>> # TopSellers for first category
+            >>> result = api.browse_node_lookup(root_ids[0], 'TopSellers')
+            >>> for item in result.BrowseNodes.BrowseNode.TopSellers.TopSeller:
+            ...     print item.ASIN, item.Title
+            ...
+            B004LLHE62 Ghost in the Polka Dot Bikini (A Ghost of Granny Apples Mystery)
+            B004LROUNG The Litigators
+            B005K0HDGE 11/22/63 [Enhanced eBook]
+            B004W2UBYW Steve Jobs
+            1419702238 Diary of a Wimpy Kid: Cabin Fever
+            1451648537 Steve Jobs
+            B003YL4LNY Inheritance (The Inheritance Cycle)
+            0375856110 Inheritance (The Inheritance Cycle)
+            B005IGVS6Q Unfinished Business
+            B005O548QI Last Breath
+
+        You can use :meth:`browse_node_lookup` iteratively to navigate through
+        the browse node hierarchy to reach the node that most appropriately
+        suits your search. Then you can use the browse node ID in an
+        :meth:`item_search` request. This response would be far more targeted
+        than, for example, searching through all of the browse nodes in a
+        search index.
+
+        A list of BrowseNodes can be found here:
+        http://docs.amazonwebservices.com/AWSECommerceService/latest/DG/index.html?BrowseNodeIDs.html
 
         :param browse_node_id: A positive integer assigned by Amazon that
           uniquely identifies a product category.
-          Default: None
-          Valid Values: A positive integer.
-        :type browse_node_id: str
+        :type browse_node_id: positive int
+
         :param response_group: Specifies the types of values to return. You can
           specify multiple response groups in one request by separating them
-          with commas.
-          Default: ``BrowseNodeInfo``
-          Valid Values: ``MostGifted``, ``NewReleases``, ``MostWishedFor``,
-          ``TopSellers``
+          with commas. Valid Values are ``BrowseNodeInfo`` (default),
+          ``MostGifted``, ``NewReleases``, ``MostWishedFor``, ``TopSellers``.
+        :type response_group: str
+
+        :param params: This can be any (or none) of the
+          :ref:`common-request-parameters`.
         """
         try:
             return self.call(Operation='BrowseNodeLookup',
