@@ -2,6 +2,7 @@
 More advanced uses
 ==================
 
+.. _adjusting-api-version:
 
 Using a different API version
 -----------------------------
