@@ -9,7 +9,6 @@ from base64 import b64encode
 from datetime import datetime, timedelta
 import gzip
 import hmac
-import os
 import socket
 import StringIO
 import sys
@@ -29,10 +28,12 @@ else:
 from amazonproduct.version import VERSION
 from amazonproduct.errors import *
 from amazonproduct.paginators import paginate
-from amazonproduct import processors
+from amazonproduct.utils import running_on_gae
 
-#: Is this module running on Google App Engine (GAE)?
-RUNNING_ON_GAE = 'Google' in os.environ.get('SERVER_SOFTWARE', '')
+try:
+    from processors.objectify import Processor as default_processor
+except ImportError:
+    from processors.etree import Processor as default_processor
 
 USER_AGENT = ('python-amazon-product-api/%s '
     '+http://pypi.python.org/pypi/python-amazon-product-api/' % VERSION)
@@ -138,17 +139,16 @@ class API (object):
             raise UnknownLocale(locale)
 
         # GAE does not allow timeouts to be specified manually
-        if not RUNNING_ON_GAE:
+        if not running_on_gae():
             socket.setdefaulttimeout(self.TIMEOUT)
 
         self.last_call = datetime(1970, 1, 1)
         self.debug = 0 # set to 1 if you want to see HTTP headers
 
-        if RUNNING_ON_GAE:
-            default_processor = processors.MinidomProcessor
+        if processor is not None:
+            self.response_processor = processor
         else:
-            default_processor = processors.LxmlObjectifyProcessor
-        self.response_processor = processor or default_processor()
+            self.response_processor = default_processor()
 
     def _build_url(self, **qargs):
         """
