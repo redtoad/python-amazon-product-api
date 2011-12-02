@@ -82,7 +82,7 @@ class XPathPaginator (BaseResultPaginator):
                 path = xpath.replace('{}', nspace)
                 node = root.findtext(path)
                 return int(node)
-            except (IndexError, TypeError):
+            except (ValueError, TypeError):
                 return default
         return map(lambda a: fetch_value(*a), [
             (self.current_page_xpath, 1),

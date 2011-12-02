@@ -21,13 +21,12 @@ class BaseResultPaginator (object):
 
     def __init__(self, fun, *args, **kwargs):
         """
-        :param counter: counter variable passed to AWS.
         :param limit: limit fetched pages to this amount (restricted to a
-        maximum of 400 pages by API itself).
+        maximum of 10 pages by API itself).
         """
         self.fun = fun
         self.args, self.kwargs = args, kwargs
-        self.limit = kwargs.pop('limit', 400)
+        self.limit = kwargs.pop('limit', 10)
 
         # fetch first page to get pagination parameters
         self._first_page = self.page(1)
