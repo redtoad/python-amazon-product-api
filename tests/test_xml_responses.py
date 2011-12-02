@@ -10,6 +10,7 @@ from tests import XML_TEST_DIR
 from tests import TESTABLE_API_VERSIONS, TESTABLE_LOCALES, TESTABLE_PROCESSORS
 
 from amazonproduct.api import API, USER_AGENT
+from amazonproduct.contrib.cart import Cart
 from amazonproduct.errors import *
 
 def pytest_generate_tests(metafunc):
@@ -539,7 +540,7 @@ class TestCartCreate (object):
     Check that all XML responses for CartCreate are parsed correctly.
     """
 
-    processors = ['objectify']
+    processors = ['objectify', 'etree']
 
     def test_creating_basket_with_empty_items_fails(self, api, item):
         pytest.raises(MissingParameters, api.cart_create, {}) # Items missing
@@ -557,7 +558,7 @@ class TestCartCreate (object):
     def test_create_cart(self, api, items):
         first, second = items[:2]
         root = api.cart_create({first: 1, second: 1})
-        cart = utils.Cart.from_xml(root.Cart)
+        cart = api.processor.parse_cart(root)
         assert len(cart.items) == 2
         assert cart[first].quantity == 1
         assert cart[second].quantity == 1
@@ -572,10 +573,8 @@ def pytest_funcarg__cart(request):
     items = {fst: 1, snd: 2}
     def create_cart():
         root = api.cart_create(items)
-        cart = utils.Cart.from_xml(root.Cart)
+        cart = api.processor.parse_cart(root)
         print 'Cart created:', cart
-        from lxml import etree
-        print etree.tostring(root.Cart, pretty_print=True)
         return cart
     def destroy_cart(cart):
         api.cart_clear(cart.cart_id, cart.hmac)
@@ -590,7 +589,7 @@ class TestCartAdd (object):
     Check that all XML responses for CartAdd are parsed correctly.
     """
 
-    processors = ['objectify']
+    processors = ['objectify', 'etree']
 
     def test_adding_with_wrong_cartid_hmac_fails(self, api, cart, item):
         pytest.raises(CartInfoMismatch, api.cart_add, '???', cart.hmac, {item: 1})
@@ -615,7 +614,7 @@ class TestCartAdd (object):
         # from lxml import etree
         # print etree.tostring(root.Cart, pretty_print=True)
 
-        cart = utils.Cart.from_xml(root.Cart)
+        cart = api.processor.parse_cart(root)
         assert len(cart) == 6
         assert len(cart.items) == 3
 
@@ -630,7 +629,7 @@ class TestCartModify (object):
     Check that all XML responses for CartModify are parsed correctly.
     """
 
-    processors = ['objectify']
+    processors = ['objectify', 'etree']
 
     def test_modifying_with_wrong_cartid_hmac_fails(self, api, cart, item):
         pytest.raises(CartInfoMismatch, api.cart_modify, '???', cart.hmac, {item: 1})
@@ -653,7 +652,7 @@ class TestCartModify (object):
         # from lxml import etree
         # print etree.tostring(root.Cart, pretty_print=True)
 
-        cart = utils.Cart.from_xml(root.Cart)
+        cart = api.processor.parse_cart(root)
         assert len(cart) == 1
         assert len(cart.items) == 1
 
@@ -669,7 +668,7 @@ class TestCartModify (object):
         root = api.cart_modify(cart.cart_id, cart.hmac, {item: 0})
         # from lxml import etree
         # print etree.tostring(root.Cart, pretty_print=True)
-        cart = utils.Cart.from_xml(root.Cart)
+        cart = api.processor.parse_cart(root)
         assert len(cart) == 3
         assert len(cart.items) == 2
 
@@ -680,7 +679,7 @@ class TestCartGet (object):
     Check that all XML responses for CartGet are parsed correctly.
     """
 
-    processors = ['objectify']
+    processors = ['objectify', 'etree']
 
     def test_getting_with_wrong_cartid_hmac_fails(self, api, cart):
         pytest.raises(CartInfoMismatch, api.cart_get, '???', cart.hmac)
@@ -688,7 +687,7 @@ class TestCartGet (object):
 
     def test_getting_cart(self, api, cart):
         root = api.cart_get(cart.cart_id, cart.hmac)
-        cart = utils.Cart.from_xml(root.Cart)
+        cart = api.processor.parse_cart(root)
         assert len(cart) == 3
         assert len(cart.items) == 2
 
@@ -699,7 +698,7 @@ class TestCartClear (object):
     Check that all XML responses for CartClear are parsed correctly.
     """
 
-    processors = ['objectify']
+    processors = ['objectify', 'etree']
 
     def test_clearing_with_wrong_cartid_hmac_fails(self, api, cart):
         pytest.raises(CartInfoMismatch, api.cart_clear, '???', cart.hmac)
@@ -707,7 +706,7 @@ class TestCartClear (object):
 
     def test_clearing_cart(self, api, cart):
         root = api.cart_clear(cart.cart_id, cart.hmac)
-        cart = utils.Cart.from_xml(root.Cart)
+        cart = api.processor.parse_cart(root)
         assert len(cart.items) == 0
 
 
