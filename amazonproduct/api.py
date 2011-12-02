@@ -409,7 +409,7 @@ class API (object):
             if paginator is not None:
                 # Amazon limits returned pages to max 5
                 # if SearchIndex "All" is used!
-                if search_index == 'All' and operators.get('limit', 400) > 5:
+                if search_index == 'All' and operators.get('limit', 10) > 5:
                     operators['limit'] = 5
                 return paginator(self.call, **operators)
             else:
