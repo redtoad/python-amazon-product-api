@@ -3,7 +3,6 @@
 # This program is release under the BSD License. You can find the full text of
 # the license in the LICENSE file.
 
-
 __docformat__ = "restructuredtext en"
 
 from base64 import b64encode
@@ -39,9 +38,11 @@ else:
 
 from amazonproduct.version import VERSION
 from amazonproduct.errors import *
-from amazonproduct.paginators import paginate
-from amazonproduct.processors import LxmlObjectifyProcessor
-from amazonproduct.utils import load_config
+from amazonproduct.utils import load_config, running_on_gae
+try:
+    from processors.objectify import Processor as default_processor
+except ImportError:
+    from processors.etree import Processor as default_processor
 
 USER_AGENT = ('python-amazon-product-api/%s '
     '+http://pypi.python.org/pypi/python-amazon-product-api/' % VERSION)
@@ -157,12 +158,18 @@ class API (object):
         except KeyError:
             raise UnknownLocale(locale)
 
-        socket.setdefaulttimeout(self.TIMEOUT)
+
+        # GAE does not allow timeouts to be specified manually
+        if not running_on_gae():
+            socket.setdefaulttimeout(self.TIMEOUT)
 
         self.last_call = datetime(1970, 1, 1)
         self.debug = 0 # set to 1 if you want to see HTTP headers
 
-        self.response_processor = processor or LxmlObjectifyProcessor()
+        if processor is not None:
+            self.processor = processor
+        else:
+            self.processor = default_processor()
 
     def __repr__(self):
         return '<API(%s/%s) at %s>' % (self.VERSION, self.locale, hex(id(self)))
@@ -250,7 +257,7 @@ class API (object):
         you have defined one.
         """
         try:
-            return self.response_processor(fp)
+            return self.processor.parse(fp)
         except AWSError, e:
 
             if e.code == 'InternalError':
@@ -356,8 +363,7 @@ class API (object):
             # otherwise re-raise exception
             raise # pragma: no cover
 
-    @paginate
-    def item_search(self, search_index, **params):
+    def item_search(self, search_index, paginate='ItemPage', **params):
         """
         The ``ItemSearch`` operation returns items that satisfy the search
         criteria, including one or more search indices.
@@ -393,9 +399,26 @@ class API (object):
            You can only fetch up to 10 result pages (instead of 400).
         """
         try:
-            return self.call(Operation='ItemSearch',
-                                  SearchIndex=search_index, **params)
+            operators = {
+                'Operation': 'ItemSearch',
+                'SearchIndex': search_index,
+            }
+            operators.update(params)
+
+            paginator = self.processor.load_paginator(paginate)
+            if paginator is not None:
+                # Amazon limits returned pages to max 5
+                # if SearchIndex "All" is used!
+                if search_index == 'All' and operators.get('limit', 400) > 5:
+                    operators['limit'] = 5
+                return paginator(self.call, **operators)
+            else:
+                return self.call(**operators)
         except AWSError, e:
+
+            if (e.code == 'AWS.InvalidEnumeratedParameter'
+            and self._reg('invalid-value').search(e.msg)):
+                raise InvalidSearchIndex(search_index)
 
             if e.code == 'AWS.InvalidResponseGroup':
                 raise InvalidResponseGroup(params.get('ResponseGroup'))
