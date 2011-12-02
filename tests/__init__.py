@@ -3,6 +3,7 @@ import imp
 import os.path
 
 from amazonproduct import HOSTS
+from amazonproduct.processors import objectify, etree, minidom
 
 _here = os.path.abspath(os.path.dirname(__file__))
 
@@ -25,6 +26,13 @@ TESTABLE_API_VERSIONS = [
 
 #: Locales to test against. 
 TESTABLE_LOCALES = HOSTS.keys()
+
+#: Result processors to test with.
+TESTABLE_PROCESSORS = {
+    'objectify': objectify.Processor,
+    'etree': etree.Processor,
+#    'minidom': minidom.Processor,
+}
 
 def get_config_value(key, default=None):
     """

@@ -2,13 +2,14 @@
 from lxml import etree, objectify
 
 from amazonproduct.errors import AWSError
-from amazonproduct.paginators import LxmlItemSearchPaginator
+from amazonproduct.processors import BaseResultPaginator
 
 
 class SelectiveClassLookup(etree.CustomElementClassLookup):
     """
     Lookup mechanism for XML elements to ensure that ItemIds (like
     ASINs) are always StringElements and evaluated as such.
+
     Thanks to Brian Browning for pointing this out.
     """
     # pylint: disable-msg=W0613
@@ -36,7 +37,7 @@ class Processor (object):
         lookup.set_fallback(objectify.ObjectifyElementClassLookup())
         self._parser.set_element_class_lookup(lookup)
 
-    def __call__(self, fp):
+    def parse(self, fp):
         """
         Parses a file-like object containing the Amazon XML response.
         """
@@ -59,4 +60,40 @@ class Processor (object):
 
         return root
 
-    item_search_paginator = LxmlItemSearchPaginator
+    @classmethod
+    def load_paginator(cls, counter):
+        return {
+            'ItemPage': SearchPaginator,
+        }[counter]
+
+
+class Paginator (BaseResultPaginator):
+
+    """
+    Result paginator using lxml and XPath expressions to extract page and
+    result information from XML.
+    """
+
+    def extract_data(self, root):
+        nspace = root.nsmap.get(None, '')
+        def fetch_value(xpath, default):
+            try:
+                return root.xpath(xpath, namespaces={'aws' : nspace})[0]
+            except AttributeError:
+                # node has no attribute pyval so it better be a number
+                return int(node)
+            except IndexError:
+                return default
+        return map(lambda a: fetch_value(*a), [
+            (self.current_page_xpath, 1),
+            (self.total_pages_xpath, 0),
+            (self.total_results_xpath, 0)
+        ])
+
+
+class SearchPaginator (Paginator):
+
+    counter = 'ItemPage'
+    current_page_xpath = '//aws:Items/aws:Request/aws:ItemSearchRequest/aws:ItemPage'
+    total_pages_xpath = '//aws:Items/aws:TotalPages'
+    total_results_xpath = '//aws:Items/aws:TotalResults'

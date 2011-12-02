@@ -6,12 +6,11 @@ import urllib2
 
 from tests.utils import convert_camel_case, Cart
 from tests import XML_TEST_DIR
-from tests import TESTABLE_API_VERSIONS, TESTABLE_LOCALES
+from tests import TESTABLE_API_VERSIONS, TESTABLE_LOCALES, TESTABLE_PROCESSORS
 from tests import AWS_KEY, SECRET_KEY
 
 from amazonproduct.api import API
 from amazonproduct.errors import *
-from amazonproduct.paginators import LxmlPaginator
 
 def pytest_generate_tests(metafunc):
     """
@@ -20,23 +19,27 @@ def pytest_generate_tests(metafunc):
     ``api_versions`` to specify which one are used.
     """
     if 'api' in metafunc.funcargnames:
-        api_versions = getattr(metafunc.function, 'api_versions',
-            getattr(metafunc.cls, 'api_versions', TESTABLE_API_VERSIONS))
-        for version in api_versions:
-            locales = getattr(metafunc.function, 'locales',
-                getattr(metafunc.cls, 'locales', TESTABLE_LOCALES))
-            for locale in locales:
-                # file containing previously fetched response
-                local_file = os.path.join(XML_TEST_DIR, version,
-                    '%s-%s-%s.xml' % (metafunc.cls.__name__[4:], locale, 
-                    metafunc.function.__name__[5:].replace('_', '-')))
-                metafunc.addcall(
-                    id='%s/%s' % (version, locale), 
-                    param={
-                        'version' : version, 
-                        'locale' : locale, 
-                        'xml_response' : local_file
-                    })
+        processors = getattr(metafunc.function, 'processors',
+            getattr(metafunc.cls, 'processors', TESTABLE_PROCESSORS))
+        for processor in processors:
+            api_versions = getattr(metafunc.function, 'api_versions',
+                getattr(metafunc.cls, 'api_versions', TESTABLE_API_VERSIONS))
+            for version in api_versions:
+                locales = getattr(metafunc.function, 'locales',
+                    getattr(metafunc.cls, 'locales', TESTABLE_LOCALES))
+                for locale in locales:
+                    # file containing previously fetched response
+                    local_file = os.path.join(XML_TEST_DIR, version,
+                        '%s-%s-%s.xml' % (metafunc.cls.__name__[4:], locale,
+                        metafunc.function.__name__[5:].replace('_', '-')))
+                    metafunc.addcall(
+                        id='%s:%s/%s' % (processor, version, locale),
+                        param={
+                            'processor': processor,
+                            'version': version,
+                            'locale': locale,
+                            'xml_response': local_file
+                        })
 
 def pytest_funcarg__server(request):
     """
@@ -62,7 +65,8 @@ def pytest_funcarg__api(request):
     server = request.getfuncargvalue('server')
     url_reg = re.compile(r'^http://(?P<host>[\w\-\.]+)(?P<path>/onca/xml.*)$')
 
-    api = API(AWS_KEY, SECRET_KEY, request.param['locale'])
+    processor = TESTABLE_PROCESSORS[request.param['processor']]()
+    api = API(AWS_KEY, SECRET_KEY, request.param['locale'], processor=processor, associate_tag='redtoad-20')
     api.VERSION = request.param['version']
     api.REQUESTS_PER_SECOND = 10000 # just for here!
 
@@ -101,6 +105,29 @@ def pytest_funcarg__api(request):
 
     api._fetch = counter(api._fetch)
     return api
+
+
+class runfor (object):
+
+    """
+    Can limit any test method/function decorated with this to run only for/with
+    the specified API version, locale and/or result processor.
+    """
+
+    def __init__(self, api_versions=None, locales=None, processors=None):
+        self.api_versions = api_versions
+        self.locales = locales
+        self.processors = processors
+
+    def __call__(self, fnc):
+        if self.api_versions is not None:
+            fnc.api_versions = self.api_versions
+        if self.locales is not None:
+            fnc.locales = self.locales
+        if self.processors is not None:
+            fnc.processors = self.processors
+        return fnc
+
 
 
 class TestCorrectVersion (object):
@@ -185,8 +212,8 @@ class TestItemSearch (object):
     def test_invalid_parameter_combination(self, api):
         pytest.raises(InvalidParameterCombination, api.item_search, 
                           'All', BrowseNode=132)
-        
-    #@ignore_locales('jp')
+
+    @runfor(processors=['objectify'])
     def test_lookup_by_title(self, api):
         for result in api.item_search('Books', Title='Harry Potter', limit=1):
             for item in result.Items.Item:
@@ -200,7 +227,8 @@ class TestSimilarityLookup (object):
     """
     
     locales = ['de']
-    
+
+    @runfor(processors=['objectify'])
     def test_similar_items(self, api):
         # 0451462009 Small Favor: A Novel of the Dresden Files 
         root = api.similarity_lookup('0451462009')
@@ -224,18 +252,12 @@ class TestResultPaginator (object):
     api_versions = ['2009-10-01', '2009-11-01']
     locales = ['de']
 
-    class ReviewPaginator (LxmlPaginator):
-        counter = 'ReviewPage'
-        current_page_xpath = '//aws:Items/aws:Request/aws:ItemLookupRequest/aws:ReviewPage'
-        total_pages_xpath = '//aws:Items/aws:Item/aws:CustomerReviews/aws:TotalReviewPages'
-        total_results_xpath = '//aws:Items/aws:Item/aws:CustomerReviews/aws:TotalReviews'
-
     def test_itemsearch_pagination(self, api):
 
         results = 272
         pages = 28
 
-        paginator = api.item_search('Books', 
+        paginator = api.item_search('Books',
                 Publisher='Galileo Press', Sort='salesrank', limit=10)
         for page, root in enumerate(paginator):
             assert paginator.results == results
@@ -263,67 +285,40 @@ class TestResultPaginator (object):
         assert len(pages) == 2
         assert paginator.current == 2
 
-    def test_review_pagination(self, api):
-        # reviews for "Harry Potter and the Philosopher's Stone"
-        ASIN = '0747532745'
-
-        # test values for different API versions
-        # version : (total_reviews, review_pages)
-        VALUES = {
-            '2009-10-01' : (2458, 492),
-            '2009-11-01' : (2465, 493),
-        }
-
-        paginator = self.ReviewPaginator(api.item_lookup, 
-            ASIN, ResponseGroup='Reviews', limit=10)
-
-        for page, root in enumerate(paginator):
-            reviews, pages = VALUES[api.VERSION]
-            assert paginator.results == reviews
-            assert paginator.pages == pages
-            assert paginator.current == page+1
-
-        assert page == 9
-        assert paginator.current == 10
-
-    def test_pagination_works_for_missing_reviews(self, api):
-        # "Sherlock Holmes (limitierte Steelbook Edition) [Blu-ray]"
-        # had no reviews at time of writing
-        ASIN = 'B0039NM7Y2'
-
-        paginator = self.ReviewPaginator(api.item_lookup, 
-            ASIN, ResponseGroup='Reviews')
-
-        for page, root in enumerate(paginator):
-            assert not hasattr(root.Items.Item, 'CustomerReviews')
-
-        assert page == 0
-
-# FIXME: ListLookup has since been deprecated! Until I find suitable example to
-# use instead, I'm disabling this test.
-#    def test_pagination_works_for_xpath_expr_returning_attributes(self):
-#        # Bug reported by Giacomo Lacava:
-#        # > I've found an issue with the ResultPaginator: basically your
-#        # > code assumes that the xpath results are going to be nodes and calls
-#        # > pyval on it, but they might actually be *attributes* and in that
-#        # > case you'd get an error (because they don't have pyval). In my 
-#        # > code, working with WishLists, I don't get a Page node in the 
-#        # > result, so have to rely on the Argument node (which looks like 
-#        # > this: <Argument Name="ProductPage" Value="1">).
-#        LIST_ID = '229RA3LVMR97X'
-#        paginator = ResultPaginator('ProductPage',
-#            '//aws:OperationRequest/aws:Arguments/aws:Argument[@Name="ProductPage"]/@Value',
-#            '//aws:Lists/aws:List/aws:TotalPages',
-#            '//aws:Lists/aws:List/aws:TotalItems')
+#    def test_review_pagination(self, api):
+#        # reviews for "Harry Potter and the Philosopher's Stone"
+#        ASIN = '0747532745'
 #
-#        for page, root in enumerate(paginator(self.api.list_lookup,
-#                LIST_ID, 'WishList',
-#                ResponseGroup='ItemAttributes,ListInfo',
-#                IsOmitPurchasedItems=True)):
+#        # test values for different API versions
+#        # version : (total_reviews, review_pages)
+#        VALUES = {
+#            '2009-10-01' : (2458, 492),
+#            '2009-11-01' : (2465, 493),
+#        }
 #
-#            self.assertEquals(paginator.total_results, 29)
-#            self.assertEquals(paginator.total_pages, 3)
-#            self.assertEquals(paginator.current_page, page+1)
+#        paginator = api.item_lookup(ASIN, ResponseGroup='Reviews', paginate='ReviewPage', limit=10)
+#
+#        for page, root in enumerate(paginator):
+#            reviews, pages = VALUES[api.VERSION]
+#            assert paginator.results == reviews
+#            assert paginator.pages == pages
+#            assert paginator.current == page+1
+#
+#        assert page == 9
+#        assert paginator.current == 10
+#
+#    def test_pagination_works_for_missing_reviews(self, api):
+#        # "Sherlock Holmes (limitierte Steelbook Edition) [Blu-ray]"
+#        # had no reviews at time of writing
+#        ASIN = 'B0039NM7Y2'
+#
+#        paginator = self.ReviewPaginator(api.item_lookup,
+#            ASIN, ResponseGroup='Reviews')
+#
+#        for page, root in enumerate(paginator):
+#            assert not hasattr(root.Items.Item, 'CustomerReviews')
+#
+#        assert page == 0
 
 
 class TestBrowseNodeLookup (object):
@@ -382,7 +377,8 @@ class TestBrowseNodeLookup (object):
         pytest.raises(InvalidParameterValue, api.browse_node_lookup, '???')
         pytest.raises(InvalidResponseGroup, api.browse_node_lookup, 
                 self.BOOKS_ROOT_NODE[api.locale], '???')
-        
+
+    @runfor(processors=['objectify'])
     def test_books_browsenode(self, api):
         nodes = api.browse_node_lookup(self.BOOKS_ROOT_NODE[api.locale]).BrowseNodes
         assert nodes.Request.IsValid.text == 'True'
@@ -400,6 +396,8 @@ class TestCartCreate (object):
     """
     Check that all XML responses for CartCreate are parsed correctly.
     """
+
+    processors = ['objectify']
 
     def test_creating_basket_with_empty_items_fails(self, api):
         pytest.raises(ValueError, api.cart_create, {})
@@ -449,6 +447,8 @@ class TestCartAdd (object):
     Check that all XML responses for CartAdd are parsed correctly.
     """
 
+    processors = ['objectify']
+
     def test_adding_with_wrong_cartid_hmac_fails(self, api, cart):
         pytest.raises(CartInfoMismatch, api.cart_add, '???', cart.hmac, {'0201896834' : 1})
         pytest.raises(CartInfoMismatch, api.cart_add, cart.cart_id, '???', {'0201896834' : 1})
@@ -491,6 +491,8 @@ class TestCartModify (object):
     """
     Check that all XML responses for CartModify are parsed correctly.
     """
+
+    processors = ['objectify']
 
     def test_modifying_with_wrong_cartid_hmac_fails(self, api, cart):
         pytest.raises(CartInfoMismatch, api.cart_modify, '???', cart.hmac, {'0201896834' : 1})
@@ -544,6 +546,8 @@ class TestCartGet (object):
     Check that all XML responses for CartGet are parsed correctly.
     """
 
+    processors = ['objectify']
+
     def test_getting_with_wrong_cartid_hmac_fails(self, api, cart):
         pytest.raises(CartInfoMismatch, api.cart_get, '???', cart.hmac)
         pytest.raises(CartInfoMismatch, api.cart_get, cart.cart_id, '???')
@@ -560,6 +564,8 @@ class TestCartClear (object):
     """
     Check that all XML responses for CartClear are parsed correctly.
     """
+
+    processors = ['objectify']
 
     def test_clearing_with_wrong_cartid_hmac_fails(self, api, cart):
         pytest.raises(CartInfoMismatch, api.cart_clear, '???', cart.hmac)
@@ -636,7 +642,7 @@ class TestXMLParsing (object):
     def test_all_ItemId_elements_are_StringElement(self):
         for file in self.test_files:
             try:
-                tree = self.api.response_processor(open(file))
+                tree = self.api.processor.parse(open(file))
                 if not hasattr(tree, 'nsmap'):
                     raise pytest.skip('This test only works with lxml processors!')
                 nspace = tree.nsmap.get(None, '')
@@ -649,7 +655,7 @@ class TestXMLParsing (object):
     def test_all_ASIN_elements_are_StringElement(self):
         for file in self.test_files:
             try:
-                tree = self.api.response_processor(open(file))
+                tree = self.api.processor.parse(open(file))
                 if not hasattr(tree, 'nsmap'):
                     raise pytest.skip('This test only works with lxml processors!')
                 nspace = tree.nsmap.get(None, '')
