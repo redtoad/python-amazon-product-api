@@ -21,6 +21,13 @@ def pytest_generate_tests(metafunc):
     if 'api' in metafunc.funcargnames:
         processors = getattr(metafunc.function, 'processors',
             getattr(metafunc.cls, 'processors', TESTABLE_PROCESSORS))
+        # if --processor is used get intersecting values
+        if metafunc.config.option.processors:
+            is_specified = lambda x: x in metafunc.config.option.processors
+            processors = filter(is_specified, processors)
+            if not processors:
+                pytest.skip('Test cannot run for specified processors'
+                            '%s.' % (metafunc.config.option.processors, ))
         for processor in processors:
             api_versions = getattr(metafunc.function, 'api_versions',
                 getattr(metafunc.cls, 'api_versions', TESTABLE_API_VERSIONS))
