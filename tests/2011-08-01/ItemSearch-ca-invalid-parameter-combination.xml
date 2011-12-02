@@ -1,15 +1,14 @@
 <ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
   <OperationRequest>
     <HTTPHeaders>
-      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.6pre/fc8fd5fbdf85 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
     </HTTPHeaders>
-    <RequestId>355f9a85-8852-4c9d-8703-d66a399a36c9</RequestId>
+    <RequestId>1490db95-bc71-4a61-a6df-388921b99185</RequestId>
     <Arguments>
-      <Argument Name="limit" Value="5"/>
       <Argument Name="Operation" Value="ItemSearch"/>
       <Argument Name="Service" Value="AWSECommerceService"/>
       <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="Timestamp" Value="2011-11-08T21:14:46Z"/>
+      <Argument Name="Timestamp" Value="2011-12-02T01:11:59Z"/>
       <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
       <Argument Name="ItemPage" Value="1"/>
       <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
@@ -17,7 +16,7 @@
       <Argument Name="BrowseNode" Value="132"/>
       <Argument Name="Version" Value="2011-08-01"/>
     </Arguments>
-    <RequestProcessingTime>0.0023590000000000</RequestProcessingTime>
+    <RequestProcessingTime>0.0021500000000000</RequestProcessingTime>
   </OperationRequest>
   <Items>
     <Request>

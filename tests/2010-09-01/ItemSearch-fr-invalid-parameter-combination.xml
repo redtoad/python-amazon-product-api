@@ -1,31 +1,30 @@
 <ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2010-09-01">
   <OperationRequest>
-    <RequestId>fc7e6b96-1cf6-4829-bf61-b7c131341029</RequestId>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.6pre/fc8fd5fbdf85 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+    </HTTPHeaders>
+    <RequestId>7889322c-129b-4b48-b712-e11be1c11ae3</RequestId>
     <Arguments>
-      <Argument Name="limit" Value="5"/>
       <Argument Name="Operation" Value="ItemSearch"/>
       <Argument Name="Service" Value="AWSECommerceService"/>
       <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="Timestamp" Value="2011-09-18T21:18:26Z"/>
+      <Argument Name="Timestamp" Value="2011-12-02T01:12:30Z"/>
       <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
       <Argument Name="ItemPage" Value="1"/>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
       <Argument Name="SearchIndex" Value="All"/>
       <Argument Name="BrowseNode" Value="132"/>
       <Argument Name="Version" Value="2010-09-01"/>
     </Arguments>
-    <RequestProcessingTime>0.0026860000000000</RequestProcessingTime>
+    <RequestProcessingTime>0.0034180000000000</RequestProcessingTime>
   </OperationRequest>
   <Items>
     <Request>
       <IsValid>False</IsValid>
       <ItemSearchRequest>
         <BrowseNode>132</BrowseNode>
-        <Condition>New</Condition>
-        <DeliveryMethod>Ship</DeliveryMethod>
         <ItemPage>1</ItemPage>
-        <MerchantId>Amazon</MerchantId>
         <ResponseGroup>Small</ResponseGroup>
-        <ReviewSort>-SubmissionDate</ReviewSort>
         <SearchIndex>All</SearchIndex>
       </ItemSearchRequest>
       <Errors>

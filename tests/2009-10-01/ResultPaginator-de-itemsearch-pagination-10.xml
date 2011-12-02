@@ -1,323 +1,318 @@
 <ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2009-10-01">
   <OperationRequest>
     <HTTPHeaders>
-      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.5a2 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.6pre/278d08f677ae+ +http://pypi.python.org/pypi/python-amazon-product-api/"/>
     </HTTPHeaders>
-    <RequestId>77461707-2b0c-404f-9477-f671ab048c5d</RequestId>
+    <RequestId>d72922ef-fd01-4b41-ac65-d33d6a5e51d0</RequestId>
     <Arguments>
+      <Argument Name="Sort" Value="salesrank"/>
       <Argument Name="Operation" Value="ItemSearch"/>
       <Argument Name="Service" Value="AWSECommerceService"/>
-      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="ItemPage" Value="10"/>
-      <Argument Name="Version" Value="2009-10-01"/>
-      <Argument Name="limit" Value="10"/>
-      <Argument Name="Sort" Value="salesrank"/>
       <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="Timestamp" Value="2011-02-15T17:42:24Z"/>
+      <Argument Name="Timestamp" Value="2011-12-02T01:19:32Z"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
       <Argument Name="Publisher" Value="Galileo Press"/>
+      <Argument Name="ItemPage" Value="10"/>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
       <Argument Name="SearchIndex" Value="Books"/>
+      <Argument Name="Version" Value="2009-10-01"/>
     </Arguments>
-    <RequestProcessingTime>0.4798730000000000</RequestProcessingTime>
+    <RequestProcessingTime>0.3641570000000000</RequestProcessingTime>
   </OperationRequest>
   <Items>
     <Request>
       <IsValid>True</IsValid>
       <ItemSearchRequest>
-        <Condition>New</Condition>
-        <DeliveryMethod>Ship</DeliveryMethod>
         <ItemPage>10</ItemPage>
-        <MerchantId>Amazon</MerchantId>
         <Publisher>Galileo Press</Publisher>
         <ResponseGroup>Small</ResponseGroup>
-        <ReviewSort>-SubmissionDate</ReviewSort>
         <SearchIndex>Books</SearchIndex>
         <Sort>salesrank</Sort>
       </ItemSearchRequest>
     </Request>
-    <TotalResults>272</TotalResults>
-    <TotalPages>28</TotalPages>
+    <TotalResults>281</TotalResults>
+    <TotalPages>29</TotalPages>
     <Item>
-      <ASIN>389842104X</ASIN>
-      <DetailPageURL>http://www.amazon.de/EXtensible-Stylesheet-Language-Einf%C3%BChrung-Referenz/dp/389842104X%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D389842104X</DetailPageURL>
+      <ASIN>3934358330</ASIN>
+      <DetailPageURL>http://www.amazon.de/Adobe-InDesign-1-5-Kreatives-Grafik-Design/dp/3934358330%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3934358330</DetailPageURL>
       <ItemLinks>
         <ItemLink>
           <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D389842104X%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D389842104X</URL>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D3934358330%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358330</URL>
         </ItemLink>
         <ItemLink>
           <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.de/gp/pdp/taf/389842104X%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D389842104X</URL>
+          <URL>http://www.amazon.de/gp/pdp/taf/3934358330%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358330</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.de/review/product/389842104X%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D389842104X</URL>
+          <URL>http://www.amazon.de/review/product/3934358330%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358330</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Offers</Description>
-          <URL>http://www.amazon.de/gp/offer-listing/389842104X%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D389842104X</URL>
+          <URL>http://www.amazon.de/gp/offer-listing/3934358330%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358330</URL>
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
-        <Author>Holger Reibold</Author>
+        <Author>Armin Haller</Author>
+        <Author>Katja Popp</Author>
         <Manufacturer>Galileo Press</Manufacturer>
         <ProductGroup>Book</ProductGroup>
-        <Title>EXtensible Stylesheet Language. Einf&#252;hrung, Praxis, Referenz</Title>
+        <Title>Adobe InDesign 1.5: Kreatives Layout und Grafik-Design (Galileo Design)</Title>
       </ItemAttributes>
     </Item>
     <Item>
-      <ASIN>3934358926</ASIN>
-      <DetailPageURL>http://www.amazon.de/Illustrator-Galileo-Design-J%C3%BCrgen-Sch%C3%B6ntauf/dp/3934358926%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3934358926</DetailPageURL>
+      <ASIN>3898421295</ASIN>
+      <DetailPageURL>http://www.amazon.de/VB-NET-Objektorientierte-Programmierung-NET-Framework-Computing/dp/3898421295%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3898421295</DetailPageURL>
       <ItemLinks>
         <ItemLink>
           <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D3934358926%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358926</URL>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D3898421295%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898421295</URL>
         </ItemLink>
         <ItemLink>
           <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.de/gp/pdp/taf/3934358926%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358926</URL>
+          <URL>http://www.amazon.de/gp/pdp/taf/3898421295%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898421295</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.de/review/product/3934358926%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358926</URL>
+          <URL>http://www.amazon.de/review/product/3898421295%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898421295</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Offers</Description>
-          <URL>http://www.amazon.de/gp/offer-listing/3934358926%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358926</URL>
+          <URL>http://www.amazon.de/gp/offer-listing/3898421295%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898421295</URL>
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
-        <Author>J&#252;rgen Sch&#246;ntauf</Author>
-        <Author>Vera Sartorius</Author>
+        <Author>Andreas K&#252;hnel</Author>
         <Manufacturer>Galileo Press</Manufacturer>
         <ProductGroup>Book</ProductGroup>
-        <Title>Illustrator 9 (Galileo Design)</Title>
+        <Title>VB.NET - Objektorientierte Programmierung und Einstieg in das .NET-Framework, mit CD (Galileo Computing)</Title>
       </ItemAttributes>
     </Item>
     <Item>
-      <ASIN>3898429466</ASIN>
-      <DetailPageURL>http://www.amazon.de/SAP-BW-Projektmanagement-Thorsten-L%C3%BCdtke/dp/3898429466%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3898429466</DetailPageURL>
+      <ASIN>3934358624</ASIN>
+      <DetailPageURL>http://www.amazon.de/3D-Visualisierung-Optimale-Ergebnispr%C3%A4sentation-AutoCAD/dp/3934358624%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3934358624</DetailPageURL>
       <ItemLinks>
         <ItemLink>
           <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D3898429466%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898429466</URL>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D3934358624%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358624</URL>
         </ItemLink>
         <ItemLink>
           <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.de/gp/pdp/taf/3898429466%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898429466</URL>
+          <URL>http://www.amazon.de/gp/pdp/taf/3934358624%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358624</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.de/review/product/3898429466%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898429466</URL>
+          <URL>http://www.amazon.de/review/product/3934358624%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358624</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Offers</Description>
-          <URL>http://www.amazon.de/gp/offer-listing/3898429466%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898429466</URL>
+          <URL>http://www.amazon.de/gp/offer-listing/3934358624%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358624</URL>
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
-        <Author>Thorsten L&#252;dtke</Author>
+        <Author>R&#252;diger Mach</Author>
         <Manufacturer>Galileo Press</Manufacturer>
         <ProductGroup>Book</ProductGroup>
-        <Title>SAP BW-Projektmanagement</Title>
+        <Title>3D Visualisierung - Optimale Ergebnispr&#228;sentation mit AutoCAD und 3D Studio MAX, mit CD (Galileo Design)</Title>
       </ItemAttributes>
     </Item>
     <Item>
-      <ASIN>3898422542</ASIN>
-      <DetailPageURL>http://www.amazon.de/Photoshop-Grundlagen-Praxiswissen-Galileo-Design/dp/3898422542%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3898422542</DetailPageURL>
+      <ASIN>3898422461</ASIN>
+      <DetailPageURL>http://www.amazon.de/Effiziente-Kundenbindung-mit-CRM-Kundenbeziehungen/dp/3898422461%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3898422461</DetailPageURL>
       <ItemLinks>
         <ItemLink>
           <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D3898422542%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898422542</URL>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D3898422461%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898422461</URL>
         </ItemLink>
         <ItemLink>
           <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.de/gp/pdp/taf/3898422542%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898422542</URL>
+          <URL>http://www.amazon.de/gp/pdp/taf/3898422461%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898422461</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.de/review/product/3898422542%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898422542</URL>
+          <URL>http://www.amazon.de/review/product/3898422461%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898422461</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Offers</Description>
-          <URL>http://www.amazon.de/gp/offer-listing/3898422542%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898422542</URL>
+          <URL>http://www.amazon.de/gp/offer-listing/3898422461%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898422461</URL>
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
-        <Author>Gerhard Koren</Author>
+        <Author>Tom Gawlik</Author>
+        <Author>Joachim Kellner</Author>
+        <Author>Dirk Seifert</Author>
         <Manufacturer>Galileo Press</Manufacturer>
         <ProductGroup>Book</ProductGroup>
-        <Title>Photoshop 7 - Grundlagen und Praxiswissen, mit CD (Galileo Design)</Title>
+        <Title>Effiziente Kundenbindung mit CRM - Wie Procter &amp; Gamble, Henkel, Kraft &amp; Co. Kundenbeziehungen gestalten</Title>
       </ItemAttributes>
     </Item>
     <Item>
-      <ASIN>3898424626</ASIN>
-      <DetailPageURL>http://www.amazon.de/Windows-Server-2003-inoffizelle-Handbuch/dp/3898424626%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3898424626</DetailPageURL>
+      <ASIN>389842135X</ASIN>
+      <DetailPageURL>http://www.amazon.de/Das-Loyalit%C3%A4ts-Netzwerk-Wertsch%C3%B6pfung-eine-Wirtschaft/dp/389842135X%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D389842135X</DetailPageURL>
       <ItemLinks>
         <ItemLink>
           <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D3898424626%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898424626</URL>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D389842135X%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D389842135X</URL>
         </ItemLink>
         <ItemLink>
           <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.de/gp/pdp/taf/3898424626%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898424626</URL>
+          <URL>http://www.amazon.de/gp/pdp/taf/389842135X%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D389842135X</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.de/review/product/3898424626%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898424626</URL>
+          <URL>http://www.amazon.de/review/product/389842135X%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D389842135X</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Offers</Description>
-          <URL>http://www.amazon.de/gp/offer-listing/3898424626%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898424626</URL>
+          <URL>http://www.amazon.de/gp/offer-listing/389842135X%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D389842135X</URL>
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
-        <Author>Michael Lechtenb&#246;rger</Author>
         <Manufacturer>Galileo Press</Manufacturer>
         <ProductGroup>Book</ProductGroup>
-        <Title>Windows Server 2003 - Das inoffizelle Handbuch</Title>
+        <Title>Das Loyalit&#228;ts-Netzwerk - Wertsch&#246;pfung f&#252;r eine neue Wirtschaft</Title>
       </ItemAttributes>
     </Item>
     <Item>
-      <ASIN>3898422518</ASIN>
-      <DetailPageURL>http://www.amazon.de/Power-Selling-Ebay-Galileo-Computing/dp/3898422518%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3898422518</DetailPageURL>
+      <ASIN>3934358667</ASIN>
+      <DetailPageURL>http://www.amazon.de/Java-Patterns-Java-Zertifizierung-Galileo-Computing/dp/3934358667%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3934358667</DetailPageURL>
       <ItemLinks>
         <ItemLink>
           <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D3898422518%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898422518</URL>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D3934358667%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358667</URL>
         </ItemLink>
         <ItemLink>
           <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.de/gp/pdp/taf/3898422518%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898422518</URL>
+          <URL>http://www.amazon.de/gp/pdp/taf/3934358667%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358667</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.de/review/product/3898422518%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898422518</URL>
+          <URL>http://www.amazon.de/review/product/3934358667%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358667</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Offers</Description>
-          <URL>http://www.amazon.de/gp/offer-listing/3898422518%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898422518</URL>
+          <URL>http://www.amazon.de/gp/offer-listing/3934358667%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358667</URL>
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
-        <Author>Marion von Kuczkowski</Author>
+        <Author>Friedrich Esser</Author>
         <Manufacturer>Galileo Press</Manufacturer>
         <ProductGroup>Book</ProductGroup>
-        <Title>Power Selling mit Ebay (Galileo Computing)</Title>
+        <Title>Java 2: Patterns, Idioms, Java-Zertifizierung (Galileo Computing)</Title>
       </ItemAttributes>
     </Item>
     <Item>
-      <ASIN>3836212927</ASIN>
-      <DetailPageURL>http://www.amazon.de/SAP-Integration-Handbuch-Projektleiter-Realisation-Integrationsprojekten/dp/3836212927%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3836212927</DetailPageURL>
+      <ASIN>3934358136</ASIN>
+      <DetailPageURL>http://www.amazon.de/3D-Character-Design-Modeling-Animation/dp/3934358136%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3934358136</DetailPageURL>
       <ItemLinks>
         <ItemLink>
           <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D3836212927%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3836212927</URL>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D3934358136%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358136</URL>
         </ItemLink>
         <ItemLink>
           <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.de/gp/pdp/taf/3836212927%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3836212927</URL>
+          <URL>http://www.amazon.de/gp/pdp/taf/3934358136%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358136</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.de/review/product/3836212927%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3836212927</URL>
+          <URL>http://www.amazon.de/review/product/3934358136%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358136</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Offers</Description>
-          <URL>http://www.amazon.de/gp/offer-listing/3836212927%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3836212927</URL>
+          <URL>http://www.amazon.de/gp/offer-listing/3934358136%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358136</URL>
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
-        <Author>Andr&#233; Achtermeier</Author>
-        <Author>Ernst Gerd Amelung</Author>
-        <Author>Friedrich Wilhelm Schmitz</Author>
+        <Author>Arndt von Koenigsmarck</Author>
         <Manufacturer>Galileo Press</Manufacturer>
         <ProductGroup>Book</ProductGroup>
-        <Title>SAP-Integration - Handbuch f&#252;r Projektleiter und Berater: Meistern Sie die Planung und Realisation von Integrationsprojekten</Title>
+        <Title>3D Character Design: Character Modeling &amp; Animation (Galileo Design)</Title>
       </ItemAttributes>
     </Item>
     <Item>
-      <ASIN>3898421414</ASIN>
-      <DetailPageURL>http://www.amazon.de/SELECT-Server-2000-Galileo-Computing/dp/3898421414%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3898421414</DetailPageURL>
+      <ASIN>3898421376</ASIN>
+      <DetailPageURL>http://www.amazon.de/Einstieg-XML-Einf%C3%BChrung-Beispiele-Computing/dp/3898421376%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3898421376</DetailPageURL>
       <ItemLinks>
         <ItemLink>
           <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D3898421414%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898421414</URL>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D3898421376%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898421376</URL>
         </ItemLink>
         <ItemLink>
           <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.de/gp/pdp/taf/3898421414%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898421414</URL>
+          <URL>http://www.amazon.de/gp/pdp/taf/3898421376%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898421376</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.de/review/product/3898421414%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898421414</URL>
+          <URL>http://www.amazon.de/review/product/3898421376%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898421376</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Offers</Description>
-          <URL>http://www.amazon.de/gp/offer-listing/3898421414%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898421414</URL>
+          <URL>http://www.amazon.de/gp/offer-listing/3898421376%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898421376</URL>
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
-        <Author>Hans Willi Kremer</Author>
+        <Author>Helmut Vonhoegen</Author>
         <Manufacturer>Galileo Press</Manufacturer>
         <ProductGroup>Book</ProductGroup>
-        <Title>SELECT * FROM SQL Server 2000 (Galileo Computing)</Title>
+        <Title>Einstieg in XML: Einf&#252;hrung, Beispiele, Referenz (Galileo Computing)</Title>
       </ItemAttributes>
     </Item>
     <Item>
-      <ASIN>3898422380</ASIN>
-      <DetailPageURL>http://www.amazon.de/Marketing-Service-Kundenbindung-Stolpmann-B%C3%A4nden/dp/3898422380%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3898422380</DetailPageURL>
+      <ASIN>3898421384</ASIN>
+      <DetailPageURL>http://www.amazon.de/Qualit%C3%A4tsmanagement-mit-mySAP-com-Proze%C3%9Fmodellierung-Customizing/dp/3898421384%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3898421384</DetailPageURL>
       <ItemLinks>
         <ItemLink>
           <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D3898422380%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898422380</URL>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D3898421384%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898421384</URL>
         </ItemLink>
         <ItemLink>
           <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.de/gp/pdp/taf/3898422380%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898422380</URL>
+          <URL>http://www.amazon.de/gp/pdp/taf/3898421384%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898421384</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.de/review/product/3898422380%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898422380</URL>
+          <URL>http://www.amazon.de/review/product/3898421384%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898421384</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Offers</Description>
-          <URL>http://www.amazon.de/gp/offer-listing/3898422380%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898422380</URL>
+          <URL>http://www.amazon.de/gp/offer-listing/3898421384%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898421384</URL>
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
-        <Author>Markus Stolpmann</Author>
+        <Author>Michael H&#246;lzer</Author>
+        <Author>Michael Schramm</Author>
         <Manufacturer>Galileo Press</Manufacturer>
         <ProductGroup>Book</ProductGroup>
-        <Title>Marketing - Service - Kundenbindung - Der gro&#223;e Stolpmann in drei B&#228;nden</Title>
+        <Title>Qualit&#228;tsmanagement mit mySAP.com - Proze&#223;modellierung, Customizing, Anwendung von mySAP QM 4.6 (SAP PRESS)</Title>
       </ItemAttributes>
     </Item>
     <Item>
-      <ASIN>3898422062</ASIN>
-      <DetailPageURL>http://www.amazon.de/Sichere-Unternehmensportale-mit-SAP-PRESS/dp/3898422062%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3898422062</DetailPageURL>
+      <ASIN>3898421104</ASIN>
+      <DetailPageURL>http://www.amazon.de/Final-Cut-Pro-Professionelle-Videobearbeitung/dp/3898421104%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3898421104</DetailPageURL>
       <ItemLinks>
         <ItemLink>
           <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D3898422062%26SubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898422062</URL>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D3898421104%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898421104</URL>
         </ItemLink>
         <ItemLink>
           <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.de/gp/pdp/taf/3898422062%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898422062</URL>
+          <URL>http://www.amazon.de/gp/pdp/taf/3898421104%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898421104</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.de/review/product/3898422062%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898422062</URL>
+          <URL>http://www.amazon.de/review/product/3898421104%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898421104</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Offers</Description>
-          <URL>http://www.amazon.de/gp/offer-listing/3898422062%3FSubscriptionId%3DXXXXXXXXXXXXXXX%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898422062</URL>
+          <URL>http://www.amazon.de/gp/offer-listing/3898421104%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898421104</URL>
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
-        <Author>Florian Zwerger</Author>
-        <Author>Guido Schneider</Author>
+        <Author>Robin M. Greissinger</Author>
         <Manufacturer>Galileo Press</Manufacturer>
         <ProductGroup>Book</ProductGroup>
-        <Title>Sichere Unternehmensportale mit SAP (SAP PRESS)</Title>
+        <Title>Final Cut Pro X - Professionelle Videobearbeitung am Macintosh, mit CD (Galileo Design)</Title>
       </ItemAttributes>
     </Item>
   </Items>
