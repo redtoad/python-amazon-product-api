@@ -20,7 +20,7 @@ class JSONAPI (API):
     
     def __init__(self, *args, **kwargs):
         API.__init__(self, *args, **kwargs)
-        self.response_processor = self.json_processor
+        self.processor = self.json_processor
     
     def _build_url(self, **qargs):
         qargs['Style'] = self.STYLE_SHEET

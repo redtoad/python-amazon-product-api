@@ -8,7 +8,7 @@ class Processor(object):
     library.
     """
 
-    def __call__(self, fp):
+    def parse(self, fp):
         root = xml.dom.minidom.parse(fp)
         # parse errors
         for error in root.getElementsByTagName('Error'):

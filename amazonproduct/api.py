@@ -27,7 +27,6 @@ else:
 
 from amazonproduct.version import VERSION
 from amazonproduct.errors import *
-from amazonproduct.paginators import paginate
 from amazonproduct.utils import running_on_gae
 
 try:
@@ -146,9 +145,9 @@ class API (object):
         self.debug = 0 # set to 1 if you want to see HTTP headers
 
         if processor is not None:
-            self.response_processor = processor
+            self.processor = processor
         else:
-            self.response_processor = default_processor()
+            self.processor = default_processor()
 
     def _build_url(self, **qargs):
         """
@@ -233,7 +232,7 @@ class API (object):
         you have defined one.
         """
         try:
-            return self.response_processor(fp)
+            return self.processor.parse(fp)
         except AWSError, e:
 
             if e.code == 'InvalidClientTokenId':
@@ -322,8 +321,7 @@ class API (object):
             # otherwise re-raise exception
             raise # pragma: no cover
 
-    @paginate
-    def item_search(self, search_index, **params):
+    def item_search(self, search_index, paginate='ItemPage', **params):
         """
         The ``ItemSearch`` operation returns items that satisfy the search
         criteria, including one or more search indices.
@@ -356,8 +354,21 @@ class API (object):
         general, when trying to find an item for sale, you use this operation.
         """
         try:
-            return self.call(Operation='ItemSearch',
-                                  SearchIndex=search_index, **params)
+            operators = {
+                'Operation': 'ItemSearch',
+                'SearchIndex': search_index,
+            }
+            operators.update(params)
+
+            paginator = self.processor.load_paginator(paginate)
+            if paginator is not None:
+                # Amazon limits returned pages to max 5
+                # if SearchIndex "All" is used!
+                if search_index == 'All' and operators.get('limit', 400) > 5:
+                    operators['limit'] = 5
+                return paginator(self.call, **operators)
+            else:
+                return self.call(**operators)
         except AWSError, e:
 
             if (e.code == 'AWS.InvalidEnumeratedParameter'
