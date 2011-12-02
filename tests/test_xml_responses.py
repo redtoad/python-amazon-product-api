@@ -348,8 +348,8 @@ class TestResultPaginator (object):
 
     def test_itemsearch_pagination(self, api):
 
-        results = 272
-        pages = 28
+        results = 281
+        pages = 29
 
         paginator = api.item_search('Books',
                 Publisher='Galileo Press', Sort='salesrank', limit=10)

@@ -1,15 +1,14 @@
 <ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
   <OperationRequest>
     <HTTPHeaders>
-      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.6pre/fc8fd5fbdf85 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
     </HTTPHeaders>
-    <RequestId>f955945c-4904-401a-b435-fd6d65f9c6ce</RequestId>
+    <RequestId>02daf9d4-9bba-40a3-bc05-c66021d06a89</RequestId>
     <Arguments>
-      <Argument Name="limit" Value="1"/>
       <Argument Name="Operation" Value="ItemSearch"/>
       <Argument Name="Service" Value="AWSECommerceService"/>
       <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="Timestamp" Value="2011-11-08T21:14:47Z"/>
+      <Argument Name="Timestamp" Value="2011-12-02T01:13:02Z"/>
       <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
       <Argument Name="Title" Value="Harry Potter"/>
       <Argument Name="ItemPage" Value="1"/>
@@ -17,7 +16,7 @@
       <Argument Name="SearchIndex" Value="Books"/>
       <Argument Name="Version" Value="2011-08-01"/>
     </Arguments>
-    <RequestProcessingTime>0.2655960000000000</RequestProcessingTime>
+    <RequestProcessingTime>0.3651670000000000</RequestProcessingTime>
   </OperationRequest>
   <Items>
     <Request>
@@ -29,8 +28,8 @@
         <Title>Harry Potter</Title>
       </ItemSearchRequest>
     </Request>
-    <TotalResults>861</TotalResults>
-    <TotalPages>87</TotalPages>
+    <TotalResults>857</TotalResults>
+    <TotalPages>86</TotalPages>
     <MoreSearchResultsUrl>http://www.amazon.fr/gp/redirect.html?camp=2025&amp;creative=12742&amp;location=http%3A%2F%2Fwww.amazon.fr%2Fgp%2Fsearch%3Fkeywords%3DHarry%2BPotter%26url%3Dsearch-alias%253Dbooks-single-index&amp;linkCode=xm2&amp;tag=redtoad-21&amp;SubscriptionId=AKIAJTJID3GQ4PAFYOEQ</MoreSearchResultsUrl>
     <Item>
       <ASIN>2364800056</ASIN>
@@ -82,38 +81,10 @@
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
-        <Author>J K Rowling</Author>
+        <Author>J. K. Rowling</Author>
         <Manufacturer>Gallimard</Manufacturer>
         <ProductGroup>Book</ProductGroup>
         <Title>Harry Potter, Tome 1 : Harry Potter &#224; l'&#233;cole des sorciers</Title>
-      </ItemAttributes>
-    </Item>
-    <Item>
-      <ASIN>2070643034</ASIN>
-      <DetailPageURL>http://www.amazon.fr/Harry-Potter-chambre-secrets/dp/2070643034%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D2070643034</DetailPageURL>
-      <ItemLinks>
-        <ItemLink>
-          <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.fr/gp/registry/wishlist/add-item.html%3Fasin.0%3D2070643034%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D2070643034</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.fr/gp/pdp/taf/2070643034%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D2070643034</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.fr/review/product/2070643034%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D2070643034</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>All Offers</Description>
-          <URL>http://www.amazon.fr/gp/offer-listing/2070643034%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D2070643034</URL>
-        </ItemLink>
-      </ItemLinks>
-      <ItemAttributes>
-        <Author>J K Rowling</Author>
-        <Manufacturer>Gallimard</Manufacturer>
-        <ProductGroup>Book</ProductGroup>
-        <Title>Harry Potter, Tome 2 : Harry Potter et la chambre des secrets</Title>
       </ItemAttributes>
     </Item>
     <Item>
@@ -146,60 +117,60 @@
       </ItemAttributes>
     </Item>
     <Item>
-      <ASIN>2070643085</ASIN>
-      <DetailPageURL>http://www.amazon.fr/Harry-Potter-Reliques-Mort/dp/2070643085%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D2070643085</DetailPageURL>
+      <ASIN>2070643034</ASIN>
+      <DetailPageURL>http://www.amazon.fr/Harry-Potter-chambre-secrets/dp/2070643034%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D2070643034</DetailPageURL>
       <ItemLinks>
         <ItemLink>
           <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.fr/gp/registry/wishlist/add-item.html%3Fasin.0%3D2070643085%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D2070643085</URL>
+          <URL>http://www.amazon.fr/gp/registry/wishlist/add-item.html%3Fasin.0%3D2070643034%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D2070643034</URL>
         </ItemLink>
         <ItemLink>
           <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.fr/gp/pdp/taf/2070643085%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D2070643085</URL>
+          <URL>http://www.amazon.fr/gp/pdp/taf/2070643034%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D2070643034</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.fr/review/product/2070643085%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D2070643085</URL>
+          <URL>http://www.amazon.fr/review/product/2070643034%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D2070643034</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Offers</Description>
-          <URL>http://www.amazon.fr/gp/offer-listing/2070643085%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D2070643085</URL>
+          <URL>http://www.amazon.fr/gp/offer-listing/2070643034%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D2070643034</URL>
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
-        <Author>J-K Rowling</Author>
-        <Creator Role="Traduction">Jean-Fran&#231;ois M&#233;nard</Creator>
-        <Manufacturer>Gallimard jeunesse</Manufacturer>
+        <Author>J K Rowling</Author>
+        <Creator Role="Traduction">Jean-Francois Menard</Creator>
+        <Manufacturer>Gallimard</Manufacturer>
         <ProductGroup>Book</ProductGroup>
-        <Title>Harry Potter, Tome 7 : Harry Potter et les Reliques de la Mort</Title>
+        <Title>Harry Potter, Tome 2 : Harry Potter et la chambre des secrets</Title>
       </ItemAttributes>
     </Item>
     <Item>
-      <ASIN>2070615367</ASIN>
-      <DetailPageURL>http://www.amazon.fr/Harry-Potter-reliques-mort/dp/2070615367%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D2070615367</DetailPageURL>
+      <ASIN>2070643042</ASIN>
+      <DetailPageURL>http://www.amazon.fr/Harry-Potter-prisonnier-dAzkaban/dp/2070643042%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D2070643042</DetailPageURL>
       <ItemLinks>
         <ItemLink>
           <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.fr/gp/registry/wishlist/add-item.html%3Fasin.0%3D2070615367%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D2070615367</URL>
+          <URL>http://www.amazon.fr/gp/registry/wishlist/add-item.html%3Fasin.0%3D2070643042%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D2070643042</URL>
         </ItemLink>
         <ItemLink>
           <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.fr/gp/pdp/taf/2070615367%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D2070615367</URL>
+          <URL>http://www.amazon.fr/gp/pdp/taf/2070643042%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D2070643042</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.fr/review/product/2070615367%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D2070615367</URL>
+          <URL>http://www.amazon.fr/review/product/2070643042%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D2070643042</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Offers</Description>
-          <URL>http://www.amazon.fr/gp/offer-listing/2070615367%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D2070615367</URL>
+          <URL>http://www.amazon.fr/gp/offer-listing/2070643042%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D2070643042</URL>
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
-        <Author>J-K Rowling</Author>
-        <Manufacturer>Gallimard jeunesse</Manufacturer>
+        <Author>J. K. Rowling</Author>
+        <Manufacturer>Gallimard</Manufacturer>
         <ProductGroup>Book</ProductGroup>
-        <Title>Harry Potter, tome 7 : Harry Potter et les reliques de la mort</Title>
+        <Title>Harry Potter, Tome 3 : Harry Potter et le prisonnier d'Azkaban</Title>
       </ItemAttributes>
     </Item>
     <Item>
@@ -225,9 +196,95 @@
       </ItemLinks>
       <ItemAttributes>
         <Author>J K Rowling</Author>
+        <Creator Role="Traduction">Jean-Francois Menard</Creator>
         <Manufacturer>Gallimard</Manufacturer>
         <ProductGroup>Book</ProductGroup>
         <Title>Harry Potter, Tome 6 : Harry Potter et le Prince de Sang-M&#234;l&#233;</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>2070643085</ASIN>
+      <DetailPageURL>http://www.amazon.fr/Harry-Potter-Reliques-Mort/dp/2070643085%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D2070643085</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.fr/gp/registry/wishlist/add-item.html%3Fasin.0%3D2070643085%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D2070643085</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.fr/gp/pdp/taf/2070643085%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D2070643085</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.fr/review/product/2070643085%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D2070643085</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.fr/gp/offer-listing/2070643085%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D2070643085</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>J K Rowling</Author>
+        <Manufacturer>Gallimard</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Harry Potter, Tome 7 : Harry Potter et les Reliques de la Mort</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>2070643069</ASIN>
+      <DetailPageURL>http://www.amazon.fr/Harry-Potter-lOrdre-Ph%C3%A9nix/dp/2070643069%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D2070643069</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.fr/gp/registry/wishlist/add-item.html%3Fasin.0%3D2070643069%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D2070643069</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.fr/gp/pdp/taf/2070643069%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D2070643069</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.fr/review/product/2070643069%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D2070643069</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.fr/gp/offer-listing/2070643069%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D2070643069</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>J K Rowling</Author>
+        <Manufacturer>Gallimard</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Harry Potter, Tome 5 : Harry Potter et l'Ordre du Ph&#233;nix</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>2070541290</ASIN>
+      <DetailPageURL>http://www.amazon.fr/Harry-Potter-Chambre-secrets/dp/2070541290%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D2070541290</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.fr/gp/registry/wishlist/add-item.html%3Fasin.0%3D2070541290%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D2070541290</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.fr/gp/pdp/taf/2070541290%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D2070541290</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.fr/review/product/2070541290%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D2070541290</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.fr/gp/offer-listing/2070541290%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D2070541290</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>Joanne K. Rowling</Author>
+        <Creator Role="Traduction">Jean-Fran&#231;ois M&#233;nard</Creator>
+        <Manufacturer>Gallimard Jeunesse</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Harry Potter, tome 2 : Harry Potter et la Chambre des secrets</Title>
       </ItemAttributes>
     </Item>
     <Item>
@@ -256,64 +313,6 @@
         <Manufacturer>Gallimard</Manufacturer>
         <ProductGroup>Book</ProductGroup>
         <Title>Harry Potter, Tome 4 : Harry Potter et la Coupe de feu</Title>
-      </ItemAttributes>
-    </Item>
-    <Item>
-      <ASIN>2070643042</ASIN>
-      <DetailPageURL>http://www.amazon.fr/Harry-Potter-prisonnier-dAzkaban/dp/2070643042%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D2070643042</DetailPageURL>
-      <ItemLinks>
-        <ItemLink>
-          <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.fr/gp/registry/wishlist/add-item.html%3Fasin.0%3D2070643042%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D2070643042</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.fr/gp/pdp/taf/2070643042%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D2070643042</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.fr/review/product/2070643042%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D2070643042</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>All Offers</Description>
-          <URL>http://www.amazon.fr/gp/offer-listing/2070643042%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D2070643042</URL>
-        </ItemLink>
-      </ItemLinks>
-      <ItemAttributes>
-        <Author>J K Rowling</Author>
-        <Manufacturer>Gallimard</Manufacturer>
-        <ProductGroup>Book</ProductGroup>
-        <Title>Harry Potter, Tome 3 : Harry Potter et le prisonnier d'Azkaban</Title>
-      </ItemAttributes>
-    </Item>
-    <Item>
-      <ASIN>2070518426</ASIN>
-      <DetailPageURL>http://www.amazon.fr/Harry-Potter-%C3%A0-l%C3%A9cole-sorciers/dp/2070518426%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D2070518426</DetailPageURL>
-      <ItemLinks>
-        <ItemLink>
-          <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.fr/gp/registry/wishlist/add-item.html%3Fasin.0%3D2070518426%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D2070518426</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.fr/gp/pdp/taf/2070518426%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D2070518426</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.fr/review/product/2070518426%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D2070518426</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>All Offers</Description>
-          <URL>http://www.amazon.fr/gp/offer-listing/2070518426%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D2070518426</URL>
-        </ItemLink>
-      </ItemLinks>
-      <ItemAttributes>
-        <Author>Joanne K. Rowling</Author>
-        <Creator Role="Illustrations">Jean-Claude G&#246;tting</Creator>
-        <Creator Role="Traduction">Jean-Fran&#231;ois M&#233;nard</Creator>
-        <Manufacturer>Gallimard Jeunesse</Manufacturer>
-        <ProductGroup>Book</ProductGroup>
-        <Title>Harry Potter, tome 1 : Harry Potter &#224; l'&#233;cole des sorciers</Title>
       </ItemAttributes>
     </Item>
   </Items>

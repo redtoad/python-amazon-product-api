@@ -1,23 +1,22 @@
 <ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
   <OperationRequest>
     <HTTPHeaders>
-      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.6pre/fc8fd5fbdf85 +http://pypi.python.org/pypi/python-amazon-product-api/"/>
     </HTTPHeaders>
-    <RequestId>e15ef582-4453-4036-a745-ee552a73a790</RequestId>
+    <RequestId>1548fbfe-0566-4c98-ba0d-624784bd5ab9</RequestId>
     <Arguments>
       <Argument Name="Operation" Value="ItemSearch"/>
       <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2011-12-02T01:13:03Z"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Title" Value="Harry Potter"/>
       <Argument Name="ItemPage" Value="1"/>
       <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="Version" Value="2011-08-01"/>
-      <Argument Name="limit" Value="1"/>
       <Argument Name="SearchIndex" Value="Books"/>
-      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="Timestamp" Value="2011-11-08T21:14:51Z"/>
-      <Argument Name="Title" Value="Harry Potter"/>
+      <Argument Name="Version" Value="2011-08-01"/>
     </Arguments>
-    <RequestProcessingTime>0.0790820000000000</RequestProcessingTime>
+    <RequestProcessingTime>0.0871440000000000</RequestProcessingTime>
   </OperationRequest>
   <Items>
     <Request>
@@ -29,8 +28,8 @@
         <Title>Harry Potter</Title>
       </ItemSearchRequest>
     </Request>
-    <TotalResults>3744</TotalResults>
-    <TotalPages>375</TotalPages>
+    <TotalResults>3765</TotalResults>
+    <TotalPages>377</TotalPages>
     <MoreSearchResultsUrl>http://www.amazon.co.uk/gp/redirect.html?camp=2025&amp;creative=12734&amp;location=http%3A%2F%2Fwww.amazon.co.uk%2Fgp%2Fsearch%3Fkeywords%3DHarry%2BPotter%26url%3Dsearch-alias%253Dbooks-single-index&amp;linkCode=xm2&amp;tag=redtoad-21&amp;SubscriptionId=AKIAJTJID3GQ4PAFYOEQ</MoreSearchResultsUrl>
     <Item>
       <ASIN>0857687751</ASIN>
@@ -58,34 +57,6 @@
         <Manufacturer>Titan Books Ltd</Manufacturer>
         <ProductGroup>Book</ProductGroup>
         <Title>Harry Potter: Page to Screen</Title>
-      </ItemAttributes>
-    </Item>
-    <Item>
-      <ASIN>1405366451</ASIN>
-      <DetailPageURL>http://www.amazon.co.uk/LEGO%C2%AE-Harry-Potter-Building-Magical/dp/1405366451%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1405366451</DetailPageURL>
-      <ItemLinks>
-        <ItemLink>
-          <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3D1405366451%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D1405366451</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.co.uk/gp/pdp/taf/1405366451%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D1405366451</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.co.uk/review/product/1405366451%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D1405366451</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>All Offers</Description>
-          <URL>http://www.amazon.co.uk/gp/offer-listing/1405366451%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D1405366451</URL>
-        </ItemLink>
-      </ItemLinks>
-      <ItemAttributes>
-        <Author>DK</Author>
-        <Manufacturer>Dorling Kindersley</Manufacturer>
-        <ProductGroup>Book</ProductGroup>
-        <Title>LEGO&#174; Harry Potter Building the Magical World</Title>
       </ItemAttributes>
     </Item>
     <Item>
@@ -117,6 +88,61 @@
       </ItemAttributes>
     </Item>
     <Item>
+      <ASIN>076242821X</ASIN>
+      <DetailPageURL>http://www.amazon.co.uk/Harry-Potter-Golden-Snitch-Mega/dp/076242821X%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D076242821X</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3D076242821X%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D076242821X</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.co.uk/gp/pdp/taf/076242821X%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D076242821X</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.co.uk/review/product/076242821X%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D076242821X</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.co.uk/gp/offer-listing/076242821X%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D076242821X</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Creator Role="Creator">Running Press</Creator>
+        <Manufacturer>Running Press Miniature Editions</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>The Harry Potter Golden Snitch Kit (Mega Mini Kits)</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>1847708706</ASIN>
+      <DetailPageURL>http://www.amazon.co.uk/Official-Harry-Potter-Calendar-2012/dp/1847708706%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1847708706</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3D1847708706%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D1847708706</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.co.uk/gp/pdp/taf/1847708706%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D1847708706</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.co.uk/review/product/1847708706%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D1847708706</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.co.uk/gp/offer-listing/1847708706%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D1847708706</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Manufacturer>Danilo Promotions Limited</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Official Harry Potter Calendar 2012</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
       <ASIN>0747558191</ASIN>
       <DetailPageURL>http://www.amazon.co.uk/Harry-Potter-Philosophers-Stone-Book/dp/0747558191%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0747558191</DetailPageURL>
       <ItemLinks>
@@ -145,31 +171,31 @@
       </ItemAttributes>
     </Item>
     <Item>
-      <ASIN>076242821X</ASIN>
-      <DetailPageURL>http://www.amazon.co.uk/Harry-Potter-Golden-Snitch-Mega/dp/076242821X%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D076242821X</DetailPageURL>
+      <ASIN>0747595844</ASIN>
+      <DetailPageURL>http://www.amazon.co.uk/Complete-Harry-Potter-Collection-Paperback/dp/0747595844%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0747595844</DetailPageURL>
       <ItemLinks>
         <ItemLink>
           <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3D076242821X%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D076242821X</URL>
+          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3D0747595844%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747595844</URL>
         </ItemLink>
         <ItemLink>
           <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.co.uk/gp/pdp/taf/076242821X%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D076242821X</URL>
+          <URL>http://www.amazon.co.uk/gp/pdp/taf/0747595844%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747595844</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.co.uk/review/product/076242821X%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D076242821X</URL>
+          <URL>http://www.amazon.co.uk/review/product/0747595844%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747595844</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Offers</Description>
-          <URL>http://www.amazon.co.uk/gp/offer-listing/076242821X%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D076242821X</URL>
+          <URL>http://www.amazon.co.uk/gp/offer-listing/0747595844%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747595844</URL>
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
-        <Creator Role="Creator">Running Press</Creator>
-        <Manufacturer>Running Press Miniature Editions</Manufacturer>
+        <Author>J. K. Rowling</Author>
+        <Manufacturer>Bloomsbury Publishing PLC</Manufacturer>
         <ProductGroup>Book</ProductGroup>
-        <Title>The Harry Potter Golden Snitch Kit (Mega Mini Kits)</Title>
+        <Title>The Complete Harry Potter Collection: (Adult Paperback Boxed Set)</Title>
       </ItemAttributes>
     </Item>
     <Item>
@@ -201,86 +227,31 @@
       </ItemAttributes>
     </Item>
     <Item>
-      <ASIN>1847708706</ASIN>
-      <DetailPageURL>http://www.amazon.co.uk/Official-Harry-Potter-Calendar-2012/dp/1847708706%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1847708706</DetailPageURL>
+      <ASIN>0762429771</ASIN>
+      <DetailPageURL>http://www.amazon.co.uk/Harry-Potter-Turner-Sticker-Running/dp/0762429771%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0762429771</DetailPageURL>
       <ItemLinks>
         <ItemLink>
           <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3D1847708706%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D1847708706</URL>
+          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3D0762429771%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0762429771</URL>
         </ItemLink>
         <ItemLink>
           <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.co.uk/gp/pdp/taf/1847708706%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D1847708706</URL>
+          <URL>http://www.amazon.co.uk/gp/pdp/taf/0762429771%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0762429771</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.co.uk/review/product/1847708706%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D1847708706</URL>
+          <URL>http://www.amazon.co.uk/review/product/0762429771%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0762429771</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Offers</Description>
-          <URL>http://www.amazon.co.uk/gp/offer-listing/1847708706%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D1847708706</URL>
+          <URL>http://www.amazon.co.uk/gp/offer-listing/0762429771%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0762429771</URL>
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
-        <Manufacturer>Danilo Promotions Limited</Manufacturer>
+        <Creator Role="Creator">Running Press</Creator>
+        <Manufacturer>Running Press,U.S.</Manufacturer>
         <ProductGroup>Book</ProductGroup>
-        <Title>Official Harry Potter Calendar 2012</Title>
-      </ItemAttributes>
-    </Item>
-    <Item>
-      <ASIN>0747595844</ASIN>
-      <DetailPageURL>http://www.amazon.co.uk/Harry-Potter-Adult-Paperback-Boxed/dp/0747595844%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0747595844</DetailPageURL>
-      <ItemLinks>
-        <ItemLink>
-          <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3D0747595844%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747595844</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.co.uk/gp/pdp/taf/0747595844%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747595844</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.co.uk/review/product/0747595844%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747595844</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>All Offers</Description>
-          <URL>http://www.amazon.co.uk/gp/offer-listing/0747595844%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0747595844</URL>
-        </ItemLink>
-      </ItemLinks>
-      <ItemAttributes>
-        <Author>J. K. Rowling</Author>
-        <Manufacturer>Bloomsbury Publishing PLC</Manufacturer>
-        <ProductGroup>Book</ProductGroup>
-        <Title>Harry Potter Adult Paperback Boxed Set: Adult Edition: Contains: Philosopher's Stone / Chamber of Secrets / Prisoner of Azkaban / Goblet of Fire / ... / Deathly Hollows (Harry Potter Adult Cover)</Title>
-      </ItemAttributes>
-    </Item>
-    <Item>
-      <ASIN>074757376X</ASIN>
-      <DetailPageURL>http://www.amazon.co.uk/Harry-Potter-Prisoner-Azkaban-Celebratory/dp/074757376X%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D074757376X</DetailPageURL>
-      <ItemLinks>
-        <ItemLink>
-          <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3D074757376X%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D074757376X</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.co.uk/gp/pdp/taf/074757376X%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D074757376X</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.co.uk/review/product/074757376X%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D074757376X</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>All Offers</Description>
-          <URL>http://www.amazon.co.uk/gp/offer-listing/074757376X%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D074757376X</URL>
-        </ItemLink>
-      </ItemLinks>
-      <ItemAttributes>
-        <Author>J. K. Rowling</Author>
-        <Manufacturer>Bloomsbury Publishing PLC</Manufacturer>
-        <ProductGroup>Book</ProductGroup>
-        <Title>Harry Potter and the Prisoner of Azkaban: Celebratory Edition</Title>
+        <Title>The "Harry Potter" Time Turner and Sticker Kit (Running Press Mega Mini Kits)</Title>
       </ItemAttributes>
     </Item>
     <Item>
@@ -309,6 +280,34 @@
         <Manufacturer>Bloomsbury Publishing PLC</Manufacturer>
         <ProductGroup>Book</ProductGroup>
         <Title>Harry Potter and the Chamber of Secrets (Book 2): Celebratory Edition</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>1405366451</ASIN>
+      <DetailPageURL>http://www.amazon.co.uk/LEGO%C2%AE-Harry-Potter-Building-Magical/dp/1405366451%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1405366451</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3D1405366451%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D1405366451</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.co.uk/gp/pdp/taf/1405366451%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D1405366451</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.co.uk/review/product/1405366451%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D1405366451</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.co.uk/gp/offer-listing/1405366451%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D1405366451</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>DK</Author>
+        <Manufacturer>Dorling Kindersley</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>LEGO&#174; Harry Potter Building the Magical World</Title>
       </ItemAttributes>
     </Item>
   </Items>
