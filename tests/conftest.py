@@ -21,6 +21,9 @@ def pytest_addoption(parser):
         default='no', help='Fetch responses from live server and overwrite '
             'previously cached XML file: one of no (default)|missing|outdated|'
             'all.')
+    group._addoption('--processor', action='append', dest='processors',
+        metavar='PROCESSOR', choices=['objectify', 'etree', 'minidom'],
+        help='Result processor to use: one of objectify|etree|minidom.')
 
 
 def pytest_funcarg__server(request):
