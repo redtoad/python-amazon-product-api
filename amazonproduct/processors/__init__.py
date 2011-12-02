@@ -8,6 +8,17 @@ class BaseProcessor (object):
     def load_paginator(cls, type_):
         return None
 
+    @classmethod
+    def parse_cart(cls, node):
+        """
+        Returns an instance of :class:`amazonproduct.contrib.Cart` based on
+        information extracted from ``node``.
+
+        Obviously, this has to be implemented in each subclass of
+        :class:`BaseProcessor`.
+        """
+        raise NotImplementedError
+
 
 class BaseResultPaginator (object):
 

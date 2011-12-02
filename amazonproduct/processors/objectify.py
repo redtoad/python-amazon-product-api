@@ -1,8 +1,9 @@
 
 from lxml import etree, objectify
 
+from amazonproduct.contrib.cart import Cart, Item
 from amazonproduct.errors import AWSError
-from amazonproduct.processors import BaseResultPaginator
+from amazonproduct.processors import BaseResultPaginator, BaseProcessor
 
 
 class SelectiveClassLookup(etree.CustomElementClassLookup):
@@ -18,7 +19,7 @@ class SelectiveClassLookup(etree.CustomElementClassLookup):
             return objectify.StringElement
 
 
-class Processor (object):
+class Processor (BaseProcessor):
 
     """
     Response processor using ``lxml.objectify``. It uses a custom lookup
@@ -59,6 +60,44 @@ class Processor (object):
             raise AWSError(code, msg)
 
         return root
+
+    @classmethod
+    def parse_cart(cls, node):
+        """
+        Returns an instance of :class:`amazonproduct.contrib.Cart` based on
+        information extracted from ``node``.
+        """
+        cart = Cart()
+        # TODO This is probably not the safest way to get <Cart>
+        root = node.Cart
+        cart.cart_id = root.CartId.pyval
+        cart.hmac = root.HMAC.pyval
+
+        def parse_item(item_node):
+            item = Item()
+            item.item_id = item_node.CartItemId.pyval
+            item.asin = item_node.ASIN.pyval
+            item.seller = item_node.SellerNickname.pyval
+            item.quantity = item_node.Quantity.pyval
+            item.title = item_node.Title.pyval
+            item.product_group = item_node.ProductGroup.pyval
+            item.price = (
+                item_node.Price.Amount.pyval,
+                item_node.Price.CurrencyCode.pyval)
+            item.total = (
+                item_node.ItemTotal.Amount.pyval,
+                item_node.ItemTotal.CurrencyCode.pyval)
+            return item
+
+        try:
+            for item_node in root.CartItems.CartItem:
+                cart.items.append(parse_item(item_node))
+            cart.url = root.PurchaseURL.pyval
+            cart.subtotal = (root.SubTotal.Amount, root.SubTotal.CurrencyCode)
+        except AttributeError:
+            cart.url = None
+            cart.subtotal = None
+        return cart
 
     @classmethod
     def load_paginator(cls, counter):

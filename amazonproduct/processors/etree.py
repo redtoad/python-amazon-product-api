@@ -1,4 +1,5 @@
 import re
+from amazonproduct.contrib.cart import Cart, Item
 
 from amazonproduct.errors import AWSError
 from amazonproduct.processors import BaseResultPaginator, BaseProcessor
@@ -58,6 +59,48 @@ class Processor (BaseProcessor):
     def __repr__(self):
         return '<%s using %s at %s>' % (
             self.__class__.__name__, etree.__name__, hex(id(self)))
+
+    @classmethod
+    def parse_cart(cls, node):
+        """
+        Returns an instance of :class:`amazonproduct.contrib.Cart` based on
+        information extracted from ``node``.
+        """
+        _nspace = extract_nspace(node)
+        _xpath = lambda path: path.replace('{}', _nspace)
+        root = node.find(_xpath('.//{}Cart'))
+
+
+        cart = Cart()
+        cart.cart_id = root.findtext(_xpath('./{}CartId'))
+        cart.hmac = root.findtext(_xpath('./{}HMAC'))
+        cart.url = root.findtext(_xpath('./{}PurchaseURL'))
+
+        def parse_item(item_node):
+            from lxml.etree import tostring
+            print tostring(item_node, pretty_print=True)
+            item = Item()
+            item.item_id = item_node.findtext(_xpath('./{}CartItemId'))
+            item.asin = item_node.findtext(_xpath('./{}ASIN'))
+            item.seller = item_node.findtext(_xpath('./{}SellerNickname'))
+            item.quantity = int(item_node.findtext(_xpath('./{}Quantity')))
+            item.title = item_node.findtext(_xpath('./{}Title'))
+            item.product_group = item_node.findtext(_xpath('./{}ProductGroup'))
+            item.price = (
+                int(item_node.findtext(_xpath('./{}Price/{}Amount'))),
+                item_node.findtext(_xpath('./{}Price/{}CurrencyCode')))
+            item.total = (
+                int(item_node.findtext(_xpath('./{}ItemTotal/{}Amount'))),
+                item_node.findtext(_xpath('./{}ItemTotal/{}CurrencyCode')))
+            return item
+
+        try:
+            for item_node in root.findall(_xpath('./{}CartItems/{}CartItem')):
+                cart.items.append(parse_item(item_node))
+            cart.subtotal = (node.SubTotal.Amount, node.SubTotal.CurrencyCode)
+        except AttributeError:
+            cart.subtotal = (None, None)
+        return cart
 
     @classmethod
     def load_paginator(cls, type_):
