@@ -3,6 +3,7 @@ from amazonproduct.contrib.cart import Cart, Item
 
 from amazonproduct.errors import AWSError
 from amazonproduct.processors import BaseResultPaginator, BaseProcessor
+from amazonproduct.processors import ITEMS_PAGINATOR
 from amazonproduct.utils import import_module
 
 
@@ -103,11 +104,13 @@ class Processor (BaseProcessor):
         return cart
 
     @classmethod
-    def load_paginator(cls, type_):
-        return {
-            'ItemPage': ItemPaginator,
-        }[type_]
-
+    def load_paginator(cls, paginator_type):
+        try:
+            return {
+                ITEMS_PAGINATOR: ItemPaginator,
+            }[paginator_type]
+        except KeyError:
+            return None
 
 class XPathPaginator (BaseResultPaginator):
 

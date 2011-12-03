@@ -39,6 +39,8 @@ else:
 from amazonproduct.version import VERSION
 from amazonproduct.errors import *
 from amazonproduct.utils import load_config, running_on_gae
+from amazonproduct.processors import ITEMS_PAGINATOR
+
 try:
     from processors.objectify import Processor as default_processor
 except ImportError:
@@ -363,7 +365,7 @@ class API (object):
             # otherwise re-raise exception
             raise # pragma: no cover
 
-    def item_search(self, search_index, paginate='ItemPage', **params):
+    def item_search(self, search_index, paginate=ITEMS_PAGINATOR, **params):
         """
         The ``ItemSearch`` operation returns items that satisfy the search
         criteria, including one or more search indices.
@@ -411,6 +413,9 @@ class API (object):
                 # if SearchIndex "All" is used!
                 if search_index == 'All' and operators.get('limit', 10) > 5:
                     operators['limit'] = 5
+                # otherwise it's 10 pages max
+                elif operators.get('limit', 10) > 10:
+                    operators['limit'] = 10
                 return paginator(self.call, **operators)
             else:
                 return self.call(**operators)

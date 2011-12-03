@@ -1,11 +1,17 @@
 
+# paginator types
+ITEMS_PAGINATOR = 'ItemPage'
+TAGS_PAGINATOR = 'TagPage'
+RELATEDITEMS_PAGINATOR = 'RelatedItemPage'
+
+
 class BaseProcessor (object):
 
     def parse(self, fp):
         raise NotImplementedError
 
     @classmethod
-    def load_paginator(cls, type_):
+    def load_paginator(cls, paginator_type):
         return None
 
     @classmethod
