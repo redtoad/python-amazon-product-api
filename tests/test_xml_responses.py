@@ -4,13 +4,14 @@ import os
 import pytest
 import re
 import urllib2
-from amazonproduct.processors import ITEMS_PAGINATOR, TAGS_PAGINATOR, BaseResultPaginator
 
 from tests import utils
 from tests import XML_TEST_DIR
 from tests import TESTABLE_API_VERSIONS, TESTABLE_LOCALES, TESTABLE_PROCESSORS
 
 from amazonproduct.api import API, USER_AGENT
+from amazonproduct.processors import BaseResultPaginator
+from amazonproduct.processors import ITEMS_PAGINATOR, RELATEDITEMS_PAGINATOR
 from amazonproduct.errors import *
 
 def pytest_generate_tests(metafunc):
@@ -393,6 +394,14 @@ class TestResultPaginator (object):
     def test_itemsearch_no_pagination(self, api):
         paginator = api.item_search('All', Keywords='Michael', paginate=False)
         assert not isinstance(paginator, BaseResultPaginator)
+
+    def test_itemsearch_related_items_pagination(self, api):
+        paginator = api.item_search('All', Keywords='Michael',
+            paginate=RELATEDITEMS_PAGINATOR)
+        pages = list(paginator)
+        len(pages) == paginator.pages == 2
+        len(paginator) == paginator.results == 2
+        paginator.current == 2
 
 
 #    def test_review_pagination(self, api):

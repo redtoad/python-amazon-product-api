@@ -3,7 +3,7 @@ from amazonproduct.contrib.cart import Cart, Item
 
 from amazonproduct.errors import AWSError
 from amazonproduct.processors import BaseResultPaginator, BaseProcessor
-from amazonproduct.processors import ITEMS_PAGINATOR
+from amazonproduct.processors import ITEMS_PAGINATOR, RELATEDITEMS_PAGINATOR
 from amazonproduct.utils import import_module
 
 
@@ -108,6 +108,7 @@ class Processor (BaseProcessor):
         try:
             return {
                 ITEMS_PAGINATOR: ItemPaginator,
+                RELATEDITEMS_PAGINATOR: RelatedItemsPaginator,
             }[paginator_type]
         except KeyError:
             return None
@@ -144,3 +145,9 @@ class ItemPaginator (XPathPaginator):
     total_pages_xpath = './/{}Items/{}TotalPages'
     total_results_xpath = './/{}Items/{}TotalResults'
 
+class RelatedItemsPaginator (XPathPaginator):
+
+    counter = 'RelatedItemPage'
+    current_page_xpath = './/{}Items/{}Request/{}ItemSearchRequest/{}RelatedItemPage'
+    total_pages_xpath = './/{}Items/{}TotalPages'
+    total_results_xpath = './/{}Items/{}TotalResults'
