@@ -399,10 +399,9 @@ class TestResultPaginator (object):
         paginator = api.item_search('All', Keywords='Michael',
             paginate=RELATEDITEMS_PAGINATOR)
         pages = list(paginator)
-        len(pages) == paginator.pages == 2
-        len(paginator) == paginator.results == 2
-        paginator.current == 2
-
+        assert len(pages) == len(paginator) == 5
+        assert paginator.results == 556394
+        assert paginator.current == 5
 
 #    def test_review_pagination(self, api):
 #        # reviews for "Harry Potter and the Philosopher's Stone"
