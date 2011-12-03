@@ -1,7 +1,6 @@
 
 # paginator types
 ITEMS_PAGINATOR = 'ItemPage'
-TAGS_PAGINATOR = 'TagPage'
 RELATEDITEMS_PAGINATOR = 'RelatedItemPage'
 
 
@@ -56,6 +55,12 @@ class BaseResultPaginator (object):
         yield self._first_page
         while self.current < self.pages and self.current < self.limit:
             yield self.page(self.current + 1)
+
+    def __len__(self):
+        """
+        Returns the number of total results.
+        """
+        return self.results
 
     def page(self, index):
         """

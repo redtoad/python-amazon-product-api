@@ -4,7 +4,7 @@ from lxml import etree, objectify
 from amazonproduct.contrib.cart import Cart, Item
 from amazonproduct.errors import AWSError
 from amazonproduct.processors import BaseResultPaginator, BaseProcessor
-from amazonproduct.processors import ITEMS_PAGINATOR, TAGS_PAGINATOR
+from amazonproduct.processors import ITEMS_PAGINATOR, RELATEDITEMS_PAGINATOR
 
 
 class SelectiveClassLookup(etree.CustomElementClassLookup):
@@ -105,6 +105,7 @@ class Processor (BaseProcessor):
         try:
             return {
                 ITEMS_PAGINATOR: SearchPaginator,
+                RELATEDITEMS_PAGINATOR: RelatedItemsPaginator,
             }[paginator_type]
         except KeyError:
             return None
@@ -138,5 +139,13 @@ class SearchPaginator (Paginator):
 
     counter = 'ItemPage'
     current_page_xpath = '//aws:Items/aws:Request/aws:ItemSearchRequest/aws:ItemPage'
+    total_pages_xpath = '//aws:Items/aws:TotalPages'
+    total_results_xpath = '//aws:Items/aws:TotalResults'
+
+
+class RelatedItemsPaginator (Paginator):
+
+    counter = 'RelatedItemPage'
+    current_page_xpath = '//aws:Items/aws:Request/aws:ItemSearchRequest/aws:RelatedItemPage'
     total_pages_xpath = '//aws:Items/aws:TotalPages'
     total_results_xpath = '//aws:Items/aws:TotalResults'
