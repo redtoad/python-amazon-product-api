@@ -4,6 +4,7 @@ from lxml import etree, objectify
 from amazonproduct.contrib.cart import Cart, Item
 from amazonproduct.errors import AWSError
 from amazonproduct.processors import BaseResultPaginator, BaseProcessor
+from amazonproduct.processors import ITEMS_PAGINATOR, TAGS_PAGINATOR
 
 
 class SelectiveClassLookup(etree.CustomElementClassLookup):
@@ -100,10 +101,14 @@ class Processor (BaseProcessor):
         return cart
 
     @classmethod
-    def load_paginator(cls, counter):
-        return {
-            'ItemPage': SearchPaginator,
-        }[counter]
+    def load_paginator(cls, paginator_type):
+        try:
+            return {
+                ITEMS_PAGINATOR: SearchPaginator,
+                TAGS_PAGINATOR: TagPaginator,
+            }[paginator_type]
+        except KeyError:
+            return None
 
 
 class Paginator (BaseResultPaginator):

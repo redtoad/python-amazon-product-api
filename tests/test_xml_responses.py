@@ -4,13 +4,13 @@ import os
 import pytest
 import re
 import urllib2
+from amazonproduct.processors import ITEMS_PAGINATOR, TAGS_PAGINATOR, BaseResultPaginator
 
 from tests import utils
 from tests import XML_TEST_DIR
 from tests import TESTABLE_API_VERSIONS, TESTABLE_LOCALES, TESTABLE_PROCESSORS
 
 from amazonproduct.api import API, USER_AGENT
-from amazonproduct.contrib.cart import Cart
 from amazonproduct.errors import *
 
 def pytest_generate_tests(metafunc):
@@ -351,41 +351,49 @@ class TestResultPaginator (object):
     Check that all XML responses for pagination are parsed correctly.
     """
 
-    api_versions = ['2009-10-01', '2009-11-01']
+    api_versions = ['2011-08-01']
     locales = ['de']
 
     def test_itemsearch_pagination(self, api):
-
-        results = 281
-        pages = 29
-
         paginator = api.item_search('Books',
                 Publisher='Galileo Press', Sort='salesrank', limit=10)
+
+        # default paginator type
+        assert paginator.counter == ITEMS_PAGINATOR
+
         for page, root in enumerate(paginator):
-            assert paginator.results == results
-            assert paginator.pages == pages
+            assert paginator.results == 281
+            assert paginator.pages == 29
             assert paginator.current == page+1
 
         assert page == 9
         assert paginator.current == 10
 
     def test_itemsearch_over_all_is_limited_to_five(self, api):
-        paginator = api.item_search('All', Keywords='Michael Jackson')
+        paginator = api.item_search('All', Keywords='Michael Jackson',
+            paginate=ITEMS_PAGINATOR)
         pages = list(paginator)
         assert len(pages) == 5
         assert paginator.current == 5
 
     def test_itemsearch_over_all_is_limited_to_five_even_for_higher_limits(self, api):
-        paginator = api.item_search('All', Keywords='Michael Jackson', limit=20)
+        paginator = api.item_search('All', Keywords='Michael Jackson',
+            paginate=ITEMS_PAGINATOR, limit=20)
         pages = list(paginator)
         assert len(pages) == 5
         assert paginator.current == 5
 
     def test_itemsearch_over_all_can_be_further_limited(self, api):
-        paginator = api.item_search('All', Keywords='Michael Jackson', limit=2)
+        paginator = api.item_search('All', Keywords='Michael Jackson',
+            paginate=ITEMS_PAGINATOR, limit=2)
         pages = list(paginator)
         assert len(pages) == 2
         assert paginator.current == 2
+
+    def test_itemsearch_no_pagination(self, api):
+        paginator = api.item_search('All', Keywords='Michael', paginate=False)
+        assert not isinstance(paginator, BaseResultPaginator)
+
 
 #    def test_review_pagination(self, api):
 #        # reviews for "Harry Potter and the Philosopher's Stone"
