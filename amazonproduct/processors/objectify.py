@@ -105,7 +105,6 @@ class Processor (BaseProcessor):
         try:
             return {
                 ITEMS_PAGINATOR: SearchPaginator,
-                TAGS_PAGINATOR: TagPaginator,
             }[paginator_type]
         except KeyError:
             return None
