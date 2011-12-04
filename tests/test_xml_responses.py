@@ -403,6 +403,16 @@ class TestResultPaginator (object):
         assert paginator.results == 556394
         assert paginator.current == 5
 
+    def test_itemlookup_related_items_pagination(self, api):
+        paginator = api.item_lookup('B000B09WRQ',
+            ResponseGroup='Large,RelatedItems',
+            RelationshipType='AuthorityTitle',
+            paginate=RELATEDITEMS_PAGINATOR)
+        pages = list(paginator)
+        assert len(pages) == len(paginator) == 8
+        assert paginator.results == 80
+        assert paginator.current == 8
+
 #    def test_review_pagination(self, api):
 #        # reviews for "Harry Potter and the Philosopher's Stone"
 #        ASIN = '0747532745'
