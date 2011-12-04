@@ -239,11 +239,11 @@ class TestCorrectVersion (object):
     Check that each requested API version is also really used.
     """
 
+    processors = ['objectify', 'etree']
+
     def test_correct_version(self, api):
         # any operation will do here
         root = api.item_lookup('0747532745')
-        if not hasattr(root, 'nsmap'):
-            raise pytest.skip('This test only works with lxml processors!')
         nspace = root.nsmap.get(None, '')
         assert api.VERSION in nspace
 
@@ -811,8 +811,6 @@ class TestXMLParsing (object):
         for file in self.test_files:
             try:
                 tree = self.api.processor.parse(open(file))
-                if not hasattr(tree, 'nsmap'):
-                    raise pytest.skip('This test only works with lxml processors!')
                 nspace = tree.nsmap.get(None, '')
                 for item_id in tree.xpath('//aws:ItemId',
                                           namespaces={'aws' : nspace}):
@@ -824,8 +822,6 @@ class TestXMLParsing (object):
         for file in self.test_files:
             try:
                 tree = self.api.processor.parse(open(file))
-                if not hasattr(tree, 'nsmap'):
-                    raise pytest.skip('This test only works with lxml processors!')
                 nspace = tree.nsmap.get(None, '')
                 for item_id in tree.xpath('//aws:ItemId',
                                           namespaces={'aws' : nspace}):
