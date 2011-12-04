@@ -127,8 +127,13 @@ class XPathPaginator (BaseResultPaginator):
         def fetch_value(xpath, default):
             try:
                 path = xpath.replace('{}', nspace)
-                node = root.findtext(path)
-                return int(node)
+                # ElementTree does not seem to support XPath expressions to
+                # be combined with | separator!
+                for expr in path.split('|'):
+                    node = root.findtext(expr)
+                    if node is not None:
+                        return int(node)
+                return default
             except (ValueError, TypeError):
                 return default
         return map(lambda a: fetch_value(*a), [
@@ -145,9 +150,14 @@ class ItemPaginator (XPathPaginator):
     total_pages_xpath = './/{}Items/{}TotalPages'
     total_results_xpath = './/{}Items/{}TotalResults'
 
+
 class RelatedItemsPaginator (XPathPaginator):
 
     counter = 'RelatedItemPage'
-    current_page_xpath = './/{}Items/{}Request/{}ItemSearchRequest/{}RelatedItemPage'
-    total_pages_xpath = './/{}Items/{}TotalPages'
-    total_results_xpath = './/{}Items/{}TotalResults'
+    current_page_xpath = './/{}RelatedItemPage'
+    total_pages_xpath = (
+        './/{}Items/{}TotalPages'
+        '|.//{}RelatedItems/{}RelatedItemPageCount')
+    total_results_xpath = (
+        './/{}Items/{}TotalResults'
+        '|.//{}RelatedItems/{}RelatedItemCount')
