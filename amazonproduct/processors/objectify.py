@@ -111,7 +111,7 @@ class Processor (BaseProcessor):
             return None
 
 
-class Paginator (BaseResultPaginator):
+class XPathPaginator (BaseResultPaginator):
 
     """
     Result paginator using lxml and XPath expressions to extract page and
@@ -135,7 +135,7 @@ class Paginator (BaseResultPaginator):
         ])
 
 
-class SearchPaginator (Paginator):
+class SearchPaginator (XPathPaginator):
 
     counter = 'ItemPage'
     current_page_xpath = '//aws:Items/aws:Request/aws:ItemSearchRequest/aws:ItemPage'
@@ -143,9 +143,31 @@ class SearchPaginator (Paginator):
     total_results_xpath = '//aws:Items/aws:TotalResults'
 
 
-class RelatedItemsPaginator (Paginator):
+class RelatedItemsPaginator (XPathPaginator):
 
+    """
+    XPath paginator which will work for both :meth:`item_lookup` and
+    :meth:`item_search`. The corresponding paths are::
+
+        ItemLookupResponse
+          Items
+            Item
+              RelatedItems
+                RelatedItemPage (counter)
+                RelatedItemCount (total_results)
+                RelatedItemPageCount (total_pages)
+
+        ItemSearchResponse
+          Request
+            ItemSearchRequest
+              ItemPage (counter)
+          Items
+            TotalResults (total_results)
+            TotalPages (total_pages)
+
+    """
     counter = 'RelatedItemPage'
-    current_page_xpath = '//aws:Items/aws:Request/aws:ItemSearchRequest/aws:RelatedItemPage'
-    total_pages_xpath = '//aws:Items/aws:TotalPages'
-    total_results_xpath = '//aws:Items/aws:TotalResults'
+    current_page_xpath = '//aws:RelatedItemPage'
+    total_pages_xpath = '//aws:Items/aws:TotalPages|//aws:RelatedItems/aws:RelatedItemPageCount'
+    total_results_xpath = '//aws:Items/aws:TotalResults|//aws:RelatedItems/aws:RelatedItemCount'
+
