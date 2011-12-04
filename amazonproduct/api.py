@@ -41,13 +41,16 @@ from amazonproduct.errors import *
 from amazonproduct.utils import load_config, running_on_gae
 from amazonproduct.processors import ITEMS_PAGINATOR
 
+
+# load default processor
 try:
-    from amazonproduct.processors.objectify import Processor as default_processor
+    from amazonproduct.processors.objectify import Processor
 except ImportError:
-    from processors.etree import Processor as default_processor
+    from amazonproduct.processors.etree import Processor
 
 USER_AGENT = ('python-amazon-product-api/%s '
     '+http://pypi.python.org/pypi/python-amazon-product-api/' % VERSION)
+
 
 #: Hosts used by Amazon for normal/XSLT operations
 HOSTS = {
@@ -171,7 +174,7 @@ class API (object):
         if processor is not None:
             self.processor = processor
         else:
-            self.processor = default_processor()
+            self.processor = Processor()
 
     def __repr__(self):
         return '<API(%s/%s) at %s>' % (self.VERSION, self.locale, hex(id(self)))
