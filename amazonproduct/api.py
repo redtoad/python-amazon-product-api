@@ -473,6 +473,9 @@ class API (object):
                 asin = self._reg('no-similarities').search(e.msg).group('ASIN')
                 raise NoSimilarityForASIN(asin)
 
+            # otherwise re-raise exception
+            raise # pragma: no cover
+
     def browse_node_lookup(self, browse_node_id, response_group=None, **params):
         """
         Given a ``browse_node_id``, this method returns the specified browse
