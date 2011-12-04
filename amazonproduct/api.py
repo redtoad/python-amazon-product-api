@@ -42,7 +42,7 @@ from amazonproduct.utils import load_config, running_on_gae
 from amazonproduct.processors import ITEMS_PAGINATOR
 
 try:
-    from processors.objectify import Processor as default_processor
+    from amazonproduct.processors.objectify import Processor as default_processor
 except ImportError:
     from processors.etree import Processor as default_processor
 
@@ -334,7 +334,7 @@ class API (object):
                 raise InternalError
             raise
 
-    def item_lookup(self, item_id, **params):
+    def item_lookup(self, *ids, **params):
         """
         Given an Item identifier, the ``ItemLookup`` operation returns some or
         all of the item attributes, depending on the response group specified
@@ -351,7 +351,21 @@ class API (object):
         by commas.
         """
         try:
-            return self.call(Operation='ItemLookup', ItemId=item_id, **params)
+            paginate = params.pop('paginate', False)
+            operators = {
+                'Operation': 'ItemLookup',
+                'ItemId': ','.join(ids),
+            }
+            operators.update(params)
+
+            paginator = self.processor.load_paginator(paginate)
+            if paginator is not None:
+                # Amazon limits returned pages to max 10 pages max
+                if operators.get('limit', 10) > 10:
+                    operators['limit'] = 10
+                return paginator(self.call, **operators)
+            else:
+                return self.call(**operators)
         except AWSError, e:
 
             if (e.code == 'AWS.InvalidEnumeratedParameter'
