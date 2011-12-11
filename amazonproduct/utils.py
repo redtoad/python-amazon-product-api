@@ -1,49 +1,126 @@
 from ConfigParser import SafeConfigParser
 import os
-import re
 import sys
 
-CREDENTIALS = 'Credentials'
-CONFIG_FILES = [
-    '/etc/boto.cfg', 
-    '~/.boto',
-    '/etc/amazon-product-api.cfg',
-    '~/.amazon-product-api',
+REQUIRED_KEYS = [
+    'access_key',
+    'secret_key',
+    'associate_tag',
+    'locale',
 ]
 
-def load_config():
+BOTO_FILES = [
+    '/etc/boto.cfg',
+    '~/.boto',
+]
+CONFIG_FILES = [
+    '/etc/amazon-product-api.cfg',
+    '~/.amazon-product-api'
+]
+
+
+def load_boto_config():
     """
-    Returns a dict with ``AWS_KEY``, ``SECRET_KEY`` and ``ASSOCIATE_TAG`` which
-    is loaded from (in thsi order):
-    
-    * a ``config.py`` file in this directory
-    * a boto-like config file [#]_ found in ``/etc/boto.cfg``, ``~/.boto``,
-      ``/etc/amazon-product-api.cfg`` or ``~/.amazon-product-api``.
-    
-    Whatever is found first counts.
-    
+    Loads config dict from a boto config file [#]_ found in ``/etc/boto.cfg``
+    or ``~/.boto``. A boto config file looks like this::
+
+        [Credentials]
+        aws_access_key_id = <your access key>
+        aws_secret_access_key = <your secret key>
+
+    Note that the only config section that will be used in ``Credentials``.
+
     .. _#: http://code.google.com/p/boto/wiki/BotoConfig
     """
     config = SafeConfigParser()
-    config.read([os.path.expanduser(path) for path in CONFIG_FILES])
+    config.read(BOTO_FILES)
 
-    # maps boto config -> amazonproduct key
     mapper = {
-        'aws_access_key_id': 'access_key',
-        'aws_secret_access_key': 'secret_key',
-        'aws_associate_tag': 'associate_tag',
-        'aws_product_locale': 'locale'
+        'access_key': 'aws_access_key_id',
+        'secret_key': 'aws_secret_access_key',
     }
-    options = {}
-    for boto, key in mapper.items():
-        if config.has_option(CREDENTIALS, boto): 
-            options[key] = config.get(CREDENTIALS, boto)
+    return dict(
+        (key, config.get('Credentials', boto))
+        for key, boto in mapper.items()
+        if config.has_option('Credentials', boto)
+    )
+
+
+def load_file_config():
+    """
+    Loads dict from config files ``/etc/amazon-product-api.cfg`` or
+    ``~/.amazon-product-api``. ::
+
+        [Credentials]
+        access_key = <your access key>
+        secret_key = <your secret key>
+        locale = us
+
+    """
+    config = SafeConfigParser()
+    config.read(CONFIG_FILES)
+
+    if not config.has_section('Credentials'):
+        return {}
+    return dict((key, val) for key, val in config.items('Credentials'))
+
+
+def load_environment_config():
+    """
+    Loads config dict from environmental variables (if set):
+
+    * AWS_ACCESS_KEY
+    * AWS_SECRET_ACCESS_KEY
+    * AWS_ASSOCIATE_TAG
+    * AWS_LOCALE
+    """
+    mapper = {
+        'access_key': 'AWS_ACCESS_KEY',
+        'secret_key': 'AWS_SECRET_ACCESS_KEY',
+        'associate_tag': 'AWS_ASSOCIATE_TAG',
+        'locale': 'AWS_LOCALE',
+    }
+    return dict(
+        (key, os.environ.get(val))
+        for key, val in mapper.items()
+        if os.environ.has_key(val)
+    )
+
+
+def load_config():
+    """
+    Returns a dict with API credentials which is loaded from (in this order):
+
+    * Environment variables ``AWS_ACCESS_KEY``, ``AWS_SECRET_ACCESS_KEY``,
+      ``AWS_ASSOCIATE_TAG`` and ``AWS_LOCALE``
+    * Config files ``/etc/amazon-product-api.cfg`` or ``~/.amazon-product-api``
+      where the latter may add or replace values of the former.
+    * A boto config file [#]_ found in ``/etc/boto.cfg`` or ``~/.boto``.
+    
+    Whatever is found first counts.
+
+    The returned dictionary may look like this::
+
+        {
+            'access_key': '<access key>',
+            'secret_key': '<secret key>',
+            'associate_tag': 'redtoad-10',
+            'locale': 'uk'
+        }
+    
+    .. _#: http://code.google.com/p/boto/wiki/BotoConfig
+    """
+    config = load_boto_config()
+    config.update(load_file_config())
+    config.update(load_environment_config())
 
     # substitute None for all values not found
-    for key in mapper.values():
-        if key not in options:
-            options[key] = None
-    return options
+    for key in REQUIRED_KEYS:
+        if key not in config:
+            config[key] = None
+
+    return config
+
 
 def import_module(name, package=None):
     """Import a module.
@@ -79,6 +156,7 @@ def import_module(name, package=None):
         name = _resolve_name(name[level:], package, level)
     __import__(name)
     return sys.modules[name]
+
 
 def running_on_gae():
     """

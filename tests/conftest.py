@@ -1,3 +1,5 @@
+from ConfigParser import SafeConfigParser
+import os.path
 import re
 import textwrap
 
@@ -57,14 +59,14 @@ class DummyConfig (object):
         self.tmpdir = tmpdir
         self.files = []
 
-    def add_file(self, content, path=None):
+    def add_file(self, content, path):
         """
         Writes one temporary file.
         """
         if not path:
             path = 'config-%i' % self._file_counter
             self._file_counter += 1
-        p = self.tmpdir.ensure(path)
+        p = self.tmpdir.ensure(os.path.expanduser(path))
         p.write(textwrap.dedent(content))
         self.files += [p.strpath]
 
@@ -86,8 +88,33 @@ class DummyConfig (object):
         else:
             raise ValueError('Where are the file paths?')
 
+    def read(self, filenames):
+        """Read and parse a filename or a list of filenames.
+
+        Files that cannot be opened are silently ignored; this is
+        designed so that you can specify a list of potential
+        configuration file locations (e.g. current directory, user's
+        home directory, systemwide directory), and all existing
+        configuration files in the list will be read.  A single
+        filename may also be given.
+
+        Return list of successfully read files.
+        """
+        if isinstance(filenames, basestring):
+            filenames = [filenames]
+        read_ok = []
+        for filename in filenames:
+            try:
+                fp = open(filename)
+            except IOError:
+                continue
+            self._read(fp, filename)
+            fp.close()
+            read_ok.append(filename)
+        return read_ok
+
     def __repr__(self):
-        return '<DummyConfig %s files=%r>' % (id(self), self.files)
+        return '<DummyConfig %s files=%r>' % (hex(id(self)), self.files)
 
 
 def pytest_funcarg__configfiles(request):
@@ -101,9 +128,9 @@ def pytest_funcarg__configfiles(request):
 
         configfiles.add_file('''
             [Credentials]
-            aws_access_key_id = ABCDEFGH12345
-            aws_secret_access_key = abcdegf43
-            aws_product_locale = de''', path='/etc/amazon.config')
+            access_key = ABCDEFGH12345
+            secret_key = abcdegf43
+            locale = de''', path='/etc/amazon-product-api.cfg')
 
     In order to add multiple config files at once, you can use the following
     method::
@@ -116,12 +143,19 @@ def pytest_funcarg__configfiles(request):
         
         # file: /home/user/.amazon-product-api
         [Credentials]
-        aws_product_locale = de
+        locale = de
         ''') 
 
     """
     tmpdir = request.getfuncargvalue('tmpdir')
     monkeypatch = request.getfuncargvalue('monkeypatch')
+
+    def prepend_tmppath(dir, files):
+        return [tmpdir.join(os.path.expanduser(fn)).strpath for fn in files]
+    monkeypatch.setattr(utils, 'BOTO_FILES',
+        prepend_tmppath(tmpdir, utils.BOTO_FILES))
+    monkeypatch.setattr(utils, 'CONFIG_FILES',
+        prepend_tmppath(tmpdir, utils.CONFIG_FILES))
+
     cfg = DummyConfig(tmpdir)
-    monkeypatch.setattr(utils, 'CONFIG_FILES', cfg.files)
     return cfg

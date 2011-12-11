@@ -51,36 +51,37 @@ class TestAPIInitialisation (object):
     """
 
     def test_init_with_parameters(self):
-        api = API('ACCESS_KEY', 'SECRET_KEY', 'de', 'associate-tag')
+        pytest.deprecated_call(API, 'ACCESS_KEY', 'SECRET_KEY', 'de',
+            'associate-tag')
 
     def test_init_with_config_file(self, configfiles):
         configfiles.add_file("""
         [Credentials]
-        aws_access_key_id = ABCDEFGH12345
-        aws_secret_access_key = abcdegf43
-        aws_product_locale = de""") 
+        access_key = ABCDEFGH12345
+        secret_key = abcdegf43
+        locale = de""", '~/.amazon-product-api')
         api = API()
 
     def test_init_with_config_file(self, configfiles):
         configfiles.add_file("""
         [Credentials]
-        aws_access_key_id = ABCDEFGH12345
-        aws_secret_access_key = abcdegf43
-        aws_product_locale = de""") 
+        access_key = ABCDEFGH12345
+        secret_key = abcdegf43
+        locale = de""", '~/.amazon-product-api')
         api = API()
 
     def test_init_with_config_file_and_parameters(self, configfiles):
         configfiles.add_file("""
         [Credentials]
-        aws_access_key_id = ABCDEFGH12345
-        aws_secret_access_key = abcdegf43""") 
+        access_key = ABCDEFGH12345
+        secret_key = abcdegf43""", '~/.amazon-product-api')
         API(locale='de')
 
     def test_init_with_incomplete_config_file(self, configfiles):
         configfiles.add_file("""
         [Credentials]
-        aws_access_key_id = ABCDEFGH12345
-        aws_secret_access_key = abcdegf43""") 
+        access_key = ABCDEFGH12345
+        secret_key = abcdegf43""", '~/.amazon-product-api')
         pytest.raises(UnknownLocale, API)
 
 
