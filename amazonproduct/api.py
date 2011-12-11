@@ -14,6 +14,7 @@ import StringIO
 import sys
 from time import strftime, gmtime, sleep
 import urllib2
+import warnings
 
 # For historic reasons, this module also supports Python 2.4. To make this
 # happen, a few things have to be imported differently, e.g. pycrypto is needed
@@ -38,7 +39,7 @@ else:
 
 from amazonproduct.version import VERSION
 from amazonproduct.errors import *
-from amazonproduct.utils import load_config, running_on_gae
+from amazonproduct.utils import load_config, running_on_gae, REQUIRED_KEYS
 from amazonproduct.processors import ITEMS_PAGINATOR
 
 
@@ -94,15 +95,20 @@ class GZipHandler(urllib2.BaseHandler):
 class API (object):
 
     """
-    Wrapper class for the Amazon Product Advertising API. You will need both an
-    AWS access key id and the secret counterpart.
+    Wrapper class for the Amazon Product Advertising API.
 
-    Example::
+    You will need an *AWS access key*, its *secret counterpart* and an
+    *associate ID*. Create the file ``~/.amazon-product-api`` and add the
+    following content::
 
-        AWS_KEY = '...'
-        SECRET_KEY = '...'
+        [Credentials]
+        access_key = <your access key>
+        secret_key = <your secret key>
+        associate_tag = <your associate id>
 
-        api = ProductAdvertisingAPI(AWS_KEY, SECRET_KEY, 'us')
+    Now you can use this class to do things like ::
+
+        api = ProductAdvertisingAPI(locale='us')
         root = api.item_lookup('9783836214063', IdType='ISBN',
                     SearchIndex='Books', ResponseGroup='Reviews', ReviewPage=1)
 
@@ -110,26 +116,6 @@ class API (object):
         total_reviews = root.Items.Item.CustomerReviews.TotalReviews.pyval
         review_pages = root.Items.Item.CustomerReviews.TotalReviewPages.pyval
 
-    It is possible to use a different module for parsing the XML response. For
-    instance, you can use ``xml.minidom`` instead of ``lxml`` by defining a
-    custom result processor::
-
-        def minidom_response_parser(fp):
-            root = parse(fp)
-            # parse errors
-            for error in root.getElementsByTagName('Error'):
-                code = error.getElementsByTagName('Code')[0].firstChild.nodeValue
-                msg = error.getElementsByTagName('Message')[0].firstChild.nodeValue
-                raise AWSError(code, msg)
-            return root
-        api = API(AWS_KEY, SECRET_KEY, processor=minidom_response_parser)
-        root = api.item_lookup('0718155157')
-        print root.toprettyxml()
-        # ...
-
-    Just make sure it raises an ``AWSError`` with the appropriate error code
-    and message. For a more complex example, have a look at the default
-    LxmlObjectifyResponseProcessor class.
     """
 
     VERSION = '2011-08-01' #: supported Amazon API version
@@ -139,22 +125,31 @@ class API (object):
     def __init__(self, access_key_id=None, secret_access_key=None, locale=None,
                  associate_tag=None, processor=None):
         """
-        :param access_key_id: AWS access key ID.
-        :param secret_key_id: AWS secret key.
-        :param associate_tag: Amazon Associates tracking id.
+        .. versionchanged:: 0.2.6
+           Passing parameters ``access_key_id``, ``secret_access_key`` and
+           ``associate_tag`` directly to the constructor will be removed in one
+           of the next releases. See :ref:`config` for alternatives.
+
+        :param access_key_id: AWS access key ID (deprecated).
+        :param secret_key_id: AWS secret key (deprecated).
+        :param associate_tag: Amazon Associates tracking id (deprecated).
         :param locale: localise results by using one value from ``LOCALES``.
         :param processor: result processing function (``None`` if unsure).
         """
+        if not (access_key_id is None and secret_access_key is None
+        and associate_tag is None):
+            warnings.warn('Please use a config file!', DeprecationWarning,
+                stacklevel=2)
+
         self.access_key = access_key_id
         self.secret_key = secret_access_key
         self.associate_tag = associate_tag
         self.locale = locale
 
         # load missing valued from config file
-        required_keys = ['access_key', 'secret_key', 'associate_tag', 'locale']
-        if not all(getattr(self, key, False) for key in required_keys):
+        if not all(getattr(self, key, False) for key in REQUIRED_KEYS):
             cfg = load_config()
-            for key in required_keys:
+            for key in REQUIRED_KEYS:
                 if getattr(self, key, '???') is None and cfg.get(key, None):
                     setattr(self, key, cfg[key])
 
