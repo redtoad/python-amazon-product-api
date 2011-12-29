@@ -42,6 +42,13 @@ class PyTest(Command):
         errno = subprocess.call([sys.executable, os.path.join(_here, 'tests', 'runtests.py')])
         raise SystemExit(errno)
 
+# make sure that no development version end up on PyPI
+if 'register' in sys.argv or 'upload' in sys.argv:
+    version_ = version()
+    if '/' in version_ or '+' in version_:
+        print 'ERROR: Version %r has not been adjusted yet!' % version_
+        sys.exit(1)
+
 setup(
     name = 'python-amazon-product-api',
     version = version(),
