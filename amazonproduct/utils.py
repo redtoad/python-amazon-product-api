@@ -33,7 +33,7 @@ def load_boto_config():
     .. _#: http://code.google.com/p/boto/wiki/BotoConfig
     """
     config = SafeConfigParser()
-    config.read(BOTO_FILES)
+    config.read([os.path.expandvars(path) for path in BOTO_FILES])
 
     mapper = {
         'access_key': 'aws_access_key_id',
@@ -58,7 +58,7 @@ def load_file_config():
 
     """
     config = SafeConfigParser()
-    config.read(CONFIG_FILES)
+    config.read([os.path.expandvars(path) for path in CONFIG_FILES])
 
     if not config.has_section('Credentials'):
         return {}
