@@ -54,6 +54,7 @@ def load_file_config():
         [Credentials]
         access_key = <your access key>
         secret_key = <your secret key>
+        associate_tag = <your associate tag>
         locale = us
 
     """
@@ -62,7 +63,12 @@ def load_file_config():
 
     if not config.has_section('Credentials'):
         return {}
-    return dict((key, val) for key, val in config.items('Credentials'))
+
+    return dict(
+        (key, val)
+        for key, val in config.items('Credentials')
+        if key in REQUIRED_KEYS
+    )
 
 
 def load_environment_config():
