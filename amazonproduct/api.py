@@ -42,6 +42,7 @@ from amazonproduct.errors import *
 from amazonproduct.utils import load_config, running_on_gae, REQUIRED_KEYS
 from amazonproduct.processors import ITEMS_PAGINATOR
 
+from amazonproduct.retry import retry
 
 # load default processor
 try:
@@ -305,6 +306,7 @@ class API (object):
             # otherwise simply re-raise
             raise
 
+    @retry(urllib2.URLError)
     def call(self, **qargs):
         """
         Builds a signed URL for the operation, fetches the result from Amazon
