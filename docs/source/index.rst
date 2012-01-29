@@ -21,6 +21,7 @@ way.
    basic-usage
    operations
    errors
+   config
    advanced
    faq
    contributing
