@@ -71,13 +71,14 @@ class BaseResultPaginator (object):
 
     def __iter__(self):
         """
-        Iterate over all paginated results of ``fun``.
+        .. versionchanged:: 0.2.6
+           Iterates over items rather than pages. Use :meth:`iterpages` to do
+           the former.
+
+        Iterate over all paginated results of ``fun`` returning the items.
         """
-        # return cached first page
-        for item in self.iterate(self._first_page):
-            yield item
-        while self.current < self.pages and self.current < self.limit:
-            for item in self.iterate(self.page(self.current + 1)):
+        for page in self.iterpages():
+            for item in self.iterate(page):
                 yield item
 
     def __len__(self):
@@ -98,6 +99,17 @@ class BaseResultPaginator (object):
         root = self.fun(*self.args, **self.kwargs)
         self.current, self.pages, self.results = self.paginator_data(root)
         return root
+
+    def iterpages(self):
+        """
+        Iterates over all pages. Keep in mind that Amazon limits the number of
+        pages it makes available, although attribute ``pages`` may say
+        otherwise!
+        """
+        # return cached first page
+        yield self._first_page
+        while self.current < self.pages and self.current < self.limit:
+            yield self.page(self.current + 1)
 
     def paginator_data(self, node):
         """
