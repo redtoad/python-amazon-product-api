@@ -318,9 +318,9 @@ class TestItemSearch (object):
 
     @runfor(processors=['objectify'])
     def test_lookup_by_title(self, api):
-        for result in api.item_search('Books', Title='Harry Potter', limit=1):
-            for item in result.Items.Item:
-                assert item.ASIN == item.ASIN.pyval == item.ASIN.text
+        # TODO Does this test really make sense?
+        for item in api.item_search('Books', Title='Harry Potter', limit=1):
+            assert item.ASIN == item.ASIN.pyval == item.ASIN.text
         
 
 class TestSimilarityLookup (object):
@@ -362,7 +362,7 @@ class TestResultPaginator (object):
         # default paginator type
         assert paginator.counter == ITEMS_PAGINATOR
 
-        for page, root in enumerate(paginator):
+        for page, root in enumerate(paginator.iterpages()):
             assert paginator.results == 281
             assert paginator.pages == 29
             assert paginator.current == page+1
@@ -398,7 +398,7 @@ class TestResultPaginator (object):
     def test_itemsearch_related_items_pagination(self, api):
         paginator = api.item_search('All', Keywords='Michael',
             paginate=RELATEDITEMS_PAGINATOR)
-        pages = list(paginator)
+        pages = list(paginator.iterpages())
         assert len(pages) == len(paginator) == 5
         assert paginator.results == 556394
         assert paginator.current == 5
