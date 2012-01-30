@@ -1,7 +1,9 @@
 import xml.dom.minidom
-from amazonproduct.errors import AWSError
 
-class Processor(object):
+from amazonproduct.errors import AWSError
+from amazonproduct.processors import BaseProcessor
+
+class Processor(BaseProcessor):
 
     """
     Alternative result parser using ``xml.dom.minidom` from the standard
