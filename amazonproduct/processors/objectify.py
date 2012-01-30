@@ -118,14 +118,14 @@ class XPathPaginator (BaseResultPaginator):
     result information from XML.
     """
 
-    def extract_data(self, root):
+    def paginator_data(self, root):
         nspace = root.nsmap.get(None, '')
         def fetch_value(xpath, default):
             try:
                 return root.xpath(xpath, namespaces={'aws' : nspace})[0]
             except AttributeError:
                 # node has no attribute pyval so it better be a number
-                return int(node)
+                return int(root)
             except IndexError:
                 return default
         return map(lambda a: fetch_value(*a), [
@@ -134,6 +134,10 @@ class XPathPaginator (BaseResultPaginator):
             (self.total_results_xpath, 0)
         ])
 
+    def iterate(self, root):
+        nspace = root.nsmap.get(None, '')
+        return root.xpath(self.items, namespaces={'aws' : nspace})
+
 
 class SearchPaginator (XPathPaginator):
 
@@ -141,6 +145,7 @@ class SearchPaginator (XPathPaginator):
     current_page_xpath = '//aws:Items/aws:Request/aws:ItemSearchRequest/aws:ItemPage'
     total_pages_xpath = '//aws:Items/aws:TotalPages'
     total_results_xpath = '//aws:Items/aws:TotalResults'
+    items = '//aws:Items/aws:Item'
 
 
 class RelatedItemsPaginator (XPathPaginator):
@@ -170,4 +175,5 @@ class RelatedItemsPaginator (XPathPaginator):
     current_page_xpath = '//aws:RelatedItemPage'
     total_pages_xpath = '//aws:Items/aws:TotalPages|//aws:RelatedItems/aws:RelatedItemPageCount'
     total_results_xpath = '//aws:Items/aws:TotalResults|//aws:RelatedItems/aws:RelatedItemCount'
+    items = '//aws:Items/aws:Item'
 

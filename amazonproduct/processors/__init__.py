@@ -55,6 +55,7 @@ class BaseResultPaginator (object):
     LIMIT = 10
 
     counter = None
+    items = None
 
     def __init__(self, fun, *args, **kwargs):
         """
@@ -73,9 +74,11 @@ class BaseResultPaginator (object):
         Iterate over all paginated results of ``fun``.
         """
         # return cached first page
-        yield self._first_page
+        for item in self.iterate(self._first_page):
+            yield item
         while self.current < self.pages and self.current < self.limit:
-            yield self.page(self.current + 1)
+            for item in self.iterate(self.page(self.current + 1)):
+                yield item
 
     def __len__(self):
         """
@@ -93,11 +96,18 @@ class BaseResultPaginator (object):
         """
         self.kwargs[self.counter] = index
         root = self.fun(*self.args, **self.kwargs)
-        self.current, self.pages, self.results = self.extract_data(root)
+        self.current, self.pages, self.results = self.paginator_data(root)
         return root
 
-    def extract_data(self, node):
+    def paginator_data(self, node):
         """
         Extracts pagination data from XML node.
         """
         raise NotImplementedError
+
+    def iterate(self, node):
+        """
+        Returns iterable over XML item nodes.
+        """
+        raise NotImplementedError
+
