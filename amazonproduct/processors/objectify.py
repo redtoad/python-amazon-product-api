@@ -56,9 +56,8 @@ class Processor (BaseProcessor):
             errors = root.xpath('//Error')
 
         for error in errors:
-            code = error.Code.text
-            msg = error.Message.text
-            raise AWSError(code, msg)
+            raise AWSError(code=error.Code.text,
+                msg=error.Message.text, xml=root)
 
         return root
 

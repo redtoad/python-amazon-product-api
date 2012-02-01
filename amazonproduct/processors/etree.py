@@ -52,9 +52,8 @@ class Processor (BaseProcessor):
         ns = extract_nspace(root)
         errors = root.findall('.//%sError' % ns)
         for error in errors:
-            code = error.findtext('./%sCode' % ns)
-            msg = error.findtext('./%sMessage' % ns)
-            raise AWSError(code, msg)
+            raise AWSError(code=error.findtext('./%sCode' % ns),
+                msg=error.findtext('./%sMessage' % ns), xml=root)
         return root
 
     def __repr__(self):
