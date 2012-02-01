@@ -13,9 +13,10 @@ class Processor(BaseProcessor):
     def parse(self, fp):
         root = xml.dom.minidom.parse(fp)
         # parse errors
-        for error in root.getElementsByTagName('Error'):
-            code = error.getElementsByTagName('Code')[0].firstChild.nodeValue
-            msg = error.getElementsByTagName('Message')[0].firstChild.nodeValue
-            raise AWSError(code, msg)
+        for er in root.getElementsByTagName('Error'):
+            raise AWSError(
+                code=er.getElementsByTagName('Code')[0].firstChild.nodeValue,
+                msg=er.getElementsByTagName('Message')[0].firstChild.nodeValue,
+                xml=root)
         return root
 
