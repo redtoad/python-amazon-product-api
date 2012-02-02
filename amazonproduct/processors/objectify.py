@@ -117,6 +117,10 @@ class XPathPaginator (BaseResultPaginator):
     result information from XML.
     """
 
+    current_page_xpath = None
+    total_pages_xpath = None
+    total_results_xpath = None
+
     def paginator_data(self, root):
         nspace = root.nsmap.get(None, '')
         def fetch_value(xpath, default):
