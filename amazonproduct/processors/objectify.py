@@ -176,7 +176,7 @@ class RelatedItemsPaginator (XPathPaginator):
     """
     counter = 'RelatedItemPage'
     current_page_xpath = '//aws:RelatedItemPage'
-    total_pages_xpath = '//aws:Items/aws:TotalPages|//aws:RelatedItems/aws:RelatedItemPageCount'
-    total_results_xpath = '//aws:Items/aws:TotalResults|//aws:RelatedItems/aws:RelatedItemCount'
-    items = '//aws:Items/aws:Item'
+    total_pages_xpath = '//aws:RelatedItems/aws:RelatedItemPageCount'
+    total_results_xpath = '//aws:RelatedItems/aws:RelatedItemCount'
+    items = '//aws:RelatedItems/aws:RelatedItem/aws:Item'
 
