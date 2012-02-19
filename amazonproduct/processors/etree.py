@@ -77,8 +77,6 @@ class Processor (BaseProcessor):
         cart.url = root.findtext(_xpath('./{}PurchaseURL'))
 
         def parse_item(item_node):
-            from lxml.etree import tostring
-            print tostring(item_node, pretty_print=True)
             item = Item()
             item.item_id = item_node.findtext(_xpath('./{}CartItemId'))
             item.asin = item_node.findtext(_xpath('./{}ASIN'))
@@ -159,10 +157,6 @@ class RelatedItemsPaginator (XPathPaginator):
 
     counter = 'RelatedItemPage'
     current_page_xpath = './/{}RelatedItemPage'
-    total_pages_xpath = (
-        './/{}Items/{}TotalPages'
-        '|.//{}RelatedItems/{}RelatedItemPageCount')
-    total_results_xpath = (
-        './/{}Items/{}TotalResults'
-        '|.//{}RelatedItems/{}RelatedItemCount')
-    items = './/{}Items/{}Item'
+    total_pages_xpath = './/{}RelatedItems/{}RelatedItemPageCount'
+    total_results_xpath = './/{}RelatedItems/{}RelatedItemCount'
+    items = './/{}:RelatedItems/{}:RelatedItem/{}:Item'
