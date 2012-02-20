@@ -2,17 +2,61 @@
 Operations
 ==========
 
+All functionality of the Amazon Product Advertising API is provided by
+*operations* each of which will accept a number of different parameters both
+required and optional. A special signed URL has to be constructed from which the
+result of an operation can be retrieved as a XML document.
+
+Building the individual URL can be quite cumbersome when done repeatedly by
+hand. That's the main reason why this module came into being. Any operation
+listed in the `API documentation`_ can thus be called with :meth:`~API.call()`.
+To look up information on an article, one could for instance call ItemLookup_
+in the following way::
+
+    api.call(Operation='ItemLookup', ItemId='B00008OE6I')
+    
+However, this module offers a few *convenience methods* which can make your life
+easier by producing clearer error messages or even :ref:`paginating
+<pagination>` over the returned results. For the above call you would simply use
+:meth:`~amazonproduct.api.API.item_lookup`.
+
+Below is a list of all the operations which are specifically supported in this
+module.
+
+.. _API documentation: http://docs.amazonwebservices.com/AWSECommerceService/
+        latest/DG/CHAP_OperationListAlphabetical.html
+.. _ItemLookup: http://docs.amazonwebservices.com/AWSECommerceService/latest/
+        DG/ItemLookup.html
+
+
 Lookup and search operations
 ----------------------------
 
-.. automethod:: amazonproduct.api.API.item_search(searchindex)
-.. automethod:: amazonproduct.api.API.item_lookup
-.. automethod:: amazonproduct.api.API.similarity_lookup
+These operations are the heart and soul of the API. With these you can search
+for products and retreive their data.
+
+.. automethod:: amazonproduct.api.API.item_search(searchindex, **query)
+.. automethod:: amazonproduct.api.API.item_lookup(id [, id2, ...], **extra)
+.. automethod:: amazonproduct.api.API.similarity_lookup(id [, id2, ...], **extra)
+
+Amazon als structures their products in categories, so called *BrowseNodes*,
+each with its unique ID. You can find a list of these nodes here_.
+
+.. _here: http://docs.amazonwebservices.com/AWSECommerceService/latest/DG/
+        index.html?BrowseNodeIDs.html>`_.
 
 .. automethod:: amazonproduct.api.API.browse_node_lookup
 
+
 Cart operations
 ---------------
+
+Since the Amazon Product Advertising API is all about generating revenue for
+Amazon, of course, there is also the possibility to create remote shopping
+baskets. The operations below are staight-forward and need little explanation.
+You may, however, have a look at the :mod:`amazonproduct.contrib.cart` module
+which provides a generic :class:`~amazonproduct.contrib.cart.Cart` class to deal
+with the responses from these operations.
 
 .. automethod:: amazonproduct.api.API.cart_create
 .. automethod:: amazonproduct.api.API.cart_get
