@@ -159,4 +159,4 @@ class RelatedItemsPaginator (XPathPaginator):
     current_page_xpath = './/{}RelatedItemPage'
     total_pages_xpath = './/{}RelatedItems/{}RelatedItemPageCount'
     total_results_xpath = './/{}RelatedItems/{}RelatedItemCount'
-    items = './/{}:RelatedItems/{}:RelatedItem/{}:Item'
+    items = './/{}RelatedItems/{}RelatedItem/{}Item'

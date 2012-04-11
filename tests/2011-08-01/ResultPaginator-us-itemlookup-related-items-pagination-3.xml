@@ -1,0 +1,251 @@
+<ItemLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.6pre/098fcc41968b+ +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+    </HTTPHeaders>
+    <RequestId>f54dbd87-dfb4-43e6-9cdb-d71a09b02813</RequestId>
+    <Arguments>
+      <Argument Name="Operation" Value="ItemLookup"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Version" Value="2011-08-01"/>
+      <Argument Name="ItemId" Value="B000YEF2OG"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="RelatedItemPage" Value="3"/>
+      <Argument Name="Timestamp" Value="2012-02-19T13:32:54Z"/>
+      <Argument Name="ResponseGroup" Value="Large,RelatedItems"/>
+      <Argument Name="RelationshipType" Value="Episode,Season"/>
+    </Arguments>
+    <RequestProcessingTime>0.1080720000000000</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>True</IsValid>
+      <ItemLookupRequest>
+        <IdType>ASIN</IdType>
+        <ItemId>B000YEF2OG</ItemId>
+        <ResponseGroup>Large</ResponseGroup>
+        <ResponseGroup>RelatedItems</ResponseGroup>
+        <VariationPage>All</VariationPage>
+        <RelatedItemPage>3</RelatedItemPage>
+        <RelationshipType>Episode</RelationshipType>
+        <RelationshipType>Season</RelationshipType>
+      </ItemLookupRequest>
+    </Request>
+    <Item>
+      <ASIN>B000YEF2OG</ASIN>
+      <DetailPageURL>http://www.amazon.com/Family-Guy-Season-3/dp/B000YEF2OG%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB000YEF2OG</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Technical Details</Description>
+          <URL>http://www.amazon.com/Family-Guy-Season-3/dp/tech-data/B000YEF2OG%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB000YEF2OG</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Add To Baby Registry</Description>
+          <URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3DB000YEF2OG%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB000YEF2OG</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Add To Wedding Registry</Description>
+          <URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3DB000YEF2OG%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB000YEF2OG</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3DB000YEF2OG%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB000YEF2OG</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.com/gp/pdp/taf/B000YEF2OG%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB000YEF2OG</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.com/review/product/B000YEF2OG%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB000YEF2OG</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.com/gp/offer-listing/B000YEF2OG%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB000YEF2OG</URL>
+        </ItemLink>
+      </ItemLinks>
+      <SmallImage>
+        <URL>http://ecx.images-amazon.com/images/I/51i6A4UInsL._SL75_.jpg</URL>
+        <Height Units="pixels">56</Height>
+        <Width Units="pixels">75</Width>
+      </SmallImage>
+      <MediumImage>
+        <URL>http://ecx.images-amazon.com/images/I/51i6A4UInsL._SL160_.jpg</URL>
+        <Height Units="pixels">120</Height>
+        <Width Units="pixels">160</Width>
+      </MediumImage>
+      <LargeImage>
+        <URL>http://ecx.images-amazon.com/images/I/51i6A4UInsL.jpg</URL>
+        <Height Units="pixels">375</Height>
+        <Width Units="pixels">500</Width>
+      </LargeImage>
+      <ImageSets>
+        <ImageSet Category="primary">
+          <SwatchImage>
+            <URL>http://ecx.images-amazon.com/images/I/51i6A4UInsL._SL30_.jpg</URL>
+            <Height Units="pixels">22</Height>
+            <Width Units="pixels">30</Width>
+          </SwatchImage>
+          <SmallImage>
+            <URL>http://ecx.images-amazon.com/images/I/51i6A4UInsL._SL75_.jpg</URL>
+            <Height Units="pixels">56</Height>
+            <Width Units="pixels">75</Width>
+          </SmallImage>
+          <ThumbnailImage>
+            <URL>http://ecx.images-amazon.com/images/I/51i6A4UInsL._SL75_.jpg</URL>
+            <Height Units="pixels">56</Height>
+            <Width Units="pixels">75</Width>
+          </ThumbnailImage>
+          <TinyImage>
+            <URL>http://ecx.images-amazon.com/images/I/51i6A4UInsL._SL110_.jpg</URL>
+            <Height Units="pixels">82</Height>
+            <Width Units="pixels">110</Width>
+          </TinyImage>
+          <MediumImage>
+            <URL>http://ecx.images-amazon.com/images/I/51i6A4UInsL._SL160_.jpg</URL>
+            <Height Units="pixels">120</Height>
+            <Width Units="pixels">160</Width>
+          </MediumImage>
+          <LargeImage>
+            <URL>http://ecx.images-amazon.com/images/I/51i6A4UInsL.jpg</URL>
+            <Height Units="pixels">375</Height>
+            <Width Units="pixels">500</Width>
+          </LargeImage>
+        </ImageSet>
+      </ImageSets>
+      <ItemAttributes>
+        <Binding>Amazon Instant Video</Binding>
+        <EpisodeSequence>3</EpisodeSequence>
+        <ProductGroup>TV Series Season Video on Demand</ProductGroup>
+        <ProductTypeName>DOWNLOADABLE_TV_SEASON</ProductTypeName>
+        <ReleaseDate>2012-01-04</ReleaseDate>
+        <Studio>FOX</Studio>
+        <Title>Family Guy Season 3</Title>
+      </ItemAttributes>
+      <RelatedItems>
+        <Relationship>Children</Relationship>
+        <RelationshipType>Episode</RelationshipType>
+        <RelatedItemCount>22</RelatedItemCount>
+        <RelatedItemPageCount>3</RelatedItemPageCount>
+        <RelatedItemPage>3</RelatedItemPage>
+        <RelatedItem>
+          <Item>
+            <ASIN>B000YEIP8Q</ASIN>
+            <ItemAttributes>
+              <Binding>Amazon Instant Video</Binding>
+              <Creator Role="Producer">Seth MacFarlane</Creator>
+              <EpisodeSequence>8</EpisodeSequence>
+              <Genre>Animation</Genre>
+              <ProductGroup>TV Series Episode Video on Demand</ProductGroup>
+              <ProductTypeName>DOWNLOADABLE_TV_EPISODE</ProductTypeName>
+              <ReleaseDate>2007-11-06</ReleaseDate>
+              <RunningTime Units="minutes">23</RunningTime>
+              <Studio>FOX</Studio>
+              <Title>Kiss Seen Round The World</Title>
+            </ItemAttributes>
+          </Item>
+        </RelatedItem>
+        <RelatedItem>
+          <Item>
+            <ASIN>B000YEIOM8</ASIN>
+            <ItemAttributes>
+              <Binding>Amazon Instant Video</Binding>
+              <Creator Role="Producer">Seth MacFarlane</Creator>
+              <EpisodeSequence>16</EpisodeSequence>
+              <Genre>Animation</Genre>
+              <ProductGroup>TV Series Episode Video on Demand</ProductGroup>
+              <ProductTypeName>DOWNLOADABLE_TV_EPISODE</ProductTypeName>
+              <ReleaseDate>2007-11-06</ReleaseDate>
+              <RunningTime Units="minutes">23</RunningTime>
+              <Studio>FOX</Studio>
+              <Title>A Very Special Family Guy Freakin' Christmas</Title>
+            </ItemAttributes>
+          </Item>
+        </RelatedItem>
+      </RelatedItems>
+      <OfferSummary>
+        <LowestNewPrice>
+          <Amount>2199</Amount>
+          <CurrencyCode>USD</CurrencyCode>
+          <FormattedPrice>$21.99</FormattedPrice>
+        </LowestNewPrice>
+        <TotalNew>1</TotalNew>
+        <TotalUsed>0</TotalUsed>
+        <TotalCollectible>0</TotalCollectible>
+        <TotalRefurbished>0</TotalRefurbished>
+      </OfferSummary>
+      <Offers>
+        <TotalOffers>1</TotalOffers>
+        <TotalOfferPages>1</TotalOfferPages>
+        <MoreOffersUrl>http://www.amazon.com/gp/offer-listing/B000YEF2OG%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB000YEF2OG</MoreOffersUrl>
+        <Offer>
+          <OfferAttributes>
+            <Condition>New</Condition>
+          </OfferAttributes>
+          <OfferListing>
+            <OfferListingId>x3ff8XNtiqyz3mQZ24ppUrrhwereKHmxv2B%2B4N85R3HyKHq4VN%2FOZ%2BgNKTjmrD4sykRf7OYNHcOuLri5QL9fiCJTiLXTGcbWpnttnC%2Fi9IcohiZX7hDy6lB5InZs1UHlDgU3oYc3%2Bv3kWuj1qAcD8rXuRSbD1iA8</OfferListingId>
+            <Price>
+              <Amount>2199</Amount>
+              <CurrencyCode>USD</CurrencyCode>
+              <FormattedPrice>$21.99</FormattedPrice>
+            </Price>
+            <Availability>Usually ships in 1-2 business days</Availability>
+            <AvailabilityAttributes>
+              <AvailabilityType>now</AvailabilityType>
+              <MinimumHours>24</MinimumHours>
+              <MaximumHours>48</MaximumHours>
+            </AvailabilityAttributes>
+            <IsEligibleForSuperSaverShipping>0</IsEligibleForSuperSaverShipping>
+          </OfferListing>
+        </Offer>
+      </Offers>
+      <CustomerReviews>
+        <IFrameURL>http://www.amazon.com/reviews/iframe?akid=AKIAJTJID3GQ4PAFYOEQ&amp;alinkCode=xm2&amp;asin=B000YEF2OG&amp;atag=redtoad-20&amp;exp=2012-02-20T13%3A32%3A55Z&amp;v=2&amp;sig=XBXvWGjKF%2BIx7Tth25yEChC%2FIhKY99WujRCZAHnBarQ%3D</IFrameURL>
+        <HasReviews>true</HasReviews>
+      </CustomerReviews>
+      <SimilarProducts>
+        <SimilarProduct>
+          <ASIN>B000YEF2OG</ASIN>
+          <Title>Family Guy Season 3</Title>
+        </SimilarProduct>
+        <SimilarProduct>
+          <ASIN>B005KO32GK</ASIN>
+          <Title>Family Guy Season 10</Title>
+        </SimilarProduct>
+        <SimilarProduct>
+          <ASIN>B000W4CG4W</ASIN>
+          <Title>Family Guy Season 5</Title>
+        </SimilarProduct>
+        <SimilarProduct>
+          <ASIN>B000UUKS7U</ASIN>
+          <Title>Family Guy Season 1</Title>
+        </SimilarProduct>
+        <SimilarProduct>
+          <ASIN>B000UUH4YU</ASIN>
+          <Title>Family Guy Season 4</Title>
+        </SimilarProduct>
+      </SimilarProducts>
+      <BrowseNodes>
+        <BrowseNode>
+          <BrowseNodeId>2649513011</BrowseNodeId>
+          <Name>TV</Name>
+          <Ancestors>
+            <BrowseNode>
+              <BrowseNodeId>2625374011</BrowseNodeId>
+              <Name>Departments</Name>
+              <IsCategoryRoot>1</IsCategoryRoot>
+              <Ancestors>
+                <BrowseNode>
+                  <BrowseNodeId>2625373011</BrowseNodeId>
+                  <Name>Movies &amp; TV</Name>
+                </BrowseNode>
+              </Ancestors>
+            </BrowseNode>
+          </Ancestors>
+        </BrowseNode>
+      </BrowseNodes>
+    </Item>
+  </Items>
+</ItemLookupResponse>
