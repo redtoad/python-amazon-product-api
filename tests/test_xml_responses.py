@@ -353,7 +353,7 @@ class TestResultPaginator (object):
     """
 
     api_versions = ['2011-08-01']
-    locales = ['de']
+    locales = ['us']
 
     def test_itemsearch_pagination(self, api):
         paginator = api.item_search('Books',
@@ -363,8 +363,8 @@ class TestResultPaginator (object):
         assert paginator.counter == ITEMS_PAGINATOR
 
         for page, root in enumerate(paginator.iterpages()):
-            assert paginator.results == 281
-            assert paginator.pages == 29
+            assert paginator.results == 530
+            assert paginator.pages == 53
             assert paginator.current == page+1
 
         assert page == 9
@@ -373,45 +373,49 @@ class TestResultPaginator (object):
     def test_itemsearch_over_all_is_limited_to_five(self, api):
         paginator = api.item_search('All', Keywords='Michael Jackson',
             paginate=ITEMS_PAGINATOR)
-        pages = list(paginator)
-        assert len(pages) == 5
+        items = list(paginator)
+        assert len(items) == 50
+        assert len(paginator) == 5
         assert paginator.current == 5
+        assert paginator.pages == 2320
+        assert paginator.results == 23198
 
     def test_itemsearch_over_all_is_limited_to_five_even_for_higher_limits(self, api):
         paginator = api.item_search('All', Keywords='Michael Jackson',
             paginate=ITEMS_PAGINATOR, limit=20)
-        pages = list(paginator)
-        assert len(pages) == 5
+        items = list(paginator)
+        assert len(items) == 50
+        assert len(paginator) == 5
         assert paginator.current == 5
+        assert paginator.pages == 2320
+        assert paginator.results == 23198
 
     def test_itemsearch_over_all_can_be_further_limited(self, api):
         paginator = api.item_search('All', Keywords='Michael Jackson',
             paginate=ITEMS_PAGINATOR, limit=2)
-        pages = list(paginator)
-        assert len(pages) == 2
+        items = list(paginator)
+        assert len(items) == 20
+        assert len(paginator) == 2
         assert paginator.current == 2
+        assert paginator.pages == 2324
+        assert paginator.results == 23236
 
     def test_itemsearch_no_pagination(self, api):
         paginator = api.item_search('All', Keywords='Michael', paginate=False)
         assert not isinstance(paginator, BaseResultPaginator)
 
-    def test_itemsearch_related_items_pagination(self, api):
-        paginator = api.item_search('All', Keywords='Michael',
-            paginate=RELATEDITEMS_PAGINATOR)
-        pages = list(paginator.iterpages())
-        assert len(pages) == len(paginator) == 5
-        assert paginator.results == 556394
-        assert paginator.current == 5
-
     def test_itemlookup_related_items_pagination(self, api):
-        paginator = api.item_lookup('B000B09WRQ',
+        paginator = api.item_lookup('B000YEF2OG',
             ResponseGroup='Large,RelatedItems',
-            RelationshipType='AuthorityTitle',
+            RelationshipType='Episode,Season',
             paginate=RELATEDITEMS_PAGINATOR)
-        pages = list(paginator)
-        assert len(pages) == len(paginator) == 8
-        assert paginator.results == 80
-        assert paginator.current == 8
+        items = list(paginator)
+        assert len(items) == 22
+        assert len(paginator) == 3 # no of pages!
+
+        # having run through the current values should be...
+        assert paginator.current == 3
+        assert paginator.results == 22
 
 #    def test_review_pagination(self, api):
 #        # reviews for "Harry Potter and the Philosopher's Stone"

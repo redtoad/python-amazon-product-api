@@ -108,7 +108,7 @@ class BaseResultPaginator (object):
         """
         # return cached first page
         yield self._first_page
-        while self.current < self.pages and self.current < self.limit:
+        while self.pages > self.current < self.limit:
             yield self.page(self.current + 1)
 
     def paginator_data(self, node):
