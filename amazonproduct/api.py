@@ -15,9 +15,6 @@ import sys
 from time import strftime, gmtime, sleep
 import urllib2
 import warnings
-import math
-import time
-import re
 
 # For historic reasons, this module also supports Python 2.4. To make this
 # happen, a few things have to be imported differently, e.g. pycrypto is needed
@@ -45,6 +42,7 @@ from amazonproduct.errors import *
 from amazonproduct.utils import load_config, running_on_gae, REQUIRED_KEYS
 from amazonproduct.processors import ITEMS_PAGINATOR
 
+
 # load default processor
 try:
     from amazonproduct.processors.objectify import Processor
@@ -67,54 +65,6 @@ HOSTS = {
     'uk': ('ecs.amazonaws.co.uk', 'xml-uk.amznxslt.com'),
     'us': ('ecs.amazonaws.com', 'xml-us.amznxslt.com'),
 }
-
-def retry(tries=5, delay=3, backoff=1):
-    """Retry decorator
-    adapted from http://wiki.python.org/moin/PythonDecoratorLibrary#Retry
-    Kwargs:
-        tries (int): max number of tries before giving up
-        delay (int): delay between tries in seconds
-        backoff (int): exponential backoff multiplier
-    """
-    tries = math.floor(tries)
-    if tries < 0:
-        raise ValueError("tries must be 0 or greater")
-    if delay <= 0:
-        raise ValueError("delay must be greater than 0")
-    if backoff < 1:
-        raise ValueError("backoff must be 1 or greater")
-    def deco_retry(f):
-        def f_retry(*args, **kwargs):
-            mtries, mdelay = tries, delay # make mutable
-            while mtries > 0:
-                try:
-                    return f(*args, **kwargs)
-                except (urllib2.URLError, socket.timeout), e:
-                    # following "urllib2 - The Missing Manual" example
-                    # http://www.voidspace.org.uk/python/articles/urllib2.shtml#id22
-                    if hasattr(e, 'reason'):
-                        error_msg = str(e.reason)
-                    elif hasattr(e, 'message'):
-                        error_msg = str(e.message)
-                    else:
-                        raise
-                    if not re.search(r'timed out', error_msg, re.I):
-                        raise
-                    if mtries == 1:
-                        msg = "%s, Retry maxed, Gave up" % str(e)
-                    else:
-                        msg = "%s, Retrying in %d seconds..." % (str(e), mdelay)
-                    print(msg)
-                    if mtries == 1:
-                        break
-                    time.sleep(mdelay)
-                    mdelay *= backoff
-                    mtries -= 1
-                except:
-                    raise
-            raise
-        return f_retry # true decorator
-    return deco_retry
 
 
 class GZipHandler(urllib2.BaseHandler):
@@ -355,7 +305,6 @@ class API (object):
             # otherwise simply re-raise
             raise
 
-    @retry()
     def call(self, **qargs):
         """
         Builds a signed URL for the operation, fetches the result from Amazon
