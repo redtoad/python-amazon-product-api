@@ -109,16 +109,14 @@ class API (object):
         secret_key = <your secret key>
         associate_tag = <your associate id>
 
-    Now you can use this class to do things like ::
-
-        api = ProductAdvertisingAPI(locale='us')
-        root = api.item_lookup('9783836214063', IdType='ISBN',
+    Now you can use this class to do things like this (note lxml must be installed for this to work) ::
+        
+        from amazonproduct import API
+        api = API(locale='us')
+        root = api.item_lookup('0136042597', IdType='ISBN',
                     SearchIndex='Books', ResponseGroup='Reviews', ReviewPage=1)
 
-        rating = root.Items.Item.CustomerReviews.AverageRating.pyval
-        total_reviews = root.Items.Item.CustomerReviews.TotalReviews.pyval
-        review_pages = root.Items.Item.CustomerReviews.TotalReviewPages.pyval
-
+        reviews_iframe = root.Items.Item.CustomerReviews.IFrameURL
     """
 
     VERSION = '2011-08-01' #: supported Amazon API version
