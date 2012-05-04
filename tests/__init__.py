@@ -29,12 +29,23 @@ TESTABLE_API_VERSIONS = [
 #: Locales to test against. 
 TESTABLE_LOCALES = HOSTS.keys()
 
+ELEMENTTREE_IMPLEMENTATIONS = [
+    'lxml.etree',
+    'xml.etree.cElementTree',
+    'xml.etree.ElementTree',
+    'cElementTree',
+    'elementtree.ElementTree',
+    'elementtree.ElementTree'
+]
+
 #: Result processors to test with.
 TESTABLE_PROCESSORS = {
     'objectify': objectify.Processor,
-    'etree': etree.Processor,
-#    'minidom': minidom.Processor,
+    #    'minidom': minidom.Processor,
 }
+# add ElementTree implementations
+for mod in ELEMENTTREE_IMPLEMENTATIONS:
+    TESTABLE_PROCESSORS[mod] = etree.Processor(module=mod)
 
 def get_config_value(key, default=None):
     """
