@@ -8,7 +8,10 @@ from amazonproduct.api import API
 class RetryAPI (API):
 
     """
-    API which will try up to TRIES times to fetch a result from Amazon should it run into a timeout.
+    API which will try up to ``TRIES`` times to fetch a result from Amazon
+    should it run into a timeout. For the time being this will remain in
+    :mod:`amazonproduct.contrib` but its functionality may be merged into the
+    main API at a later date.
 
     Based on work by Jerry Ji
     """
