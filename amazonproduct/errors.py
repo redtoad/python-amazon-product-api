@@ -17,9 +17,23 @@ __all__ = [
 ]
 
 class AWSError (Exception):
+
     """
-    Generic AWS error message.
+    Generic AWS error message with the following attributes:
+
+        ``code``
+            The Amazon error code (e.g. ``AWS.InvalidEnumeratedParameter``)
+
+        ``msg``
+            The original error message from Amazon
+
+        ``xml``
+            XML returned from Amazon as processed by the API's result processor
+
+    You can (and should) still pass additional arguments to derived exceptions
+    which (as with :class:`BaseException`) will be stored in ``args``.
     """
+
     def __init__(self, *args, **kwargs):
         Exception.__init__(self)
         self.args = args
