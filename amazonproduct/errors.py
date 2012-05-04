@@ -21,10 +21,11 @@ class AWSError (Exception):
     Generic AWS error message.
     """
     def __init__(self, *args, **kwargs):
+        Exception.__init__(self)
+        self.args = args
         self.code = kwargs.pop('code', None)
         self.msg = kwargs.pop('msg', None)
         self.xml = kwargs.pop('xml', None)
-        Exception.__init__(self)
     def __str__(self): # pragma: no cover
         if self.code is not None:
             return '%(code)s: %(msg)s' % self.__dict__
