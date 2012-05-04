@@ -31,7 +31,6 @@ def load_elementtree_module(*modules):
         "Couldn't find any of the ElementTree implementations in %s!" % (
             list(modules), ))
 
-etree = load_elementtree_module()
 
 
 _nsreg = re.compile('^({.+?})')
@@ -47,8 +46,20 @@ def extract_nspace(element):
 
 class Processor (BaseProcessor):
 
+    def __init__(self, *args, **kwargs):
+        # processor can be told which etree module to use in order to have
+        # multiple processors each using a different implementation 
+        etree_mod = kwargs.pop('module', None)
+        try:
+            if etree_mod:
+                self.etree = load_elementtree_module(etree_mod)
+            else:
+                self.etree = load_elementtree_module()
+        except (AttributeError, ImportError):
+            self.etree = None
+
     def parse(self, fp):
-        root = etree.parse(fp).getroot()
+        root = self.etree.parse(fp).getroot()
         ns = extract_nspace(root)
         errors = root.findall('.//%sError' % ns)
         for error in errors:
@@ -56,9 +67,9 @@ class Processor (BaseProcessor):
                 msg=error.findtext('./%sMessage' % ns), xml=root)
         return root
 
-    def __repr__(self):
+    def __repr__(self): # pragma: no cover
         return '<%s using %s at %s>' % (
-            self.__class__.__name__, etree.__name__, hex(id(self)))
+            self.__class__.__name__, getattr(self.etree, '__name__', '???'), hex(id(self)))
 
     @classmethod
     def parse_cart(cls, node):
