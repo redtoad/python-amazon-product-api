@@ -52,9 +52,8 @@ class Processor (BaseProcessor):
         ns = extract_nspace(root)
         errors = root.findall('.//%sError' % ns)
         for error in errors:
-            code = error.findtext('./%sCode' % ns)
-            msg = error.findtext('./%sMessage' % ns)
-            raise AWSError(code, msg)
+            raise AWSError(code=error.findtext('./%sCode' % ns),
+                msg=error.findtext('./%sMessage' % ns), xml=root)
         return root
 
     def __repr__(self):
@@ -78,8 +77,6 @@ class Processor (BaseProcessor):
         cart.url = root.findtext(_xpath('./{}PurchaseURL'))
 
         def parse_item(item_node):
-            from lxml.etree import tostring
-            print tostring(item_node, pretty_print=True)
             item = Item()
             item.item_id = item_node.findtext(_xpath('./{}CartItemId'))
             item.asin = item_node.findtext(_xpath('./{}ASIN'))
@@ -122,7 +119,7 @@ class XPathPaginator (BaseResultPaginator):
 
     counter = current_page_xpath = total_pages_xpath = total_results_xpath = None
 
-    def extract_data(self, root):
+    def paginator_data(self, root):
         nspace = extract_nspace(root)
         def fetch_value(xpath, default):
             try:
@@ -142,6 +139,11 @@ class XPathPaginator (BaseResultPaginator):
             (self.total_results_xpath, 0)
         ])
 
+    def iterate(self, root):
+        nspace = extract_nspace(root)
+        xpath = self.items.replace('{}', nspace)
+        return root.findall(xpath)
+
 
 class ItemPaginator (XPathPaginator):
 
@@ -149,15 +151,12 @@ class ItemPaginator (XPathPaginator):
     current_page_xpath = './/{}Items/{}Request/{}ItemSearchRequest/{}ItemPage'
     total_pages_xpath = './/{}Items/{}TotalPages'
     total_results_xpath = './/{}Items/{}TotalResults'
-
+    items = './/{}Items/{}Item'
 
 class RelatedItemsPaginator (XPathPaginator):
 
     counter = 'RelatedItemPage'
     current_page_xpath = './/{}RelatedItemPage'
-    total_pages_xpath = (
-        './/{}Items/{}TotalPages'
-        '|.//{}RelatedItems/{}RelatedItemPageCount')
-    total_results_xpath = (
-        './/{}Items/{}TotalResults'
-        '|.//{}RelatedItems/{}RelatedItemCount')
+    total_pages_xpath = './/{}RelatedItems/{}RelatedItemPageCount'
+    total_results_xpath = './/{}RelatedItems/{}RelatedItemCount'
+    items = './/{}RelatedItems/{}RelatedItem/{}Item'

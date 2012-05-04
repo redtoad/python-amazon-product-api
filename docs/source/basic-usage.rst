@@ -1,44 +1,89 @@
 
-Basic usage
-===========
+.. _getting-started:
+
+Getting started
+===============
 
 In order to use this API you'll obviously need an Amazon Associates Web Service
 account for which you must `register with Amazon`_. Each account contains an
 *AWSAccessKeyId* and a *SecretKey*. As of API version 2011-08-01 you will also
 need to `register for an AssociateTag`_.
 
-.. _register with Amazon: https://affiliate-program.amazon.com/gp/advertising/api/detail/your-account.html
+.. note:: It is assumed that you know what the Amazon Product Advertising API
+   does. If you are unsure, read their `developer guide`_ (particularly the
+   section *Introduction to the Product Advertising API*.  
+
+.. _developer guide: http://docs.amazonwebservices.com/AWSECommerceService/
+    2011-08-01/DG/Welcome.html?r=4324
+
+Basic setup
+-----------
+
+If you haven't done so already, create a file ``~/.amazon-product-api``
+(``C:\Users\You\.amazon-product-api`` if you're on Windows) and paste the
+following content into it::
+
+    [Credentials]
+    access_key = <your access key>
+    secret_key = <your secret key>
+    associate_tag = <your associate id>
+
+Of course, you'll need to fill in the appropriate values! More information on
+how to configure the module can be found :ref:`later on <config>`.
+
+.. _register with Amazon: https://affiliate-program.amazon.com/gp/advertising/
+    api/detail/your-account.html
 .. _register for an AssociateTag: https://affiliate-program.amazon.com/
 
+
+Your first API request
+----------------------
+
 Here is an example how to use the API to search for books of a certain 
-publisher. Of course, you'll need to replace ``AWS_KEY``, ``SECRET_KEY`` and
-``ASSOCIATE_TAG`` with the appropriate values! ::
+publisher.  ::
 
-    AWS_KEY = '...'
-    SECRET_KEY = '...'
-    ASSOCIATE_TAG = 'mytag-12'
-    
-    api = API(AWS_KEY, SECRET_KEY, 'us', ASSOCIATE_TAG)
-    node = api.item_search('Books', Publisher='Galileo Press')
+    api = API(locale='us')
+    items = api.item_search('Books', Publisher="O'Reilly")
 
-The ``node`` object returned is a `lxml.objectified`__ element. All its 
-attributes can be accessed the pythonic way::
-    
-    # .pyval will convert the node content into int here
-    total_results = node.Items.TotalResults.pyval
-    total_pages = node.Items.TotalPages.pyval
+So what happens here? First you initialised your API wrapper to use Amazon.com.
+There are, of course, `other locales available`_ should you wish to use a
+different one. For instance, ``locale='de'`` will cause requests to be sent to
+Amazon.de (Germany).
+
+Afterwards you called the API operation *ItemSearch* to get a list of all books
+that where published by O'Reilly. Now method ``item_search`` does several
+things at once for you: 
+
+1. It turns all your parameters into a validly signed URL and sends a request.
+2. The returned XML document is parsed and if it contains any error message,
+   the appropriate Python exception is raised (see :ref:`dealing-with-errors`). 
+3. Amazon itself provides their results spread over several pages. If you were
+   to do this manually you would have to make several calls. To make things
+   easier for you :meth:`item_search` will iterate over all availabe results
+   (see :ref:`pagination` for more information).
+
+.. _other locales available: http://docs.amazonwebservices.com/
+    AWSECommerceService/latest/DG/CHAP_LocaleConsiderations.html
+
+You can now iterate over the ``items`` and will get a number of parsed XML
+nodes (by default and if available `lxml.objectify`_ is used). With it you can
+access all elements and attributes in a Pythonic way::
     
     # get all books from result set and 
     # print author and title
-    for book in node.Items.Item:
+    for book in items:
         print '%s: "%s"' % (book.ItemAttributes.Author, 
                             book.ItemAttributes.Title)
 
-Please refer to the `lxml.objectify`_ documentation for more details.
+Please refer to the `lxml.objectify`_ documentation for more details. If you
+cannot/will not use lxml, see :ref:`pagination` for alternatives.
+
+You can find more API operations later in :ref:`operations`.
 
 .. _lxml.objectify: http://codespeak.net/lxml/objectify.html
-__ lxml.objectify_
 
+
+.. _dealing-with-errors:
 
 Dealing with errors
 -------------------
@@ -58,99 +103,3 @@ Amazon will raise Python exceptions with meaningful messages. ::
 
 A list of exceptions can be found in :ref:`error-handling`.
 
-
-.. _config:
-
-Configuration
--------------
-
-.. versionadded:: 0.2.6
-
-There is a growing list of configuration options for the library, many of which
-can be passed directly to the API constructor at initialisation. Some options,
-such as credentials, can also be read from environment variables (e.g.
-``AWS_ACCESS_KEY_ID`` and ``AWS_SECRET_ACCESS_KEY``).
-
-The order of precedence for is always:
-
-* Parameters passed into Connection class constructor.
-* Parameters specified by environment variables
-* Parameters specified as options in the config file.
-
-The following table gives an overview which values can be defined where:
-
-=============  ======================  =====================
-config file    boto config             environment variable
-=============  ======================  =====================
-access_key     aws_access_key_id       AWS_ACCESS_KEY_ID
-secret_key     aws_secret_access_key   AWS_SECRET_ACCESS_KEY
-associate_tag                          AWS_ASSOCIATE_TAG
-locale                                 AWS_LOCALE
-=============  ======================  =====================
-
-
-Config files
-~~~~~~~~~~~~
-
-Upon initialisation, the API looks for configuration files (similar to the
-`boto config`_, where I have borrowed the idea from) in the following
-locations and in the following order:
-
-* any `boto config`_ files ``/etc/boto.cfg`` and ``~/.boto``
-* ``/etc/amazon-product-api.cfg`` for site-wide settings that all users on
-  this machine will use
-* ``~/.amazon-product-api`` for user-specific settings
-
-The options are merged into a single, in-memory configuration that is available.
-Files from this wrapper will always take precedence over boto config files!
-
-The following sections and options are currently recognized within the config
-file.
-
-``Credentials``
-    The Credentials section is used to specify the AWS credentials used for
-    all requests.
-
-
-    ``access_key``
-        Your AWS access key
-
-    ``secret_key``
-        Your AWS secret access key
-
-    ``associate_tag``
-        Your AWS associate ID
-
-    Example::
-
-        [Credentials]
-        access_key = <your access key>
-        secret_key = <your secret key>
-        associate_tag = <your associate id>
-
-.. _boto config: http://code.google.com/p/boto/wiki/BotoConfig
-
-
-Environment variables
-~~~~~~~~~~~~~~~~~~~~~
-
-You can also set the following environment variables:
-
-``AWS_ACCESS_KEY_ID``
-    Your AWS access key
-
-``AWS_SECRET_ACCESS_KEY``
-    Your AWS secret access key
-
-``AWS_ASSOCIATE_TAG``
-    Your AWS associate ID
-
-``AWS_LOCALE``
-    Your API locale
-
-
-More information on the API
----------------------------
-
-* Amazon Product Advertising API Best Practices: 
-  http://aws.amazon.com/articles/1057
