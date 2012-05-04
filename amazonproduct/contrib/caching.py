@@ -24,13 +24,12 @@ class ResponseCachingAPI (API):
     https://gist.github.com/657174
     """
 
-    def __init__(self, access_key_id, secret_access_key, locale,
-                 cachedir=DEFAULT_CACHE_DIR, **kwargs):
+    def __init__(self, *args, **kwargs):
         """
         :param cachedir: Path to directory containing cached responses.
         """
-        API.__init__(self, access_key_id, secret_access_key, locale, **kwargs)
-        self.cache = cachedir
+        self.cache = kwargs.pop('cachedir', DEFAULT_CACHE_DIR)
+        API.__init__(self, *args, **kwargs)
         if self.cache and not os.path.isdir(self.cache):
             os.mkdir(self.cache)
 

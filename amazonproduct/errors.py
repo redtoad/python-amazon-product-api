@@ -16,44 +16,47 @@ __all__ = [
     'UnknownLocale'
 ]
 
-class UnknownLocale (Exception):
-    """
-    Raised when unknown locale is specified.
-    """
-
 class AWSError (Exception):
     """
     Generic AWS error message.
     """
-    def __init__(self, code, msg):
+    def __init__(self, *args, **kwargs):
+        self.code = kwargs.pop('code', None)
+        self.msg = kwargs.pop('msg', None)
+        self.xml = kwargs.pop('xml', None)
         Exception.__init__(self)
-        self.code = code
-        self.msg = msg
     def __str__(self): # pragma: no cover
-        return '%(code)s: %(msg)s' % self.__dict__
+        if self.code is not None:
+            return '%(code)s: %(msg)s' % self.__dict__
+        return Exception.__str__(self)
 
-class InternalError (Exception):
+class UnknownLocale (AWSError):
+    """
+    Raised when unknown locale is specified.
+    """
+
+class InternalError (AWSError):
     """
     Amazon encountered an internal error. Please try again.
     """
 
-class InvalidClientTokenId (Exception):
+class InvalidClientTokenId (AWSError):
     """
     The AWS Access Key Id you provided does not exist in Amazon's records.
     """
 
-class MissingClientTokenId (Exception):
+class MissingClientTokenId (AWSError):
     """
     Request must contain AWSAccessKeyId or X.509 certificate.
     """
 
-class MissingParameters (Exception):
+class MissingParameters (AWSError):
     """
     Your request is missing required parameters. Required parameters include
     XXX.
     """
 
-class InvalidSearchIndex (Exception):
+class InvalidSearchIndex (AWSError):
     """
     The value specified for SearchIndex is invalid. Valid values include:
 
@@ -65,7 +68,7 @@ class InvalidSearchIndex (Exception):
     Watches
     """
 
-class InvalidResponseGroup (Exception):
+class InvalidResponseGroup (AWSError):
     """
     The specified ResponseGroup parameter is invalid. Valid response groups for
     ItemLookup requests include:
@@ -80,70 +83,70 @@ class InvalidResponseGroup (Exception):
     Variations.
     """
 
-class InvalidParameterValue (Exception):
+class InvalidParameterValue (AWSError):
     """
     The specified ItemId parameter is invalid. Please change this value and
     retry your request.
     """
 
-class InvalidListType (Exception):
+class InvalidListType (AWSError):
     """
     The value you specified for ListType is invalid. Valid values include:
     BabyRegistry, Listmania, WeddingRegistry, WishList.
     """
 
-class NoSimilarityForASIN (Exception):
+class NoSimilarityForASIN (AWSError):
     """
     When you specify multiple items, it is possible for there to be no
     intersection of similar items.
     """
 
-class NoExactMatchesFound (Exception):
+class NoExactMatchesFound (AWSError):
     """
     We did not find any matches for your request.
     """
 
-class TooManyRequests (Exception):
+class TooManyRequests (AWSError):
     """
     You are submitting requests too quickly and your requests are being
     throttled. If this is the case, you need to slow your request rate to one
     request per second.
     """
 
-class NotEnoughParameters (Exception):
+class NotEnoughParameters (AWSError):
     """
     Your request should have at least one parameter which you did not submit.
     """
 
-class InvalidParameterCombination (Exception):
+class InvalidParameterCombination (AWSError):
     """
     Your request contained a restricted parameter combination.
     """
 
-class DeprecatedOperation (Exception):
+class DeprecatedOperation (AWSError):
     """
     The specified feature (operation) is deprecated.
     """
 
-class InvalidOperation (Exception):
+class InvalidOperation (AWSError):
     """
     The specified feature (operation) is invalid.
     """
 
-class InvalidCartItem (Exception):
+class InvalidCartItem (AWSError):
     """
     The item you specified, ???, is not eligible to be added to the cart. Check
     the item's availability to make sure it is available.
     """
 
-class ItemAlreadyInCart (Exception):
+class ItemAlreadyInCart (AWSError):
     """
     The item you specified, ???, is already in your cart.
     
     .. deprecated:: 0.2.6
     """
 
-class CartInfoMismatch (Exception):
+class CartInfoMismatch (AWSError):
     """
     Your request contains an invalid AssociateTag, CartId and HMAC combination.
     Please verify the AssociateTag, CartId, HMAC and retry.
@@ -152,7 +155,7 @@ class CartInfoMismatch (Exception):
     returned to you during the CartCreate operation.
     """
 
-class InvalidCartId (Exception):
+class InvalidCartId (AWSError):
     """
     Your request contains an invalid value for CartId. Please check your CartId
     and retry your request.
