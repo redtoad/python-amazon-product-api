@@ -4,6 +4,21 @@ Developer FAQ
 
 Here is a growing collection of questions that pop up regularly.
  
+
+I read the API docs but I can't manage to get this to work
+----------------------------------------------------------
+
+The XML structure returned by Amazon is sometimes not easy to understand. Try
+the following::
+
+    from lxml import etree
+    api = API(locale='...')
+    results = api.call(Operation='...') # your API call
+    print etree.tostring(results, pretty_print=True)
+
+It will print the XML response nicely formatted.
+
+
 Which locale should I use and why is this important?
 ----------------------------------------------------
 
