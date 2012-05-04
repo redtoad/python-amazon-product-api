@@ -6,12 +6,32 @@ RELATEDITEMS_PAGINATOR = 'RelatedItemPage'
 
 class BaseProcessor (object):
 
+    """
+    Skeleton class for processors.
+
+    If you like to implement your own result processing, subclass
+    :class:`BaseProcessor` and override the methods.
+    """
+
     def parse(self, fp):
-        raise NotImplementedError
+        """
+        Parses a file-like XML source returned from Amazon. This is the most
+        import method of this class!
+
+        :return: parsed XML node
+        """
+        raise NotImplementedError # pragma: no cover
 
     @classmethod
     def load_paginator(cls, paginator_type):
-        return None
+        """
+        Returns a result paginator for operations like ItemSearch.
+
+        :param paginator_type: will be one of :const:`ITEMS_PAGINATOR` or
+          :const:`RELATEDITEMS_PAGINATOR`.
+        :return: a subclass of :class:`BaseResultPaginator`
+        """
+        return None # pragma: no cover
 
     @classmethod
     def parse_cart(cls, node):
@@ -21,8 +41,11 @@ class BaseProcessor (object):
 
         Obviously, this has to be implemented in each subclass of
         :class:`BaseProcessor`.
+
+        :param node: parsed XML node (as returned by :meth:`parse`).
+        :return: a :class:`~amazonproduct.contrib.Cart` instance
         """
-        raise NotImplementedError
+        raise NotImplementedError # pragma: no cover
 
 
 class BaseResultPaginator (object):
@@ -37,10 +60,10 @@ class BaseResultPaginator (object):
 
     A result paginator has the following attributes:
 
-    ``pages``
+    ``pages`` (same as ``len(<paginator>)``)
         Number of *total* pages. This may differ from the number of pages
         actually iterated over because of limits either imposed by Amazon or
-        yourself (using ``limit`).
+        yourself (using ``limit``).
 
     ``results``
         Number of total results. This may differ from the number of results
@@ -59,8 +82,8 @@ class BaseResultPaginator (object):
 
     def __init__(self, fun, *args, **kwargs):
         """
-        :param limit: limit fetched pages to this amount (restricted to a
-        maximum of 10 pages by API itself).
+        :param fun: original API method which will be called repeatedly with
+        ``args`` and ``kwargs``.
         """
         self.fun = fun
         self.args, self.kwargs = args, kwargs
@@ -113,13 +136,21 @@ class BaseResultPaginator (object):
 
     def paginator_data(self, node):
         """
-        Extracts pagination data from XML node.
+        Extracts pagination data from XML node, i.e.
+
+        * current page
+        * total number of pages
+        * total number of results
+
+        .. note:: *Number of pages* and *number of results* which may differ
+           from the ones that Amazon is actually willing to return!
+
+        :return: ``(current page, total pages, total results)``
         """
-        raise NotImplementedError
+        raise NotImplementedError # pragma: no cover
 
     def iterate(self, node):
         """
         Returns iterable over XML item nodes.
         """
-        raise NotImplementedError
-
+        raise NotImplementedError # pragma: no cover

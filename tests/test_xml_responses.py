@@ -5,7 +5,7 @@ import pytest
 import re
 import urllib2
 
-from tests import utils
+from tests import utils, ELEMENTTREE_IMPLEMENTATIONS
 from tests import XML_TEST_DIR
 from tests import TESTABLE_API_VERSIONS, TESTABLE_LOCALES, TESTABLE_PROCESSORS
 
@@ -23,6 +23,11 @@ def pytest_generate_tests(metafunc):
     if 'api' in metafunc.funcargnames:
         processors = getattr(metafunc.function, 'processors',
             getattr(metafunc.cls, 'processors', TESTABLE_PROCESSORS))
+        # replace etree with all known implementations
+        if 'etree' in processors:
+            processors.extend(ELEMENTTREE_IMPLEMENTATIONS)
+            processors = set(processors)
+            processors.remove('etree')
         # if --processor is used get intersecting values
         if metafunc.config.option.processors:
             is_specified = lambda x: x in metafunc.config.option.processors
@@ -112,7 +117,10 @@ def pytest_funcarg__api(request):
     locale = request.param['locale']
     version = request.param['version']
     xml_response = request.param['xml_response']
-    processor = TESTABLE_PROCESSORS[request.param['processor']]()
+
+    processor = TESTABLE_PROCESSORS[request.param['processor']]
+    if isinstance(processor, type):
+        processor = processor()
 
     api = API(locale=locale, processor=processor)
     api.VERSION = version
@@ -239,7 +247,7 @@ class TestCorrectVersion (object):
     Check that each requested API version is also really used.
     """
 
-    processors = ['objectify', 'etree']
+    processors = ['objectify']
 
     def test_correct_version(self, api):
         # any operation will do here
