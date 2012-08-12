@@ -6,7 +6,7 @@ Contains all errors specific to this package.
 import re
 
 __all__ = [
-    'AWSError', 'CartInfoMismatch', 'DEFAULT_ERROR_REGS',
+    'AccountLimitExceeded', 'AWSError', 'CartInfoMismatch', 'DEFAULT_ERROR_REGS',
     'InvalidClientTokenId', 'MissingClientTokenId', 'MissingParameters',
     'DeprecatedOperation', 'InternalError', 'InvalidCartId', 'InvalidCartItem',
     'InvalidListType', 'InvalidOperation', 'InvalidParameterCombination',
@@ -174,6 +174,11 @@ class InvalidCartId (AWSError):
     """
     Your request contains an invalid value for CartId. Please check your CartId
     and retry your request.
+    """
+
+class AccountLimitExceeded (AWSError):
+    """
+    Account limit of 2000 requests per hour exceeded.
     """
 
 DEFAULT_ERROR_REGS = {
