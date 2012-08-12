@@ -302,6 +302,9 @@ class API (object):
                 m = self._reg('invalid-parameter-combination').search(e.msg)
                 raise InvalidParameterCombination(m.group('message'))
 
+            if e.code == 'AccountLimitExceeded':
+                raise AccountLimitExceeded(e.msg)
+
             # otherwise simply re-raise
             raise
 
