@@ -215,7 +215,8 @@ JAPANESE_ERROR_REGS = {
         u'\u3092\u5b9f\u884c\u3057\u3066\u304f\u3060\u3055\u3044\u3002'),
 
     'no-similarities' : re.compile(
-        'There are no similar items for this ASIN: (?P<ASIN>\w+).'),
+        u'\u3053\u306eASIN\u3001(?P<ASIN>[\w,]+)\u3068\u985e\u4f3c\u3059\u308b'
+        u'\u5546\u54c1\u306f\u3042\u308a\u307e\u305b\u3093\u3002'),
 
     'not-enough-parameters' : re.compile(
         u'\u6b21\u306e\u30d1\u30e9\u30e1\u30fc\u30bf\u306e\u3046\u3061\u3001'
