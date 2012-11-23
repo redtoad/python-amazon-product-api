@@ -55,15 +55,15 @@ USER_AGENT = ('python-amazon-product-api/%s '
 
 #: Hosts used by Amazon for normal/XSLT operations
 HOSTS = {
-    'ca': ('ecs.amazonaws.ca', 'xml-ca.amznxslt.com'),
-    'cn': ('webservices.amazon.cn', 'xml-cn.amznxslt.com'),
-    'de': ('ecs.amazonaws.de', 'xml-de.amznxslt.com'),
-    'es': ('webservices.amazon.es', 'xml-es.amznxslt.com'),
-    'fr': ('ecs.amazonaws.fr', 'xml-fr.amznxslt.com'),
-    'it': ('webservices.amazon.it', 'xml-it.amznxslt.com'),
-    'jp': ('ecs.amazonaws.jp', 'xml-jp.amznxslt.com'),
-    'uk': ('ecs.amazonaws.co.uk', 'xml-uk.amznxslt.com'),
-    'us': ('ecs.amazonaws.com', 'xml-us.amznxslt.com'),
+    'ca': 'ecs.amazonaws.ca',
+    'cn': 'webservices.amazon.cn',
+    'de': 'ecs.amazonaws.de',
+    'es': 'webservices.amazon.es',
+    'fr': 'ecs.amazonaws.fr',
+    'it': 'webservices.amazon.it',
+    'jp': 'ecs.amazonaws.jp',
+    'uk': 'ecs.amazonaws.co.uk',
+    'us': 'ecs.amazonaws.com',
 }
 
 
@@ -204,21 +204,18 @@ class API (object):
         # create signature
         keys = sorted(qargs.keys())
         args = '&'.join('%s=%s' % (key, quote(unicode(qargs[key])
-                        .encode('utf-8'),safe='~')) for key in keys)
-
-        # Amazon uses a different host for XSLT operations
-        host = self.host['Style' in qargs]
+                        .encode('utf-8'), safe='~')) for key in keys)
 
         msg = 'GET'
-        msg += '\n' + host
+        msg += '\n' + self.host
         msg += '\n/onca/xml'
         msg += '\n' + args
 
         signature = quote(
             b64encode(hmac.new(self.secret_key or '', msg, sha256).digest()))
 
-        url = 'http://%s/onca/xml?%s&Signature=%s' % (host, args, signature)
-        return url
+        return 'http://%s/onca/xml?%s&Signature=%s' % (
+            self.host, args, signature)
 
     def _fetch(self, url):
         """

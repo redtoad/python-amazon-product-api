@@ -1,5 +1,6 @@
 from ConfigParser import SafeConfigParser
 import os.path
+import pytest
 import re
 import textwrap
 
