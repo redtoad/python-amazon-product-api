@@ -5,9 +5,7 @@ Get all editorial reviews for books with the specified ISBNs.
 """
 
 import sys
-from textwrap import fill
 
-from config import AWS_KEY, SECRET_KEY
 from amazonproduct.api import API
 
 if __name__ == '__main__':
@@ -20,14 +18,16 @@ if __name__ == '__main__':
     for isbn in sys.argv[1:]:
 
         isbn = isbn.replace('-', '')
-        
-        api = API(AWS_KEY, SECRET_KEY, 'us')
+
+        # Don't forget to create file ~/.amazon-product-api
+        # with your credentials (see docs for details)
+        api = API(locale='us')
         for root in api.item_lookup(isbn, IdType='ISBN', 
                              SearchIndex='Books', ResponseGroup='EditorialReview'):
             nspace = root.nsmap.get(None, '')
             reviews = root.xpath('//aws:EditorialReview', 
                                 namespaces={'aws' : nspace})
             for review in reviews:
-                print str(review.Source)
+                print unicode(review.Source)
                 print '-' * 40
-                print str(review.Content)
+                print unicode(review.Content)

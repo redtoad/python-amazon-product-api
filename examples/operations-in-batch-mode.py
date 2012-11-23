@@ -1,5 +1,4 @@
 
-from config import AWS_KEY, SECRET_KEY
 from amazonproduct.api import API
 from amazonproduct.errors import AWSError
 
@@ -68,7 +67,9 @@ class BatchModeAPI(API):
 
 if __name__ == '__main__':
 
-    api = BatchModeAPI(AWS_KEY, SECRET_KEY, 'us')
+    # Don't forget to create file ~/.amazon-product-api
+    # with your credentials (see docs for details)
+    api = BatchModeAPI(locale='us')
 
     # batch operation: up to 2 operations with one request
     api.start_batch_request()

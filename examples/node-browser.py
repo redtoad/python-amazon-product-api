@@ -6,7 +6,6 @@ corresponding node from the web service.
 """
 
 import gtk
-from config import AWS_KEY, SECRET_KEY
 from amazonproduct.api import API
 
 #: a list of root nodes retrieved from
@@ -208,7 +207,7 @@ class BrowseNodeExplorer (gtk.Window):
         self.connect("delete_event", self.on_delete)
         
         self.locale = locale
-        self.api = API(AWS_KEY, SECRET_KEY, self.locale)
+        self.api = API(locale=self.locale)
         
         # create a TreeStore with one string column to use as the model
         self.treestore = gtk.TreeStore(int, str)

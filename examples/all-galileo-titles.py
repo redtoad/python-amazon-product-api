@@ -3,39 +3,34 @@
 Get all books published by "Galileo Press".
 """
 
-from config import AWS_KEY, SECRET_KEY
 from amazonproduct.api import API
+import lxml
 
 if __name__ == '__main__':
     
-    api = API(AWS_KEY, SECRET_KEY, 'de')
-    
-    for root in api.item_search('Books', Publisher='Galileo Press',
-                                ResponseGroup='Large'):
+    # Don't forget to create file ~/.amazon-product-api
+    # with your credentials (see docs for details)
+    api = API(locale='de')
 
-        # extract paging information
-        total_results = root.Items.TotalResults.pyval
-        total_pages = root.Items.TotalPages.pyval
-        try:
-            current_page = root.Items.Request.ItemSearchRequest.ItemPage.pyval
-        except AttributeError:
-            current_page = 1
-            
-        print 'page %d of %d' % (current_page, total_pages)
+    result = api.item_search('Books', Publisher='Galileo Press',
+        ResponseGroup='Large')
+
+    # extract paging information
+    total_results = result.results
+    total_pages = len(result)  # or result.pages
+
+    for book in result:
+
+        print 'page %d of %d' % (result.current, total_pages)
         
         #~ from lxml import etree
-        #~ print etree.tostring(root, pretty_print=True)
+        #~ print etree.tostring(book, pretty_print=True)
         
-        nspace = root.nsmap.get(None, '')
-        books = root.xpath('//aws:Items/aws:Item', 
-                             namespaces={'aws' : nspace})
-        
-        for book in books:
-            print book.ASIN,
-            print unicode(book.ItemAttributes.Author), ':', 
-            print unicode(book.ItemAttributes.Title),
-            if hasattr(book.ItemAttributes, 'ListPrice'): 
-                print unicode(book.ItemAttributes.ListPrice.FormattedPrice)
-            elif hasattr(book.OfferSummary, 'LowestUsedPrice'):
-                print u'(used from %s)' % book.OfferSummary.LowestUsedPrice.FormattedPrice
+        print book.ASIN,
+        print unicode(book.ItemAttributes.Author), ':',
+        print unicode(book.ItemAttributes.Title),
+        if hasattr(book.ItemAttributes, 'ListPrice'):
+            print unicode(book.ItemAttributes.ListPrice.FormattedPrice)
+        elif hasattr(book.OfferSummary, 'LowestUsedPrice'):
+            print u'(used from %s)' % book.OfferSummary.LowestUsedPrice.FormattedPrice
                             
