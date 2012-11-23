@@ -10,8 +10,7 @@ import os.path
 import sys
 import urllib2
 
-from config import AWS_KEY, SECRET_KEY
-from amazonproduct.api import API
+from amazonproduct.api import API, HOSTS
 
 ASIN = 'ASIN'
 EAN = 'EAN'
@@ -38,6 +37,8 @@ if __name__ == '__main__':
         help='ID is an Universal Product Code (UPC).')
     parser.add_option('--sku', action='store_const', dest='id_type', const=SKU,
         help='ID is an Stock Keeping Unit (SKU).')
+    parser.add_option('--locale', choices=HOSTS.keys(), dest='locale',
+        help='Amazon locale to use [default: %default].', default='de')
     parser.add_option('-q', '--quiet', action='store_false', dest='verbose', 
         help='Suppress output.')
     
@@ -45,8 +46,10 @@ if __name__ == '__main__':
     
     if len(ids) == 0:
         parser.error('No IDs specified!')
-    
-    api = API(AWS_KEY, SECRET_KEY, 'de')
+
+    # Don't forget to create file ~/.amazon-product-api
+    # with your credentials (see docs for details)
+    api = API(locale=options.locale)
     
     params = {
         'ResponseGroup' : 'Images',

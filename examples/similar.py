@@ -5,11 +5,12 @@ Find similar items to "Small Favor: A Novel of the Dresden Files"
 """
 
 from amazonproduct.api import API
-from config import AWS_KEY, SECRET_KEY
 
 if __name__ == '__main__':
 
-    api = API(AWS_KEY, SECRET_KEY, 'us')
+    # Don't forget to create file ~/.amazon-product-api
+    # with your credentials (see docs for details)
+    api = API(locale='us')
     root = api.similarity_lookup('0451462009')
 
     #~ from lxml import etree
