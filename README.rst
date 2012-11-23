@@ -10,55 +10,47 @@ product selection and discovery functionality. It has search and look up
 capabilities, provides information on products and other features such as
 Reviews, Similar Products and New and Used listings.
 
-.. _Amazon Product Advertising API: https://affiliate-program.amazon.com/gp/advertising/api/detail/main.html
+.. _Amazon Product Advertising API:
+   https://affiliate-program.amazon.com/gp/advertising/api/detail/main.html
 
 Basic usage
 ===========
 
 In order to use this API you'll obviously need an Amazon Associates Web Service
 account for which you must with Amazon at http://aws.amazon.com. Each account
-contains an *AWSAccessKeyId* and a *SecretKey*. 
+contains an *AWSAccessKeyId* and a *SecretKey*.
 
-Here is an example how to use the API to search for books of a certain 
+Create a file ``~/.amazon-product-api`` containing the following data::
+
+    [Credentials]
+    access_key = <your access key>
+    secret_key = <your secret key>
+    associate_tag = <your associate id>
+
+Here is an example how to use the API to search for books of a certain
 publisher::
 
-    AWS_KEY = '...'
-    SECRET_KEY = '...'
-    
-    api = API(AWS_KEY, SECRET_KEY, 'de')
-    node = api.item_search('Books', Publisher='Galileo Press')
+    from amazonproduct import API
+    api = API(locale='de')
 
-The ``node`` object returned is a `lxml.objectified`_ element. All its 
-attributes can be accessed the pythonic way::
-    
     total_results = node.Items.TotalResults.pyval
     total_pages = node.Items.TotalPages.pyval
-    
-    # get all books from result set and 
+
+    # get all books from result set and
     # print author and title
-    for book in node.Items.Item:
-        print '%s: "%s"' % (book.ItemAttributes.Author, 
+    for book in api.item_search('Books', Publisher='Galileo Press'):
+        print '%s: "%s"' % (book.ItemAttributes.Author,
                             book.ItemAttributes.Title)
 
-Please refer to the more extensive `documentation`_ for more details.
+In the background the API will iteratively retrieve all available result pages
+from Amazon and return each book in turn as a `lxml.objectified`_ element.
+
+In general, this module offers a number of convenience methods that will deal
+with the nitty-gritty details like error checking so you won't have to. Please
+refer to the extensive `documentation`_ for more details.
 
 .. _lxml.objectified: http://codespeak.net/lxml/objectify.html
 .. _documentation: http://packages.python.org/python-amazon-product-api/
-
-Status
-======
-
-This module is still undergoing development. All operations can be used with
-the API's ``call(Operation=...)`` method. Additionally, there is a number of 
-convenience methods that include for instance additional error checking.
-These are currently limited to:
-   
-- ``ItemLookup``
-- ``ItemSearch``
-- ``SimilarityLookup``
-- ``BrowseNodeLookup``
-
-More functionality is to follow as development progresses. 
 
 Installation
 ============
