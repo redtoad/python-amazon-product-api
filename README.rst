@@ -94,7 +94,3 @@ License
 This module is release under the BSD License. You can find the full text of
 the license in the LICENSE file.
 
-Changelog
-=========
-
-.. include:: CHANGES
