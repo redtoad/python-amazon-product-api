@@ -89,8 +89,10 @@ class BaseResultPaginator (object):
         self.args, self.kwargs = args, kwargs
         self.limit = kwargs.pop('limit', self.LIMIT)
 
+        self._pagecache = {}
+
         # fetch first page to get pagination parameters
-        self._first_page = self.page(1)
+        self.page(kwargs.get(self.counter, 1))
 
     def __iter__(self):
         """
@@ -119,7 +121,12 @@ class BaseResultPaginator (object):
         Fetch single page from results.
         """
         self.kwargs[self.counter] = index
-        root = self.fun(*self.args, **self.kwargs)
+        # use cached page if found
+        if index in self._pagecache:
+            root = self._pagecache[index]
+        else:
+            root = self.fun(*self.args, **self.kwargs)
+            self._pagecache[index] = root
         self.current, self.pages, self.results = self.paginator_data(root)
         return root
 
@@ -129,8 +136,7 @@ class BaseResultPaginator (object):
         pages it makes available, although attribute ``pages`` may say
         otherwise!
         """
-        # return cached first page
-        yield self._first_page
+        yield self.page(1)
         while self.pages > self.current < self.limit:
             yield self.page(self.current + 1)
 
