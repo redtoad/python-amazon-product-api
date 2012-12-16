@@ -1,5 +1,7 @@
 import os
+import time
 import tempfile
+
 from lxml import etree
 
 try: # make it python2.4 compatible!
@@ -10,6 +12,7 @@ except ImportError: # pragma: no cover
 from amazonproduct.api import API
 
 DEFAULT_CACHE_DIR = tempfile.mkdtemp(prefix='amzn_')
+DEFAULT_CACHE_TIME = 86400 # in seconds
 
 class ResponseCachingAPI (API):
 
@@ -24,12 +27,14 @@ class ResponseCachingAPI (API):
     https://gist.github.com/657174
     """
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self, access_key_id, secret_access_key, locale, associate_tag,
+                 cachedir=DEFAULT_CACHE_DIR, cachetime=DEFAULT_CACHE_TIME, **kwargs):
         """
         :param cachedir: Path to directory containing cached responses.
         """
-        self.cache = kwargs.pop('cachedir', DEFAULT_CACHE_DIR)
-        API.__init__(self, *args, **kwargs)
+        API.__init__(self, access_key_id, secret_access_key, locale, associate_tag, **kwargs)
+        self.cache = cachedir
+        self.cachetime = cachetime
         if self.cache and not os.path.isdir(self.cache):
             os.mkdir(self.cache)
 
@@ -38,7 +43,8 @@ class ResponseCachingAPI (API):
             path = os.path.join(self.cache, '%s.xml' % self.get_hash(url))
             # if response was fetched previously, use that one
             if os.path.isfile(path):
-                return open(path)
+                if os.path.getmtime(path) + self.cachetime > time.time():
+                    return open(path)
 
         # fetch original response from Amazon
         resp = API._fetch(self, url)
