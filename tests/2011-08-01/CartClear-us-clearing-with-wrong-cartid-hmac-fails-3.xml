@@ -1,0 +1,35 @@
+<CartClearResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+    </HTTPHeaders>
+    <RequestId>13X8JK55GA8Z5VKN1AW7</RequestId>
+    <Arguments>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Operation" Value="CartClear"/>
+      <Argument Name="Timestamp" Value="2011-11-08T21:48:24Z"/>
+      <Argument Name="Version" Value="2011-08-01"/>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="HMAC" Value="???"/>
+      <Argument Name="CartId" Value="189-8874114-6409942"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+    </Arguments>
+    <RequestProcessingTime>0.0306229591369629</RequestProcessingTime>
+  </OperationRequest>
+  <Cart>
+    <Request>
+      <IsValid>True</IsValid>
+      <CartClearRequest>
+        <CartId>189-8874114-6409942</CartId>
+        <HMAC>???</HMAC>
+      </CartClearRequest>
+      <Errors>
+        <Error>
+          <Code>AWS.ECommerceService.CartInfoMismatch</Code>
+          <Message>Your request contains an invalid AssociateTag, CartId and HMAC combination. Please verify the AssociateTag, CartId, HMAC and retry. Remember that all Cart operations must pass in the CartId and HMAC that were returned to you during the CartCreate operation.</Message>
+        </Error>
+      </Errors>
+    </Request>
+  </Cart>
+</CartClearResponse>

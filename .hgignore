@@ -1,0 +1,40 @@
+
+dist
+build
+sandbox
+python_amazon_product_api.egg-info
+docs/build
+docs/amazon
+.tox
+testsc
+.venv
+
+# hide real key data!
+examples/config.py$
+tests/config.py$
+
+# eclipse/PyCharm project files
+.settings
+.project
+.pydevproject
+.idea
+
+# code coverage files
+.coverage
+cover
+htmlcov
+coverage.xml
+
+# XUnit reports
+nosetests.xml
+nosetests-py\d+.xml
+junit-py\d+.xml
+
+# pylint reports
+pylint.txt
+
+# use glob syntax.
+syntax: glob
+
+*.pyc
+*.pyo

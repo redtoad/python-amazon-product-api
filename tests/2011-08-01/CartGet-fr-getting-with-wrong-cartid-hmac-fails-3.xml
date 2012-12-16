@@ -1,0 +1,35 @@
+<CartGetResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+    </HTTPHeaders>
+    <RequestId>1Z41KMD3TR9RBJ6BGM7V</RequestId>
+    <Arguments>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Operation" Value="CartGet"/>
+      <Argument Name="Timestamp" Value="2011-11-08T21:47:58Z"/>
+      <Argument Name="Version" Value="2011-08-01"/>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="HMAC" Value="???"/>
+      <Argument Name="CartId" Value="278-6093324-9610961"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+    </Arguments>
+    <RequestProcessingTime>0.059039831161499</RequestProcessingTime>
+  </OperationRequest>
+  <Cart>
+    <Request>
+      <IsValid>True</IsValid>
+      <CartGetRequest>
+        <CartId>278-6093324-9610961</CartId>
+        <HMAC>???</HMAC>
+      </CartGetRequest>
+      <Errors>
+        <Error>
+          <Code>AWS.ECommerceService.CartInfoMismatch</Code>
+          <Message>Votre demande comprend une combinaison AssociateTag, CartId et HMAC non valide. Veuillez v&#233;rifier l'AssociateTag, le CartId et le HMAC avant de r&#233;essayer. N'oubliez pas que toutes les op&#233;rations du panier doivent s'effectuer avec le CartId et le HMAC qui vous ont &#233;t&#233; renvoy&#233;s lors de l'op&#233;ration CartCreate.</Message>
+        </Error>
+      </Errors>
+    </Request>
+  </Cart>
+</CartGetResponse>

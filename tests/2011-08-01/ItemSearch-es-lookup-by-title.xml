@@ -1,0 +1,137 @@
+<ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+    </HTTPHeaders>
+    <RequestId>bcedeef6-eca2-476d-9b14-79ba62e961a4</RequestId>
+    <Arguments>
+      <Argument Name="limit" Value="1"/>
+      <Argument Name="Operation" Value="ItemSearch"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2011-11-09T07:24:19Z"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Title" Value="Harry Potter"/>
+      <Argument Name="ItemPage" Value="1"/>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="SearchIndex" Value="Books"/>
+      <Argument Name="Version" Value="2011-08-01"/>
+    </Arguments>
+    <RequestProcessingTime>0.3935090000000000</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>True</IsValid>
+      <ItemSearchRequest>
+        <ItemPage>1</ItemPage>
+        <ResponseGroup>Small</ResponseGroup>
+        <SearchIndex>Books</SearchIndex>
+        <Title>Harry Potter</Title>
+      </ItemSearchRequest>
+    </Request>
+    <TotalResults>318</TotalResults>
+    <TotalPages>32</TotalPages>
+    <MoreSearchResultsUrl>http://www.amazon.es/gp/redirect.html?camp=2025&amp;creative=165953&amp;location=http%3A%2F%2Fwww.amazon.es%2Fgp%2Fsearch%3Fkeywords%3DHarry%2BPotter%26url%3Dsearch-alias%253Dstripbooks&amp;linkCode=xm2&amp;tag=redtoad-21&amp;SubscriptionId=AKIAJTJID3GQ4PAFYOEQ</MoreSearchResultsUrl>
+    <Item>
+      <ASIN>8498383447</ASIN>
+      <DetailPageURL>http://www.amazon.es/Harry-Potter-C%C3%A1liz-Letras-Bolsillo/dp/8498383447%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D8498383447</DetailPageURL>
+      <ItemAttributes>
+        <Author>J.K. Rowling</Author>
+        <Manufacturer>Salamandra</Manufacturer>
+        <ProductGroup>Libro</ProductGroup>
+        <Title>Harry Potter y el C&#225;liz de Fuego (Letras De Bolsillo)</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>8498383439</ASIN>
+      <DetailPageURL>http://www.amazon.es/Potter-prisionero-Azkaban-Letras-Bolsillo/dp/8498383439%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D8498383439</DetailPageURL>
+      <ItemAttributes>
+        <Author>J.K. Rowling</Author>
+        <Manufacturer>Salamandra</Manufacturer>
+        <ProductGroup>Libro</ProductGroup>
+        <Title>Harry Potter y el prisionero de Azkaban (Letras De Bolsillo)</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>8498382661</ASIN>
+      <DetailPageURL>http://www.amazon.es/Potter-Piedra-Filosofal-Letras-Bolsillo/dp/8498382661%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D8498382661</DetailPageURL>
+      <ItemAttributes>
+        <Author>J.K. Rowling</Author>
+        <Manufacturer>Salamandra</Manufacturer>
+        <ProductGroup>Libro</ProductGroup>
+        <Title>Harry Potter y la Piedra Filosofal (Letras De Bolsillo)</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>849838267X</ASIN>
+      <DetailPageURL>http://www.amazon.es/Potter-C%C3%A1mara-Secreta-Letras-Bolsillo/dp/849838267X%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D849838267X</DetailPageURL>
+      <ItemAttributes>
+        <Author>J.K. Rowling</Author>
+        <Manufacturer>Salamandra</Manufacturer>
+        <ProductGroup>Libro</ProductGroup>
+        <Title>Harry Potter y la C&#225;mara Secreta (Letras De Bolsillo)</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>8478886559</ASIN>
+      <DetailPageURL>http://www.amazon.es/Harry-potter-prisionero-azkaban-edic/dp/8478886559%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D8478886559</DetailPageURL>
+      <ItemAttributes>
+        <Author>Rowling</Author>
+        <Manufacturer>SALAMANDRA</Manufacturer>
+        <ProductGroup>Libro</ProductGroup>
+        <Title>Harry potter y el prisionero de azkaban (3) (r)edic.</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>8498383625</ASIN>
+      <DetailPageURL>http://www.amazon.es/Harry-Potter-Orden-Letras-Bolsillo/dp/8498383625%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D8498383625</DetailPageURL>
+      <ItemAttributes>
+        <Author>J.K. Rowling</Author>
+        <Manufacturer>Salamandra</Manufacturer>
+        <ProductGroup>Libro</ProductGroup>
+        <Title>Harry Potter y la Orden del F&#233;nix (Letras De Bolsillo)</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>8498383641</ASIN>
+      <DetailPageURL>http://www.amazon.es/Potter-Reliquias-Muerte-Letras-Bolsillo/dp/8498383641%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D8498383641</DetailPageURL>
+      <ItemAttributes>
+        <Author>J.K. Rowling</Author>
+        <Manufacturer>Salamandra</Manufacturer>
+        <ProductGroup>Libro</ProductGroup>
+        <Title>Harry Potter y las Reliquias de la Muerte (Letras De Bolsillo)</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>8498383633</ASIN>
+      <DetailPageURL>http://www.amazon.es/Potter-misterio-pr%C3%ADncipe-Letras-Bolsillo/dp/8498383633%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D8498383633</DetailPageURL>
+      <ItemAttributes>
+        <Author>J.K. Rowling</Author>
+        <Manufacturer>Salamandra</Manufacturer>
+        <ProductGroup>Libro</ProductGroup>
+        <Title>Harry Potter y el misterio del pr&#237;ncipe (Letras De Bolsillo)</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>8498381401</ASIN>
+      <DetailPageURL>http://www.amazon.es/Harry-Potter-las-Reliquias-Muerte/dp/8498381401%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D8498381401</DetailPageURL>
+      <ItemAttributes>
+        <Author>J.K. Rowling</Author>
+        <Manufacturer>Salamandra</Manufacturer>
+        <ProductGroup>Libro</ProductGroup>
+        <Title>Harry Potter y las Reliquias de La Muerte</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>8448068467</ASIN>
+      <DetailPageURL>http://www.amazon.es/Los-tesoros-Harry-Potter-Fotograf%C3%ADas/dp/8448068467%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D8448068467</DetailPageURL>
+      <ItemAttributes>
+        <Author>Brian Sibley</Author>
+        <Creator Role="Traductor">Luis Sarabia Utrilla</Creator>
+        <Manufacturer>Timun Mas</Manufacturer>
+        <ProductGroup>Libro</ProductGroup>
+        <Title>Los tesoros de Harry Potter: Fotograf&#237;as y recuerdos de un mundo m&#225;gico</Title>
+      </ItemAttributes>
+    </Item>
+  </Items>
+</ItemSearchResponse>

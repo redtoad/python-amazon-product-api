@@ -1,0 +1,147 @@
+<ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+    </HTTPHeaders>
+    <RequestId>ac50d6b1-8465-4807-9844-ee471b26101f</RequestId>
+    <Arguments>
+      <Argument Name="Operation" Value="ItemSearch"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Author" Value="F&#233;lix J. Palma"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="ItemPage" Value="1"/>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Version" Value="2011-08-01"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2011-11-09T07:24:16Z"/>
+      <Argument Name="SearchIndex" Value="Books"/>
+    </Arguments>
+    <RequestProcessingTime>0.5819880000000000</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>True</IsValid>
+      <ItemSearchRequest>
+        <Author>F&#233;lix J. Palma</Author>
+        <ItemPage>1</ItemPage>
+        <ResponseGroup>Small</ResponseGroup>
+        <SearchIndex>Books</SearchIndex>
+      </ItemSearchRequest>
+    </Request>
+    <TotalResults>12</TotalResults>
+    <TotalPages>2</TotalPages>
+    <MoreSearchResultsUrl>http://www.amazon.es/gp/redirect.html?camp=2025&amp;creative=165953&amp;location=http%3A%2F%2Fwww.amazon.es%2Fgp%2Fsearch%3Fkeywords%3DF%25C3%25A9lix%2BJ.%2BPalma%26url%3Dsearch-alias%253Dstripbooks&amp;linkCode=xm2&amp;tag=redtoad-21&amp;SubscriptionId=AKIAJTJID3GQ4PAFYOEQ</MoreSearchResultsUrl>
+    <Item>
+      <ASIN>8498771595</ASIN>
+      <DetailPageURL>http://www.amazon.es/mapa-del-tiempo-Literaria-algaida/dp/8498771595%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D8498771595</DetailPageURL>
+      <ItemAttributes>
+        <Author>F&#233;lix J. Palma Mac&#237;as</Author>
+        <Manufacturer>Algaida</Manufacturer>
+        <ProductGroup>Libro</ProductGroup>
+        <Title>El mapa del tiempo (Literaria (algaida))</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>8484338290</ASIN>
+      <DetailPageURL>http://www.amazon.es/corrientes-oce%C3%A1nicas-F%C3%A9lix-Palma-Mac%C3%ADas/dp/8484338290%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D8484338290</DetailPageURL>
+      <ItemAttributes>
+        <Author>F&#233;lix J. Palma Mac&#237;as</Author>
+        <Manufacturer>Algaida</Manufacturer>
+        <ProductGroup>Libro</ProductGroup>
+        <Title>Las corrientes oce&#225;nicas</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>8483930544</ASIN>
+      <DetailPageURL>http://www.amazon.es/menor-espect%C3%A1culo-mundo-Voces-Literatura/dp/8483930544%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D8483930544</DetailPageURL>
+      <ItemAttributes>
+        <Author>F&#233;lix J. Palma</Author>
+        <Manufacturer>Paginas De Espuma</Manufacturer>
+        <ProductGroup>Libro</ProductGroup>
+        <Title>El menor espect&#225;culo del mundo (Voces / Literatura)</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>8420691186</ASIN>
+      <DetailPageURL>http://www.amazon.es/El-mapa-del-tiempo-alianza/dp/8420691186%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D8420691186</DetailPageURL>
+      <ItemAttributes>
+        <Author>F&#233;lix J. Palma Mac&#237;as</Author>
+        <Manufacturer>Alianza Editorial</Manufacturer>
+        <ProductGroup>Libro</ProductGroup>
+        <Title>El mapa del tiempo (13/20 (alianza))</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>8498890276</ASIN>
+      <DetailPageURL>http://www.amazon.es/Hormiga-que-quiso-ser-astronauta/dp/8498890276%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D8498890276</DetailPageURL>
+      <ItemAttributes>
+        <Author>Felix J. Palma</Author>
+        <Manufacturer>Alamut Ediciones</Manufacturer>
+        <ProductGroup>Libro</ProductGroup>
+        <Title>Hormiga que quiso ser astronauta, la</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>8481912174</ASIN>
+      <DetailPageURL>http://www.amazon.es/El-vigilante-salamandra-F%C3%A9lix-Palma/dp/8481912174%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D8481912174</DetailPageURL>
+      <ItemAttributes>
+        <Author>F&#233;lix J. Palma</Author>
+        <Manufacturer>Editorial Pre-Textos</Manufacturer>
+        <ProductGroup>Libro</ProductGroup>
+        <Title>&#160;El vigilante de la salamandra</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>8488599382</ASIN>
+      <DetailPageURL>http://www.amazon.es/hormiga-que-quiso-ser-astron%C3%A1uta/dp/8488599382%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D8488599382</DetailPageURL>
+      <ItemAttributes>
+        <Author>F&#233;lix J. Palma Mac&#237;as</Author>
+        <Manufacturer>Quorum Editores</Manufacturer>
+        <ProductGroup>Libro</ProductGroup>
+        <Title>La hormiga que quiso ser astron&#225;uta</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>849541824X</ASIN>
+      <DetailPageURL>http://www.amazon.es/Padre-calla-Las-l%C3%A1grimas-Lorenzo/dp/849541824X%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D849541824X</DetailPageURL>
+      <ItemAttributes>
+        <Author>Carlos Vadillo Buenfil</Author>
+        <Author>F&#233;lix J. Palma</Author>
+        <Manufacturer>Editorial Pre-Textos</Manufacturer>
+        <ProductGroup>Libro</ProductGroup>
+        <Title>&#160;Padre calla ; Las l&#225;grimas de Lorenzo</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>8497400216</ASIN>
+      <DetailPageURL>http://www.amazon.es/Las-interioridades-F%C3%A9lix-J-Palma/dp/8497400216%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D8497400216</DetailPageURL>
+      <ItemAttributes>
+        <Author>F&#233;lix J. Palma</Author>
+        <Manufacturer>Castalia Ediciones</Manufacturer>
+        <ProductGroup>Libro</ProductGroup>
+        <Title>Las interioridades                                                              .</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>8488599439</ASIN>
+      <DetailPageURL>http://www.amazon.es/Relatos-Don-Carnal-historias-carnaval/dp/8488599439%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D8488599439</DetailPageURL>
+      <ItemAttributes>
+        <Author>F&#233;lix Bay&#243;n</Author>
+        <Author>Jos&#233; Manuel Ben&#237;tez Ariza</Author>
+        <Author>Felipe Ben&#237;tez Reyes</Author>
+        <Author>Alejandro Luque de Diego</Author>
+        <Author>Jes&#250;s Maeso de la Torre</Author>
+        <Author>Rafael Mar&#237;n Trechera</Author>
+        <Author>Eduardo Mendicutti</Author>
+        <Author>F&#233;lix J. Palma Mac&#237;as</Author>
+        <Author>Fernando Qui&#241;&#243;nes</Author>
+        <Author>Rafael Ram&#237;rez Escoto</Author>
+        <Author>Manuel J. Ruiz Torres</Author>
+        <Author>Juan Jos&#233; T&#233;llez Rubio</Author>
+        <Manufacturer>Quorum Editores</Manufacturer>
+        <ProductGroup>Libro</ProductGroup>
+        <Title>Relatos de Don Carnal: 12 historias del carnaval</Title>
+      </ItemAttributes>
+    </Item>
+  </Items>
+</ItemSearchResponse>

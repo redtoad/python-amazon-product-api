@@ -1,0 +1,107 @@
+<CartAddResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+    </HTTPHeaders>
+    <RequestId>0Z7MSWYB3H3MD6108T6C</RequestId>
+    <Arguments>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Item.1.ASIN" Value="0201896850"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Item.1.Quantity" Value="3"/>
+      <Argument Name="HMAC" Value="xw4B14vHubelj7Ua+is/HCrkJAs="/>
+      <Argument Name="Operation" Value="CartAdd"/>
+      <Argument Name="CartId" Value="277-7113419-9077030"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2011-11-09T07:24:46Z"/>
+      <Argument Name="Version" Value="2011-08-01"/>
+    </Arguments>
+    <RequestProcessingTime>0.140658140182495</RequestProcessingTime>
+  </OperationRequest>
+  <Cart>
+    <Request>
+      <IsValid>True</IsValid>
+      <CartAddRequest>
+        <CartId>277-7113419-9077030</CartId>
+        <HMAC>xw4B14vHubelj7Ua+is/HCrkJAs=</HMAC>
+        <Items>
+          <Item>
+            <ASIN>0201896850</ASIN>
+            <Quantity>3</Quantity>
+          </Item>
+        </Items>
+      </CartAddRequest>
+    </Request>
+    <CartId>277-7113419-9077030</CartId>
+    <HMAC>xw4B14vHubelj7Ua+is/HCrkJAs=</HMAC>
+    <URLEncodedHMAC>xw4B14vHubelj7Ua%2Bis%2FHCrkJAs%3D</URLEncodedHMAC>
+    <PurchaseURL>https://www.amazon.es/gp/cart/aws-merge.html?cart-id=277-7113419-9077030%26associate-id=redtoad-21%26hmac=xw4B14vHubelj7Ua%2Bis/HCrkJAs=%26SubscriptionId=AKIAJTJID3GQ4PAFYOEQ%26MergeCart=False</PurchaseURL>
+    <SubTotal>
+      <Amount>22002</Amount>
+      <CurrencyCode>EUR</CurrencyCode>
+      <FormattedPrice>EUR 220,02</FormattedPrice>
+    </SubTotal>
+    <CartItems>
+      <SubTotal>
+        <Amount>22002</Amount>
+        <CurrencyCode>EUR</CurrencyCode>
+        <FormattedPrice>EUR 220,02</FormattedPrice>
+      </SubTotal>
+      <CartItem>
+        <CartItemId>U3JXBTEQ23OSTW</CartItemId>
+        <ASIN>0201896850</ASIN>
+        <SellerNickname>Amazon.es</SellerNickname>
+        <Quantity>3</Quantity>
+        <Title>The Art of Computer Programming: Sorting and Searching v. 3: The Classic Work Newly Updated and Revised</Title>
+        <ProductGroup>Libro</ProductGroup>
+        <Price>
+          <Amount>3667</Amount>
+          <CurrencyCode>EUR</CurrencyCode>
+          <FormattedPrice>EUR 36,67</FormattedPrice>
+        </Price>
+        <ItemTotal>
+          <Amount>11001</Amount>
+          <CurrencyCode>EUR</CurrencyCode>
+          <FormattedPrice>EUR 110,01</FormattedPrice>
+        </ItemTotal>
+      </CartItem>
+      <CartItem>
+        <CartItemId>U1FAD6LFHFDD4H</CartItemId>
+        <ASIN>0201896842</ASIN>
+        <SellerNickname>Amazon.es</SellerNickname>
+        <Quantity>2</Quantity>
+        <Title>The Art of Computer Programming: Seminumerical Algorithms v. 2</Title>
+        <ProductGroup>Libro</ProductGroup>
+        <Price>
+          <Amount>3667</Amount>
+          <CurrencyCode>EUR</CurrencyCode>
+          <FormattedPrice>EUR 36,67</FormattedPrice>
+        </Price>
+        <ItemTotal>
+          <Amount>7334</Amount>
+          <CurrencyCode>EUR</CurrencyCode>
+          <FormattedPrice>EUR 73,34</FormattedPrice>
+        </ItemTotal>
+      </CartItem>
+      <CartItem>
+        <CartItemId>U3K0TD6PUYSUN3</CartItemId>
+        <ASIN>0201896834</ASIN>
+        <SellerNickname>Amazon.es</SellerNickname>
+        <Quantity>1</Quantity>
+        <Title>The Art of Computer Programming: Fundamental Algorithms v. 1 (Art of Computer Programming Volume 1)</Title>
+        <ProductGroup>Libro</ProductGroup>
+        <Price>
+          <Amount>3667</Amount>
+          <CurrencyCode>EUR</CurrencyCode>
+          <FormattedPrice>EUR 36,67</FormattedPrice>
+        </Price>
+        <ItemTotal>
+          <Amount>3667</Amount>
+          <CurrencyCode>EUR</CurrencyCode>
+          <FormattedPrice>EUR 36,67</FormattedPrice>
+        </ItemTotal>
+      </CartItem>
+    </CartItems>
+  </Cart>
+</CartAddResponse>

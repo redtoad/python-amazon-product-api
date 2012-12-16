@@ -1,0 +1,41 @@
+<ItemLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+    </HTTPHeaders>
+    <RequestId>f45ae75f-0107-476f-8968-d40b84707217</RequestId>
+    <Arguments>
+      <Argument Name="Operation" Value="ItemLookup"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="ItemId" Value="9780747532743"/>
+      <Argument Name="IdType" Value="ISBN"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2011-11-13T11:42:35Z"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="SearchIndex" Value="???"/>
+      <Argument Name="Version" Value="2011-08-01"/>
+    </Arguments>
+    <RequestProcessingTime>0.0025250000000000</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>False</IsValid>
+      <ItemLookupRequest>
+        <IdType>ISBN</IdType>
+        <ItemId>9780747532743</ItemId>
+        <ResponseGroup>Small</ResponseGroup>
+        <SearchIndex>???</SearchIndex>
+        <VariationPage>All</VariationPage>
+      </ItemLookupRequest>
+      <Errors>
+        <Error>
+          <Code>AWS.InvalidEnumeratedParameter</Code>
+          <Message>The value you specified for SearchIndex is invalid. Valid values include [
+				'All','Apparel','Appliances','Automotive','Baby','Beauty','Blended','Books','Electronics','Grocery','HealthPersonalCare','Home','HomeImprovement','Jewelry','Misc','Music','OfficeProducts','Photo','Shoes','Software','SportingGoods','Toys','Video','VideoGames','Watches'
+				].</Message>
+        </Error>
+      </Errors>
+    </Request>
+  </Items>
+</ItemLookupResponse>

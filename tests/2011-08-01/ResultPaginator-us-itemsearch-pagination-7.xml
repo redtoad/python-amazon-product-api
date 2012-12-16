@@ -1,0 +1,437 @@
+<ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.6pre/51603295d574+ +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+    </HTTPHeaders>
+    <RequestId>3212df2c-d6fe-44cf-9009-71c181be4a19</RequestId>
+    <Arguments>
+      <Argument Name="Operation" Value="ItemSearch"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="ItemPage" Value="7"/>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Version" Value="2011-08-01"/>
+      <Argument Name="Sort" Value="salesrank"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2012-04-11T06:29:26Z"/>
+      <Argument Name="Publisher" Value="Galileo Press"/>
+      <Argument Name="SearchIndex" Value="Books"/>
+    </Arguments>
+    <RequestProcessingTime>0.5879360000000000</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>True</IsValid>
+      <ItemSearchRequest>
+        <ItemPage>7</ItemPage>
+        <Publisher>Galileo Press</Publisher>
+        <ResponseGroup>Small</ResponseGroup>
+        <SearchIndex>Books</SearchIndex>
+        <Sort>salesrank</Sort>
+      </ItemSearchRequest>
+    </Request>
+    <TotalResults>530</TotalResults>
+    <TotalPages>53</TotalPages>
+    <MoreSearchResultsUrl>http://www.amazon.com/gp/redirect.html?camp=2025&amp;creative=386001&amp;location=http%3A%2F%2Fwww.amazon.com%2Fgp%2Fsearch%3Fkeywords%3DGalileo%2BPress%26url%3Dsearch-alias%253Dstripbooks&amp;linkCode=xm2&amp;tag=redtoad-20&amp;SubscriptionId=AKIAJTJID3GQ4PAFYOEQ</MoreSearchResultsUrl>
+    <Item>
+      <ASIN>3836212951</ASIN>
+      <DetailPageURL>http://www.amazon.com/SilverStripe-CD-ROM-Schommer-Steven-Broschart/dp/3836212951%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3836212951</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Technical Details</Description>
+          <URL>http://www.amazon.com/SilverStripe-CD-ROM-Schommer-Steven-Broschart/dp/tech-data/3836212951%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3836212951</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Add To Baby Registry</Description>
+          <URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D3836212951%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3836212951</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Add To Wedding Registry</Description>
+          <URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D3836212951%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3836212951</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D3836212951%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3836212951</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.com/gp/pdp/taf/3836212951%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3836212951</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.com/review/product/3836212951%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3836212951</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.com/gp/offer-listing/3836212951%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3836212951</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>Ingo Schommer Steven Broschart</Author>
+        <Manufacturer>Galileo Press GmbH</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>SilverStripe/mit CD-ROM</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>3836212617</ASIN>
+      <DetailPageURL>http://www.amazon.com/Adobe-Dreamweaver-CS4-Hussein-Morsy/dp/3836212617%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3836212617</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Technical Details</Description>
+          <URL>http://www.amazon.com/Adobe-Dreamweaver-CS4-Hussein-Morsy/dp/tech-data/3836212617%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3836212617</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Add To Baby Registry</Description>
+          <URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D3836212617%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3836212617</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Add To Wedding Registry</Description>
+          <URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D3836212617%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3836212617</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D3836212617%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3836212617</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.com/gp/pdp/taf/3836212617%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3836212617</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.com/review/product/3836212617%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3836212617</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.com/gp/offer-listing/3836212617%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3836212617</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>Hussein Morsy</Author>
+        <Manufacturer>Galileo Press GmbH</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Adobe Dreamweaver CS4</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>3836215489</ASIN>
+      <DetailPageURL>http://www.amazon.com/Anlagenbuchhaltung-J%C3%B6rg-Siebert-Dieter-Schlagenhauf/dp/3836215489%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3836215489</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Technical Details</Description>
+          <URL>http://www.amazon.com/Anlagenbuchhaltung-J%C3%B6rg-Siebert-Dieter-Schlagenhauf/dp/tech-data/3836215489%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3836215489</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Add To Baby Registry</Description>
+          <URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D3836215489%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3836215489</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Add To Wedding Registry</Description>
+          <URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D3836215489%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3836215489</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D3836215489%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3836215489</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.com/gp/pdp/taf/3836215489%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3836215489</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.com/review/product/3836215489%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3836215489</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.com/gp/offer-listing/3836215489%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3836215489</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>J&#246;rg Siebert Dieter Schlagenhauf</Author>
+        <Manufacturer>Galileo Press GmbH</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Anlagenbuchhaltung mit SAP</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>3836218178</ASIN>
+      <DetailPageURL>http://www.amazon.com/Business-ByDesign-Kienegger-Flormann-Konstantinidis/dp/3836218178%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3836218178</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Technical Details</Description>
+          <URL>http://www.amazon.com/Business-ByDesign-Kienegger-Flormann-Konstantinidis/dp/tech-data/3836218178%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3836218178</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Add To Baby Registry</Description>
+          <URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D3836218178%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3836218178</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Add To Wedding Registry</Description>
+          <URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D3836218178%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3836218178</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D3836218178%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3836218178</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.com/gp/pdp/taf/3836218178%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3836218178</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.com/review/product/3836218178%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3836218178</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.com/gp/offer-listing/3836218178%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3836218178</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>Harald Kienegger, Lukas Flormann, Holger Wittges, Helmut Krcmar Christos Konstantinidis</Author>
+        <Manufacturer>Galileo Press GmbH</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>SAP Business ByDesign</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>3836217112</ASIN>
+      <DetailPageURL>http://www.amazon.com/Einstieg-XML-Helmut-Vonhoegen/dp/3836217112%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3836217112</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Technical Details</Description>
+          <URL>http://www.amazon.com/Einstieg-XML-Helmut-Vonhoegen/dp/tech-data/3836217112%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3836217112</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Add To Baby Registry</Description>
+          <URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D3836217112%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3836217112</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Add To Wedding Registry</Description>
+          <URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D3836217112%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3836217112</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D3836217112%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3836217112</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.com/gp/pdp/taf/3836217112%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3836217112</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.com/review/product/3836217112%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3836217112</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.com/gp/offer-listing/3836217112%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3836217112</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>Helmut Vonhoegen</Author>
+        <Manufacturer>Galileo Press GmbH</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Einstieg in XML</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>3898422917</ASIN>
+      <DetailPageURL>http://www.amazon.com/Mac-OS-10-2-Harald-Puchtler/dp/3898422917%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3898422917</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Technical Details</Description>
+          <URL>http://www.amazon.com/Mac-OS-10-2-Harald-Puchtler/dp/tech-data/3898422917%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3898422917</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Add To Baby Registry</Description>
+          <URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D3898422917%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3898422917</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Add To Wedding Registry</Description>
+          <URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D3898422917%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3898422917</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D3898422917%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3898422917</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.com/gp/pdp/taf/3898422917%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3898422917</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.com/review/product/3898422917%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3898422917</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.com/gp/offer-listing/3898422917%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3898422917</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>Harald Puchtler</Author>
+        <Manufacturer>Galileo Press GmbH</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Mac OS X 10.2.</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>3898425762</ASIN>
+      <DetailPageURL>http://www.amazon.com/Windows-XP-Professional-Helmut-Vonhoegen/dp/3898425762%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3898425762</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Technical Details</Description>
+          <URL>http://www.amazon.com/Windows-XP-Professional-Helmut-Vonhoegen/dp/tech-data/3898425762%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3898425762</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Add To Baby Registry</Description>
+          <URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D3898425762%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3898425762</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Add To Wedding Registry</Description>
+          <URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D3898425762%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3898425762</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D3898425762%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3898425762</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.com/gp/pdp/taf/3898425762%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3898425762</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.com/review/product/3898425762%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3898425762</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.com/gp/offer-listing/3898425762%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3898425762</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>Helmut Vonhoegen</Author>
+        <Manufacturer>Galileo Press GmbH</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Windows XP Professional</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>3898423778</ASIN>
+      <DetailPageURL>http://www.amazon.com/Bildgestaltung-im-Medienkontext-Mit-DVD-ROM/dp/3898423778%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3898423778</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Technical Details</Description>
+          <URL>http://www.amazon.com/Bildgestaltung-im-Medienkontext-Mit-DVD-ROM/dp/tech-data/3898423778%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3898423778</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Add To Baby Registry</Description>
+          <URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D3898423778%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3898423778</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Add To Wedding Registry</Description>
+          <URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D3898423778%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3898423778</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D3898423778%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3898423778</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.com/gp/pdp/taf/3898423778%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3898423778</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.com/review/product/3898423778%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3898423778</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.com/gp/offer-listing/3898423778%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3898423778</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>Anna Elisa Heine</Author>
+        <Manufacturer>Galileo Press GmbH</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Bildgestaltung im Medienkontext. Mit DVD-ROM.</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>383621198X</ASIN>
+      <DetailPageURL>http://www.amazon.com/OpenLDAP-Martin-Ungar-Oliver-Liebel/dp/383621198X%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D383621198X</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Technical Details</Description>
+          <URL>http://www.amazon.com/OpenLDAP-Martin-Ungar-Oliver-Liebel/dp/tech-data/383621198X%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D383621198X</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Add To Baby Registry</Description>
+          <URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D383621198X%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D383621198X</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Add To Wedding Registry</Description>
+          <URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D383621198X%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D383621198X</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D383621198X%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D383621198X</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.com/gp/pdp/taf/383621198X%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D383621198X</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.com/review/product/383621198X%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D383621198X</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.com/gp/offer-listing/383621198X%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D383621198X</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>John Martin Ungar Oliver Liebel</Author>
+        <Manufacturer>Galileo Press GmbH</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>OpenLDAP 2.4</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>3836211998</ASIN>
+      <DetailPageURL>http://www.amazon.com/Vertriebscontrolling-mit-SAP-NetWeaver-BI/dp/3836211998%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3836211998</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Technical Details</Description>
+          <URL>http://www.amazon.com/Vertriebscontrolling-mit-SAP-NetWeaver-BI/dp/tech-data/3836211998%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3836211998</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Add To Baby Registry</Description>
+          <URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D3836211998%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3836211998</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Add To Wedding Registry</Description>
+          <URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D3836211998%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3836211998</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D3836211998%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3836211998</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.com/gp/pdp/taf/3836211998%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3836211998</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.com/review/product/3836211998%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3836211998</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.com/gp/offer-listing/3836211998%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D3836211998</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>Jochen Scheibler</Author>
+        <Manufacturer>Galileo Press GmbH</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Vertriebscontrolling mit SAP NetWeaver BI</Title>
+      </ItemAttributes>
+    </Item>
+  </Items>
+</ItemSearchResponse>

@@ -1,0 +1,43 @@
+<CartModifyResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+    </HTTPHeaders>
+    <RequestId>0RJYMB3RWTEM0V6FH14J</RequestId>
+    <Arguments>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Item.1.Quantity" Value="-1"/>
+      <Argument Name="Item.1.CartItemId" Value="0201896834"/>
+      <Argument Name="HMAC" Value="YBudKCEG+2uwnPs5ocEXnoy9Rmg="/>
+      <Argument Name="Operation" Value="CartModify"/>
+      <Argument Name="CartId" Value="280-8292200-8189751"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2011-11-09T08:26:07Z"/>
+      <Argument Name="Version" Value="2011-08-01"/>
+    </Arguments>
+    <RequestProcessingTime>0.00386595726013184</RequestProcessingTime>
+  </OperationRequest>
+  <Cart>
+    <Request>
+      <IsValid>False</IsValid>
+      <CartModifyRequest>
+        <CartId>280-8292200-8189751</CartId>
+        <HMAC>YBudKCEG+2uwnPs5ocEXnoy9Rmg=</HMAC>
+        <Items>
+          <Item>
+            <CartItemId>0201896834</CartItemId>
+            <Quantity>-1</Quantity>
+          </Item>
+        </Items>
+      </CartModifyRequest>
+      <Errors>
+        <Error>
+          <Code>AWS.ParameterOutOfRange</Code>
+          <Message>The value you specified for Quantity is invalid.  Valid values must be between 0 and 999.</Message>
+        </Error>
+      </Errors>
+    </Request>
+  </Cart>
+</CartModifyResponse>

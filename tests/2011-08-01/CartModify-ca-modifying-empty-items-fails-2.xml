@@ -1,0 +1,35 @@
+<CartModifyResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+    </HTTPHeaders>
+    <RequestId>1ESKKGW06PM99CHER0MF</RequestId>
+    <Arguments>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Operation" Value="CartModify"/>
+      <Argument Name="Timestamp" Value="2011-11-08T21:47:17Z"/>
+      <Argument Name="Version" Value="2011-08-01"/>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="HMAC" Value="7pWaikL1bmSDEjP1UEUh1CyJUmg="/>
+      <Argument Name="CartId" Value="187-0447201-3975268"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+    </Arguments>
+    <RequestProcessingTime>0.00348997116088867</RequestProcessingTime>
+  </OperationRequest>
+  <Cart>
+    <Request>
+      <IsValid>False</IsValid>
+      <CartModifyRequest>
+        <CartId>187-0447201-3975268</CartId>
+        <HMAC>7pWaikL1bmSDEjP1UEUh1CyJUmg=</HMAC>
+      </CartModifyRequest>
+      <Errors>
+        <Error>
+          <Code>AWS.MissingParameters</Code>
+          <Message>Your request is missing required parameters. Required parameters include Items.</Message>
+        </Error>
+      </Errors>
+    </Request>
+  </Cart>
+</CartModifyResponse>

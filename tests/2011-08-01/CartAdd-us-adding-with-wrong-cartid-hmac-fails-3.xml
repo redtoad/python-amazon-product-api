@@ -1,0 +1,43 @@
+<CartAddResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+    </HTTPHeaders>
+    <RequestId>13J5J6CWDMG6M2NM1PN9</RequestId>
+    <Arguments>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Item.1.Quantity" Value="1"/>
+      <Argument Name="Operation" Value="CartAdd"/>
+      <Argument Name="Timestamp" Value="2011-11-08T21:46:09Z"/>
+      <Argument Name="Version" Value="2011-08-01"/>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Item.1.ASIN" Value="0201896834"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="HMAC" Value="???"/>
+      <Argument Name="CartId" Value="179-1011576-9631625"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+    </Arguments>
+    <RequestProcessingTime>0.0332190990447998</RequestProcessingTime>
+  </OperationRequest>
+  <Cart>
+    <Request>
+      <IsValid>True</IsValid>
+      <CartAddRequest>
+        <CartId>179-1011576-9631625</CartId>
+        <HMAC>???</HMAC>
+        <Items>
+          <Item>
+            <ASIN>0201896834</ASIN>
+            <Quantity>1</Quantity>
+          </Item>
+        </Items>
+      </CartAddRequest>
+      <Errors>
+        <Error>
+          <Code>AWS.ECommerceService.CartInfoMismatch</Code>
+          <Message>Your request contains an invalid AssociateTag, CartId and HMAC combination. Please verify the AssociateTag, CartId, HMAC and retry. Remember that all Cart operations must pass in the CartId and HMAC that were returned to you during the CartCreate operation.</Message>
+        </Error>
+      </Errors>
+    </Request>
+  </Cart>
+</CartAddResponse>

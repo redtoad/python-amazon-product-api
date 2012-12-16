@@ -1,0 +1,43 @@
+<CartAddResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+    </HTTPHeaders>
+    <RequestId>18E5W5W90WHC446E4Z61</RequestId>
+    <Arguments>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Item.1.ASIN" Value="021554"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Item.1.Quantity" Value="1"/>
+      <Argument Name="HMAC" Value="TG4mpGJo7kbRZfMiGXYG9VSyKfg="/>
+      <Argument Name="Operation" Value="CartAdd"/>
+      <Argument Name="CartId" Value="280-9781067-7644048"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2011-11-08T21:46:40Z"/>
+      <Argument Name="Version" Value="2011-08-01"/>
+    </Arguments>
+    <RequestProcessingTime>0.0571799278259277</RequestProcessingTime>
+  </OperationRequest>
+  <Cart>
+    <Request>
+      <IsValid>True</IsValid>
+      <CartAddRequest>
+        <CartId>280-9781067-7644048</CartId>
+        <HMAC>TG4mpGJo7kbRZfMiGXYG9VSyKfg=</HMAC>
+        <Items>
+          <Item>
+            <ASIN>021554</ASIN>
+            <Quantity>1</Quantity>
+          </Item>
+        </Items>
+      </CartAddRequest>
+      <Errors>
+        <Error>
+          <Code>AWS.ECommerceService.ItemNotEligibleForCart</Code>
+          <Message>The item you specified, , is not eligible to be added to the cart. Check the item's availability to make sure it is available.</Message>
+        </Error>
+      </Errors>
+    </Request>
+  </Cart>
+</CartAddResponse>

@@ -1,0 +1,41 @@
+<ItemLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+    </HTTPHeaders>
+    <RequestId>00ddb678-a179-4880-a4fd-b1446c7955d4</RequestId>
+    <Arguments>
+      <Argument Name="Operation" Value="ItemLookup"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="ItemId" Value="0747532745"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2011-11-13T11:42:27Z"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Version" Value="2011-08-01"/>
+    </Arguments>
+    <RequestProcessingTime>0.0358540000000000</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>True</IsValid>
+      <ItemLookupRequest>
+        <IdType>ASIN</IdType>
+        <ItemId>0747532745</ItemId>
+        <ResponseGroup>Small</ResponseGroup>
+        <VariationPage>All</VariationPage>
+      </ItemLookupRequest>
+    </Request>
+    <Item>
+      <ASIN>0747532745</ASIN>
+      <DetailPageURL>http://www.amazon.cn/Harry-Potter-and-the-Philosopher-s-Stone-J-K-Rowling/dp/0747532745?SubscriptionId=AKIAJTJID3GQ4PAFYOEQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=0747532745</DetailPageURL>
+      <ItemAttributes>
+        <Author>J. K. Rowling</Author>
+        <Creator Role="&#20316;&#32773;">J. K. Rowling</Creator>
+        <Manufacturer>Bloomsbury Pub Ltd</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Harry Potter and the Philosopher's Stone</Title>
+      </ItemAttributes>
+    </Item>
+  </Items>
+</ItemLookupResponse>

@@ -1,0 +1,43 @@
+<CartModifyResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+    </HTTPHeaders>
+    <RequestId>1CHP7TE4KD012CTFF6ZN</RequestId>
+    <Arguments>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Item.1.Quantity" Value="1"/>
+      <Argument Name="Item.1.CartItemId" Value="0201896834"/>
+      <Argument Name="HMAC" Value="aD/FB8Ia5NyVhSClAqnxliN5fSQ="/>
+      <Argument Name="Operation" Value="CartModify"/>
+      <Argument Name="CartId" Value="???"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2011-11-08T21:47:04Z"/>
+      <Argument Name="Version" Value="2011-08-01"/>
+    </Arguments>
+    <RequestProcessingTime>0.0781741142272949</RequestProcessingTime>
+  </OperationRequest>
+  <Cart>
+    <Request>
+      <IsValid>True</IsValid>
+      <CartModifyRequest>
+        <CartId>???</CartId>
+        <HMAC>aD/FB8Ia5NyVhSClAqnxliN5fSQ=</HMAC>
+        <Items>
+          <Item>
+            <CartItemId>0201896834</CartItemId>
+            <Quantity>1</Quantity>
+          </Item>
+        </Items>
+      </CartModifyRequest>
+      <Errors>
+        <Error>
+          <Code>AWS.ECommerceService.CartInfoMismatch</Code>
+          <Message>Votre demande comprend une combinaison AssociateTag, CartId et HMAC non valide. Veuillez v&#233;rifier l'AssociateTag, le CartId et le HMAC avant de r&#233;essayer. N'oubliez pas que toutes les op&#233;rations du panier doivent s'effectuer avec le CartId et le HMAC qui vous ont &#233;t&#233; renvoy&#233;s lors de l'op&#233;ration CartCreate.</Message>
+        </Error>
+      </Errors>
+    </Request>
+  </Cart>
+</CartModifyResponse>

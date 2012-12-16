@@ -1,0 +1,322 @@
+<ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.6pre/d0b5a5e7eeac+ +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+    </HTTPHeaders>
+    <RequestId>7d460ee3-a002-457b-8972-4491eee05274</RequestId>
+    <Arguments>
+      <Argument Name="Operation" Value="ItemSearch"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="ItemPage" Value="4"/>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Version" Value="2011-08-01"/>
+      <Argument Name="Sort" Value="salesrank"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2011-12-03T17:30:23Z"/>
+      <Argument Name="Publisher" Value="Galileo Press"/>
+      <Argument Name="SearchIndex" Value="Books"/>
+    </Arguments>
+    <RequestProcessingTime>0.2644860000000000</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>True</IsValid>
+      <ItemSearchRequest>
+        <ItemPage>4</ItemPage>
+        <Publisher>Galileo Press</Publisher>
+        <ResponseGroup>Small</ResponseGroup>
+        <SearchIndex>Books</SearchIndex>
+        <Sort>salesrank</Sort>
+      </ItemSearchRequest>
+    </Request>
+    <TotalResults>281</TotalResults>
+    <TotalPages>29</TotalPages>
+    <MoreSearchResultsUrl>http://www.amazon.de/gp/redirect.html?camp=2025&amp;creative=12738&amp;location=http%3A%2F%2Fwww.amazon.de%2Fgp%2Fsearch%3Fkeywords%3DGalileo%2BPress%26url%3Dsearch-alias%253Dbooks-single-index&amp;linkCode=xm2&amp;tag=redtoad-21&amp;SubscriptionId=AKIAJTJID3GQ4PAFYOEQ</MoreSearchResultsUrl>
+    <Item>
+      <ASIN>3898422240</ASIN>
+      <DetailPageURL>http://www.amazon.de/Rendering-mit-Maya-Mental-Galileo/dp/3898422240%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3898422240</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D3898422240%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898422240</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.de/gp/pdp/taf/3898422240%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898422240</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.de/review/product/3898422240%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898422240</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.de/gp/offer-listing/3898422240%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898422240</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>Christoph Berndt</Author>
+        <Author>Thomas Loeder</Author>
+        <Manufacturer>Galileo Press</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Rendering mit Maya - und Mental Ray for Maya, mit CD (Galileo Design)</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>3934358039</ASIN>
+      <DetailPageURL>http://www.amazon.de/Grundlagen-professionellen-Programmierung-Galileo-Computing/dp/3934358039%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3934358039</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D3934358039%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358039</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.de/gp/pdp/taf/3934358039%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358039</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.de/review/product/3934358039%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358039</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.de/gp/offer-listing/3934358039%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358039</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>Ulrich Kaiser</Author>
+        <Manufacturer>Galileo Press</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>C/C++: Von den Grundlagen zur professionellen Programmierung (Galileo Computing)</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>389842197X</ASIN>
+      <DetailPageURL>http://www.amazon.de/Effiziente-Marktforschung-Marius-Dannenberg/dp/389842197X%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D389842197X</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D389842197X%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D389842197X</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.de/gp/pdp/taf/389842197X%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D389842197X</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.de/review/product/389842197X%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D389842197X</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.de/gp/offer-listing/389842197X%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D389842197X</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>Marius Dannenberg</Author>
+        <Author>Sascha Barthel</Author>
+        <Manufacturer>Galileo Press</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Effiziente Marktforschung</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>3898421643</ASIN>
+      <DetailPageURL>http://www.amazon.de/Service-Support-Internet-Intelligente-Dienstleistungen/dp/3898421643%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3898421643</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D3898421643%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898421643</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.de/gp/pdp/taf/3898421643%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898421643</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.de/review/product/3898421643%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898421643</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.de/gp/offer-listing/3898421643%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898421643</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>Markus Stolpmann</Author>
+        <Manufacturer>Galileo Press</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Service und Support im Internet - Intelligente Dienstleistungen - effizient zum Erfolg</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>3898421155</ASIN>
+      <DetailPageURL>http://www.amazon.de/Community-Building-Strategien-erfolgreicher-Web-Communities/dp/3898421155%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3898421155</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D3898421155%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898421155</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.de/gp/pdp/taf/3898421155%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898421155</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.de/review/product/3898421155%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898421155</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.de/gp/offer-listing/3898421155%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898421155</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>Amy Jo Kim</Author>
+        <Manufacturer>Galileo Press</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Community Building - Strategien f&#252;r den Aufbau erfolgreicher Web-Communities</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>3934358454</ASIN>
+      <DetailPageURL>http://www.amazon.de/Produktionsplanung-steuerung-mit-SAP-Serienfertigung/dp/3934358454%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3934358454</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D3934358454%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358454</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.de/gp/pdp/taf/3934358454%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358454</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.de/review/product/3934358454%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358454</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.de/gp/offer-listing/3934358454%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3934358454</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>Klaus Weihrauch</Author>
+        <Author>Gerhard Keller</Author>
+        <Manufacturer>Galileo Press</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Produktionsplanung und -steuerung mit SAP: Einf&#252;hrung in die diskrete Fertigung und die Serienfertigung mit SAP PP (SAP PRESS)</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>3898421287</ASIN>
+      <DetailPageURL>http://www.amazon.de/SAP-Branchenl%C3%B6sungen-Business-Units-erfolgreich-managen/dp/3898421287%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3898421287</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D3898421287%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898421287</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.de/gp/pdp/taf/3898421287%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898421287</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.de/review/product/3898421287%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898421287</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.de/gp/offer-listing/3898421287%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898421287</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>Henning Kagermann</Author>
+        <Author>Gerhard Keller</Author>
+        <Manufacturer>Galileo Press</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>SAP-Branchenl&#246;sungen - Business Units erfolgreich managen (SAP PRESS)</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>3898422518</ASIN>
+      <DetailPageURL>http://www.amazon.de/Power-Selling-Ebay-Galileo-Computing/dp/3898422518%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3898422518</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D3898422518%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898422518</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.de/gp/pdp/taf/3898422518%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898422518</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.de/review/product/3898422518%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898422518</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.de/gp/offer-listing/3898422518%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898422518</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>Marion von Kuczkowski</Author>
+        <Manufacturer>Galileo Press</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Power Selling mit Ebay (Galileo Computing)</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>3898423573</ASIN>
+      <DetailPageURL>http://www.amazon.de/SAP-Performanceoptimierung-Analyse-Tuning-SAP-Systemen-PRESS/dp/3898423573%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3898423573</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D3898423573%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898423573</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.de/gp/pdp/taf/3898423573%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898423573</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.de/review/product/3898423573%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898423573</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.de/gp/offer-listing/3898423573%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898423573</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>Thomas Schneider</Author>
+        <Manufacturer>Galileo Press</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>SAP-Performanceoptimierung - Analyse und Tuning von SAP-Systemen (SAP PRESS)</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>3898421953</ASIN>
+      <DetailPageURL>http://www.amazon.de/-Business-Projekte-Warum-scheitern-Erfolg-f%C3%BChrt/dp/3898421953%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3898421953</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D3898421953%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898421953</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.de/gp/pdp/taf/3898421953%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898421953</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.de/review/product/3898421953%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898421953</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.de/gp/offer-listing/3898421953%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3898421953</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>Florian Zwerger</Author>
+        <Author>Sachar Paulus</Author>
+        <Manufacturer>Galileo Press</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>E-Business-Projekte - Warum sie scheitern und wie man sie zum Erfolg f&#252;hrt</Title>
+      </ItemAttributes>
+    </Item>
+  </Items>
+</ItemSearchResponse>

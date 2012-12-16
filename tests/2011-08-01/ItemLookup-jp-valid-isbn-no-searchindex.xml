@@ -1,0 +1,38 @@
+<ItemLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+    </HTTPHeaders>
+    <RequestId>ce2e149c-f34d-414b-8ba2-6a3a9449e01d</RequestId>
+    <Arguments>
+      <Argument Name="Operation" Value="ItemLookup"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Version" Value="2011-08-01"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="ItemId" Value="9780747532743"/>
+      <Argument Name="IdType" Value="ISBN"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2011-11-08T21:14:34Z"/>
+    </Arguments>
+    <RequestProcessingTime>0.0023370000000000</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>False</IsValid>
+      <ItemLookupRequest>
+        <IdType>ISBN</IdType>
+        <ItemId>9780747532743</ItemId>
+        <ResponseGroup>Small</ResponseGroup>
+        <VariationPage>All</VariationPage>
+      </ItemLookupRequest>
+      <Errors>
+        <Error>
+          <Code>AWS.MissingParameterValueCombination</Code>
+          <Message>&#12522;&#12463;&#12456;&#12473;&#12488;&#12395;&#12399;&#24517;&#35201;&#12394;&#12497;&#12521;&#12513;&#12540;&#12479;&#12398;&#32068;&#12415;&#21512;&#12431;&#12379;&#12364;&#21547;&#12414;&#12428;&#12390;&#12356;&#12414;&#12379;&#12435;&#12290;IdType&#12364;['DPCI', 'SKU',
+				'UPC', 'EAN','ISBN']&#12391;&#12354;&#12427;&#22580;&#21512;&#12289;SearchIndex&#12364;&#24517;&#35201;&#12391;&#12377;&#12290;</Message>
+        </Error>
+      </Errors>
+    </Request>
+  </Items>
+</ItemLookupResponse>

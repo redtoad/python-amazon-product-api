@@ -1,0 +1,81 @@
+<CartGetResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+    </HTTPHeaders>
+    <RequestId>1SSJNBTS8TAGWH2R4CZQ</RequestId>
+    <Arguments>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="HMAC" Value="cvx2bobnlt0Mg7FSPkBybFJvEJQ="/>
+      <Argument Name="Operation" Value="CartGet"/>
+      <Argument Name="CartId" Value="475-7956060-7727830"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2011-11-13T12:07:46Z"/>
+      <Argument Name="Version" Value="2011-08-01"/>
+    </Arguments>
+    <RequestProcessingTime>0.0717239379882812</RequestProcessingTime>
+  </OperationRequest>
+  <Cart>
+    <Request>
+      <IsValid>True</IsValid>
+      <CartGetRequest>
+        <CartId>475-7956060-7727830</CartId>
+        <HMAC>cvx2bobnlt0Mg7FSPkBybFJvEJQ=</HMAC>
+      </CartGetRequest>
+    </Request>
+    <CartId>475-7956060-7727830</CartId>
+    <HMAC>cvx2bobnlt0Mg7FSPkBybFJvEJQ=</HMAC>
+    <URLEncodedHMAC>cvx2bobnlt0Mg7FSPkBybFJvEJQ%3D</URLEncodedHMAC>
+    <PurchaseURL>https://www.amazon.cn/gp/cart/aws-merge.html?cart-id=475-7956060-7727830&amp;associate-id=redtoad-21&amp;hmac=cvx2bobnlt0Mg7FSPkBybFJvEJQ=&amp;SubscriptionId=AKIAJTJID3GQ4PAFYOEQ&amp;MergeCart=False</PurchaseURL>
+    <SubTotal>
+      <Amount>4370</Amount>
+      <CurrencyCode>CNY</CurrencyCode>
+      <FormattedPrice>&#65509; 43.70</FormattedPrice>
+    </SubTotal>
+    <CartItems>
+      <SubTotal>
+        <Amount>4370</Amount>
+        <CurrencyCode>CNY</CurrencyCode>
+        <FormattedPrice>&#65509; 43.70</FormattedPrice>
+      </SubTotal>
+      <CartItem>
+        <CartItemId>U190WNS335356K</CartItemId>
+        <ASIN>B005DRCPVM</ASIN>
+        <SellerNickname>&#20122;&#39532;&#36874;</SellerNickname>
+        <Quantity>2</Quantity>
+        <Title>&#26790;&#37324;&#33457;&#33853;&#30693;&#22810;&#23569;</Title>
+        <ProductGroup>Book</ProductGroup>
+        <Price>
+          <Amount>1450</Amount>
+          <CurrencyCode>CNY</CurrencyCode>
+          <FormattedPrice>&#65509; 14.50</FormattedPrice>
+        </Price>
+        <ItemTotal>
+          <Amount>2900</Amount>
+          <CurrencyCode>CNY</CurrencyCode>
+          <FormattedPrice>&#65509; 29.00</FormattedPrice>
+        </ItemTotal>
+      </CartItem>
+      <CartItem>
+        <CartItemId>U211YONUOFE6MV</CartItemId>
+        <ASIN>B005DRCQZ2</ASIN>
+        <SellerNickname>&#20122;&#39532;&#36874;</SellerNickname>
+        <Quantity>1</Quantity>
+        <Title>&#25746;&#21704;&#25289;&#30340;&#25925;&#20107;</Title>
+        <ProductGroup>Book</ProductGroup>
+        <Price>
+          <Amount>1470</Amount>
+          <CurrencyCode>CNY</CurrencyCode>
+          <FormattedPrice>&#65509; 14.70</FormattedPrice>
+        </Price>
+        <ItemTotal>
+          <Amount>1470</Amount>
+          <CurrencyCode>CNY</CurrencyCode>
+          <FormattedPrice>&#65509; 14.70</FormattedPrice>
+        </ItemTotal>
+      </CartItem>
+    </CartItems>
+  </Cart>
+</CartGetResponse>
