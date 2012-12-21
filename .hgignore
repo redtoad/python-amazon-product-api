@@ -33,6 +33,9 @@ junit-py\d+.xml
 # pylint reports
 pylint.txt
 
+# ignore git files
+^\.git
+
 # use glob syntax.
 syntax: glob
 
