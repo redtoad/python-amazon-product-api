@@ -1,7 +1,13 @@
+# Copyright (C) 2009-2013 Sebastian Rahlf <basti at redtoad dot de>
+#
+# This program is release under the BSD License. You can find the full text of
+# the license in the LICENSE file.
+
 import xml.dom.minidom
 
 from amazonproduct.errors import AWSError
 from amazonproduct.processors import BaseProcessor
+
 
 class Processor(BaseProcessor):
 

@@ -1,4 +1,4 @@
-# Copyright (C) 2009-2011 Sebastian Rahlf <basti at redtoad dot de>
+# Copyright (C) 2009-2013 Sebastian Rahlf <basti at redtoad dot de>
 #
 # This program is release under the BSD License. You can find the full text of
 # the license in the LICENSE file.
@@ -39,15 +39,18 @@ else:
 
 from amazonproduct.version import VERSION
 from amazonproduct.errors import *
-from amazonproduct.utils import load_config, running_on_gae, REQUIRED_KEYS
-from amazonproduct.processors import ITEMS_PAGINATOR
+from amazonproduct.utils import load_config, load_class
+from amazonproduct.utils import running_on_gae, REQUIRED_KEYS
+from amazonproduct.processors import ITEMS_PAGINATOR, BaseProcessor
 
 
-# load default processor
-try:
-    from amazonproduct.processors.objectify import Processor
-except ImportError:
-    from amazonproduct.processors.etree import Processor
+# first processors successfully imported is used
+PROCESSORS = [
+    'amazonproduct.processors.objectify.Processor',
+    'amazonproduct.processors.etree.Processor',
+    'amazonproduct.processors.minidom.Processor',
+]
+
 
 USER_AGENT = ('python-amazon-product-api/%s '
     '+http://pypi.python.org/pypi/python-amazon-product-api/' % VERSION)
@@ -166,10 +169,34 @@ class API (object):
         self.last_call = datetime(1970, 1, 1)
         self.debug = 0 # set to 1 if you want to see HTTP headers
 
-        if processor is not None:
+        if isinstance(processor, BaseProcessor):
             self.processor = processor
         else:
-            self.processor = Processor()
+            self.processor = self._load_processor(processor)()
+
+    @staticmethod
+    def _load_processor(*names):
+        """
+        Loads result processor. If no processor is given (``None``), the first
+        one is taken that can be successfully imported from the list of default
+        processors (:const:`PROCESSORS`).
+        """
+        if len(names) == 0 or names[0] is None:
+            names = PROCESSORS
+        for name in names:
+            # processor was given as string
+            if isinstance(name, (str, unicode)):
+                try:
+                    pclass = load_class(name)
+                    if issubclass(pclass, BaseProcessor):
+                        return pclass
+                except ImportError:
+                    continue
+            # processor was given as class
+            elif isinstance(name, type) and issubclass(name, BaseProcessor):
+                return name
+        # nothing successfully loaded
+        raise ImportError('No processor class could be imported!')
 
     def __repr__(self):
         return '<API(%s/%s) at %s>' % (self.VERSION, self.locale, hex(id(self)))
@@ -308,8 +335,13 @@ class API (object):
     def call(self, **qargs):
         """
         Builds a signed URL for the operation, fetches the result from Amazon
-        and parses the XML. If you want to customise things at any stage, simply
-        override the respective method(s):
+        and parses the XML.
+
+        Example::
+
+            xml = api.call(Operation='ItemLookup', ItemId='B067884223')
+
+        .. note:: If you want to customise things at any stage, simply override the respective method(s):
 
         * ``_build_url(**query_parameters)``
         * ``_fetch(url)``

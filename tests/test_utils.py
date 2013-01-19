@@ -1,4 +1,8 @@
+import pytest
+import types
+
 from amazonproduct import utils
+from amazonproduct.processors import etree
 
 def test_load_global_boto_config(configfiles):
     configfiles.add_file('''
@@ -96,3 +100,13 @@ def test_load_config(configfiles, monkeypatch):
     assert cfg['associate_tag'] is None
     assert cfg['locale'] == 'OS VARIABLE'
 
+
+@pytest.mark.parametrize(('txt', 'cls'), [
+    ('amazonproduct.processors.etree.Processor', etree.Processor),
+    ('amazonproduct.processors.etree.XPathPaginator', etree.XPathPaginator),
+    ('amazonproduct.processors.etree.ItemPaginator', etree.ItemPaginator),
+])
+def test_load_class(txt, cls):
+    loaded = utils.load_class(txt)
+    assert isinstance(loaded, types.TypeType)
+    assert loaded == cls

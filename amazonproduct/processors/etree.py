@@ -1,3 +1,8 @@
+# Copyright (C) 2009-2013 Sebastian Rahlf <basti at redtoad dot de>
+#
+# This program is release under the BSD License. You can find the full text of
+# the license in the LICENSE file.
+
 import re
 from amazonproduct.contrib.cart import Cart, Item
 
@@ -46,9 +51,23 @@ def extract_nspace(element):
 
 class Processor (BaseProcessor):
 
+    """
+    Result processor using ElementTree.
+
+    The first implementation of ElementTree which can be successfully imported
+    will be used. Order of import is:
+
+    * lxml.etree
+    * xml.etree.cElementTree
+    * xml.etree.ElementTree
+    * cElementTree
+    * elementtree.ElementTree
+
+    """
+
     def __init__(self, *args, **kwargs):
         # processor can be told which etree module to use in order to have
-        # multiple processors each using a different implementation 
+        # multiple processors each using a different implementation
         etree_mod = kwargs.pop('module', None)
         try:
             if etree_mod:
@@ -121,6 +140,7 @@ class Processor (BaseProcessor):
         except KeyError:
             return None
 
+
 class XPathPaginator (BaseResultPaginator):
 
     """
@@ -163,6 +183,7 @@ class ItemPaginator (XPathPaginator):
     total_pages_xpath = './/{}Items/{}TotalPages'
     total_results_xpath = './/{}Items/{}TotalResults'
     items = './/{}Items/{}Item'
+
 
 class RelatedItemsPaginator (XPathPaginator):
 
