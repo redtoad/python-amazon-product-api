@@ -1,3 +1,7 @@
+# Copyright (C) 2009-2013 Sebastian Rahlf <basti at redtoad dot de>
+#
+# This program is release under the BSD License. You can find the full text of
+# the license in the LICENSE file.
 
 from lxml import etree, objectify
 

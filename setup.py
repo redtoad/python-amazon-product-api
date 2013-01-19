@@ -7,8 +7,8 @@ import re
 _here = os.path.abspath(os.path.dirname(__file__))
 
 def version():
-    # This rather complicated mechanism is employed to avoid importing any 
-    # yet unfulfilled dependencies, for instance when installing under 
+    # This rather complicated mechanism is employed to avoid importing any
+    # yet unfulfilled dependencies, for instance when installing under
     # Python 2.4 from scratch
     import imp
     path = os.path.join(_here, 'amazonproduct', 'version.py')
@@ -16,8 +16,11 @@ def version():
     return mod.VERSION
 
 def read(fname):
-    # makes sure that setup can be executed from a different location
-    return open(os.path.join(_here, fname)).read()
+    try:
+        # makes sure that setup can be executed from a different location
+        return open(os.path.join(_here, fname)).read()
+    except IOError:
+        return ''
 
 def readme():
     # substitute all include statements.
@@ -25,10 +28,13 @@ def readme():
         return read(matchobj.group(1))
     return re.sub(r'\.\. include:: (\w+)', insert_include, read('README.rst'))
 
-reqs = []
+extras = {
+    'setup_requires': [],
+}
+
  # for python2.4
 if sys.version_info[:2] < (2, 5):
-    reqs += ['pycrypto']
+    extras['setup_requires'] += ['pycrypto']
 
 class PyTest(Command):
     """
@@ -39,35 +45,48 @@ class PyTest(Command):
     def finalize_options(self): pass
     def run(self):
         import subprocess
-        errno = subprocess.call([sys.executable, os.path.join(_here, 'tests', 'runtests.py')])
+        errno = subprocess.call([
+            sys.executable, os.path.join(_here, 'tests', 'runtests.py'), '-vl'])
         raise SystemExit(errno)
 
 # make sure that no development version end up on PyPI
 if 'register' in sys.argv or 'upload' in sys.argv:
     version_ = version()
     if '/' in version_ or '+' in version_:
-        print 'ERROR: Version %r has not been adjusted yet!' % version_
-        sys.exit(1)
+        if 'local' in sys.argv:
+            extras['setup_requires'] += ['hgtools']
+            extras['use_hg_version'] = {'increment': '0.0.1'}
+        else:
+            print 'ERROR: Version %r has not been adjusted yet!' % version_
+            sys.exit(1)
 
 setup(
-    name = 'python-amazon-product-api',
-    version = version(),
-    author = 'Sebastian Rahlf',
-    author_email = 'basti AT redtoad DOT de',
+    name='python-amazon-product-api',
+    version=version(),
+    author='Sebastian Rahlf',
+    author_email='basti AT redtoad DOT de',
     url="http://bitbucket.org/basti/python-amazon-product-api/downloads/",
     license='bsd',
 
-    description = 'A Python wrapper for the Amazon Product Advertising API.',
+    description='A Python wrapper for the Amazon Product Advertising API.',
     long_description=readme(),
-    keywords = 'amazon product advertising api wrapper signed requests',
+    zip_safe=False,  # we want to find README.rst and version.py
+    keywords='amazon product advertising api wrapper signed requests',
 
-    packages = find_packages(_here, exclude=['tests']),
-    install_requires=reqs,
+    packages=find_packages(_here, exclude=['tests']),
 
-    cmdclass = {'test': PyTest},
-    test_requires=['pytest>=2.0.3,<2.2', 'pytest-localserver'],
+    cmdclass={'test': PyTest},
+    tests_require=[
+        'pytest>=2.0.3,<2.3',
+        'pytest-localserver',
+        'lxml',
+        'cElementTree',
+        'elementtree',
+        'tox',
+        'virtualenv<1.8',  # for testing Python 2.4
+    ],
 
-    classifiers = [
+    classifiers=[
         'Operating System :: OS Independent',
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
@@ -79,5 +98,7 @@ setup(
         'Programming Language :: Python :: 2.7',
         'Topic :: Internet :: WWW/HTTP',
         'Topic :: Software Development :: Libraries :: Python Modules',
-    ]
+    ],
+
+    **extras
 )
