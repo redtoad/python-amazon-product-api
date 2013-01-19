@@ -1,3 +1,8 @@
+# Copyright (C) 2009-2013 Sebastian Rahlf <basti at redtoad dot de>
+#
+# This program is release under the BSD License. You can find the full text of
+# the license in the LICENSE file.
+
 from ConfigParser import SafeConfigParser
 import os
 import sys
@@ -102,7 +107,7 @@ def load_config():
     * Config files ``/etc/amazon-product-api.cfg`` or ``~/.amazon-product-api``
       where the latter may add or replace values of the former.
     * A boto config file [#]_ found in ``/etc/boto.cfg`` or ``~/.boto``.
-    
+
     Whatever is found first counts.
 
     The returned dictionary may look like this::
@@ -113,7 +118,7 @@ def load_config():
             'associate_tag': 'redtoad-10',
             'locale': 'uk'
         }
-    
+
     .. _#: http://code.google.com/p/boto/wiki/BotoConfig
     """
     config = load_boto_config()
@@ -170,3 +175,14 @@ def running_on_gae():
     """
     return 'Google' in os.environ.get('SERVER_SOFTWARE', '')
 
+
+def load_class(name):
+    """
+    Loads class from string.
+
+    :param name: fully-qualified class name (e.g. ``processors.etree.
+      ItemPaginator``)
+    """
+    module_name, class_name = name.rsplit('.', 1)
+    module = import_module(module_name)
+    return getattr(module, class_name)
