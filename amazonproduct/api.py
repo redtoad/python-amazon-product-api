@@ -109,7 +109,8 @@ class API (object):
         secret_key = <your secret key>
         associate_tag = <your associate id>
 
-    Now you can use this class to do things like this (note lxml must be installed for this to work) ::
+    Now you can use this class to do things like this (note lxml must be
+    installed for this to work) ::
         
         from amazonproduct import API
         api = API(locale='us')
