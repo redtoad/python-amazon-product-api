@@ -26,7 +26,7 @@ def readme():
     # substitute all include statements.
     def insert_include(matchobj):
         return read(matchobj.group(1))
-    return re.sub(r'\.\. include:: (\w+)', insert_include, read('README.rst'))
+    return re.sub(r'\.\. include:: (\w+)', insert_include, read('README'))
 
 extras = {
     'setup_requires': [],
