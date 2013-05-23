@@ -1,0 +1,344 @@
+<ItemLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.6pre/ae46f8a34429+ +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+    </HTTPHeaders>
+    <RequestId>681502da-88c0-44f0-b5c1-9e8c61e72631</RequestId>
+    <Arguments>
+      <Argument Name="Operation" Value="ItemLookup"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="ItemId" Value="B000B09WRQ"/>
+      <Argument Name="RelatedItemPage" Value="7"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2011-12-04T14:59:19Z"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="ResponseGroup" Value="Large,RelatedItems"/>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="RelationshipType" Value="AuthorityTitle"/>
+      <Argument Name="Version" Value="2011-08-01"/>
+    </Arguments>
+    <RequestProcessingTime>0.1716930000000000</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>True</IsValid>
+      <ItemLookupRequest>
+        <IdType>ASIN</IdType>
+        <ItemId>B000B09WRQ</ItemId>
+        <ResponseGroup>Large</ResponseGroup>
+        <ResponseGroup>RelatedItems</ResponseGroup>
+        <VariationPage>All</VariationPage>
+        <RelatedItemPage>7</RelatedItemPage>
+        <RelationshipType>AuthorityTitle</RelationshipType>
+      </ItemLookupRequest>
+    </Request>
+    <Item>
+      <ASIN>B000B09WRQ</ASIN>
+      <DetailPageURL>http://www.amazon.de/Harry-Potter-Philosophers-Stone-242479/dp/B000B09WRQ%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB000B09WRQ</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3DB000B09WRQ%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB000B09WRQ</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.de/gp/pdp/taf/B000B09WRQ%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB000B09WRQ</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.de/review/product/B000B09WRQ%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB000B09WRQ</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.de/gp/offer-listing/B000B09WRQ%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB000B09WRQ</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <ProductGroup>Authority Non Buyable</ProductGroup>
+        <ProductTypeName>TITLE_AUTHORITY_SET</ProductTypeName>
+        <Title>Harry Potter and the Philosopher's Stone [LegacyTitleID: 242479]</Title>
+      </ItemAttributes>
+      <RelatedItems>
+        <Relationship>Children</Relationship>
+        <RelationshipType>AuthorityTitle</RelationshipType>
+        <RelatedItemCount>80</RelatedItemCount>
+        <RelatedItemPageCount>8</RelatedItemPageCount>
+        <RelatedItemPage>7</RelatedItemPage>
+        <RelatedItem>
+          <Item>
+            <ASIN>0563533358</ASIN>
+            <ItemAttributes>
+              <Author>J. K. Rowling</Author>
+              <Binding>Taschenbuch</Binding>
+              <Creator Role="Autor">J. K. Rowling</Creator>
+              <EAN>9780563533351</EAN>
+              <EANList>
+                <EANListElement>9780563533351</EANListElement>
+              </EANList>
+              <ISBN>0563533358</ISBN>
+              <Label>Penguin Character Books Ltd</Label>
+              <Manufacturer>Penguin Character Books Ltd</Manufacturer>
+              <NumberOfPages>24</NumberOfPages>
+              <PackageDimensions>
+                <Height Units="hundredths-inches">24</Height>
+                <Length Units="hundredths-inches">1047</Length>
+                <Weight Units="hundredths-pounds">26</Weight>
+                <Width Units="hundredths-inches">811</Width>
+              </PackageDimensions>
+              <ProductGroup>Book</ProductGroup>
+              <ProductTypeName>ABIS_BOOK</ProductTypeName>
+              <PublicationDate>2001-11-05</PublicationDate>
+              <Publisher>Penguin Character Books Ltd</Publisher>
+              <SKU>200170461</SKU>
+              <Studio>Penguin Character Books Ltd</Studio>
+              <Title>Harry Potter and the Philosopher's Stone: 3-D Movie Book</Title>
+            </ItemAttributes>
+          </Item>
+        </RelatedItem>
+        <RelatedItem>
+          <Item>
+            <ASIN>0807281182</ASIN>
+            <ItemAttributes>
+              <Binding>H&#246;rkassette</Binding>
+              <EAN>9780807281185</EAN>
+              <EANList>
+                <EANListElement>9780807281185</EANListElement>
+              </EANList>
+              <ISBN>0807281182</ISBN>
+              <PackageDimensions>
+                <Height Units="hundredths-inches">130</Height>
+                <Length Units="hundredths-inches">890</Length>
+                <Weight Units="hundredths-pounds">95</Weight>
+                <Width Units="hundredths-inches">650</Width>
+              </PackageDimensions>
+              <ProductGroup>Book</ProductGroup>
+              <ProductTypeName>ABIS_BOOK</ProductTypeName>
+              <SKU>G0807281182I5N10</SKU>
+              <Title>Harry Potter and the Sorcerer's Stone (Library) (Harry Potter)</Title>
+            </ItemAttributes>
+          </Item>
+        </RelatedItem>
+        <RelatedItem>
+          <Item>
+            <ASIN>0747549559</ASIN>
+            <ItemAttributes>
+              <Author>Joanne K. Rowling</Author>
+              <Binding>Broschiert</Binding>
+              <Creator Role="Autor">Joanne K. Rowling</Creator>
+              <EAN>9780747549550</EAN>
+              <EANList>
+                <EANListElement>9780747549550</EANListElement>
+              </EANList>
+              <Edition>Export ed</Edition>
+              <ISBN>0747549559</ISBN>
+              <ItemDimensions>
+                <Height Units="hundredths-inches">83</Height>
+                <Length Units="hundredths-inches">697</Length>
+                <Width Units="hundredths-inches">437</Width>
+              </ItemDimensions>
+              <Label>Bloomsbury Publishing</Label>
+              <ListPrice>
+                <Amount>990</Amount>
+                <CurrencyCode>EUR</CurrencyCode>
+                <FormattedPrice>EUR 9,90</FormattedPrice>
+              </ListPrice>
+              <Manufacturer>Bloomsbury Publishing</Manufacturer>
+              <ManufacturerMaximumAge Units="months">144</ManufacturerMaximumAge>
+              <ManufacturerMinimumAge Units="months">120</ManufacturerMinimumAge>
+              <NumberOfPages>232</NumberOfPages>
+              <PackageDimensions>
+                <Height Units="hundredths-inches">87</Height>
+                <Length Units="hundredths-inches">685</Length>
+                <Weight Units="hundredths-pounds">40</Weight>
+                <Width Units="hundredths-inches">433</Width>
+              </PackageDimensions>
+              <ProductGroup>Book</ProductGroup>
+              <ProductTypeName>ABIS_BOOK</ProductTypeName>
+              <PublicationDate>2000-02-01</PublicationDate>
+              <Publisher>Bloomsbury Publishing</Publisher>
+              <SKU>0747549559</SKU>
+              <Studio>Bloomsbury Publishing</Studio>
+              <Title>Harry Potter 1 and the Philosopher's Stone</Title>
+            </ItemAttributes>
+          </Item>
+        </RelatedItem>
+        <RelatedItem>
+          <Item>
+            <ASIN>0613959922</ASIN>
+            <ItemAttributes>
+              <Author>J. K. Rowling</Author>
+              <Binding>Bibliothekseinband</Binding>
+              <CatalogNumberList>
+                <CatalogNumberListElement>0613959922</CatalogNumberListElement>
+              </CatalogNumberList>
+              <Creator Role="Autor">J. K. Rowling</Creator>
+              <EAN>9780613959926</EAN>
+              <EANList>
+                <EANListElement>9780613959926</EANListElement>
+              </EANList>
+              <ISBN>0613959922</ISBN>
+              <ItemDimensions>
+                <Weight Units="hundredths-pounds">1</Weight>
+              </ItemDimensions>
+              <Label>Turtleback Books: A Division of Sanval</Label>
+              <Manufacturer>Turtleback Books: A Division of Sanval</Manufacturer>
+              <NumberOfPages>384</NumberOfPages>
+              <PackageDimensions>
+                <Height Units="hundredths-inches">140</Height>
+                <Length Units="hundredths-inches">660</Length>
+                <Weight Units="hundredths-pounds">35</Weight>
+                <Width Units="hundredths-inches">420</Width>
+              </PackageDimensions>
+              <ProductGroup>Book</ProductGroup>
+              <ProductTypeName>ABIS_BOOK</ProductTypeName>
+              <PublicationDate>2001-10</PublicationDate>
+              <Publisher>Turtleback Books: A Division of Sanval</Publisher>
+              <Studio>Turtleback Books: A Division of Sanval</Studio>
+              <Title>Harry Potter and the Sorcerer's Stone (Racksize Edition)</Title>
+            </ItemAttributes>
+          </Item>
+        </RelatedItem>
+        <RelatedItem>
+          <Item>
+            <ASIN>0606170979</ASIN>
+            <ItemAttributes>
+              <Author>J. K. Rowling</Author>
+              <Binding>Sondereinband</Binding>
+              <CatalogNumberList>
+                <CatalogNumberListElement>0606170979</CatalogNumberListElement>
+              </CatalogNumberList>
+              <Creator Role="Autor">J. K. Rowling</Creator>
+              <Creator Role="Illustrator">Mary GrandPre</Creator>
+              <EAN>9780606170970</EAN>
+              <EANList>
+                <EANListElement>9780606170970</EANListElement>
+              </EANList>
+              <ISBN>0606170979</ISBN>
+              <Label>Demco Media</Label>
+              <Manufacturer>Demco Media</Manufacturer>
+              <PackageDimensions>
+                <Height Units="hundredths-inches">94</Height>
+                <Length Units="hundredths-inches">756</Length>
+                <Weight Units="hundredths-pounds">106</Weight>
+                <Width Units="hundredths-inches">520</Width>
+              </PackageDimensions>
+              <ProductGroup>Book</ProductGroup>
+              <ProductTypeName>ABIS_BOOK</ProductTypeName>
+              <PublicationDate>1998-06</PublicationDate>
+              <Publisher>Demco Media</Publisher>
+              <SKU>ACOMMP2_book_usedgood_0606170979</SKU>
+              <Studio>Demco Media</Studio>
+              <Title>Harry Potter and the Sorcerer's Stone</Title>
+            </ItemAttributes>
+          </Item>
+        </RelatedItem>
+        <RelatedItem>
+          <Item>
+            <ASIN>155192398X</ASIN>
+            <ItemAttributes>
+              <Binding>Taschenbuch</Binding>
+              <EAN>9781551923987</EAN>
+              <EANList>
+                <EANListElement>9781551923987</EANListElement>
+              </EANList>
+              <ISBN>155192398X</ISBN>
+              <Label>Raincoast Books</Label>
+              <Manufacturer>Raincoast Books</Manufacturer>
+              <NumberOfPages>223</NumberOfPages>
+              <PackageDimensions>
+                <Height Units="hundredths-inches">70</Height>
+                <Length Units="hundredths-inches">750</Length>
+                <Weight Units="hundredths-pounds">40</Weight>
+                <Width Units="hundredths-inches">480</Width>
+              </PackageDimensions>
+              <ProductGroup>Book</ProductGroup>
+              <ProductTypeName>ABIS_BOOK</ProductTypeName>
+              <Publisher>Raincoast Books</Publisher>
+              <SKU>8-B-5-0456</SKU>
+              <Studio>Raincoast Books</Studio>
+              <Title>Harry Potter and the Philosopher's Stone</Title>
+            </ItemAttributes>
+          </Item>
+        </RelatedItem>
+        <RelatedItem>
+          <Item>
+            <ASIN>185549860X</ASIN>
+            <ItemAttributes>
+              <Author>J.K. Rowling</Author>
+              <Binding>H&#246;rkassette</Binding>
+              <Creator Role="Autor">J.K. Rowling</Creator>
+              <Creator Role="Sprecher">Stephen Fry</Creator>
+              <EAN>9781855498600</EAN>
+              <EANList>
+                <EANListElement>9781855498600</EANListElement>
+              </EANList>
+              <Edition>Library edition</Edition>
+              <Format>Audiobook</Format>
+              <ISBN>185549860X</ISBN>
+              <Label>Cover to Cover Cassettes Ltd</Label>
+              <Manufacturer>Cover to Cover Cassettes Ltd</Manufacturer>
+              <NumberOfItems>6</NumberOfItems>
+              <ProductGroup>Book</ProductGroup>
+              <ProductTypeName>ABIS_BOOK</ProductTypeName>
+              <PublicationDate>1999-05-01</PublicationDate>
+              <Publisher>Cover to Cover Cassettes Ltd</Publisher>
+              <Studio>Cover to Cover Cassettes Ltd</Studio>
+              <Title>Harry Potter and the Philosopher's Stone</Title>
+            </ItemAttributes>
+          </Item>
+        </RelatedItem>
+        <RelatedItem>
+          <Item>
+            <ASIN>0439554934</ASIN>
+            <ItemAttributes>
+              <Binding>Gebundene Ausgabe</Binding>
+              <EAN>9780439554930</EAN>
+              <EANList>
+                <EANListElement>9780439554930</EANListElement>
+              </EANList>
+              <ISBN>0439554934</ISBN>
+              <NumberOfPages>309</NumberOfPages>
+              <PackageDimensions>
+                <Height Units="hundredths-inches">110</Height>
+                <Length Units="hundredths-inches">880</Length>
+                <Weight Units="hundredths-pounds">155</Weight>
+                <Width Units="hundredths-inches">610</Width>
+              </PackageDimensions>
+              <ProductGroup>Book</ProductGroup>
+              <ProductTypeName>ABIS_BOOK</ProductTypeName>
+              <SKU>ACOMMP2_book_usedverygood_0439554934</SKU>
+              <Title>Harry Potter and the Sorcerer's Stone (Harry Potter)</Title>
+            </ItemAttributes>
+          </Item>
+        </RelatedItem>
+      </RelatedItems>
+      <OfferSummary>
+        <TotalNew>0</TotalNew>
+        <TotalUsed>0</TotalUsed>
+        <TotalCollectible>0</TotalCollectible>
+        <TotalRefurbished>0</TotalRefurbished>
+      </OfferSummary>
+      <Offers>
+        <TotalOffers>0</TotalOffers>
+        <TotalOfferPages>0</TotalOfferPages>
+        <MoreOffersUrl>0</MoreOffersUrl>
+      </Offers>
+      <CustomerReviews>
+        <IFrameURL>http://www.amazon.de/reviews/iframe?akid=AKIAJTJID3GQ4PAFYOEQ&amp;alinkCode=xm2&amp;asin=B000B09WRQ&amp;atag=redtoad-21&amp;exp=2011-12-05T14%3A59%3A19Z&amp;v=2&amp;sig=DHZtay0tKY3Bcv2k3mi68Knei9ImhHXzt0xG6Kh2kiI%3D</IFrameURL>
+        <HasReviews>true</HasReviews>
+      </CustomerReviews>
+      <BrowseNodes>
+        <BrowseNode>
+          <BrowseNodeId>194644031</BrowseNodeId>
+          <Name>Authority Asins</Name>
+          <Ancestors>
+            <BrowseNode>
+              <BrowseNodeId>301051</BrowseNodeId>
+              <Name>Stores</Name>
+            </BrowseNode>
+          </Ancestors>
+        </BrowseNode>
+      </BrowseNodes>
+    </Item>
+  </Items>
+</ItemLookupResponse>

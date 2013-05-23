@@ -1,0 +1,58 @@
+<BrowseNodeLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+    </HTTPHeaders>
+    <RequestId>183T6SXGAF9YQ2SPG94Y</RequestId>
+    <Arguments>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Operation" Value="BrowseNodeLookup"/>
+      <Argument Name="BrowseNodeId" Value="411663031"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2011-11-09T08:25:53Z"/>
+      <Argument Name="Version" Value="2011-08-01"/>
+    </Arguments>
+    <RequestProcessingTime>0.00831818580627441</RequestProcessingTime>
+  </OperationRequest>
+  <BrowseNodes>
+    <Request>
+      <IsValid>True</IsValid>
+      <BrowseNodeLookupRequest>
+        <BrowseNodeId>411663031</BrowseNodeId>
+      </BrowseNodeLookupRequest>
+    </Request>
+    <BrowseNode>
+      <BrowseNodeId>411663031</BrowseNodeId>
+      <Name>Libri</Name>
+      <Children>
+        <BrowseNode>
+          <BrowseNodeId>411664031</BrowseNodeId>
+          <Name>Categorie</Name>
+          <IsCategoryRoot>1</IsCategoryRoot>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>411665031</BrowseNodeId>
+          <Name>Refinements</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>427501031</BrowseNodeId>
+          <Name>Featured Categories</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>435457031</BrowseNodeId>
+          <Name>Ricerca avanzata</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>435458031</BrowseNodeId>
+          <Name>Shops</Name>
+        </BrowseNode>
+        <BrowseNode>
+          <BrowseNodeId>518368031</BrowseNodeId>
+          <Name>Self Service</Name>
+        </BrowseNode>
+      </Children>
+    </BrowseNode>
+  </BrowseNodes>
+</BrowseNodeLookupResponse>
