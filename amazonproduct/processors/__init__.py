@@ -13,6 +13,10 @@ class BaseProcessor (object):
     :class:`BaseProcessor` and override the methods.
     """
 
+    #: contains mapping of paginator types (e.g ``ITEMS_PAGINATOR``) to the
+    #: appropriate subclass of :class:`BaseResultPaginator`
+    paginators = {}
+
     def parse(self, fp):
         """
         Parses a file-like XML source returned from Amazon. This is the most
@@ -20,18 +24,7 @@ class BaseProcessor (object):
 
         :return: parsed XML node
         """
-        raise NotImplementedError # pragma: no cover
-
-    @classmethod
-    def load_paginator(cls, paginator_type):
-        """
-        Returns a result paginator for operations like ItemSearch.
-
-        :param paginator_type: will be one of :const:`ITEMS_PAGINATOR` or
-          :const:`RELATEDITEMS_PAGINATOR`.
-        :return: a subclass of :class:`BaseResultPaginator`
-        """
-        return None # pragma: no cover
+        raise NotImplementedError  # pragma: no cover
 
     @classmethod
     def parse_cart(cls, node):
@@ -45,7 +38,7 @@ class BaseProcessor (object):
         :param node: parsed XML node (as returned by :meth:`parse`).
         :return: a :class:`~amazonproduct.contrib.Cart` instance
         """
-        raise NotImplementedError # pragma: no cover
+        raise NotImplementedError  # pragma: no cover
 
 
 class BaseResultPaginator (object):

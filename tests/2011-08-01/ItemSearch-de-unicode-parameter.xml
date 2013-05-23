@@ -1,55 +1,53 @@
 <ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
   <OperationRequest>
     <HTTPHeaders>
-      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.6pre/bc5c48faf932+ +http://pypi.python.org/pypi/python-amazon-product-api/"/>
     </HTTPHeaders>
-    <RequestId>bc9ef8f1-3c96-43c1-9e64-128f02d73018</RequestId>
+    <RequestId>ce7c9d23-d452-4279-abb0-6eddf9980994</RequestId>
     <Arguments>
       <Argument Name="Operation" Value="ItemSearch"/>
       <Argument Name="Service" Value="AWSECommerceService"/>
-      <Argument Name="ItemPage" Value="1"/>
       <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
       <Argument Name="Version" Value="2011-08-01"/>
       <Argument Name="SearchIndex" Value="Books"/>
       <Argument Name="Author" Value="F&#233;lix J. Palma"/>
       <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
       <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="Timestamp" Value="2011-11-08T21:04:46Z"/>
+      <Argument Name="Timestamp" Value="2013-05-23T08:24:18Z"/>
     </Arguments>
-    <RequestProcessingTime>0.0401160000000000</RequestProcessingTime>
+    <RequestProcessingTime>0.3175870000000000</RequestProcessingTime>
   </OperationRequest>
   <Items>
     <Request>
       <IsValid>True</IsValid>
       <ItemSearchRequest>
         <Author>F&#233;lix J. Palma</Author>
-        <ItemPage>1</ItemPage>
         <ResponseGroup>Small</ResponseGroup>
         <SearchIndex>Books</SearchIndex>
       </ItemSearchRequest>
     </Request>
-    <TotalResults>6</TotalResults>
-    <TotalPages>1</TotalPages>
-    <MoreSearchResultsUrl>http://www.amazon.de/gp/redirect.html?camp=2025&amp;creative=12738&amp;location=http%3A%2F%2Fwww.amazon.de%2Fgp%2Fsearch%3Fkeywords%3DF%25C3%25A9lix%2BJ.%2BPalma%26url%3Dsearch-alias%253Dbooks-single-index&amp;linkCode=xm2&amp;tag=redtoad-21&amp;SubscriptionId=AKIAJTJID3GQ4PAFYOEQ</MoreSearchResultsUrl>
+    <TotalResults>18</TotalResults>
+    <TotalPages>2</TotalPages>
+    <MoreSearchResultsUrl>http://www.amazon.de/gp/redirect.html?camp=2025&amp;creative=12738&amp;location=http%3A%2F%2Fwww.amazon.de%2Fgp%2Fsearch%3Fkeywords%3DF%25C3%25A9lix%2BJ.%2BPalma%26url%3Dsearch-alias%253Dbooks-single-index&amp;linkCode=xm2&amp;tag=redtoad-10&amp;SubscriptionId=AKIAJTJID3GQ4PAFYOEQ</MoreSearchResultsUrl>
     <Item>
-      <ASIN>3463405776</ASIN>
-      <DetailPageURL>http://www.amazon.de/Die-Landkarte-Zeit-F%C3%A9lix-Palma/dp/3463405776%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3463405776</DetailPageURL>
+      <ASIN>346340625X</ASIN>
+      <DetailPageURL>http://www.amazon.de/Die-Landkarte-Himmels-F%C3%A9lix-Palma/dp/346340625X%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D346340625X</DetailPageURL>
       <ItemLinks>
         <ItemLink>
           <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D3463405776%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3463405776</URL>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D346340625X%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D346340625X</URL>
         </ItemLink>
         <ItemLink>
           <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.de/gp/pdp/taf/3463405776%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3463405776</URL>
+          <URL>http://www.amazon.de/gp/pdp/taf/346340625X%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D346340625X</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.de/review/product/3463405776%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3463405776</URL>
+          <URL>http://www.amazon.de/review/product/346340625X%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D346340625X</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Offers</Description>
-          <URL>http://www.amazon.de/gp/offer-listing/3463405776%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3463405776</URL>
+          <URL>http://www.amazon.de/gp/offer-listing/346340625X%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D346340625X</URL>
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
@@ -57,58 +55,28 @@
         <Creator Role="&#220;bersetzer">Willi Zurbr&#252;ggen</Creator>
         <Manufacturer>Kindler</Manufacturer>
         <ProductGroup>Book</ProductGroup>
-        <Title>Die Landkarte der Zeit</Title>
-      </ItemAttributes>
-    </Item>
-    <Item>
-      <ASIN>3839810574</ASIN>
-      <DetailPageURL>http://www.amazon.de/Die-Landkarte-Zeit-9-CDs/dp/3839810574%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3839810574</DetailPageURL>
-      <ItemLinks>
-        <ItemLink>
-          <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D3839810574%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3839810574</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.de/gp/pdp/taf/3839810574%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3839810574</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.de/review/product/3839810574%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3839810574</URL>
-        </ItemLink>
-        <ItemLink>
-          <Description>All Offers</Description>
-          <URL>http://www.amazon.de/gp/offer-listing/3839810574%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3839810574</URL>
-        </ItemLink>
-      </ItemLinks>
-      <ItemAttributes>
-        <Author>F&#233;lix J. Palma</Author>
-        <Creator Role="Sprecher">Andreas Fr&#246;hlich</Creator>
-        <Creator Role="&#220;bersetzer">Willi Zurbr&#252;ggen</Creator>
-        <Manufacturer>Argon Verlag</Manufacturer>
-        <ProductGroup>Book</ProductGroup>
-        <Title>Die Landkarte der Zeit (9 CDs)</Title>
+        <Title>Die Landkarte des Himmels</Title>
       </ItemAttributes>
     </Item>
     <Item>
       <ASIN>3499253194</ASIN>
-      <DetailPageURL>http://www.amazon.de/Die-Landkarte-Zeit-F%C3%A9lix-Palma/dp/3499253194%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3499253194</DetailPageURL>
+      <DetailPageURL>http://www.amazon.de/Die-Landkarte-Zeit-F%C3%A9lix-Palma/dp/3499253194%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3499253194</DetailPageURL>
       <ItemLinks>
         <ItemLink>
           <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D3499253194%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3499253194</URL>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D3499253194%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3499253194</URL>
         </ItemLink>
         <ItemLink>
           <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.de/gp/pdp/taf/3499253194%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3499253194</URL>
+          <URL>http://www.amazon.de/gp/pdp/taf/3499253194%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3499253194</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.de/review/product/3499253194%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3499253194</URL>
+          <URL>http://www.amazon.de/review/product/3499253194%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3499253194</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Offers</Description>
-          <URL>http://www.amazon.de/gp/offer-listing/3499253194%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3499253194</URL>
+          <URL>http://www.amazon.de/gp/offer-listing/3499253194%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3499253194</URL>
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
@@ -121,23 +89,23 @@
     </Item>
     <Item>
       <ASIN>B004WOX40I</ASIN>
-      <DetailPageURL>http://www.amazon.de/Die-Landkarte-der-Zeit-ebook/dp/B004WOX40I%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB004WOX40I</DetailPageURL>
+      <DetailPageURL>http://www.amazon.de/Die-Landkarte-der-Zeit-ebook/dp/B004WOX40I%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB004WOX40I</DetailPageURL>
       <ItemLinks>
         <ItemLink>
           <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3DB004WOX40I%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB004WOX40I</URL>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3DB004WOX40I%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB004WOX40I</URL>
         </ItemLink>
         <ItemLink>
           <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.de/gp/pdp/taf/B004WOX40I%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB004WOX40I</URL>
+          <URL>http://www.amazon.de/gp/pdp/taf/B004WOX40I%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB004WOX40I</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.de/review/product/B004WOX40I%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB004WOX40I</URL>
+          <URL>http://www.amazon.de/review/product/B004WOX40I%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB004WOX40I</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Offers</Description>
-          <URL>http://www.amazon.de/gp/offer-listing/B004WOX40I%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB004WOX40I</URL>
+          <URL>http://www.amazon.de/gp/offer-listing/B004WOX40I%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB004WOX40I</URL>
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
@@ -149,59 +117,206 @@
       </ItemAttributes>
     </Item>
     <Item>
-      <ASIN>B0059ECT7O</ASIN>
-      <DetailPageURL>http://www.amazon.de/Time-Palma-Felix-Author-Hardcover/dp/B0059ECT7O%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB0059ECT7O</DetailPageURL>
+      <ASIN>3463405776</ASIN>
+      <DetailPageURL>http://www.amazon.de/Die-Landkarte-Zeit-F%C3%A9lix-Palma/dp/3463405776%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3463405776</DetailPageURL>
       <ItemLinks>
         <ItemLink>
           <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3DB0059ECT7O%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB0059ECT7O</URL>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D3463405776%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3463405776</URL>
         </ItemLink>
         <ItemLink>
           <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.de/gp/pdp/taf/B0059ECT7O%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB0059ECT7O</URL>
+          <URL>http://www.amazon.de/gp/pdp/taf/3463405776%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3463405776</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.de/review/product/B0059ECT7O%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB0059ECT7O</URL>
+          <URL>http://www.amazon.de/review/product/3463405776%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3463405776</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Offers</Description>
-          <URL>http://www.amazon.de/gp/offer-listing/B0059ECT7O%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB0059ECT7O</URL>
+          <URL>http://www.amazon.de/gp/offer-listing/3463405776%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3463405776</URL>
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
-        <Author>Felix J. Palma</Author>
-        <Manufacturer>Atria Books</Manufacturer>
+        <Author>F&#233;lix J. Palma</Author>
+        <Creator Role="&#220;bersetzer">Willi Zurbr&#252;ggen</Creator>
+        <Manufacturer>Kindler</Manufacturer>
         <ProductGroup>Book</ProductGroup>
-        <Title>(The Map of Time) By Palma, Felix J. (Author) Hardcover on (06 , 2011)</Title>
+        <Title>Die Landkarte der Zeit</Title>
       </ItemAttributes>
     </Item>
     <Item>
-      <ASIN>B0058PZ15Q</ASIN>
-      <DetailPageURL>http://www.amazon.de/MAP-TIME-PALMA-FELIX-HARDCOVER/dp/B0058PZ15Q%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB0058PZ15Q</DetailPageURL>
+      <ASIN>3839811864</ASIN>
+      <DetailPageURL>http://www.amazon.de/Die-Landkarte-Himmels-F%C3%A9lix-Palma/dp/3839811864%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3839811864</DetailPageURL>
       <ItemLinks>
         <ItemLink>
           <Description>Add To Wishlist</Description>
-          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3DB0058PZ15Q%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB0058PZ15Q</URL>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D3839811864%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3839811864</URL>
         </ItemLink>
         <ItemLink>
           <Description>Tell A Friend</Description>
-          <URL>http://www.amazon.de/gp/pdp/taf/B0058PZ15Q%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB0058PZ15Q</URL>
+          <URL>http://www.amazon.de/gp/pdp/taf/3839811864%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3839811864</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Customer Reviews</Description>
-          <URL>http://www.amazon.de/review/product/B0058PZ15Q%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB0058PZ15Q</URL>
+          <URL>http://www.amazon.de/review/product/3839811864%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3839811864</URL>
         </ItemLink>
         <ItemLink>
           <Description>All Offers</Description>
-          <URL>http://www.amazon.de/gp/offer-listing/B0058PZ15Q%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB0058PZ15Q</URL>
+          <URL>http://www.amazon.de/gp/offer-listing/3839811864%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3839811864</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>F&#233;lix J. Palma</Author>
+        <Creator Role="Sprecher">Stefan Kaminski</Creator>
+        <Creator Role="&#220;bersetzer">Willi Zurbr&#252;ggen</Creator>
+        <Manufacturer>Argon Verlag</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Die Landkarte des Himmels</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>3839810574</ASIN>
+      <DetailPageURL>http://www.amazon.de/Die-Landkarte-Zeit-F%C3%A9lix-Palma/dp/3839810574%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3839810574</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D3839810574%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3839810574</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.de/gp/pdp/taf/3839810574%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3839810574</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.de/review/product/3839810574%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3839810574</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.de/gp/offer-listing/3839810574%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3839810574</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>F&#233;lix J. Palma</Author>
+        <Creator Role="Sprecher">Andreas Fr&#246;hlich</Creator>
+        <Creator Role="&#220;bersetzer">Willi Zurbr&#252;ggen</Creator>
+        <Manufacturer>Argon Verlag</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Die Landkarte der Zeit</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>B008XRZX5O</ASIN>
+      <DetailPageURL>http://www.amazon.de/Die-Landkarte-des-Himmels-ebook/dp/B008XRZX5O%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB008XRZX5O</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3DB008XRZX5O%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB008XRZX5O</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.de/gp/pdp/taf/B008XRZX5O%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB008XRZX5O</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.de/review/product/B008XRZX5O%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB008XRZX5O</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.de/gp/offer-listing/B008XRZX5O%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB008XRZX5O</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>F&#233;lix J. Palma</Author>
+        <Creator Role="&#220;bersetzer">Willi Zurbr&#252;ggen</Creator>
+        <Manufacturer>Rowohlt (com)</Manufacturer>
+        <ProductGroup>eBooks</ProductGroup>
+        <Title>Die Landkarte des Himmels</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>B00CX3J03K</ASIN>
+      <DetailPageURL>http://www.amazon.de/Felix-J-Palma-Landkarte-Zeit/dp/B00CX3J03K%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00CX3J03K</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3DB00CX3J03K%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB00CX3J03K</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.de/gp/pdp/taf/B00CX3J03K%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB00CX3J03K</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.de/review/product/B00CX3J03K%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB00CX3J03K</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.de/gp/offer-listing/B00CX3J03K%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3DB00CX3J03K</URL>
         </ItemLink>
       </ItemLinks>
       <ItemAttributes>
         <Author>Felix J. Palma</Author>
-        <Manufacturer>Atria Books</Manufacturer>
+        <Manufacturer>Kindler</Manufacturer>
         <ProductGroup>Book</ProductGroup>
-        <Title>THE MAP OF TIME BY PALMA, FELIX J.[HARDCOVER]</Title>
+        <Title>Felix J. Palma : Die Landkarte der Zeit</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>3499258153</ASIN>
+      <DetailPageURL>http://www.amazon.de/Die-Landkarte-Himmels-F%C3%A9lix-Palma/dp/3499258153%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D3499258153</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D3499258153%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3499258153</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.de/gp/pdp/taf/3499258153%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3499258153</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.de/review/product/3499258153%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3499258153</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.de/gp/offer-listing/3499258153%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D3499258153</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>F&#233;lix J. Palma</Author>
+        <Creator Role="&#220;bersetzer">Willi Zurbr&#252;ggen</Creator>
+        <Manufacturer>rororo</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Die Landkarte des Himmels</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>8865831057</ASIN>
+      <DetailPageURL>http://www.amazon.de/mappa-del-cielo-F%C3%A9lix-Palma/dp/8865831057%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D8865831057</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.de/gp/registry/wishlist/add-item.html%3Fasin.0%3D8865831057%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D8865831057</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.de/gp/pdp/taf/8865831057%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D8865831057</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.de/review/product/8865831057%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D8865831057</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.de/gp/offer-listing/8865831057%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12738%26creativeASIN%3D8865831057</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>F&#233;lix J. Palma</Author>
+        <Manufacturer>LIT - Libri in Tasca</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>La mappa del cielo</Title>
       </ItemAttributes>
     </Item>
   </Items>

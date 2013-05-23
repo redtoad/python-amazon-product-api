@@ -43,15 +43,6 @@ from amazonproduct.utils import load_config, load_class
 from amazonproduct.utils import running_on_gae, REQUIRED_KEYS
 from amazonproduct.processors import ITEMS_PAGINATOR, BaseProcessor
 
-
-# first processors successfully imported is used
-PROCESSORS = [
-    'amazonproduct.processors.objectify.Processor',
-    'amazonproduct.processors.etree.Processor',
-    'amazonproduct.processors.minidom.Processor',
-]
-
-
 USER_AGENT = ('python-amazon-product-api/%s '
     '+http://pypi.python.org/pypi/python-amazon-product-api/' % VERSION)
 
@@ -125,7 +116,7 @@ class API (object):
     TIMEOUT = 5 #: timeout in seconds
 
     def __init__(self, access_key_id=None, secret_access_key=None, locale=None,
-                 associate_tag=None, processor=None):
+                 associate_tag=None, processor='amazonproduct.processors.objectify'):
         """
         .. versionchanged:: 0.2.6
            Passing parameters ``access_key_id``, ``secret_access_key`` and
@@ -136,7 +127,7 @@ class API (object):
         :param secret_key_id: AWS secret key (deprecated).
         :param associate_tag: Amazon Associates tracking id (deprecated).
         :param locale: localise results by using one value from ``LOCALES``.
-        :param processor: result processing function (``None`` if unsure).
+        :param processor: module containing result processing functions.
         """
         if not (access_key_id is None and secret_access_key is None
         and associate_tag is None):
@@ -160,45 +151,20 @@ class API (object):
         except KeyError:
             raise UnknownLocale(locale)
 
-
         # GAE does not allow timeouts to be specified manually
         if not running_on_gae():
             socket.setdefaulttimeout(self.TIMEOUT)
 
+        # instantiate processor class
+        self._processor_module = processor
+        self.processor = load_class('%s.Processor' % processor)()
+
         self.last_call = datetime(1970, 1, 1)
-        self.debug = 0 # set to 1 if you want to see HTTP headers
-
-        if isinstance(processor, BaseProcessor):
-            self.processor = processor
-        else:
-            self.processor = self._load_processor(processor)()
-
-    @staticmethod
-    def _load_processor(*names):
-        """
-        Loads result processor. If no processor is given (``None``), the first
-        one is taken that can be successfully imported from the list of default
-        processors (:const:`PROCESSORS`).
-        """
-        if len(names) == 0 or names[0] is None:
-            names = PROCESSORS
-        for name in names:
-            # processor was given as string
-            if isinstance(name, (str, unicode)):
-                try:
-                    pclass = load_class(name)
-                    if issubclass(pclass, BaseProcessor):
-                        return pclass
-                except ImportError:
-                    continue
-            # processor was given as class
-            elif isinstance(name, type) and issubclass(name, BaseProcessor):
-                return name
-        # nothing successfully loaded
-        raise ImportError('No processor class could be imported!')
+        self.debug = 0  # set to 1 if you want to see HTTP headers
 
     def __repr__(self):
-        return '<API(%s/%s) at %s>' % (self.VERSION, self.locale, hex(id(self)))
+        return '<API(%s/%s/%s) at %s>' % (
+            self.VERSION, self.locale, self._processor_module, hex(id(self)))
 
     def _build_url(self, **qargs):
         """
@@ -380,14 +346,14 @@ class API (object):
         by commas.
         """
         try:
-            paginate = params.pop('paginate', False)
+            paginate = params.pop('paginate', None)
             operators = {
                 'Operation': 'ItemLookup',
                 'ItemId': ','.join(ids),
             }
             operators.update(params)
 
-            paginator = self.processor.load_paginator(paginate)
+            paginator = self.processor.paginators.get(paginate)
             if paginator is not None:
                 # Amazon limits returned pages to max 10 pages max
                 if operators.get('limit', 10) > 10:
@@ -450,7 +416,7 @@ class API (object):
             }
             operators.update(params)
 
-            paginator = self.processor.load_paginator(paginate)
+            paginator = self.processor.paginators.get(paginate)
             if paginator is not None:
                 # Amazon limits returned pages to max 5
                 # if SearchIndex "All" is used!

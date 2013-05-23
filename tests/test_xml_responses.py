@@ -5,7 +5,7 @@ import pytest
 import re
 import urllib2
 
-from tests import utils, ELEMENTTREE_IMPLEMENTATIONS
+from tests import utils
 from tests import XML_TEST_DIR
 from tests import TESTABLE_API_VERSIONS, TESTABLE_LOCALES, TESTABLE_PROCESSORS
 
@@ -21,49 +21,39 @@ def pytest_generate_tests(metafunc):
     ``api_versions`` to specify which one are used.
     """
     if 'api' in metafunc.funcargnames:
+
         processors = getattr(metafunc.function, 'processors',
             getattr(metafunc.cls, 'processors', TESTABLE_PROCESSORS))
-        # replace etree with all known implementations
-        if 'etree' in processors:
-            processors.extend(ELEMENTTREE_IMPLEMENTATIONS)
-            processors = set(processors)
-            processors.remove('etree')
         # if --processor is used get intersecting values
         if metafunc.config.option.processors:
             is_specified = lambda x: x in metafunc.config.option.processors
             processors = filter(is_specified, processors)
             if not processors:
-                pytest.skip('Test cannot run for specified processors'
-                            '%s.' % (metafunc.config.option.processors, ))
+                pytest.skip('Test cannot run for specified processors %s.' % 
+                    (metafunc.config.option.processors, ))
+
+        api_versions = getattr(metafunc.function, 'api_versions',
+            getattr(metafunc.cls, 'api_versions', TESTABLE_API_VERSIONS))
+        # if --api-version is used get intersecting versions
+        if metafunc.config.option.versions:
+            is_specified = lambda x: x in metafunc.config.option.versions
+            api_versions = filter(is_specified, api_versions)
+            if not api_versions:
+                pytest.skip('Test cannot run for specified API versions %s.' % 
+                    (metafunc.config.option.versions, ))
+
+        locales = getattr(metafunc.function, 'locales',
+            getattr(metafunc.cls, 'locales', TESTABLE_LOCALES))
+        # if --locale is used get intersecting locales
+        if metafunc.config.option.locales:
+            is_specified = lambda x: x in metafunc.config.option.locales
+            locales = filter(is_specified, locales)
+            if not locales:
+                pytest.skip('Test cannot run for specified locales %s.' % 
+                    (metafunc.config.option.locales, ))
+
         for processor in processors:
-            api_versions = getattr(metafunc.function, 'api_versions',
-                getattr(metafunc.cls, 'api_versions', TESTABLE_API_VERSIONS))
-            # if --api-version is used get intersecting versions
-            if metafunc.config.option.versions:
-                is_specified = lambda x: x in metafunc.config.option.versions
-                api_versions = filter(is_specified, api_versions)
-                if not api_versions:
-                    pytest.skip('Test cannot run for specified API versions '
-                                '%s.' % (metafunc.config.option.versions, ))
             for version in api_versions:
-                locales = getattr(metafunc.function, 'locales',
-                    getattr(metafunc.cls, 'locales', TESTABLE_LOCALES))
-                # if --locale is used get intersecting locales
-                if metafunc.config.option.locales:
-                    is_specified = lambda x: x in metafunc.config.option.locales
-                    locales = filter(is_specified, locales)
-                    if not locales:
-                        pytest.skip('Test cannot run for specified locales '
-                                    '%s.' % (metafunc.config.option.locales, ))
-                # FIXME: For the time being we support all API versions. This will
-                # no longer be neccessary from February 21, 2012 when all versions
-                # previous to 2011-08-01 will no longer be supported!
-                if version < '2011-08-01':
-                    for unsupported in ['cn', 'es', 'it']:
-                        try:
-                            locales.remove(unsupported)
-                        except ValueError:
-                            pass
                 for locale in locales:
                     # file containing previously fetched response
                     local_file = os.path.join(XML_TEST_DIR, version,
@@ -77,6 +67,7 @@ def pytest_generate_tests(metafunc):
                             'locale' : locale, 
                             'xml_response' : local_file
                         })
+
 
 def pytest_funcarg__server(request):
     """
@@ -95,6 +86,7 @@ def pytest_funcarg__server(request):
         server.stop()
     return request.cached_setup(setup, teardown, 'module')
 
+
 class ArgumentMismatch (Exception):
     """
     The request arguments stored in XML response previously fetched differs
@@ -105,6 +97,7 @@ class ResponseRequired (Exception):
     """
     XML response from live API required.
     """
+
 
 def pytest_funcarg__api(request):
     """
@@ -118,8 +111,7 @@ def pytest_funcarg__api(request):
     version = request.param['version']
     xml_response = request.param['xml_response']
 
-    api = API(locale=locale,
-        processor=TESTABLE_PROCESSORS[request.param['processor']])
+    api = API(locale=locale, processor=request.param['processor'])
     api.VERSION = version
     api.REQUESTS_PER_SECOND = 10000 # just for here!
 
@@ -156,10 +148,10 @@ def pytest_funcarg__api(request):
                 except ArgumentMismatch:
                     if request.config.option.fetch == 'outdated':
                         raise ResponseRequired
-                    return pytest.skip('Cached arguments in %s differ from the '
-                        'ones currently tested against!' % path)
-                        #'\ncached=%r\ncurrent=%r' % (path,
-                        #cached_params, current_params))
+                    msg = ('Cached arguments in %s differ from the ones '
+                           'currently tested against!\ncached=%r\ncurrent=%r' %
+                           (path, cached_params, current_params))
+                    return pytest.skip(msg)
                 except AttributeError:
                     # XML for error messages have no Argument elements!
                     pass
@@ -246,7 +238,7 @@ class TestCorrectVersion (object):
     Check that each requested API version is also really used.
     """
 
-    processors = ['objectify']
+    processors = ['amazonproduct.processors.objectify']
 
     def test_correct_version(self, api):
         # any operation will do here
@@ -323,7 +315,7 @@ class TestItemSearch (object):
         pytest.raises(InvalidParameterCombination, api.item_search, 
                           'All', BrowseNode=132)
 
-    @runfor(processors=['objectify'])
+    @runfor(processors=['amazonproduct.processors.objectify'])
     def test_lookup_by_title(self, api):
         # TODO Does this test really make sense?
         for item in api.item_search('Books', Title='Harry Potter', limit=1):
@@ -338,7 +330,7 @@ class TestSimilarityLookup (object):
     
     locales = ['de']
 
-    @runfor(processors=['objectify'])
+    @runfor(processors=['amazonproduct.processors.objectify'])
     def test_similar_items(self, api):
         # 0451462009 Small Favor: A Novel of the Dresden Files 
         root = api.similarity_lookup('0451462009')
@@ -524,7 +516,7 @@ class TestBrowseNodeLookup (object):
         pytest.raises(InvalidResponseGroup, api.browse_node_lookup, 
                 self.BOOKS_ROOT_NODE[api.locale], '???')
 
-    @runfor(processors=['objectify'])
+    @runfor(processors=['amazonproduct.processors.objectify'])
     def test_books_browsenode(self, api):
         nodes = api.browse_node_lookup(self.BOOKS_ROOT_NODE[api.locale]).BrowseNodes
         assert nodes.Request.IsValid.text == 'True'
@@ -577,7 +569,7 @@ class TestCartCreate (object):
     Check that all XML responses for CartCreate are parsed correctly.
     """
 
-    processors = ['objectify', 'etree']
+    processors = ['amazonproduct.processors.objectify', 'amazonproduct.processors.etree']
 
     def test_creating_basket_with_empty_items_fails(self, api, item):
         pytest.raises(MissingParameters, api.cart_create, {}) # Items missing
@@ -626,7 +618,7 @@ class TestCartAdd (object):
     Check that all XML responses for CartAdd are parsed correctly.
     """
 
-    processors = ['objectify', 'etree']
+    processors = ['amazonproduct.processors.objectify', 'amazonproduct.processors.etree']
 
     def test_adding_with_wrong_cartid_hmac_fails(self, api, cart, item):
         pytest.raises(CartInfoMismatch, api.cart_add, '???', cart.hmac, {item: 1})
@@ -666,7 +658,7 @@ class TestCartModify (object):
     Check that all XML responses for CartModify are parsed correctly.
     """
 
-    processors = ['objectify', 'etree']
+    processors = ['amazonproduct.processors.objectify', 'amazonproduct.processors.etree']
 
     def test_modifying_with_wrong_cartid_hmac_fails(self, api, cart, item):
         pytest.raises(CartInfoMismatch, api.cart_modify, '???', cart.hmac, {item: 1})
@@ -716,7 +708,7 @@ class TestCartGet (object):
     Check that all XML responses for CartGet are parsed correctly.
     """
 
-    processors = ['objectify', 'etree']
+    processors = ['amazonproduct.processors.objectify', 'amazonproduct.processors.etree']
 
     def test_getting_with_wrong_cartid_hmac_fails(self, api, cart):
         pytest.raises(CartInfoMismatch, api.cart_get, '???', cart.hmac)
@@ -735,7 +727,7 @@ class TestCartClear (object):
     Check that all XML responses for CartClear are parsed correctly.
     """
 
-    processors = ['objectify', 'etree']
+    processors = ['amazonproduct.processors.objectify', 'amazonproduct.processors.etree']
 
     def test_clearing_with_wrong_cartid_hmac_fails(self, api, cart):
         pytest.raises(CartInfoMismatch, api.cart_clear, '???', cart.hmac)

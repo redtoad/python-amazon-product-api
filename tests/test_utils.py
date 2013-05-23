@@ -104,7 +104,7 @@ def test_load_config(configfiles, monkeypatch):
 @pytest.mark.parametrize(('txt', 'cls'), [
     ('amazonproduct.processors.etree.Processor', etree.Processor),
     ('amazonproduct.processors.etree.XPathPaginator', etree.XPathPaginator),
-    ('amazonproduct.processors.etree.ItemPaginator', etree.ItemPaginator),
+    ('amazonproduct.processors.etree.ItemPaginator', etree.SearchPaginator),
 ])
 def test_load_class(txt, cls):
     loaded = utils.load_class(txt)
