@@ -25,7 +25,7 @@ def pytest_addoption(parser):
             'previously cached XML file: one of no (default)|missing|outdated|'
             'all.')
     group._addoption('--processor', action='append', dest='processors',
-        metavar='PROCESSOR', choices=['objectify', 'etree', 'minidom'],
+        metavar='PROCESSOR', choices=['objectify', 'amazonproduct.processors.etree', 'minidom'],
         help='Result processor to use: one of objectify|etree|minidom.')
 
 

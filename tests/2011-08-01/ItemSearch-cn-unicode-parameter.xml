@@ -1,29 +1,27 @@
 <ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
   <OperationRequest>
     <HTTPHeaders>
-      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.6pre/bc5c48faf932+ +http://pypi.python.org/pypi/python-amazon-product-api/"/>
     </HTTPHeaders>
-    <RequestId>ca1afed0-ca79-4f08-93cc-d9f79967473f</RequestId>
+    <RequestId>ac932613-d522-4db2-9945-8211d056871f</RequestId>
     <Arguments>
       <Argument Name="Operation" Value="ItemSearch"/>
       <Argument Name="Service" Value="AWSECommerceService"/>
       <Argument Name="Author" Value="F&#233;lix J. Palma"/>
-      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="Timestamp" Value="2011-11-13T11:42:47Z"/>
       <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="ItemPage" Value="1"/>
       <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="SearchIndex" Value="Books"/>
       <Argument Name="Version" Value="2011-08-01"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2013-05-23T08:24:15Z"/>
+      <Argument Name="SearchIndex" Value="Books"/>
     </Arguments>
-    <RequestProcessingTime>0.0174190000000000</RequestProcessingTime>
+    <RequestProcessingTime>0.0370530000000000</RequestProcessingTime>
   </OperationRequest>
   <Items>
     <Request>
       <IsValid>True</IsValid>
       <ItemSearchRequest>
         <Author>F&#233;lix J. Palma</Author>
-        <ItemPage>1</ItemPage>
         <ResponseGroup>Small</ResponseGroup>
         <SearchIndex>Books</SearchIndex>
       </ItemSearchRequest>
@@ -36,6 +34,6 @@
     </Request>
     <TotalResults>0</TotalResults>
     <TotalPages>0</TotalPages>
-    <MoreSearchResultsUrl>http://www.amazon.cn/gp/redirect.html?camp=2025&amp;creative=165953&amp;location=http%3A%2F%2Fwww.amazon.cn%2Fgp%2Fsearch%3Fkeywords%3DF%25C3%25A9lix%2BJ.%2BPalma%26url%3Dsearch-alias%253Dbooks&amp;linkCode=xm2&amp;tag=redtoad-21&amp;SubscriptionId=AKIAJTJID3GQ4PAFYOEQ</MoreSearchResultsUrl>
+    <MoreSearchResultsUrl>http://www.amazon.cn/gp/redirect.html?camp=2025&amp;creative=165953&amp;location=http%3A%2F%2Fwww.amazon.cn%2Fgp%2Fsearch%3Fkeywords%3DF%25C3%25A9lix%2BJ.%2BPalma%26url%3Dsearch-alias%253Dbooks&amp;linkCode=xm2&amp;tag=redtoad-10&amp;SubscriptionId=AKIAJTJID3GQ4PAFYOEQ</MoreSearchResultsUrl>
   </Items>
 </ItemSearchResponse>

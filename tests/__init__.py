@@ -1,6 +1,7 @@
 
 import imp
-import os.path
+import os
+import re
 
 from amazonproduct import HOSTS
 from amazonproduct.processors import objectify, etree, minidom
@@ -21,29 +22,28 @@ XML_TEST_DIR = _here
 
 #: Versions of Amazon API to be tested against 
 TESTABLE_API_VERSIONS = [
-    '2011-08-01',
+    d for d in os.listdir(_here) 
+    if re.match(r'^\d{4}-\d{2}-\d{2}$', d)
 ]
 
 #: Locales to test against. 
 TESTABLE_LOCALES = HOSTS.keys()
 
-ELEMENTTREE_IMPLEMENTATIONS = [
-    'lxml.etree',
-    'xml.etree.cElementTree',
-    'xml.etree.ElementTree',
-    'cElementTree',
-    'elementtree.ElementTree',
-    'elementtree.ElementTree'
-]
+#ELEMENTTREE_IMPLEMENTATIONS = [
+#    'lxml.etree',
+#    'xml.etree.cElementTree',
+#    'xml.etree.ElementTree',
+#    'cElementTree',
+#    'elementtree.ElementTree',
+#    'elementtree.ElementTree'
+#]
 
 #: Result processors to test with.
 TESTABLE_PROCESSORS = {
-    'objectify': objectify.Processor,
-    #    'minidom': minidom.Processor,
+    'amazonproduct.processors.objectify',
+    'amazonproduct.processors.etree',
+#    'amazonproduct.processors.minidom',
 }
-# add ElementTree implementations
-for mod in ELEMENTTREE_IMPLEMENTATIONS:
-    TESTABLE_PROCESSORS[mod] = etree.Processor(module=mod)
 
 def get_config_value(key, default=None):
     """

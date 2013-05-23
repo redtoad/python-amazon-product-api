@@ -1,29 +1,27 @@
 <ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
   <OperationRequest>
     <HTTPHeaders>
-      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.6pre/bc5c48faf932+ +http://pypi.python.org/pypi/python-amazon-product-api/"/>
     </HTTPHeaders>
-    <RequestId>4d8e3993-b8a9-4068-a602-e4b921d71c44</RequestId>
+    <RequestId>b72c7fc8-4bc5-4052-92d8-0a064ea094a8</RequestId>
     <Arguments>
       <Argument Name="Operation" Value="ItemSearch"/>
       <Argument Name="Service" Value="AWSECommerceService"/>
-      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="Timestamp" Value="2011-11-09T07:24:18Z"/>
-      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="ItemPage" Value="1"/>
       <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="SearchIndex" Value="???"/>
       <Argument Name="BrowseNode" Value="132"/>
       <Argument Name="Version" Value="2011-08-01"/>
+      <Argument Name="SearchIndex" Value="???"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2013-05-23T08:24:29Z"/>
     </Arguments>
-    <RequestProcessingTime>0.0027330000000000</RequestProcessingTime>
+    <RequestProcessingTime>0.0023600000000000</RequestProcessingTime>
   </OperationRequest>
   <Items>
     <Request>
       <IsValid>False</IsValid>
       <ItemSearchRequest>
         <BrowseNode>132</BrowseNode>
-        <ItemPage>1</ItemPage>
         <ResponseGroup>Small</ResponseGroup>
         <SearchIndex>???</SearchIndex>
       </ItemSearchRequest>
@@ -31,16 +29,8 @@
         <Error>
           <Code>AWS.InvalidEnumeratedParameter</Code>
           <Message>The value you specified for SearchIndex is invalid. Valid values include [
-				'All','Books','DVD','Electronics','ForeignBooks','Kitchen','Music','Software','Toys','VideoGames','Watches'
+				'All','Automotive','Baby','Books','DVD','Electronics','ForeignBooks','KindleStore','Kitchen','MP3Downloads','Music','Shoes','Software','Toys','VideoGames','Watches'
 				].</Message>
-        </Error>
-        <Error>
-          <Code>AWS.RestrictedParameterValueCombination</Code>
-          <Message>Your request contained a restricted parameter combination.  When SearchIndex equals ???, ItemPage cannot be present.</Message>
-        </Error>
-        <Error>
-          <Code>AWS.RestrictedParameterValueCombination</Code>
-          <Message>Your request contained a restricted parameter combination.  When SearchIndex equals ???, BrowseNode cannot be present.</Message>
         </Error>
       </Errors>
     </Request>
