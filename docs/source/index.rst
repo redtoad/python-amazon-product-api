@@ -21,6 +21,8 @@ version of the API without getting in your way.
    install
    basic-usage
    operations
+   processors
+   pagination
    errors
    config
    advanced
