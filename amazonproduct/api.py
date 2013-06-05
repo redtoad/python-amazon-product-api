@@ -529,7 +529,7 @@ class API (object):
             >>> api.item_search('Blended', Keywords='Mustang')
 
         * Use the Availability parameter to only return shirts that are
-        available::
+          available::
 
             >>> api.item_search('Apparel', Condition='All',
             ...     Availability='Available', Keywords='Shirt')
