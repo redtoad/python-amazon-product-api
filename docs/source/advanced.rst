@@ -1,4 +1,3 @@
-
 More advanced uses
 ==================
 
@@ -54,10 +53,6 @@ here is one using ``xml.minidom``::
    error code and message.
 
 
-Using batch operations
-----------------------
-
-
 Caching responses
 -----------------
 
@@ -65,5 +60,5 @@ Caching responses
 
 Sometimes when developing or when it is foreseeable that the very same request
 will be sent over and over again, it might be better to cache API responses from
-Amazon for a short time in order to avoi going over you request limit.
+Amazon for a short time in order to avoid going over you request limit.
 
