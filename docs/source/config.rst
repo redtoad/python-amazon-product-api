@@ -11,23 +11,6 @@ can be passed directly to the API constructor at initialisation. Some options,
 such as credentials, can also be read from environment variables (e.g.
 ``AWS_ACCESS_KEY_ID`` and ``AWS_SECRET_ACCESS_KEY``).
 
-The order of precedence for is always:
-
-* Parameters passed into Connection class constructor.
-* Parameters specified by environment variables
-* Parameters specified as options in the config file.
-
-The following table gives an overview which values can be defined where:
-
-=============  ======================  =====================
-config file    boto config             environment variable
-=============  ======================  =====================
-access_key     aws_access_key_id       AWS_ACCESS_KEY_ID
-secret_key     aws_secret_access_key   AWS_SECRET_ACCESS_KEY
-associate_tag                          AWS_ASSOCIATE_TAG
-locale                                 AWS_LOCALE
-=============  ======================  =====================
-
 
 Config files
 ------------
@@ -68,6 +51,9 @@ file.
         secret_key = <your secret key>
         associate_tag = <your associate id>
 
+    .. note:: Stating the obivious: Your access key is *not* ``<your access
+       key>`` but something like ``10RZZJBK6YBQASX213G2``.
+
 .. _boto config: http://code.google.com/p/boto/wiki/BotoConfig
 
 
@@ -88,4 +74,23 @@ You can also set the following environment variables:
 ``AWS_LOCALE``
     Your API locale
 
+
+Order of precedence
+-------------------
+
+* Parameters specified by environment variables
+* User-specific parameters from ``~/.amazon-product-api``
+* Site-wide parameters from ``/etc/amazon-product-api.cfg`` for settings that all users on
+* `boto config`_ files
+
+The following table gives an overview which values can be defined where:
+
+=============  ======================  =====================
+config file    boto config             environment variable
+=============  ======================  =====================
+access_key     aws_access_key_id       AWS_ACCESS_KEY_ID
+secret_key     aws_secret_access_key   AWS_SECRET_ACCESS_KEY
+associate_tag                          AWS_ASSOCIATE_TAG
+locale                                 AWS_LOCALE
+=============  ======================  =====================
 
