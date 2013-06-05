@@ -1,3 +1,4 @@
+
 import imp
 import os
 import re
@@ -38,11 +39,12 @@ TESTABLE_LOCALES = HOSTS.keys()
 #]
 
 #: Result processors to test with.
-TESTABLE_PROCESSORS = [
-    'amazonproduct.processors.objectify',
-    'amazonproduct.processors.etree',
-#    'amazonproduct.processors.minidom',
-]
+TESTABLE_PROCESSORS = {
+    'objectify': 'amazonproduct.processors.objectify',
+    'etree': 'amazonproduct.processors.etree',
+    'elementtree': 'amazonproduct.processors.elementtree',
+#    'minidom': 'amazonproduct.processors.minidom',
+}
 
 def get_config_value(key, default=None):
     """

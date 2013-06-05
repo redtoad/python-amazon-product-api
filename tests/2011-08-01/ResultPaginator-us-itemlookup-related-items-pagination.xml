@@ -1,9 +1,9 @@
 <ItemLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
   <OperationRequest>
     <HTTPHeaders>
-      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.6pre/bc5c48faf932+ +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.6pre/59eb0080b5aa+ +http://pypi.python.org/pypi/python-amazon-product-api/"/>
     </HTTPHeaders>
-    <RequestId>88f934b4-f7c5-45d2-b785-434374522e85</RequestId>
+    <RequestId>dcc657f1-9e58-47c8-9b38-900243da219f</RequestId>
     <Arguments>
       <Argument Name="Operation" Value="ItemLookup"/>
       <Argument Name="Service" Value="AWSECommerceService"/>
@@ -12,11 +12,12 @@
       <Argument Name="Version" Value="2011-08-01"/>
       <Argument Name="ItemId" Value="B000YEF2OG"/>
       <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="Timestamp" Value="2013-05-23T08:24:39Z"/>
+      <Argument Name="RelatedItemPage" Value="1"/>
+      <Argument Name="Timestamp" Value="2013-06-05T20:40:45Z"/>
       <Argument Name="ResponseGroup" Value="Large,RelatedItems"/>
       <Argument Name="RelationshipType" Value="Episode,Season"/>
     </Arguments>
-    <RequestProcessingTime>0.1504180000000000</RequestProcessingTime>
+    <RequestProcessingTime>0.1466500000000000</RequestProcessingTime>
   </OperationRequest>
   <Items>
     <Request>
@@ -27,6 +28,7 @@
         <ResponseGroup>Large</ResponseGroup>
         <ResponseGroup>RelatedItems</ResponseGroup>
         <VariationPage>All</VariationPage>
+        <RelatedItemPage>1</RelatedItemPage>
         <RelationshipType>Episode</RelationshipType>
         <RelationshipType>Season</RelationshipType>
       </ItemLookupRequest>
