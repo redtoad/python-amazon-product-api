@@ -7,13 +7,14 @@
     <Arguments>
       <Argument Name="Operation" Value="ItemSearch"/>
       <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="ItemPage" Value="1"/>
       <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
       <Argument Name="Version" Value="2011-08-01"/>
       <Argument Name="Keywords" Value="Michael Jackson"/>
-      <Argument Name="SearchIndex" Value="All"/>
-      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
       <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
-      <Argument Name="Timestamp" Value="2013-05-23T08:24:37Z"/>
+      <Argument Name="Timestamp" Value="2013-06-05T20:40:41Z"/>
+      <Argument Name="SearchIndex" Value="All"/>
     </Arguments>
     <RequestProcessingTime>0.1435130000000000</RequestProcessingTime>
   </OperationRequest>
@@ -21,6 +22,7 @@
     <Request>
       <IsValid>True</IsValid>
       <ItemSearchRequest>
+        <ItemPage>1</ItemPage>
         <Keywords>Michael Jackson</Keywords>
         <ResponseGroup>Small</ResponseGroup>
         <SearchIndex>All</SearchIndex>

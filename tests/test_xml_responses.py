@@ -14,6 +14,7 @@ from amazonproduct.processors import BaseResultPaginator
 from amazonproduct.processors import ITEMS_PAGINATOR, RELATEDITEMS_PAGINATOR
 from amazonproduct.errors import *
 
+
 def pytest_generate_tests(metafunc):
     """
     All test methods is called once for each API version and locale. Test
@@ -23,14 +24,14 @@ def pytest_generate_tests(metafunc):
     if 'api' in metafunc.funcargnames:
 
         processors = getattr(metafunc.function, 'processors',
-            getattr(metafunc.cls, 'processors', TESTABLE_PROCESSORS))
+            getattr(metafunc.cls, 'processors', TESTABLE_PROCESSORS.keys()))
         # if --processor is used get intersecting values
         if metafunc.config.option.processors:
             is_specified = lambda x: x in metafunc.config.option.processors
             processors = filter(is_specified, processors)
             if not processors:
-                pytest.skip('Test cannot run for specified processors %s.' % 
-                    (metafunc.config.option.processors, ))
+                pytest.skip('Test cannot run for specified processors %s.' % (
+                    metafunc.config.option.processors, ))
 
         api_versions = getattr(metafunc.function, 'api_versions',
             getattr(metafunc.cls, 'api_versions', TESTABLE_API_VERSIONS))
@@ -39,8 +40,8 @@ def pytest_generate_tests(metafunc):
             is_specified = lambda x: x in metafunc.config.option.versions
             api_versions = filter(is_specified, api_versions)
             if not api_versions:
-                pytest.skip('Test cannot run for specified API versions %s.' % 
-                    (metafunc.config.option.versions, ))
+                pytest.skip('Test cannot run for specified API versions %s.' % (
+                    metafunc.config.option.versions, ))
 
         locales = getattr(metafunc.function, 'locales',
             getattr(metafunc.cls, 'locales', TESTABLE_LOCALES))
@@ -49,8 +50,8 @@ def pytest_generate_tests(metafunc):
             is_specified = lambda x: x in metafunc.config.option.locales
             locales = filter(is_specified, locales)
             if not locales:
-                pytest.skip('Test cannot run for specified locales %s.' % 
-                    (metafunc.config.option.locales, ))
+                pytest.skip('Test cannot run for specified locales %s.' % (
+                    metafunc.config.option.locales, ))
 
         for processor in processors:
             for version in api_versions:
@@ -63,9 +64,9 @@ def pytest_generate_tests(metafunc):
                         id='%s:%s/%s' % (processor, version, locale),
                         param={
                             'processor': processor,
-                            'version' : version, 
-                            'locale' : locale, 
-                            'xml_response' : local_file
+                            'version': version,
+                            'locale': locale,
+                            'xml_response': local_file
                         })
 
 
@@ -111,9 +112,10 @@ def pytest_funcarg__api(request):
     version = request.param['version']
     xml_response = request.param['xml_response']
 
-    api = API(locale=locale, processor=request.param['processor'])
+    processor = TESTABLE_PROCESSORS[request.param['processor']]
+    api = API(locale=locale, processor=processor)
     api.VERSION = version
-    api.REQUESTS_PER_SECOND = 10000 # just for here!
+    api.REQUESTS_PER_SECOND = 10000  # just for here!
 
     def counter(fnc):
         """
@@ -124,6 +126,7 @@ def pytest_funcarg__api(request):
         2. Fetches any response that has not been cached from the live servers
         """
         api._count = 0
+        
         def wrapped(url):
             api._count += 1
             path = xml_response
@@ -238,7 +241,7 @@ class TestCorrectVersion (object):
     Check that each requested API version is also really used.
     """
 
-    processors = ['amazonproduct.processors.objectify']
+    processors = ['objectify']
 
     def test_correct_version(self, api):
         # any operation will do here
@@ -315,7 +318,7 @@ class TestItemSearch (object):
         pytest.raises(InvalidParameterCombination, api.item_search, 
                           'All', BrowseNode=132)
 
-    @runfor(processors=['amazonproduct.processors.objectify'])
+    @runfor(processors=['objectify'])
     def test_lookup_by_title(self, api):
         # TODO Does this test really make sense?
         for item in api.item_search('Books', Title='Harry Potter', limit=1):
@@ -330,7 +333,7 @@ class TestSimilarityLookup (object):
     
     locales = ['de']
 
-    @runfor(processors=['amazonproduct.processors.objectify'])
+    @runfor(processors=['objectify'])
     def test_similar_items(self, api):
         # 0451462009 Small Favor: A Novel of the Dresden Files 
         root = api.similarity_lookup('0451462009')
@@ -362,8 +365,8 @@ class TestResultPaginator (object):
         assert paginator.counter == ITEMS_PAGINATOR
 
         for page, root in enumerate(paginator.iterpages()):
-            assert paginator.results == 530
-            assert paginator.pages == 53
+            assert paginator.results == 682
+            assert paginator.pages == 69
             assert paginator.current == page+1
 
         assert page == 9
@@ -516,7 +519,7 @@ class TestBrowseNodeLookup (object):
         pytest.raises(InvalidResponseGroup, api.browse_node_lookup, 
                 self.BOOKS_ROOT_NODE[api.locale], '???')
 
-    @runfor(processors=['amazonproduct.processors.objectify'])
+    @runfor(processors=['objectify'])
     def test_books_browsenode(self, api):
         nodes = api.browse_node_lookup(self.BOOKS_ROOT_NODE[api.locale]).BrowseNodes
         assert nodes.Request.IsValid.text == 'True'
@@ -569,7 +572,7 @@ class TestCartCreate (object):
     Check that all XML responses for CartCreate are parsed correctly.
     """
 
-    processors = ['amazonproduct.processors.objectify', 'amazonproduct.processors.etree']
+    processors = ['objectify', 'etree']
 
     def test_creating_basket_with_empty_items_fails(self, api, item):
         pytest.raises(MissingParameters, api.cart_create, {}) # Items missing
@@ -618,7 +621,7 @@ class TestCartAdd (object):
     Check that all XML responses for CartAdd are parsed correctly.
     """
 
-    processors = ['amazonproduct.processors.objectify', 'amazonproduct.processors.etree']
+    processors = ['objectify', 'etree']
 
     def test_adding_with_wrong_cartid_hmac_fails(self, api, cart, item):
         pytest.raises(CartInfoMismatch, api.cart_add, '???', cart.hmac, {item: 1})
@@ -658,7 +661,7 @@ class TestCartModify (object):
     Check that all XML responses for CartModify are parsed correctly.
     """
 
-    processors = ['amazonproduct.processors.objectify', 'amazonproduct.processors.etree']
+    processors = ['objectify', 'etree']
 
     def test_modifying_with_wrong_cartid_hmac_fails(self, api, cart, item):
         pytest.raises(CartInfoMismatch, api.cart_modify, '???', cart.hmac, {item: 1})
@@ -708,7 +711,7 @@ class TestCartGet (object):
     Check that all XML responses for CartGet are parsed correctly.
     """
 
-    processors = ['amazonproduct.processors.objectify', 'amazonproduct.processors.etree']
+    processors = ['objectify', 'etree']
 
     def test_getting_with_wrong_cartid_hmac_fails(self, api, cart):
         pytest.raises(CartInfoMismatch, api.cart_get, '???', cart.hmac)
@@ -727,7 +730,7 @@ class TestCartClear (object):
     Check that all XML responses for CartClear are parsed correctly.
     """
 
-    processors = ['amazonproduct.processors.objectify', 'amazonproduct.processors.etree']
+    processors = ['objectify', 'etree']
 
     def test_clearing_with_wrong_cartid_hmac_fails(self, api, cart):
         pytest.raises(CartInfoMismatch, api.cart_clear, '???', cart.hmac)
