@@ -133,7 +133,7 @@ class API (object):
            of the next releases. See :ref:`config` for alternatives.
 
         :param access_key_id: AWS access key ID (deprecated).
-        :param secret_key_id: AWS secret key (deprecated).
+        :param secret_access_key: AWS secret key (deprecated).
         :param associate_tag: Amazon Associates tracking id (deprecated).
         :param locale: localise results by using one value from ``LOCALES``.
         :param processor: result processing function (``None`` if unsure).
@@ -365,19 +365,89 @@ class API (object):
 
     def item_lookup(self, *ids, **params):
         """
-        Given an Item identifier, the ``ItemLookup`` operation returns some or
-        all of the item attributes, depending on the response group specified
-        in the request. By default, ``ItemLookup`` returns an item's ``ASIN``,
-        ``DetailPageURL``, ``Manufacturer``, ``ProductGroup``, and ``Title`` of
-        the item.
+        Given an item identifier, the :meth:`~API.item_lookup` operation
+        returns some or all of the item attributes, depending on the response
+        group specified in the request. By default, :meth:`item_lookup` returns
+        an item's ASIN, Manufacturer, ProductGroup, and Title of the item. ::
 
-        ``ItemLookup`` supports many response groups, so you can retrieve many
-        different kinds of product information, called item attributes,
+            >>> api = API(locale='uk')
+            >>> result = api.item_lookup('B006H3MIV8')
+            >>> for item in result.Items.Item:
+            ...     print '%s (%s) in group %s' % (
+            ...         item.ItemAttributes.Title, item.ASIN)
+            ... 
+            Chimes of Freedom: The Songs of Bob Dylan (B006H3MIV8)
+
+        :meth:`item_lookup` supports many response groups, so you can retrieve
+        many different kinds of product information, called item attributes,
         including product reviews, variations, similar products, pricing,
         availability, images of products, accessories, and other information.
 
-        To look up more than one item at a time, separate the item identifiers
-        by commas.
+        To look up more than one item at a time, you can pass several
+        identifiers at once.
+
+            >>> res = api.item_lookup('B000002O4S', 'B000002O6R', 'B0000014RN')
+
+        .. note:: The parameter support varies by locale used.
+
+        Examples: 
+
+        * The following request returns the information associated with ItemId
+          B00008OE6I. ::
+
+            >>> api.item_lookup('B00008OE6I')
+
+        * The following request returns an offer for a refurbished item that is
+          not sold by Amazon ::
+
+            >>> api.item_lookup('B00008OE6I',
+            ...     ResponseGroup='OfferFull', Condition='All')
+
+        * In the following request, the ItemId is an SKU, which requires that
+          you also specify the IdType. ::
+
+            >>> api.item_lookup([SKU], IdType='SKU')
+
+        * If you use a UPC as ItemId, you also need to specify SearchIndex and
+          ItemType.
+
+            >>> api.item_lookup([UPC], SearchIndex='Books', IdType='UPC')
+
+        In the following request, the ItemId is an EAN, which requires that you
+        also specify the SearchIndex and ItemType.
+
+            >>> api.item_lookup([EAN], IdType='EAN')
+
+        Tips:
+
+        * Use the ``BrowseNodes`` response group to find the browse node of an
+          item.
+
+        * Use the ``Tracks`` response group to find the track, title, and
+          number for each track on each CD in the response.
+
+        * Use the ``Similarities`` response group to find the ASIN and Title
+          for similar products returned in the response.
+
+        * Use the ``Reviews`` response group to find reviews written by
+          customers about an item, and the total number of reviews for each
+          item in the response.
+
+        * Use the ``OfferSummary`` response group to find the number of offer
+          listings and the lowest price for each of the offer listing condition
+          classes, including ``New``, ``Used``, ``Collectible``, and
+          ``Refurbished``.
+
+        * Use the ``Accessories`` response group to find the a list of
+          accessory product ASINs and Titles for each product in the response
+          that has accessories.
+
+        * The following requests an iframe that contains customer reviews for
+          the specified item.
+
+            >>> api.item_lookup('0316067938', ResponseGroup='Reviews',
+            ...     TruncateReviewsAt=256, IncludeReviewsSummary=False)
+
         """
         try:
             paginate = params.pop('paginate', False)
@@ -410,38 +480,69 @@ class API (object):
 
     def item_search(self, search_index, paginate=ITEMS_PAGINATOR, **params):
         """
-        The ``ItemSearch`` operation returns items that satisfy the search
+        .. versionchanged:: 2011-08-01
+           You can only fetch up to 10 result pages (instead of 400).
+
+        The :meth:`item_search` operation returns items that satisfy the search
         criteria, including one or more search indices.
 
-        ``ItemSearch`` returns up to ten search results at a time. When
-        ``condition`` equals "All," ``ItemSearch`` returns up to three offers
-        per condition (if they exist), for example, three new, three used,
-        three refurbished, and three collectible items. Or, for example, if
-        there are no collectible or refurbished offers, ``ItemSearch`` returns
-        three new and three used offers.
+        :meth:`item_search` returns up to ten search results at a time. When
+        ``condition`` equals "All," :meth:`item_search` returns up to three
+        offers per condition (if they exist), for example, three new, three
+        used, three refurbished, and three collectible items. Or, for example,
+        if there are no collectible or refurbished offers, :meth:`item_search`
+        returns three new and three used offers.
 
         Because there are thousands of items in each search index,
-        ``ItemSearch`` requires that you specify the value for at least one
+        :meth:`item_search` requires that you specify the value for at least one
         parameter in addition to a search index. The additional parameter value
         must reference items within the specified search index. For example,
-        you might specify a browse node (BrowseNode is an ``ItemSearch``
-        parameter), Harry Potter Books, within the Books product category. You
-        would not get results, for example, if you specified the search index
-        to be Automotive and the browse node to be Harry Potter Books. In this
-        case, the parameter value is not associated with the search index
-        value.
+        you might specify a browse node (``BrowseNode`` is an
+        :meth:`item_search` parameter), Harry Potter Books, within the Books
+        product category. You would not get results, for example, if you
+        specified the search index to be Automotive and the browse node to be
+        Harry Potter Books. In this case, the parameter value is not associated
+        with the search index value.
 
         The ``ItemPage`` parameter enables you to return a specified page of
         results. The maximum ``ItemPage`` number that can be returned is 400.
         An error is returned if you try to access higher numbered pages. If you
         do not include ``ItemPage`` in your request, the first page will be
-        returned by default. There can be up to ten items per page.
+        returned by default. There can be up to ten items per page (see
+        :ref:`pagination` for more details).
 
-        ``ItemSearch`` is the operation that is used most often in requests. In
-        general, when trying to find an item for sale, you use this operation.
+        :meth:`item_search` is the operation that is used most often in
+        requests. In general, when trying to find an item for sale, you use this
+        operation.
 
-        .. versionchanged:: 2011-08-01
-           You can only fetch up to 10 result pages (instead of 400).
+        Examples:
+
+        * Use the search index, Toys, and the parameter, Keywords, to return
+          information about all toy rockets sold in by Amazon. ::
+
+            >>> api.item_search('Toys', Keywords='Rocket')
+
+        * Use a blended search to look through multiple search indices for
+          items that have "Mustang" in their name or description. A blended
+          search looks through multiple search indices at the same time. ::
+
+            >>> api.item_search('Blended', Keywords='Mustang')
+
+        * Use the Availability parameter to only return shirts that are
+        available::
+
+            >>> api.item_search('Apparel', Condition='All',
+            ...     Availability='Available', Keywords='Shirt')
+
+        * Set the search index to ``MusicTracks`` and ``Keywords`` to the title
+          of a song to find a song title.
+
+        * Use the ``BrowseNodes`` response group to find the browse node of an
+          item.
+
+        * Use the ``Variations`` response group and the ``BrowseNode`` parameter
+          to find all of the variations of a parent browse node.
+
         """
         try:
             operators = {
@@ -476,21 +577,66 @@ class API (object):
 
     def similarity_lookup(self, *ids, **params):
         """
-        The ``SimilarityLookup`` operation returns up to ten products per page
-        that are similar to one or more items specified in the request. This
-        operation is typically used to pique a customer's interest in buying
-        something similar to what they've already ordered.
+        The :meth:`similarity_lookup` operation returns up to ten products per
+        page that are similar to one or more items specified in the request.
+        This operation is typically used to pique a customer's interest in
+        buying something similar to what they've already ordered.
 
-        If you specify more than one item, ``SimilarityLookup`` returns the
-        intersection of similar items each item would return separately.
-        Alternatively, you can use the ``SimilarityType`` parameter to return
-        the union of items that are similar to any of the specified items. A
+        If you specify more than one item, :meth:`similarity_lookup` returns
+        the intersection of similar items each item would return separately.
+        Alternatively, you can use the SimilarityType parameter to return the
+        union of items that are similar to any of the specified items. A
         maximum of ten similar items are returned; the operation does not
         return additional pages of similar items. If there are more than ten
         similar items, running the same request can result in different answers
         because the ten that are included in the response are picked randomly.
         The results are picked randomly only when you specify multiple items
         and the results include more than ten similar items.
+
+        When you specify multiple items, it is possible for there to be no
+        intersection of similar items. In this case, the operation raises the
+        exception :exc:`~amazonproduct.errors.NoSimilarityForASIN`.
+
+        This result is very often the case if the items belong to different
+        search indices. The error can occur, however, even when the items share
+        the same search index.
+
+        Similarity is a measurement of similar items purchased, that is,
+        customers who bought X also bought Y and Z. It is not a measure, for
+        example, of items viewed, that is, customers who viewed X also viewed Y
+        and Z.
+
+        Items returned can be filtered by:
+
+        ``Condition``
+            Describes the status of an item. Valid values are ``All``, ``New``
+            (default), ``Used``, ``Refurbished`` or ``Collectible``. When the
+            Availability parameter is set to "Available," the Condition
+            parameter cannot be set to "New."
+
+        Examples:
+
+        * Return items that are similar to a list of items. ::
+
+            >>> api.similarity_lookup('ASIN1', 'ASIN2', 'ASIN3')
+
+          This request returns the intersection of the similarities for each
+          ASIN. The response to this request is shown in Response to Sample
+          Request.
+
+          Return up to ten items that are similar to any of the ASINs
+          specified. ::
+
+            >>> api.similarity_lookup('ASIN1', 'ASIN2', 'ASIN3',
+            ...     SimilarityType='Random')
+
+          This request returns the union of items that are similar to all of the
+          ASINs specified. Only ten items can be returned and those are picked
+          randomly from all of the similar items. Repeating the operation could
+          produce different results.
+
+        :param ids: One or more ASINs you want to look up. You can specify up
+            to ten Ids.
         """
         item_id = ','.join(ids)
         try:
@@ -629,42 +775,43 @@ class API (object):
 
     def cart_create(self, items, **params):
         """
-        The ``CartCreate`` operation enables you to create a remote shopping
-        cart.  A shopping cart is the metaphor used by most e-commerce
-        solutions. It is a temporary data storage structure that resides on
-        Amazon servers.  The structure contains the items a customer wants to
-        buy. In Product Advertising API, the shopping cart is considered remote
-        because it is hosted by Amazon servers. In this way, the cart is remote
-        to the vendor's web site where the customer views and selects the items
-        they want to purchase.
+        :meth:`cart_create` enables you to create a remote shopping cart. A
+        shopping cart is the metaphor used by most e-commerce solutions. It is a
+        temporary data storage structure that resides on Amazon servers. The
+        structure contains the items a customer wants to buy. In Product
+        Advertising API, the shopping cart is considered remote because it is
+        hosted by Amazon servers. In this way, the cart is remote to the
+        vendor's web site where the customer views and selects the items they
+        want to purchase.
 
         Once you add an item to a cart by specifying the item's ListItemId and
-        ASIN, or OfferListing ID, the item is assigned a ``CartItemId`` and
+        ASIN, or ``OfferListingId``, the item is assigned a ``CartItemId`` and
         accessible only by that value. That is, in subsequent requests, an item
         in a cart cannot be accessed by its ``ListItemId`` and ``ASIN``, or
-        ``OfferListingId``. ``CartItemId`` is returned by ``CartCreate``,
-        ``CartGet``, and ``CartAdd``.
+        ``OfferListingId``. ``CartItemId`` is returned by :meth:`cart_create`,
+        :meth:`cart_get`, and :meth:`cart_add`.
 
         Because the contents of a cart can change for different reasons, such
         as item availability, you should not keep a copy of a cart locally.
         Instead, use the other cart operations to modify the cart contents. For
         example, to retrieve contents of the cart, which are represented by
-        CartItemIds, use ``CartGet``.
+        ``CartItemIds``, use :meth:`cart_get`.
 
         Available products are added as cart items. Unavailable items, for
         example, items out of stock, discontinued, or future releases, are
-        added as SaveForLaterItems. No error is generated. The Amazon database
-        changes regularly. You may find a product with an offer listing ID but
-        by the time the item is added to the cart the product is no longer
-        available. The checkout page in the Order Pipeline clearly lists items
-        that are available and those that are SaveForLaterItems.
+        added as ``SaveForLaterItems``. No error is generated. The Amazon
+        database changes regularly. You may find a product with an offer listing
+        ID but by the time the item is added to the cart the product is no
+        longer available. The checkout page in the Order Pipeline clearly lists
+        items that are available and those that are ``SaveForLaterItems``.
 
         It is impossible to create an empty shopping cart. You have to add at
-        least one item to a shopping cart using a single ``CartCreate``
-        request.  You can add specific quantities (up to 999) of each item.
+        least one item to a shopping cart using a single :meth:`cart_create`
+        request. You can add specific quantities (up to 999) of each item.
 
-        ``CartCreate`` can be used only once in the life cycle of a cart. To
-        modify the contents of the cart, use one of the other cart operations.
+        :meth:`cart_create` can be used only once in the life cycle of a cart.
+        To modify the contents of the cart, use one of the other cart
+        operations.
 
         Carts cannot be deleted. They expire automatically after being unused
         for 7 days. The lifespan of a cart restarts, however, every time a cart
@@ -687,30 +834,30 @@ class API (object):
                 raise InvalidCartItem(e.msg)
 
             # otherwise re-raise exception
-            raise # pragma: no cover
+            raise  # pragma: no cover
 
     def cart_add(self, cart_id, hmac, items, **params):
         """
-        The ``CartAdd`` operation enables you to add items to an existing
-        remote shopping cart. ``CartAdd`` can only be used to place a new item
-        in a shopping cart. It cannot be used to increase the quantity of an
-        item already in the cart. If you would like to increase the quantity of
-        an item that is already in the cart, you must use the ``CartModify``
-        operation.
+        The :meth:`cart_add` operation enables you to add items to an existing
+        remote shopping cart. :meth:`cart_add` can only be used to place a new
+        item in a shopping cart. It cannot be used to increase the quantity of
+        an item already in the cart. If you would like to increase the quantity
+        of an item that is already in the cart, you must use the
+        :meth:`cart_modify` operation.
 
         You add an item to a cart by specifying the item's ``OfferListingId``,
         or ``ASIN`` and ``ListItemId``. Once in a cart, an item can only be
         identified by its ``CartItemId``. That is, an item in a cart cannot be
-        accessed by its ASIN or OfferListingId. CartItemId is returned by
-        ``CartCreate``, ``CartGet``, and ``CartAdd``.
+        accessed by its ASIN or ``OfferListingId``. ``CartItemId`` is returned
+        by :meth:`cart_create`, :meth:`cart_get`, and :meth:`cart_add`.
 
         To add items to a cart, you must specify the cart using the ``CartId``
-        and ``HMAC`` values, which are returned by the ``CartCreate``
+        and ``HMAC`` values, which are returned by the :meth:`cart_create`
         operation.
 
-        If the associated CartCreate request specified an AssociateTag, all
-        ``CartAdd`` requests must also include a value for Associate Tag
-        otherwise the request will fail.
+        If the associated :meth:`cart_create` request specified an AssociateTag,
+        all :meth:`cart_add` requests must also include a value for Associate
+        Tag otherwise the request will fail.
 
         .. note:: Some manufacturers have a minimum advertised price (MAP) that
            can be displayed on Amazon's retail web site. In these cases, when
@@ -721,8 +868,8 @@ class API (object):
         """
         try:
             params.update({
-                'CartId' : cart_id,
-                'HMAC' : hmac,
+                'CartId': cart_id,
+                'HMAC': hmac,
             })
             params.update(self._convert_cart_items(items))
             return self.call(Operation='CartAdd', **params)
@@ -748,38 +895,39 @@ class API (object):
                 raise ItemAlreadyInCart(item)
 
             # otherwise re-raise exception
-            raise # pragma: no cover
+            raise  # pragma: no cover
 
     def cart_modify(self, cart_id, hmac, item_ids, **params):
         """
-        The ``CartModify`` operation enables you to change the quantity of
+        The :meth:`cart_modify` operation enables you to change the quantity of
         items that are already in a remote shopping cart and move items from
-        the active area of a cart to the SaveForLater area or the reverse.
+        the active area of a cart to the ``SaveForLater`` area or the reverse.
 
         To modify the number of items in a cart, you must specify the cart
-        using the CartId and HMAC values that are returned in the CartCreate
-        operation. A value similar to HMAC, URLEncodedHMAC, is also returned.
-        This value is the URL encoded version of the HMAC. This encoding is
-        necessary because some characters, such as + and /, cannot be included
-        in a URL. Rather than encoding the HMAC yourself, use the
-        URLEncodedHMAC value for the HMAC parameter.
+        using the ``CartId`` and HMAC values that are returned in the
+        :meth:`cart_create` operation. A value similar to HMAC,
+        ``URLEncodedHMAC``, is also returned. This value is the URL encoded
+        version of the HMAC. This encoding is necessary because some characters,
+        such as ``+`` and ``/``, cannot be included in a URL. Rather than
+        encoding the HMAC yourself, use the ``URLEncodedHMAC`` value for the
+        HMAC parameter.
 
-        You can use ``CartModify`` to modify the number of items in a remote
-        shopping cart by setting the value of the Quantity parameter
+        You can use :meth:`cart_modify` to modify the number of items in a
+        remote shopping cart by setting the value of the Quantity parameter
         appropriately. You can eliminate an item from a cart by setting the
         value of the Quantity parameter to zero. Or, you can double the number
-        of a particular item in the cart by doubling its Quantity . You cannot,
-        however, use ``CartModify`` to add new items to a cart.
+        of a particular item in the cart by doubling its Quantity. You cannot,
+        however, use :meth:`cart_modify` to add new items to a cart.
 
-        If the associated CartCreate request specified an AssociateTag, all
-        ``CartModify`` requests must also include a value for Associate Tag
-        otherwise the request will fail.
+        If the associated :meth:`cart_create` request specified an
+        AssociateTag, all :meth:`cart_modify` requests must also include a value
+        for Associate Tag otherwise the request will fail.
         """
         # TODO Action=SaveForLater
         try:
             params.update({
-                'CartId' : cart_id,
-                'HMAC' : hmac,
+                'CartId': cart_id,
+                'HMAC': hmac,
             })
             params.update(self._convert_cart_items(item_ids, key='CartItemId'))
             return self.call(Operation='CartModify', **params)
@@ -798,39 +946,39 @@ class API (object):
                 raise InvalidCartItem(e.msg)
 
             # otherwise re-raise exception
-            raise # pragma: no cover
+            raise  # pragma: no cover
 
     def cart_get(self, cart_id, hmac, **params):
         """
-        The ``CartGet`` operation enables you to retrieve the IDs, quantities,
-        and prices of all of the items, including SavedForLater items in a
-        remote shopping cart.
+        The :meth:`cart_get` operation enables you to retrieve the IDs,
+        quantities, and prices of all of the items, including ``SavedForLater``
+        items in a remote shopping cart.
 
         Because the contents of a cart can change for different reasons, such
         as availability, you should not keep a copy of a cart locally. Instead,
-        use ``CartGet`` to retrieve the items in a remote shopping cart.
+        use :meth:`cart_get` to retrieve the items in a remote shopping cart.
 
         To retrieve the items in a cart, you must specify the cart using the
         ``CartId`` and ``HMAC`` values, which are returned in the
-        ``CartCreate`` operation.  A value similar to HMAC, ``URLEncodedHMAC``,
-        is also returned. This value is the URL encoded version of the
-        ``HMAC``. This encoding is necessary because some characters, such as
-        ``+`` and ``/``, cannot be included in a URL.  Rather than encoding the
-        ``HMAC`` yourself, use the ``URLEncodedHMAC`` value for the HMAC
-        parameter.
+        :meth:`cart_create` operation.  A value similar to ``HMAC``,
+        ``URLEncodedHMAC``, is also returned. This value is the URL encoded
+        version of the ``HMAC``. This encoding is necessary because some
+        characters, such as ``+`` and ``/``, cannot be included in a URL. Rather
+        than encoding the ``HMAC`` yourself, use the ``URLEncodedHMAC`` value
+        for the HMAC parameter.
 
-        ``CartGet`` does not work after the customer has used the
+        :meth:`cart_get` does not work after the customer has used the
         ``PurchaseURL`` to either purchase the items or merge them with the
         items in their Amazon cart.
 
-        If the associated ``CartCreate`` request specified an ``AssociateTag``,
-        all ``CartGet`` requests must also include a value for ``AssociateTag``
-        otherwise the request will fail.
+        If the associated :meth:`cart_create` request specified an
+        ``AssociateTag``, all :meth:`cart_get` requests must also include a
+        value for ``AssociateTag`` otherwise the request will fail.
         """
         try:
             params.update({
-                'CartId' : cart_id,
-                'HMAC' : hmac,
+                'CartId': cart_id,
+                'HMAC': hmac,
             })
             return self.call(Operation='CartGet', **params)
         except AWSError, e:
@@ -839,25 +987,25 @@ class API (object):
                 raise CartInfoMismatch
 
             # otherwise re-raise exception
-            raise # pragma: no cover
+            raise  # pragma: no cover
 
     def cart_clear(self, cart_id, hmac, **params):
         """
-        The ``CartClear`` operation enables you to remove all of the items in a
-        remote shopping cart, including SavedForLater items. To remove only
-        some of the items in a cart or to reduce the quantity of one or more
-        items, use ``CartModify``.
+        The :meth:`cart_clear` operation enables you to remove all of the items
+        in a remote shopping cart, including ``SavedForLater`` items. To remove
+        only some of the items in a cart or to reduce the quantity of one or
+        more items, use :meth:`cart_modify`.
 
         To delete all of the items from a remote shopping cart, you must
         specify the cart using the ``CartId`` and ``HMAC`` values, which are
-        returned by the ``CartCreate`` operation. A value similar to the
+        returned by the :meth:`cart_create` operation. A value similar to the
         ``HMAC``, ``URLEncodedHMAC``, is also returned. This value is the URL
         encoded version of the ``HMAC``. This encoding is necessary because
         some characters, such as ``+`` and ``/``, cannot be included in a URL.
         Rather than encoding the ``HMAC`` yourself, use the U``RLEncodedHMAC``
         value for the HMAC parameter.
 
-        ``CartClear`` does not work after the customer has used the
+        :meth:`cart_clear` does not work after the customer has used the
         ``PurchaseURL`` to either purchase the items or merge them with the
         items in their Amazon cart.
 
@@ -867,8 +1015,8 @@ class API (object):
         """
         try:
             params.update({
-                'CartId' : cart_id,
-                'HMAC' : hmac,
+                'CartId': cart_id,
+                'HMAC': hmac,
             })
             return self.call(Operation='CartClear', **params)
         except AWSError, e:
@@ -877,7 +1025,7 @@ class API (object):
                 raise CartInfoMismatch
 
             # otherwise re-raise exception
-            raise # pragma: no cover
+            raise  # pragma: no cover
 
     def deprecated_operation(self, *args, **kwargs):
         """
