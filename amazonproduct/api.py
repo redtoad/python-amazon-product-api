@@ -127,7 +127,8 @@ class API (object):
         :param secret_key_id: AWS secret key (deprecated).
         :param associate_tag: Amazon Associates tracking id (deprecated).
         :param locale: localise results by using one value from ``LOCALES``.
-        :param processor: module containing result processing functions.
+        :param processor: module containing result processing functions. Look
+        in package ``amazonproduct.processors`` for values.
         """
         if not (access_key_id is None and secret_access_key is None
         and associate_tag is None):
