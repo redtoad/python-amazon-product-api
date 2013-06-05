@@ -76,11 +76,11 @@ access all elements and attributes in a Pythonic way::
                             book.ItemAttributes.Title)
 
 Please refer to the `lxml.objectify`_ documentation for more details. If you
-cannot/will not use lxml, see :ref:`pagination` for alternatives.
+cannot/will not use lxml, see :ref:`parsers` for alternatives.
 
 You can find more API operations later in :ref:`operations`.
 
-.. _lxml.objectify: http://codespeak.net/lxml/objectify.html
+.. _lxml.objectify: http://lxml.de/objectify.html
 
 
 .. _dealing-with-errors:
