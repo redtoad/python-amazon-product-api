@@ -116,7 +116,8 @@ class API (object):
     TIMEOUT = 5 #: timeout in seconds
 
     def __init__(self, access_key_id=None, secret_access_key=None, locale=None,
-                 associate_tag=None, processor='amazonproduct.processors.objectify'):
+             associate_tag=None, processor='amazonproduct.processors.objectify',
+             cfg=None):
         """
         .. versionchanged:: 0.2.6
            Passing parameters ``access_key_id``, ``secret_access_key`` and
@@ -130,8 +131,8 @@ class API (object):
         :param processor: module containing result processing functions. Look
         in package ``amazonproduct.processors`` for values.
         """
-        if not (access_key_id is None and secret_access_key is None
-        and associate_tag is None):
+
+        if any([access_key_id, secret_access_key, associate_tag]):
             warnings.warn('Please use a config file!', DeprecationWarning,
                 stacklevel=2)
 
@@ -140,9 +141,10 @@ class API (object):
         self.associate_tag = associate_tag
         self.locale = locale
 
-        # load missing valued from config file
         if not all(getattr(self, key, False) for key in REQUIRED_KEYS):
-            cfg = load_config()
+            # load missing valued from config file
+            if cfg is None or isinstance(cfg, (str, unicode)):
+                cfg = load_config(cfg)
             for key in REQUIRED_KEYS:
                 if getattr(self, key, '???') is None and cfg.get(key, None):
                     setattr(self, key, cfg[key])
