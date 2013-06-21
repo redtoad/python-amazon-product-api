@@ -1,39 +1,9 @@
+import os
 import pytest
 import types
 
 from amazonproduct import utils
 from amazonproduct.processors import etree, minidom
-
-def test_load_global_boto_config(configfiles):
-    configfiles.add_file('''
-        [Credentials]
-        aws_access_key_id = ABCDEFGH12345
-        aws_secret_access_key = abcdegf43''', path='/etc/boto.cfg')
-
-    cfg = utils.load_boto_config()
-    assert cfg['access_key'] == 'ABCDEFGH12345'
-    assert cfg['secret_key'] == 'abcdegf43'
-    assert len(cfg) == 2
-
-def test_load_local_boto_config(configfiles):
-    configfiles.add_file('''
-        [Credentials]
-        aws_access_key_id = ABCDEFGH12345
-        aws_secret_access_key = zhgsdds8''', path='~/.boto')
-
-    cfg = utils.load_boto_config()
-    assert cfg['access_key'] == 'ABCDEFGH12345'
-    assert cfg['secret_key'] == 'zhgsdds8'
-    assert len(cfg) == 2
-
-def test_load_partial_boto_config(configfiles):
-    configfiles.add_file('''
-        [Credentials]
-        aws_access_key_id = ABCDEFGH12345''', path='~/.boto')
-
-    cfg = utils.load_boto_config()
-    assert cfg['access_key'] == 'ABCDEFGH12345'
-    assert len(cfg) == 1
 
 
 def test_load_global_file_config(configfiles):
@@ -46,6 +16,7 @@ def test_load_global_file_config(configfiles):
     assert cfg['access_key'] == 'ABCDEFGH12345'
     assert cfg['secret_key'] == 'zhgsdds8'
     assert len(cfg) == 2
+
 
 def test_load_local_file_config(configfiles):
     configfiles.add_file('''
@@ -72,20 +43,21 @@ def test_load_environment_config(monkeypatch):
 
 
 DUMMY_CONFIG = """
-# file: /etc/boto.cfg
+# file: /etc/amazon-product-api.cfg
 [Credentials]
-aws_access_key_id = global boto value
-aws_secret_access_key = global boto value
-
-# file: ~/.boto
-[Credentials]
-aws_access_key_id_wrongly_written = local boto value
-aws_secret_access_key = local boto value
+access_key = global cfg value
+secret_key = global cfg value
 
 # file: ~/.amazon-product-api
 [Credentials]
+secret_key = local cfg value
 locale = de
+
+# file: ~/my-config
+[Credentials]
+secret_key = CUSTOM CONFIG OVERRIDES ALL!
 """
+
 
 def test_load_config(configfiles, monkeypatch):
     configfiles.load_from_string(DUMMY_CONFIG)
@@ -95,8 +67,23 @@ def test_load_config(configfiles, monkeypatch):
     assert set(cfg.keys()) == set([
         'access_key', 'secret_key', 'associate_tag', 'locale'])
 
-    assert cfg['access_key'] == 'global boto value'
-    assert cfg['secret_key'] == 'local boto value'
+    assert cfg['access_key'] == 'global cfg value'
+    assert cfg['secret_key'] == 'local cfg value'
+    assert cfg['associate_tag'] is None
+    assert cfg['locale'] == 'OS VARIABLE'
+
+
+def test_specific_config_file_overrides_all_but_os_variables(configfiles, monkeypatch):
+    configfiles.load_from_string(DUMMY_CONFIG)
+    monkeypatch.setenv('AWS_LOCALE', 'OS VARIABLE')
+
+    path = configfiles.tmpdir.join(os.path.expanduser('~/my-config')).strpath
+    cfg = utils.load_config(path)
+    assert set(cfg.keys()) == set([
+        'access_key', 'secret_key', 'associate_tag', 'locale'])
+
+    assert cfg['secret_key'] == 'CUSTOM CONFIG OVERRIDES ALL!'
+    assert cfg['access_key'] is None
     assert cfg['associate_tag'] is None
     assert cfg['locale'] == 'OS VARIABLE'
 
