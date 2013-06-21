@@ -50,5 +50,5 @@ hg gimport
 
 # There you go! A push from there would get your git commits to your remote hg
 # repo. You’re set up to work with git and publish to hg!
-git push $GITHUB
+git push --set-upstream $GITHUB master
 
