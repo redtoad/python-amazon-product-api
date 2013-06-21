@@ -72,13 +72,14 @@ class DummyConfig (object):
         self.files += [p.strpath]
 
     _REG = re.compile(r'^#\s*file:\s+(.+?)\n', re.DOTALL | re.MULTILINE)
+
     def load_from_string(self, content):
         """
         Creates config files from string which is split up into file blocks and
         written to temporary files.
         """
-        last = 0 # end of the last matching '# file: XXX'
-        path = None # path of the last matching '# file: XXX'
+        last = 0  # end of the last matching '# file: XXX'
+        path = None  # path of the last matching '# file: XXX'
         for m in self._REG.finditer(content):
             if path is not None:
                 self.add_file(content[last:m.start()], path)
@@ -153,8 +154,6 @@ def pytest_funcarg__configfiles(request):
 
     def prepend_tmppath(dir, files):
         return [tmpdir.join(os.path.expanduser(fn)).strpath for fn in files]
-    monkeypatch.setattr(utils, 'BOTO_FILES',
-        prepend_tmppath(tmpdir, utils.BOTO_FILES))
     monkeypatch.setattr(utils, 'CONFIG_FILES',
         prepend_tmppath(tmpdir, utils.CONFIG_FILES))
 

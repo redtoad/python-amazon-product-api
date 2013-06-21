@@ -14,47 +14,15 @@ REQUIRED_KEYS = [
     'locale',
 ]
 
-BOTO_FILES = [
-    '/etc/boto.cfg',
-    '~/.boto',
-]
 CONFIG_FILES = [
     '/etc/amazon-product-api.cfg',
     '~/.amazon-product-api'
 ]
 
 
-def load_boto_config():
+def load_file_config(path=None):
     """
-    Loads config dict from a boto config file [#]_ found in ``/etc/boto.cfg``
-    or ``~/.boto``. A boto config file looks like this::
-
-        [Credentials]
-        aws_access_key_id = <your access key>
-        aws_secret_access_key = <your secret key>
-
-    Note that the only config section that will be used in ``Credentials``.
-
-    .. _#: http://code.google.com/p/boto/wiki/BotoConfig
-    """
-    config = SafeConfigParser()
-    config.read([os.path.expanduser(path) for path in BOTO_FILES])
-
-    mapper = {
-        'access_key': 'aws_access_key_id',
-        'secret_key': 'aws_secret_access_key',
-    }
-    return dict(
-        (key, config.get('Credentials', boto))
-        for key, boto in mapper.items()
-        if config.has_option('Credentials', boto)
-    )
-
-
-def load_file_config():
-    """
-    Loads dict from config files ``/etc/amazon-product-api.cfg`` or
-    ``~/.amazon-product-api``. ::
+    Loads configuration from file with following content::
 
         [Credentials]
         access_key = <your access key>
@@ -62,9 +30,14 @@ def load_file_config():
         associate_tag = <your associate tag>
         locale = us
 
+    :param path: path to config file. If not specified, locations
+    ``/etc/amazon-product-api.cfg`` and ``~/.amazon-product-api`` are tried.
     """
     config = SafeConfigParser()
-    config.read([os.path.expanduser(path) for path in CONFIG_FILES])
+    if path is None:
+        config.read([os.path.expanduser(path) for path in CONFIG_FILES])
+    else:
+        config.read(path)
 
     if not config.has_section('Credentials'):
         return {}
@@ -94,11 +67,11 @@ def load_environment_config():
     return dict(
         (key, os.environ.get(val))
         for key, val in mapper.items()
-        if os.environ.has_key(val)
+        if val in os.environ
     )
 
 
-def load_config():
+def load_config(path=None):
     """
     Returns a dict with API credentials which is loaded from (in this order):
 
@@ -106,7 +79,6 @@ def load_config():
       ``AWS_ASSOCIATE_TAG`` and ``AWS_LOCALE``
     * Config files ``/etc/amazon-product-api.cfg`` or ``~/.amazon-product-api``
       where the latter may add or replace values of the former.
-    * A boto config file [#]_ found in ``/etc/boto.cfg`` or ``~/.boto``.
 
     Whatever is found first counts.
 
@@ -119,10 +91,9 @@ def load_config():
             'locale': 'uk'
         }
 
-    .. _#: http://code.google.com/p/boto/wiki/BotoConfig
+    :param path: path to config file.
     """
-    config = load_boto_config()
-    config.update(load_file_config())
+    config = load_file_config(path)
     config.update(load_environment_config())
 
     # substitute None for all values not found
