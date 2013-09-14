@@ -1,9 +1,10 @@
-0.2.6 (in development)
-----------------------
+0.2.6 (2013-09-14) "Humperdinck"
+--------------------------------
 
 - Supports API version 2011-08-01
 - Config files added
-- Will work with elementtree from stdlib.
+- Almost total rewrite of processors backend. Will work now with elementtree
+  from stdlib, too.
 - #26: Added endpoints for CN, ES and IT.
 - Added RetryAPI to contrib package thanks to Jerry Ji.
 - Documentation was overhauled.
