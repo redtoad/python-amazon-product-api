@@ -1,0 +1,316 @@
+<ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.6pre/59eb0080b5aa+ +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+    </HTTPHeaders>
+    <RequestId>07f24cc8-038b-4a87-9332-442b03da8d38</RequestId>
+    <Arguments>
+      <Argument Name="Operation" Value="ItemSearch"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="ItemPage" Value="1"/>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Version" Value="2011-08-01"/>
+      <Argument Name="SearchIndex" Value="Books"/>
+      <Argument Name="Author" Value="F&#233;lix J. Palma"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2013-06-05T21:11:32Z"/>
+    </Arguments>
+    <RequestProcessingTime>0.4633740000000000</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>True</IsValid>
+      <ItemSearchRequest>
+        <Author>F&#233;lix J. Palma</Author>
+        <ItemPage>1</ItemPage>
+        <ResponseGroup>Small</ResponseGroup>
+        <SearchIndex>Books</SearchIndex>
+      </ItemSearchRequest>
+    </Request>
+    <TotalResults>47</TotalResults>
+    <TotalPages>5</TotalPages>
+    <MoreSearchResultsUrl>http://www.amazon.co.uk/gp/redirect.html?camp=2025&amp;creative=12734&amp;location=http%3A%2F%2Fwww.amazon.co.uk%2Fgp%2Fsearch%3Fkeywords%3DF%25C3%25A9lix%2BJ.%2BPalma%26url%3Dsearch-alias%253Dbooks-single-index&amp;linkCode=xm2&amp;tag=redtoad-20&amp;SubscriptionId=AKIAJTJID3GQ4PAFYOEQ</MoreSearchResultsUrl>
+    <Item>
+      <ASIN>B00505YYQ6</ASIN>
+      <DetailPageURL>http://www.amazon.co.uk/The-Map-of-Time-ebook/dp/B00505YYQ6%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00505YYQ6</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3DB00505YYQ6%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3DB00505YYQ6</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.co.uk/gp/pdp/taf/B00505YYQ6%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3DB00505YYQ6</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.co.uk/review/product/B00505YYQ6%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3DB00505YYQ6</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.co.uk/gp/offer-listing/B00505YYQ6%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3DB00505YYQ6</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>F&#233;lix J. Palma</Author>
+        <Manufacturer>HarperCollins</Manufacturer>
+        <ProductGroup>eBooks</ProductGroup>
+        <Title>The Map of Time</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>B00AE8YLN0</ASIN>
+      <DetailPageURL>http://www.amazon.co.uk/The-Map-Sky-ebook/dp/B00AE8YLN0%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00AE8YLN0</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3DB00AE8YLN0%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3DB00AE8YLN0</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.co.uk/gp/pdp/taf/B00AE8YLN0%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3DB00AE8YLN0</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.co.uk/review/product/B00AE8YLN0%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3DB00AE8YLN0</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.co.uk/gp/offer-listing/B00AE8YLN0%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3DB00AE8YLN0</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>Felix J Palma</Author>
+        <Manufacturer>Atria Books</Manufacturer>
+        <ProductGroup>eBooks</ProductGroup>
+        <Title>The Map of the Sky</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>1451683030</ASIN>
+      <DetailPageURL>http://www.amazon.co.uk/The-Map-Time-Felix-Palma/dp/1451683030%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1451683030</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3D1451683030%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D1451683030</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.co.uk/gp/pdp/taf/1451683030%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D1451683030</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.co.uk/review/product/1451683030%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D1451683030</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.co.uk/gp/offer-listing/1451683030%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D1451683030</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>Felix J. Palma</Author>
+        <Manufacturer>Pocket Books</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>The Map of Time</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>0007344139</ASIN>
+      <DetailPageURL>http://www.amazon.co.uk/The-Map-Time-F%C3%A9lix-Palma/dp/0007344139%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0007344139</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3D0007344139%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0007344139</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.co.uk/gp/pdp/taf/0007344139%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0007344139</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.co.uk/review/product/0007344139%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0007344139</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.co.uk/gp/offer-listing/0007344139%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0007344139</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>F&#233;lix J. Palma</Author>
+        <Manufacturer>Harper</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>The Map of Time</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>0007344120</ASIN>
+      <DetailPageURL>http://www.amazon.co.uk/The-Map-Time-F%C3%A9lix-Palma/dp/0007344120%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0007344120</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3D0007344120%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0007344120</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.co.uk/gp/pdp/taf/0007344120%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0007344120</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.co.uk/review/product/0007344120%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0007344120</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.co.uk/gp/offer-listing/0007344120%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D0007344120</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>F&#233;lix J. Palma</Author>
+        <Manufacturer>HarperCollins</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>The Map of Time</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>1451660316</ASIN>
+      <DetailPageURL>http://www.amazon.co.uk/The-Map-Sky-Felix-Palma/dp/1451660316%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1451660316</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3D1451660316%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D1451660316</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.co.uk/gp/pdp/taf/1451660316%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D1451660316</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.co.uk/review/product/1451660316%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D1451660316</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.co.uk/gp/offer-listing/1451660316%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D1451660316</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>Felix J. Palma</Author>
+        <Manufacturer>Atria Books</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>The Map of the Sky</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>1451660324</ASIN>
+      <DetailPageURL>http://www.amazon.co.uk/The-Map-Sky-Felix-Palma/dp/1451660324%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1451660324</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3D1451660324%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D1451660324</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.co.uk/gp/pdp/taf/1451660324%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D1451660324</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.co.uk/review/product/1451660324%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D1451660324</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.co.uk/gp/offer-listing/1451660324%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3D1451660324</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>Felix J. Palma</Author>
+        <Manufacturer>Atria Books</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>The Map of the Sky</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>B009SN2FRG</ASIN>
+      <DetailPageURL>http://www.amazon.co.uk/The-Time-Turn-Screw-ebook/dp/B009SN2FRG%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB009SN2FRG</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3DB009SN2FRG%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3DB009SN2FRG</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.co.uk/gp/pdp/taf/B009SN2FRG%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3DB009SN2FRG</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.co.uk/review/product/B009SN2FRG%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3DB009SN2FRG</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.co.uk/gp/offer-listing/B009SN2FRG%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3DB009SN2FRG</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>F&#233;lix J. Palma</Author>
+        <Author>Henry James</Author>
+        <Manufacturer>HarperCollins</Manufacturer>
+        <ProductGroup>eBooks</ProductGroup>
+        <Title>The Map of Time and The Turn of the Screw</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>B0085U68V2</ASIN>
+      <DetailPageURL>http://www.amazon.co.uk/Literaria-algaida-Spanish-Edition-ebook/dp/B0085U68V2%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB0085U68V2</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3DB0085U68V2%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3DB0085U68V2</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.co.uk/gp/pdp/taf/B0085U68V2%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3DB0085U68V2</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.co.uk/review/product/B0085U68V2%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3DB0085U68V2</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.co.uk/gp/offer-listing/B0085U68V2%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3DB0085U68V2</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>F&#233;lix J. Palma</Author>
+        <Manufacturer>Algaida Editores</Manufacturer>
+        <ProductGroup>eBooks</ProductGroup>
+        <Title>El mapa del tiempo (Literaria (algaida)) (Spanish Edition)</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>B0071MJ6AA</ASIN>
+      <DetailPageURL>http://www.amazon.co.uk/cielo-Exitos-Spanish-Edition-ebook/dp/B0071MJ6AA%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB0071MJ6AA</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.co.uk/gp/registry/wishlist/add-item.html%3Fasin.0%3DB0071MJ6AA%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3DB0071MJ6AA</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.co.uk/gp/pdp/taf/B0071MJ6AA%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3DB0071MJ6AA</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.co.uk/review/product/B0071MJ6AA%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3DB0071MJ6AA</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.co.uk/gp/offer-listing/B0071MJ6AA%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12734%26creativeASIN%3DB0071MJ6AA</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>F&#201;LIX J. PALMA</Author>
+        <Manufacturer>PLAZA &amp; JANES</Manufacturer>
+        <ProductGroup>eBooks</ProductGroup>
+        <Title>El mapa del cielo (Exitos De Plaza &amp; Janes) (Spanish Edition)</Title>
+      </ItemAttributes>
+    </Item>
+  </Items>
+</ItemSearchResponse>

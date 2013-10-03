@@ -1,0 +1,40 @@
+<ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.6pre/59eb0080b5aa+ +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+    </HTTPHeaders>
+    <RequestId>3922f131-7f13-42dc-9ac0-1126a4440935</RequestId>
+    <Arguments>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="ItemPage" Value="1"/>
+      <Argument Name="Timestamp" Value="2013-06-05T21:11:58Z"/>
+      <Argument Name="Operation" Value="ItemSearch"/>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="BrowseNode" Value="132"/>
+      <Argument Name="Version" Value="2011-08-01"/>
+      <Argument Name="SearchIndex" Value="???"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+    </Arguments>
+    <RequestProcessingTime>0.0031450000000000</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>False</IsValid>
+      <ItemSearchRequest>
+        <BrowseNode>132</BrowseNode>
+        <ItemPage>1</ItemPage>
+        <ResponseGroup>Small</ResponseGroup>
+        <SearchIndex>???</SearchIndex>
+      </ItemSearchRequest>
+      <Errors>
+        <Error>
+          <Code>AWS.InvalidEnumeratedParameter</Code>
+          <Message>SearchIndex&#12395;&#25351;&#23450;&#12375;&#12383;&#20516;&#12399;&#28961;&#21177;&#12391;&#12377;&#12290;[
+				'All','Apparel','Appliances','Automotive','Baby','Beauty','Blended','Books','Classical','DVD','Electronics','ForeignBooks','Grocery','HealthPersonalCare','Hobbies','HomeImprovement','Jewelry','KindleStore','Kitchen','Marketplace','MobileApps','Music','MP3Downloads','MusicalInstruments','MusicTracks','OfficeProducts','PCHardware','PetSupplies','Shoes','Software','SportingGoods','Toys','VHS','Video','VideoGames','Watches'
+				]&#12394;&#12393;&#12364;&#26377;&#21177;&#12394;&#20516;&#12398;&#20363;&#12391;&#12377;&#12290;</Message>
+        </Error>
+      </Errors>
+    </Request>
+  </Items>
+</ItemSearchResponse>

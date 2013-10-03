@@ -1,0 +1,43 @@
+<CartAddResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="Python-urllib/2.6"/>
+    </HTTPHeaders>
+    <RequestId>1R666219EAMCT7KYHMZB</RequestId>
+    <Arguments>
+      <Argument Name="Version" Value="2011-08-01"/>
+      <Argument Name="CartId" Value="378-4965830-9244050"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Operation" Value="CartAdd"/>
+      <Argument Name="Timestamp" Value="2011-11-13T13:23:58Z"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Item.1.Quantity" Value="0"/>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Item.1.ASIN" Value="0201896834"/>
+      <Argument Name="HMAC" Value="TKDomHKnCGf62ieZiAtBY0hnzbY="/>
+    </Arguments>
+    <RequestProcessingTime>0.00423598289489746</RequestProcessingTime>
+  </OperationRequest>
+  <Cart>
+    <Request>
+      <IsValid>False</IsValid>
+      <CartAddRequest>
+        <CartId>378-4965830-9244050</CartId>
+        <HMAC>TKDomHKnCGf62ieZiAtBY0hnzbY=</HMAC>
+        <Items>
+          <Item>
+            <ASIN>0201896834</ASIN>
+            <Quantity>0</Quantity>
+          </Item>
+        </Items>
+      </CartAddRequest>
+      <Errors>
+        <Error>
+          <Code>AWS.ParameterOutOfRange</Code>
+          <Message>Quantity &#12392;&#12375;&#12390;&#25351;&#23450;&#12375;&#12383;&#20516;&#12399;&#28961;&#21177;&#12391;&#12377;&#12290;&#26377;&#21177;&#12394;&#20516;&#12399;&#12289;1&#12363;&#12425;999&#12414;&#12391;&#12398;&#12418;&#12398;&#12391;&#12377;&#12290;</Message>
+        </Error>
+      </Errors>
+    </Request>
+  </Cart>
+</CartAddResponse>

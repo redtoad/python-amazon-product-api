@@ -1,0 +1,90 @@
+<CartModifyResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.6pre/613e2c5f4c5a+ +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+    </HTTPHeaders>
+    <RequestId>0SVT0W9NJ9D3704V9BDT</RequestId>
+    <Arguments>
+      <Argument Name="Version" Value="2011-08-01"/>
+      <Argument Name="CartId" Value="377-2737464-1526909"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Operation" Value="CartModify"/>
+      <Argument Name="Timestamp" Value="2011-11-13T13:35:34Z"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Item.1.CartItemId" Value="0201896834"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Item.1.Quantity" Value="0"/>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="HMAC" Value="kpxZBg8Da5ngDMiYcIV9/I258JQ="/>
+    </Arguments>
+    <RequestProcessingTime>0.0772459506988525</RequestProcessingTime>
+  </OperationRequest>
+  <Cart>
+    <Request>
+      <IsValid>True</IsValid>
+      <CartModifyRequest>
+        <CartId>377-2737464-1526909</CartId>
+        <HMAC>kpxZBg8Da5ngDMiYcIV9/I258JQ=</HMAC>
+        <Items>
+          <Item>
+            <CartItemId>0201896834</CartItemId>
+            <Quantity>0</Quantity>
+          </Item>
+        </Items>
+      </CartModifyRequest>
+    </Request>
+    <CartId>377-2737464-1526909</CartId>
+    <HMAC>kpxZBg8Da5ngDMiYcIV9/I258JQ=</HMAC>
+    <URLEncodedHMAC>kpxZBg8Da5ngDMiYcIV9%2FI258JQ%3D</URLEncodedHMAC>
+    <PurchaseURL>https://www.amazon.co.jp/gp/cart/aws-merge.html?cart-id=377-2737464-1526909%26associate-id=redtoad-21%26hmac=kpxZBg8Da5ngDMiYcIV9/I258JQ=%26SubscriptionId=AKIAJTJID3GQ4PAFYOEQ%26MergeCart=False</PurchaseURL>
+    <MobileCartURL>http://www.amazon.co.jp/gp/aw/rcart?cart-id=377-2737464-1526909%26associate-id=redtoad-21%26hmac=kpxZBg8Da5ngDMiYcIV9/I258JQ=%26SubscriptionId=AKIAJTJID3GQ4PAFYOEQ%26MergeCart=False%26uid=NULLGWDOCOMO</MobileCartURL>
+    <SubTotal>
+      <Amount>16640</Amount>
+      <CurrencyCode>JPY</CurrencyCode>
+      <FormattedPrice>&#65509; 16,640</FormattedPrice>
+    </SubTotal>
+    <CartItems>
+      <SubTotal>
+        <Amount>16640</Amount>
+        <CurrencyCode>JPY</CurrencyCode>
+        <FormattedPrice>&#65509; 16,640</FormattedPrice>
+      </SubTotal>
+      <CartItem>
+        <CartItemId>U2WDLE16L0VGBK</CartItemId>
+        <ASIN>0201896842</ASIN>
+        <SellerNickname>Amazon.co.jp</SellerNickname>
+        <Quantity>2</Quantity>
+        <Title>Art of Computer Programming, Volume 2: Seminumerical Algorithms (Art of Computer Programming Volume 2)</Title>
+        <ProductGroup>Book</ProductGroup>
+        <Price>
+          <Amount>5547</Amount>
+          <CurrencyCode>JPY</CurrencyCode>
+          <FormattedPrice>&#65509; 5,547</FormattedPrice>
+        </Price>
+        <ItemTotal>
+          <Amount>11094</Amount>
+          <CurrencyCode>JPY</CurrencyCode>
+          <FormattedPrice>&#65509; 11,094</FormattedPrice>
+        </ItemTotal>
+      </CartItem>
+      <CartItem>
+        <CartItemId>U29KZN7NZ01S6J</CartItemId>
+        <ASIN>0201896834</ASIN>
+        <SellerNickname>Amazon.co.jp</SellerNickname>
+        <Quantity>1</Quantity>
+        <Title>Art of Computer Programming, Volume 1: Fundamental Algorithms (Art of Computer Programming Volume 1)</Title>
+        <ProductGroup>Book</ProductGroup>
+        <Price>
+          <Amount>5546</Amount>
+          <CurrencyCode>JPY</CurrencyCode>
+          <FormattedPrice>&#65509; 5,546</FormattedPrice>
+        </Price>
+        <ItemTotal>
+          <Amount>5546</Amount>
+          <CurrencyCode>JPY</CurrencyCode>
+          <FormattedPrice>&#65509; 5,546</FormattedPrice>
+        </ItemTotal>
+      </CartItem>
+    </CartItems>
+  </Cart>
+</CartModifyResponse>

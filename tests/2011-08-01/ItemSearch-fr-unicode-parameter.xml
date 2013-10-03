@@ -1,0 +1,261 @@
+<ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.6pre/59eb0080b5aa+ +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+    </HTTPHeaders>
+    <RequestId>67fc9e53-9241-422b-955d-6e59d583c165</RequestId>
+    <Arguments>
+      <Argument Name="Operation" Value="ItemSearch"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="ItemPage" Value="1"/>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Version" Value="2011-08-01"/>
+      <Argument Name="SearchIndex" Value="Books"/>
+      <Argument Name="Author" Value="F&#233;lix J. Palma"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2013-06-05T21:11:29Z"/>
+    </Arguments>
+    <RequestProcessingTime>0.4223200000000000</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>True</IsValid>
+      <ItemSearchRequest>
+        <Author>F&#233;lix J. Palma</Author>
+        <ItemPage>1</ItemPage>
+        <ResponseGroup>Small</ResponseGroup>
+        <SearchIndex>Books</SearchIndex>
+      </ItemSearchRequest>
+    </Request>
+    <TotalResults>8</TotalResults>
+    <TotalPages>1</TotalPages>
+    <MoreSearchResultsUrl>http://www.amazon.fr/gp/redirect.html?camp=2025&amp;creative=12742&amp;location=http%3A%2F%2Fwww.amazon.fr%2Fgp%2Fsearch%3Fkeywords%3DF%25C3%25A9lix%2BJ.%2BPalma%26url%3Dsearch-alias%253Dbooks-single-index&amp;linkCode=xm2&amp;tag=redtoad-20&amp;SubscriptionId=AKIAJTJID3GQ4PAFYOEQ</MoreSearchResultsUrl>
+    <Item>
+      <ASIN>2266218646</ASIN>
+      <DetailPageURL>http://www.amazon.fr/La-carte-temps-F%C3%A9lix-Palma/dp/2266218646%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D2266218646</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.fr/gp/registry/wishlist/add-item.html%3Fasin.0%3D2266218646%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D2266218646</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.fr/gp/pdp/taf/2266218646%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D2266218646</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.fr/review/product/2266218646%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D2266218646</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.fr/gp/offer-listing/2266218646%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D2266218646</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>F&#233;lix J Palma</Author>
+        <Creator Role="Traduction">Marianne Millon</Creator>
+        <Manufacturer>Pocket</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>La carte du temps</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>2221114825</ASIN>
+      <DetailPageURL>http://www.amazon.fr/La-carte-temps-F%C3%A9lix-Palma/dp/2221114825%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D2221114825</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.fr/gp/registry/wishlist/add-item.html%3Fasin.0%3D2221114825%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D2221114825</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.fr/gp/pdp/taf/2221114825%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D2221114825</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.fr/review/product/2221114825%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D2221114825</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.fr/gp/offer-listing/2221114825%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D2221114825</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>F&#233;lix J Palma</Author>
+        <Creator Role="Traduction">Marianne Millon</Creator>
+        <Manufacturer>Robert Laffont</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>La carte du temps</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>8865831057</ASIN>
+      <DetailPageURL>http://www.amazon.fr/mappa-del-cielo-F%C3%A9lix-Palma/dp/8865831057%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D8865831057</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.fr/gp/registry/wishlist/add-item.html%3Fasin.0%3D8865831057%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D8865831057</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.fr/gp/pdp/taf/8865831057%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D8865831057</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.fr/review/product/8865831057%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D8865831057</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.fr/gp/offer-listing/8865831057%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D8865831057</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>F&#233;lix J. Palma</Author>
+        <Manufacturer>LIT - Libri in Tasca</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>La mappa del cielo</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>B00951BXKQ</ASIN>
+      <DetailPageURL>http://www.amazon.fr/El-vigilante-salamandra-F%C3%A9lix-Palma/dp/B00951BXKQ%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00951BXKQ</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.fr/gp/registry/wishlist/add-item.html%3Fasin.0%3DB00951BXKQ%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3DB00951BXKQ</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.fr/gp/pdp/taf/B00951BXKQ%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3DB00951BXKQ</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.fr/review/product/B00951BXKQ%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3DB00951BXKQ</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.fr/gp/offer-listing/B00951BXKQ%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3DB00951BXKQ</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>F&#233;lix J. Palma</Author>
+        <Manufacturer>Pretextos</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>El vigilante de la salamandra</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>887615664X</ASIN>
+      <DetailPageURL>http://www.amazon.fr/mappa-del-cielo-F%C3%A9lix-Palma/dp/887615664X%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D887615664X</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.fr/gp/registry/wishlist/add-item.html%3Fasin.0%3D887615664X%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D887615664X</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.fr/gp/pdp/taf/887615664X%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D887615664X</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.fr/review/product/887615664X%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D887615664X</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.fr/gp/offer-listing/887615664X%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D887615664X</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>F&#233;lix J. Palma</Author>
+        <Manufacturer>Castelvecchi</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>La mappa del cielo</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>5271381927</ASIN>
+      <DetailPageURL>http://www.amazon.fr/Karta-vremeni-Felix-J-Palma/dp/5271381927%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D5271381927</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.fr/gp/registry/wishlist/add-item.html%3Fasin.0%3D5271381927%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D5271381927</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.fr/gp/pdp/taf/5271381927%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D5271381927</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.fr/review/product/5271381927%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D5271381927</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.fr/gp/offer-listing/5271381927%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3D5271381927</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>Felix J. Palma</Author>
+        <Manufacturer>Astrel</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Karta vremeni</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>B0059ECT7O</ASIN>
+      <DetailPageURL>http://www.amazon.fr/Time-Palma-Felix-Author-Hardcover/dp/B0059ECT7O%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB0059ECT7O</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.fr/gp/registry/wishlist/add-item.html%3Fasin.0%3DB0059ECT7O%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3DB0059ECT7O</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.fr/gp/pdp/taf/B0059ECT7O%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3DB0059ECT7O</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.fr/review/product/B0059ECT7O%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3DB0059ECT7O</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.fr/gp/offer-listing/B0059ECT7O%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3DB0059ECT7O</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>Felix J. Palma</Author>
+        <Manufacturer>Atria Books</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>(The Map of Time) By Palma, Felix J. (Author) Hardcover on (06 , 2011)</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>B0058PZ15Q</ASIN>
+      <DetailPageURL>http://www.amazon.fr/PALMA-FELIX-AUTHOR-Hardcover-Jun-2011/dp/B0058PZ15Q%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB0058PZ15Q</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.fr/gp/registry/wishlist/add-item.html%3Fasin.0%3DB0058PZ15Q%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3DB0058PZ15Q</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.fr/gp/pdp/taf/B0058PZ15Q%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3DB0058PZ15Q</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.fr/review/product/B0058PZ15Q%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3DB0058PZ15Q</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.fr/gp/offer-listing/B0058PZ15Q%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D12742%26creativeASIN%3DB0058PZ15Q</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>Felix J. Palma</Author>
+        <Manufacturer>Atria Books</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>(THE MAP OF TIME) BY PALMA, FELIX J.(AUTHOR)Hardcover Jun-2011</Title>
+      </ItemAttributes>
+    </Item>
+  </Items>
+</ItemSearchResponse>

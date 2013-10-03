@@ -1,0 +1,318 @@
+<ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.6pre/59eb0080b5aa+ +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+    </HTTPHeaders>
+    <RequestId>f50b8bc3-6bae-4194-a5fc-5546328d5169</RequestId>
+    <Arguments>
+      <Argument Name="Operation" Value="ItemSearch"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Author" Value="F&#233;lix J. Palma"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="ItemPage" Value="1"/>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Version" Value="2011-08-01"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2013-06-05T21:11:34Z"/>
+      <Argument Name="SearchIndex" Value="Books"/>
+    </Arguments>
+    <RequestProcessingTime>0.6966410000000000</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>True</IsValid>
+      <ItemSearchRequest>
+        <Author>F&#233;lix J. Palma</Author>
+        <ItemPage>1</ItemPage>
+        <ResponseGroup>Small</ResponseGroup>
+        <SearchIndex>Books</SearchIndex>
+      </ItemSearchRequest>
+    </Request>
+    <TotalResults>31</TotalResults>
+    <TotalPages>4</TotalPages>
+    <MoreSearchResultsUrl>http://www.amazon.ca/gp/redirect.html?camp=2025&amp;creative=386005&amp;location=http%3A%2F%2Fwww.amazon.ca%2Fgp%2Fsearch%3Fkeywords%3DF%25C3%25A9lix%2BJ.%2BPalma%26url%3Dsearch-alias%253Dbooks-single-index&amp;linkCode=xm2&amp;tag=redtoad-20&amp;SubscriptionId=AKIAJTJID3GQ4PAFYOEQ</MoreSearchResultsUrl>
+    <Item>
+      <ASIN>B007USA5WS</ASIN>
+      <DetailPageURL>http://www.amazon.ca/Atria-Summer-2012-Beach-Read-ebook/dp/B007USA5WS%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB007USA5WS</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.ca/gp/registry/wishlist/add-item.html%3Fasin.0%3DB007USA5WS%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3DB007USA5WS</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.ca/gp/pdp/taf/B007USA5WS%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3DB007USA5WS</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.ca/review/product/B007USA5WS%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3DB007USA5WS</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.ca/gp/offer-listing/B007USA5WS%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3DB007USA5WS</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>Jennifer Weiner</Author>
+        <Author>Felix J Palma</Author>
+        <Author>Lisa Tucker</Author>
+        <Manufacturer>Atria Books</Manufacturer>
+        <ProductGroup>eBooks</ProductGroup>
+        <Title>The Atria Summer 2012 Beach-Read Bag: Escape the Heat with Excerpts from Cool Reads</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>1451660324</ASIN>
+      <DetailPageURL>http://www.amazon.ca/The-Map-Sky-A-Novel/dp/1451660324%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1451660324</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.ca/gp/registry/wishlist/add-item.html%3Fasin.0%3D1451660324%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1451660324</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.ca/gp/pdp/taf/1451660324%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1451660324</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.ca/review/product/1451660324%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1451660324</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.ca/gp/offer-listing/1451660324%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1451660324</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>Felix J Palma</Author>
+        <Manufacturer>Atria Books</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>The Map of the Sky: A Novel</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>B004G8QNL2</ASIN>
+      <DetailPageURL>http://www.amazon.ca/The-Map-Time-Novel-ebook/dp/B004G8QNL2%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB004G8QNL2</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.ca/gp/registry/wishlist/add-item.html%3Fasin.0%3DB004G8QNL2%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3DB004G8QNL2</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.ca/gp/pdp/taf/B004G8QNL2%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3DB004G8QNL2</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.ca/review/product/B004G8QNL2%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3DB004G8QNL2</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.ca/gp/offer-listing/B004G8QNL2%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3DB004G8QNL2</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>F&#233;lix J Palma</Author>
+        <Manufacturer>Atria Books</Manufacturer>
+        <ProductGroup>eBooks</ProductGroup>
+        <Title>The Map of Time: A Novel</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>1451660316</ASIN>
+      <DetailPageURL>http://www.amazon.ca/The-Map-Sky-A-Novel/dp/1451660316%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1451660316</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.ca/gp/registry/wishlist/add-item.html%3Fasin.0%3D1451660316%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1451660316</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.ca/gp/pdp/taf/1451660316%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1451660316</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.ca/review/product/1451660316%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1451660316</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.ca/gp/offer-listing/1451660316%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1451660316</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>Felix J Palma</Author>
+        <Manufacturer>Atria Books</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>The Map of the Sky: A Novel</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>1451683030</ASIN>
+      <DetailPageURL>http://www.amazon.ca/The-Map-Time-A-Novel/dp/1451683030%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1451683030</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.ca/gp/registry/wishlist/add-item.html%3Fasin.0%3D1451683030%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1451683030</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.ca/gp/pdp/taf/1451683030%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1451683030</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.ca/review/product/1451683030%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1451683030</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.ca/gp/offer-listing/1451683030%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1451683030</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>Felix J Palma</Author>
+        <Manufacturer>Pocket Books</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>The Map of Time: A Novel</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>1439167397</ASIN>
+      <DetailPageURL>http://www.amazon.ca/The-Map-Time-A-Novel/dp/1439167397%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1439167397</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.ca/gp/registry/wishlist/add-item.html%3Fasin.0%3D1439167397%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1439167397</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.ca/gp/pdp/taf/1439167397%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1439167397</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.ca/review/product/1439167397%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1439167397</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.ca/gp/offer-listing/1439167397%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1439167397</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>Felix J Palma</Author>
+        <Manufacturer>Atria Books</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>The Map of Time: A Novel</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>B0061PVQVU</ASIN>
+      <DetailPageURL>http://www.amazon.ca/The-Map-Sky-Novel-ebook/dp/B0061PVQVU%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB0061PVQVU</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.ca/gp/registry/wishlist/add-item.html%3Fasin.0%3DB0061PVQVU%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3DB0061PVQVU</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.ca/gp/pdp/taf/B0061PVQVU%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3DB0061PVQVU</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.ca/review/product/B0061PVQVU%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3DB0061PVQVU</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.ca/gp/offer-listing/B0061PVQVU%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3DB0061PVQVU</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>Felix J Palma</Author>
+        <Manufacturer>Atria Books</Manufacturer>
+        <ProductGroup>eBooks</ProductGroup>
+        <Title>The Map of the Sky: A Novel</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>1439167419</ASIN>
+      <DetailPageURL>http://www.amazon.ca/The-Map-Time-A-Novel/dp/1439167419%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1439167419</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.ca/gp/registry/wishlist/add-item.html%3Fasin.0%3D1439167419%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1439167419</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.ca/gp/pdp/taf/1439167419%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1439167419</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.ca/review/product/1439167419%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1439167419</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.ca/gp/offer-listing/1439167419%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D1439167419</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>Felix J Palma</Author>
+        <Manufacturer>Atria Books</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>The Map of Time: A Novel</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>2221114825</ASIN>
+      <DetailPageURL>http://www.amazon.ca/La-carte-temps-Felix-Palma/dp/2221114825%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D2221114825</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.ca/gp/registry/wishlist/add-item.html%3Fasin.0%3D2221114825%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D2221114825</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.ca/gp/pdp/taf/2221114825%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D2221114825</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.ca/review/product/2221114825%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D2221114825</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.ca/gp/offer-listing/2221114825%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3D2221114825</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>Felix J. Palma</Author>
+        <Author>Marianne Millon</Author>
+        <Manufacturer>Robert Laffont</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>La carte du temps</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>B0061Q68P8</ASIN>
+      <DetailPageURL>http://www.amazon.ca/El-mapa-del-tiempo-ebook/dp/B0061Q68P8%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB0061Q68P8</DetailPageURL>
+      <ItemLinks>
+        <ItemLink>
+          <Description>Add To Wishlist</Description>
+          <URL>http://www.amazon.ca/gp/registry/wishlist/add-item.html%3Fasin.0%3DB0061Q68P8%26SubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3DB0061Q68P8</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>Tell A Friend</Description>
+          <URL>http://www.amazon.ca/gp/pdp/taf/B0061Q68P8%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3DB0061Q68P8</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Customer Reviews</Description>
+          <URL>http://www.amazon.ca/review/product/B0061Q68P8%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3DB0061Q68P8</URL>
+        </ItemLink>
+        <ItemLink>
+          <Description>All Offers</Description>
+          <URL>http://www.amazon.ca/gp/offer-listing/B0061Q68P8%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386005%26creativeASIN%3DB0061Q68P8</URL>
+        </ItemLink>
+      </ItemLinks>
+      <ItemAttributes>
+        <Author>Felix J Palma</Author>
+        <Manufacturer>Atria Books</Manufacturer>
+        <ProductGroup>eBooks</ProductGroup>
+        <Title>El mapa del tiempo: una novela (Atria Espanol)</Title>
+      </ItemAttributes>
+    </Item>
+  </Items>
+</ItemSearchResponse>

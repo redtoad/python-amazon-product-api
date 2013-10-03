@@ -6,8 +6,7 @@ corresponding node from the web service.
 """
 
 import gtk
-from config import AWS_KEY, SECRET_KEY
-from amazonproduct import API
+from amazonproduct.api import API
 
 #: a list of root nodes retrieved from
 #: http://docs.amazonwebservices.com/AWSECommerceService/2009-11-01/DG/index.html?BrowseNodeIDs.html
@@ -208,7 +207,7 @@ class BrowseNodeExplorer (gtk.Window):
         self.connect("delete_event", self.on_delete)
         
         self.locale = locale
-        self.api = API(AWS_KEY, SECRET_KEY, self.locale)
+        self.api = API(locale=self.locale)
         
         # create a TreeStore with one string column to use as the model
         self.treestore = gtk.TreeStore(int, str)
@@ -241,7 +240,7 @@ class BrowseNodeExplorer (gtk.Window):
         # populate with root nodes
         # but avoid duplicated node ids
         node_ids = set(NODE_IDS[self.locale].values())
-        for name, id in list(NODE_IDS[self.locale].items()):
+        for name, id in NODE_IDS[self.locale].items():
             if id in node_ids:
                 self.treestore.append(None, [id, name])
                 node_ids.remove(id)
@@ -299,7 +298,7 @@ class BrowseNodeExplorer (gtk.Window):
         except AttributeError:
             children = {}
         
-        for child_id, child_name in list(children.items()):
+        for child_id, child_name in children.items():
             self.treestore.append(row.iter, [child_id, child_name])
             
         # expand nodes of just added

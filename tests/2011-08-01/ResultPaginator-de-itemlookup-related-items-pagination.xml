@@ -1,0 +1,43 @@
+<ItemLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.6pre/098fcc41968b+ +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+    </HTTPHeaders>
+    <RequestId>206b442e-ebd2-4758-a3ff-e5a23f2856f2</RequestId>
+    <Arguments>
+      <Argument Name="ItemId" Value="B000YEF2OG"/>
+      <Argument Name="Operation" Value="ItemLookup"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="RelatedItemPage" Value="1"/>
+      <Argument Name="Timestamp" Value="2012-02-19T13:31:12Z"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="ResponseGroup" Value="Large,RelatedItems"/>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="RelationshipType" Value="Episode,Season"/>
+      <Argument Name="Version" Value="2011-08-01"/>
+    </Arguments>
+    <RequestProcessingTime>0.1232220000000000</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>True</IsValid>
+      <ItemLookupRequest>
+        <IdType>ASIN</IdType>
+        <ItemId>B000YEF2OG</ItemId>
+        <ResponseGroup>Large</ResponseGroup>
+        <ResponseGroup>RelatedItems</ResponseGroup>
+        <VariationPage>All</VariationPage>
+        <RelatedItemPage>1</RelatedItemPage>
+        <RelationshipType>Episode</RelationshipType>
+        <RelationshipType>Season</RelationshipType>
+      </ItemLookupRequest>
+      <Errors>
+        <Error>
+          <Code>AWS.InvalidParameterValue</Code>
+          <Message>B000YEF2OG is not a valid value for ItemId. Please change this value and retry your request.</Message>
+        </Error>
+      </Errors>
+    </Request>
+  </Items>
+</ItemLookupResponse>

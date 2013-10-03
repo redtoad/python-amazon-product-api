@@ -1,0 +1,145 @@
+<ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.6pre/bc5c48faf932+ +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+    </HTTPHeaders>
+    <RequestId>ca1ecb01-e1a3-4f01-bddf-d6b1720d1576</RequestId>
+    <Arguments>
+      <Argument Name="Operation" Value="ItemSearch"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="ItemPage" Value="1"/>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Version" Value="2011-08-01"/>
+      <Argument Name="SearchIndex" Value="Books"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2013-05-23T08:24:34Z"/>
+      <Argument Name="Title" Value="Harry Potter"/>
+    </Arguments>
+    <RequestProcessingTime>0.3041940000000000</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>True</IsValid>
+      <ItemSearchRequest>
+        <ItemPage>1</ItemPage>
+        <ResponseGroup>Small</ResponseGroup>
+        <SearchIndex>Books</SearchIndex>
+        <Title>Harry Potter</Title>
+      </ItemSearchRequest>
+    </Request>
+    <TotalResults>547</TotalResults>
+    <TotalPages>55</TotalPages>
+    <MoreSearchResultsUrl>http://www.amazon.it/gp/redirect.html?camp=2025&amp;creative=165953&amp;location=http%3A%2F%2Fwww.amazon.it%2Fgp%2Fsearch%3Fkeywords%3DHarry%2BPotter%26url%3Dsearch-alias%253Dstripbooks&amp;linkCode=xm2&amp;tag=redtoad-10&amp;SubscriptionId=AKIAJTJID3GQ4PAFYOEQ</MoreSearchResultsUrl>
+    <Item>
+      <ASIN>8884518784</ASIN>
+      <DetailPageURL>http://www.amazon.it/Harry-Potter-doni-della-morte/dp/8884518784%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D8884518784</DetailPageURL>
+      <ItemAttributes>
+        <Author>J. K. Rowling</Author>
+        <Creator Role="a cura di">D. Gamba</Creator>
+        <Creator Role="Traduttore">B. Masini</Creator>
+        <Manufacturer>Salani</Manufacturer>
+        <ProductGroup>Libro</ProductGroup>
+        <Title>Harry Potter e i doni della morte</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>8862561687</ASIN>
+      <DetailPageURL>http://www.amazon.it/Harry-Potter-La-Pietra-Filosofale/dp/8862561687%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D8862561687</DetailPageURL>
+      <ItemAttributes>
+        <Author>J.K. Rowling</Author>
+        <Manufacturer>Salani Casa Editrice</Manufacturer>
+        <ProductGroup>Libro</ProductGroup>
+        <Title>Harry Potter e La Pietra Filosofale</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>8862561709</ASIN>
+      <DetailPageURL>http://www.amazon.it/Harry-Potter-prigioniero-Azkaban-Rowling/dp/8862561709%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D8862561709</DetailPageURL>
+      <ItemAttributes>
+        <Author>J. K. Rowling</Author>
+        <Creator Role="a cura di">S. Bartezzaghi</Creator>
+        <Creator Role="Traduttore">B. Masini</Creator>
+        <Manufacturer>Salani</Manufacturer>
+        <ProductGroup>Libro</ProductGroup>
+        <Title>Harry Potter e il prigioniero di Azkaban</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>8862561733</ASIN>
+      <DetailPageURL>http://www.amazon.it/Harry-Potter-Principe-Mezzosangue-Rowling/dp/8862561733%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D8862561733</DetailPageURL>
+      <ItemAttributes>
+        <Author>J. K. Rowling</Author>
+        <Creator Role="Traduttore">B. Masini</Creator>
+        <Manufacturer>Salani</Manufacturer>
+        <ProductGroup>Libro</ProductGroup>
+        <Title>Harry Potter e il Principe Mezzosangue</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>8862561695</ASIN>
+      <DetailPageURL>http://www.amazon.it/Harry-Potter-camera-dei-segreti/dp/8862561695%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D8862561695</DetailPageURL>
+      <ItemAttributes>
+        <Author>J. K. Rowling</Author>
+        <Creator Role="a cura di">S. Bartezzaghi</Creator>
+        <Creator Role="Traduttore">M. Astrologo</Creator>
+        <Manufacturer>Salani</Manufacturer>
+        <ProductGroup>Libro</ProductGroup>
+        <Title>Harry Potter e la camera dei segreti</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>8867152653</ASIN>
+      <DetailPageURL>http://www.amazon.it/Harry-Potter-pietra-filosofale-Rowling/dp/8867152653%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D8867152653</DetailPageURL>
+      <ItemAttributes>
+        <Author>J. K. Rowling</Author>
+        <Manufacturer>Salani</Manufacturer>
+        <ProductGroup>Libro</ProductGroup>
+        <Title>Harry Potter e la pietra filosofale</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>8862561717</ASIN>
+      <DetailPageURL>http://www.amazon.it/Harry-Potter-calice-fuoco-Rowling/dp/8862561717%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D8862561717</DetailPageURL>
+      <ItemAttributes>
+        <Author>J. K. Rowling</Author>
+        <Creator Role="a cura di">S. Bartezzaghi</Creator>
+        <Creator Role="Traduttore">B. Masini</Creator>
+        <Manufacturer>Salani</Manufacturer>
+        <ProductGroup>Libro</ProductGroup>
+        <Title>Harry Potter e il calice di fuoco</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>8862561725</ASIN>
+      <DetailPageURL>http://www.amazon.it/Harry-Potter-lOrdine-della-Fenice/dp/8862561725%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D8862561725</DetailPageURL>
+      <ItemAttributes>
+        <Author>J. K. Rowling</Author>
+        <Creator Role="a cura di">S. Bartezzaghi</Creator>
+        <Manufacturer>Salani</Manufacturer>
+        <ProductGroup>Libro</ProductGroup>
+        <Title>Harry Potter e l'Ordine della Fenice</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>8867152688</ASIN>
+      <DetailPageURL>http://www.amazon.it/Harry-Potter-calice-fuoco-Rowling/dp/8867152688%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D8867152688</DetailPageURL>
+      <ItemAttributes>
+        <Author>J. K. Rowling</Author>
+        <Manufacturer>Salani</Manufacturer>
+        <ProductGroup>Libro</ProductGroup>
+        <Title>Harry Potter e il calice di fuoco</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>8867152696</ASIN>
+      <DetailPageURL>http://www.amazon.it/Harry-Potter-lOrdine-della-Fenice/dp/8867152696%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-10%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D8867152696</DetailPageURL>
+      <ItemAttributes>
+        <Author>J. K. Rowling</Author>
+        <Manufacturer>Salani</Manufacturer>
+        <ProductGroup>Libro</ProductGroup>
+        <Title>Harry Potter e l'Ordine della Fenice</Title>
+      </ItemAttributes>
+    </Item>
+  </Items>
+</ItemSearchResponse>

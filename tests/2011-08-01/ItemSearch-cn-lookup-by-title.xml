@@ -1,0 +1,150 @@
+<ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.6pre/bc5c48faf932+ +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+    </HTTPHeaders>
+    <RequestId>a780390c-ffd5-4427-9daa-c6f2dd1d8f81</RequestId>
+    <Arguments>
+      <Argument Name="Operation" Value="ItemSearch"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="ItemPage" Value="1"/>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Version" Value="2011-08-01"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2013-05-23T08:24:34Z"/>
+      <Argument Name="Title" Value="Harry Potter"/>
+      <Argument Name="SearchIndex" Value="Books"/>
+    </Arguments>
+    <RequestProcessingTime>0.2008810000000000</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>True</IsValid>
+      <ItemSearchRequest>
+        <ItemPage>1</ItemPage>
+        <ResponseGroup>Small</ResponseGroup>
+        <SearchIndex>Books</SearchIndex>
+        <Title>Harry Potter</Title>
+      </ItemSearchRequest>
+    </Request>
+    <TotalResults>894</TotalResults>
+    <TotalPages>90</TotalPages>
+    <MoreSearchResultsUrl>http://www.amazon.cn/gp/redirect.html?camp=2025&amp;creative=165953&amp;location=http%3A%2F%2Fwww.amazon.cn%2Fgp%2Fsearch%3Fkeywords%3DHarry%2BPotter%26url%3Dsearch-alias%253Dbooks&amp;linkCode=xm2&amp;tag=redtoad-10&amp;SubscriptionId=AKIAJTJID3GQ4PAFYOEQ</MoreSearchResultsUrl>
+    <Item>
+      <ASIN>B00116M5XM</ASIN>
+      <DetailPageURL>http://www.amazon.cn/%E5%93%88%E5%88%A9%E2%80%A2%E6%B3%A2%E7%89%B9%E4%B8%8E%E9%AD%94%E6%B3%95%E7%9F%B3-J-K-%E7%BD%97%E7%90%B3/dp/B00116M5XM?SubscriptionId=AKIAJTJID3GQ4PAFYOEQ&amp;tag=redtoad-10&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=B00116M5XM</DetailPageURL>
+      <ItemAttributes>
+        <Author>J.K.&#32599;&#29747;(Rowling.J.K.)</Author>
+        <Creator Role="&#20316;&#32773;">J.K.&#32599;&#29747;(Rowling.J.K.)</Creator>
+        <Creator Role="&#35793;&#32773;">&#33487;&#20892;</Creator>
+        <Manufacturer>&#20154;&#27665;&#25991;&#23398;&#20986;&#29256;&#31038;</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>&#21704;&#21033;&#8226;&#27874;&#29305;&#19982;&#39764;&#27861;&#30707;</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>B0011C69X8</ASIN>
+      <DetailPageURL>http://www.amazon.cn/%E5%93%88%E5%88%A9%E2%80%A2%E6%B3%A2%E7%89%B9%E4%B8%8E%E6%AD%BB%E4%BA%A1%E5%9C%A3%E5%99%A8-J-K-%E7%BD%97%E7%90%B3/dp/B0011C69X8?SubscriptionId=AKIAJTJID3GQ4PAFYOEQ&amp;tag=redtoad-10&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=B0011C69X8</DetailPageURL>
+      <ItemAttributes>
+        <Author>J.K.&#32599;&#29747; (J.K.Rowling)</Author>
+        <Creator Role="&#20316;&#32773;">J.K.&#32599;&#29747; (J.K.Rowling)</Creator>
+        <Creator Role="&#35793;&#32773;">&#39532;&#29233;&#20892;</Creator>
+        <Creator Role="&#35793;&#32773;">&#39532;&#29233;&#26032;</Creator>
+        <Manufacturer>&#20154;&#27665;&#25991;&#23398;</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>&#21704;&#21033;&#8226;&#27874;&#29305;&#19982;&#27515;&#20129;&#22307;&#22120;(&#28779;&#28909;&#21457;&#36135;!)</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>B00116M5XC</ASIN>
+      <DetailPageURL>http://www.amazon.cn/%E5%93%88%E5%88%A9%E2%80%A2%E6%B3%A2%E7%89%B9%E4%B8%8E%E5%AF%86%E5%AE%A4-J-K-%E7%BD%97%E7%90%B3/dp/B00116M5XC?SubscriptionId=AKIAJTJID3GQ4PAFYOEQ&amp;tag=redtoad-10&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=B00116M5XC</DetailPageURL>
+      <ItemAttributes>
+        <Author>J.K.&#32599;&#29747; (Rowling.J.K.)</Author>
+        <Creator Role="&#20316;&#32773;">J.K.&#32599;&#29747; (Rowling.J.K.)</Creator>
+        <Creator Role="&#35793;&#32773;">&#39532;&#29233;&#26032;</Creator>
+        <Manufacturer>&#20154;&#27665;&#25991;&#23398;</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>&#21704;&#21033;&#8226;&#27874;&#29305;&#19982;&#23494;&#23460;</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>B002KCMNA6</ASIN>
+      <DetailPageURL>http://www.amazon.cn/%E5%93%88%E5%88%A9%E2%80%A2%E6%B3%A2%E7%89%B9%E4%B8%8E%E9%98%BF%E5%85%B9%E5%8D%A1%E7%8F%AD%E5%9B%9A%E5%BE%92-J-K-%E7%BD%97%E7%90%B3/dp/B002KCMNA6?SubscriptionId=AKIAJTJID3GQ4PAFYOEQ&amp;tag=redtoad-10&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=B002KCMNA6</DetailPageURL>
+      <ItemAttributes>
+        <Author>J.K.&#32599;&#29747; (Rowling.J.K.)</Author>
+        <Creator Role="&#20316;&#32773;">J.K.&#32599;&#29747; (Rowling.J.K.)</Creator>
+        <Creator Role="&#35793;&#32773;">&#39532;&#29233;&#20892;</Creator>
+        <Creator Role="&#35793;&#32773;">&#39532;&#29233;&#26032;</Creator>
+        <Manufacturer>&#20154;&#27665;&#25991;&#23398;&#20986;&#29256;&#31038;</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>&#21704;&#21033;&#8226;&#27874;&#29305;&#19982;&#38463;&#20857;&#21345;&#29677;&#22234;&#24466;</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>B00116MCLW</ASIN>
+      <DetailPageURL>http://www.amazon.cn/%E5%93%88%E5%88%A9%E2%80%A2%E6%B3%A2%E7%89%B9%E4%B8%8E%E7%81%AB%E7%84%B0%E6%9D%AF-J-K-%E7%BD%97%E7%90%B3/dp/B00116MCLW?SubscriptionId=AKIAJTJID3GQ4PAFYOEQ&amp;tag=redtoad-10&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=B00116MCLW</DetailPageURL>
+      <ItemAttributes>
+        <Author>J.K.&#32599;&#29747;(Rowling.J.K.)</Author>
+        <Creator Role="&#20316;&#32773;">J.K.&#32599;&#29747;(Rowling.J.K.)</Creator>
+        <Creator Role="&#35793;&#32773;">&#39532;&#29233;&#26032;</Creator>
+        <Manufacturer>&#20154;&#27665;&#25991;&#23398;&#20986;&#29256;&#31038;</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>&#21704;&#21033;&#8226;&#27874;&#29305;&#19982;&#28779;&#28976;&#26479;</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>B005GC7C5I</ASIN>
+      <DetailPageURL>http://www.amazon.cn/%E5%93%88%E5%88%A9%E2%80%A2%E6%B3%A2%E7%89%B9%E7%99%BE%E7%A7%91%E5%85%A8%E4%B9%A6/dp/B005GC7C5I?SubscriptionId=AKIAJTJID3GQ4PAFYOEQ&amp;tag=redtoad-10&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=B005GC7C5I</DetailPageURL>
+      <ItemAttributes>
+        <Creator Role="&#32534;&#32773;">&#12298;&#21704;&#21033;&#183;&#27874;&#29305;&#30334;&#31185;&#20840;&#20070;&#12299;&#32534;&#22996;&#20250;</Creator>
+        <Manufacturer>&#21271;&#20140;&#29702;&#24037;&#22823;&#23398;&#20986;&#29256;&#31038;</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>&#21704;&#21033;&#8226;&#27874;&#29305;&#30334;&#31185;&#20840;&#20070;(&#29645;&#34255;&#29256;)</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>B0011BROVK</ASIN>
+      <DetailPageURL>http://www.amazon.cn/%E5%93%88%E5%88%A9%E2%80%A2%E6%B3%A2%E7%89%B9%E4%B8%8E%E6%B7%B7%E8%A1%80%E7%8E%8B%E5%AD%90-J-K-%E7%BD%97%E7%90%B3/dp/B0011BROVK?SubscriptionId=AKIAJTJID3GQ4PAFYOEQ&amp;tag=redtoad-10&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=B0011BROVK</DetailPageURL>
+      <ItemAttributes>
+        <Author>J.K.&#32599;&#29747; (Rowling.J.K.)</Author>
+        <Creator Role="&#20316;&#32773;">J.K.&#32599;&#29747; (Rowling.J.K.)</Creator>
+        <Creator Role="&#35793;&#32773;">&#39532;&#29233;&#20892;</Creator>
+        <Creator Role="&#35793;&#32773;">&#39532;&#29233;&#26032;</Creator>
+        <Manufacturer>&#20154;&#27665;&#25991;&#23398;</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>&#21704;&#21033;&#8226;&#27874;&#29305;&#19982;&#28151;&#34880;&#29579;&#23376;(&#31616;&#20307;&#20013;&#25991;&#29256;)</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>059035342X</ASIN>
+      <DetailPageURL>http://www.amazon.cn/Harry-Potter-and-the-Sorcerer-s-Stone-J-K-Rowling/dp/059035342X?SubscriptionId=AKIAJTJID3GQ4PAFYOEQ&amp;tag=redtoad-10&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=059035342X</DetailPageURL>
+      <ItemAttributes>
+        <Author>J.K. Rowling</Author>
+        <Creator Role="&#20316;&#32773;">J.K. Rowling</Creator>
+        <Manufacturer>Scholastic Paperbacks</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Harry Potter and the Sorcerer's Stone (Book 1)</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>B009ZTMKMI</ASIN>
+      <DetailPageURL>http://www.amazon.cn/%E9%9D%92%E5%B0%91%E7%89%88%E8%8B%B1%E6%96%87%E7%89%88%E5%93%88%E5%88%A9%E6%B3%A2%E7%89%B91-7%E5%85%A8%E9%9B%86%E5%85%A8%E5%A5%97Harry-Potter-Paperback-Box-Set/dp/B009ZTMKMI?SubscriptionId=AKIAJTJID3GQ4PAFYOEQ&amp;tag=redtoad-10&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=B009ZTMKMI</DetailPageURL>
+      <ItemAttributes>
+        <ProductGroup>Book</ProductGroup>
+        <Title>&#38738;&#23569;&#29256;&#33521;&#25991;&#29256;&#21704;&#21033;&#27874;&#29305;1-7&#20840;&#38598;&#20840;&#22871;Harry Potter Paperback Box Set (Books 1-7)</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>0747595844</ASIN>
+      <DetailPageURL>http://www.amazon.cn/Harry-Potter-Adult-Paperback-Boxed-Set-%E4%B9%94%E5%AE%89%E5%A6%AE%E2%80%A2%E5%87%AF%E7%91%9F%E7%90%B3%E2%80%A2%E7%BD%97%E7%90%B3/dp/0747595844?SubscriptionId=AKIAJTJID3GQ4PAFYOEQ&amp;tag=redtoad-10&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=0747595844</DetailPageURL>
+      <ItemAttributes>
+        <Author>&#20052;&#23433;&#22958;&#8226;&#20975;&#29791;&#29747;&#8226;&#32599;&#29747; &#65288;J.K. Rowling&#65289;</Author>
+        <Creator Role="&#20316;&#32773;">&#20052;&#23433;&#22958;&#8226;&#20975;&#29791;&#29747;&#8226;&#32599;&#29747; &#65288;J.K. Rowling&#65289;</Creator>
+        <Manufacturer>Bloomsbury Publishing PLC</Manufacturer>
+        <ProductGroup>Book</ProductGroup>
+        <Title>Harry Potter Adult Paperback Boxed Set</Title>
+      </ItemAttributes>
+    </Item>
+  </Items>
+</ItemSearchResponse>

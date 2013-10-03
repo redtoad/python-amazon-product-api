@@ -1,0 +1,89 @@
+<CartModifyResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.6pre/59eb0080b5aa+ +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+    </HTTPHeaders>
+    <RequestId>0RD6PNW6BPDKQFH0067R</RequestId>
+    <Arguments>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Item.1.Quantity" Value="0"/>
+      <Argument Name="Item.1.CartItemId" Value="0201896834"/>
+      <Argument Name="HMAC" Value="dmzlYl62GhS507Gak37QvoxPEns="/>
+      <Argument Name="Operation" Value="CartModify"/>
+      <Argument Name="CartId" Value="280-4121999-9511055"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2013-06-05T21:12:24Z"/>
+      <Argument Name="Version" Value="2011-08-01"/>
+    </Arguments>
+    <RequestProcessingTime>0.0492291450500488</RequestProcessingTime>
+  </OperationRequest>
+  <Cart>
+    <Request>
+      <IsValid>True</IsValid>
+      <CartModifyRequest>
+        <CartId>280-4121999-9511055</CartId>
+        <HMAC>dmzlYl62GhS507Gak37QvoxPEns=</HMAC>
+        <Items>
+          <Item>
+            <CartItemId>0201896842</CartItemId>
+            <Quantity>0</Quantity>
+          </Item>
+        </Items>
+      </CartModifyRequest>
+    </Request>
+    <CartId>280-4121999-9511055</CartId>
+    <HMAC>dmzlYl62GhS507Gak37QvoxPEns=</HMAC>
+    <URLEncodedHMAC>dmzlYl62GhS507Gak37QvoxPEns%3D</URLEncodedHMAC>
+    <PurchaseURL>https://www.amazon.es/gp/cart/aws-merge.html?cart-id=280-4121999-9511055%26associate-id=redtoad-21%26hmac=dmzlYl62GhS507Gak37QvoxPEns=%26SubscriptionId=AKIAJTJID3GQ4PAFYOEQ%26MergeCart=False</PurchaseURL>
+    <SubTotal>
+      <Amount>11001</Amount>
+      <CurrencyCode>EUR</CurrencyCode>
+      <FormattedPrice>EUR 110,01</FormattedPrice>
+    </SubTotal>
+    <CartItems>
+      <SubTotal>
+        <Amount>11001</Amount>
+        <CurrencyCode>EUR</CurrencyCode>
+        <FormattedPrice>EUR 110,01</FormattedPrice>
+      </SubTotal>
+      <CartItem>
+        <CartItemId>U1FAD6LFHFDD4H</CartItemId>
+        <ASIN>0201896842</ASIN>
+        <SellerNickname>Amazon.es</SellerNickname>
+        <Quantity>2</Quantity>
+        <Title>The Art of Computer Programming: Seminumerical Algorithms v. 2</Title>
+        <ProductGroup>Libro</ProductGroup>
+        <Price>
+          <Amount>3667</Amount>
+          <CurrencyCode>EUR</CurrencyCode>
+          <FormattedPrice>EUR 36,67</FormattedPrice>
+        </Price>
+        <ItemTotal>
+          <Amount>7334</Amount>
+          <CurrencyCode>EUR</CurrencyCode>
+          <FormattedPrice>EUR 73,34</FormattedPrice>
+        </ItemTotal>
+      </CartItem>
+      <CartItem>
+        <CartItemId>U3K0TD6PUYSUN3</CartItemId>
+        <ASIN>0201896834</ASIN>
+        <SellerNickname>Amazon.es</SellerNickname>
+        <Quantity>1</Quantity>
+        <Title>The Art of Computer Programming: Fundamental Algorithms v. 1 (Art of Computer Programming Volume 1)</Title>
+        <ProductGroup>Libro</ProductGroup>
+        <Price>
+          <Amount>3667</Amount>
+          <CurrencyCode>EUR</CurrencyCode>
+          <FormattedPrice>EUR 36,67</FormattedPrice>
+        </Price>
+        <ItemTotal>
+          <Amount>3667</Amount>
+          <CurrencyCode>EUR</CurrencyCode>
+          <FormattedPrice>EUR 36,67</FormattedPrice>
+        </ItemTotal>
+      </CartItem>
+    </CartItems>
+  </Cart>
+</CartModifyResponse>

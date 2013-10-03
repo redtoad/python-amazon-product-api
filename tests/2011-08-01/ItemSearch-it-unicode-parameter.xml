@@ -1,0 +1,147 @@
+<ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.6pre/59eb0080b5aa+ +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+    </HTTPHeaders>
+    <RequestId>c712f59d-c193-40d1-b092-3d91b66fdb85</RequestId>
+    <Arguments>
+      <Argument Name="Operation" Value="ItemSearch"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="ItemPage" Value="1"/>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Version" Value="2011-08-01"/>
+      <Argument Name="SearchIndex" Value="Books"/>
+      <Argument Name="Author" Value="F&#233;lix J. Palma"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2013-06-05T21:11:38Z"/>
+    </Arguments>
+    <RequestProcessingTime>0.5762700000000000</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>True</IsValid>
+      <ItemSearchRequest>
+        <Author>F&#233;lix J. Palma</Author>
+        <ItemPage>1</ItemPage>
+        <ResponseGroup>Small</ResponseGroup>
+        <SearchIndex>Books</SearchIndex>
+      </ItemSearchRequest>
+    </Request>
+    <TotalResults>18</TotalResults>
+    <TotalPages>2</TotalPages>
+    <MoreSearchResultsUrl>http://www.amazon.it/gp/redirect.html?camp=2025&amp;creative=165953&amp;location=http%3A%2F%2Fwww.amazon.it%2Fgp%2Fsearch%3Fkeywords%3DF%25C3%25A9lix%2BJ.%2BPalma%26url%3Dsearch-alias%253Dstripbooks&amp;linkCode=xm2&amp;tag=redtoad-20&amp;SubscriptionId=AKIAJTJID3GQ4PAFYOEQ</MoreSearchResultsUrl>
+    <Item>
+      <ASIN>8865830433</ASIN>
+      <DetailPageURL>http://www.amazon.it/mappa-del-tempo-F%C3%A9lix-Palma/dp/8865830433%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D8865830433</DetailPageURL>
+      <ItemAttributes>
+        <Author>F&#233;lix J. Palma</Author>
+        <Creator Role="Traduttore">P. Marchetti</Creator>
+        <Manufacturer>LIT - Libri in Tasca</Manufacturer>
+        <ProductGroup>Libro</ProductGroup>
+        <Title>La mappa del tempo</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>887615664X</ASIN>
+      <DetailPageURL>http://www.amazon.it/mappa-del-cielo-F%C3%A9lix-Palma/dp/887615664X%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D887615664X</DetailPageURL>
+      <ItemAttributes>
+        <Author>F&#233;lix J. Palma</Author>
+        <Creator Role="Traduttore">P. Marchetti</Creator>
+        <Manufacturer>Castelvecchi</Manufacturer>
+        <ProductGroup>Libro</ProductGroup>
+        <Title>La mappa del cielo</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>8876154892</ASIN>
+      <DetailPageURL>http://www.amazon.it/mappa-del-tempo-F%C3%A9lix-Palma/dp/8876154892%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D8876154892</DetailPageURL>
+      <ItemAttributes>
+        <Author>F&#233;lix J. Palma</Author>
+        <Creator Role="Traduttore">P. Marchetti</Creator>
+        <Manufacturer>Castelvecchi</Manufacturer>
+        <ProductGroup>Libro</ProductGroup>
+        <Title>La mappa del tempo</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>B00505YYQ6</ASIN>
+      <DetailPageURL>http://www.amazon.it/The-Map-of-Time-ebook/dp/B00505YYQ6%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00505YYQ6</DetailPageURL>
+      <ItemAttributes>
+        <Author>F&#233;lix J. Palma</Author>
+        <Manufacturer>HarperCollins</Manufacturer>
+        <ProductGroup>Libro digitale</ProductGroup>
+        <Title>The Map of Time</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>B0061PVQVU</ASIN>
+      <DetailPageURL>http://www.amazon.it/The-Map-Sky-Novel-ebook/dp/B0061PVQVU%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB0061PVQVU</DetailPageURL>
+      <ItemAttributes>
+        <Author>Felix J Palma</Author>
+        <Manufacturer>Atria Books</Manufacturer>
+        <ProductGroup>Libro digitale</ProductGroup>
+        <Title>The Map of the Sky: A Novel</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>B0085U68V2</ASIN>
+      <DetailPageURL>http://www.amazon.it/mapa-tiempo-Literaria-algaida-ebook/dp/B0085U68V2%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB0085U68V2</DetailPageURL>
+      <ItemAttributes>
+        <Author>F&#233;lix J. Palma</Author>
+        <Manufacturer>Algaida Editores</Manufacturer>
+        <ProductGroup>Libro digitale</ProductGroup>
+        <Title>El mapa del tiempo (Literaria (algaida))</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>B008XRZX5O</ASIN>
+      <DetailPageURL>http://www.amazon.it/Die-Landkarte-des-Himmels-ebook/dp/B008XRZX5O%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB008XRZX5O</DetailPageURL>
+      <ItemAttributes>
+        <Author>F&#233;lix J. Palma</Author>
+        <Creator Role="Traduttore">Willi Zurbr&#252;ggen</Creator>
+        <Manufacturer>Rowohlt E-Book</Manufacturer>
+        <ProductGroup>Libro digitale</ProductGroup>
+        <Title>Die Landkarte des Himmels</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>B00BSBVH0M</ASIN>
+      <DetailPageURL>http://www.amazon.it/Atria-Espa%C3%B1ol-Selecci%C3%B3n-bestsellers-ebook/dp/B00BSBVH0M%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00BSBVH0M</DetailPageURL>
+      <ItemAttributes>
+        <Author>Maria Duenas</Author>
+        <Author>Javier Sierra</Author>
+        <Author>Felix J Palma</Author>
+        <Author>Fabiola Santiago</Author>
+        <Author>Jodi Picoult</Author>
+        <Author>Anjanette Delgado</Author>
+        <Manufacturer>Atria Books</Manufacturer>
+        <ProductGroup>Libro digitale</ProductGroup>
+        <Title>Atria Espa&#241;ol: Selecci&#243;n de novelas bestsellers: Muestra gratis</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>B007USA5WS</ASIN>
+      <DetailPageURL>http://www.amazon.it/Atria-Summer-2012-Beach-Read-ebook/dp/B007USA5WS%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB007USA5WS</DetailPageURL>
+      <ItemAttributes>
+        <Author>Jennifer Weiner</Author>
+        <Author>Felix J Palma</Author>
+        <Author>Lisa Tucker</Author>
+        <Manufacturer>Atria Books</Manufacturer>
+        <ProductGroup>Libro digitale</ProductGroup>
+        <Title>The Atria Summer 2012 Beach-Read Bag: Escape the Heat with Excerpts from Cool Reads</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>B00D2IQSLM</ASIN>
+      <DetailPageURL>http://www.amazon.it/hinter-Vorhang-Rowohlt-E-Book-ebook/dp/B00D2IQSLM%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00D2IQSLM</DetailPageURL>
+      <ItemAttributes>
+        <Author>F&#233;lix J. Palma</Author>
+        <Creator Role="Traduttore">Willi Zurbr&#252;ggen</Creator>
+        <Manufacturer>Rowohlt E-Book</Manufacturer>
+        <ProductGroup>Libro digitale</ProductGroup>
+        <Title>Der Mann hinter dem Vorhang. Rowohlt E-Book Only</Title>
+      </ItemAttributes>
+    </Item>
+  </Items>
+</ItemSearchResponse>

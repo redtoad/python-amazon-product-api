@@ -1,0 +1,140 @@
+<ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="python-amazon-product-api/0.2.6pre/59eb0080b5aa+ +http://pypi.python.org/pypi/python-amazon-product-api/"/>
+    </HTTPHeaders>
+    <RequestId>b9401619-3a44-42b0-958a-c7580f8b0590</RequestId>
+    <Arguments>
+      <Argument Name="Operation" Value="ItemSearch"/>
+      <Argument Name="Service" Value="AWSECommerceService"/>
+      <Argument Name="ItemPage" Value="1"/>
+      <Argument Name="AssociateTag" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Version" Value="2011-08-01"/>
+      <Argument Name="SearchIndex" Value="Books"/>
+      <Argument Name="Author" Value="F&#233;lix J. Palma"/>
+      <Argument Name="Signature" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="AWSAccessKeyId" Value="XXXXXXXXXXXXXXX"/>
+      <Argument Name="Timestamp" Value="2013-06-05T21:11:39Z"/>
+    </Arguments>
+    <RequestProcessingTime>0.5507500000000000</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>True</IsValid>
+      <ItemSearchRequest>
+        <Author>F&#233;lix J. Palma</Author>
+        <ItemPage>1</ItemPage>
+        <ResponseGroup>Small</ResponseGroup>
+        <SearchIndex>Books</SearchIndex>
+      </ItemSearchRequest>
+    </Request>
+    <TotalResults>25</TotalResults>
+    <TotalPages>3</TotalPages>
+    <MoreSearchResultsUrl>http://www.amazon.es/gp/redirect.html?camp=2025&amp;creative=165953&amp;location=http%3A%2F%2Fwww.amazon.es%2Fgp%2Fsearch%3Fkeywords%3DF%25C3%25A9lix%2BJ.%2BPalma%26url%3Dsearch-alias%253Dstripbooks&amp;linkCode=xm2&amp;tag=redtoad-20&amp;SubscriptionId=AKIAJTJID3GQ4PAFYOEQ</MoreSearchResultsUrl>
+    <Item>
+      <ASIN>8490320489</ASIN>
+      <DetailPageURL>http://www.amazon.es/mapa-del-cielo-Bestseller-debolsillo/dp/8490320489%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D8490320489</DetailPageURL>
+      <ItemAttributes>
+        <Author>FELIX J. PALMA</Author>
+        <Manufacturer>DEBOLSILLO</Manufacturer>
+        <ProductGroup>Libro</ProductGroup>
+        <Title>El mapa del cielo (Bestseller (debolsillo))</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>B0085U68V2</ASIN>
+      <DetailPageURL>http://www.amazon.es/mapa-tiempo-Literaria-algaida-ebook/dp/B0085U68V2%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB0085U68V2</DetailPageURL>
+      <ItemAttributes>
+        <Author>F&#233;lix J. Palma</Author>
+        <Manufacturer>Algaida Editores</Manufacturer>
+        <ProductGroup>Libro digital</ProductGroup>
+        <Title>El mapa del tiempo (Literaria (algaida))</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>B0071MJ6AA</ASIN>
+      <DetailPageURL>http://www.amazon.es/cielo-Exitos-Plaza-Janes-ebook/dp/B0071MJ6AA%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB0071MJ6AA</DetailPageURL>
+      <ItemAttributes>
+        <Author>F&#201;LIX J. PALMA</Author>
+        <Manufacturer>PLAZA &amp; JANES</Manufacturer>
+        <ProductGroup>Libro digital</ProductGroup>
+        <Title>El mapa del cielo (Exitos De Plaza &amp; Janes)</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>8420691186</ASIN>
+      <DetailPageURL>http://www.amazon.es/El-mapa-del-tiempo-alianza/dp/8420691186%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D8420691186</DetailPageURL>
+      <ItemAttributes>
+        <Author>F&#233;lix J. Palma</Author>
+        <Manufacturer>Alianza</Manufacturer>
+        <ProductGroup>Libro</ProductGroup>
+        <Title>El mapa del tiempo (13/20 (alianza))</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>8483930544</ASIN>
+      <DetailPageURL>http://www.amazon.es/menor-espect%C3%A1culo-mundo-Voces-Literatura/dp/8483930544%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D8483930544</DetailPageURL>
+      <ItemAttributes>
+        <Author>F&#233;lix J. Palma</Author>
+        <Manufacturer>P&#225;ginas de Espuma</Manufacturer>
+        <ProductGroup>Libro</ProductGroup>
+        <Title>El menor espect&#225;culo del mundo (Voces / Literatura)</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>8401339553</ASIN>
+      <DetailPageURL>http://www.amazon.es/mapa-cielo-Exitos-Plaza-Janes/dp/8401339553%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D8401339553</DetailPageURL>
+      <ItemAttributes>
+        <Author>FELIX J. PALMA</Author>
+        <Manufacturer>PLAZA &amp; JANES</Manufacturer>
+        <ProductGroup>Libro</ProductGroup>
+        <Title>El mapa del cielo (Exitos De Plaza &amp; Janes)</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>8498771595</ASIN>
+      <DetailPageURL>http://www.amazon.es/Mapa-Del-Tiempo-Literaria-algaida/dp/8498771595%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D8498771595</DetailPageURL>
+      <ItemAttributes>
+        <Author>F&#233;lix J. Palma</Author>
+        <Manufacturer>Algaida</Manufacturer>
+        <ProductGroup>Libro</ProductGroup>
+        <Title>El Mapa Del Tiempo (Literaria (algaida))</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>8497400216</ASIN>
+      <DetailPageURL>http://www.amazon.es/Las-interioridades-Albatros-F%C3%A9lix-Palma/dp/8497400216%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D8497400216</DetailPageURL>
+      <ItemAttributes>
+        <Author>F&#233;lix J. Palma</Author>
+        <Manufacturer>Castalia Ediciones</Manufacturer>
+        <ProductGroup>Libro</ProductGroup>
+        <Title>Las interioridades                                                              . (Albatros)</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>B00BSBVH0M</ASIN>
+      <DetailPageURL>http://www.amazon.es/Atria-Espa%C3%B1ol-Selecci%C3%B3n-bestsellers-ebook/dp/B00BSBVH0M%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00BSBVH0M</DetailPageURL>
+      <ItemAttributes>
+        <Author>Maria Duenas</Author>
+        <Author>Javier Sierra</Author>
+        <Author>Felix J Palma</Author>
+        <Author>Fabiola Santiago</Author>
+        <Author>Jodi Picoult</Author>
+        <Author>Anjanette Delgado</Author>
+        <Manufacturer>Atria Books</Manufacturer>
+        <ProductGroup>Libro digital</ProductGroup>
+        <Title>Atria Espa&#241;ol: Selecci&#243;n de novelas bestsellers: Muestra gratis</Title>
+      </ItemAttributes>
+    </Item>
+    <Item>
+      <ASIN>B00841EXQO</ASIN>
+      <DetailPageURL>http://www.amazon.es/Del-amor-otras-confusiones-ebook/dp/B00841EXQO%3FSubscriptionId%3DAKIAJTJID3GQ4PAFYOEQ%26tag%3Dredtoad-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00841EXQO</DetailPageURL>
+      <ItemAttributes>
+        <Author>F&#233;lix J. Palma</Author>
+        <Manufacturer>RHM FLASH</Manufacturer>
+        <ProductGroup>Libro digital</ProductGroup>
+        <Title>Del amor y otras confusiones: Del amor y otras v&#237;sceras / Confusi&#243;n macabra</Title>
+      </ItemAttributes>
+    </Item>
+  </Items>
+</ItemSearchResponse>
