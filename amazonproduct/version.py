@@ -3,7 +3,7 @@ import os.path
 
 # The version is defined in its own module so we can import it from setup.py
 # without introducing unwanted dependencies at that stage.
-VERSION = '0.2.6'
+VERSION = '0.2.7'
 
 # The following code is borrowed from Sphinx
 # https://bitbucket.org/birkenfeld/sphinx/
