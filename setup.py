@@ -78,7 +78,7 @@ setup(
     cmdclass={'test': PyTest},
     tests_require=[
         'pytest>=2.0.3,<2.3',
-        'pytest-localserver',
+        'pytest-localserver>=0.3',
         'lxml',
         'cElementTree',
         'elementtree',
