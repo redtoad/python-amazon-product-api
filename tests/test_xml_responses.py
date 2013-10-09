@@ -5,6 +5,8 @@ import pytest
 import re
 import urllib2
 
+from pytest_localserver import http
+
 from tests import utils
 from tests import XML_TEST_DIR
 from tests import TESTABLE_API_VERSIONS, TESTABLE_LOCALES, TESTABLE_PROCESSORS
@@ -76,11 +78,7 @@ def pytest_funcarg__server(request):
     difference that it has a module-wide scope.
     """
     def setup():
-        try:
-            localserver = request.config.pluginmanager.getplugin('localserver')
-        except KeyError:
-            raise pytest.skip('This test needs plugin pytest-localserver!')
-        server = localserver.http.Server()
+        server = http.ContentServer()
         server.start()
         return server
     def teardown(server):
