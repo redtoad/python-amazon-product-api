@@ -159,8 +159,12 @@ class API (object):
             socket.setdefaulttimeout(self.TIMEOUT)
 
         # instantiate processor class
-        self._processor_module = processor
-        self.processor = load_class('%s.Processor' % processor)()
+        if isinstance(processor, str):
+            self._processor_module = processor
+            self.processor = load_class('%s.Processor' % processor)()
+        else:
+            self._processor_module = processor.__class__.__name__
+            self.processor = processor
 
         self.last_call = datetime(1970, 1, 1)
         self.debug = 0  # set to 1 if you want to see HTTP headers
