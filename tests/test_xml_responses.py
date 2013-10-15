@@ -1,4 +1,5 @@
 
+import collections
 import lxml.etree
 import os
 import pytest
@@ -55,6 +56,9 @@ def pytest_generate_tests(metafunc):
                 pytest.skip('Test cannot run for specified locales %s.' % (
                     metafunc.config.option.locales, ))
 
+        params = collections.namedtuple('Parameters', 
+            ['processor', 'version', 'locale', 'xml_response'])
+
         for processor in processors:
             for version in api_versions:
                 for locale in locales:
@@ -64,12 +68,7 @@ def pytest_generate_tests(metafunc):
                         metafunc.function.__name__[5:].replace('_', '-')))
                     metafunc.addcall(
                         id='%s:%s/%s' % (processor, version, locale),
-                        param={
-                            'processor': processor,
-                            'version': version,
-                            'locale': locale,
-                            'xml_response': local_file
-                        })
+                        param=params(processor, version, locale, local_file))
 
 
 def pytest_funcarg__server(request):
@@ -106,11 +105,11 @@ def pytest_funcarg__api(request):
     url_reg = re.compile(r'^http://(?P<host>[\w\-\.]+)(?P<path>/onca/xml.*)$')
 
     # the following parameters are injected by pytest_generate_tests
-    locale = request.param['locale']
-    version = request.param['version']
-    xml_response = request.param['xml_response']
+    locale = request.param.locale
+    version = request.param.version
+    xml_response = request.param.xml_response
 
-    processor = TESTABLE_PROCESSORS[request.param['processor']]
+    processor = TESTABLE_PROCESSORS[request.param.processor]
     api = API(locale=locale, processor=processor)
     api.VERSION = version
     api.REQUESTS_PER_SECOND = 10000  # just for here!
