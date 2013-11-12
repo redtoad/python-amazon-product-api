@@ -64,9 +64,7 @@ setup(
     packages=find_packages(_here, exclude=['tests']),
 
     cmdclass={'test': PyTest},
-    'install_requires': [
-        'requests', 
-    ],
+    install_requires=['requests'],
     tests_require=[
         'pytest-localserver>=0.3',
         'lxml',
