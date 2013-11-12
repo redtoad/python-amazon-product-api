@@ -4,16 +4,17 @@ Contains all errors specific to this package.
 """
 
 import re
+import sys
 
 __all__ = [
     'AccountLimitExceeded', 'AWSError', 'CartInfoMismatch', 'DEFAULT_ERROR_REGS',
     'InvalidClientTokenId', 'MissingClientTokenId', 'MissingParameters',
-    'DeprecatedOperation', 'InternalError', 'InvalidCartId', 'InvalidCartItem',
-    'InvalidListType', 'InvalidOperation', 'InvalidParameterCombination',
-    'InvalidParameterValue', 'InvalidResponseGroup', 'InvalidSearchIndex',
-    'ItemAlreadyInCart', 'JAPANESE_ERROR_REGS', 'NoExactMatchesFound',
-    'NoSimilarityForASIN', 'NotEnoughParameters', 'TooManyRequests',
-    'UnknownLocale'
+    'ParameterOutOfRange', 'DeprecatedOperation', 'InternalError',
+    'InvalidCartId', 'InvalidCartItem', 'InvalidListType', 'InvalidOperation',
+    'InvalidParameterCombination', 'InvalidParameterValue',
+    'InvalidResponseGroup', 'InvalidSearchIndex', 'ItemAlreadyInCart',
+    'JAPANESE_ERROR_REGS', 'NoExactMatchesFound', 'NoSimilarityForASIN',
+    'NotEnoughParameters', 'TooManyRequests', 'UnknownLocale', '_e'
 ]
 
 class AWSError (Exception):
@@ -69,6 +70,11 @@ class MissingParameters (AWSError):
     """
     Your request is missing required parameters. Required parameters include
     XXX.
+    """
+
+class ParameterOutOfRange(AWSError):
+    """
+    The value you specified for XXX is invalid.
     """
 
 class InvalidSearchIndex (AWSError):
@@ -244,4 +250,17 @@ JAPANESE_ERROR_REGS = {
         u'\u30bf\u306b\u306f\u3001(?P<parameter>\w+)\u306a\u3069\u304c\u3042'
         u'\u308a\u307e\u3059\u3002'),
 }
+
+
+def _e(error_class, *args, **kwargs):
+    """
+    Returns an exception of type ``error_class`` based on an instance of
+    :class:`AWSError`  all relevant information appended.
+    """
+    exc = sys.exc_info()[1]
+    error = error_class(*args)
+    error.msg = exc.msg
+    error.code = exc.code
+    error.xml = exc.xml
+    return error
 

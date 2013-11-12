@@ -256,50 +256,48 @@ class API (object):
             return self.processor.parse(fp)
         except AWSError, e:
 
-            if e.code == 'InternalError':
-                raise InternalError
+            # simple errors
 
-            if e.code == 'InvalidClientTokenId':
-                raise InvalidClientTokenId
+            errors = {
+                'InternalError': InternalError,
+                'InvalidClientTokenId': InvalidClientTokenId,
+                'MissingClientTokenId': MissingClientTokenId,
+                'RequestThrottled': TooManyRequests,
+                'Deprecated': DeprecatedOperation,
+                'AWS.ECommerceService.NoExactMatches': NoExactMatchesFound,
+                'AccountLimitExceeded': AccountLimitExceeded,
+                'AWS.ECommerceService.ItemNotEligibleForCart': InvalidCartItem,
+                'AWS.ECommerceService.CartInfoMismatch': CartInfoMismatch,
+                'AWS.ParameterOutOfRange': ParameterOutOfRange,  # TODO regexp?
+            }
 
-            if e.code == 'MissingClientTokenId':
-                raise MissingClientTokenId
+            if e.code in errors:
+                raise _e(errors[e.code])
 
             if e.code == 'AWS.MissingParameters':
                 m = self._reg('missing-parameters').search(e.msg)
-                raise MissingParameters(m.group('parameter'))
-
-            if e.code == 'RequestThrottled':
-                raise TooManyRequests
-
-            if e.code == 'Deprecated':
-                raise DeprecatedOperation(e.msg)
-
-            if e.code == 'AWS.ECommerceService.NoExactMatches':
-                raise NoExactMatchesFound
-
-            if e.code == 'AWS.ECommerceService.NoExactMatches':
-                raise NoExactMatchesFound
+                raise _e(MissingParameters, m.group('parameter'))
 
             if e.code == 'AWS.InvalidEnumeratedParameter':
                 m = self._reg('invalid-value').search(e.msg)
                 if m is not None:
                     if m.group('parameter') == 'ResponseGroup':
-                        raise InvalidResponseGroup()
+                        raise _e(InvalidResponseGroup)
                     elif m.group('parameter') == 'SearchIndex':
-                        raise InvalidSearchIndex()
+                        raise _e(InvalidSearchIndex)
 
             if e.code == 'AWS.InvalidParameterValue':
                 m = self._reg('invalid-parameter-value').search(e.msg)
-                raise InvalidParameterValue(m.group('parameter'),
-                                            m.group('value'))
+                raise _e(InvalidParameterValue,
+                         m.group('parameter'), m.group('value'))
 
             if e.code == 'AWS.RestrictedParameterValueCombination':
                 m = self._reg('invalid-parameter-combination').search(e.msg)
-                raise InvalidParameterCombination(m.group('message'))
+                raise _e(InvalidParameterCombination, m.group('message'))
 
-            if e.code == 'AccountLimitExceeded':
-                raise AccountLimitExceeded(e.msg)
+            if e.code == 'AWS.ECommerceService.ItemAlreadyInCart':
+                item = self._reg('already-in-cart').search(e.msg).group('item')
+                raise _e(ItemAlreadyInCart, item)
 
             # otherwise simply re-raise
             raise
@@ -438,18 +436,11 @@ class API (object):
                 return paginator(self.call, **operators)
             else:
                 return self.call(**operators)
-        except AWSError, e:
 
-            if (e.code == 'AWS.InvalidEnumeratedParameter'
-            and self._reg('invalid-value').search(e.msg)
-                    .group('parameter') == 'SearchIndex'):
-                raise InvalidSearchIndex(params.get('SearchIndex'))
-
-            if e.code == 'AWS.InvalidResponseGroup':
-                raise InvalidResponseGroup(params.get('ResponseGroup'))
-
-            # otherwise re-raise exception
-            raise # pragma: no cover
+        except InvalidSearchIndex:
+            raise _e(InvalidSearchIndex, params.get('SearchIndex'))
+        except InvalidResponseGroup:
+            raise _e(InvalidResponseGroup, params.get('ResponseGroup'))
 
     def item_search(self, search_index, paginate=ITEMS_PAGINATOR, **params):
         """
@@ -536,17 +527,11 @@ class API (object):
                 return paginator(self.call, **operators)
             else:
                 return self.call(**operators)
-        except AWSError, e:
 
-            if (e.code == 'AWS.InvalidEnumeratedParameter'
-            and self._reg('invalid-value').search(e.msg)):
-                raise InvalidSearchIndex(search_index)
-
-            if e.code == 'AWS.InvalidResponseGroup':
-                raise InvalidResponseGroup(params.get('ResponseGroup'))
-
-            # otherwise re-raise exception
-            raise # pragma: no cover
+        except InvalidSearchIndex:
+            raise _e(InvalidSearchIndex, search_index)
+        except InvalidResponseGroup:
+            raise _e(InvalidResponseGroup, params.get('ResponseGroup'))
 
     def similarity_lookup(self, *ids, **params):
         """
@@ -619,10 +604,10 @@ class API (object):
 
             if e.code == 'AWS.ECommerceService.NoSimilarities':
                 asin = self._reg('no-similarities').search(e.msg).group('ASIN')
-                raise NoSimilarityForASIN(asin)
+                raise _e(NoSimilarityForASIN, asin)
 
             # otherwise re-raise exception
-            raise # pragma: no cover
+            raise  # pragma: no cover
 
     def browse_node_lookup(self, browse_node_id, response_group=None, **params):
         """
@@ -729,10 +714,10 @@ class API (object):
         except AWSError, e:
 
             if e.code == 'AWS.InvalidResponseGroup':
-                raise InvalidResponseGroup(params.get('ResponseGroup'))
+                raise _e(InvalidResponseGroup, params.get('ResponseGroup'))
 
             # otherwise re-raise exception
-            raise # pragma: no cover
+            raise  # pragma: no cover
 
     def _convert_cart_items(self, items, key='ASIN'):
         """
@@ -791,23 +776,13 @@ class API (object):
         is modified. In this way, a cart can last for more than 7 days. If, for
         example, on day 6, the customer modifies a cart, the 7 day countdown
         starts over.
+
+        .. versionchanged:: 0.2.8
+           Will raise :class:`~errors.ParameterOutOfRange` rather than
+           :class:`ValueError`.
         """
-        try:
-            params.update(self._convert_cart_items(items))
-            return self.call(Operation='CartCreate', **params)
-        except AWSError, e:
-
-            if e.code == 'AWS.MissingParameters':
-                raise ValueError(e.msg)
-
-            if e.code == 'AWS.ParameterOutOfRange':
-                raise ValueError(e.msg)
-
-            if e.code == 'AWS.ECommerceService.ItemNotEligibleForCart':
-                raise InvalidCartItem(e.msg)
-
-            # otherwise re-raise exception
-            raise  # pragma: no cover
+        params.update(self._convert_cart_items(items))
+        return self.call(Operation='CartCreate', **params)
 
     def cart_add(self, cart_id, hmac, items, **params):
         """
@@ -838,37 +813,17 @@ class API (object):
            actual price. The only way to see the actual price is to add the
            item to a remote shopping cart and follow the PurchaseURL. The
            actual price will be the MAP or lower.
+
+        .. versionchanged:: 0.2.8
+           Will raise :class:`~errors.ParameterOutOfRange` rather than
+           :class:`ValueError`.
         """
-        try:
-            params.update({
-                'CartId': cart_id,
-                'HMAC': hmac,
-            })
-            params.update(self._convert_cart_items(items))
-            return self.call(Operation='CartAdd', **params)
-        except AWSError, e:
-
-            if e.code == 'AWS.ECommerceService.InvalidCartId':
-                raise InvalidCartId
-
-            if e.code == 'AWS.ECommerceService.CartInfoMismatch':
-                raise CartInfoMismatch
-
-            if e.code == 'AWS.MissingParameters':
-                raise ValueError(e.msg)
-
-            if e.code == 'AWS.ParameterOutOfRange':
-                raise ValueError(e.msg)
-
-            if e.code == 'AWS.ECommerceService.ItemNotEligibleForCart':
-                raise InvalidCartItem(e.msg)
-
-            if e.code == 'AWS.ECommerceService.ItemAlreadyInCart':
-                item = self._reg('already-in-cart').search(e.msg).group('item')
-                raise ItemAlreadyInCart(item)
-
-            # otherwise re-raise exception
-            raise  # pragma: no cover
+        params.update({
+            'CartId': cart_id,
+            'HMAC': hmac,
+        })
+        params.update(self._convert_cart_items(items))
+        return self.call(Operation='CartAdd', **params)
 
     def cart_modify(self, cart_id, hmac, item_ids, **params):
         """
@@ -895,31 +850,18 @@ class API (object):
         If the associated :meth:`cart_create` request specified an
         AssociateTag, all :meth:`cart_modify` requests must also include a value
         for Associate Tag otherwise the request will fail.
+
+        .. versionchanged:: 0.2.8
+           Will raise :class:`~errors.ParameterOutOfRange` or
+           :class:`~errors.MissingParameters`rather than :class:`ValueError`.
         """
         # TODO Action=SaveForLater
-        try:
-            params.update({
-                'CartId': cart_id,
-                'HMAC': hmac,
-            })
-            params.update(self._convert_cart_items(item_ids, key='CartItemId'))
-            return self.call(Operation='CartModify', **params)
-        except AWSError, e:
-
-            if e.code == 'AWS.ECommerceService.CartInfoMismatch':
-                raise CartInfoMismatch
-
-            if e.code == 'AWS.MissingParameters':
-                raise ValueError(e.msg)
-
-            if e.code == 'AWS.ParameterOutOfRange':
-                raise ValueError(e.msg)
-
-            if e.code == 'AWS.ECommerceService.ItemNotEligibleForCart':
-                raise InvalidCartItem(e.msg)
-
-            # otherwise re-raise exception
-            raise  # pragma: no cover
+        params.update({
+            'CartId': cart_id,
+            'HMAC': hmac,
+        })
+        params.update(self._convert_cart_items(item_ids, key='CartItemId'))
+        return self.call(Operation='CartModify', **params)
 
     def cart_get(self, cart_id, hmac, **params):
         """
@@ -948,19 +890,11 @@ class API (object):
         ``AssociateTag``, all :meth:`cart_get` requests must also include a
         value for ``AssociateTag`` otherwise the request will fail.
         """
-        try:
-            params.update({
-                'CartId': cart_id,
-                'HMAC': hmac,
-            })
-            return self.call(Operation='CartGet', **params)
-        except AWSError, e:
-
-            if e.code == 'AWS.ECommerceService.CartInfoMismatch':
-                raise CartInfoMismatch
-
-            # otherwise re-raise exception
-            raise  # pragma: no cover
+        params.update({
+            'CartId': cart_id,
+            'HMAC': hmac,
+        })
+        return self.call(Operation='CartGet', **params)
 
     def cart_clear(self, cart_id, hmac, **params):
         """
@@ -986,19 +920,11 @@ class API (object):
         is 7 days since the last time it was acted upon. For example, if a cart
         created 6 days ago is modified, the cart lifespan is reset to 7 days.
         """
-        try:
-            params.update({
-                'CartId': cart_id,
-                'HMAC': hmac,
-            })
-            return self.call(Operation='CartClear', **params)
-        except AWSError, e:
-
-            if e.code == 'AWS.ECommerceService.CartInfoMismatch':
-                raise CartInfoMismatch
-
-            # otherwise re-raise exception
-            raise  # pragma: no cover
+        params.update({
+            'CartId': cart_id,
+            'HMAC': hmac,
+        })
+        return self.call(Operation='CartClear', **params)
 
     def deprecated_operation(self, *args, **kwargs):
         """
@@ -1006,7 +932,7 @@ class API (object):
         avoid unnecessary API calls, a ``DeprecatedOperation`` exception is
         thrown straight-away.
         """
-        raise DeprecatedOperation
+        raise DeprecatedOperation  # no error factory necessary!
 
     # shortcuts for deprecated operations
     customer_content_lookup = customer_content_search = deprecated_operation
