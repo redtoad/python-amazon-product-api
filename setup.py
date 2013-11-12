@@ -28,14 +28,6 @@ def readme():
         return read(matchobj.group(1))
     return re.sub(r'\.\. include:: (\w+)', insert_include, read('README'))
 
-extras = {
-    'setup_requires': [],
-}
-
- # for python2.4
-if sys.version_info[:2] < (2, 5):
-    extras['setup_requires'] += ['pycrypto']
-
 class PyTest(Command):
     """
     setuptools/distutils command to run py.test.
@@ -53,12 +45,8 @@ class PyTest(Command):
 if 'register' in sys.argv or 'upload' in sys.argv:
     version_ = version()
     if '/' in version_ or '+' in version_:
-        if 'local' in sys.argv:
-            extras['setup_requires'] += ['hgtools']
-            extras['use_hg_version'] = {'increment': '0.0.1'}
-        else:
-            print 'ERROR: Version %r has not been adjusted yet!' % version_
-            sys.exit(1)
+        print('ERROR: Version %r has not been adjusted yet!' % version_)
+        sys.exit(1)
 
 setup(
     name='python-amazon-product-api',
@@ -76,29 +64,22 @@ setup(
     packages=find_packages(_here, exclude=['tests']),
 
     cmdclass={'test': PyTest},
+    'install_requires': [
+        'requests', 
+    ],
     tests_require=[
-        'pytest>=2.0.3,<2.3',
         'pytest-localserver>=0.3',
         'lxml',
-        'cElementTree',
-        'elementtree',
-        'tox',
-        'virtualenv<1.8',  # for testing Python 2.4
     ],
 
     classifiers=[
-        'Operating System :: OS Independent',
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
         'Operating System :: OS Independent',
-        'Programming Language :: Python :: 2.4',
-        'Programming Language :: Python :: 2.5',
-        'Programming Language :: Python :: 2.6',
-        'Programming Language :: Python :: 2.7',
-        'Topic :: Internet :: WWW/HTTP',
-        'Topic :: Software Development :: Libraries :: Python Modules',
+        'Programming Language :: Python', 
+        'Programming Language :: Python :: 2.6', 
+        'Programming Language :: Python :: 2.7', 
+        'Programming Language :: Python :: 3.3', 
     ],
-
-    **extras
 )
