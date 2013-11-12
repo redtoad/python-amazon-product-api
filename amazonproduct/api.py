@@ -853,7 +853,7 @@ class API (object):
 
         .. versionchanged:: 0.2.8
            Will raise :class:`~errors.ParameterOutOfRange` or
-           :class:`~errors.MissingParameters`rather than :class:`ValueError`.
+           :class:`~errors.MissingParameters` rather than :class:`ValueError`.
         """
         # TODO Action=SaveForLater
         params.update({
