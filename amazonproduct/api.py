@@ -269,6 +269,8 @@ class API (object):
                 'AWS.ECommerceService.ItemNotEligibleForCart': InvalidCartItem,
                 'AWS.ECommerceService.CartInfoMismatch': CartInfoMismatch,
                 'AWS.ParameterOutOfRange': ParameterOutOfRange,  # TODO regexp?
+                'AWS.InvalidAccount': InvalidAccount,
+                'SignatureDoesNotMatch': InvalidSignature,
             }
 
             if e.code in errors:

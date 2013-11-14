@@ -127,6 +127,12 @@ class TestAPICalls (object):
         server.serve_content(xml, 403)
         pytest.raises(InvalidClientTokenId, api.item_lookup, '9780747532743')
 
+    def test_fails_for_invalid_signature(self, api, server):
+        xml = open(os.path.join(XML_TEST_DIR,
+                                'APICalls-fails-for-invalid-signature.xml')).read()
+        server.serve_content(xml, 403)
+        pytest.raises(InvalidSignature, api.item_lookup, '9780747532743')
+
     def test_fails_for_too_many_requests(self, api, server):
         xml = open(os.path.join(XML_TEST_DIR,
             'APICalls-fails-for-too-many-requests.xml')).read()
