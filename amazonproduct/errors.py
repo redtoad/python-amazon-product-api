@@ -8,7 +8,7 @@ import sys
 
 __all__ = [
     'AccountLimitExceeded', 'AWSError', 'CartInfoMismatch', 'DEFAULT_ERROR_REGS',
-    'InvalidClientTokenId', 'MissingClientTokenId', 'MissingParameters',
+    'InvalidClientTokenId', 'InvalidSignature', 'InvalidAccount', 'MissingClientTokenId', 'MissingParameters',
     'ParameterOutOfRange', 'DeprecatedOperation', 'InternalError',
     'InvalidCartId', 'InvalidCartItem', 'InvalidListType', 'InvalidOperation',
     'InvalidParameterCombination', 'InvalidParameterValue',
@@ -64,6 +64,16 @@ class InvalidClientTokenId (AWSError):
 class MissingClientTokenId (AWSError):
     """
     Request must contain AWSAccessKeyId or X.509 certificate.
+    """
+
+class InvalidSignature(AWSError):
+    """
+    The AWS Secret key you provided is invalid.
+    """
+
+class InvalidAccount(AWSError):
+    """
+    Your account has no access to the product API.
     """
 
 class MissingParameters (AWSError):

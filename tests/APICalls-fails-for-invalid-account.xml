@@ -1,0 +1,36 @@
+<ItemLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
+    <OperationRequest>
+        <RequestId>fcab31f9-1351-4ebd-b17f-94feabee32c9</RequestId>
+        <Arguments>
+            <Argument Name="Operation" Value="ItemLookup"/>
+            <Argument Name="Service" Value="AWSECommerceService"/>
+            <Argument Name="AssociateTag" Value="foobar-21"/>
+            <Argument Name="Version" Value="2011-08-01"/>
+            <Argument Name="Signature" Value="xxx"/>
+            <Argument Name="ItemId" Value="B00CX7C0FQ,B00F8ZEAX0"/>
+            <Argument Name="IdType" Value="ASIN"/>
+            <Argument Name="AWSAccessKeyId" Value="xxx"/>
+            <Argument Name="Timestamp" Value="2013-11-14T10:03:41Z"/>
+            <Argument Name="ResponseGroup" Value="Large"/>
+        </Arguments>
+        <RequestProcessingTime>0.0077710000000000</RequestProcessingTime>
+    </OperationRequest>
+    <Items>
+        <Request>
+            <IsValid>False</IsValid>
+            <ItemLookupRequest>
+                <IdType>ASIN</IdType>
+                <ItemId>B00CX7C0FQ,B00F8ZEAX0</ItemId>
+                <ResponseGroup>Large</ResponseGroup>
+            </ItemLookupRequest>
+            <Errors>
+                <Error>
+                    <Code>AWS.InvalidAccount</Code>
+                    <Message>
+                        Ihre Zugriffsschlüssel-ID ist nicht für das Produktwerbungs-API registriert. Verwenden Sie die Zugriffsschlüssel-ID, die Sie nach der Registrierung bei https://partnernet.amazon.de/gp/flex/advertising/api/sign-in.html erhalten haben.
+                    </Message>
+                </Error>
+            </Errors>
+        </Request>
+    </Items>
+</ItemLookupResponse>
