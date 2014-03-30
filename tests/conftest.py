@@ -6,6 +6,9 @@ import textwrap
 
 from amazonproduct import utils
 
+pytest_plugins = 'localserver'
+
+
 def pytest_addoption(parser):
     group = parser.getgroup('amazonproduct',
         'custom options for testing python-amazon-product-api')
@@ -35,11 +38,8 @@ def pytest_funcarg__server(request):
     difference that it has a module-wide scope.
     """
     def setup():
-        try:
-            localserver = request.config.pluginmanager.getplugin('localserver')
-        except KeyError:
-            raise pytest.skip('This test needs plugin pytest-localserver!')
-        server = localserver.http.Server()
+        from pytest_localserver import http
+        server = http.ContentServer()
         server.start()
         return server
     def teardown(server):
