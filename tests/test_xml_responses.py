@@ -569,13 +569,13 @@ class TestCartCreate (object):
 
     def test_creating_basket_with_empty_items_fails(self, api, item):
         pytest.raises(MissingParameters, api.cart_create, {}) # Items missing
-        pytest.raises(ValueError, api.cart_create, {item: 0})
+        pytest.raises(ParameterOutOfRange, api.cart_create, {item: 0})
 
     def test_creating_basket_with_negative_item_quantity_fails(self, api, item):
-        pytest.raises(ValueError, api.cart_create, {item: -1})
+        pytest.raises(ParameterOutOfRange, api.cart_create, {item: -1})
 
     def test_creating_basket_with_quantity_too_high_fails(self, api, item):
-        pytest.raises(ValueError, api.cart_create, {item: 1000})
+        pytest.raises(ParameterOutOfRange, api.cart_create, {item: 1000})
 
     def test_creating_basket_with_unknown_item_fails(self, api, item):
         pytest.raises(InvalidCartItem, api.cart_create, {'021554' : 1})
@@ -622,13 +622,13 @@ class TestCartAdd (object):
 
     def test_adding_empty_items_fails(self, api, cart, item):
         pytest.raises(MissingParameters, api.cart_add, cart.cart_id, cart.hmac, {})
-        pytest.raises(ValueError, api.cart_add, cart.cart_id, cart.hmac, {item: 0})
+        pytest.raises(ParameterOutOfRange, api.cart_add, cart.cart_id, cart.hmac, {item: 0})
 
     def test_adding_negative_item_quantity_fails(self, api, cart, item):
-        pytest.raises(ValueError, api.cart_add, cart.cart_id, cart.hmac, {item: -1})
+        pytest.raises(ParameterOutOfRange, api.cart_add, cart.cart_id, cart.hmac, {item: -1})
 
     def test_adding_item_quantity_too_high_fails(self, api, cart, item):
-        pytest.raises(ValueError, api.cart_add, cart.cart_id, cart.hmac, {item: 1000})
+        pytest.raises(ParameterOutOfRange, api.cart_add, cart.cart_id, cart.hmac, {item: 1000})
 
     def test_adding_unknown_item_fails(self, api, cart):
         pytest.raises(InvalidCartItem, api.cart_add, cart.cart_id, cart.hmac, {'021554': 1})
@@ -664,10 +664,10 @@ class TestCartModify (object):
         pytest.raises(MissingParameters, api.cart_modify, cart.cart_id, cart.hmac, {})
 
     def test_modifying_negative_item_quantity_fails(self, api, cart, item):
-        pytest.raises(ValueError, api.cart_modify, cart.cart_id, cart.hmac, {item: -1})
+        pytest.raises(ParameterOutOfRange, api.cart_modify, cart.cart_id, cart.hmac, {item: -1})
 
     def test_modifying_item_quantity_too_high_fails(self, api, cart, item):
-        pytest.raises(ValueError, api.cart_modify, cart.cart_id, cart.hmac, {item: 1000})
+        pytest.raises(ParameterOutOfRange, api.cart_modify, cart.cart_id, cart.hmac, {item: 1000})
 
     def test_modifying_item(self, api, cart, items):
         first, second = items[:2]
