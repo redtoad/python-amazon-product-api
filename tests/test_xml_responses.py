@@ -4,7 +4,6 @@ import lxml.etree
 import os
 import pytest
 import re
-import urllib2
 
 from pytest_localserver import http
 
@@ -28,6 +27,7 @@ def pytest_generate_tests(metafunc):
 
         processors = getattr(metafunc.function, 'processors',
             getattr(metafunc.cls, 'processors', TESTABLE_PROCESSORS.keys()))
+
         # if --processor is used get intersecting values
         if metafunc.config.option.processors:
             is_specified = lambda x: x in metafunc.config.option.processors
@@ -159,12 +159,8 @@ def pytest_funcarg__api(request):
                 # fetch XML via urllib2 rather than directly via
                 # lxml.etree.parse() to avoid, for instance, problems with HTTP
                 # 403 errors
-                try:
-                    req = urllib2.Request(url, headers={'User-Agent': USER_AGENT})
-                    xml = urllib2.urlopen(req).read()
-                except urllib2.HTTPError, e:
-                    xml = e.read()
-                root = lxml.etree.fromstring(xml)
+                resp = requests.get(url, headers={'User-Agent': USER_AGENT})
+                root = lxml.etree.fromstring(resp.text)
                 # overwrite sensitive information in XML document.
                 for arg in root.xpath('//aws:Argument',
                         namespaces={'aws': root.nsmap[None]}):
