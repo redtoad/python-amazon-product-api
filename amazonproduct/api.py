@@ -197,6 +197,9 @@ class API (object):
         if 'AssociateTag' not in qargs and self.associate_tag:
             qargs['AssociateTag'] = self.associate_tag
 
+        if isinstance(qargs.get('ResponseGroup'), list):
+            qargs['ResponseGroup'] = ','.join(qargs['ResponseGroup'])
+
         # add timestamp (this is required when using a signature)
         qargs['Timestamp'] = strftime("%Y-%m-%dT%H:%M:%SZ", gmtime())
 
