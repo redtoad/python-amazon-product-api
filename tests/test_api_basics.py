@@ -44,6 +44,16 @@ class TestAPICallsWithOptionalParameters (object):
         assert qs['AssociateTag'][0] == tag
 
 
+class TestParameterConversions (object):
+
+    def test_responsegroups_as_list(self):
+        api = API(locale='de')
+        url = api._build_url(ResponseGroup=['ItemAttributes', 'Images'])
+        qs = parse_qs(urlparse(url)[4])
+        assert qs['ResponseGroup'][0] == 'ItemAttributes,Images'
+
+
+
 class TestAPIInitialisation (object):
 
     """
