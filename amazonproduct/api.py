@@ -349,8 +349,7 @@ class API (object):
             >>> api = API(locale='uk')
             >>> result = api.item_lookup('B006H3MIV8')
             >>> for item in result.Items.Item:
-            ...     print '%s (%s) in group %s' % (
-            ...         item.ItemAttributes.Title, item.ASIN)
+            ...     print '%s (%s)' % (item.ItemAttributes.Title, item.ASIN)
             ... 
             Chimes of Freedom: The Songs of Bob Dylan (B006H3MIV8)
 
