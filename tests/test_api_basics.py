@@ -3,11 +3,11 @@ from datetime import datetime, timedelta
 import pytest
 import os.path
 
+# support Python 2 and Python 3 without conversion
 try:
-    from urlparse import urlparse, parse_qs
+    from urllib.parse import urlparse, parse_qs
 except ImportError:
-    from urlparse import urlparse
-    from cgi import parse_qs
+    from urlparse import urlparse, parse_qs
 
 from tests import TESTABLE_API_VERSIONS, XML_TEST_DIR
 from tests.utils import convert_camel_case, extract_operations_from_wsdl

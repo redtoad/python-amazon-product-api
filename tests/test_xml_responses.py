@@ -4,6 +4,15 @@ import lxml.etree
 import os
 import pytest
 import re
+import sys
+
+# support Python 2 and Python 3 without conversion
+try:
+    from urllib.request import HTTPError
+except ImportError:
+    from urllib2 import HTTPError
+
+import requests
 
 from pytest_localserver import http
 
@@ -272,7 +281,8 @@ class TestItemLookup (object):
         # Harry Potter and the Philosopher's Stone
         try:
             api.item_lookup('9780747532743', IdType='ISBN')
-        except AWSError, e:
+        except AWSError:
+            e = sys.exc_info()[1]  # Python 2/3 compatible
             assert e.code == 'AWS.MissingParameterValueCombination'
         
         
@@ -286,7 +296,8 @@ class TestItemSearch (object):
         try:
             pytest.raises(InvalidResponseGroup, 
                               api.item_search, 'Books')
-        except AWSError, e:
+        except AWSError:
+            e = sys.exc_info()[1]  # Python 2/3 compatible
             assert e.code == 'AWS.MinimumParameterRequirement'
         
     def test_unicode_parameter(self, api):
@@ -495,7 +506,7 @@ class TestBrowseNodeLookup (object):
                83],
         'us': [1, 2, 3, 4, 4366, 5, 6, 86, 301889, 10, 9, 48, 10777, 17,
                13996, 18, 53, 290060, 20, 173507, 21, 22, 23, 75, 25, 26, 28,
-               27, 3248857011L],
+               27, 3248857011],
     }
     
     ANCESTORS = {
@@ -599,11 +610,11 @@ def pytest_funcarg__cart(request):
     def create_cart():
         root = api.cart_create(items)
         cart = api.processor.parse_cart(root)
-        print 'Cart created:', cart
+        print('Cart created:', cart)
         return cart
     def destroy_cart(cart):
         api.cart_clear(cart.cart_id, cart.hmac)
-        print 'Cart cleared.'
+        print('Cart cleared.')
     return request.cached_setup(
         setup=create_cart, teardown=destroy_cart, scope='function')
 
