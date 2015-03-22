@@ -1,7 +1,13 @@
 
 import socket
 import time
-import urllib2
+import sys
+
+# support Python 2 and Python 3 without conversion
+try:
+    from urllib.request import URLError
+except ImportError:
+    from urllib2 import URLError
 
 from amazonproduct.api import API
 
@@ -37,7 +43,8 @@ class RetryAPI (API):
             try:
                 attempts += 1
                 return API._fetch(self, url)
-            except urllib2.URLError, e:
+            except URLError:
+                e = sys.exc_info()[1]  # Python 2/3 compatible
 
                 # if a timeout occurred
                 # wait for some time before trying again

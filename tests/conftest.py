@@ -1,8 +1,13 @@
-from ConfigParser import SafeConfigParser
 import os.path
 import pytest
 import re
 import textwrap
+
+# Python 2/3 compatible imports
+try:
+    from configparser import SafeConfigParser
+except ImportError:
+    from ConfigParser import SafeConfigParser
 
 from amazonproduct import utils
 

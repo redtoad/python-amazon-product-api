@@ -1,5 +1,13 @@
+
 import socket
-from urllib2 import URLError
+import sys
+
+# support Python 2 and Python 3 without conversion
+try:
+    from urllib.request import URLError
+except ImportError:
+    from urllib2 import URLError
+
 import pytest
 
 from amazonproduct.api import API
@@ -16,7 +24,7 @@ def test_timeout(monkeypatch):
             self.calls = 0
         def __call__(self, _, url):
             self.calls += 1
-            print 'call %i: %s' % (self.calls, url)
+            print('call {0}: {1}'.format(self.calls, url))
             raise URLError(socket.timeout())
 
     fetcher = mock_fetch()
@@ -28,7 +36,8 @@ def test_timeout(monkeypatch):
     try:
         api.call(operation='DummyOperation')
         itworked = True
-    except URLError, e:
+    except URLError:
+        e = sys.exc_info()[1]  # Python 2/3 compatible
         assert isinstance(e.reason, socket.timeout)
 
     # timeout WAS raised and fetch was called TRIES times

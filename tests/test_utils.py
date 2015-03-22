@@ -1,6 +1,10 @@
 import os
 import pytest
-import types
+
+try:
+    from types import TypeType
+except ImportError:
+    TypeType = type
 
 from amazonproduct import utils
 from amazonproduct.processors import etree, minidom
@@ -39,7 +43,7 @@ def test_load_environment_config(monkeypatch):
     assert cfg['access_key'] == 'ABCDEFGH12345'
     assert cfg['secret_key'] == 'zhgsdds8'
     assert cfg['locale'] == 'uk'
-    assert not cfg.has_key('associate_tag')
+    assert 'associate_tag' not in cfg
 
 
 DUMMY_CONFIG = """
@@ -94,5 +98,5 @@ def test_specific_config_file_overrides_all_but_os_variables(configfiles, monkey
 ])
 def test_load_class(txt, cls):
     loaded = utils.load_class(txt)
-    assert isinstance(loaded, types.TypeType)
+    assert isinstance(loaded, TypeType)
     assert loaded == cls

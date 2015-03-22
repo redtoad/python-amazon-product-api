@@ -3,9 +3,14 @@
 # This program is release under the BSD License. You can find the full text of
 # the license in the LICENSE file.
 
-from ConfigParser import SafeConfigParser
 import os
 import sys
+
+# Python 2/3 compatible imports
+try:
+    from configparser import SafeConfigParser
+except ImportError:
+    from ConfigParser import SafeConfigParser
 
 REQUIRED_KEYS = [
     'access_key',
@@ -119,7 +124,7 @@ def import_module(name, package=None):
         if not hasattr(package, 'rindex'):
             raise ValueError("'package' not set to a string")
         dot = len(package)
-        for x in xrange(level, 1, -1):
+        for x in range(level, 1, -1):
             try:
                 dot = package.rindex('.', 0, dot)
             except ValueError:

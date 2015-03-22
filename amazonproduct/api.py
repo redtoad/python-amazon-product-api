@@ -1,41 +1,33 @@
-# Copyright (C) 2009-2013 Sebastian Rahlf <basti at redtoad dot de>
+# Copyright (C) 2009-2015 Sebastian Rahlf <basti at redtoad dot de>
 #
 # This program is release under the BSD License. You can find the full text of
 # the license in the LICENSE file.
+
+from __future__ import unicode_literals
 
 __docformat__ = "restructuredtext en"
 
 from base64 import b64encode
 from datetime import datetime, timedelta
 import gzip
+from hashlib import sha256
 import hmac
 import socket
-import StringIO
 import sys
 from time import strftime, gmtime, sleep
-import urllib2
 import warnings
 
-# For historic reasons, this module also supports Python 2.4. To make this
-# happen, a few things have to be imported differently, e.g. pycrypto is needed
-# to create URL signatures.
-if sys.version_info[:2] > (2, 4): # pragma: no cover
+# support Python 2 and Python 3 without conversion
+try:
+    from io import StringIO
+    from urllib.request import HTTPError
+    from urllib.parse import quote
+except ImportError:
+    from cStringIO import StringIO
+    from urllib2 import HTTPError
     from urllib2 import quote
-    from hashlib import sha256 # pylint: disable-msg=E0611
-else:
-    from urllib import quote
-    from Crypto.Hash import SHA256 as sha256
 
-    # builtin function all() is only available from Python 2.5 onward!
-    def all(iterable):
-        """
-        Returns True if all elements of the iterable are true (or if the
-        iterable is empty).
-        """
-        for element in iterable:
-            if not element:
-                return False
-        return True
+import requests
 
 from amazonproduct.version import VERSION
 from amazonproduct.errors import *
@@ -59,31 +51,6 @@ HOSTS = {
     'uk': 'ecs.amazonaws.co.uk',
     'us': 'ecs.amazonaws.com',
 }
-
-
-class GZipHandler(urllib2.BaseHandler):
-
-    """
-    A handler to deal with gzip encoded content.
-    Borrowed from Andrew Rowls
-    http://techknack.net/python-urllib2-handlers/
-    """
-
-    def http_request(self, req):
-        req.add_header('Accept-Encoding', 'gzip')
-        return req
-
-    def http_response(self, req, resp):
-        if resp.headers.get('content-encoding') == 'gzip':
-            gz = gzip.GzipFile(fileobj=StringIO.StringIO(resp.read()), mode='r')
-            old = resp
-            resp = urllib2.addinfourl(gz, old.headers, old.url)
-            resp.msg = old.msg
-            resp.code = old.code # support for Python2.4/2.5
-        return resp
-
-    https_request = http_request
-    https_response = http_response
 
 
 class API (object):
@@ -111,9 +78,9 @@ class API (object):
         reviews_iframe = root.Items.Item.CustomerReviews.IFrameURL
     """
 
-    VERSION = '2011-08-01' #: supported Amazon API version
-    REQUESTS_PER_SECOND = 1 #: max requests per second
-    TIMEOUT = 5 #: timeout in seconds
+    VERSION = '2011-08-01'  #: supported Amazon API version
+    REQUESTS_PER_SECOND = 1  #: max requests per second
+    TIMEOUT = 5  #: timeout in seconds
 
     def __init__(self, access_key_id=None, secret_access_key=None, locale=None,
              associate_tag=None, processor='amazonproduct.processors.objectify',
@@ -143,7 +110,7 @@ class API (object):
 
         if not all(getattr(self, key, False) for key in REQUIRED_KEYS):
             # load missing valued from config file
-            if cfg is None or isinstance(cfg, (str, unicode)):
+            if cfg is None or isinstance(cfg, str):
                 cfg = load_config(cfg)
             for key in REQUIRED_KEYS:
                 if getattr(self, key, '???') is None and cfg.get(key, None):
@@ -180,8 +147,8 @@ class API (object):
         http://blog.umlungu.co.uk/blog/2009/jul/12/pyaws-adding-request-authentication/)
         """
         # remove empty (=None) parameters
-        for key, val in qargs.items():
-            if val is None:
+        for key in list(qargs):
+            if qargs[key] is None:
                 del qargs[key]
 
         if 'AWSAccessKeyId' not in qargs:
@@ -202,17 +169,22 @@ class API (object):
 
         # create signature
         keys = sorted(qargs.keys())
-        args = '&'.join('%s=%s' % (key, quote(unicode(qargs[key])
-                        .encode('utf-8'), safe='~')) for key in keys)
+        args = '&'.join('%s=%s' % (
+            key, quote(str(qargs[key]).encode('utf-8'))) for key in keys)
 
         msg = 'GET'
         msg += '\n' + self.host
         msg += '\n/onca/xml'
         msg += '\n' + args
 
-        signature = quote(
-            b64encode(hmac.new(self.secret_key or '', msg, sha256).digest()))
+        key = self.secret_key or ''
+        # On python3, HMAC needs bytes for key and msg.
+        try:
+            hash = hmac.new(key, msg, sha256)
+        except TypeError:
+            hash = hmac.new(key.encode(), msg.encode(), sha256)
 
+        signature = quote(b64encode(hash.digest()))
         return 'http://%s/onca/xml?%s&Signature=%s' % (
             self.host, args, signature)
 
@@ -220,9 +192,6 @@ class API (object):
         """
         Calls the Amazon Product Advertising API and returns the response.
         """
-        request = urllib2.Request(url)
-        request.add_header('User-Agent', USER_AGENT)
-
         # Be nice and wait for some time
         # before submitting the next request
         delta = datetime.now() - self.last_call
@@ -232,10 +201,10 @@ class API (object):
             sleep(wait.seconds+wait.microseconds/1000000.0) # pragma: no cover
         self.last_call = datetime.now()
 
-        handler = urllib2.HTTPHandler(debuglevel=self.debug)
-        opener = urllib2.build_opener(handler, GZipHandler())
-        response = opener.open(request)
-        return response
+        response = requests.get(url, stream=True, headers={
+            'User-Agent': USER_AGENT
+        })
+        return response.raw
 
     def _reg(self, key):
         """
@@ -254,7 +223,8 @@ class API (object):
         """
         try:
             return self.processor.parse(fp)
-        except AWSError, e:
+        except AWSError:
+            e = sys.exc_info()[1]  # Python 2/3 compatible
 
             # simple errors
 
@@ -321,13 +291,14 @@ class API (object):
         try:
             fp = self._fetch(url)
             return self._parse(fp)
-        except urllib2.HTTPError, e:
+        except HTTPError:
             # Some HTTP send a more detailed error message as body which can be
             # parsed too.
             # - 400 (Bad Request)
             # - 403 (Unauthorised)
             # - 410 (Gone)
             # - 503 (Service unavailable)
+            e = sys.exc_info()[1]  # Python 2/3 compatible
             if e.code in (400, 403, 410, 503):
                 return self._parse(e.fp)
             if e.code == 500:
@@ -600,7 +571,8 @@ class API (object):
         try:
             return self.call(Operation='SimilarityLookup',
                               ItemId=item_id, **params)
-        except AWSError, e:
+        except AWSError:
+            e = sys.exc_info()[1]  # Python 2/3 compatible
 
             if e.code == 'AWS.ECommerceService.NoSimilarities':
                 asin = self._reg('no-similarities').search(e.msg).group('ASIN')
@@ -711,7 +683,8 @@ class API (object):
             return self.call(Operation='BrowseNodeLookup',
                     BrowseNodeId=browse_node_id, ResponseGroup=response_group,
                     **params)
-        except AWSError, e:
+        except AWSError:
+            e = sys.exc_info()[1]  # Python 2/3 compatible
 
             if e.code == 'AWS.InvalidResponseGroup':
                 raise _e(InvalidResponseGroup, params.get('ResponseGroup'))
