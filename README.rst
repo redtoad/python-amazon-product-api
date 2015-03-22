@@ -33,9 +33,6 @@ publisher::
     from amazonproduct import API
     api = API(locale='de')
 
-    total_results = node.Items.TotalResults.pyval
-    total_pages = node.Items.TotalPages.pyval
-
     # get all books from result set and
     # print author and title
     for book in api.item_search('Books', Publisher='Galileo Press'):
