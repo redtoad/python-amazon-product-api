@@ -44,6 +44,16 @@ class TestAPICallsWithOptionalParameters (object):
         assert qs['AssociateTag'][0] == tag
 
 
+class TestParameterConversions (object):
+
+    def test_responsegroups_as_list(self):
+        api = API(locale='de')
+        url = api._build_url(ResponseGroup=['ItemAttributes', 'Images'])
+        qs = parse_qs(urlparse(url)[4])
+        assert qs['ResponseGroup'][0] == 'ItemAttributes,Images'
+
+
+
 class TestAPIInitialisation (object):
 
     """
@@ -126,6 +136,12 @@ class TestAPICalls (object):
             'APICalls-fails-for-wrong-aws-key.xml')).read()
         server.serve_content(xml, 403)
         pytest.raises(InvalidClientTokenId, api.item_lookup, '9780747532743')
+
+    def test_fails_for_invalid_signature(self, api, server):
+        xml = open(os.path.join(XML_TEST_DIR,
+                                'APICalls-fails-for-invalid-signature.xml')).read()
+        server.serve_content(xml, 403)
+        pytest.raises(InvalidSignature, api.item_lookup, '9780747532743')
 
     def test_fails_for_too_many_requests(self, api, server):
         xml = open(os.path.join(XML_TEST_DIR,

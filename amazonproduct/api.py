@@ -164,6 +164,9 @@ class API (object):
         if 'AssociateTag' not in qargs and self.associate_tag:
             qargs['AssociateTag'] = self.associate_tag
 
+        if isinstance(qargs.get('ResponseGroup'), list):
+            qargs['ResponseGroup'] = ','.join(qargs['ResponseGroup'])
+
         # add timestamp (this is required when using a signature)
         qargs['Timestamp'] = strftime("%Y-%m-%dT%H:%M:%SZ", gmtime())
 
@@ -239,6 +242,8 @@ class API (object):
                 'AWS.ECommerceService.ItemNotEligibleForCart': InvalidCartItem,
                 'AWS.ECommerceService.CartInfoMismatch': CartInfoMismatch,
                 'AWS.ParameterOutOfRange': ParameterOutOfRange,  # TODO regexp?
+                'AWS.InvalidAccount': InvalidAccount,
+                'SignatureDoesNotMatch': InvalidSignature,
             }
 
             if e.code in errors:
@@ -315,8 +320,7 @@ class API (object):
             >>> api = API(locale='uk')
             >>> result = api.item_lookup('B006H3MIV8')
             >>> for item in result.Items.Item:
-            ...     print '%s (%s) in group %s' % (
-            ...         item.ItemAttributes.Title, item.ASIN)
+            ...     print '%s (%s)' % (item.ItemAttributes.Title, item.ASIN)
             ... 
             Chimes of Freedom: The Songs of Bob Dylan (B006H3MIV8)
 
