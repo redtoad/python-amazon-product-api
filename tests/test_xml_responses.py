@@ -13,6 +13,7 @@ except ImportError:
     from urllib2 import HTTPError
 
 import requests
+import six
 
 from pytest_localserver import http
 
@@ -179,7 +180,7 @@ def pytest_funcarg__api(request):
                 content = lxml.etree.tostring(root, pretty_print=True)
                 # complain loudly about missing credentials
                 # UNLESS it was actually on purpose!
-                if ('MissingClientTokenId' in content
+                if (six.b('MissingClientTokenId') in content
                 and getattr(request.function, 'refetch', True)):
                     raise pytest.fail('Cannot fetch XML response without credentials!')
                 if not os.path.exists(os.path.dirname(path)):
