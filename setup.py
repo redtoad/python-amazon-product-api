@@ -68,6 +68,7 @@ setup(
     tests_require=[
         'pytest-localserver>=0.3',
         'lxml',
+        'six',
     ],
 
     classifiers=[
