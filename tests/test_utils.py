@@ -65,6 +65,8 @@ secret_key = CUSTOM CONFIG OVERRIDES ALL!
 
 def test_load_config(configfiles, monkeypatch):
     configfiles.load_from_string(DUMMY_CONFIG)
+    for key in ['AWS_ACCESS_KEY', 'AWS_SECRET_ACCESS_KEY', 'AWS_ASSOCIATE_TAG', 'AWS_LOCALE']:
+        monkeypatch.delenv(key, raising=False)
     monkeypatch.setenv('AWS_LOCALE', 'OS VARIABLE')
 
     cfg = utils.load_config()
@@ -79,6 +81,8 @@ def test_load_config(configfiles, monkeypatch):
 
 def test_specific_config_file_overrides_all_but_os_variables(configfiles, monkeypatch):
     configfiles.load_from_string(DUMMY_CONFIG)
+    for key in ['AWS_ACCESS_KEY', 'AWS_SECRET_ACCESS_KEY', 'AWS_ASSOCIATE_TAG', 'AWS_LOCALE']:
+        monkeypatch.delenv(key, raising=False)
     monkeypatch.setenv('AWS_LOCALE', 'OS VARIABLE')
 
     path = configfiles.tmpdir.join(os.path.expanduser('~/my-config')).strpath
