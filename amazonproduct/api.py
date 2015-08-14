@@ -40,16 +40,19 @@ USER_AGENT = ('python-amazon-product-api/%s '
 
 
 #: Hosts used by Amazon for normal/XSLT operations
+#: http://docs.aws.amazon.com/AWSECommerceService/latest/DG/AnatomyOfaRESTRequest.html
 HOSTS = {
-    'ca': 'ecs.amazonaws.ca',
+    # 'br': 'webservices.amazonaws.com.br',
+    'ca': 'webservices.amazonaws.ca',
     'cn': 'webservices.amazon.cn',
-    'de': 'ecs.amazonaws.de',
+    'de': 'webservices.amazonaws.de',
     'es': 'webservices.amazon.es',
-    'fr': 'ecs.amazonaws.fr',
+    'fr': 'webservices.amazonaws.fr',
+    # 'in': 'webservices.amazon.in',
     'it': 'webservices.amazon.it',
-    'jp': 'ecs.amazonaws.jp',
-    'uk': 'ecs.amazonaws.co.uk',
-    'us': 'ecs.amazonaws.com',
+    'jp': 'webservices.amazonaws.jp',
+    'uk': 'webservices.amazonaws.co.uk',
+    'us': 'webservices.amazonaws.com',
 }
 
 
