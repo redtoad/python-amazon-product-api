@@ -9,7 +9,7 @@ Configuration
 There is a growing list of configuration options for the library, many of which
 can be passed directly to the API constructor at initialisation. Some options,
 such as credentials, can also be read from environment variables (e.g.
-``AWS_ACCESS_KEY_ID`` and ``AWS_SECRET_ACCESS_KEY``).
+``AWS_ACCESS_KEY`` and ``AWS_SECRET_ACCESS_KEY``).
 
 
 Using files
@@ -78,7 +78,7 @@ Environment variables
 
 You can also set the following environment variables:
 
-``AWS_ACCESS_KEY_ID``
+``AWS_ACCESS_KEY``
     Your AWS access key
 
 ``AWS_SECRET_ACCESS_KEY``
@@ -105,7 +105,7 @@ The following table gives an overview which values can be defined where:
 =============  =====================
 config file    environment variable
 =============  =====================
-access_key     AWS_ACCESS_KEY_ID
+access_key     AWS_ACCESS_KEY
 secret_key     AWS_SECRET_ACCESS_KEY
 associate_tag  AWS_ASSOCIATE_TAG
 locale         AWS_LOCALE
