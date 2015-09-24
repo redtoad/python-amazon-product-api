@@ -339,6 +339,9 @@ class API (object):
 
         .. note:: The parameter support varies by locale used.
 
+        Results spanning multiple pages will all be subsequently retrieved
+        when you iterate over them. See :ref:`pagination` for more details.
+
         Examples: 
 
         * The following request returns the information associated with ItemId
