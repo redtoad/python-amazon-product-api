@@ -9,7 +9,7 @@ __docformat__ = "restructuredtext en"
 
 from base64 import b64encode
 from datetime import datetime, timedelta
-import gzip
+import functools
 from hashlib import sha256
 import hmac
 import socket
@@ -210,6 +210,8 @@ class API (object):
         response = requests.get(url, stream=True, headers={
             'User-Agent': USER_AGENT
         })
+        # https://github.com/kennethreitz/requests/issues/2155
+        response.raw.read = functools.partial(response.raw.read, decode_content=True)
         return response.raw
 
     def _reg(self, key):
