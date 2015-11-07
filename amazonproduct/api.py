@@ -129,7 +129,7 @@ class API (object):
             socket.setdefaulttimeout(self.TIMEOUT)
 
         # instantiate processor class
-        if isinstance(processor, str):
+        if isinstance(processor, (str, unicode)):
             self._processor_module = processor
             self.processor = load_class('%s.Processor' % processor)()
         else:
