@@ -3,8 +3,6 @@
 # This program is release under the BSD License. You can find the full text of
 # the license in the LICENSE file.
 
-from __future__ import unicode_literals
-
 __docformat__ = "restructuredtext en"
 
 from base64 import b64encode
@@ -16,6 +14,8 @@ import socket
 import sys
 from time import strftime, gmtime, sleep
 import warnings
+
+import six
 
 # support Python 2 and Python 3 without conversion
 try:
@@ -129,7 +129,7 @@ class API (object):
             socket.setdefaulttimeout(self.TIMEOUT)
 
         # instantiate processor class
-        if isinstance(processor, (str, unicode)):
+        if isinstance(processor, six.text_type):
             self._processor_module = processor
             self.processor = load_class('%s.Processor' % processor)()
         else:
