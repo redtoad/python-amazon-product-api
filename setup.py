@@ -64,11 +64,13 @@ setup(
     packages=find_packages(_here, exclude=['tests']),
 
     cmdclass={'test': PyTest},
-    install_requires=['requests'],
+    install_requires=[
+        'requests',
+        'six',
+    ],
     tests_require=[
         'pytest-localserver>=0.3',
         'lxml',
-        'six',
     ],
 
     classifiers=[
