@@ -5,7 +5,7 @@
 BITBUCKET=ssh://hg@bitbucket.org/basti/python-amazon-product-api
 GITHUB=ssh://git@github.com/redtoad/python-amazon-product-api
 
-TMPREPO=`mktemp --directory --suffix=amazon`
+TMPREPO=`mktemp -d -t amazon`
 
 # Here are the basic steps I follow to get set up to work with git on an hg
 # project. First, we need a mercurial checkout.
