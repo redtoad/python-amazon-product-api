@@ -1,13 +1,11 @@
 
-dist
-build
-sandbox
+dist/
+build/
+sandbox/
 python_amazon_product_api.egg-info
-docs/build
-docs/amazon
+docs/build/
+
 .tox
-testsc
-.venv
 
 # hide real key data!
 examples/config.py$
@@ -32,12 +30,6 @@ junit-py\d+.xml
 
 # pylint reports
 pylint.txt
-
-# ignore git files
-^\.git
-
-# use glob syntax.
-syntax: glob
 
 *.pyc
 *.pyo
