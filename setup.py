@@ -54,7 +54,7 @@ setup(
     author='Sebastian Rahlf',
     author_email='basti AT redtoad DOT de',
     url="http://bitbucket.org/basti/python-amazon-product-api/downloads/",
-    license='bsd',
+    license='mit',
 
     description='A Python wrapper for the Amazon Product Advertising API.',
     long_description=readme(),
