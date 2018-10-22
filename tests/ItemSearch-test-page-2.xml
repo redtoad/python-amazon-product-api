@@ -1,0 +1,3024 @@
+<?xml version="1.0" ?>
+<ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
+    <OperationRequest>
+        <HTTPHeaders>
+            <Header Name="UserAgent"
+                    Value="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36"></Header>
+        </HTTPHeaders>
+        <RequestId>2ab9488a-7ac7-4d1b-a5e1-5d4b252181ec</RequestId>
+        <Arguments>
+            <Argument Name="AWSAccessKeyId" Value="AKIAIUNWM3JIBSM6LYNQ"></Argument>
+            <Argument Name="AssociateTag" Value="redtoad-21"></Argument>
+            <Argument Name="Author" Value="Aaronovitch"></Argument>
+            <Argument Name="Conditions" Value="All"></Argument>
+            <Argument Name="ItemPage" Value="2"></Argument>
+            <Argument Name="Operation" Value="ItemSearch"></Argument>
+            <Argument Name="ResponseGroup" Value="Large"></Argument>
+            <Argument Name="SearchIndex" Value="Books"></Argument>
+            <Argument Name="Service" Value="AWSECommerceService"></Argument>
+            <Argument Name="Timestamp" Value="2018-07-08T20:20:12Z"></Argument>
+            <Argument Name="Signature" Value="8A6yIVEimAo97qRdkyaj5W2KW8InP4f4WH00F877Tno="></Argument>
+        </Arguments>
+        <RequestProcessingTime>0.4965125040000000</RequestProcessingTime>
+    </OperationRequest>
+    <Items>
+        <Request>
+            <IsValid>True</IsValid>
+            <ItemSearchRequest>
+                <Author>Aaronovitch</Author>
+                <ItemPage>2</ItemPage>
+                <ResponseGroup>Large</ResponseGroup>
+                <SearchIndex>Books</SearchIndex>
+            </ItemSearchRequest>
+        </Request>
+        <TotalResults>104</TotalResults>
+        <TotalPages>11</TotalPages>
+        <MoreSearchResultsUrl>https://www.amazon.de/gp/search?linkCode=xm2&amp;SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;keywords=Aaronovitch&amp;tag=redtoad-21&amp;creative=12738&amp;url=search-alias%3Dbooks-single-index&amp;camp=2025</MoreSearchResultsUrl>
+        <Item>
+            <ASIN>B00I4RZVEG</ASIN>
+            <DetailPageURL>
+                https://www.amazon.de/b%C3%B6se-Ort-Roman-Peter-Grant-ebook/dp/B00I4RZVEG?SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=B00I4RZVEG
+            </DetailPageURL>
+            <ItemLinks>
+                <ItemLink>
+                    <Description>Add To Wishlist</Description>
+                    <URL>https://www.amazon.de/gp/registry/wishlist/add-item.html?asin.0=B00I4RZVEG&amp;SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=B00I4RZVEG</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Tell A Friend</Description>
+                    <URL>https://www.amazon.de/gp/pdp/taf/B00I4RZVEG?SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=B00I4RZVEG</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>All Customer Reviews</Description>
+                    <URL>https://www.amazon.de/review/product/B00I4RZVEG?SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=B00I4RZVEG</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>All Offers</Description>
+                    <URL>https://www.amazon.de/gp/offer-listing/B00I4RZVEG?SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=B00I4RZVEG</URL>
+                </ItemLink>
+            </ItemLinks>
+            <SalesRank>14955</SalesRank>
+            <SmallImage>
+                <URL>https://images-eu.ssl-images-amazon.com/images/I/618VweFZZlL._SL75_.jpg</URL>
+                <Height Units="pixels">75</Height>
+                <Width Units="pixels">47</Width>
+            </SmallImage>
+            <MediumImage>
+                <URL>https://images-eu.ssl-images-amazon.com/images/I/618VweFZZlL._SL160_.jpg</URL>
+                <Height Units="pixels">160</Height>
+                <Width Units="pixels">100</Width>
+            </MediumImage>
+            <LargeImage>
+                <URL>https://images-eu.ssl-images-amazon.com/images/I/618VweFZZlL.jpg</URL>
+                <Height Units="pixels">500</Height>
+                <Width Units="pixels">314</Width>
+            </LargeImage>
+            <ImageSets>
+                <ImageSet Category="primary">
+                    <SwatchImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/618VweFZZlL._SL30_.jpg</URL>
+                        <Height Units="pixels">30</Height>
+                        <Width Units="pixels">19</Width>
+                    </SwatchImage>
+                    <SmallImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/618VweFZZlL._SL75_.jpg</URL>
+                        <Height Units="pixels">75</Height>
+                        <Width Units="pixels">47</Width>
+                    </SmallImage>
+                    <ThumbnailImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/618VweFZZlL._SL75_.jpg</URL>
+                        <Height Units="pixels">75</Height>
+                        <Width Units="pixels">47</Width>
+                    </ThumbnailImage>
+                    <TinyImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/618VweFZZlL._SL110_.jpg</URL>
+                        <Height Units="pixels">110</Height>
+                        <Width Units="pixels">69</Width>
+                    </TinyImage>
+                    <MediumImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/618VweFZZlL._SL160_.jpg</URL>
+                        <Height Units="pixels">160</Height>
+                        <Width Units="pixels">100</Width>
+                    </MediumImage>
+                    <LargeImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/618VweFZZlL.jpg</URL>
+                        <Height Units="pixels">500</Height>
+                        <Width Units="pixels">314</Width>
+                    </LargeImage>
+                </ImageSet>
+            </ImageSets>
+            <ItemAttributes>
+                <Author>Ben Aaronovitch</Author>
+                <Binding>Kindle Edition</Binding>
+                <Creator Role="Übersetzer">Christine Blum</Creator>
+                <EISBN>9783423422802</EISBN>
+                <Format>Kindle eBook</Format>
+                <Label>dtv Verlagsgesellschaft mbH &amp; Co. KG</Label>
+                <Languages>
+                    <Language>
+                        <Name>Deutsch</Name>
+                        <Type>Veröffentlicht</Type>
+                    </Language>
+                </Languages>
+                <Manufacturer>dtv Verlagsgesellschaft mbH &amp; Co. KG</Manufacturer>
+                <NumberOfPages>400</NumberOfPages>
+                <ProductGroup>eBooks</ProductGroup>
+                <ProductTypeName>ABIS_EBOOKS</ProductTypeName>
+                <PublicationDate>2014-04-23</PublicationDate>
+                <Publisher>dtv Verlagsgesellschaft mbH &amp; Co. KG</Publisher>
+                <ReleaseDate>2014-04-23</ReleaseDate>
+                <Studio>dtv Verlagsgesellschaft mbH &amp; Co. KG</Studio>
+                <Title>Der böse Ort: Roman (Peter Grant 4)</Title>
+            </ItemAttributes>
+            <CustomerReviews>
+                <IFrameURL>https://www.amazon.de/reviews/iframe?akid=AKIAIUNWM3JIBSM6LYNQ&amp;alinkCode=xm2&amp;asin=B00I4RZVEG&amp;atag=redtoad-21&amp;exp=2018-07-09T20%3A20%3A16Z&amp;v=2&amp;sig=0B7r25wqEqcZOCCLerI%252B1kJQbbidFEJzbhmwdsYlNHw%253D</IFrameURL>
+                <HasReviews>true</HasReviews>
+            </CustomerReviews>
+            <EditorialReviews>
+                <EditorialReview>
+                    <Source>Kurzbeschreibung</Source>
+                    <Content>&lt;p&gt;Magische Architektur in Südlondon&lt;/p&gt;&lt;br /&gt;&lt;p&gt;Seltsame Dinge
+                        geschehen im Skygarden Tower, einem berüchtigten Sozialwohnblock in Südlondon. Dinge, die eine
+                        magische Anziehungskraft auf Police Constable und Zauberlehrling Peter Grant ausüben. Zunächst
+                        geht es nur um ein gestohlenes altes Buch über Magie, das aus der Weißen Bibliothek zu Weimar
+                        stammt. Doch dann weitet sich der Fall rasant aus. Denn der Erbauer des Tower, Erik Stromberg,
+                        ein brillanter, wenngleich leicht gestörter Architekt, hatte sich einst in seiner Zeit am
+                        Bauhaus offenbar nicht nur mit modernem Design, sondern auch mit Magie befasst. Was erklären
+                        könnte, warum der Skygarden Tower einen unablässigen Strom von begabten Künstlern, Politikern,
+                        Drogendealern, Serienmördern und Irren hervorgebracht hat. Und warum der unheimliche
+                        gesichtslose Magier, den Peter noch in schlechtester Erinnerung hat, ein so eingehendes
+                        Interesse daran an den Tag legt …&lt;/p&gt;
+                    </Content>
+                    <IsLinkSuppressed>0</IsLinkSuppressed>
+                </EditorialReview>
+            </EditorialReviews>
+            <SimilarProducts>
+                <SimilarProduct>
+                    <ASIN>B00ZUAK0RS</ASIN>
+                    <Title>Fingerhut-Sommer: Roman (Peter Grant 5)</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>B00BQWXIXW</ASIN>
+                    <Title>Ein Wispern unter Baker Street: Roman (Peter Grant 3)</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>B06XCF4BQ8</ASIN>
+                    <Title>Der Galgen von Tyburn: Roman (Die Flüsse-von-London-Reihe (Peter Grant))</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>B008FNE1H2</ASIN>
+                    <Title>Schwarzer Mond über Soho: Roman (Peter Grant 2)</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>B007BLO6WY</ASIN>
+                    <Title>Die Flüsse von London: Roman</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>B077JSZJZW</ASIN>
+                    <Title>Geister auf der Metropolitan Line: Eine Peter-Grant-Story</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>B004OL2IYM</ASIN>
+                    <Title>Flavia de Luce 1 - Mord im Gurkenbeet: Roman</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>B00T69SAVW</ASIN>
+                    <Title>Weiße Magie - mordsgünstig: Kriminalroman Mit Abbildungen</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>B07D32DZ65</ASIN>
+                    <Title>Lennart Malmkvist und der überraschend perfide Plan des Olav Tryggvason: Roman</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>B01IA04ZCK</ASIN>
+                    <Title>Lennart Malmkvist und der ziemlich seltsame Mops des Buri Bolmen: Roman</Title>
+                </SimilarProduct>
+            </SimilarProducts>
+            <BrowseNodes>
+                <BrowseNode>
+                    <BrowseNodeId>420050031</BrowseNodeId>
+                    <Name>Fantasy</Name>
+                    <Ancestors>
+                        <BrowseNode>
+                            <BrowseNodeId>142</BrowseNodeId>
+                            <Name>Fantasy &amp; Science Fiction</Name>
+                            <Ancestors>
+                                <BrowseNode>
+                                    <BrowseNodeId>541686</BrowseNodeId>
+                                    <Name>Kategorien</Name>
+                                    <IsCategoryRoot>1</IsCategoryRoot>
+                                    <Ancestors>
+                                        <BrowseNode>
+                                            <BrowseNodeId>186606</BrowseNodeId>
+                                            <Name>Bücher</Name>
+                                        </BrowseNode>
+                                    </Ancestors>
+                                </BrowseNode>
+                            </Ancestors>
+                        </BrowseNode>
+                    </Ancestors>
+                </BrowseNode>
+                <BrowseNode>
+                    <BrowseNodeId>567111031</BrowseNodeId>
+                    <Name>Belletristik</Name>
+                    <Children>
+                        <BrowseNode>
+                            <BrowseNodeId>6692008031</BrowseNodeId>
+                            <Name>Action &amp; Abenteuer</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>6692049031</BrowseNodeId>
+                            <Name>Aufsätze &amp; Korrespondenz</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>6692291031</BrowseNodeId>
+                            <Name>Belletristik für Frauen</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>610651031</BrowseNodeId>
+                            <Name>Dramatik</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>610653031</BrowseNodeId>
+                            <Name>Gegenwartsliteratur</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>610655031</BrowseNodeId>
+                            <Name>Historische Romane</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>567123031</BrowseNodeId>
+                            <Name>Horror</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>610656031</BrowseNodeId>
+                            <Name>Humor</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>610657031</BrowseNodeId>
+                            <Name>Klassiker</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>610658031</BrowseNodeId>
+                            <Name>Kurzgeschichten &amp; Anthologien</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>6692207031</BrowseNodeId>
+                            <Name>Literarische Belletristik</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>6692135031</BrowseNodeId>
+                            <Name>Literaturkritik &amp; -theorie</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>610660031</BrowseNodeId>
+                            <Name>Lyrik</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>610661031</BrowseNodeId>
+                            <Name>Märchen, Sagen &amp; Legenden</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>6692063031</BrowseNodeId>
+                            <Name>Populäre Belletristik</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>6692271031</BrowseNodeId>
+                            <Name>Religiöse Belletristik</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>6692274031</BrowseNodeId>
+                            <Name>Vereinigte Staaten</Name>
+                        </BrowseNode>
+                    </Children>
+                    <Ancestors>
+                        <BrowseNode>
+                            <BrowseNodeId>530886031</BrowseNodeId>
+                            <Name>Kindle eBooks</Name>
+                            <Ancestors>
+                                <BrowseNode>
+                                    <BrowseNodeId>530485031</BrowseNodeId>
+                                    <Name>Kategorien</Name>
+                                    <IsCategoryRoot>1</IsCategoryRoot>
+                                    <Ancestors>
+                                        <BrowseNode>
+                                            <BrowseNodeId>530484031</BrowseNodeId>
+                                            <Name>Kindle-Shop</Name>
+                                        </BrowseNode>
+                                    </Ancestors>
+                                </BrowseNode>
+                            </Ancestors>
+                        </BrowseNode>
+                    </Ancestors>
+                </BrowseNode>
+                <BrowseNode>
+                    <BrowseNodeId>620981031</BrowseNodeId>
+                    <Name>Fantasy</Name>
+                    <Children>
+                        <BrowseNode>
+                            <BrowseNodeId>8421127031</BrowseNodeId>
+                            <Name>Epen</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>8421124031</BrowseNodeId>
+                            <Name>Fantasy-Anthologien</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>8421129031</BrowseNodeId>
+                            <Name>Historisch</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>8421133031</BrowseNodeId>
+                            <Name>Mythen &amp; Legenden</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>8421139031</BrowseNodeId>
+                            <Name>Paranormal</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>8421141031</BrowseNodeId>
+                            <Name>Schwert &amp; Magie</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>8421131031</BrowseNodeId>
+                            <Name>Schwul &amp; Lesbisch</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>8421142031</BrowseNodeId>
+                            <Name>Urban</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>8421126031</BrowseNodeId>
+                            <Name>Zeitgenössisch</Name>
+                        </BrowseNode>
+                    </Children>
+                    <Ancestors>
+                        <BrowseNode>
+                            <BrowseNodeId>567119031</BrowseNodeId>
+                            <Name>Fantasy &amp; Science Fiction</Name>
+                            <Ancestors>
+                                <BrowseNode>
+                                    <BrowseNodeId>530886031</BrowseNodeId>
+                                    <Name>Kindle eBooks</Name>
+                                    <Ancestors>
+                                        <BrowseNode>
+                                            <BrowseNodeId>530485031</BrowseNodeId>
+                                            <Name>Kategorien</Name>
+                                            <IsCategoryRoot>1</IsCategoryRoot>
+                                            <Ancestors>
+                                                <BrowseNode>
+                                                    <BrowseNodeId>530484031</BrowseNodeId>
+                                                    <Name>Kindle-Shop</Name>
+                                                </BrowseNode>
+                                            </Ancestors>
+                                        </BrowseNode>
+                                    </Ancestors>
+                                </BrowseNode>
+                            </Ancestors>
+                        </BrowseNode>
+                    </Ancestors>
+                </BrowseNode>
+            </BrowseNodes>
+        </Item>
+        <Item>
+            <ASIN>3423216026</ASIN>
+            <DetailPageURL>
+                https://www.amazon.de/Fingerhut-Sommer-Roman-Fl%C3%BCsse-von-London-Reihe-Peter-Grant/dp/3423216026?SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=3423216026
+            </DetailPageURL>
+            <ItemLinks>
+                <ItemLink>
+                    <Description>Add To Wishlist</Description>
+                    <URL>https://www.amazon.de/gp/registry/wishlist/add-item.html?asin.0=3423216026&amp;SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=3423216026</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Tell A Friend</Description>
+                    <URL>https://www.amazon.de/gp/pdp/taf/3423216026?SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=3423216026</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>All Customer Reviews</Description>
+                    <URL>https://www.amazon.de/review/product/3423216026?SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=3423216026</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>All Offers</Description>
+                    <URL>https://www.amazon.de/gp/offer-listing/3423216026?SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=3423216026</URL>
+                </ItemLink>
+            </ItemLinks>
+            <SalesRank>7194</SalesRank>
+            <SmallImage>
+                <URL>https://images-eu.ssl-images-amazon.com/images/I/61RGtmna93L._SL75_.jpg</URL>
+                <Height Units="pixels">75</Height>
+                <Width Units="pixels">47</Width>
+            </SmallImage>
+            <MediumImage>
+                <URL>https://images-eu.ssl-images-amazon.com/images/I/61RGtmna93L._SL160_.jpg</URL>
+                <Height Units="pixels">160</Height>
+                <Width Units="pixels">100</Width>
+            </MediumImage>
+            <LargeImage>
+                <URL>https://images-eu.ssl-images-amazon.com/images/I/61RGtmna93L.jpg</URL>
+                <Height Units="pixels">500</Height>
+                <Width Units="pixels">314</Width>
+            </LargeImage>
+            <ImageSets>
+                <ImageSet Category="primary">
+                    <SwatchImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/61RGtmna93L._SL30_.jpg</URL>
+                        <Height Units="pixels">30</Height>
+                        <Width Units="pixels">19</Width>
+                    </SwatchImage>
+                    <SmallImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/61RGtmna93L._SL75_.jpg</URL>
+                        <Height Units="pixels">75</Height>
+                        <Width Units="pixels">47</Width>
+                    </SmallImage>
+                    <ThumbnailImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/61RGtmna93L._SL75_.jpg</URL>
+                        <Height Units="pixels">75</Height>
+                        <Width Units="pixels">47</Width>
+                    </ThumbnailImage>
+                    <TinyImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/61RGtmna93L._SL110_.jpg</URL>
+                        <Height Units="pixels">110</Height>
+                        <Width Units="pixels">69</Width>
+                    </TinyImage>
+                    <MediumImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/61RGtmna93L._SL160_.jpg</URL>
+                        <Height Units="pixels">160</Height>
+                        <Width Units="pixels">100</Width>
+                    </MediumImage>
+                    <LargeImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/61RGtmna93L.jpg</URL>
+                        <Height Units="pixels">500</Height>
+                        <Width Units="pixels">314</Width>
+                    </LargeImage>
+                </ImageSet>
+            </ImageSets>
+            <ItemAttributes>
+                <Author>Ben Aaronovitch</Author>
+                <Binding>Taschenbuch</Binding>
+                <Creator Role="Übersetzer">Christine Blum</Creator>
+                <EAN>9783423216029</EAN>
+                <EANList>
+                    <EANListElement>9783423216029</EANListElement>
+                </EANList>
+                <ISBN>3423216026</ISBN>
+                <ItemDimensions>
+                    <Height Units="hundredths-inches">756</Height>
+                    <Length Units="hundredths-inches">480</Length>
+                    <Width Units="hundredths-inches">110</Width>
+                </ItemDimensions>
+                <Label>dtv Verlagsgesellschaft</Label>
+                <Languages>
+                    <Language>
+                        <Name>Deutsch</Name>
+                        <Type>Veröffentlicht</Type>
+                    </Language>
+                    <Language>
+                        <Name>Deutsch</Name>
+                        <Type>Originalsprache</Type>
+                    </Language>
+                </Languages>
+                <Manufacturer>dtv Verlagsgesellschaft</Manufacturer>
+                <NumberOfItems>1</NumberOfItems>
+                <NumberOfPages>416</NumberOfPages>
+                <PackageDimensions>
+                    <Height Units="hundredths-inches">110</Height>
+                    <Length Units="hundredths-inches">740</Length>
+                    <Weight Units="Hundertstel Pfund">62</Weight>
+                    <Width Units="hundredths-inches">472</Width>
+                </PackageDimensions>
+                <ProductGroup>Book</ProductGroup>
+                <ProductTypeName>ABIS_BOOK</ProductTypeName>
+                <PublicationDate>2015-08-21</PublicationDate>
+                <Publisher>dtv Verlagsgesellschaft</Publisher>
+                <Studio>dtv Verlagsgesellschaft</Studio>
+                <Title>Fingerhut-Sommer: Roman (Die Flüsse-von-London-Reihe (Peter Grant), Band 21602)</Title>
+            </ItemAttributes>
+            <OfferSummary>
+                <LowestNewPrice>
+                    <Amount>995</Amount>
+                    <CurrencyCode>EUR</CurrencyCode>
+                    <FormattedPrice>EUR 9,95</FormattedPrice>
+                </LowestNewPrice>
+                <LowestUsedPrice>
+                    <Amount>399</Amount>
+                    <CurrencyCode>EUR</CurrencyCode>
+                    <FormattedPrice>EUR 3,99</FormattedPrice>
+                </LowestUsedPrice>
+                <TotalNew>37</TotalNew>
+                <TotalUsed>7</TotalUsed>
+                <TotalCollectible>0</TotalCollectible>
+                <TotalRefurbished>0</TotalRefurbished>
+            </OfferSummary>
+            <Offers>
+                <TotalOffers>1</TotalOffers>
+                <TotalOfferPages>1</TotalOfferPages>
+                <MoreOffersUrl>https://www.amazon.de/gp/offer-listing/3423216026?SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=3423216026</MoreOffersUrl>
+                <Offer>
+                    <OfferAttributes>
+                        <Condition>New</Condition>
+                    </OfferAttributes>
+                    <OfferListing>
+                        <OfferListingId>
+                            LQ0Yvw4cRhhcGGfF0iPXhbrVx1O7u%2BwCKDBMaEhjizs865zZfZq2rgY1uefSLbXUKHPCWCcZTQsOLYBf0iQHhYYJi76TdUzeV8O4m2JCzM8%3D
+                        </OfferListingId>
+                        <Price>
+                            <Amount>1095</Amount>
+                            <CurrencyCode>EUR</CurrencyCode>
+                            <FormattedPrice>EUR 10,95</FormattedPrice>
+                        </Price>
+                        <Availability>Gewöhnlich versandfertig in 24 Stunden</Availability>
+                        <AvailabilityAttributes>
+                            <AvailabilityType>now</AvailabilityType>
+                            <MinimumHours>0</MinimumHours>
+                            <MaximumHours>0</MaximumHours>
+                        </AvailabilityAttributes>
+                        <IsEligibleForSuperSaverShipping>1</IsEligibleForSuperSaverShipping>
+                        <IsEligibleForPrime>1</IsEligibleForPrime>
+                    </OfferListing>
+                </Offer>
+            </Offers>
+            <CustomerReviews>
+                <IFrameURL>https://www.amazon.de/reviews/iframe?akid=AKIAIUNWM3JIBSM6LYNQ&amp;alinkCode=xm2&amp;asin=3423216026&amp;atag=redtoad-21&amp;exp=2018-07-09T20%3A20%3A16Z&amp;v=2&amp;sig=Vvxymv%252F1QJSozHIqNJNPPm7HbAv7ms2JP6fVMeU1d0c%253D</IFrameURL>
+                <HasReviews>true</HasReviews>
+            </CustomerReviews>
+            <SimilarProducts>
+                <SimilarProduct>
+                    <ASIN>3423215070</ASIN>
+                    <Title>Der böse Ort: Roman (Die Flüsse-von-London-Reihe (Peter Grant), Band 21507)</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>3423216689</ASIN>
+                    <Title>Der Galgen von Tyburn: Roman (Die Flüsse-von-London-Reihe (Peter Grant), Band 21668)</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>3423214481</ASIN>
+                    <Title>Ein Wispern unter Baker Street: Roman (Die Flüsse-von-London-Reihe (Peter Grant), Band
+                        21448)
+                    </Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>3423213809</ASIN>
+                    <Title>Schwarzer Mond über Soho: Roman (Die Flüsse-von-London-Reihe (Peter Grant), Band 21380)
+                    </Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>3423217332</ASIN>
+                    <Title>Geister auf der Metropolitan Line: Eine Peter-Grant-Story</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>3423213418</ASIN>
+                    <Title>Die Flüsse von London: Roman (Die Flüsse-von-London-Reihe (Peter Grant), Band 21341)</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>3423216514</ASIN>
+                    <Title>Lennart Malmkvist und der ziemlich seltsame Mops des Buri Bolmen: Roman</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>3423215917</ASIN>
+                    <Title>Weiße Magie - mordsgünstig: Kriminalroman</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>3833734272</ASIN>
+                    <Title>Gestatten: Peter Grant (Die Flüsse von London &amp; Schwarzer Mond über Soho)</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>3423217049</ASIN>
+                    <Title>Lennart Malmkvist und der ganz und gar wunderliche Gast aus Trindemossen: Roman</Title>
+                </SimilarProduct>
+            </SimilarProducts>
+            <BrowseNodes>
+                <BrowseNode>
+                    <BrowseNodeId>420050031</BrowseNodeId>
+                    <Name>Fantasy</Name>
+                    <Ancestors>
+                        <BrowseNode>
+                            <BrowseNodeId>142</BrowseNodeId>
+                            <Name>Fantasy &amp; Science Fiction</Name>
+                            <Ancestors>
+                                <BrowseNode>
+                                    <BrowseNodeId>541686</BrowseNodeId>
+                                    <Name>Kategorien</Name>
+                                    <IsCategoryRoot>1</IsCategoryRoot>
+                                    <Ancestors>
+                                        <BrowseNode>
+                                            <BrowseNodeId>186606</BrowseNodeId>
+                                            <Name>Bücher</Name>
+                                        </BrowseNode>
+                                    </Ancestors>
+                                </BrowseNode>
+                            </Ancestors>
+                        </BrowseNode>
+                    </Ancestors>
+                </BrowseNode>
+            </BrowseNodes>
+        </Item>
+        <Item>
+            <ASIN>B00BQWXIXW</ASIN>
+            <DetailPageURL>
+                https://www.amazon.de/Ein-Wispern-unter-Baker-Street-ebook/dp/B00BQWXIXW?SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=B00BQWXIXW
+            </DetailPageURL>
+            <ItemLinks>
+                <ItemLink>
+                    <Description>Add To Wishlist</Description>
+                    <URL>https://www.amazon.de/gp/registry/wishlist/add-item.html?asin.0=B00BQWXIXW&amp;SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=B00BQWXIXW</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Tell A Friend</Description>
+                    <URL>https://www.amazon.de/gp/pdp/taf/B00BQWXIXW?SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=B00BQWXIXW</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>All Customer Reviews</Description>
+                    <URL>https://www.amazon.de/review/product/B00BQWXIXW?SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=B00BQWXIXW</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>All Offers</Description>
+                    <URL>https://www.amazon.de/gp/offer-listing/B00BQWXIXW?SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=B00BQWXIXW</URL>
+                </ItemLink>
+            </ItemLinks>
+            <SalesRank>7882</SalesRank>
+            <SmallImage>
+                <URL>https://images-eu.ssl-images-amazon.com/images/I/51DX7iTsQVL._SL75_.jpg</URL>
+                <Height Units="pixels">75</Height>
+                <Width Units="pixels">47</Width>
+            </SmallImage>
+            <MediumImage>
+                <URL>https://images-eu.ssl-images-amazon.com/images/I/51DX7iTsQVL._SL160_.jpg</URL>
+                <Height Units="pixels">160</Height>
+                <Width Units="pixels">100</Width>
+            </MediumImage>
+            <LargeImage>
+                <URL>https://images-eu.ssl-images-amazon.com/images/I/51DX7iTsQVL.jpg</URL>
+                <Height Units="pixels">500</Height>
+                <Width Units="pixels">314</Width>
+            </LargeImage>
+            <ImageSets>
+                <ImageSet Category="primary">
+                    <SwatchImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/51DX7iTsQVL._SL30_.jpg</URL>
+                        <Height Units="pixels">30</Height>
+                        <Width Units="pixels">19</Width>
+                    </SwatchImage>
+                    <SmallImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/51DX7iTsQVL._SL75_.jpg</URL>
+                        <Height Units="pixels">75</Height>
+                        <Width Units="pixels">47</Width>
+                    </SmallImage>
+                    <ThumbnailImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/51DX7iTsQVL._SL75_.jpg</URL>
+                        <Height Units="pixels">75</Height>
+                        <Width Units="pixels">47</Width>
+                    </ThumbnailImage>
+                    <TinyImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/51DX7iTsQVL._SL110_.jpg</URL>
+                        <Height Units="pixels">110</Height>
+                        <Width Units="pixels">69</Width>
+                    </TinyImage>
+                    <MediumImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/51DX7iTsQVL._SL160_.jpg</URL>
+                        <Height Units="pixels">160</Height>
+                        <Width Units="pixels">100</Width>
+                    </MediumImage>
+                    <LargeImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/51DX7iTsQVL.jpg</URL>
+                        <Height Units="pixels">500</Height>
+                        <Width Units="pixels">314</Width>
+                    </LargeImage>
+                </ImageSet>
+            </ImageSets>
+            <ItemAttributes>
+                <Author>Ben Aaronovitch</Author>
+                <Binding>Kindle Edition</Binding>
+                <Creator Role="Übersetzer">Christine Blum</Creator>
+                <EISBN>9783423418324</EISBN>
+                <Format>Kindle eBook</Format>
+                <Label>dtv Verlagsgesellschaft mbH &amp; Co. KG</Label>
+                <Languages>
+                    <Language>
+                        <Name>Deutsch</Name>
+                        <Type>Veröffentlicht</Type>
+                    </Language>
+                </Languages>
+                <Manufacturer>dtv Verlagsgesellschaft mbH &amp; Co. KG</Manufacturer>
+                <NumberOfPages>448</NumberOfPages>
+                <ProductGroup>eBooks</ProductGroup>
+                <ProductTypeName>ABIS_EBOOKS</ProductTypeName>
+                <PublicationDate>2013-05-24</PublicationDate>
+                <Publisher>dtv Verlagsgesellschaft mbH &amp; Co. KG</Publisher>
+                <ReleaseDate>2013-05-24</ReleaseDate>
+                <Studio>dtv Verlagsgesellschaft mbH &amp; Co. KG</Studio>
+                <Title>Ein Wispern unter Baker Street: Roman (Peter Grant 3)</Title>
+            </ItemAttributes>
+            <CustomerReviews>
+                <IFrameURL>https://www.amazon.de/reviews/iframe?akid=AKIAIUNWM3JIBSM6LYNQ&amp;alinkCode=xm2&amp;asin=B00BQWXIXW&amp;atag=redtoad-21&amp;exp=2018-07-09T20%3A20%3A16Z&amp;v=2&amp;sig=LE6INvkvwaQBQK4Roll74wzFyhlqh%252Bm0E7dnk0OoyvQ%253D</IFrameURL>
+                <HasReviews>true</HasReviews>
+            </CustomerReviews>
+            <EditorialReviews>
+                <EditorialReview>
+                    <Source>Kurzbeschreibung</Source>
+                    <Content>&lt;p&gt;Mord und Magie im Londoner Untergrund &lt;/p&gt;&lt;br /&gt;&lt;p&gt;Es ist ja
+                        nicht so, dass Peter Grant, Zauberer in Ausbildung und Police Constable, nichts für das Pauken
+                        von Lateinvokabeln übrighätte – bestimmt nicht! Aber es ist doch immer wieder schön, wenn zur
+                        Abwechslung auch mal reelle Polizeiarbeit gefragt ist. Ein Unbekannter wird im U-Bahn-Tunnel
+                        nahe der Station Baker Street tot aufgefunden – erstochen, und es deutet alles auf die
+                        Anwesenheit von Magie hin. Ein Fall für Peter! Der unbekannte Tote stellt sich als
+                        amerikanischer Kunststudent und Sohn eines US-Senators heraus und ehe man »internationale
+                        Verwicklungen« sagen kann, hat Peter bereits die FBI-Agentin Kimberley Reynolds mitsamt ihren
+                        felsenfesten religiösen Überzeugungen am Hals. Dabei gestalten sich seine Ermittlungen auch so
+                        schon gruselig genug, denn in vergessenen Flüssen und viktorianischen Abwasserkanälen hört er
+                        ein Wispern von alten Künsten und gequälten Geistern… &lt;/p&gt;
+                    </Content>
+                    <IsLinkSuppressed>0</IsLinkSuppressed>
+                </EditorialReview>
+            </EditorialReviews>
+            <SimilarProducts>
+                <SimilarProduct>
+                    <ASIN>B00I4RZVEG</ASIN>
+                    <Title>Der böse Ort: Roman (Peter Grant 4)</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>B008FNE1H2</ASIN>
+                    <Title>Schwarzer Mond über Soho: Roman (Peter Grant 2)</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>B00ZUAK0RS</ASIN>
+                    <Title>Fingerhut-Sommer: Roman (Peter Grant 5)</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>B06XCF4BQ8</ASIN>
+                    <Title>Der Galgen von Tyburn: Roman (Die Flüsse-von-London-Reihe (Peter Grant))</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>B007BLO6WY</ASIN>
+                    <Title>Die Flüsse von London: Roman</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>B077JSZJZW</ASIN>
+                    <Title>Geister auf der Metropolitan Line: Eine Peter-Grant-Story</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>B004OL2IYM</ASIN>
+                    <Title>Flavia de Luce 1 - Mord im Gurkenbeet: Roman</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>B07D32DZ65</ASIN>
+                    <Title>Lennart Malmkvist und der überraschend perfide Plan des Olav Tryggvason: Roman</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>B00T69SAVW</ASIN>
+                    <Title>Weiße Magie - mordsgünstig: Kriminalroman Mit Abbildungen</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>B00CWZL61I</ASIN>
+                    <Title>Lockwood &amp; Co. - Die Seufzende Wendeltreppe (Die Lockwood &amp; Co.-Reihe 1)</Title>
+                </SimilarProduct>
+            </SimilarProducts>
+            <BrowseNodes>
+                <BrowseNode>
+                    <BrowseNodeId>287480</BrowseNodeId>
+                    <Name>Krimis &amp; Thriller</Name>
+                    <Children>
+                        <BrowseNode>
+                            <BrowseNodeId>419947031</BrowseNodeId>
+                            <Name>Algerien</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>419948031</BrowseNodeId>
+                            <Name>Amerika</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>419950031</BrowseNodeId>
+                            <Name>Australien</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>419951031</BrowseNodeId>
+                            <Name>Brasilien</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>419952031</BrowseNodeId>
+                            <Name>China</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>419953031</BrowseNodeId>
+                            <Name>Dänemark</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>419954031</BrowseNodeId>
+                            <Name>Deutschland</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>419966031</BrowseNodeId>
+                            <Name>Finnland</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>419967031</BrowseNodeId>
+                            <Name>Frankreich</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>419963031</BrowseNodeId>
+                            <Name>Großbritannien</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>419969031</BrowseNodeId>
+                            <Name>Irland</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>419970031</BrowseNodeId>
+                            <Name>Island</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>419971031</BrowseNodeId>
+                            <Name>Israel</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>419972031</BrowseNodeId>
+                            <Name>Italien</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>419976031</BrowseNodeId>
+                            <Name>Japan</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>419977031</BrowseNodeId>
+                            <Name>Kanada</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>419978031</BrowseNodeId>
+                            <Name>Norwegen</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>419979031</BrowseNodeId>
+                            <Name>Österreich</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>419981031</BrowseNodeId>
+                            <Name>Russland</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>419983031</BrowseNodeId>
+                            <Name>Schweden</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>419986031</BrowseNodeId>
+                            <Name>Schweiz</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>419987031</BrowseNodeId>
+                            <Name>Spanien</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>419988031</BrowseNodeId>
+                            <Name>Türkei</Name>
+                        </BrowseNode>
+                    </Children>
+                    <Ancestors>
+                        <BrowseNode>
+                            <BrowseNodeId>541686</BrowseNodeId>
+                            <Name>Kategorien</Name>
+                            <IsCategoryRoot>1</IsCategoryRoot>
+                            <Ancestors>
+                                <BrowseNode>
+                                    <BrowseNodeId>186606</BrowseNodeId>
+                                    <Name>Bücher</Name>
+                                </BrowseNode>
+                            </Ancestors>
+                        </BrowseNode>
+                    </Ancestors>
+                </BrowseNode>
+                <BrowseNode>
+                    <BrowseNodeId>420050031</BrowseNodeId>
+                    <Name>Fantasy</Name>
+                    <Ancestors>
+                        <BrowseNode>
+                            <BrowseNodeId>142</BrowseNodeId>
+                            <Name>Fantasy &amp; Science Fiction</Name>
+                            <Ancestors>
+                                <BrowseNode>
+                                    <BrowseNodeId>541686</BrowseNodeId>
+                                    <Name>Kategorien</Name>
+                                    <IsCategoryRoot>1</IsCategoryRoot>
+                                    <Ancestors>
+                                        <BrowseNode>
+                                            <BrowseNodeId>186606</BrowseNodeId>
+                                            <Name>Bücher</Name>
+                                        </BrowseNode>
+                                    </Ancestors>
+                                </BrowseNode>
+                            </Ancestors>
+                        </BrowseNode>
+                    </Ancestors>
+                </BrowseNode>
+                <BrowseNode>
+                    <BrowseNodeId>567111031</BrowseNodeId>
+                    <Name>Belletristik</Name>
+                    <Children>
+                        <BrowseNode>
+                            <BrowseNodeId>6692008031</BrowseNodeId>
+                            <Name>Action &amp; Abenteuer</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>6692049031</BrowseNodeId>
+                            <Name>Aufsätze &amp; Korrespondenz</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>6692291031</BrowseNodeId>
+                            <Name>Belletristik für Frauen</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>610651031</BrowseNodeId>
+                            <Name>Dramatik</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>610653031</BrowseNodeId>
+                            <Name>Gegenwartsliteratur</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>610655031</BrowseNodeId>
+                            <Name>Historische Romane</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>567123031</BrowseNodeId>
+                            <Name>Horror</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>610656031</BrowseNodeId>
+                            <Name>Humor</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>610657031</BrowseNodeId>
+                            <Name>Klassiker</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>610658031</BrowseNodeId>
+                            <Name>Kurzgeschichten &amp; Anthologien</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>6692207031</BrowseNodeId>
+                            <Name>Literarische Belletristik</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>6692135031</BrowseNodeId>
+                            <Name>Literaturkritik &amp; -theorie</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>610660031</BrowseNodeId>
+                            <Name>Lyrik</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>610661031</BrowseNodeId>
+                            <Name>Märchen, Sagen &amp; Legenden</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>6692063031</BrowseNodeId>
+                            <Name>Populäre Belletristik</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>6692271031</BrowseNodeId>
+                            <Name>Religiöse Belletristik</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>6692274031</BrowseNodeId>
+                            <Name>Vereinigte Staaten</Name>
+                        </BrowseNode>
+                    </Children>
+                    <Ancestors>
+                        <BrowseNode>
+                            <BrowseNodeId>530886031</BrowseNodeId>
+                            <Name>Kindle eBooks</Name>
+                            <Ancestors>
+                                <BrowseNode>
+                                    <BrowseNodeId>530485031</BrowseNodeId>
+                                    <Name>Kategorien</Name>
+                                    <IsCategoryRoot>1</IsCategoryRoot>
+                                    <Ancestors>
+                                        <BrowseNode>
+                                            <BrowseNodeId>530484031</BrowseNodeId>
+                                            <Name>Kindle-Shop</Name>
+                                        </BrowseNode>
+                                    </Ancestors>
+                                </BrowseNode>
+                            </Ancestors>
+                        </BrowseNode>
+                    </Ancestors>
+                </BrowseNode>
+                <BrowseNode>
+                    <BrowseNodeId>620981031</BrowseNodeId>
+                    <Name>Fantasy</Name>
+                    <Children>
+                        <BrowseNode>
+                            <BrowseNodeId>8421127031</BrowseNodeId>
+                            <Name>Epen</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>8421124031</BrowseNodeId>
+                            <Name>Fantasy-Anthologien</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>8421129031</BrowseNodeId>
+                            <Name>Historisch</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>8421133031</BrowseNodeId>
+                            <Name>Mythen &amp; Legenden</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>8421139031</BrowseNodeId>
+                            <Name>Paranormal</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>8421141031</BrowseNodeId>
+                            <Name>Schwert &amp; Magie</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>8421131031</BrowseNodeId>
+                            <Name>Schwul &amp; Lesbisch</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>8421142031</BrowseNodeId>
+                            <Name>Urban</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>8421126031</BrowseNodeId>
+                            <Name>Zeitgenössisch</Name>
+                        </BrowseNode>
+                    </Children>
+                    <Ancestors>
+                        <BrowseNode>
+                            <BrowseNodeId>567119031</BrowseNodeId>
+                            <Name>Fantasy &amp; Science Fiction</Name>
+                            <Ancestors>
+                                <BrowseNode>
+                                    <BrowseNodeId>530886031</BrowseNodeId>
+                                    <Name>Kindle eBooks</Name>
+                                    <Ancestors>
+                                        <BrowseNode>
+                                            <BrowseNodeId>530485031</BrowseNodeId>
+                                            <Name>Kategorien</Name>
+                                            <IsCategoryRoot>1</IsCategoryRoot>
+                                            <Ancestors>
+                                                <BrowseNode>
+                                                    <BrowseNodeId>530484031</BrowseNodeId>
+                                                    <Name>Kindle-Shop</Name>
+                                                </BrowseNode>
+                                            </Ancestors>
+                                        </BrowseNode>
+                                    </Ancestors>
+                                </BrowseNode>
+                            </Ancestors>
+                        </BrowseNode>
+                    </Ancestors>
+                </BrowseNode>
+                <BrowseNode>
+                    <BrowseNodeId>5870295031</BrowseNodeId>
+                    <Name>Thriller</Name>
+                    <Children>
+                        <BrowseNode>
+                            <BrowseNodeId>5870300031</BrowseNodeId>
+                            <Name>Historische Thriller</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>5870297031</BrowseNodeId>
+                            <Name>Kriminalthriller</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>5870303031</BrowseNodeId>
+                            <Name>Militär-Thriller</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>5870304031</BrowseNodeId>
+                            <Name>Polit-Thriller</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>5870305031</BrowseNodeId>
+                            <Name>Psychothriller</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>5870298031</BrowseNodeId>
+                            <Name>Spionage</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>5870307031</BrowseNodeId>
+                            <Name>Techno-Thriller</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>5870306031</BrowseNodeId>
+                            <Name>Übernatürliche Thriller</Name>
+                        </BrowseNode>
+                    </Children>
+                    <Ancestors>
+                        <BrowseNode>
+                            <BrowseNodeId>567126031</BrowseNodeId>
+                            <Name>Krimis &amp; Thriller</Name>
+                            <Ancestors>
+                                <BrowseNode>
+                                    <BrowseNodeId>530886031</BrowseNodeId>
+                                    <Name>Kindle eBooks</Name>
+                                    <Ancestors>
+                                        <BrowseNode>
+                                            <BrowseNodeId>530485031</BrowseNodeId>
+                                            <Name>Kategorien</Name>
+                                            <IsCategoryRoot>1</IsCategoryRoot>
+                                            <Ancestors>
+                                                <BrowseNode>
+                                                    <BrowseNodeId>530484031</BrowseNodeId>
+                                                    <Name>Kindle-Shop</Name>
+                                                </BrowseNode>
+                                            </Ancestors>
+                                        </BrowseNode>
+                                    </Ancestors>
+                                </BrowseNode>
+                            </Ancestors>
+                        </BrowseNode>
+                    </Ancestors>
+                </BrowseNode>
+                <BrowseNode>
+                    <BrowseNodeId>5870296031</BrowseNodeId>
+                    <Name>Suspense</Name>
+                    <Ancestors>
+                        <BrowseNode>
+                            <BrowseNodeId>567126031</BrowseNodeId>
+                            <Name>Krimis &amp; Thriller</Name>
+                            <Ancestors>
+                                <BrowseNode>
+                                    <BrowseNodeId>530886031</BrowseNodeId>
+                                    <Name>Kindle eBooks</Name>
+                                    <Ancestors>
+                                        <BrowseNode>
+                                            <BrowseNodeId>530485031</BrowseNodeId>
+                                            <Name>Kategorien</Name>
+                                            <IsCategoryRoot>1</IsCategoryRoot>
+                                            <Ancestors>
+                                                <BrowseNode>
+                                                    <BrowseNodeId>530484031</BrowseNodeId>
+                                                    <Name>Kindle-Shop</Name>
+                                                </BrowseNode>
+                                            </Ancestors>
+                                        </BrowseNode>
+                                    </Ancestors>
+                                </BrowseNode>
+                            </Ancestors>
+                        </BrowseNode>
+                    </Ancestors>
+                </BrowseNode>
+            </BrowseNodes>
+        </Item>
+        <Item>
+            <ASIN>3423215070</ASIN>
+            <DetailPageURL>
+                https://www.amazon.de/b%C3%B6se-Ort-Roman-Fl%C3%BCsse-von-London-Reihe-Peter/dp/3423215070?SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=3423215070
+            </DetailPageURL>
+            <ItemLinks>
+                <ItemLink>
+                    <Description>Add To Wishlist</Description>
+                    <URL>https://www.amazon.de/gp/registry/wishlist/add-item.html?asin.0=3423215070&amp;SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=3423215070</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Tell A Friend</Description>
+                    <URL>https://www.amazon.de/gp/pdp/taf/3423215070?SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=3423215070</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>All Customer Reviews</Description>
+                    <URL>https://www.amazon.de/review/product/3423215070?SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=3423215070</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>All Offers</Description>
+                    <URL>https://www.amazon.de/gp/offer-listing/3423215070?SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=3423215070</URL>
+                </ItemLink>
+            </ItemLinks>
+            <SalesRank>3021</SalesRank>
+            <SmallImage>
+                <URL>https://images-eu.ssl-images-amazon.com/images/I/610w7OgFIGL._SL75_.jpg</URL>
+                <Height Units="pixels">75</Height>
+                <Width Units="pixels">47</Width>
+            </SmallImage>
+            <MediumImage>
+                <URL>https://images-eu.ssl-images-amazon.com/images/I/610w7OgFIGL._SL160_.jpg</URL>
+                <Height Units="pixels">160</Height>
+                <Width Units="pixels">100</Width>
+            </MediumImage>
+            <LargeImage>
+                <URL>https://images-eu.ssl-images-amazon.com/images/I/610w7OgFIGL.jpg</URL>
+                <Height Units="pixels">500</Height>
+                <Width Units="pixels">314</Width>
+            </LargeImage>
+            <ImageSets>
+                <ImageSet Category="primary">
+                    <SwatchImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/610w7OgFIGL._SL30_.jpg</URL>
+                        <Height Units="pixels">30</Height>
+                        <Width Units="pixels">19</Width>
+                    </SwatchImage>
+                    <SmallImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/610w7OgFIGL._SL75_.jpg</URL>
+                        <Height Units="pixels">75</Height>
+                        <Width Units="pixels">47</Width>
+                    </SmallImage>
+                    <ThumbnailImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/610w7OgFIGL._SL75_.jpg</URL>
+                        <Height Units="pixels">75</Height>
+                        <Width Units="pixels">47</Width>
+                    </ThumbnailImage>
+                    <TinyImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/610w7OgFIGL._SL110_.jpg</URL>
+                        <Height Units="pixels">110</Height>
+                        <Width Units="pixels">69</Width>
+                    </TinyImage>
+                    <MediumImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/610w7OgFIGL._SL160_.jpg</URL>
+                        <Height Units="pixels">160</Height>
+                        <Width Units="pixels">100</Width>
+                    </MediumImage>
+                    <LargeImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/610w7OgFIGL.jpg</URL>
+                        <Height Units="pixels">500</Height>
+                        <Width Units="pixels">314</Width>
+                    </LargeImage>
+                </ImageSet>
+            </ImageSets>
+            <ItemAttributes>
+                <Author>Ben Aaronovitch</Author>
+                <Binding>Taschenbuch</Binding>
+                <Creator Role="Übersetzer">Christine Blum</Creator>
+                <EAN>9783423215077</EAN>
+                <EANList>
+                    <EANListElement>9783423215077</EANListElement>
+                </EANList>
+                <Edition>3</Edition>
+                <ISBN>3423215070</ISBN>
+                <ItemDimensions>
+                    <Height Units="hundredths-inches">756</Height>
+                    <Length Units="hundredths-inches">476</Length>
+                    <Width Units="hundredths-inches">118</Width>
+                </ItemDimensions>
+                <Label>dtv Verlagsgesellschaft</Label>
+                <Languages>
+                    <Language>
+                        <Name>Deutsch</Name>
+                        <Type>Veröffentlicht</Type>
+                    </Language>
+                    <Language>
+                        <Name>Deutsch</Name>
+                        <Type>Originalsprache</Type>
+                    </Language>
+                    <Language>
+                        <Name>Deutsch</Name>
+                        <Type>Unbekannt</Type>
+                    </Language>
+                </Languages>
+                <Manufacturer>dtv Verlagsgesellschaft</Manufacturer>
+                <NumberOfItems>1</NumberOfItems>
+                <NumberOfPages>400</NumberOfPages>
+                <PackageDimensions>
+                    <Height Units="hundredths-inches">102</Height>
+                    <Length Units="hundredths-inches">748</Length>
+                    <Weight Units="Hundertstel Pfund">62</Weight>
+                    <Width Units="hundredths-inches">472</Width>
+                </PackageDimensions>
+                <ProductGroup>Book</ProductGroup>
+                <ProductTypeName>ABIS_BOOK</ProductTypeName>
+                <PublicationDate>2014-05-01</PublicationDate>
+                <Publisher>dtv Verlagsgesellschaft</Publisher>
+                <Studio>dtv Verlagsgesellschaft</Studio>
+                <Title>Der böse Ort: Roman (Die Flüsse-von-London-Reihe (Peter Grant), Band 21507)</Title>
+            </ItemAttributes>
+            <OfferSummary>
+                <LowestNewPrice>
+                    <Amount>1095</Amount>
+                    <CurrencyCode>EUR</CurrencyCode>
+                    <FormattedPrice>EUR 10,95</FormattedPrice>
+                </LowestNewPrice>
+                <LowestUsedPrice>
+                    <Amount>249</Amount>
+                    <CurrencyCode>EUR</CurrencyCode>
+                    <FormattedPrice>EUR 2,49</FormattedPrice>
+                </LowestUsedPrice>
+                <TotalNew>36</TotalNew>
+                <TotalUsed>11</TotalUsed>
+                <TotalCollectible>0</TotalCollectible>
+                <TotalRefurbished>0</TotalRefurbished>
+            </OfferSummary>
+            <Offers>
+                <TotalOffers>1</TotalOffers>
+                <TotalOfferPages>1</TotalOfferPages>
+                <MoreOffersUrl>https://www.amazon.de/gp/offer-listing/3423215070?SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=3423215070</MoreOffersUrl>
+                <Offer>
+                    <OfferAttributes>
+                        <Condition>New</Condition>
+                    </OfferAttributes>
+                    <OfferListing>
+                        <OfferListingId>
+                            LQ0Yvw4cRhhcGGfF0iPXhY72JDSU8LBaJOKcqcxce8Dc1STvARaJf2WNEJAXjUYpdBd6V1vi69qIJT818QTZbH2BgqhV085VU87a0iRNDaA%3D
+                        </OfferListingId>
+                        <Price>
+                            <Amount>1095</Amount>
+                            <CurrencyCode>EUR</CurrencyCode>
+                            <FormattedPrice>EUR 10,95</FormattedPrice>
+                        </Price>
+                        <Availability>Gewöhnlich versandfertig in 24 Stunden</Availability>
+                        <AvailabilityAttributes>
+                            <AvailabilityType>now</AvailabilityType>
+                            <MinimumHours>0</MinimumHours>
+                            <MaximumHours>0</MaximumHours>
+                        </AvailabilityAttributes>
+                        <IsEligibleForSuperSaverShipping>1</IsEligibleForSuperSaverShipping>
+                        <IsEligibleForPrime>1</IsEligibleForPrime>
+                    </OfferListing>
+                </Offer>
+            </Offers>
+            <CustomerReviews>
+                <IFrameURL>https://www.amazon.de/reviews/iframe?akid=AKIAIUNWM3JIBSM6LYNQ&amp;alinkCode=xm2&amp;asin=3423215070&amp;atag=redtoad-21&amp;exp=2018-07-09T20%3A20%3A16Z&amp;v=2&amp;sig=jmg8yKg%252BhxUZij3keST77W6qWY5sSlV0WiNEgX%252Bm1EY%253D</IFrameURL>
+                <HasReviews>true</HasReviews>
+            </CustomerReviews>
+            <SimilarProducts>
+                <SimilarProduct>
+                    <ASIN>3423216026</ASIN>
+                    <Title>Fingerhut-Sommer: Roman (Die Flüsse-von-London-Reihe (Peter Grant), Band 21602)</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>3423214481</ASIN>
+                    <Title>Ein Wispern unter Baker Street: Roman (Die Flüsse-von-London-Reihe (Peter Grant), Band
+                        21448)
+                    </Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>3423216689</ASIN>
+                    <Title>Der Galgen von Tyburn: Roman (Die Flüsse-von-London-Reihe (Peter Grant), Band 21668)</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>3423213809</ASIN>
+                    <Title>Schwarzer Mond über Soho: Roman (Die Flüsse-von-London-Reihe (Peter Grant), Band 21380)
+                    </Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>3423213418</ASIN>
+                    <Title>Die Flüsse von London: Roman (Die Flüsse-von-London-Reihe (Peter Grant), Band 21341)</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>3423217332</ASIN>
+                    <Title>Geister auf der Metropolitan Line: Eine Peter-Grant-Story</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>3423216514</ASIN>
+                    <Title>Lennart Malmkvist und der ziemlich seltsame Mops des Buri Bolmen: Roman</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>3423215917</ASIN>
+                    <Title>Weiße Magie - mordsgünstig: Kriminalroman</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>3423217049</ASIN>
+                    <Title>Lennart Malmkvist und der ganz und gar wunderliche Gast aus Trindemossen: Roman</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>3833734272</ASIN>
+                    <Title>Gestatten: Peter Grant (Die Flüsse von London &amp; Schwarzer Mond über Soho)</Title>
+                </SimilarProduct>
+            </SimilarProducts>
+            <BrowseNodes>
+                <BrowseNode>
+                    <BrowseNodeId>420050031</BrowseNodeId>
+                    <Name>Fantasy</Name>
+                    <Ancestors>
+                        <BrowseNode>
+                            <BrowseNodeId>142</BrowseNodeId>
+                            <Name>Fantasy &amp; Science Fiction</Name>
+                            <Ancestors>
+                                <BrowseNode>
+                                    <BrowseNodeId>541686</BrowseNodeId>
+                                    <Name>Kategorien</Name>
+                                    <IsCategoryRoot>1</IsCategoryRoot>
+                                    <Ancestors>
+                                        <BrowseNode>
+                                            <BrowseNodeId>186606</BrowseNodeId>
+                                            <Name>Bücher</Name>
+                                        </BrowseNode>
+                                    </Ancestors>
+                                </BrowseNode>
+                            </Ancestors>
+                        </BrowseNode>
+                    </Ancestors>
+                </BrowseNode>
+            </BrowseNodes>
+        </Item>
+        <Item>
+            <ASIN>B00ZUAK0RS</ASIN>
+            <DetailPageURL>
+                https://www.amazon.de/Fingerhut-Sommer-Roman-Peter-Grant-5-ebook/dp/B00ZUAK0RS?SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=B00ZUAK0RS
+            </DetailPageURL>
+            <ItemLinks>
+                <ItemLink>
+                    <Description>Add To Wishlist</Description>
+                    <URL>https://www.amazon.de/gp/registry/wishlist/add-item.html?asin.0=B00ZUAK0RS&amp;SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=B00ZUAK0RS</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Tell A Friend</Description>
+                    <URL>https://www.amazon.de/gp/pdp/taf/B00ZUAK0RS?SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=B00ZUAK0RS</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>All Customer Reviews</Description>
+                    <URL>https://www.amazon.de/review/product/B00ZUAK0RS?SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=B00ZUAK0RS</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>All Offers</Description>
+                    <URL>https://www.amazon.de/gp/offer-listing/B00ZUAK0RS?SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=B00ZUAK0RS</URL>
+                </ItemLink>
+            </ItemLinks>
+            <SalesRank>7129</SalesRank>
+            <SmallImage>
+                <URL>https://images-eu.ssl-images-amazon.com/images/I/61rwxhW9%2B7L._SL75_.jpg</URL>
+                <Height Units="pixels">75</Height>
+                <Width Units="pixels">47</Width>
+            </SmallImage>
+            <MediumImage>
+                <URL>https://images-eu.ssl-images-amazon.com/images/I/61rwxhW9%2B7L._SL160_.jpg</URL>
+                <Height Units="pixels">160</Height>
+                <Width Units="pixels">100</Width>
+            </MediumImage>
+            <LargeImage>
+                <URL>https://images-eu.ssl-images-amazon.com/images/I/61rwxhW9%2B7L.jpg</URL>
+                <Height Units="pixels">500</Height>
+                <Width Units="pixels">314</Width>
+            </LargeImage>
+            <ImageSets>
+                <ImageSet Category="primary">
+                    <SwatchImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/61rwxhW9%2B7L._SL30_.jpg</URL>
+                        <Height Units="pixels">30</Height>
+                        <Width Units="pixels">19</Width>
+                    </SwatchImage>
+                    <SmallImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/61rwxhW9%2B7L._SL75_.jpg</URL>
+                        <Height Units="pixels">75</Height>
+                        <Width Units="pixels">47</Width>
+                    </SmallImage>
+                    <ThumbnailImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/61rwxhW9%2B7L._SL75_.jpg</URL>
+                        <Height Units="pixels">75</Height>
+                        <Width Units="pixels">47</Width>
+                    </ThumbnailImage>
+                    <TinyImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/61rwxhW9%2B7L._SL110_.jpg</URL>
+                        <Height Units="pixels">110</Height>
+                        <Width Units="pixels">69</Width>
+                    </TinyImage>
+                    <MediumImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/61rwxhW9%2B7L._SL160_.jpg</URL>
+                        <Height Units="pixels">160</Height>
+                        <Width Units="pixels">100</Width>
+                    </MediumImage>
+                    <LargeImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/61rwxhW9%2B7L.jpg</URL>
+                        <Height Units="pixels">500</Height>
+                        <Width Units="pixels">314</Width>
+                    </LargeImage>
+                </ImageSet>
+            </ImageSets>
+            <ItemAttributes>
+                <Author>Ben Aaronovitch</Author>
+                <Binding>Kindle Edition</Binding>
+                <Creator Role="Übersetzer">Christine Blum</Creator>
+                <EISBN>9783423427258</EISBN>
+                <Format>Kindle eBook</Format>
+                <Label>dtv Verlagsgesellschaft mbH &amp; Co. KG</Label>
+                <Languages>
+                    <Language>
+                        <Name>Deutsch</Name>
+                        <Type>Veröffentlicht</Type>
+                    </Language>
+                </Languages>
+                <Manufacturer>dtv Verlagsgesellschaft mbH &amp; Co. KG</Manufacturer>
+                <NumberOfPages>415</NumberOfPages>
+                <ProductGroup>eBooks</ProductGroup>
+                <ProductTypeName>ABIS_EBOOKS</ProductTypeName>
+                <PublicationDate>2015-08-21</PublicationDate>
+                <Publisher>dtv Verlagsgesellschaft mbH &amp; Co. KG</Publisher>
+                <ReleaseDate>2015-08-21</ReleaseDate>
+                <Studio>dtv Verlagsgesellschaft mbH &amp; Co. KG</Studio>
+                <Title>Fingerhut-Sommer: Roman (Peter Grant 5)</Title>
+            </ItemAttributes>
+            <CustomerReviews>
+                <IFrameURL>https://www.amazon.de/reviews/iframe?akid=AKIAIUNWM3JIBSM6LYNQ&amp;alinkCode=xm2&amp;asin=B00ZUAK0RS&amp;atag=redtoad-21&amp;exp=2018-07-09T20%3A20%3A16Z&amp;v=2&amp;sig=T%252FbXQQh%252FKnZ96JKhk2TBg5HRY9yVSR9NBReuqEgzY%252BU%253D</IFrameURL>
+                <HasReviews>true</HasReviews>
+            </CustomerReviews>
+            <EditorialReviews>
+                <EditorialReview>
+                    <Source>Kurzbeschreibung</Source>
+                    <Content>&lt;p&gt;Der fünfte Band: Schwarzer Humor trifft auf schwarze Magie&lt;/p&gt;&lt;br /&gt;&lt;p&gt;Obwohl
+                        sich Police Constable Peter Grant schon unwohl fühlt, wenn er Londons Skyline auch nur ein paar
+                        Kilometer weit hinter sich lässt, wird er jetzt in die tiefste Provinz geschickt: in einen
+                        kleinen Ort in Herefordshire – wo sich Fuchs, Hase und der Dorfpolizist Gute Nacht sagen. Aber
+                        es werden zwei Kinder vermisst, und ihr Verschwinden erfolgte womöglich unter magischen
+                        Umständen. Also muss Peter notgedrungen sein angestammtes Biotop verlassen. Mit der Flusstochter
+                        Beverley Brook begibt er sich mutig nach Westen, hinein ins ländliche England ... &lt;/p&gt;
+                    </Content>
+                    <IsLinkSuppressed>0</IsLinkSuppressed>
+                </EditorialReview>
+            </EditorialReviews>
+            <SimilarProducts>
+                <SimilarProduct>
+                    <ASIN>B00I4RZVEG</ASIN>
+                    <Title>Der böse Ort: Roman (Peter Grant 4)</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>B06XCF4BQ8</ASIN>
+                    <Title>Der Galgen von Tyburn: Roman (Die Flüsse-von-London-Reihe (Peter Grant))</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>B00BQWXIXW</ASIN>
+                    <Title>Ein Wispern unter Baker Street: Roman (Peter Grant 3)</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>B008FNE1H2</ASIN>
+                    <Title>Schwarzer Mond über Soho: Roman (Peter Grant 2)</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>B007BLO6WY</ASIN>
+                    <Title>Die Flüsse von London: Roman</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>B077JSZJZW</ASIN>
+                    <Title>Geister auf der Metropolitan Line: Eine Peter-Grant-Story</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>B004OL2IYM</ASIN>
+                    <Title>Flavia de Luce 1 - Mord im Gurkenbeet: Roman</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>B01IA04ZCK</ASIN>
+                    <Title>Lennart Malmkvist und der ziemlich seltsame Mops des Buri Bolmen: Roman</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>B004P1J6CS</ASIN>
+                    <Title>Flavia de Luce 2 - Mord ist kein Kinderspiel: Roman</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>B074P5JZBJ</ASIN>
+                    <Title>Lennart Malmkvist und der ganz und gar wunderliche Gast aus Trindemossen: Roman</Title>
+                </SimilarProduct>
+            </SimilarProducts>
+            <BrowseNodes>
+                <BrowseNode>
+                    <BrowseNodeId>420050031</BrowseNodeId>
+                    <Name>Fantasy</Name>
+                    <Ancestors>
+                        <BrowseNode>
+                            <BrowseNodeId>142</BrowseNodeId>
+                            <Name>Fantasy &amp; Science Fiction</Name>
+                            <Ancestors>
+                                <BrowseNode>
+                                    <BrowseNodeId>541686</BrowseNodeId>
+                                    <Name>Kategorien</Name>
+                                    <IsCategoryRoot>1</IsCategoryRoot>
+                                    <Ancestors>
+                                        <BrowseNode>
+                                            <BrowseNodeId>186606</BrowseNodeId>
+                                            <Name>Bücher</Name>
+                                        </BrowseNode>
+                                    </Ancestors>
+                                </BrowseNode>
+                            </Ancestors>
+                        </BrowseNode>
+                    </Ancestors>
+                </BrowseNode>
+                <BrowseNode>
+                    <BrowseNodeId>567111031</BrowseNodeId>
+                    <Name>Belletristik</Name>
+                    <Children>
+                        <BrowseNode>
+                            <BrowseNodeId>6692008031</BrowseNodeId>
+                            <Name>Action &amp; Abenteuer</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>6692049031</BrowseNodeId>
+                            <Name>Aufsätze &amp; Korrespondenz</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>6692291031</BrowseNodeId>
+                            <Name>Belletristik für Frauen</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>610651031</BrowseNodeId>
+                            <Name>Dramatik</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>610653031</BrowseNodeId>
+                            <Name>Gegenwartsliteratur</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>610655031</BrowseNodeId>
+                            <Name>Historische Romane</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>567123031</BrowseNodeId>
+                            <Name>Horror</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>610656031</BrowseNodeId>
+                            <Name>Humor</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>610657031</BrowseNodeId>
+                            <Name>Klassiker</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>610658031</BrowseNodeId>
+                            <Name>Kurzgeschichten &amp; Anthologien</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>6692207031</BrowseNodeId>
+                            <Name>Literarische Belletristik</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>6692135031</BrowseNodeId>
+                            <Name>Literaturkritik &amp; -theorie</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>610660031</BrowseNodeId>
+                            <Name>Lyrik</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>610661031</BrowseNodeId>
+                            <Name>Märchen, Sagen &amp; Legenden</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>6692063031</BrowseNodeId>
+                            <Name>Populäre Belletristik</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>6692271031</BrowseNodeId>
+                            <Name>Religiöse Belletristik</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>6692274031</BrowseNodeId>
+                            <Name>Vereinigte Staaten</Name>
+                        </BrowseNode>
+                    </Children>
+                    <Ancestors>
+                        <BrowseNode>
+                            <BrowseNodeId>530886031</BrowseNodeId>
+                            <Name>Kindle eBooks</Name>
+                            <Ancestors>
+                                <BrowseNode>
+                                    <BrowseNodeId>530485031</BrowseNodeId>
+                                    <Name>Kategorien</Name>
+                                    <IsCategoryRoot>1</IsCategoryRoot>
+                                    <Ancestors>
+                                        <BrowseNode>
+                                            <BrowseNodeId>530484031</BrowseNodeId>
+                                            <Name>Kindle-Shop</Name>
+                                        </BrowseNode>
+                                    </Ancestors>
+                                </BrowseNode>
+                            </Ancestors>
+                        </BrowseNode>
+                    </Ancestors>
+                </BrowseNode>
+                <BrowseNode>
+                    <BrowseNodeId>8421136031</BrowseNodeId>
+                    <Name>Keltisch, Englisch &amp; Walisisch</Name>
+                    <Ancestors>
+                        <BrowseNode>
+                            <BrowseNodeId>8421133031</BrowseNodeId>
+                            <Name>Mythen &amp; Legenden</Name>
+                            <Ancestors>
+                                <BrowseNode>
+                                    <BrowseNodeId>620981031</BrowseNodeId>
+                                    <Name>Fantasy</Name>
+                                    <Ancestors>
+                                        <BrowseNode>
+                                            <BrowseNodeId>567119031</BrowseNodeId>
+                                            <Name>Fantasy &amp; Science Fiction</Name>
+                                            <Ancestors>
+                                                <BrowseNode>
+                                                    <BrowseNodeId>530886031</BrowseNodeId>
+                                                    <Name>Kindle eBooks</Name>
+                                                    <Ancestors>
+                                                        <BrowseNode>
+                                                            <BrowseNodeId>530485031</BrowseNodeId>
+                                                            <Name>Kategorien</Name>
+                                                            <IsCategoryRoot>1</IsCategoryRoot>
+                                                            <Ancestors>
+                                                                <BrowseNode>
+                                                                    <BrowseNodeId>530484031</BrowseNodeId>
+                                                                    <Name>Kindle-Shop</Name>
+                                                                </BrowseNode>
+                                                            </Ancestors>
+                                                        </BrowseNode>
+                                                    </Ancestors>
+                                                </BrowseNode>
+                                            </Ancestors>
+                                        </BrowseNode>
+                                    </Ancestors>
+                                </BrowseNode>
+                            </Ancestors>
+                        </BrowseNode>
+                    </Ancestors>
+                </BrowseNode>
+            </BrowseNodes>
+        </Item>
+        <Item>
+            <ASIN>3833734272</ASIN>
+            <DetailPageURL>
+                https://www.amazon.de/Gestatten-Peter-Fl%C3%BCsse-London-Schwarzer/dp/3833734272?SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=3833734272
+            </DetailPageURL>
+            <ItemLinks>
+                <ItemLink>
+                    <Description>Add To Wishlist</Description>
+                    <URL>https://www.amazon.de/gp/registry/wishlist/add-item.html?asin.0=3833734272&amp;SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=3833734272</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Tell A Friend</Description>
+                    <URL>https://www.amazon.de/gp/pdp/taf/3833734272?SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=3833734272</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>All Customer Reviews</Description>
+                    <URL>https://www.amazon.de/review/product/3833734272?SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=3833734272</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>All Offers</Description>
+                    <URL>https://www.amazon.de/gp/offer-listing/3833734272?SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=3833734272</URL>
+                </ItemLink>
+            </ItemLinks>
+            <SalesRank>234240</SalesRank>
+            <SmallImage>
+                <URL>https://images-eu.ssl-images-amazon.com/images/I/61DLse7NzeL._SL75_.jpg</URL>
+                <Height Units="pixels">66</Height>
+                <Width Units="pixels">75</Width>
+            </SmallImage>
+            <MediumImage>
+                <URL>https://images-eu.ssl-images-amazon.com/images/I/61DLse7NzeL._SL160_.jpg</URL>
+                <Height Units="pixels">142</Height>
+                <Width Units="pixels">160</Width>
+            </MediumImage>
+            <LargeImage>
+                <URL>https://images-eu.ssl-images-amazon.com/images/I/61DLse7NzeL.jpg</URL>
+                <Height Units="pixels">443</Height>
+                <Width Units="pixels">500</Width>
+            </LargeImage>
+            <ImageSets>
+                <ImageSet Category="primary">
+                    <SwatchImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/61DLse7NzeL._SL30_.jpg</URL>
+                        <Height Units="pixels">27</Height>
+                        <Width Units="pixels">30</Width>
+                    </SwatchImage>
+                    <SmallImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/61DLse7NzeL._SL75_.jpg</URL>
+                        <Height Units="pixels">66</Height>
+                        <Width Units="pixels">75</Width>
+                    </SmallImage>
+                    <ThumbnailImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/61DLse7NzeL._SL75_.jpg</URL>
+                        <Height Units="pixels">66</Height>
+                        <Width Units="pixels">75</Width>
+                    </ThumbnailImage>
+                    <TinyImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/61DLse7NzeL._SL110_.jpg</URL>
+                        <Height Units="pixels">97</Height>
+                        <Width Units="pixels">110</Width>
+                    </TinyImage>
+                    <MediumImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/61DLse7NzeL._SL160_.jpg</URL>
+                        <Height Units="pixels">142</Height>
+                        <Width Units="pixels">160</Width>
+                    </MediumImage>
+                    <LargeImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/61DLse7NzeL.jpg</URL>
+                        <Height Units="pixels">443</Height>
+                        <Width Units="pixels">500</Width>
+                    </LargeImage>
+                </ImageSet>
+            </ImageSets>
+            <ItemAttributes>
+                <Author>Ben Aaronovitch</Author>
+                <Binding>Audio CD</Binding>
+                <Brand>Jumbo Neue Medien</Brand>
+                <EAN>9783833734274</EAN>
+                <EANList>
+                    <EANListElement>9783833734274</EANListElement>
+                </EANList>
+                <Format>Audiobook</Format>
+                <ISBN>3833734272</ISBN>
+                <ItemDimensions>
+                    <Height Units="hundredths-inches">488</Height>
+                    <Length Units="hundredths-inches">567</Length>
+                    <Weight Units="Hundertstel Pfund">51</Weight>
+                    <Width Units="hundredths-inches">98</Width>
+                </ItemDimensions>
+                <Label>JUMBO Neue Medien &amp; Verlag GmbH</Label>
+                <Languages>
+                    <Language>
+                        <Name>Deutsch</Name>
+                        <Type>Veröffentlicht</Type>
+                    </Language>
+                    <Language>
+                        <Name>Deutsch</Name>
+                        <Type>Originalsprache</Type>
+                    </Language>
+                    <Language>
+                        <Name>Deutsch</Name>
+                        <Type>Unbekannt</Type>
+                    </Language>
+                </Languages>
+                <Manufacturer>JUMBO Neue Medien &amp; Verlag GmbH</Manufacturer>
+                <MPN>41842893</MPN>
+                <NumberOfItems>6</NumberOfItems>
+                <NumberOfPages>1</NumberOfPages>
+                <PackageDimensions>
+                    <Height Units="hundredths-inches">102</Height>
+                    <Length Units="hundredths-inches">567</Length>
+                    <Weight Units="Hundertstel Pfund">53</Weight>
+                    <Width Units="hundredths-inches">496</Width>
+                </PackageDimensions>
+                <PartNumber>41842893</PartNumber>
+                <ProductGroup>Book</ProductGroup>
+                <ProductTypeName>ABIS_BOOK</ProductTypeName>
+                <PublicationDate>2015-03-24</PublicationDate>
+                <Publisher>JUMBO Neue Medien &amp; Verlag GmbH</Publisher>
+                <RunningTime Units="Minuten">501</RunningTime>
+                <Studio>JUMBO Neue Medien &amp; Verlag GmbH</Studio>
+                <Title>Gestatten: Peter Grant (Die Flüsse von London &amp; Schwarzer Mond über Soho)</Title>
+            </ItemAttributes>
+            <OfferSummary>
+                <LowestNewPrice>
+                    <Amount>1199</Amount>
+                    <CurrencyCode>EUR</CurrencyCode>
+                    <FormattedPrice>EUR 11,99</FormattedPrice>
+                </LowestNewPrice>
+                <LowestUsedPrice>
+                    <Amount>799</Amount>
+                    <CurrencyCode>EUR</CurrencyCode>
+                    <FormattedPrice>EUR 7,99</FormattedPrice>
+                </LowestUsedPrice>
+                <TotalNew>47</TotalNew>
+                <TotalUsed>7</TotalUsed>
+                <TotalCollectible>0</TotalCollectible>
+                <TotalRefurbished>0</TotalRefurbished>
+            </OfferSummary>
+            <Offers>
+                <TotalOffers>1</TotalOffers>
+                <TotalOfferPages>1</TotalOfferPages>
+                <MoreOffersUrl>https://www.amazon.de/gp/offer-listing/3833734272?SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=3833734272</MoreOffersUrl>
+                <Offer>
+                    <OfferAttributes>
+                        <Condition>New</Condition>
+                    </OfferAttributes>
+                    <OfferListing>
+                        <OfferListingId>
+                            LQ0Yvw4cRhjy9hhS8w8UCSwUqRV97Dx3PknSpwgcHq90uEa96aokO6WU%2BGpGSccKZd5MvR4IPJPAA%2BAmfRa%2BnqaQLZmVWh7q6ctR0tudhvc%3D
+                        </OfferListingId>
+                        <Price>
+                            <Amount>1199</Amount>
+                            <CurrencyCode>EUR</CurrencyCode>
+                            <FormattedPrice>EUR 11,99</FormattedPrice>
+                        </Price>
+                        <Availability>Gewöhnlich versandfertig in 24 Stunden</Availability>
+                        <AvailabilityAttributes>
+                            <AvailabilityType>now</AvailabilityType>
+                            <MinimumHours>0</MinimumHours>
+                            <MaximumHours>0</MaximumHours>
+                        </AvailabilityAttributes>
+                        <IsEligibleForSuperSaverShipping>1</IsEligibleForSuperSaverShipping>
+                        <IsEligibleForPrime>1</IsEligibleForPrime>
+                    </OfferListing>
+                </Offer>
+            </Offers>
+            <CustomerReviews>
+                <IFrameURL>https://www.amazon.de/reviews/iframe?akid=AKIAIUNWM3JIBSM6LYNQ&amp;alinkCode=xm2&amp;asin=3833734272&amp;atag=redtoad-21&amp;exp=2018-07-09T20%3A20%3A16Z&amp;v=2&amp;sig=BAgkmhpypxShQpelzUVXGEfM9n%252FP7AApDSAbFVvZBuw%253D</IFrameURL>
+                <HasReviews>true</HasReviews>
+            </CustomerReviews>
+            <EditorialReviews>
+                <EditorialReview>
+                    <Source>Product Description</Source>
+                    <Content>480 Min.&lt;br /&gt;Audio CD&lt;br /&gt;Die Flüsse von London: Der frischgebackene Police
+                        Constable Peter Grant war schon immer irgendwie anders. Als er bemerkt, dass er mit Geistern
+                        sprechen kann und ein Zaubermeister auf den Plan tritt, wird Peters Leben kompliziert.&lt;br /&gt;Schwarzer
+                        Mond über Soho: In den Jazzclubs Sohos sterben verdächtig viele Musiker eines unerwarteten
+                        Todes. Als Peter zu der Leiche eines Jazzmusikers gerufen wird, die eine Swing-Version von Body
+                        and Soul spielt, ist es klar - er ist mitten in seinem zweiten magischen Fall.
+                    </Content>
+                    <IsLinkSuppressed>0</IsLinkSuppressed>
+                </EditorialReview>
+            </EditorialReviews>
+            <SimilarProducts>
+                <SimilarProduct>
+                    <ASIN>3833736623</ASIN>
+                    <Title>Ihr Einsatz, Peter Grant: Ein Wispern unter Baker Street &amp; Der böse Ort</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>3833734248</ASIN>
+                    <Title>Fingerhutsommer (Peter Grant)</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>3833735791</ASIN>
+                    <Title>Der Galgen von Tyburn (Peter Grant)</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>B01FV97D8Q</ASIN>
+                    <Title>Ihr Einsatz,Peter Grant (Box)</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>3833738219</ASIN>
+                    <Title>Geister auf der Metropolitan Line: Eine Peter-Grant-Story</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>3833732210</ASIN>
+                    <Title>Der böse Ort (Peter Grant, Band 4)</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>B0106WBTC4</ASIN>
+                    <Title>Fingerhut-Sommer</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>3423217332</ASIN>
+                    <Title>Geister auf der Metropolitan Line: Eine Peter-Grant-Story</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>3423216026</ASIN>
+                    <Title>Fingerhut-Sommer: Roman (Die Flüsse-von-London-Reihe (Peter Grant), Band 21602)</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>3423215070</ASIN>
+                    <Title>Der böse Ort: Roman (Die Flüsse-von-London-Reihe (Peter Grant), Band 21507)</Title>
+                </SimilarProduct>
+            </SimilarProducts>
+            <BrowseNodes>
+                <BrowseNode>
+                    <BrowseNodeId>420050031</BrowseNodeId>
+                    <Name>Fantasy</Name>
+                    <Ancestors>
+                        <BrowseNode>
+                            <BrowseNodeId>142</BrowseNodeId>
+                            <Name>Fantasy &amp; Science Fiction</Name>
+                            <Ancestors>
+                                <BrowseNode>
+                                    <BrowseNodeId>541686</BrowseNodeId>
+                                    <Name>Kategorien</Name>
+                                    <IsCategoryRoot>1</IsCategoryRoot>
+                                    <Ancestors>
+                                        <BrowseNode>
+                                            <BrowseNodeId>186606</BrowseNodeId>
+                                            <Name>Bücher</Name>
+                                        </BrowseNode>
+                                    </Ancestors>
+                                </BrowseNode>
+                            </Ancestors>
+                        </BrowseNode>
+                    </Ancestors>
+                </BrowseNode>
+            </BrowseNodes>
+        </Item>
+        <Item>
+            <ASIN>3833736623</ASIN>
+            <DetailPageURL>
+                https://www.amazon.de/Ihr-Einsatz-Peter-Grant-Wispern/dp/3833736623?SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=3833736623
+            </DetailPageURL>
+            <ItemLinks>
+                <ItemLink>
+                    <Description>Add To Wishlist</Description>
+                    <URL>https://www.amazon.de/gp/registry/wishlist/add-item.html?asin.0=3833736623&amp;SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=3833736623</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Tell A Friend</Description>
+                    <URL>https://www.amazon.de/gp/pdp/taf/3833736623?SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=3833736623</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>All Customer Reviews</Description>
+                    <URL>https://www.amazon.de/review/product/3833736623?SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=3833736623</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>All Offers</Description>
+                    <URL>https://www.amazon.de/gp/offer-listing/3833736623?SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=3833736623</URL>
+                </ItemLink>
+            </ItemLinks>
+            <SalesRank>227472</SalesRank>
+            <SmallImage>
+                <URL>https://images-eu.ssl-images-amazon.com/images/I/61ik-8JU8wL._SL75_.jpg</URL>
+                <Height Units="pixels">75</Height>
+                <Width Units="pixels">75</Width>
+            </SmallImage>
+            <MediumImage>
+                <URL>https://images-eu.ssl-images-amazon.com/images/I/61ik-8JU8wL._SL160_.jpg</URL>
+                <Height Units="pixels">160</Height>
+                <Width Units="pixels">160</Width>
+            </MediumImage>
+            <LargeImage>
+                <URL>https://images-eu.ssl-images-amazon.com/images/I/61ik-8JU8wL.jpg</URL>
+                <Height Units="pixels">500</Height>
+                <Width Units="pixels">500</Width>
+            </LargeImage>
+            <ImageSets>
+                <ImageSet Category="primary">
+                    <SwatchImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/61ik-8JU8wL._SL30_.jpg</URL>
+                        <Height Units="pixels">30</Height>
+                        <Width Units="pixels">30</Width>
+                    </SwatchImage>
+                    <SmallImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/61ik-8JU8wL._SL75_.jpg</URL>
+                        <Height Units="pixels">75</Height>
+                        <Width Units="pixels">75</Width>
+                    </SmallImage>
+                    <ThumbnailImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/61ik-8JU8wL._SL75_.jpg</URL>
+                        <Height Units="pixels">75</Height>
+                        <Width Units="pixels">75</Width>
+                    </ThumbnailImage>
+                    <TinyImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/61ik-8JU8wL._SL110_.jpg</URL>
+                        <Height Units="pixels">110</Height>
+                        <Width Units="pixels">110</Width>
+                    </TinyImage>
+                    <MediumImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/61ik-8JU8wL._SL160_.jpg</URL>
+                        <Height Units="pixels">160</Height>
+                        <Width Units="pixels">160</Width>
+                    </MediumImage>
+                    <LargeImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/61ik-8JU8wL.jpg</URL>
+                        <Height Units="pixels">500</Height>
+                        <Width Units="pixels">500</Width>
+                    </LargeImage>
+                </ImageSet>
+            </ImageSets>
+            <ItemAttributes>
+                <Author>Ben Aaronovitch</Author>
+                <Binding>Audio CD</Binding>
+                <Brand>Jumbo Neue Medien</Brand>
+                <Creator Role="Sprecher">Dietmar Wunder</Creator>
+                <EAN>9783833736629</EAN>
+                <EANList>
+                    <EANListElement>9783833736629</EANListElement>
+                </EANList>
+                <Format>Audiobook</Format>
+                <Format>CD</Format>
+                <ISBN>3833736623</ISBN>
+                <ItemDimensions>
+                    <Height Units="hundredths-inches">567</Height>
+                    <Length Units="hundredths-inches">496</Length>
+                    <Width Units="hundredths-inches">106</Width>
+                </ItemDimensions>
+                <Label>Jumbo</Label>
+                <Languages>
+                    <Language>
+                        <Name>Deutsch</Name>
+                        <Type>Veröffentlicht</Type>
+                    </Language>
+                    <Language>
+                        <Name>Deutsch</Name>
+                        <Type>Originalsprache</Type>
+                    </Language>
+                </Languages>
+                <Manufacturer>Jumbo</Manufacturer>
+                <MPN>44854354</MPN>
+                <NumberOfItems>6</NumberOfItems>
+                <PackageDimensions>
+                    <Height Units="hundredths-inches">100</Height>
+                    <Length Units="hundredths-inches">560</Length>
+                    <Weight Units="Hundertstel Pfund">49</Weight>
+                    <Width Units="hundredths-inches">500</Width>
+                </PackageDimensions>
+                <PartNumber>44854354</PartNumber>
+                <ProductGroup>Book</ProductGroup>
+                <ProductTypeName>ABIS_BOOK</ProductTypeName>
+                <PublicationDate>2016-07-22</PublicationDate>
+                <Publisher>Jumbo</Publisher>
+                <RunningTime Units="Minuten">530</RunningTime>
+                <Studio>Jumbo</Studio>
+                <Title>Ihr Einsatz, Peter Grant: Ein Wispern unter Baker Street &amp; Der böse Ort</Title>
+            </ItemAttributes>
+            <OfferSummary>
+                <LowestNewPrice>
+                    <Amount>1009</Amount>
+                    <CurrencyCode>EUR</CurrencyCode>
+                    <FormattedPrice>EUR 10,09</FormattedPrice>
+                </LowestNewPrice>
+                <LowestUsedPrice>
+                    <Amount>899</Amount>
+                    <CurrencyCode>EUR</CurrencyCode>
+                    <FormattedPrice>EUR 8,99</FormattedPrice>
+                </LowestUsedPrice>
+                <TotalNew>50</TotalNew>
+                <TotalUsed>4</TotalUsed>
+                <TotalCollectible>0</TotalCollectible>
+                <TotalRefurbished>0</TotalRefurbished>
+            </OfferSummary>
+            <Offers>
+                <TotalOffers>1</TotalOffers>
+                <TotalOfferPages>1</TotalOfferPages>
+                <MoreOffersUrl>https://www.amazon.de/gp/offer-listing/3833736623?SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=3833736623</MoreOffersUrl>
+                <Offer>
+                    <OfferAttributes>
+                        <Condition>New</Condition>
+                    </OfferAttributes>
+                    <OfferListing>
+                        <OfferListingId>
+                            LQ0Yvw4cRhjy9hhS8w8UCRXCY4B1Ix2SSOx%2FpfrHo80eFvD8%2F3UaubZRw9kD8gXNCd0NSOGbeEe3Gexcp0npSIlBaGUi3CHYCpbhHs3GWf0%3D
+                        </OfferListingId>
+                        <Price>
+                            <Amount>1299</Amount>
+                            <CurrencyCode>EUR</CurrencyCode>
+                            <FormattedPrice>EUR 12,99</FormattedPrice>
+                        </Price>
+                        <Availability>Gewöhnlich versandfertig in 24 Stunden</Availability>
+                        <AvailabilityAttributes>
+                            <AvailabilityType>now</AvailabilityType>
+                            <MinimumHours>0</MinimumHours>
+                            <MaximumHours>0</MaximumHours>
+                        </AvailabilityAttributes>
+                        <IsEligibleForSuperSaverShipping>1</IsEligibleForSuperSaverShipping>
+                        <IsEligibleForPrime>1</IsEligibleForPrime>
+                    </OfferListing>
+                </Offer>
+            </Offers>
+            <CustomerReviews>
+                <IFrameURL>https://www.amazon.de/reviews/iframe?akid=AKIAIUNWM3JIBSM6LYNQ&amp;alinkCode=xm2&amp;asin=3833736623&amp;atag=redtoad-21&amp;exp=2018-07-09T20%3A20%3A16Z&amp;v=2&amp;sig=80d9IlkUDTU13EJ%252BifMsuhMOdOsvS4SZmLN9v92V6MI%253D</IFrameURL>
+                <HasReviews>true</HasReviews>
+            </CustomerReviews>
+            <EditorialReviews>
+                <EditorialReview>
+                    <Source>Product Description</Source>
+                    <Content>Ein Wispern unter Baker Street &amp; Der böse Ort, Lesung. 263 Min.&lt;br /&gt;Audio CD&lt;br
+                        /&gt;Ein Wispern unter Baker Street:&lt;br /&gt;Ein junger Mann wird im U-Bahn-Tunnel nahe der
+                        Station Baker Street erstochen aufgefunden. Peter Grant, Constable und Zauberer in Ausbildung,
+                        wird frühmorgens&lt;br /&gt;an den Tatort gerufen. Der unbekannte Tote stellt sich als Sohn
+                        eines US-Senators&lt;br /&gt;heraus und ehe man noch "internationale Verwicklungen" sagen kann,
+                        hat Peter bereits die FBI-Agentin Kimberley Reynolds am Hals.&lt;br /&gt;&lt;br /&gt;Der böse
+                        Ort:&lt;br /&gt;Seltsame Dinge geschehen im Skygarden Tower, einem berüchtigten Sozialwohnblock&lt;br
+                        /&gt;in Südlondon. Zunächst geht es nur um ein gestohlenes altes Buch über Magie, das aus der
+                        Weißen Bibliothek zu Weimar stammt. Doch dann weitet sich der Fall rasant aus. Denn der Erbauer
+                        des Towers, Erik Stromberg, ein brillanter, wenngleich leicht gestörter Architekt, hatte sich
+                        einst nicht nur mit Design, sondern auch mit Magie beschäftigt.&lt;br /&gt;&lt;br /&gt;Die
+                        gleichnamigen Bücher, aus dem Englischen von Christine Blum, sind im Deutschen Taschenbuch
+                        Verlag erschienen.
+                    </Content>
+                    <IsLinkSuppressed>0</IsLinkSuppressed>
+                </EditorialReview>
+            </EditorialReviews>
+            <SimilarProducts>
+                <SimilarProduct>
+                    <ASIN>3833734248</ASIN>
+                    <Title>Fingerhutsommer (Peter Grant)</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>3833730153</ASIN>
+                    <Title>Schwarzer Mond über Soho (Peter Grant, Band 2)</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>3833735791</ASIN>
+                    <Title>Der Galgen von Tyburn (Peter Grant)</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>3833734272</ASIN>
+                    <Title>Gestatten: Peter Grant (Die Flüsse von London &amp; Schwarzer Mond über Soho)</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>3833732210</ASIN>
+                    <Title>Der böse Ort (Peter Grant, Band 4)</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>3833730013</ASIN>
+                    <Title>Die Flüsse von London (Peter Grant)</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>3833738219</ASIN>
+                    <Title>Geister auf der Metropolitan Line: Eine Peter-Grant-Story</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>B0106WBTC4</ASIN>
+                    <Title>Fingerhut-Sommer</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>3423217332</ASIN>
+                    <Title>Geister auf der Metropolitan Line: Eine Peter-Grant-Story</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>3862319849</ASIN>
+                    <Title>Der Blackthorn-Code – Teil 2: Die schwarze Gefahr: Lesung mit Oliver Rohrbeck (5 CDs)</Title>
+                </SimilarProduct>
+            </SimilarProducts>
+            <BrowseNodes>
+                <BrowseNode>
+                    <BrowseNodeId>420050031</BrowseNodeId>
+                    <Name>Fantasy</Name>
+                    <Ancestors>
+                        <BrowseNode>
+                            <BrowseNodeId>142</BrowseNodeId>
+                            <Name>Fantasy &amp; Science Fiction</Name>
+                            <Ancestors>
+                                <BrowseNode>
+                                    <BrowseNodeId>541686</BrowseNodeId>
+                                    <Name>Kategorien</Name>
+                                    <IsCategoryRoot>1</IsCategoryRoot>
+                                    <Ancestors>
+                                        <BrowseNode>
+                                            <BrowseNodeId>186606</BrowseNodeId>
+                                            <Name>Bücher</Name>
+                                        </BrowseNode>
+                                    </Ancestors>
+                                </BrowseNode>
+                            </Ancestors>
+                        </BrowseNode>
+                    </Ancestors>
+                </BrowseNode>
+            </BrowseNodes>
+        </Item>
+        <Item>
+            <ASIN>3833735791</ASIN>
+            <DetailPageURL>
+                https://www.amazon.de/Galgen-von-Tyburn-Peter-Grant/dp/3833735791?SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=3833735791
+            </DetailPageURL>
+            <ItemLinks>
+                <ItemLink>
+                    <Description>Add To Wishlist</Description>
+                    <URL>https://www.amazon.de/gp/registry/wishlist/add-item.html?asin.0=3833735791&amp;SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=3833735791</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Tell A Friend</Description>
+                    <URL>https://www.amazon.de/gp/pdp/taf/3833735791?SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=3833735791</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>All Customer Reviews</Description>
+                    <URL>https://www.amazon.de/review/product/3833735791?SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=3833735791</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>All Offers</Description>
+                    <URL>https://www.amazon.de/gp/offer-listing/3833735791?SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=3833735791</URL>
+                </ItemLink>
+            </ItemLinks>
+            <SalesRank>221308</SalesRank>
+            <SmallImage>
+                <URL>https://images-eu.ssl-images-amazon.com/images/I/61bI04e%2BYUL._SL75_.jpg</URL>
+                <Height Units="pixels">75</Height>
+                <Width Units="pixels">75</Width>
+            </SmallImage>
+            <MediumImage>
+                <URL>https://images-eu.ssl-images-amazon.com/images/I/61bI04e%2BYUL._SL160_.jpg</URL>
+                <Height Units="pixels">160</Height>
+                <Width Units="pixels">160</Width>
+            </MediumImage>
+            <LargeImage>
+                <URL>https://images-eu.ssl-images-amazon.com/images/I/61bI04e%2BYUL.jpg</URL>
+                <Height Units="pixels">500</Height>
+                <Width Units="pixels">500</Width>
+            </LargeImage>
+            <ImageSets>
+                <ImageSet Category="primary">
+                    <SwatchImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/61bI04e%2BYUL._SL30_.jpg</URL>
+                        <Height Units="pixels">30</Height>
+                        <Width Units="pixels">30</Width>
+                    </SwatchImage>
+                    <SmallImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/61bI04e%2BYUL._SL75_.jpg</URL>
+                        <Height Units="pixels">75</Height>
+                        <Width Units="pixels">75</Width>
+                    </SmallImage>
+                    <ThumbnailImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/61bI04e%2BYUL._SL75_.jpg</URL>
+                        <Height Units="pixels">75</Height>
+                        <Width Units="pixels">75</Width>
+                    </ThumbnailImage>
+                    <TinyImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/61bI04e%2BYUL._SL110_.jpg</URL>
+                        <Height Units="pixels">110</Height>
+                        <Width Units="pixels">110</Width>
+                    </TinyImage>
+                    <MediumImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/61bI04e%2BYUL._SL160_.jpg</URL>
+                        <Height Units="pixels">160</Height>
+                        <Width Units="pixels">160</Width>
+                    </MediumImage>
+                    <LargeImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/61bI04e%2BYUL.jpg</URL>
+                        <Height Units="pixels">500</Height>
+                        <Width Units="pixels">500</Width>
+                    </LargeImage>
+                </ImageSet>
+            </ImageSets>
+            <ItemAttributes>
+                <Author>Ben Aaronovitch</Author>
+                <Binding>Audio CD</Binding>
+                <Brand>Jumbo Neue Medien</Brand>
+                <Creator Role="Sprecher">Dietmar Wunder</Creator>
+                <EAN>9783833735790</EAN>
+                <EANList>
+                    <EANListElement>9783833735790</EANListElement>
+                </EANList>
+                <Format>Audiobook</Format>
+                <Format>CD</Format>
+                <ISBN>3833735791</ISBN>
+                <ItemDimensions>
+                    <Height Units="hundredths-inches">559</Height>
+                    <Length Units="hundredths-inches">484</Length>
+                    <Width Units="hundredths-inches">98</Width>
+                </ItemDimensions>
+                <Label>Jumbo</Label>
+                <Languages>
+                    <Language>
+                        <Name>Deutsch</Name>
+                        <Type>Veröffentlicht</Type>
+                    </Language>
+                    <Language>
+                        <Name>Deutsch</Name>
+                        <Type>Originalsprache</Type>
+                    </Language>
+                </Languages>
+                <Manufacturer>Jumbo</Manufacturer>
+                <MPN>45009629</MPN>
+                <NumberOfItems>3</NumberOfItems>
+                <PackageDimensions>
+                    <Height Units="hundredths-inches">94</Height>
+                    <Length Units="hundredths-inches">559</Length>
+                    <Weight Units="Hundertstel Pfund">26</Weight>
+                    <Width Units="hundredths-inches">488</Width>
+                </PackageDimensions>
+                <PartNumber>45009629</PartNumber>
+                <ProductGroup>Book</ProductGroup>
+                <ProductTypeName>ABIS_BOOK</ProductTypeName>
+                <PublicationDate>2017-05-05</PublicationDate>
+                <Publisher>Jumbo</Publisher>
+                <RunningTime Units="Minuten">270</RunningTime>
+                <Studio>Jumbo</Studio>
+                <Title>Der Galgen von Tyburn (Peter Grant)</Title>
+            </ItemAttributes>
+            <OfferSummary>
+                <LowestNewPrice>
+                    <Amount>1169</Amount>
+                    <CurrencyCode>EUR</CurrencyCode>
+                    <FormattedPrice>EUR 11,69</FormattedPrice>
+                </LowestNewPrice>
+                <LowestUsedPrice>
+                    <Amount>769</Amount>
+                    <CurrencyCode>EUR</CurrencyCode>
+                    <FormattedPrice>EUR 7,69</FormattedPrice>
+                </LowestUsedPrice>
+                <TotalNew>56</TotalNew>
+                <TotalUsed>5</TotalUsed>
+                <TotalCollectible>0</TotalCollectible>
+                <TotalRefurbished>0</TotalRefurbished>
+            </OfferSummary>
+            <Offers>
+                <TotalOffers>1</TotalOffers>
+                <TotalOfferPages>1</TotalOfferPages>
+                <MoreOffersUrl>https://www.amazon.de/gp/offer-listing/3833735791?SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=3833735791</MoreOffersUrl>
+                <Offer>
+                    <OfferAttributes>
+                        <Condition>New</Condition>
+                    </OfferAttributes>
+                    <OfferListing>
+                        <OfferListingId>
+                            LQ0Yvw4cRhjy9hhS8w8UCcRL%2FKJScDOqobENETG5juFMOpcr5UoUTwZWAd72Z9wURLgwEhB0BWmZihoKdqyeDBNIwmrgKd8MMxVAR3%2Fuzuo%3D
+                        </OfferListingId>
+                        <Price>
+                            <Amount>1169</Amount>
+                            <CurrencyCode>EUR</CurrencyCode>
+                            <FormattedPrice>EUR 11,69</FormattedPrice>
+                        </Price>
+                        <Availability>Gewöhnlich versandfertig in 24 Stunden</Availability>
+                        <AvailabilityAttributes>
+                            <AvailabilityType>now</AvailabilityType>
+                            <MinimumHours>0</MinimumHours>
+                            <MaximumHours>0</MaximumHours>
+                        </AvailabilityAttributes>
+                        <IsEligibleForSuperSaverShipping>1</IsEligibleForSuperSaverShipping>
+                        <IsEligibleForPrime>1</IsEligibleForPrime>
+                    </OfferListing>
+                </Offer>
+            </Offers>
+            <CustomerReviews>
+                <IFrameURL>https://www.amazon.de/reviews/iframe?akid=AKIAIUNWM3JIBSM6LYNQ&amp;alinkCode=xm2&amp;asin=3833735791&amp;atag=redtoad-21&amp;exp=2018-07-09T20%3A20%3A16Z&amp;v=2&amp;sig=vquWz7%252Bwx7VxvBM%252F%252FePEIGc4GgF63rV2Efbm1g1jlps%253D</IFrameURL>
+                <HasReviews>true</HasReviews>
+            </CustomerReviews>
+            <EditorialReviews>
+                <EditorialReview>
+                    <Source>Product Description</Source>
+                    <Content>Lesung. 270 Min.&lt;br /&gt;Audio CD&lt;br /&gt;Ein verdächtiger Todesfall bei einer Party
+                        der Schönen und Reichen von London: Eigentlich fällt das nicht in die Zuständigkeit von Police
+                        Constable und Zauberlehrling&lt;br /&gt;Peter Grant. Aber unter den Partygästen war auch Lady
+                        Tyburns Tochter ...&lt;br /&gt;Jetzt hat er die Wahl - zwischen seinen ethischen Grundsätzen und
+                        der Chance, seine Haut zu retten. Dann stellt sich auch noch heraus, dass die Tote eine
+                        Magie-Praktizierende war und Hinweise auf den Verbleib einer verschollenen Ausgabe des&lt;br /&gt;dritten
+                        Bandes von Newtons Principia hatte. Ein Buch, das Peters Boss, Chief Inspector Nightingale,
+                        schon lange in die Finger bekommen möchte. Und da ist er&lt;br /&gt;nicht der Einzige: Auch der
+                        Gesichtslose Magier, ein Trupp amerikanischer Zauberer&lt;br /&gt;und eine geheimnisvolle Schar
+                        weiblicher Praktizierender sind hinter dem Buch her. Peter muss jetzt also ...&lt;br /&gt;- ein
+                        verschollenes altes Buch finden,&lt;br /&gt;- einen verdächtigen Todesfall aufklären,&lt;br /&gt;-
+                        versuchen, es sich nicht völlig mit Lady Ty zu verderben,&lt;br /&gt;- vermeiden, vom
+                        Gesichtslosen ins Jenseits befördert zu werden.&lt;br /&gt;Außerdem warten die Lateinvokabeln.
+                        Und - Lesley ist zurück.&lt;br /&gt;&lt;br /&gt;Das gleichnamige Buch, aus dem Englischen von
+                        Christine Blum, ist in der dtv Verlagsgesellschaft erschienen.
+                    </Content>
+                    <IsLinkSuppressed>0</IsLinkSuppressed>
+                </EditorialReview>
+            </EditorialReviews>
+            <SimilarProducts>
+                <SimilarProduct>
+                    <ASIN>3833734248</ASIN>
+                    <Title>Fingerhutsommer (Peter Grant)</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>3833738219</ASIN>
+                    <Title>Geister auf der Metropolitan Line: Eine Peter-Grant-Story</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>3833736623</ASIN>
+                    <Title>Ihr Einsatz, Peter Grant: Ein Wispern unter Baker Street &amp; Der böse Ort</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>3833732210</ASIN>
+                    <Title>Der böse Ort (Peter Grant, Band 4)</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>B0106WBTC4</ASIN>
+                    <Title>Fingerhut-Sommer</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>3833730153</ASIN>
+                    <Title>Schwarzer Mond über Soho (Peter Grant, Band 2)</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>3833734272</ASIN>
+                    <Title>Gestatten: Peter Grant (Die Flüsse von London &amp; Schwarzer Mond über Soho)</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>3833730013</ASIN>
+                    <Title>Die Flüsse von London (Peter Grant)</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>3837140938</ASIN>
+                    <Title>Lockwood &amp; Co. - Das Grauenvolle Grab (Die Lockwood &amp; Co.-Reihe, Band 5)</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>3837134741</ASIN>
+                    <Title>Lockwood &amp; Co. - Das Flammende Phantom (Die Lockwood &amp; Co.-Reihe, Band 4)</Title>
+                </SimilarProduct>
+            </SimilarProducts>
+            <BrowseNodes>
+                <BrowseNode>
+                    <BrowseNodeId>420050031</BrowseNodeId>
+                    <Name>Fantasy</Name>
+                    <Ancestors>
+                        <BrowseNode>
+                            <BrowseNodeId>142</BrowseNodeId>
+                            <Name>Fantasy &amp; Science Fiction</Name>
+                            <Ancestors>
+                                <BrowseNode>
+                                    <BrowseNodeId>541686</BrowseNodeId>
+                                    <Name>Kategorien</Name>
+                                    <IsCategoryRoot>1</IsCategoryRoot>
+                                    <Ancestors>
+                                        <BrowseNode>
+                                            <BrowseNodeId>186606</BrowseNodeId>
+                                            <Name>Bücher</Name>
+                                        </BrowseNode>
+                                    </Ancestors>
+                                </BrowseNode>
+                            </Ancestors>
+                        </BrowseNode>
+                    </Ancestors>
+                </BrowseNode>
+            </BrowseNodes>
+        </Item>
+        <Item>
+            <ASIN>3833734248</ASIN>
+            <DetailPageURL>
+                https://www.amazon.de/Fingerhutsommer-Peter-Grant-Ben-Aaronovitch/dp/3833734248?SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=3833734248
+            </DetailPageURL>
+            <ItemLinks>
+                <ItemLink>
+                    <Description>Add To Wishlist</Description>
+                    <URL>https://www.amazon.de/gp/registry/wishlist/add-item.html?asin.0=3833734248&amp;SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=3833734248</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Tell A Friend</Description>
+                    <URL>https://www.amazon.de/gp/pdp/taf/3833734248?SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=3833734248</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>All Customer Reviews</Description>
+                    <URL>https://www.amazon.de/review/product/3833734248?SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=3833734248</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>All Offers</Description>
+                    <URL>https://www.amazon.de/gp/offer-listing/3833734248?SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=3833734248</URL>
+                </ItemLink>
+            </ItemLinks>
+            <SalesRank>171855</SalesRank>
+            <SmallImage>
+                <URL>https://images-eu.ssl-images-amazon.com/images/I/614xXXdL9BL._SL75_.jpg</URL>
+                <Height Units="pixels">64</Height>
+                <Width Units="pixels">75</Width>
+            </SmallImage>
+            <MediumImage>
+                <URL>https://images-eu.ssl-images-amazon.com/images/I/614xXXdL9BL._SL160_.jpg</URL>
+                <Height Units="pixels">137</Height>
+                <Width Units="pixels">160</Width>
+            </MediumImage>
+            <LargeImage>
+                <URL>https://images-eu.ssl-images-amazon.com/images/I/614xXXdL9BL.jpg</URL>
+                <Height Units="pixels">428</Height>
+                <Width Units="pixels">500</Width>
+            </LargeImage>
+            <ImageSets>
+                <ImageSet Category="variant">
+                    <SwatchImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/61%2BUTZcvaqL._SL30_.jpg</URL>
+                        <Height Units="pixels">26</Height>
+                        <Width Units="pixels">30</Width>
+                    </SwatchImage>
+                    <SmallImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/61%2BUTZcvaqL._SL75_.jpg</URL>
+                        <Height Units="pixels">65</Height>
+                        <Width Units="pixels">75</Width>
+                    </SmallImage>
+                    <ThumbnailImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/61%2BUTZcvaqL._SL75_.jpg</URL>
+                        <Height Units="pixels">65</Height>
+                        <Width Units="pixels">75</Width>
+                    </ThumbnailImage>
+                    <TinyImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/61%2BUTZcvaqL._SL110_.jpg</URL>
+                        <Height Units="pixels">95</Height>
+                        <Width Units="pixels">110</Width>
+                    </TinyImage>
+                    <MediumImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/61%2BUTZcvaqL._SL160_.jpg</URL>
+                        <Height Units="pixels">139</Height>
+                        <Width Units="pixels">160</Width>
+                    </MediumImage>
+                    <LargeImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/61%2BUTZcvaqL.jpg</URL>
+                        <Height Units="pixels">433</Height>
+                        <Width Units="pixels">500</Width>
+                    </LargeImage>
+                </ImageSet>
+                <ImageSet Category="primary">
+                    <SwatchImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/614xXXdL9BL._SL30_.jpg</URL>
+                        <Height Units="pixels">26</Height>
+                        <Width Units="pixels">30</Width>
+                    </SwatchImage>
+                    <SmallImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/614xXXdL9BL._SL75_.jpg</URL>
+                        <Height Units="pixels">64</Height>
+                        <Width Units="pixels">75</Width>
+                    </SmallImage>
+                    <ThumbnailImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/614xXXdL9BL._SL75_.jpg</URL>
+                        <Height Units="pixels">64</Height>
+                        <Width Units="pixels">75</Width>
+                    </ThumbnailImage>
+                    <TinyImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/614xXXdL9BL._SL110_.jpg</URL>
+                        <Height Units="pixels">94</Height>
+                        <Width Units="pixels">110</Width>
+                    </TinyImage>
+                    <MediumImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/614xXXdL9BL._SL160_.jpg</URL>
+                        <Height Units="pixels">137</Height>
+                        <Width Units="pixels">160</Width>
+                    </MediumImage>
+                    <LargeImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/614xXXdL9BL.jpg</URL>
+                        <Height Units="pixels">428</Height>
+                        <Width Units="pixels">500</Width>
+                    </LargeImage>
+                </ImageSet>
+            </ImageSets>
+            <ItemAttributes>
+                <Author>Ben Aaronovitch</Author>
+                <Binding>Audio CD</Binding>
+                <Brand>Jumbo Neue Medien</Brand>
+                <Creator Role="Sprecher">Dietmar Wunder</Creator>
+                <EAN>9783833734243</EAN>
+                <EANList>
+                    <EANListElement>9783833734243</EANListElement>
+                </EANList>
+                <Format>Audiobook</Format>
+                <ISBN>3833734248</ISBN>
+                <ItemDimensions>
+                    <Height Units="hundredths-inches">559</Height>
+                    <Length Units="hundredths-inches">496</Length>
+                    <Width Units="hundredths-inches">98</Width>
+                </ItemDimensions>
+                <Label>Jumbo</Label>
+                <Languages>
+                    <Language>
+                        <Name>Deutsch</Name>
+                        <Type>Veröffentlicht</Type>
+                    </Language>
+                    <Language>
+                        <Name>Deutsch</Name>
+                        <Type>Originalsprache</Type>
+                    </Language>
+                </Languages>
+                <ListPrice>
+                    <Amount>1279</Amount>
+                    <CurrencyCode>EUR</CurrencyCode>
+                    <FormattedPrice>EUR 12,79</FormattedPrice>
+                </ListPrice>
+                <Manufacturer>Jumbo</Manufacturer>
+                <MPN>41841971</MPN>
+                <NumberOfItems>3</NumberOfItems>
+                <PackageDimensions>
+                    <Height Units="hundredths-inches">94</Height>
+                    <Length Units="hundredths-inches">559</Length>
+                    <Weight Units="Hundertstel Pfund">40</Weight>
+                    <Width Units="hundredths-inches">488</Width>
+                </PackageDimensions>
+                <PartNumber>41841971</PartNumber>
+                <ProductGroup>Book</ProductGroup>
+                <ProductTypeName>ABIS_BOOK</ProductTypeName>
+                <PublicationDate>2015-10-23</PublicationDate>
+                <Publisher>Jumbo</Publisher>
+                <RunningTime Units="Minuten">266</RunningTime>
+                <Studio>Jumbo</Studio>
+                <Title>Fingerhutsommer (Peter Grant)</Title>
+            </ItemAttributes>
+            <OfferSummary>
+                <LowestNewPrice>
+                    <Amount>879</Amount>
+                    <CurrencyCode>EUR</CurrencyCode>
+                    <FormattedPrice>EUR 8,79</FormattedPrice>
+                </LowestNewPrice>
+                <LowestUsedPrice>
+                    <Amount>769</Amount>
+                    <CurrencyCode>EUR</CurrencyCode>
+                    <FormattedPrice>EUR 7,69</FormattedPrice>
+                </LowestUsedPrice>
+                <TotalNew>51</TotalNew>
+                <TotalUsed>6</TotalUsed>
+                <TotalCollectible>0</TotalCollectible>
+                <TotalRefurbished>0</TotalRefurbished>
+            </OfferSummary>
+            <Offers>
+                <TotalOffers>1</TotalOffers>
+                <TotalOfferPages>1</TotalOfferPages>
+                <MoreOffersUrl>https://www.amazon.de/gp/offer-listing/3833734248?SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=3833734248</MoreOffersUrl>
+                <Offer>
+                    <OfferAttributes>
+                        <Condition>New</Condition>
+                    </OfferAttributes>
+                    <OfferListing>
+                        <OfferListingId>
+                            LQ0Yvw4cRhjy9hhS8w8UCVLezEHJZn%2BkGEeGzFH7R5f7rhtujeWAGZRyoJGIYOntpwb9chaFgP%2FIHjz84GU%2BMasO1sM%2B2mGLwtqig2sQJm0%3D
+                        </OfferListingId>
+                        <Price>
+                            <Amount>1169</Amount>
+                            <CurrencyCode>EUR</CurrencyCode>
+                            <FormattedPrice>EUR 11,69</FormattedPrice>
+                        </Price>
+                        <AmountSaved>
+                            <Amount>110</Amount>
+                            <CurrencyCode>EUR</CurrencyCode>
+                            <FormattedPrice>EUR 1,10</FormattedPrice>
+                        </AmountSaved>
+                        <PercentageSaved>9</PercentageSaved>
+                        <Availability>Gewöhnlich versandfertig in 24 Stunden</Availability>
+                        <AvailabilityAttributes>
+                            <AvailabilityType>now</AvailabilityType>
+                            <MinimumHours>0</MinimumHours>
+                            <MaximumHours>0</MaximumHours>
+                        </AvailabilityAttributes>
+                        <IsEligibleForSuperSaverShipping>1</IsEligibleForSuperSaverShipping>
+                        <IsEligibleForPrime>1</IsEligibleForPrime>
+                    </OfferListing>
+                </Offer>
+            </Offers>
+            <CustomerReviews>
+                <IFrameURL>https://www.amazon.de/reviews/iframe?akid=AKIAIUNWM3JIBSM6LYNQ&amp;alinkCode=xm2&amp;asin=3833734248&amp;atag=redtoad-21&amp;exp=2018-07-09T20%3A20%3A16Z&amp;v=2&amp;sig=Fj9GEh4w4A0swyIINcWH5T7cnR5kcKpNlIfkosMBOc4%253D</IFrameURL>
+                <HasReviews>true</HasReviews>
+            </CustomerReviews>
+            <EditorialReviews>
+                <EditorialReview>
+                    <Source>Product Description</Source>
+                    <Content>Audio CD&lt;br /&gt;Peter wird in die tiefste Provinz geschickt, wo sich Fuchs, Hase und
+                        der Dorfpolizist gute Nacht sagen und wo - oh unaussprechliches Schicksal - die Läden um vier
+                        Uhr nachmittags schließen. Aber es werden zwei Kinder vermisst, und ihr Verschwinden erfolgte
+                        unter möglicherweise magischen Umständen. Also muss Peter notgedrungen sein angestammtes Biotop
+                        verlassen. Im ländlichen England sind die örtlichen Gottheiten und Kollegen zu zähmen und
+                        angesichts lebender Kühe die Nerven zu behalten. Erschwerend kommt hinzu, dass Herefordshire
+                        direkt an das schon immer für seine magische Geschichte berüchtigte Wales angrenzt. Da ist das
+                        Gesetzeshüterdasein kein&lt;br /&gt;Zuckerschlecken.
+                    </Content>
+                    <IsLinkSuppressed>0</IsLinkSuppressed>
+                </EditorialReview>
+            </EditorialReviews>
+            <SimilarProducts>
+                <SimilarProduct>
+                    <ASIN>3833735791</ASIN>
+                    <Title>Der Galgen von Tyburn (Peter Grant)</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>3833736623</ASIN>
+                    <Title>Ihr Einsatz, Peter Grant: Ein Wispern unter Baker Street &amp; Der böse Ort</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>3833730153</ASIN>
+                    <Title>Schwarzer Mond über Soho (Peter Grant, Band 2)</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>3833732210</ASIN>
+                    <Title>Der böse Ort (Peter Grant, Band 4)</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>3833734272</ASIN>
+                    <Title>Gestatten: Peter Grant (Die Flüsse von London &amp; Schwarzer Mond über Soho)</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>3833738219</ASIN>
+                    <Title>Geister auf der Metropolitan Line: Eine Peter-Grant-Story</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>3833730013</ASIN>
+                    <Title>Die Flüsse von London (Peter Grant)</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>B01FV97D8Q</ASIN>
+                    <Title>Ihr Einsatz,Peter Grant (Box)</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>3423217332</ASIN>
+                    <Title>Geister auf der Metropolitan Line: Eine Peter-Grant-Story</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>3837140938</ASIN>
+                    <Title>Lockwood &amp; Co. - Das Grauenvolle Grab (Die Lockwood &amp; Co.-Reihe, Band 5)</Title>
+                </SimilarProduct>
+            </SimilarProducts>
+            <BrowseNodes>
+                <BrowseNode>
+                    <BrowseNodeId>420050031</BrowseNodeId>
+                    <Name>Fantasy</Name>
+                    <Ancestors>
+                        <BrowseNode>
+                            <BrowseNodeId>142</BrowseNodeId>
+                            <Name>Fantasy &amp; Science Fiction</Name>
+                            <Ancestors>
+                                <BrowseNode>
+                                    <BrowseNodeId>541686</BrowseNodeId>
+                                    <Name>Kategorien</Name>
+                                    <IsCategoryRoot>1</IsCategoryRoot>
+                                    <Ancestors>
+                                        <BrowseNode>
+                                            <BrowseNodeId>186606</BrowseNodeId>
+                                            <Name>Bücher</Name>
+                                        </BrowseNode>
+                                    </Ancestors>
+                                </BrowseNode>
+                            </Ancestors>
+                        </BrowseNode>
+                    </Ancestors>
+                </BrowseNode>
+            </BrowseNodes>
+        </Item>
+        <Item>
+            <ASIN>B00DENZPQ4</ASIN>
+            <DetailPageURL>
+                https://www.amazon.de/Wispern-unter-Baker-Street-Peter/dp/B00DENZPQ4?SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=B00DENZPQ4
+            </DetailPageURL>
+            <ItemLinks>
+                <ItemLink>
+                    <Description>Add To Wishlist</Description>
+                    <URL>https://www.amazon.de/gp/registry/wishlist/add-item.html?asin.0=B00DENZPQ4&amp;SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=B00DENZPQ4</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Tell A Friend</Description>
+                    <URL>https://www.amazon.de/gp/pdp/taf/B00DENZPQ4?SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=B00DENZPQ4</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>All Customer Reviews</Description>
+                    <URL>https://www.amazon.de/review/product/B00DENZPQ4?SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=B00DENZPQ4</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>All Offers</Description>
+                    <URL>https://www.amazon.de/gp/offer-listing/B00DENZPQ4?SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=B00DENZPQ4</URL>
+                </ItemLink>
+            </ItemLinks>
+            <SalesRank>3037</SalesRank>
+            <SmallImage>
+                <URL>https://images-eu.ssl-images-amazon.com/images/I/61Q09d94w4L._SL75_.jpg</URL>
+                <Height Units="pixels">75</Height>
+                <Width Units="pixels">75</Width>
+            </SmallImage>
+            <MediumImage>
+                <URL>https://images-eu.ssl-images-amazon.com/images/I/61Q09d94w4L._SL160_.jpg</URL>
+                <Height Units="pixels">160</Height>
+                <Width Units="pixels">160</Width>
+            </MediumImage>
+            <LargeImage>
+                <URL>https://images-eu.ssl-images-amazon.com/images/I/61Q09d94w4L.jpg</URL>
+                <Height Units="pixels">500</Height>
+                <Width Units="pixels">500</Width>
+            </LargeImage>
+            <ImageSets>
+                <ImageSet Category="primary">
+                    <SwatchImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/61Q09d94w4L._SL30_.jpg</URL>
+                        <Height Units="pixels">30</Height>
+                        <Width Units="pixels">30</Width>
+                    </SwatchImage>
+                    <SmallImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/61Q09d94w4L._SL75_.jpg</URL>
+                        <Height Units="pixels">75</Height>
+                        <Width Units="pixels">75</Width>
+                    </SmallImage>
+                    <ThumbnailImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/61Q09d94w4L._SL75_.jpg</URL>
+                        <Height Units="pixels">75</Height>
+                        <Width Units="pixels">75</Width>
+                    </ThumbnailImage>
+                    <TinyImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/61Q09d94w4L._SL110_.jpg</URL>
+                        <Height Units="pixels">110</Height>
+                        <Width Units="pixels">110</Width>
+                    </TinyImage>
+                    <MediumImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/61Q09d94w4L._SL160_.jpg</URL>
+                        <Height Units="pixels">160</Height>
+                        <Width Units="pixels">160</Width>
+                    </MediumImage>
+                    <LargeImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/61Q09d94w4L.jpg</URL>
+                        <Height Units="pixels">500</Height>
+                        <Width Units="pixels">500</Width>
+                    </LargeImage>
+                </ImageSet>
+            </ImageSets>
+            <ItemAttributes>
+                <Author>Ben Aaronovitch</Author>
+                <Binding>Hörbuch-Download</Binding>
+                <Creator Role="Erzähler">Dietmar Wunder</Creator>
+                <Creator Role="Verlag">JUMBO Neue Medien &amp; Verlag GmbH</Creator>
+                <Format>Gekürzte Ausgabe</Format>
+                <IsAdultProduct>0</IsAdultProduct>
+                <Label>JUMBO Neue Medien &amp; Verlag GmbH</Label>
+                <Languages>
+                    <Language>
+                        <Name>Deutsch</Name>
+                        <Type>Unbekannt</Type>
+                    </Language>
+                </Languages>
+                <Manufacturer>JUMBO Neue Medien &amp; Verlag GmbH</Manufacturer>
+                <ProductGroup>Audible</ProductGroup>
+                <ProductTypeName>DOWNLOADABLE_AUDIO</ProductTypeName>
+                <PublicationDate>2013-06-14</PublicationDate>
+                <Publisher>JUMBO Neue Medien &amp; Verlag GmbH</Publisher>
+                <RunningTime Units="Minuten">263</RunningTime>
+                <Studio>JUMBO Neue Medien &amp; Verlag GmbH</Studio>
+                <Title>Ein Wispern unter Baker Street (Peter Grant 3)</Title>
+            </ItemAttributes>
+            <OfferSummary>
+                <LowestNewPrice>
+                    <Amount>1019</Amount>
+                    <CurrencyCode>EUR</CurrencyCode>
+                    <FormattedPrice>EUR 10,19</FormattedPrice>
+                </LowestNewPrice>
+                <TotalNew>1</TotalNew>
+                <TotalUsed>0</TotalUsed>
+                <TotalCollectible>0</TotalCollectible>
+                <TotalRefurbished>0</TotalRefurbished>
+            </OfferSummary>
+            <Offers>
+                <TotalOffers>1</TotalOffers>
+                <TotalOfferPages>1</TotalOfferPages>
+                <MoreOffersUrl>https://www.amazon.de/gp/offer-listing/B00DENZPQ4?SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=B00DENZPQ4</MoreOffersUrl>
+                <Offer>
+                    <OfferAttributes>
+                        <Condition>New</Condition>
+                    </OfferAttributes>
+                    <OfferListing>
+                        <OfferListingId>
+                            LQ0Yvw4cRhipryp729Z%2BsEGnHSl3umjcoDd5B4mtsNzlVHUvLlYsYmfQNSvEOYHnpyHprddFupntttXhKgfWaDZnLcqeYtoIPF67PxP8P6ImqCog1%2FqK9OcwPvNmBpZ8VSN3q4RkPq7BYLtxLxGwDA%3D%3D
+                        </OfferListingId>
+                        <Price>
+                            <Amount>1019</Amount>
+                            <CurrencyCode>EUR</CurrencyCode>
+                            <FormattedPrice>EUR 10,19</FormattedPrice>
+                        </Price>
+                        <SalePrice>
+                            <Amount>1019</Amount>
+                            <CurrencyCode>EUR</CurrencyCode>
+                            <FormattedPrice>EUR 10,19</FormattedPrice>
+                        </SalePrice>
+                        <Availability>Versandfertig in 1 - 2 Werktagen</Availability>
+                        <AvailabilityAttributes>
+                            <AvailabilityType>now</AvailabilityType>
+                            <MinimumHours>24</MinimumHours>
+                            <MaximumHours>48</MaximumHours>
+                        </AvailabilityAttributes>
+                        <IsEligibleForSuperSaverShipping>0</IsEligibleForSuperSaverShipping>
+                        <IsEligibleForPrime>0</IsEligibleForPrime>
+                    </OfferListing>
+                </Offer>
+            </Offers>
+            <CustomerReviews>
+                <IFrameURL>https://www.amazon.de/reviews/iframe?akid=AKIAIUNWM3JIBSM6LYNQ&amp;alinkCode=xm2&amp;asin=B00DENZPQ4&amp;atag=redtoad-21&amp;exp=2018-07-09T20%3A20%3A16Z&amp;v=2&amp;sig=tgjRRboOyJVCe5hqgVmVdnEOp6YUBwcnTy5XPdI46Ec%253D</IFrameURL>
+                <HasReviews>true</HasReviews>
+            </CustomerReviews>
+            <EditorialReviews>
+                <EditorialReview>
+                    <Source>Product Description</Source>
+                    <Content>Eine unbekannte Person wird im U-Bahn-Tunnel nahe der Station Baker Street tot aufgefunden
+                        - erstochen, und es deuten unübersehbare Anzeichen auf die Anwesenheit von Magie hin. Ein Fall
+                        für Peter, keine Frage. Der unbekannte Tote stellt sich als amerikanischer Kunststudent und Sohn
+                        eines US-Senators heraus, und ehe man noch "internationale Verwicklungen" sagen kann, hat Peter
+                        bereits die FBI-Agentin Kimberley Reynolds mitsamt ihren felsenfesten religiösen Überzeugungen
+                        am Hals. Dabei gestalten sich seine Ermittlungen auch so schon gruselig genug, denn tief in
+                        Londons Untergrund, in vergessenen Flüssen und viktorianischen Abwasserkanälen, hört er ein
+                        Wispern von alten Künsten und gequälten Geistern'Ä
+                    </Content>
+                    <IsLinkSuppressed>0</IsLinkSuppressed>
+                </EditorialReview>
+            </EditorialReviews>
+            <SimilarProducts>
+                <SimilarProduct>
+                    <ASIN>B00KC2JD22</ASIN>
+                    <Title>Der böse Ort (Peter Grant 4)</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>B00A5GZE6Y</ASIN>
+                    <Title>Schwarzer Mond über Soho (Peter Grant 2)</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>B017UMGLDA</ASIN>
+                    <Title>Fingerhut-Sommer (Peter Grant 5)</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>B0096SHJGK</ASIN>
+                    <Title>Die Flüsse von London (Peter Grant 1)</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>B071RT1SY7</ASIN>
+                    <Title>Der Galgen von Tyburn (Peter Grant 6)</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>B07DP2R25M</ASIN>
+                    <Title>Geister auf der Metropolitan Line (Peter Grant 7)</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>B01MU2PNFA</ASIN>
+                    <Title>Lennart Malmkvist und der ziemlich seltsame Mops des Buri Bolmen</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>B00F2N9PN8</ASIN>
+                    <Title>Die seufzende Wendeltreppe (Lockwood &amp; Co. 1)</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>B003GW1U9E</ASIN>
+                    <Title>Mord im Gurkenbeet (Flavia de Luce 1)</Title>
+                </SimilarProduct>
+                <SimilarProduct>
+                    <ASIN>B077S13CFH</ASIN>
+                    <Title>Das Grauenvolle Grab (Lockwood &amp; Co. 5)</Title>
+                </SimilarProduct>
+            </SimilarProducts>
+            <BrowseNodes>
+                <BrowseNode>
+                    <BrowseNodeId>420050031</BrowseNodeId>
+                    <Name>Fantasy</Name>
+                    <Ancestors>
+                        <BrowseNode>
+                            <BrowseNodeId>142</BrowseNodeId>
+                            <Name>Fantasy &amp; Science Fiction</Name>
+                            <Ancestors>
+                                <BrowseNode>
+                                    <BrowseNodeId>541686</BrowseNodeId>
+                                    <Name>Kategorien</Name>
+                                    <IsCategoryRoot>1</IsCategoryRoot>
+                                    <Ancestors>
+                                        <BrowseNode>
+                                            <BrowseNodeId>186606</BrowseNodeId>
+                                            <Name>Bücher</Name>
+                                        </BrowseNode>
+                                    </Ancestors>
+                                </BrowseNode>
+                            </Ancestors>
+                        </BrowseNode>
+                    </Ancestors>
+                </BrowseNode>
+                <BrowseNode>
+                    <BrowseNodeId>530485031</BrowseNodeId>
+                    <Name>Kategorien</Name>
+                    <IsCategoryRoot>1</IsCategoryRoot>
+                    <Children>
+                        <BrowseNode>
+                            <BrowseNodeId>530886031</BrowseNodeId>
+                            <Name>Kindle eBooks</Name>
+                        </BrowseNode>
+                        <BrowseNode>
+                            <BrowseNodeId>530887031</BrowseNodeId>
+                            <Name>Kindle Newsstand</Name>
+                        </BrowseNode>
+                    </Children>
+                    <Ancestors>
+                        <BrowseNode>
+                            <BrowseNodeId>530484031</BrowseNodeId>
+                            <Name>Kindle-Shop</Name>
+                        </BrowseNode>
+                    </Ancestors>
+                </BrowseNode>
+            </BrowseNodes>
+        </Item>
+    </Items>
+</ItemSearchResponse>

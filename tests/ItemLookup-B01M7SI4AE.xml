@@ -1,0 +1,295 @@
+<?xml version="1.0" ?>
+<ItemLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
+    <OperationRequest>
+        <HTTPHeaders>
+            <Header Name="UserAgent"
+                    Value="python-amazon-product-api/0.3.0-dev +http://pypi.python.org/pypi/python-amazon-product-api/"></Header>
+        </HTTPHeaders>
+        <RequestId>97cfc75e-196b-44b4-aa93-fa6996586c4a</RequestId>
+        <Arguments>
+            <Argument Name="AWSAccessKeyId" Value="AKIAIUNWM3JIBSM6LYNQ"></Argument>
+            <Argument Name="AssociateTag" Value="redtoad-21"></Argument>
+            <Argument Name="ItemId" Value="B01M7SI4AE"></Argument>
+            <Argument Name="Operation" Value="ItemLookup"></Argument>
+            <Argument Name="ResponseGroup" Value="Large"></Argument>
+            <Argument Name="Service" Value="AWSECommerceService"></Argument>
+            <Argument Name="Timestamp" Value="2018-07-17T14:00:31Z"></Argument>
+            <Argument Name="Version" Value="2011-08-01"></Argument>
+            <Argument Name="Signature" Value="hp71au0aOhbFGdSB9wGERN6UTOtN7jZb29OebC4x4hc="></Argument>
+        </Arguments>
+        <RequestProcessingTime>0.0289106410000000</RequestProcessingTime>
+    </OperationRequest>
+    <Items>
+        <Request>
+            <IsValid>True</IsValid>
+            <ItemLookupRequest>
+                <IdType>ASIN</IdType>
+                <ItemId>B01M7SI4AE</ItemId>
+                <ResponseGroup>Large</ResponseGroup>
+                <VariationPage>All</VariationPage>
+            </ItemLookupRequest>
+        </Request>
+        <Item>
+            <ASIN>B01M7SI4AE</ASIN>
+            <DetailPageURL>
+                https://www.amazon.de/Goliath-Staffel-1-dt-OV/dp/B01M7SI4AE?SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=B01M7SI4AE
+            </DetailPageURL>
+            <ItemLinks>
+                <ItemLink>
+                    <Description>Add To Wishlist</Description>
+                    <URL>https://www.amazon.de/gp/registry/wishlist/add-item.html?asin.0=B01M7SI4AE&amp;SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=B01M7SI4AE</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Tell A Friend</Description>
+                    <URL>https://www.amazon.de/gp/pdp/taf/B01M7SI4AE?SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=B01M7SI4AE</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>All Customer Reviews</Description>
+                    <URL>https://www.amazon.de/review/product/B01M7SI4AE?SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=B01M7SI4AE</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>All Offers</Description>
+                    <URL>https://www.amazon.de/gp/offer-listing/B01M7SI4AE?SubscriptionId=AKIAIUNWM3JIBSM6LYNQ&amp;tag=redtoad-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=B01M7SI4AE</URL>
+                </ItemLink>
+            </ItemLinks>
+            <SmallImage>
+                <URL>https://images-eu.ssl-images-amazon.com/images/I/41I1mvvHXcL._SL75_.jpg</URL>
+                <Height Units="pixels">56</Height>
+                <Width Units="pixels">75</Width>
+            </SmallImage>
+            <MediumImage>
+                <URL>https://images-eu.ssl-images-amazon.com/images/I/41I1mvvHXcL._SL160_.jpg</URL>
+                <Height Units="pixels">120</Height>
+                <Width Units="pixels">160</Width>
+            </MediumImage>
+            <LargeImage>
+                <URL>https://images-eu.ssl-images-amazon.com/images/I/41I1mvvHXcL.jpg</URL>
+                <Height Units="pixels">375</Height>
+                <Width Units="pixels">500</Width>
+            </LargeImage>
+            <ImageSets>
+                <ImageSet Category="primary">
+                    <SwatchImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/41I1mvvHXcL._SL30_.jpg</URL>
+                        <Height Units="pixels">22</Height>
+                        <Width Units="pixels">30</Width>
+                    </SwatchImage>
+                    <SmallImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/41I1mvvHXcL._SL75_.jpg</URL>
+                        <Height Units="pixels">56</Height>
+                        <Width Units="pixels">75</Width>
+                    </SmallImage>
+                    <ThumbnailImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/41I1mvvHXcL._SL75_.jpg</URL>
+                        <Height Units="pixels">56</Height>
+                        <Width Units="pixels">75</Width>
+                    </ThumbnailImage>
+                    <TinyImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/41I1mvvHXcL._SL110_.jpg</URL>
+                        <Height Units="pixels">82</Height>
+                        <Width Units="pixels">110</Width>
+                    </TinyImage>
+                    <MediumImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/41I1mvvHXcL._SL160_.jpg</URL>
+                        <Height Units="pixels">120</Height>
+                        <Width Units="pixels">160</Width>
+                    </MediumImage>
+                    <LargeImage>
+                        <URL>https://images-eu.ssl-images-amazon.com/images/I/41I1mvvHXcL.jpg</URL>
+                        <Height Units="pixels">375</Height>
+                        <Width Units="pixels">500</Width>
+                    </LargeImage>
+                </ImageSet>
+            </ImageSets>
+            <ItemAttributes>
+                <Actor>Billy Bob Thornton</Actor>
+                <Actor>William Hurt</Actor>
+                <Actor>Maria Bello</Actor>
+                <Actor>Olivia Thirlby</Actor>
+                <Actor>Nina Arianda</Actor>
+                <AudienceRating>Freigegeben ab 12 Jahren</AudienceRating>
+                <Binding>Amazon Video</Binding>
+                <Creator Role="Produzent">Lawrence Trilling</Creator>
+                <Creator Role="Autor">David E. Kelley</Creator>
+                <Creator Role="Produzent">David E. Kelley</Creator>
+                <Creator Role="Idee">David E. Kelley</Creator>
+                <Creator Role="Autor">Jonathan Shapiro</Creator>
+                <Creator Role="Produzent">Jonathan Shapiro</Creator>
+                <Creator Role="Idee">Jonathan Shapiro</Creator>
+                <Creator Role="Produzent">Ross Fineman</Creator>
+                <Creator Role="Produzent">David Semel</Creator>
+                <Creator Role="Produzent">Robert Lewis</Creator>
+                <Director>Lawrence Trilling</Director>
+                <Director>Alik Sakharov</Director>
+                <Director>Bill D\'Elia</Director>
+                <Director>Anthony Hemingway</Director>
+                <EpisodeSequence>1</EpisodeSequence>
+                <Genre>Drama &gt; Crime</Genre>
+                <Languages>
+                    <Language>
+                        <Name>Englisch</Name>
+                        <Type>Originalsprache</Type>
+                    </Language>
+                    <Language>
+                        <Name>Deutsch</Name>
+                        <Type>Unbekannt</Type>
+                    </Language>
+                </Languages>
+                <ProductGroup>TV Series Season Video on Demand</ProductGroup>
+                <ProductTypeName>DOWNLOADABLE_TV_SEASON</ProductTypeName>
+                <Studio>Amazon Studios</Studio>
+                <Title>Goliath - Staffel 1 [dt./OV]</Title>
+            </ItemAttributes>
+            <OfferSummary>
+                <TotalNew>0</TotalNew>
+                <TotalUsed>0</TotalUsed>
+                <TotalCollectible>0</TotalCollectible>
+                <TotalRefurbished>0</TotalRefurbished>
+            </OfferSummary>
+            <Offers>
+                <TotalOffers>0</TotalOffers>
+                <TotalOfferPages>0</TotalOfferPages>
+                <MoreOffersUrl>0</MoreOffersUrl>
+            </Offers>
+            <CustomerReviews>
+                <IFrameURL>https://www.amazon.de/reviews/iframe?akid=AKIAIUNWM3JIBSM6LYNQ&amp;alinkCode=xm2&amp;asin=B01M7SI4AE&amp;atag=redtoad-21&amp;exp=2018-07-18T14%3A00%3A31Z&amp;v=2&amp;sig=IKMu2%252Bq9E7hDLudU5aIICGdPu0a2%252BPZ6PfzQVt5f6Wo%253D</IFrameURL>
+                <HasReviews>true</HasReviews>
+            </CustomerReviews>
+            <BrowseNodes>
+                <BrowseNode>
+                    <BrowseNodeId>3015916031</BrowseNodeId>
+                    <Name>Serien</Name>
+                    <Ancestors>
+                        <BrowseNode>
+                            <BrowseNodeId>3010076031</BrowseNodeId>
+                            <Name>Kategorien</Name>
+                            <IsCategoryRoot>1</IsCategoryRoot>
+                            <Ancestors>
+                                <BrowseNode>
+                                    <BrowseNodeId>3010075031</BrowseNodeId>
+                                    <Name>Prime Video</Name>
+                                </BrowseNode>
+                            </Ancestors>
+                        </BrowseNode>
+                    </Ancestors>
+                </BrowseNode>
+                <BrowseNode>
+                    <BrowseNodeId>3047212031</BrowseNodeId>
+                    <Name>Drama</Name>
+                    <Ancestors>
+                        <BrowseNode>
+                            <BrowseNodeId>3010077031</BrowseNodeId>
+                            <Name>Featured Categories</Name>
+                            <Ancestors>
+                                <BrowseNode>
+                                    <BrowseNodeId>3010075031</BrowseNodeId>
+                                    <Name>Prime Video</Name>
+                                </BrowseNode>
+                            </Ancestors>
+                        </BrowseNode>
+                    </Ancestors>
+                </BrowseNode>
+                <BrowseNode>
+                    <BrowseNodeId>3047221031</BrowseNodeId>
+                    <Name>Krimi</Name>
+                    <Ancestors>
+                        <BrowseNode>
+                            <BrowseNodeId>3010077031</BrowseNodeId>
+                            <Name>Featured Categories</Name>
+                            <Ancestors>
+                                <BrowseNode>
+                                    <BrowseNodeId>3010075031</BrowseNodeId>
+                                    <Name>Prime Video</Name>
+                                </BrowseNode>
+                            </Ancestors>
+                        </BrowseNode>
+                    </Ancestors>
+                </BrowseNode>
+                <BrowseNode>
+                    <BrowseNodeId>3047225031</BrowseNodeId>
+                    <Name>Thriller</Name>
+                    <Ancestors>
+                        <BrowseNode>
+                            <BrowseNodeId>3010077031</BrowseNodeId>
+                            <Name>Featured Categories</Name>
+                            <Ancestors>
+                                <BrowseNode>
+                                    <BrowseNodeId>3010075031</BrowseNodeId>
+                                    <Name>Prime Video</Name>
+                                </BrowseNode>
+                            </Ancestors>
+                        </BrowseNode>
+                    </Ancestors>
+                </BrowseNode>
+                <BrowseNode>
+                    <BrowseNodeId>3356019031</BrowseNodeId>
+                    <Name>Serien</Name>
+                    <Ancestors>
+                        <BrowseNode>
+                            <BrowseNodeId>3279204031</BrowseNodeId>
+                            <Name>Prime Video</Name>
+                            <Ancestors>
+                                <BrowseNode>
+                                    <BrowseNodeId>3279203031</BrowseNodeId>
+                                    <Name>Specialty Stores in Amazon Video</Name>
+                                    <Ancestors>
+                                        <BrowseNode>
+                                            <BrowseNodeId>3010079031</BrowseNodeId>
+                                            <Name>Custom Stores</Name>
+                                            <Ancestors>
+                                                <BrowseNode>
+                                                    <BrowseNodeId>3010078031</BrowseNodeId>
+                                                    <Name>Specialty Stores</Name>
+                                                    <Ancestors>
+                                                        <BrowseNode>
+                                                            <BrowseNodeId>3010075031</BrowseNodeId>
+                                                            <Name>Prime Video</Name>
+                                                        </BrowseNode>
+                                                    </Ancestors>
+                                                </BrowseNode>
+                                            </Ancestors>
+                                        </BrowseNode>
+                                    </Ancestors>
+                                </BrowseNode>
+                            </Ancestors>
+                        </BrowseNode>
+                    </Ancestors>
+                </BrowseNode>
+                <BrowseNode>
+                    <BrowseNodeId>3356021031</BrowseNodeId>
+                    <Name>Serien</Name>
+                    <Ancestors>
+                        <BrowseNode>
+                            <BrowseNodeId>3279205031</BrowseNodeId>
+                            <Name>Kaufen und Leihen</Name>
+                            <Ancestors>
+                                <BrowseNode>
+                                    <BrowseNodeId>3279203031</BrowseNodeId>
+                                    <Name>Specialty Stores in Amazon Video</Name>
+                                    <Ancestors>
+                                        <BrowseNode>
+                                            <BrowseNodeId>3010079031</BrowseNodeId>
+                                            <Name>Custom Stores</Name>
+                                            <Ancestors>
+                                                <BrowseNode>
+                                                    <BrowseNodeId>3010078031</BrowseNodeId>
+                                                    <Name>Specialty Stores</Name>
+                                                    <Ancestors>
+                                                        <BrowseNode>
+                                                            <BrowseNodeId>3010075031</BrowseNodeId>
+                                                            <Name>Prime Video</Name>
+                                                        </BrowseNode>
+                                                    </Ancestors>
+                                                </BrowseNode>
+                                            </Ancestors>
+                                        </BrowseNode>
+                                    </Ancestors>
+                                </BrowseNode>
+                            </Ancestors>
+                        </BrowseNode>
+                    </Ancestors>
+                </BrowseNode>
+            </BrowseNodes>
+        </Item>
+    </Items>
+</ItemLookupResponse>
