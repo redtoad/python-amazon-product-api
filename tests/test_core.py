@@ -63,8 +63,6 @@ def signer(monkeypatch):
     return mock
 
 
-# core api
-
 # generated signed URL from https://webservices.amazon.de/scratchpad/
 TEST_SIGNED_URL = (
     'https://webservices.amazon.de/onca/xml?'
@@ -118,6 +116,18 @@ def test_api_call(backend, signer):
         Version=api.DEFAULT_VERSION,
         ResponseGroup='Large'
     )
+
+
+def test_specify_version(signer):
+    api = core.CoreAPI('access', 'secret', 'de', 'tag')
+    api.ItemSearch(Version='xxx')
+    assert signer.qargs['Version'] == 'xxx'
+
+
+def test_allow_responsegroup_lists(signer):
+    api = core.CoreAPI('access', 'secret', 'de', 'tag')
+    api.ItemSearch(ResponseGroup=['Large', 'Reviews'])
+    assert signer.qargs['ResponseGroup'] == 'Large,Reviews'
 
 
 @pytest.mark.parametrize('operation', core.CoreAPI.OPERATIONS)

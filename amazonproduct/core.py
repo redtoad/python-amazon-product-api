@@ -16,7 +16,7 @@ __version__ = "0.3.0-dev"
 
 USER_AGENT = (
     "python-amazon-product-api/%s "
-    "+http://pypi.python.org/pypi/python-amazon-product-api/" % __version__)
+    "+https://pypi.org/project/python-amazon-product-api/" % __version__)
 
 
 class UnknownLocale(Exception):
