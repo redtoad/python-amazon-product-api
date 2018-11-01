@@ -6,6 +6,12 @@ from amazonproduct.core import CoreAPI
 from amazonproduct.operations import Operation
 
 
+def test_parameters_for_single_operation():
+    op = Operation('ItemSearch', ItemId='1')
+    assert op.parameters == op._params[0]
+    assert len(op._params) == 1
+
+
 def test_add_mismatch_operations_fails():
     with pytest.raises(ValueError):
         _ = Operation('ItemSearch') + Operation('CartAdd')
@@ -14,11 +20,17 @@ def test_add_mismatch_operations_fails():
 UNSUPPORTED_OPERATIONS = "CartAdd CartClear CartCreate CartGet CartModify".split()
 
 
-@pytest.mark.parametrize('op1', UNSUPPORTED_OPERATIONS)
-@pytest.mark.parametrize('op2', CoreAPI.OPERATIONS)
-def test_add_unsupported_operations_fails(op1, op2):
+@pytest.mark.parametrize('op', UNSUPPORTED_OPERATIONS)
+def test_add_unsupported_operations_fails(op):
     with pytest.raises(ValueError):
-        _ = Operation('ItemSearch') + Operation('CartAdd')
+        _ = Operation(op) + Operation(op)
+
+
+@pytest.mark.parametrize('op1', CoreAPI.OPERATIONS[:1])
+@pytest.mark.parametrize('op2', CoreAPI.OPERATIONS[1:])
+def test_add_different_operations_fails(op1,op2):
+    with pytest.raises(ValueError):
+        _ = Operation(op1) + Operation(op2)
 
 
 def test_add_operations():
