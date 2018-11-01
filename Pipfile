@@ -13,6 +13,11 @@ pytest-localserver = "*"
 pytest-metadata = ">=1.5.1"
 responses = "*"
 requests-mock = "*"
+pytest-cov = "*"
+# FIXME These packages are added to pacify travis-tox.
+"pathlib2" = "*"
+funcsigs = "*"
+scandir = "*"
 
 [requires]
 python_version = "3.7"
