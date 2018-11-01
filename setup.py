@@ -6,15 +6,6 @@ import re
 
 _here = os.path.abspath(os.path.dirname(__file__))
 
-def version():
-    # This rather complicated mechanism is employed to avoid importing any
-    # yet unfulfilled dependencies, for instance when installing under
-    # Python 2.4 from scratch
-    import imp
-    path = os.path.join(_here, 'amazonproduct', 'version.py')
-    mod = imp.load_source('version', path)
-    return mod.VERSION
-
 def read(fname):
     try:
         # makes sure that setup can be executed from a different location
@@ -43,14 +34,14 @@ class PyTest(Command):
 
 # make sure that no development version end up on PyPI
 if 'register' in sys.argv or 'upload' in sys.argv:
-    version_ = version()
+    version_ = '0.3.0-dev'
     if '/' in version_ or '+' in version_:
         print('ERROR: Version %r has not been adjusted yet!' % version_)
         sys.exit(1)
 
 setup(
     name='python-amazon-product-api',
-    version=version(),
+    version='0.3.0-dev',
     author='Sebastian Rahlf',
     author_email='basti AT redtoad DOT de',
     url="http://bitbucket.org/basti/python-amazon-product-api/downloads/",

@@ -15,16 +15,12 @@ output was generated::
 import os.path
 import time
 
-import lxml.etree
-import lxml.objectify
-import xml.dom.minidom
-
 # make sure that amazonproduct can be imported
 # from parent directory
 import sys
 sys.path.insert(0, '..')
 
-from amazonproduct import API, AWSError
+from amazonproduct import API
 from amazonproduct.processors import objectify, etree, minidom
 
 if __name__ == '__main__':
