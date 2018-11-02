@@ -26,6 +26,13 @@ class Operation(object):
     def parameters(self):
         if len(self._params) == 1:
             return self._params[0]
+
+        # FIXME check for common parameters rather than use the ones from first set
+        if len(self._params) > 2:
+            params = self._params[0].copy()
+            params['ItemId'] = ','.join(pset['ItemId'] for pset in self._params)
+            return params
+
         keys = {key for pset in self._params for key in pset.keys()}
         args = {}
         while keys:
@@ -45,7 +52,14 @@ class Operation(object):
             raise ValueError("Only operations of same type can be combined!")
         if "Cart" in self.name or "Cart" in other.name:
             raise ValueError("Cart operations cannot be combined!")
+        if self.name != "ItemLookup" and len(self._params) >= 2:
+            raise ValueError("Only ItemLookup operations support more than two operations per batch request!")
+        if self.name == "ItemLookup" and len(self._params) >= 10:
+            raise ValueError("No support for more than ten ItemLookup operations!")
         self._params += other._params
         return self
+
+    def __repr__(self):  # pragma: no cover
+        return '<%s: %s>' % (self.name, ' '.join('%s=%r' % (key, val) for key, val in self.parameters.items()))
 
 

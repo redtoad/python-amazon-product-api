@@ -4,7 +4,6 @@ Get all books published by "Galileo Press".
 """
 
 from amazonproduct.api import API
-import lxml
 
 if __name__ == '__main__':
     
@@ -21,16 +20,18 @@ if __name__ == '__main__':
 
     for book in result:
 
-        print 'page %d of %d' % (result.current, total_pages)
+        print('page %d of %d' % (result.current, total_pages))
         
         #~ from lxml import etree
         #~ print etree.tostring(book, pretty_print=True)
         
-        print book.ASIN,
-        print unicode(book.ItemAttributes.Author), ':',
-        print unicode(book.ItemAttributes.Title),
+        print(
+            book.ASIN,
+            book.ItemAttributes.Author,
+            ':',
+            book.ItemAttributes.Title, end='')
         if hasattr(book.ItemAttributes, 'ListPrice'):
-            print unicode(book.ItemAttributes.ListPrice.FormattedPrice)
+            print(book.ItemAttributes.ListPrice.FormattedPrice)
         elif hasattr(book.OfferSummary, 'LowestUsedPrice'):
-            print u'(used from %s)' % book.OfferSummary.LowestUsedPrice.FormattedPrice
-                            
+            print('(used from %s)' % book.OfferSummary.LowestUsedPrice.FormattedPrice)
+

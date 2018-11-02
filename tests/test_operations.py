@@ -44,19 +44,22 @@ def test_add_operations():
     }
 
 
+def test_add_more_than_two_operations_fails():
+    with pytest.raises(ValueError):
+        _ = Operation('ItemSearch') + Operation('ItemSearch') + Operation('ItemSearch')
+
+
+def test_add_more_than_ten_itemlookups_fails():
+    with pytest.raises(ValueError):
+        res = Operation('ItemLookup')
+        for _ in range(10):
+             res += Operation('ItemLookup')
+
+
 def test_add_multiple_lookup_operations():
-    ops = [Operation('ItemLookup', ItemId='%03i' % (i+1), IdType='ASIN') for i in range(10)]
+    ops = [Operation('ItemLookup', ItemId='%i' % (i+1), IdType='ASIN') for i in range(10)]
     res = functools.reduce(lambda a,b: a+b, ops)
     assert res.parameters == {
-        'ItemLookup.1.ItemId': '001',
-        'ItemLookup.2.ItemId': '002',
-        'ItemLookup.3.ItemId': '003',
-        'ItemLookup.4.ItemId': '004',
-        'ItemLookup.5.ItemId': '005',
-        'ItemLookup.6.ItemId': '006',
-        'ItemLookup.7.ItemId': '007',
-        'ItemLookup.8.ItemId': '008',
-        'ItemLookup.9.ItemId': '009',
-        'ItemLookup.10.ItemId': '010',
-        'ItemLookup.Shared.IdType': 'ASIN'
+        'ItemId': '1,2,3,4,5,6,7,8,9,10',
+        'IdType': 'ASIN'
     }
