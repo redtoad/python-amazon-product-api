@@ -5,10 +5,10 @@ import pytest
 
 from amazonproduct import core
 
-_here = os.path.dirname(os.path.abspath(__file__))
-
 import requests_mock
+
 adapter = requests_mock.Adapter()
+_here = os.path.dirname(os.path.abspath(__file__))
 
 
 class MockBackend(object):

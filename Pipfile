@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 requests = "*"
+lxml = "*"
 
 [dev-packages]
 bumpversion = "*"
@@ -17,6 +18,8 @@ pytest-cov = "*"
 "pathlib2" = "*"
 funcsigs = "*"
 scandir = "*"
+pytest-localserver = "*"
+lxml = "*"
 
 [requires]
 python_version = "3.7"
