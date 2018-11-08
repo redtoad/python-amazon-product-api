@@ -1,0 +1,89 @@
+<ItemLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
+    <OperationRequest>
+        <HTTPHeaders>
+            <Header Name="UserAgent"
+                    Value="python-amazon-product-api/0.3.0-dev +https://pypi.org/project/python-amazon-product-api/"/>
+        </HTTPHeaders>
+        <RequestId>a5a4ea20-b14d-4252-9e5f-0f995d8e7964</RequestId>
+        <Arguments>
+            <Argument Name="AWSAccessKeyId" Value="XXXX"/>
+            <Argument Name="AssociateTag" Value="XXX"/>
+            <Argument Name="IdType" Value="ASIN"/>
+            <Argument Name="ItemId" Value="123,B01M7SI4AE,789"/>
+            <Argument Name="Operation" Value="ItemLookup"/>
+            <Argument Name="Service" Value="AWSECommerceService"/>
+            <Argument Name="Timestamp" Value="2018-11-06T11:29:12.000Z"/>
+            <Argument Name="Version" Value="2011-08-01"/>
+            <Argument Name="Signature" Value="XXXXXXXXXX"/>
+        </Arguments>
+        <RequestProcessingTime>0.0041329550000000</RequestProcessingTime>
+    </OperationRequest>
+    <Items>
+        <Request>
+            <IsValid>True</IsValid>
+            <ItemLookupRequest>
+                <IdType>ASIN</IdType>
+                <ItemId>123</ItemId>
+                <ItemId>B01M7SI4AE</ItemId>
+                <ItemId>789</ItemId>
+                <ResponseGroup>Small</ResponseGroup>
+                <VariationPage>All</VariationPage>
+            </ItemLookupRequest>
+            <Errors>
+                <Error>
+                    <Code>AWS.InvalidParameterValue</Code>
+                    <Message>123 is not a valid value for ItemId. Please change this value and retry your request.</Message>
+                </Error>
+                <Error>
+                    <Code>AWS.InvalidParameterValue</Code>
+                    <Message>789 is not a valid value for ItemId. Please change this value and retry your request.</Message>
+                </Error>
+            </Errors>
+        </Request>
+        <Item>
+            <ASIN>B01M7SI4AE</ASIN>
+            <DetailPageURL>https://www.amazon.de/Goliath-Staffel-1-dt-OV/dp/B01M7SI4AE?SubscriptionId=XXXX&amp;tag=XXX&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=B01M7SI4AE</DetailPageURL>
+            <ItemLinks>
+                <ItemLink>
+                    <Description>Add To Wishlist</Description>
+                    <URL>https://www.amazon.de/gp/registry/wishlist/add-item.html?asin.0=B01M7SI4AE&amp;SubscriptionId=XXXX&amp;tag=XXX&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=B01M7SI4AE</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Tell A Friend</Description>
+                    <URL>https://www.amazon.de/gp/pdp/taf/B01M7SI4AE?SubscriptionId=XXXX&amp;tag=XXX&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=B01M7SI4AE</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>All Customer Reviews</Description>
+                    <URL>https://www.amazon.de/review/product/B01M7SI4AE?SubscriptionId=XXXX&amp;tag=XXX&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=B01M7SI4AE</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>All Offers</Description>
+                    <URL>https://www.amazon.de/gp/offer-listing/B01M7SI4AE?SubscriptionId=XXXX&amp;tag=XXX&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=B01M7SI4AE</URL>
+                </ItemLink>
+            </ItemLinks>
+            <ItemAttributes>
+                <Actor>Billy Bob Thornton</Actor>
+                <Actor>William Hurt</Actor>
+                <Actor>Maria Bello</Actor>
+                <Actor>Olivia Thirlby</Actor>
+                <Actor>Nina Arianda</Actor>
+                <Creator Role="Produzent">Lawrence Trilling</Creator>
+                <Creator Role="Autor">David E. Kelley</Creator>
+                <Creator Role="Produzent">David E. Kelley</Creator>
+                <Creator Role="Idee">David E. Kelley</Creator>
+                <Creator Role="Autor">Jonathan Shapiro</Creator>
+                <Creator Role="Produzent">Jonathan Shapiro</Creator>
+                <Creator Role="Idee">Jonathan Shapiro</Creator>
+                <Creator Role="Produzent">Ross Fineman</Creator>
+                <Creator Role="Produzent">David Semel</Creator>
+                <Creator Role="Produzent">Robert Lewis</Creator>
+                <Director>Lawrence Trilling</Director>
+                <Director>Alik Sakharov</Director>
+                <Director>Bill D\'Elia</Director>
+                <Director>Anthony Hemingway</Director>
+                <ProductGroup>TV Series Season Video on Demand</ProductGroup>
+                <Title>Goliath - Staffel 1 [dt./OV]</Title>
+            </ItemAttributes>
+        </Item>
+    </Items>
+</ItemLookupResponse>

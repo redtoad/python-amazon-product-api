@@ -1,0 +1,37 @@
+<ItemLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
+    <OperationRequest>
+        <HTTPHeaders>
+            <Header Name="UserAgent" Value="python-amazon-product-api/0.3.0-dev +https://pypi.org/project/python-amazon-product-api/"/>
+        </HTTPHeaders>
+        <RequestId>c50e1300-b0a7-4417-bfbb-44bcfc81d7ef</RequestId>
+        <Arguments>
+            <Argument Name="AWSAccessKeyId" Value="AKIAIUNWM3JIBSM6LYNQ"/>
+            <Argument Name="AssociateTag" Value="redtoad-21"/>
+            <Argument Name="IdType" Value="ASIN"/>
+            <Argument Name="ItemId" Value="123"/>
+            <Argument Name="Operation" Value="ItemLookup"/>
+            <Argument Name="Service" Value="AWSECommerceService"/>
+            <Argument Name="Timestamp" Value="2018-11-06T11:11:00.000Z"/>
+            <Argument Name="Version" Value="2011-08-01"/>
+            <Argument Name="Signature" Value="/VG1//3AgZAUNgb4e6r38jD3pUk7kutut4FqAMJ71n0="/>
+        </Arguments>
+        <RequestProcessingTime>0.0024251960000000</RequestProcessingTime>
+    </OperationRequest>
+    <Items>
+        <Request>
+            <IsValid>True</IsValid>
+            <ItemLookupRequest>
+                <IdType>ASIN</IdType>
+                <ItemId>123</ItemId>
+                <ResponseGroup>Small</ResponseGroup>
+                <VariationPage>All</VariationPage>
+            </ItemLookupRequest>
+            <Errors>
+                <Error>
+                    <Code>AWS.InvalidParameterValue</Code>
+                    <Message>123 is not a valid value for ItemId. Please change this value and retry your request.</Message>
+                </Error>
+            </Errors>
+        </Request>
+    </Items>
+</ItemLookupResponse>
